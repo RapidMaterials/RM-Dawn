@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "image_banner": {
@@ -6,205 +15,294 @@
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "Image banner",
-            "heading_size": "h0"
+            "heading": "Solutions That Build Better.",
+            "heading_size": "h1"
           }
         },
-        "text": {
+        "text_QeTPD4": {
           "type": "text",
           "settings": {
-            "text": "Give customers details about the banner image(s) or content on the template.",
+            "text": "Your trusted source for premium tools, materials, and expert service for metal roofing, gutters, cladding, and more.",
             "text_style": "body"
           }
         },
         "button": {
           "type": "buttons",
           "settings": {
-            "button_label_1": "Shop all",
-            "button_link_1": "shopify://collections/all",
-            "button_style_secondary_1": true,
-            "button_label_2": "",
-            "button_link_2": "",
+            "button_label_1": "Browse All",
+            "button_link_1": "shopify://collections/rapid-materials-all",
+            "button_style_secondary_1": false,
+            "button_label_2": "Quick Order",
+            "button_link_2": "shopify://pages/quick-order-rapid-materials",
             "button_style_secondary_2": false
           }
         }
       },
-      "block_order": [
-        "heading",
-        "text",
-        "button"
+      "block_order": ["heading", "text_QeTPD4", "button"],
+      "custom_css": [
+        "@media only screen and (min-width: 750px) {.banner--content-align-left.banner--desktop-transparent .banner__box, .banner--content-align-right.banner--desktop-transparent .banner__box, .banner--medium.banner--desktop-transparent .banner__box {max-width: 80rem; }}"
       ],
       "settings": {
-        "image_overlay_opacity": 40,
-        "image_height": "large",
-        "desktop_content_position": "bottom-center",
+        "image": "shopify://shop_images/Metal_roof_install.jpg",
+        "image_overlay_opacity": 70,
+        "image_height": "medium",
+        "desktop_content_position": "middle-center",
         "show_text_box": false,
         "desktop_content_alignment": "center",
-        "color_scheme": "scheme-3",
+        "color_scheme": "scheme-6b61fb3b-285f-4844-88d1-5205c39b59d3",
+        "image_behavior": "none",
         "mobile_content_alignment": "center",
         "stack_images_on_mobile": false,
         "show_text_below": false
       }
     },
-    "rich_text": {
-      "type": "rich-text",
+    "image_with_text_full_3RwFNV": {
+      "type": "image-with-text-full",
       "blocks": {
-        "heading": {
+        "heading_QJzQHt": {
           "type": "heading",
           "settings": {
-            "heading": "Talk about your brand",
+            "heading": "S-5 Clamps & Mounting",
             "heading_size": "h1"
           }
         },
-        "text": {
+        "text_gPwXYh": {
           "type": "text",
           "settings": {
-            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.<\/p>"
+            "text": "<p>Shop the industry’s leading metal roof mounting solutions. S-5! products, including clamps, snow bars, and solar mounting systems, are designed for reliability and performance on metal roofs of all types.</p>",
+            "text_style": "body"
+          }
+        },
+        "button_9Qt44B": {
+          "type": "button",
+          "settings": {
+            "button_label": "Shop S-5",
+            "button_link": "shopify://collections/buy-s-5",
+            "button_style_secondary": true
           }
         }
       },
-      "block_order": [
-        "heading",
-        "text"
+      "block_order": ["heading_QJzQHt", "text_gPwXYh", "button_9Qt44B"],
+      "custom_css": [
+        ".image-with-text__content.gradient {background-color: transparent;}",
+        ".image-with-text__media::after {position: absolute; top: 0; z-index: 10; width: 100%; height: 100%; background: rgb(254 206 52); transform: skew(200.25deg); left: 85%; border-left: 5px solid white;}",
+        "@media screen and (max-width: 749px) {.image-with-text--overlap .image-with-text__content {width: 100%; margin: 0 auto 0; } .image-with-text__media::after {display: none; }}"
       ],
       "settings": {
-        "color_scheme": "scheme-1",
-        "full_width": true,
-        "padding_top": 40,
+        "image": "shopify://shop_images/buy-s5-main-img.png",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "content_layout": "overlap",
+        "section_color_scheme": "scheme-4193c3da-e497-4afa-91b7-12fbd16d7fb2",
+        "color_scheme": "scheme-4193c3da-e497-4afa-91b7-12fbd16d7fb2",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "padding_top": 0,
         "padding_bottom": 0
       }
     },
-    "featured_collection": {
-      "type": "featured-collection",
-      "settings": {
-        "title": "Featured products",
-        "heading_size": "h2",
-        "collection": "all",
-        "products_to_show": 8,
-        "columns_desktop": 4,
-        "color_scheme": "scheme-1",
-        "show_view_all": false,
-        "swipe_on_mobile": false,
-        "image_ratio": "adapt",
-        "show_secondary_image": true,
-        "show_vendor": false,
-        "show_rating": false,
-        "columns_mobile": "2",
-        "padding_top": 28,
-        "padding_bottom": 36
-      }
-    },
-    "collage": {
-      "type": "collage",
+    "image_with_text_full_q6VVam": {
+      "type": "image-with-text-full",
       "blocks": {
-        "collection-0": {
-          "type": "collection",
+        "heading_DprewK": {
+          "type": "heading",
           "settings": {
-            "collection": ""
+            "heading": "Metal Roofing Tools",
+            "heading_size": "h1"
           }
         },
-        "product": {
-          "type": "product",
+        "text_CVi9Aa": {
+          "type": "text",
           "settings": {
-            "product": "",
-            "second_image": false
+            "text": "<p>Find the tools you need for precision and durability in metal roofing projects. From seamers and benders to pliers and gutter tools, we offer high-quality products from trusted brands to help you work efficiently and effectively.</p><p></p>",
+            "text_style": "body"
           }
         },
-        "collection-1": {
-          "type": "collection",
+        "button_GMTB6w": {
+          "type": "button",
           "settings": {
-            "collection": ""
+            "button_label": "Shop MRT",
+            "button_link": "shopify://collections/buy-metal-roofing-tools",
+            "button_style_secondary": true
           }
         }
       },
-      "block_order": [
-        "collection-0",
-        "product",
-        "collection-1"
+      "block_order": ["heading_DprewK", "text_CVi9Aa", "button_GMTB6w"],
+      "custom_css": [
+        ".image-with-text__content.gradient {background-color: transparent;}",
+        ".image-with-text__media::after {position: absolute; top: 0; z-index: 10; width: 100%; height: 100%; background: #ff5112; transform: skew(200.25deg); left: 85%; border-left: 5px solid white;}",
+        "@media screen and (max-width: 749px) {.image-with-text--overlap .image-with-text__content {width: 100%; margin: 0 auto 0; } .image-with-text__media::after {display: none; }}"
       ],
       "settings": {
-        "heading": "Multimedia collage",
-        "heading_size": "h2",
-        "desktop_layout": "left",
-        "mobile_layout": "collage",
-        "color_scheme": "scheme-1",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "image": "shopify://shop_images/buy-mrt-main-img.png",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "content_layout": "overlap",
+        "section_color_scheme": "scheme-b93dcbe2-88fc-4fbb-a39b-00e852210e84",
+        "color_scheme": "scheme-b93dcbe2-88fc-4fbb-a39b-00e852210e84",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "padding_top": 0,
+        "padding_bottom": 0
       }
     },
-    "video": {
-      "type": "video",
-      "settings": {
-        "heading": "",
-        "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
-        "heading_size": "h1",
-        "description": "",
-        "full_width": false,
-        "color_scheme": "scheme-1",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "multicolumn": {
-      "type": "multicolumn",
+    "image_with_text_full_kaPhMJ": {
+      "type": "image-with-text-full",
       "blocks": {
-        "column1": {
-          "type": "column",
+        "heading_QmNCx9": {
+          "type": "heading",
           "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "link_label": "",
-            "link": ""
+            "heading": "Half Round Gutters",
+            "heading_size": "h1"
           }
         },
-        "column2": {
-          "type": "column",
+        "text_UtQK8M": {
+          "type": "text",
           "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "link_label": "",
-            "link": ""
+            "text": "<p>Discover premium half-round gutters and accessories in copper, zinc, lead-coated, and painted finishes. We provide everything you need to create elegant, durable gutter systems for residential or commercial projects.</p>",
+            "text_style": "body"
           }
         },
-        "column3": {
-          "type": "column",
+        "button_QAFLXy": {
+          "type": "button",
           "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "link_label": "",
-            "link": ""
+            "button_label": "Shop HRG",
+            "button_link": "shopify://collections/half-round-gutters",
+            "button_style_secondary": true
           }
         }
       },
-      "block_order": [
-        "column1",
-        "column2",
-        "column3"
+      "block_order": ["heading_QmNCx9", "text_UtQK8M", "button_QAFLXy"],
+      "custom_css": [
+        ".image-with-text__content.gradient {background-color: transparent;}",
+        ".image-with-text__media::after {position: absolute; top: 0; z-index: 10; width: 100%; height: 100%; background: #70ac47; transform: skew(200.25deg); left: 85%; border-left: 5px solid white;}",
+        "@media screen and (max-width: 749px) {.image-with-text--overlap .image-with-text__content {width: 100%; margin: 0 auto 0; } .image-with-text__media::after {display: none; }}"
       ],
       "settings": {
-        "title": "",
-        "heading_size": "h1",
-        "image_width": "third",
-        "image_ratio": "adapt",
-        "columns_desktop": 3,
-        "column_alignment": "center",
-        "background_style": "none",
-        "button_label": "",
-        "button_link": "",
-        "swipe_on_mobile": false,
-        "color_scheme": "scheme-1",
-        "columns_mobile": "1",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "image": "shopify://shop_images/buy-hrg-main-img.png",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "content_layout": "overlap",
+        "section_color_scheme": "scheme-3ecab526-23df-438e-a281-3ae133d61365",
+        "color_scheme": "scheme-3ecab526-23df-438e-a281-3ae133d61365",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "image_with_text_full_3H7Xx9": {
+      "type": "image-with-text-full",
+      "blocks": {
+        "heading_tDpYLK": {
+          "type": "heading",
+          "settings": {
+            "heading": "Cladding & Exterior Facade",
+            "heading_size": "h1"
+          }
+        },
+        "text_pyCxe9": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Elevate your designs with top-tier cladding and exterior facade systems. Explore brands like Reynobond, Equitone, Trespa, and Alucobond, along with fasteners and accessories to create stunning, durable exteriors. </p>",
+            "text_style": "body"
+          }
+        },
+        "button_mfazRm": {
+          "type": "button",
+          "settings": {
+            "button_label": "Shop CEFS",
+            "button_link": "shopify://collections/buy-cladding-exterior-facade-systems",
+            "button_style_secondary": true
+          }
+        }
+      },
+      "block_order": ["heading_tDpYLK", "text_pyCxe9", "button_mfazRm"],
+      "custom_css": [
+        ".image-with-text__content.gradient {background-color: transparent;}",
+        ".image-with-text__media::after {position: absolute; top: 0; z-index: 10; width: 100%; height: 100%; background: #34a3fe; transform: skew(200.25deg); left: 85%; border-left: 5px solid white;}",
+        "@media screen and (max-width: 749px) {.image-with-text--overlap .image-with-text__content {width: 100%; margin: 0 auto 0; } .image-with-text__media::after {display: none; }}"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/buy-cefs-main-img.png",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "content_layout": "overlap",
+        "section_color_scheme": "scheme-27ef8825-144c-4486-bfe4-c2326e784550",
+        "color_scheme": "scheme-27ef8825-144c-4486-bfe4-c2326e784550",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "image_with_text_full_8k4kzg": {
+      "type": "image-with-text-full",
+      "blocks": {
+        "heading_r6f7aG": {
+          "type": "heading",
+          "settings": {
+            "heading": "ALUCOBOND® Panels",
+            "heading_size": "h1"
+          }
+        },
+        "text_mNAwmm": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Transform your projects with ALUCOBOND®, the industry leader in aluminum composite panels. Known for their exceptional durability, design versatility, and 50-year legacy, ALUCOBOND® panels are ideal for creating striking, long-lasting exteriors. Explore a wide range of colors, finishes, and thicknesses to bring your architectural vision to life.</p>",
+            "text_style": "body"
+          }
+        },
+        "button_T3xDfR": {
+          "type": "button",
+          "settings": {
+            "button_label": "Shop Alucobond",
+            "button_link": "shopify://collections/alucobond",
+            "button_style_secondary": true
+          }
+        }
+      },
+      "block_order": ["heading_r6f7aG", "text_mNAwmm", "button_T3xDfR"],
+      "custom_css": [
+        ".image-with-text__content.gradient {background-color: transparent;}",
+        ".image-with-text__media::after {position: absolute; top: 0; z-index: 10; width: 100%; height: 100%; background: #eaa900; transform: skew(200.25deg); left: 85%; border-left: 5px solid white;}",
+        "@media screen and (max-width: 749px) {.image-with-text--overlap .image-with-text__content {width: 100%; margin: 0 auto 0; } .image-with-text__media::after {display: none; }}"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/buy-alucobond-main-img.png",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "content_layout": "overlap",
+        "section_color_scheme": "scheme-ca4eece0-1af7-4417-b786-e35af4d0956b",
+        "color_scheme": "scheme-ca4eece0-1af7-4417-b786-e35af4d0956b",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "padding_top": 0,
+        "padding_bottom": 0
       }
     }
   },
   "order": [
     "image_banner",
-    "rich_text",
-    "featured_collection",
-    "collage",
-    "video",
-    "multicolumn"
+    "image_with_text_full_3RwFNV",
+    "image_with_text_full_q6VVam",
+    "image_with_text_full_kaPhMJ",
+    "image_with_text_full_3H7Xx9",
+    "image_with_text_full_8k4kzg"
   ]
 }
