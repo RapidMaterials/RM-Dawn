@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "name": "t:sections.footer.name",
   "type": "footer",
@@ -5,49 +14,59 @@
     "footer": {
       "type": "footer",
       "blocks": {
-        "footer-0": {
+        "brand_information_WtNddX": {
+          "type": "brand_information",
+          "settings": {
+            "show_social": true
+          }
+        },
+        "link_list_i9wFpU": {
           "type": "link_list",
           "settings": {
-            "heading": "Quick links",
+            "heading": "Company",
             "menu": "footer"
           }
         },
-        "footer-1": {
+        "link_list_bFCn9d": {
           "type": "link_list",
           "settings": {
-            "heading": "Info",
-            "menu": "footer"
+            "heading": "Resources",
+            "menu": "footer-resources"
           }
         },
-        "footer-2": {
-          "type": "text",
+        "link_list_TXimaV": {
+          "type": "link_list",
           "settings": {
-            "heading": "Our mission",
-            "subtext": "<p>Share contact information, store details, and brand content with your customers.<\/p>"
+            "heading": "Products",
+            "menu": "footer-products"
           }
         }
       },
       "block_order": [
-        "footer-0",
-        "footer-1",
-        "footer-2"
+        "brand_information_WtNddX",
+        "link_list_i9wFpU",
+        "link_list_bFCn9d",
+        "link_list_TXimaV"
+      ],
+      "custom_css": [
+        ".footer__blocks-wrapper {align-items: start;}",
+        "@media screen and (max-width: 749px) {.footer-block__brand-info .footer__list-social.list-social {justify-content: center !important; } .footer-block.grid__item.footer-block--menu {padding-left: 0; } .rte, h2 {text-align: center; } .footer__content-top {padding-bottom: 3rem; padding-left: calc(2rem / var(--font-body-scale)); padding-right: calc(2rem / var(--font-body-scale));}"
       ],
       "settings": {
-        "color_scheme": "scheme-1",
-        "newsletter_enable": true,
+        "color_scheme": "scheme-3",
+        "newsletter_enable": false,
         "newsletter_heading": "Subscribe to our emails",
-        "show_social": true,
+        "enable_follow_on_shop": false,
+        "show_social": false,
         "enable_country_selector": false,
         "enable_language_selector": false,
         "payment_enable": true,
-        "show_policy": false,
-        "margin_top": 48,
-        "padding_top": 36,
-        "padding_bottom": 36
+        "show_policy": true,
+        "margin_top": 0,
+        "padding_top": 48,
+        "padding_bottom": 12
       }
     }
   },
-  "order": [
-    "footer"
-  ]
+  "order": ["footer"]
 }
