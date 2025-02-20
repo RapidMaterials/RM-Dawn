@@ -1,44 +1,48 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "name": "t:sections.header.name",
   "type": "header",
   "sections": {
-    "announcement-bar": {
-      "type": "announcement-bar",
-      "blocks": {
-        "announcement-bar-0": {
-          "type": "announcement",
-          "settings": {
-            "text": "Welcome to our store",
-            "text_alignment": "center",
-            "color_scheme": "scheme-1",
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "announcement-bar-0"
-      ]
+    "custom_liquid_kf8mBb": {
+      "type": "custom-liquid",
+      "custom_css": [],
+      "settings": {
+        "custom_liquid": "<div class=\"bar\" style=\"display: flex;\n  align-items: center;justify-content: space-between;\">\n  <div class=\"logo\">\n<a href=\"{{shop.url}}\"><img src=\"https://cdn.shopify.com/s/files/1/0645/2540/2290/files/Rapid-Logo-Wide-White-600px_430x.png?v=1733173150\" alt=\"Rapid Materials Logo\"></a>\n  </div>\n  <div class=\"info\">\n   <ul class=\"list-menu list-menu--inline\" role=\"list\">\n          {% for link in linklists.top-rm-menu.links %}\n            <li><a  id=\"HeaderMenu-{{ link.handle }}\" class=\"header__menu-item list-menu__item link link--text focus-inset\" href=\"{{ link.url }}\">{{ link.title }}</a></li>\n          {% endfor %}\n        </ul>\n  </div>\n</div>",
+        "color_scheme": "scheme-5",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
     },
     "header": {
       "type": "header",
+      "custom_css": [
+        ".header-logo {max-width: 180px; height: auto; padding-top: 8px;}",
+        "a#HeaderMenu-quick-order {color: #ffce34;}"
+      ],
       "settings": {
-        "color_scheme": "scheme-1",
         "logo_position": "middle-left",
         "menu": "main-menu",
         "menu_type_desktop": "dropdown",
-        "sticky_header_type": "on-scroll-up",
+        "sticky_header_type": "always",
         "show_line_separator": true,
-        "enable_country_selector": true,
-        "enable_language_selector": true,
+        "color_scheme": "scheme-4",
+        "menu_color_scheme": "scheme-1",
+        "enable_country_selector": false,
+        "enable_language_selector": false,
         "mobile_logo_position": "center",
         "margin_bottom": 0,
-        "padding_top": 20,
-        "padding_bottom": 20
+        "padding_top": 4,
+        "padding_bottom": 4
       }
     }
   },
-  "order": [
-    "announcement-bar",
-    "header"
-  ]
+  "order": ["custom_liquid_kf8mBb", "header"]
 }
