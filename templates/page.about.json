@@ -17,17 +17,17 @@
         "padding_bottom": 28
       }
     },
-    "image_with_text_full_PUPbKk": {
-      "type": "image-with-text-full",
+    "image_with_text_mLxANi": {
+      "type": "image-with-text",
       "blocks": {
-        "heading_9G7zbL": {
+        "heading_z6YmKz": {
           "type": "heading",
           "settings": {
             "heading": "What We Do Best",
             "heading_size": "h1"
           }
         },
-        "text_QdUQKW": {
+        "text_M7z4dE": {
           "type": "text",
           "settings": {
             "text": "<p>At RapidMaterials, we believe in providing the best quality tools and materials at great value to our customers. We are committed to treating our customers fairly, honestly, and honorably. You can always expect to receive superior quality products, competitive pricing, and dependable customer service. We pride ourselves on being able to provide expert advice based on decades of professional field experience. Whether it’s choosing the right tool for the job or calculating the correct material requirements, our experts are available to serve you.</p>",
@@ -36,21 +36,21 @@
         }
       },
       "block_order": [
-        "heading_9G7zbL",
-        "text_QdUQKW"
+        "heading_z6YmKz",
+        "text_M7z4dE"
       ],
       "settings": {
         "image": "shopify://shop_images/construction-site-plans.jpg",
         "height": "adapt",
         "desktop_image_width": "medium",
         "layout": "image_first",
+        "image_behavior": "none",
+        "content_layout": "no-overlap",
         "desktop_content_position": "top",
         "desktop_content_alignment": "left",
-        "content_layout": "overlap",
-        "section_color_scheme": "",
-        "color_scheme": "scheme-2",
-        "image_behavior": "none",
         "mobile_content_alignment": "left",
+        "section_color_scheme": "",
+        "color_scheme": "",
         "padding_top": 36,
         "padding_bottom": 36
       }
@@ -130,12 +130,12 @@
         "image_width": "full",
         "image_ratio": "adapt",
         "columns_desktop": 3,
-        "column_alignment": "left",
+        "column_alignment": "center",
         "background_style": "primary",
         "button_label": "",
         "button_link": "",
         "link_target": "_self",
-        "color_scheme": "",
+        "color_scheme": "scheme-2",
         "columns_mobile": "1",
         "swipe_on_mobile": false,
         "padding_top": 4,
@@ -145,7 +145,7 @@
   },
   "order": [
     "main",
-    "image_with_text_full_PUPbKk",
+    "image_with_text_mLxANi",
     "rich_text_LhiYAY",
     "column_image_with_text_Tjb6df"
   ]
