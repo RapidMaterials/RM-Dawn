@@ -1,0 +1,457 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "custom_liquid_9qzpnL": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<p             class=\"product__sku no-js-hidden caption-with-letter-spacing {% if product.selected_or_first_available_variant.sku.size == 0 %} visibility-hidden{% endif %}\" id=\"Sku-line\" style=\"letter-spacing:1px;margin-bottom:-1rem;;\"\nrole=\"status\"<span>{{ 'products.product.sku' | t }}: </span>{{- product.selected_or_first_available_variant.sku -}} {%- assign brand = product.metafields.custom.brand.value -%}&nbsp;| Brand: {{ brand.name }}\n              </p>"
+          }
+        },
+        "title": {
+          "type": "title",
+          "settings": {}
+        },
+        "price": {
+          "type": "price",
+          "settings": {}
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "square"
+          }
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false,
+            "show_gift_card_recipient": true
+          }
+        },
+        "text_eanxjX": {
+          "type": "text",
+          "settings": {
+            "text": "{{ product.metafields.custom.alert.value }}",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "custom_liquid_9qzpnL",
+        "title",
+        "price",
+        "variant_picker",
+        "quantity_selector",
+        "buy_buttons",
+        "text_eanxjX"
+      ],
+      "custom_css": [
+        "h1 {font-size: 2.5rem; line-height: 2.5rem;}",
+        "form.installment {display: none !important;}",
+        "#text_eanxjX {font-size: 0.9em; line-height: 1em; padding: 10px; background-color: #ffbd5f; letter-spacing: normal;}",
+        ".grid {align-items: stretch;}",
+        ".swatch-input__input.disabled + .swatch-input__label {display: none;}"
+      ],
+      "settings": {
+        "enable_sticky_info": true,
+        "color_scheme": "scheme-1",
+        "media_size": "small",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "gallery_layout": "thumbnail",
+        "mobile_thumbnails": "show",
+        "media_position": "left",
+        "image_zoom": "lightbox",
+        "hide_variants": true,
+        "enable_video_looping": false,
+        "padding_top": 28,
+        "padding_bottom": 8
+      }
+    },
+    "related-products": {
+      "type": "related-products",
+      "disabled": true,
+      "custom_css": [],
+      "settings": {
+        "heading": "Related Products",
+        "heading_size": "h2",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "columns_mobile": "2",
+        "color_scheme": "scheme-1",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "padding_top": 36,
+        "padding_bottom": 28
+      }
+    },
+    "custom_html_CMJwDt": {
+      "type": "custom-html",
+      "blocks": {
+        "text_npEQj7": {
+          "type": "text",
+          "settings": {
+            "text": "{{ product.description }}",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "text_npEQj7"
+      ],
+      "custom_css": [
+        ".grid,p {align-items: center; text-align: center;}"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/alucobond-plus-logo.png",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "color_scheme": "background-1",
+        "mobile_content_alignment": "left",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "column_image_with_text_FRrLpd": {
+      "type": "column-image-with-text",
+      "blocks": {
+        "column_V6qKDx": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Dry-Reveal_bf5e29aa-2b6d-40a5-8194-f76fb08dab7a.png",
+            "title": "Dry Reveal",
+            "text": "<p>The ALUCOBOND® Dry Reveal system creates seamless panel connections with reveal-joint splines, eliminating exposed fasteners and sealants. Designed as a pressure-equalized or back-ventilated rainscreen, it meets <strong>AAMA 508</strong> and <strong>AAMA 509</strong> standards. Offering large modular sizing and design versatility, the Dry Reveal system provides a durable, modern aesthetic ideal for facades with complex geometry.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_tDgrAr": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Wet-Seal_d6f65c56-77c8-4a27-9f7e-0fb9c1fbea26.png",
+            "title": "Wet Seal",
+            "text": "<p>The ALUCOBOND® PLUS Wet Seal system features a rout-and-return design with silicone-sealed joints and foam backer rods for a reliable air and water barrier. Tested to AAMA 501 standards, it provides weather resistance and design versatility, accommodating curves, depth, and large panel sizes. Ideal for sloping walls, it offers a clean, economical solution without exposed fasteners.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_DnpaL8": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/EasyFix_13705e8f-c0e7-41a1-904d-65278a64c3cc.png",
+            "title": "ALUCOBOND EasyFix",
+            "text": "<p>The ALUCOBOND® EasyFix system streamlines the installation of ALUCOBOND® PLUS panels on wood-frame construction. Combining 135° and 90° folds, it delivers a sleek, modern look with quick, efficient attachment via clips or continuous rails. Compatible with all ALUCOBOND® PLUS finishes, EasyFix meets IBC fire standards and offers a durable, recyclable, and VOC-free solution for interiors and exteriors.</p><p></p>",
+            "link_label": "More Details",
+            "link": "https://www.alucobondusa.com/systems-easyfix.html"
+          }
+        },
+        "column_iftnMV": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/face-fastened_446ec857-2c01-479b-8e11-f1932097f7ad.png",
+            "title": "ALUCOBOND FaceFastened",
+            "text": "<p>The ALUCOBOND® FaceFastened system combines modern aesthetics with durability, featuring flush-mounted panels and color-coated fasteners. Tested to AAMA 509 standards, it uses flat panels on aluminum rails for clean shadow lines and low-maintenance performance. This cost-effective cladding solution offers design flexibility with matching or contrasting fasteners and meets ASTM E330 standards.</p>",
+            "link_label": "More Details",
+            "link": "https://www.alucobondusa.com/systems-facefastened.html"
+          }
+        }
+      },
+      "block_order": [
+        "column_V6qKDx",
+        "column_tDgrAr",
+        "column_DnpaL8",
+        "column_iftnMV"
+      ],
+      "disabled": true,
+      "settings": {
+        "title": "ALUCOBOND® PLUS™ Compatible Systems",
+        "heading_size": "h2",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 2,
+        "column_alignment": "left",
+        "background_style": "primary",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 4,
+        "padding_bottom": 4
+      }
+    },
+    "column_image_with_text_YPcfLi": {
+      "type": "column-image-with-text",
+      "blocks": {
+        "column_rxYzJC": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/alucobond-axcent-trim.png",
+            "title": "Architectural Flashing & Trim",
+            "text": "<p>ALUCOBOND® AXCENT™ is perfect for architectural flashing and trim, offering strength and versatility. It can be roll-formed, pressed for interlocking joints, curved for rounded designs, or cut to accommodate airflow, lighting, or signage elements.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_PPbzEV": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/soffit-canopy.png",
+            "title": "Soffit, Canopy &  Parapet Cap",
+            "text": "<p>ALUCOBOND® AXCENT™ is ideal for soffit, canopy, and parapet cap applications, offering exceptional flatness, lightweight strength, and seamless color matching with ALUCOBOND® PLUS. Panels can be shaped for interlocking joints, ventilation, and curved designs.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_Xnytr8": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/alucobond-axcent-art-installation.png",
+            "title": "Custom Signage & Art Installation",
+            "text": "<p>ALUCOBOND® AXCENT™ is perfect for custom signage and art installations, offering vibrant finishes, exceptional flatness, and easy fabrication. Create striking, durable designs that capture attention and elevate any space.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_LyiTmp": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/alucobond-axcent-interiors2.png",
+            "title": "Interiors & Ceilings",
+            "text": "<p>ALUCOBOND® AXCENT™ seamlessly transitions from exterior facades to interior spaces, offering customizable shapes and large, flat panels. Perfect for feature walls, ceilings, beam wraps, baffles, stairways, and more, AXCENT™ delivers clean, modern aesthetics that enhance any design.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_RFGE3i": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/alucobond-axcent-column-cover.png",
+            "title": "Column Covers",
+            "text": "<p>ALUCOBOND® AXCENT™ is ideal for column covers, easily formed using route-and-return, rolling, or brake-bends. With the ability to achieve tight radii and maintain weather-tight sealed joints, AXCENT™ delivers both durability and sleek aesthetics.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_AjPY6f": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/alucobond-axcent-exteriors_e45e3b9f-2356-4d00-937e-2beaf01fb2f7.png",
+            "title": "Wall Panels & Cladding",
+            "text": "<p>ALUCOBOND® AXCENT™ is a lightweight, durable aluminum sheet ideal for wall panels and cladding. Its flatness and rigidity make it perfect for sleek facades, spandrel applications, and custom vertical designs.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_rxYzJC",
+        "column_PPbzEV",
+        "column_Xnytr8",
+        "column_LyiTmp",
+        "column_RFGE3i",
+        "column_AjPY6f"
+      ],
+      "disabled": true,
+      "custom_css": [
+        "section {clear: both !important;}",
+        "p,h1,h2,h3,h4,h5,body,div,span {color: #444;}"
+      ],
+      "settings": {
+        "title": "Versatile Applications with ALUCOBOND® AXCENT™",
+        "heading_size": "h2",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "background_style": "primary",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 4,
+        "padding_bottom": 4
+      }
+    },
+    "collapsible_content_ihGNyD": {
+      "type": "collapsible-content",
+      "blocks": {
+        "collapsible_row_Q74EXk": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Tech Specs",
+            "icon": "check_mark",
+            "row_content": "<p>ALUCOBOND PLUS 4mm ACM is comprised of two sheets of smooth .020” aluminum thermobonded to a solid, fire retardant core. Developed exclusively to meet fire performance requirements while providing the benefits & versatility of ACM. </p><p><strong>Sizes</strong><br/>Standard Size: 62.0\" x 196.0\"<br/>Reflect Mirror Size: 49.2” x 146.0”<br/>Rusted Metal Size: 50.0\" x 196.0\"<br/>Zinc: 50.0\" x 196.0\"<br/>Chestnut: 50.0\" x 196.0\"<br/>Rustic Walnut: 50.0\" x 196.0\"<br/>Anodized Colors: 60.0\" x 196.0\"<br/><br/>Weight: 1.56 lb/ft²<br/>Thickness: 0.157” (4mm nominal)<br/>Aluminum Skin Thickness: 0.020” (nominal)<br/><br/><strong>MINIMUM BENDING RADIUS</strong><br/>- The minimum bending radius of ALUCOBOND PLUS without routing the interior skin is 15 times the thickness<br/>- The minimum bending radius for 4mm ALUCOBOND PLUS material without routing the back skin is 4”</p><p><strong>TEMPERATURE RESISTANCE</strong><br/>- Withstands environmental temperature changes from -55 F to +180 F<br/>- Coefficient of linear expansion is governed by the aluminum sheet</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_Py7Yne": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Paint Finishes",
+            "icon": "check_mark",
+            "row_content": "<p>ALUCOBOND PVDF finishes are coated in accordance with AAMA 2605, signifying the highest performance exterior finish standard in the industry. AAMA 2605 finishes have the best chalk, humidity, and color change performance. Backed by ALUCOBOND’s 20-year warranty, SMP finishes meet AAMA 2604. ALUCOBOND has a 50+ year history of performance and offers best-in-class warranty coverage.</p><p><strong>PVDF (Polyvinylidene Fluoride) </strong>finishes are available in two types: <strong>PVDF 2</strong> and <strong>PVDF 3</strong>. <strong>PVDF 2</strong> features a 2-coat system consisting of a primer and a color coat, while <strong>PVDF 3</strong> includes a 3-coat system with a primer, a color coat, and a protective top coat. Renowned for their durability and strong performance characteristics, both systems are used to create high-quality solid, mica, or metallic finishes.</p><p><strong>PVDF/FEVE Finish</strong>: This finish consists of two coats of PVDF and a clear coat of FEVE. In Spectra finishes, the FEVE coat enhances gloss levels and creates a dynamic visual effect. Depending on the viewing angle, different wavelengths of light are reflected, producing an ever-changing color gradient with striking iridescent highlights.</p><p><strong>SMP (Silicone Modified Polyester) Paint Systems</strong>: SMP coatings are a blend of polyester and silicon intermediates, offering an excellent balance of exterior gloss and color retention. These coatings provide robust resistance to stains, chalking, ultraviolet radiation, weather, and humidity, making them a durable choice for exterior applications.</p><p><strong>SDP (Siliconized Durable Polyester) Finishes</strong>: SDP finishes are a 3-coat, highly durable architectural coating available in a wide range of colors, gloss levels, and metallic or mica finishes. This high-tech polymer-based coating offers exceptional color and gloss weatherability. SDP finishes meet AAMA 2605 standards, ensuring long-lasting performance and visual appeal.</p><p><strong>PVDF/FEVE Finish</strong>: The PVDF/FEVE finish consists of two coats of PVDF and a clear, transparent top coat of FEVE. This combination provides enhanced protection from the elements while preserving the aesthetic of the bare finish. In our Spectra finishes, the FEVE top coat offers a higher gloss level, and depending on the viewing angle, it reflects different wavelengths of light, resulting in a dynamic, ever-changing color gradient with iridescent highlights. Various tints can also be applied to the FEVE coat, broadening the color palette and further enhancing the visual appeal of the project.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_QEwC76": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "About the Manufacturer",
+            "icon": "check_mark",
+            "row_content": "<p>ALUCOBOND® has been a pioneer in metal facades for over 50 years, setting the standard for exterior and interior design materials. Manufactured by 3A Composites, ALUCOBOND® is renowned for its exceptional flatness, formability, durability, and ease of fabrication. The product provides a seamless transition of color from indoor to outdoor spaces, making it the ideal choice for creating cohesive and inspiring architectural designs.</p><p><strong>Made in the USA, </strong>ALUCOBOND® is available in a wide range of sizes, trend-forward colors, and finishes, including both standard and custom options. This versatility enables the creation of innovative facades, signage, and brand-defining elements that bring architectural visions to life.</p><p>As a trusted distributor of ALUCOBOND® on RapidMaterials.com, we are proud to offer a product backed by over five decades of leadership from 3A Composites, ensuring the highest quality and performance in every panel.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_GJtAAM": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Alucobond Sustainability",
+            "icon": "check_mark",
+            "row_content": "<p>At ALUCOBOND®, sustainability is at the heart of our products, ensuring that we not only meet the demands of today but also preserve resources for future generations. Our commitment to sustainability is reflected in every stage of our process—from production to end-of-life recycling.</p><p><strong>Environmental Responsibility</strong><br/>ALUCOBOND® is designed with the environment in mind. We adhere to stringent environmental standards and continuously work to minimize waste, reduce energy consumption, and increase the recyclability of our products. The panels are fully recyclable, allowing them to be reintroduced into the production cycle at the end of their life. This aligns with our commitment to the circular economy and sustainable manufacturing practices.</p><p><strong>Environmental Product Declaration (EPD)</strong><br/>ALUCOBOND® products are certified with an Environmental Product Declaration (EPD) according to international ISO standards. This declaration, verified by an independent third party, provides detailed information about the environmental impact of our products, such as energy consumption, CO2 emissions, and water usage. The EPD supports building certifications like LEED®, ensuring that the materials you choose contribute to a sustainable and energy-efficient building.</p><p><strong>Life Cycle Assessments (LCA)</strong><br/>We conduct comprehensive Life Cycle Assessments (LCA) to evaluate the environmental impact of our products from production through to disposal. By considering every stage of a building's lifecycle, from energy use during operation to the energy required to manufacture and transport materials, we help ensure that our products support long-term environmental goals.</p><p><strong>Recycling & VOC Emissions</strong><br/>ALUCOBOND® is a 100% recyclable material. Both the aluminum skins and core material can be returned to the recycling loop, contributing to reducing waste and the need for new raw materials. The aluminum is particularly valuable in the recycling process, as it can be reused without loss of quality. Our manufacturing processes also minimize environmental impact by reducing VOC (volatile organic compound) emissions. ALUCOBOND® panels are coil-coated in a controlled environment where 99% of VOCs are captured and destroyed, ensuring no VOCs are released from installed panels.</p><p><strong>LEED® & Other Certifications</strong><br/>ALUCOBOND® products are a recognized contributor to LEED® certification, which is one of the most respected sustainability ratings in the building industry. By incorporating our materials, building projects can earn LEED® points, helping reduce environmental impact and improving energy efficiency. ALUCOBOND® products are also compatible with other global sustainability certifications, such as BREEAM® and DGNB, further supporting eco-friendly building practices.</p><p><strong>Commitment to Continuous Improvement</strong><br/>We are committed to ongoing sustainability efforts. Over the past two decades, 3A Composites USA has invested millions in sustainable practices, such as energy-efficient production methods, waste reduction, and carbon footprint minimization. By continually improving our processes and products, we ensure that ALUCOBOND® remains a sustainable choice for the future.</p><p>With ALUCOBOND®, you’re choosing a product that meets the highest environmental, health, and safety standards, contributing to a more sustainable, energy-efficient world.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_TQTHie": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Resources & Downloads",
+            "icon": "check_mark",
+            "row_content": "<ul><li><a href=\"https://d371dyuip757b1.cloudfront.net/downloads/AXCENT%20-%20Tech%20Data%20Sheet_2022.pdf\" target=\"_blank\" title=\"Alucobond PLUS Technical Data Sheet\">PLUS Technical Data Sheet</a></li><li><a href=\"https://d371dyuip757b1.cloudfront.net/downloads/ALUCOBOND%20AXCENT%20SDS.pdf\" target=\"_blank\" title=\"Alucobond Plus Safety Data Sheet\">PLUS SDS</a></li><li><a href=\"https://d371dyuip757b1.cloudfront.net/downloads/ALUCOBOND%20PLUS%20-%20Fabrication%20Guide%20122019.pdf\" target=\"_blank\" title=\"https://d371dyuip757b1.cloudfront.net/downloads/ALUCOBOND%20PLUS%20-%20Fabrication%20Guide%20122019.pdf\">PLUS Fabrication Manual</a></li><li><a href=\"https://d371dyuip757b1.cloudfront.net/downloads/2023%20Digital%20Color%20Library.pdf\" target=\"_blank\" title=\"ALUCOBOND Color Library PDF\">ALUCOBOND Color Library PDF</a></li><li><a href=\"https://d371dyuip757b1.cloudfront.net/downloads/ALUCOBOND%20Product%20Brochure%20(digital).pdf\" target=\"_blank\" title=\"ALUCOBOND Product Brochure\">ALUCOBOND Product Brochure</a></li><li><a href=\"https://d371dyuip757b1.cloudfront.net/downloads/ALUCOBOND_Sustainability_Final.pdf\" target=\"_blank\" title=\"Alucobond Sustainability Brochure\">ALUCOBOND Sustainability Brochure</a></li></ul><p><a href=\"https://www.alucobondusa.com/downloads.html\" target=\"_blank\" title=\"More Alucobond Resources\">More Alucobond Resources</a></p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_hEd4hG": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Alucobond Return Policy",
+            "icon": "check_mark",
+            "row_content": "<p>{{ product.metafields.custom.info_return_refund_policy.value }}</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_hVqgWh": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Alucobond Shipping Details",
+            "icon": "check_mark",
+            "row_content": "<h3><strong>ALUCOBOND® Shipping Policy</strong></h3><p>At RapidMaterials, we ensure your ALUCOBOND® orders are processed efficiently and delivered safely. Due to the nature of ALUCOBOND® products, all shipments require special handling and freight services to protect your materials in transit.</p><p>Our team is available Monday–Friday, 8 AM to 5 PM EST, handling orders with care and precision. If you have any questions about your shipment, we’re happy to assist!</p><h3><strong>Shipping Information</strong></h3><h4><strong>Standard Shipping</strong></h4><ul><li>ALUCOBOND® orders are typically processed and shipped within <strong>2-3 business days</strong> for in-stock items.</li><li>Orders placed after 1 PM EST will begin processing the next business day.</li></ul><h4><strong>Freight & Crating Charges</strong></h4><ul><li>ALUCOBOND® orders <strong>ship via freight on pallets</strong> to ensure safe delivery.</li><li>Additional <strong>crating and packaging fees</strong> may apply to ALUCOBOND® shipments and may be adjusted based on order size and shipping destination.</li><li>Freight costs will be calculated at checkout, but in some cases, adjustments may be necessary. Our team will contact you if changes apply.</li></ul><h4><strong>Expedited Shipping</strong></h4><ul><li>While we do our best to accommodate urgent requests, ALUCOBOND® shipments require handling time and <strong>cannot always be expedited for same- or next-day shipping</strong>. If you need a faster turnaround, please contact us to discuss available options.</li></ul><h4><strong>Holiday Shipping</strong></h4><ul><li>We do not process or ship orders on major holidays.</li><li>Some fulfillment locations may close during the last two weeks of the year for inventory processing. Any shipping delays will be noted on product pages.</li></ul>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_row_Q74EXk",
+        "collapsible_row_Py7Yne",
+        "collapsible_row_QEwC76",
+        "collapsible_row_GJtAAM",
+        "collapsible_row_TQTHie",
+        "collapsible_row_hEd4hG",
+        "collapsible_row_hVqgWh"
+      ],
+      "custom_css": [
+        "p,h1,h2,h3,h4,h5,body,div,span {color: #444;}",
+        ".grid__item {padding: 30px;}",
+        ".grid p,.grid ul {text-align: left;}"
+      ],
+      "settings": {
+        "caption": "",
+        "heading": "",
+        "heading_size": "h1",
+        "heading_alignment": "center",
+        "layout": "none",
+        "container_color_scheme": "",
+        "color_scheme": "",
+        "open_first_collapsible_row": false,
+        "image_ratio": "adapt",
+        "desktop_layout": "image_first",
+        "padding_top": 20,
+        "padding_bottom": 36
+      }
+    },
+    "image_banner_x8Fhey": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_DF3NML": {
+          "type": "heading",
+          "settings": {
+            "heading": "Need a Custom Color or Size?",
+            "heading_size": "h1"
+          }
+        },
+        "text_AeLgT6": {
+          "type": "text",
+          "settings": {
+            "text": "If you’re looking for a color or size that’s not available in our in-stock selection, ALUCOBOND® PLUS offers a wide range of custom options. Whether you need a specific color match or a custom size to fit your project, we can help bring your design vision to life. Contact us for a personalized quote tailored to your unique requirements.",
+            "text_style": "body"
+          }
+        },
+        "buttons_DehKJC": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "Get a Custom Quote Today",
+            "button_link_1": "shopify://pages/get-a-quote",
+            "button_style_secondary_1": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_DF3NML",
+        "text_AeLgT6",
+        "buttons_DehKJC"
+      ],
+      "custom_css": [
+        "p,h1,h2,h3,h4,h5,body,div,span {color: #444;}"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/alucobond-colors-bg.png",
+        "image_overlay_opacity": 20,
+        "image_height": "medium",
+        "desktop_content_position": "middle-center",
+        "show_text_box": true,
+        "desktop_content_alignment": "center",
+        "color_scheme": "scheme-78dff5fa-b375-4a7c-9956-38ff60a01cdc",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
+      }
+    }
+  },
+  "order": [
+    "main",
+    "related-products",
+    "custom_html_CMJwDt",
+    "column_image_with_text_FRrLpd",
+    "column_image_with_text_YPcfLi",
+    "collapsible_content_ihGNyD",
+    "image_banner_x8Fhey"
+  ]
+}
