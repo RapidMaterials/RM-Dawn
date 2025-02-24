@@ -9,6 +9,18 @@
  */
 {
   "sections": {
+    "main": {
+      "type": "main-page",
+      "custom_css": [
+        "h2.widget-title {display: none;}",
+        ".widget-header {justify-content: center;}",
+        "h3.widget-collection-title {background-color: #cacaca; padding: 1%; margin: 0 !important;}"
+      ],
+      "settings": {
+        "padding_top": 12,
+        "padding_bottom": 28
+      }
+    },
     "rich_text_CcfkFN": {
       "type": "rich-text",
       "blocks": {
@@ -41,22 +53,10 @@
         "padding_top": 40,
         "padding_bottom": 0
       }
-    },
-    "main": {
-      "type": "main-page",
-      "custom_css": [
-        "h2.widget-title {display: none;}",
-        ".widget-header {justify-content: center;}",
-        "h3.widget-collection-title {background-color: #cacaca; padding: 1%; margin: 0 !important;}"
-      ],
-      "settings": {
-        "padding_top": 12,
-        "padding_bottom": 28
-      }
     }
   },
   "order": [
-    "rich_text_CcfkFN",
-    "main"
+    "main",
+    "rich_text_CcfkFN"
   ]
 }
