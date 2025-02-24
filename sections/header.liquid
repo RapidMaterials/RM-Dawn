@@ -179,13 +179,32 @@
       endif
     %}
 
-    {%- if section.settings.logo_position == 'middle-center' -%}
+   {%- if section.settings.logo_position != 'middle-center' -%}
       {%- if request.page_type == 'index' -%}
-        <h1 class="header__heading">
+        <h2 class="header__heading">
       {%- endif -%}
           <a href="{{ routes.root_url }}" class="header__heading-link link link--text focus-inset">
             {%- if settings.logo != blank -%}
               <div class="header__heading-logo-wrapper">
+                {% if product.collections %}
+                  {% for collection in product.collections %}
+                       {% if collection.metafields.custom.logo_url %}
+                            <a href="{{ collection.url }}" style="text-decoration:none;">
+                              <img src="{{ collection.metafields.custom.logo_url | file_url }}" alt="{{ collection.title }} Logo" class="header-logo">
+                            </a>
+                            {% break %}
+                       {% endif %}
+                     {% endfor %}
+                {% elsif collection.metafields.custom.logo_url %}
+                        <a href="{{ collection.url }}" style="text-decoration:none;">
+                          <img src="{{ collection.metafields.custom.logo_url | file_url }}" alt="{{ collection.title }} Logo" class="header-logo">
+                        </a>
+                {% elsif page.metafields.custom.logo_url %}
+                        <a href="{{ page.metafields.custom.collection_url }}" style="text-decoration:none;">
+                          <img src="{{ page.metafields.custom.logo_url | file_url }}" alt="Logo" class="header-logo">
+                        </a>
+                  {% else %} 
+                            {% comment %}
                 {%- assign logo_alt = settings.logo.alt | default: shop.name | escape -%}
                 {%- assign logo_height = settings.logo_width | divided_by: settings.logo.aspect_ratio -%}
                 {% capture sizes %}(min-width: 750px) {{ settings.logo_width }}px, 50vw{% endcapture %}
@@ -199,15 +218,21 @@
                   sizes: sizes,
                   preload: true
                 }}
+                  {% endcomment %}
+
+                   
+                         
+                {% endif %}
               </div>
             {%- else -%}
               <span class="h2">{{ shop.name }}</span>
             {%- endif -%}
           </a>
       {%- if request.page_type == 'index' -%}
-        </h1>
+        </h2>
       {%- endif -%}
     {%- endif -%}
+
 
     <div class="header__icons{% if section.settings.enable_country_selector or section.settings.enable_language_selector %} header__icons--localization header-localization{% endif %}">
       <div class="desktop-localization-wrapper">
