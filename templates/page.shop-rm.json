@@ -1,0 +1,100 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "column_image_with_text_99R7aU": {
+      "type": "column-image-with-text",
+      "blocks": {
+        "column_APdrhc": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/logo-buy-s5.png",
+            "title": "Buy S-5! Clamps & Mounting",
+            "text": "<p>Trusted solutions for snow retention, solar panel mounting, and more, all made in the USA.</p><p></p>",
+            "link_label": "Shop",
+            "link": "shopify://collections/buy-s-5"
+          }
+        },
+        "column_qQ9jBd": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/logo-buy-mrt.png",
+            "title": "Buy Metal Roofing Tools",
+            "text": "<p>High-quality tools designed for metal roofing professionals and precision craftsmanship.</p><p></p>",
+            "link_label": "Shop",
+            "link": "shopify://collections/buy-metal-roofing-tools"
+          }
+        },
+        "column_KMxAUn": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/logo-buy-hrg.png",
+            "title": "Buy Half Round Gutters",
+            "text": "<p>Durable, German-made half-round gutters and accessories for reliable performance.</p><p></p>",
+            "link_label": "Shop",
+            "link": "shopify://collections/half-round-gutters"
+          }
+        },
+        "column_bybmHw": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Buy-CEFS-logo_ab7311b5-e983-43b2-b085-a3465751eee1.png",
+            "title": "Buy Cladding & Facades",
+            "text": "<p>Premium materials for stunning, durable exterior walls and architectural designs.</p>",
+            "link_label": "Shop",
+            "link": "shopify://collections/cladding"
+          }
+        },
+        "column_DUycqp": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/buy-alucobond.png",
+            "title": "Buy Alucobond",
+            "text": "<p>Innovative cladding and architectural solutions, trusted for over 50 years. Made in the USA.</p>",
+            "link_label": "Shop",
+            "link": "shopify://collections/alucobond"
+          }
+        }
+      },
+      "block_order": [
+        "column_APdrhc",
+        "column_qQ9jBd",
+        "column_KMxAUn",
+        "column_bybmHw",
+        "column_DUycqp"
+      ],
+      "custom_css": ["p {line-height: 1.2em; font-size: 0.9em;}"],
+      "settings": {
+        "title": "Shop Rapid Materials",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "column_alignment": "center",
+        "background_style": "primary",
+        "button_label": "Shop All Products",
+        "button_link": "shopify://collections/rapid-materials-all",
+        "color_scheme": "scheme-1",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 4,
+        "padding_bottom": 4
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    }
+  },
+  "order": ["column_image_with_text_99R7aU", "main"]
+}
