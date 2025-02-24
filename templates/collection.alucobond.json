@@ -74,11 +74,12 @@
       ],
       "custom_css": [
         ".multicolumn {background: url(\"https://cdn.shopify.com/s/files/1/0645/2540/2290/files/alucobond-project-photo-13.png?v=1737046166&width=3840\") no-repeat center center; background-size: cover;}",
-        ".multicolumn-list li {background: #fff; padding:1%;}",
+        ".multicolumn-list li {background: #fff; padding: 1%;}",
         "p,h3 {color: #4d4d4d !important;}",
         "p,a {font-family: arial;}",
         "h3 {font-family: Georgia, serif;}",
-        "a.link {background-color: #de4826; padding: 5px 30px; border-radius: 0.25rem; color: #fff; text-decoration:none;}"
+        "a.link {background-color: #de4826; padding: 5px 30px; border-radius: 0.25rem; color: #fff; text-decoration: none;}",
+        ".svg-wrapper{display:none;}"
       ],
       "settings": {
         "title": "",
