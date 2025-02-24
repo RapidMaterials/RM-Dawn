@@ -1,0 +1,126 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "rich_text_iiwjza": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_jPEYFY": {
+          "type": "heading",
+          "settings": {
+            "heading": "Find the Right S-5! Clamp for Your Roof",
+            "heading_size": "h1"
+          }
+        },
+        "text_R4qngB": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Choosing the right S-5! clamp is essential for secure and reliable attachment to your metal roof. Whether you know your roof manufacturer and panel type or need to match a clamp to your seam profile, we’ve got you covered.</p>"
+          }
+        },
+        "button_jhzDPF": {
+          "type": "button",
+          "settings": {
+            "button_label": "",
+            "button_link": "",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_jPEYFY",
+        "text_R4qngB",
+        "button_jhzDPF"
+      ],
+      "custom_css": [
+        "@media screen and (min-width: 750px) {.rich-text__wrapper {width: 600px; }}"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "column_image_with_text_UgnQ4E": {
+      "type": "column-image-with-text",
+      "blocks": {
+        "column_yTgHVF": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/search-by-manufacturer.png",
+            "title": "<strong>By Manufacturer & Panel Type</strong>",
+            "text": "<p>If you know your roof manufacturer and specific panel type, this option allows you to quickly find compatible clamps based on tested configurations.</p>",
+            "link_label": "Search by Manufacturer",
+            "link": "https://clamptoseam.s-5.com/",
+            "link_target": "_blank"
+          }
+        },
+        "column_jQw9e4": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/search-by-profile.png",
+            "title": "By Seam Profile",
+            "text": "<p>Not sure of your roof manufacturer? No problem! Identify your roof’s seam profile and explore clamps designed for that seam profile.</p><p></p>",
+            "link_label": "Search by Seam Profile",
+            "link": "https://clamptoseam.s-5.com/seams/",
+            "link_target": "_blank"
+          }
+        }
+      },
+      "block_order": [
+        "column_yTgHVF",
+        "column_jQw9e4"
+      ],
+      "custom_css": [
+        ".multicolumn-card.content-container {background: #fff !important;}",
+        "a.link.animate-arrow {background-color: #235ba8; padding: 0.5rem 1rem; color: #fff;}",
+        ".multicolumn-card.content-container {border: 4px solid #efefef; height: 100%;}",
+        ".grid {align-items: stretch;}",
+        ".multicolumn-card__info {padding: 1rem; text-align: center;}"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 2,
+        "column_alignment": "left",
+        "background_style": "primary",
+        "button_label": "",
+        "button_link": "",
+        "link_target": "pop",
+        "color_scheme": "",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 4
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    }
+  },
+  "order": [
+    "rich_text_iiwjza",
+    "column_image_with_text_UgnQ4E",
+    "main"
+  ]
+}
