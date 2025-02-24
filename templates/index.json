@@ -91,6 +91,7 @@
         "text_eNz3xK",
         "button_PtcAcA"
       ],
+      "disabled": true,
       "custom_css": [
         ".image-with-text__content {background-color: transparent;}",
         ".image-with-text__media::after {position: absolute; z-index: 10; width: 30%; height: 100%; background: rgb(254 206 52); transform: skew(200.25deg); left: 85%; border-left: 5px solid white;}",
