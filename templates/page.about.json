@@ -1,0 +1,137 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "image_with_text_full_PUPbKk": {
+      "type": "image-with-text-full",
+      "blocks": {
+        "heading_9G7zbL": {
+          "type": "heading",
+          "settings": {
+            "heading": "What We Do Best",
+            "heading_size": "h1"
+          }
+        },
+        "text_QdUQKW": {
+          "type": "text",
+          "settings": {
+            "text": "<p>At RapidMaterials, we believe in providing the best quality tools and materials at great value to our customers. We are committed to treating our customers fairly, honestly, and honorably. You can always expect to receive superior quality products, competitive pricing, and dependable customer service. We pride ourselves on being able to provide expert advice based on decades of professional field experience. Whether it’s choosing the right tool for the job or calculating the correct material requirements, our experts are available to serve you.</p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": ["heading_9G7zbL", "text_QdUQKW"],
+      "settings": {
+        "image": "shopify://shop_images/construction-site-plans.jpg",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "overlap",
+        "section_color_scheme": "",
+        "color_scheme": "scheme-2",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "rich_text_LhiYAY": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_3dwKxC": {
+          "type": "heading",
+          "settings": {
+            "heading": "Our Products & Services",
+            "heading_size": "h1"
+          }
+        },
+        "text_D7eNzd": {
+          "type": "text",
+          "settings": {
+            "text": "<p>We are an authorized dealer for S-5! Products, which are one of the best attachment solutions available on the market today. S-5! products are 100% manufactured in the USA with the highest quality and we offer competitive pricing without minimums. We have in-depth knowledge of snow retention and solar panel mounting solutions to help guide you in selecting the right tools and materials.</p><p>We carry a wide range of tools from reputable manufacturers such as Freund, Malco, and Midwest. Our tool line includes bending tools, gutter installation tools, HVAC tools, shingle and metal roofing tools, seamers, shears, sheet metal snips, soldering tools, siding tools, slate working tools, and more. We also specialize in wall cladding products such as aluminum composite material (ACM) and metal composite material (MCM) from well-known brand names such as Alucobond, Reynobond, and larson by Alucoil, as well as metal sheets from Pac-Clad, and zinc sheets from VM Zinc. In addition, we carry high pressure laminate (HPL) wall panels from Trespa, fiber cement wall cladding materials from Equitone, and flat sheets in aluminum, zinc, and stainless steel. From gutter products to snow retention, snow guard products, and solar mounting kits, you can expect to find everything you need for your roofing, siding, and gutter projects at RapidMaterials.com. </p>"
+          }
+        }
+      },
+      "block_order": ["heading_3dwKxC", "text_D7eNzd"],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "column_image_with_text_Tjb6df": {
+      "type": "column-image-with-text",
+      "blocks": {
+        "column_eRNLDc": {
+          "type": "column",
+          "settings": {
+            "title": "Trusted",
+            "text": "<p>Backed by a team of committed staff and experts, you can be assured of a dependable, professional service that you will not find elsewhere, and superior quality products that are trusted by our customers. Based near Atlanta, Georgia, RapidMaterials.com is a trusted online source for all your building material needs.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_mhTMiQ": {
+          "type": "column",
+          "settings": {
+            "title": "Ease of use",
+            "text": "<p>Our website is responsive and mobile-friendly, allowing our customers to find and order our products easily on any device, such as desktops, laptops, tablets, and smartphones; anytime, anywhere.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_LkEAzw": {
+          "type": "column",
+          "settings": {
+            "title": "Available",
+            "text": "<p>Our representatives are waiting to answer any questions you might have.Whether you’re in the office, on-the-go, or on the roof, we’ve got you covered. Just visit our contact page.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": ["column_eRNLDc", "column_mhTMiQ", "column_LkEAzw"],
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "background_style": "primary",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "main",
+    "image_with_text_full_PUPbKk",
+    "rich_text_LhiYAY",
+    "column_image_with_text_Tjb6df"
+  ]
+}
