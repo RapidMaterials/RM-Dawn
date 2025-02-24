@@ -1,0 +1,895 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "image_banner_DNMpjA": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_bQNrE3": {
+          "type": "heading",
+          "settings": {
+            "heading": "{{ page.title }}",
+            "heading_size": "h0"
+          }
+        },
+        "text_aCt8rf": {
+          "type": "text",
+          "settings": {
+            "text": "Three Easy Steps to Find the Right Clamp for Your Roof",
+            "text_style": "subtitle"
+          }
+        }
+      },
+      "block_order": [
+        "heading_bQNrE3",
+        "text_aCt8rf"
+      ],
+      "custom_css": [
+        "h1 {color: #fff;}"
+      ],
+      "settings": {
+        "image_overlay_opacity": 60,
+        "image_height": "small",
+        "desktop_content_position": "middle-left",
+        "show_text_box": false,
+        "desktop_content_alignment": "left",
+        "color_scheme": "scheme-1",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
+      }
+    },
+    "rich_text_wDgwHL": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_xqXty9": {
+          "type": "heading",
+          "settings": {
+            "heading": "Identify The Right Clamp For Your Roof Panel Seam",
+            "heading_size": "h1"
+          }
+        },
+        "text_fLK7FM": {
+          "type": "text",
+          "settings": {
+            "text": "<p>S-5!® attachment products are backed by years of rigorous testing and documentation to provide clients with the most accurate and informative options for all metal roof attachment projects. Our Clamp to Seam Matching Tool searches through all of our known test data, providing the most up-to-date and definitive answers on where to begin your roof transformation.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_xqXty9",
+        "text_fLK7FM"
+      ],
+      "custom_css": [
+        "h2.rich-text__heading.rte.inline-richtext.h1.scroll-trigger.animate--slide-in {color: rgba(0, 0, 0, 0.7);}"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "column_image_with_text_CV89mG": {
+      "type": "column-image-with-text",
+      "blocks": {
+        "column_8n6bT8": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/32.jpg",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_qEDjNc": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/22.jpg",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_iD4xNE": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/3.jpg",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_8n6bT8",
+        "column_qEDjNc",
+        "column_iD4xNE"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "column_alignment": "center",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "scheme-5",
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "padding_top": 4,
+        "padding_bottom": 4
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "column_image_with_text_bCfz3R": {
+      "type": "column-image-with-text",
+      "blocks": {
+        "column_96pqh6": {
+          "type": "column",
+          "settings": {
+            "title": "1\" Single Fold - Copper Panel",
+            "text": "<p><strong>Compatible Clamps:</strong></p><p><a href=\"https://buys-5.com/products/s-5-b-brass-seam-clamp\" target=\"_blank\" title=\"S-5-B Seam Clamp\">S-5-B</a>, <a href=\"https://buys-5.com/products/s-5-b-brass-mini-seam-clamp\" target=\"_blank\" title=\"S-5-B Mini Seam Clamp\">S-5-B Mini</a></p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_qMAcT9": {
+          "type": "column",
+          "settings": {
+            "title": "1\" Single Fold",
+            "text": "<p><strong>Compatible Clamps:</strong></p><p><a href=\"https://buys-5.com/products/s-5-s-seam-clamp\" target=\"_blank\" title=\"S-5-S Seam Clamp\">S-5-S</a>, <a href=\"https://buys-5.com/products/s-5-s-mini-seam-clamp\" target=\"_blank\" title=\"S-5-S Mini Seam Clamp\">S-5-S Mini</a></p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_p3EtcF": {
+          "type": "column",
+          "settings": {
+            "title": "1\" Double Fold-Copper Panel",
+            "text": "<p><strong>Compatible Clamps:</strong></p><p><a href=\"https://buys-5.com/products/s-5-b-brass-seam-clamp\" target=\"_blank\" title=\"S-5-B Seam Clamp\">S-5-B</a>, <a href=\"https://buys-5.com/products/s-5-b-brass-mini-seam-clamp\" target=\"_blank\" title=\"S-5-B Mini Seam Clamp\">S-5-B Mini</a></p><h4><strong>All Other Materials</strong></h4><p><strong>Compatible Clamps:</strong></p><p><a href=\"https://buys-5.com/products/s-5-e-seam-clamp\" target=\"_blank\" title=\"S-5-E Seam Clamp\">S-5-E</a>, <a href=\"https://buys-5.com/products/s-5-e-mini-seam-clamp\" target=\"_blank\" title=\"S-5-E Mini Clamp\">S-5-E Mini</a></p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_96pqh6",
+        "column_qMAcT9",
+        "column_p3EtcF"
+      ],
+      "settings": {
+        "title": "<strong>Clamp Finder</strong>",
+        "heading_size": "h0",
+        "image_width": "half",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "",
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "padding_top": 4,
+        "padding_bottom": 4
+      }
+    },
+    "column_image_with_text_6Pifzp": {
+      "type": "column-image-with-text",
+      "blocks": {
+        "column_GAxPbU": {
+          "type": "column",
+          "settings": {
+            "title": "1\" Nail Strip",
+            "text": "<p><strong>Compatible Clamps:</strong></p><p><a href=\"/products/s-5-n-seam-clamp\" target=\"_blank\" title=\"S-5-N Seam Clamp\">S-5-N</a>, <a href=\"/products/s-5-n-mini-seam-clamp\" target=\"_blank\" title=\"S-5-N Mini Seam Clamp\">S-5-N Mini</a></p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_h9DLUJ": {
+          "type": "column",
+          "settings": {
+            "title": "1\" Batten Cap",
+            "text": "<p><strong>Compatible Clamps:</strong></p><p><a href=\"https://buys-5.com/products/s-5-s-seam-clamp\" target=\"_blank\" title=\"S-5-S Seam Clamp\">S-5-S</a>, <a href=\"https://buys-5.com/products/s-5-s-mini-seam-clamp\" target=\"_blank\" title=\"S-5-S Mini Seam Clamp\">S-5-S Mini</a></p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_bQHJFG": {
+          "type": "column",
+          "settings": {
+            "title": "1-1/2\" Batten Cap",
+            "text": "<p><strong>Compatible Clamps:</strong></p><p><a href=\"https://buys-5.com/products/s-5-s-seam-clamp\" target=\"_blank\" title=\"S-5-S Seam Clamp\">S-5-S</a>, <a href=\"https://buys-5.com/products/s-5-s-mini-seam-clamp\" target=\"_blank\" title=\"S-5-S Mini Seam Clamp\">S-5-S Mini</a></p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_GAxPbU",
+        "column_h9DLUJ",
+        "column_bQHJFG"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h0",
+        "image_width": "half",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "",
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "padding_top": 4,
+        "padding_bottom": 4
+      }
+    },
+    "column_image_with_text_ijwr8t": {
+      "type": "column-image-with-text",
+      "blocks": {
+        "column_faGjhL": {
+          "type": "column",
+          "settings": {
+            "title": "1-1/2\" Single Fold",
+            "text": "<p><strong>Compatible Clamps:</strong></p><p><a href=\"https://buys-5.com/products/s-5-s-seam-clamp\" target=\"_blank\" title=\"S-5-S Seam Clamp\">S-5-S</a>, <a href=\"https://buys-5.com/products/s-5-s-mini-seam-clamp\" target=\"_blank\" title=\"S-5-S Mini Seam Clamp\">S-5-S Mini</a></p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_Tim8hE": {
+          "type": "column",
+          "settings": {
+            "title": "1-1/2\" Double Fold",
+            "text": "<p><strong>Compatible Clamps:</strong></p><p><a href=\"https://buys-5.com/products/s-5-e-seam-clamp\" target=\"_blank\" title=\"S-5-E Seam Clamp\">S-5-E</a>, <a href=\"https://buys-5.com/products/s-5-e-mini-seam-clamp\" target=\"_blank\" title=\"S-5-E Mini Clamp\">S-5-E Mini</a></p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_RbxaLJ": {
+          "type": "column",
+          "settings": {
+            "title": "1-1/2\" Double Fold",
+            "text": "<p><strong>Compatible Clamps:</strong></p><p><a href=\"/products/s-5-v-seam-clamp\" target=\"_blank\" title=\"S-5-V Seam Clamp\">S-5-V</a>, <a href=\"/products/s-5-v-mini-seam-clamp\" target=\"_blank\" title=\"S-5-V Mini Seam Clamp\">S-5-V Mini</a></p><p><a href=\"/products/s-5-u-seam-clamp\" target=\"_blank\" title=\"S-5-U Seam Clamp\">S-5-U</a>, <a href=\"/products/s-5-u-mini-seam-clamp\" target=\"_blank\" title=\"S-5-U Mini Seam Clamp\">S-5-U Mini</a></p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_faGjhL",
+        "column_Tim8hE",
+        "column_RbxaLJ"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h0",
+        "image_width": "half",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "",
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "padding_top": 4,
+        "padding_bottom": 4
+      }
+    },
+    "column_image_with_text_CiXzrX": {
+      "type": "column-image-with-text",
+      "blocks": {
+        "column_mVjLhy": {
+          "type": "column",
+          "settings": {
+            "title": "2\" Double Fold",
+            "text": "<p><strong>Compatible Clamps:</strong></p><p><a href=\"/products/s-5-v-seam-clamp\" target=\"_blank\" title=\"S-5-V Seam Clamp\">S-5-V</a>, <a href=\"/products/s-5-v-mini-seam-clamp\" target=\"_blank\" title=\"S-5-V Mini Seam Clamp\">S-5-V Mini</a></p><p><a href=\"/products/s-5-u-seam-clamp\" target=\"_blank\" title=\"S-5-U Seam Clamp\">S-5-U</a>, <a href=\"/products/s-5-u-mini-seam-clamp\" target=\"_blank\" title=\"S-5-U Mini Seam Clamp\">S-5-U Mini</a></p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_LW4yUf": {
+          "type": "column",
+          "settings": {
+            "title": "1-1/2\" Snap Seam",
+            "text": "<p><strong>Compatible Clamps:</strong></p><p><a href=\"https://buys-5.com/products/s-5-s-seam-clamp\" target=\"_blank\" title=\"S-5-S Seam Clamp\">S-5-S</a>, <a href=\"https://buys-5.com/products/s-5-s-mini-seam-clamp\" target=\"_blank\" title=\"S-5-S Mini Seam Clamp\">S-5-S Mini</a></p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_AdkzCf": {
+          "type": "column",
+          "settings": {
+            "title": "1-3/4\" Bulb Seam EU",
+            "text": "<p><strong>Compatible Clamps:</strong></p><p><a href=\"/products/s-5-z-seam-clamp\" target=\"_blank\" title=\"S-5-Z Seam Clamp\">S-5-Z</a>, <a href=\"/products/s-5-z-mini-seam-clamp\" target=\"_blank\" title=\"S-5-Z Mini Seam Clamp\">S-5-Z Mini</a></p><p><a href=\"/products/s-5-r465-seam-clamp\" target=\"_blank\" title=\"S-5-R465 Seam Clamp\">S-5-R465</a>, <a href=\"/products/s-5-r465-mini-seam-clamp\" target=\"_blank\" title=\"S-5-R465 Mini Seam Clamp\">S-5-R465 Mini</a></p><p>(Dependent on bulb width)</p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_mVjLhy",
+        "column_LW4yUf",
+        "column_AdkzCf"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h0",
+        "image_width": "half",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "",
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "padding_top": 4,
+        "padding_bottom": 4
+      }
+    },
+    "column_image_with_text_9Bzqmx": {
+      "type": "column-image-with-text",
+      "blocks": {
+        "column_myPMcK": {
+          "type": "column",
+          "settings": {
+            "title": "1-3/4\" Snap Lock",
+            "text": "<p><strong>Compatible Clamps:</strong></p><p><a href=\"https://buys-5.com/products/s-5-s-seam-clamp\" target=\"_blank\" title=\"S-5-S Seam Clamp\">S-5-S</a>, <a href=\"https://buys-5.com/products/s-5-s-mini-seam-clamp\" target=\"_blank\" title=\"S-5-S Mini Seam Clamp\">S-5-S Mini</a></p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_NkUKYV": {
+          "type": "column",
+          "settings": {
+            "title": "2\" Bulb Seam",
+            "text": "<p><strong>Compatible Clamps:</strong></p><p><a href=\"/products/s-5-q-seam-clamp\" target=\"_blank\" title=\"S-5-Q Seam Clamp\">S-5-Q</a>, <a href=\"/products/s-5-q-mini-seam-clamp\" target=\"_blank\" title=\"S-5-Q Mini Seam Clamp\">S-5-Q Mini</a></p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_wrBhaX": {
+          "type": "column",
+          "settings": {
+            "title": "1\" Nail Strip",
+            "text": "<p><strong>Compatible Clamps:</strong></p><p><a href=\"/products/s-5-n-1-5-seam-clamp\" target=\"_blank\" title=\"S-5-N 1.5 Seam Clamp\">S-5-N 1.5</a>, <a href=\"/products/s-5-n-1-5-mini-seam-clamp\" target=\"_blank\" title=\"S-5-N 1.5 Mini Seam Clamp\">S-5-N 1.5 Mini</a></p><p><a href=\"/products/s-5-nh-1-5\" target=\"_blank\" title=\"S-5-NH 1.5\">S-5-NH 1.5</a>, <a href=\"/products/s-5-nh-1-5-mini\" target=\"_blank\" title=\"S-5-NH 1.5 Mini\">S-5-NH 1.5 Mini</a></p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_myPMcK",
+        "column_NkUKYV",
+        "column_wrBhaX"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h0",
+        "image_width": "half",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "",
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "padding_top": 4,
+        "padding_bottom": 4
+      }
+    },
+    "column_image_with_text_wfVVYq": {
+      "type": "column-image-with-text",
+      "blocks": {
+        "column_Ek8xYm": {
+          "type": "column",
+          "settings": {
+            "title": "2\" Single Fold",
+            "text": "<p><strong>Compatible Clamps:</strong></p><p><a href=\"/products/s-5-h90-seam-clamp\" target=\"_blank\" title=\"S-5-H90 Seam Clamp\">S-5-H90</a>, <a href=\"/products/s-5-h90-mini-seam-clamp\" target=\"_blank\" title=\"S-5-H90 Mini Seam Clamp\">S-5-H90 Mini</a></p><p><a href=\"/products/s-5-u-seam-clamp\" target=\"_blank\" title=\"S-5-U Seam Clamp\">S-5-U</a>, <a href=\"/products/s-5-u-mini-seam-clamp\" target=\"_blank\" title=\"S-5-U Mini Seam Clamp\">S-5-U Mini</a></p><p><a href=\"/products/s-5-h-seam-clamp\" target=\"_blank\" title=\"S-5-H Seam Clamp\">S-5-H</a>, <a href=\"/products/s-5-h-mini-seam-clamp\" target=\"_blank\" title=\"S-5-H Mini Seam Clamp\">S-5-H Mini</a></p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_tB99ET": {
+          "type": "column",
+          "settings": {
+            "title": "2-1/2\" Double Fold",
+            "text": "<p><strong>Compatible Clamps:</strong></p><p><a href=\"/products/s-5-v-seam-clamp\" target=\"_blank\" title=\"S-5-V Seam Clamp\">S-5-V</a>, <a href=\"/products/s-5-v-mini-seam-clamp\" target=\"_blank\" title=\"S-5-V Mini Seam Clamp\">S-5-V Mini</a></p><p><a href=\"/products/s-5-u-seam-clamp\" target=\"_blank\" title=\"S-5-U Seam Clamp\">S-5-U</a>, <a href=\"/products/s-5-u-mini-seam-clamp\" target=\"_blank\" title=\"S-5-U Mini Seam Clamp\">S-5-U Mini</a></p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_yEc9pQ": {
+          "type": "column",
+          "settings": {
+            "title": "2-1/2\" Single Fold",
+            "text": "<p><strong>Compatible Clamps:</strong></p><p><a href=\"/products/s-5-h90-seam-clamp\" target=\"_blank\" title=\"S-5-H90 Seam Clamp\">S-5-H90</a>, <a href=\"/products/s-5-h90-mini-seam-clamp\" target=\"_blank\" title=\"S-5-H90 Mini Seam Clamp\">S-5-H90 Mini</a></p><p><a href=\"/products/s-5-u-seam-clamp\" target=\"_blank\" title=\"S-5-U Seam Clamp\">S-5-U</a>, <a href=\"/products/s-5-u-mini-seam-clamp\" target=\"_blank\" title=\"S-5-U Mini Seam Clamp\">S-5-U Mini</a></p><p><a href=\"/products/s-5-h-seam-clamp\" target=\"_blank\" title=\"S-5-H Seam Clamp\">S-5-H</a>, <a href=\"/products/s-5-h-mini-seam-clamp\" target=\"_blank\" title=\"S-5-H Mini Seam Clamp\">S-5-H Mini</a></p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_Ek8xYm",
+        "column_tB99ET",
+        "column_yEc9pQ"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h0",
+        "image_width": "half",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "",
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "padding_top": 4,
+        "padding_bottom": 4
+      }
+    },
+    "column_image_with_text_xnLVQD": {
+      "type": "column-image-with-text",
+      "blocks": {
+        "column_3KARbL": {
+          "type": "column",
+          "settings": {
+            "title": "3\" Batten Cap T Seam",
+            "text": "<p><strong>Compatible Clamps:</strong></p><p><a href=\"/products/s-5-t-seam-clamp\" target=\"_blank\" title=\"S-5-T Seam Clamp\">S-5-T</a>, <a href=\"/products/s-5-t-mini-seam-clamp\" target=\"_blank\" title=\"S-5-T Mini Seam Clamp\">S-5-T Mini</a></p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_hXVWqz": {
+          "type": "column",
+          "settings": {
+            "title": "Conceal Fixed Narrow",
+            "text": "<p><strong>Compatible Clamps:</strong></p><p><a href=\"/products/s-5-k-grip-k-grip-snow-seam-clamp\" target=\"_blank\" title=\"S-5-K Grip & K Grip Snow Seam Clamp\">S-5-K Grip</a>, <a href=\"/products/s-5-k-grip-mini-seam-clamp\" target=\"_blank\" title=\"S-5-K Grip Mini Seam Clamp\">S-5-K Grip Mini</a></p><p><a href=\"/products/s-5-khd-seam-clamp\" target=\"_blank\" title=\"S-5-KHD Seam Clamp\">S-5-KHD</a></p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_Uqbcpj": {
+          "type": "column",
+          "settings": {
+            "title": "Conceal Fixed Wide",
+            "text": "<p><strong>Compatible Clamps:</strong></p><p><a href=\"/products/s-5-k-grip-k-grip-snow-seam-clamp\" target=\"_blank\" title=\"S-5-K Grip & K Grip Snow Seam Clamp\">S-5-K Grip</a>, <a href=\"/products/s-5-k-grip-mini-seam-clamp\" target=\"_blank\" title=\"S-5-K Grip Mini Seam Clamp\">S-5-K Grip Mini</a></p><p><a href=\"/products/s-5-khd-seam-clamp\" target=\"_blank\" title=\"S-5-KHD Seam Clamp\">S-5-KHD</a></p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_3KARbL",
+        "column_hXVWqz",
+        "column_Uqbcpj"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h0",
+        "image_width": "half",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "",
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "padding_top": 4,
+        "padding_bottom": 4
+      }
+    },
+    "column_image_with_text_LJy64F": {
+      "type": "column-image-with-text",
+      "blocks": {
+        "column_fLpEHN": {
+          "type": "column",
+          "settings": {
+            "title": "2-1/2\" Bulb Seam",
+            "text": "<p><strong>Compatible Clamps:</strong></p><p><a href=\"/products/s-5-z-seam-clamp\" target=\"_blank\" title=\"S-5-Z Seam Clamp\">S-5-Z</a>, <a href=\"/products/s-5-z-mini-seam-clamp\" target=\"_blank\" title=\"S-5-Z Mini Seam Clamp\">S-5-Z Mini</a></p><p><a href=\"/products/s-5-q-seam-clamp\" target=\"_blank\" title=\"S-5-Q Seam Clamp\">S-5-Q</a>, <a href=\"/products/s-5-q-mini-seam-clamp\" target=\"_blank\" title=\"S-5-Q Mini Seam Clamp\">S-5-Q Mini</a></p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_dHdREW": {
+          "type": "column",
+          "settings": {
+            "title": "3-3/8\" Single Fold",
+            "text": "<p><strong>Compatible Clamps:</strong></p><p><a href=\"/products/s-5-h90-seam-clamp\" target=\"_blank\" title=\"S-5-H90 Seam Clamp\">S-5-H90</a>, <a href=\"/products/s-5-h90-mini-seam-clamp\" target=\"_blank\" title=\"S-5-H90 Mini Seam Clamp\">S-5-H90 Mini</a></p><p><a href=\"/products/s-5-u-seam-clamp\" target=\"_blank\" title=\"S-5-U Seam Clamp\">S-5-U</a>, <a href=\"/products/s-5-u-mini-seam-clamp\" target=\"_blank\" title=\"S-5-U Mini Seam Clamp\">S-5-U Mini</a></p><p><a href=\"/products/s-5-h-seam-clamp\" target=\"_blank\" title=\"S-5-H Seam Clamp\">S-5-H</a>, <a href=\"/products/s-5-h-mini-seam-clamp\" target=\"_blank\" title=\"S-5-H Mini Seam Clamp\">S-5-H Mini</a></p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_DpmfE4": {
+          "type": "column",
+          "settings": {
+            "title": "1-3/8\" T Seam",
+            "text": "<p><strong>Compatible Clamps:</strong></p><p><a href=\"/products/s-5-t-seam-clamp\" target=\"_blank\" title=\"S-5-T Seam Clamp\">S-5-T</a>, <a href=\"/products/s-5-t-mini-seam-clamp\" target=\"_blank\" title=\"S-5-T Mini Seam Clamp\">S-5-T Mini</a></p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_fLpEHN",
+        "column_dHdREW",
+        "column_DpmfE4"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h0",
+        "image_width": "half",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "",
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "padding_top": 4,
+        "padding_bottom": 4
+      }
+    },
+    "column_image_with_text_nF3Wef": {
+      "type": "column-image-with-text",
+      "blocks": {
+        "column_pGrYWV": {
+          "type": "column",
+          "settings": {
+            "title": "2-3/8\" T Seam",
+            "text": "<p><strong>Compatible Clamps:</strong></p><p><a href=\"/products/s-5-t-seam-clamp\" target=\"_blank\" title=\"S-5-T Seam Clamp\">S-5-T</a>, <a href=\"/products/s-5-t-mini-seam-clamp\" target=\"_blank\" title=\"S-5-T Mini Seam Clamp\">S-5-T Mini</a></p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_bNiH7i": {
+          "type": "column",
+          "settings": {
+            "title": "2\" T Seam",
+            "text": "<p><strong>Compatible Clamps:</strong></p><p><a href=\"/products/s-5-t-seam-clamp\" target=\"_blank\" title=\"S-5-T Seam Clamp\">S-5-T</a>, <a href=\"/products/s-5-t-mini-seam-clamp\" target=\"_blank\" title=\"S-5-T Mini Seam Clamp\">S-5-T Mini</a></p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_TLGiaE": {
+          "type": "column",
+          "settings": {
+            "title": "1-1/2\" T Seam",
+            "text": "<p><strong>Compatible Clamps:</strong></p><p><a href=\"/products/s-5-t-seam-clamp\" target=\"_blank\" title=\"S-5-T Seam Clamp\">S-5-T</a>, <a href=\"/products/s-5-t-mini-seam-clamp\" target=\"_blank\" title=\"S-5-T Mini Seam Clamp\">S-5-T Mini</a></p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_pGrYWV",
+        "column_bNiH7i",
+        "column_TLGiaE"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h0",
+        "image_width": "half",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "",
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "padding_top": 4,
+        "padding_bottom": 4
+      }
+    },
+    "column_image_with_text_P8tm4R": {
+      "type": "column-image-with-text",
+      "blocks": {
+        "column_9wppW3": {
+          "type": "column",
+          "settings": {
+            "title": "2-1/2\" Batten Cap T Seam",
+            "text": "<p><strong>Compatible Clamps:</strong></p><p><a href=\"/products/s-5-t-seam-clamp\" target=\"_blank\" title=\"S-5-T Seam Clamp\">S-5-T</a>, <a href=\"/products/s-5-t-mini-seam-clamp\" target=\"_blank\" title=\"S-5-T Mini Seam Clamp\">S-5-T Mini</a></p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_9VEGaF": {
+          "type": "column",
+          "settings": {
+            "title": "2\" Trapezoidal Single Fold",
+            "text": "<p><strong>Compatible Clamps:</strong></p><p><a href=\"https://buys-5.com/products/s-5-s-seam-clamp\" target=\"_blank\" title=\"S-5-S Seam Clamp\">S-5-S</a>, <a href=\"https://buys-5.com/products/s-5-s-mini-seam-clamp\" target=\"_blank\" title=\"S-5-S Mini Seam Clamp\">S-5-S Mini</a></p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_hkDawG": {
+          "type": "column",
+          "settings": {
+            "title": "3\" Trapezoidal Single Fold",
+            "text": "<p><strong>Compatible Clamps:</strong></p><p><a href=\"https://buys-5.com/products/s-5-s-seam-clamp\" target=\"_blank\" title=\"S-5-S Seam Clamp\">S-5-S</a>, <a href=\"https://buys-5.com/products/s-5-s-mini-seam-clamp\" target=\"_blank\" title=\"S-5-S Mini Seam Clamp\">S-5-S Mini</a></p><p><a href=\"/products/s-5-u-seam-clamp\" target=\"_blank\" title=\"S-5-U Seam Clamp\">S-5-U</a>, <a href=\"/products/s-5-u-mini-seam-clamp\" target=\"_blank\" title=\"S-5-U Mini Seam Clamp\">S-5-U Mini</a></p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_9wppW3",
+        "column_9VEGaF",
+        "column_hkDawG"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h0",
+        "image_width": "half",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "",
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "padding_top": 4,
+        "padding_bottom": 4
+      }
+    },
+    "column_image_with_text_zMFDm6": {
+      "type": "column-image-with-text",
+      "blocks": {
+        "column_dLL64p": {
+          "type": "column",
+          "settings": {
+            "title": "3\" Trapezoidal Single Fold",
+            "text": "<p><strong>Compatible Clamps:</strong></p><p><a href=\"/products/s-5-h90-seam-clamp\" target=\"_blank\" title=\"S-5-H90 Seam Clamp\">S-5-H90</a>, <a href=\"/products/s-5-h90-mini-seam-clamp\" target=\"_blank\" title=\"S-5-H90 Mini Seam Clamp\">S-5-H90 Mini</a></p><p><a href=\"/products/s-5-u-seam-clamp\" target=\"_blank\" title=\"S-5-U Seam Clamp\">S-5-U</a>, <a href=\"/products/s-5-u-mini-seam-clamp\" target=\"_blank\" title=\"S-5-U Mini Seam Clamp\">S-5-U Mini</a></p><p><a href=\"/products/s-5-h-seam-clamp\" target=\"_blank\" title=\"S-5-H Seam Clamp\">S-5-H</a>, <a href=\"/products/s-5-h-mini-seam-clamp\" target=\"_blank\" title=\"S-5-H Mini Seam Clamp\">S-5-H Mini</a></p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_aXzXLd": {
+          "type": "column",
+          "settings": {
+            "title": "3\" Trapezoidal Double Fold",
+            "text": "<p><strong>Compatible Clamps:</strong></p><p><a href=\"https://buys-5.com/products/s-5-e-seam-clamp\" target=\"_blank\" title=\"S-5-E Seam Clamp\">S-5-E</a>, <a href=\"https://buys-5.com/products/s-5-e-mini-seam-clamp\" target=\"_blank\" title=\"S-5-E Mini Clamp\">S-5-E Mini</a></p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_bGGdFY": {
+          "type": "column",
+          "settings": {
+            "title": "3\" Trapezoidal Double Fold",
+            "text": "<p><strong>Compatible Clamps:</strong></p><p><a href=\"/products/s-5-v-seam-clamp\" target=\"_blank\" title=\"S-5-V Seam Clamp\">S-5-V</a>, <a href=\"/products/s-5-v-mini-seam-clamp\" target=\"_blank\" title=\"S-5-V Mini Seam Clamp\">S-5-V Mini</a></p><p><a href=\"/products/s-5-u-seam-clamp\" target=\"_blank\" title=\"S-5-U Seam Clamp\">S-5-U</a>, <a href=\"/products/s-5-u-mini-seam-clamp\" target=\"_blank\" title=\"S-5-U Mini Seam Clamp\">S-5-U Mini</a></p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_dLL64p",
+        "column_aXzXLd",
+        "column_bGGdFY"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h0",
+        "image_width": "half",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "",
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "padding_top": 4,
+        "padding_bottom": 4
+      }
+    },
+    "image_with_text_tWm7YL": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_GTAUhQ": {
+          "type": "heading",
+          "settings": {
+            "heading": "Industry Leader in Metal Roofing Attachments.",
+            "heading_size": "h1"
+          }
+        },
+        "text_yXJnnt": {
+          "type": "text",
+          "settings": {
+            "text": "<p>S-5! stays on top of the trends in the metal industry to provide the right products to fit virtually any metal roof profile. S-5! have developed clamps and brackets to support solar and utility installations, along with a top-of-the-line snow retention system to support and protect your metal roof investment.</p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "heading_GTAUhQ",
+        "text_yXJnnt"
+      ],
+      "custom_css": [
+        ".media > img {object-fit: contain;}",
+        ".image-with-text__media.image-with-text__media--adapt.global-media-settings.gradient.color-scheme-1.media {background: #1e1d1c;}"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/clamp.jpg",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "image_behavior": "none",
+        "content_layout": "no-overlap",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "section_color_scheme": "scheme-5",
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "column_image_with_text_nGwMbQ": {
+      "type": "column-image-with-text",
+      "blocks": {
+        "column_Kq9Etp": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/solar-3.jpg",
+            "title": "",
+            "text": "",
+            "link_label": "SHOP SOLAR SOLUTIONS",
+            "link": "shopify://collections/solar-mounting-solutions"
+          }
+        },
+        "column_pmfERY": {
+          "type": "column",
+          "settings": {
+            "title": "",
+            "text": "",
+            "link_label": "SHOP SNOW RETENTION",
+            "link": "shopify://pages/snow-retention"
+          }
+        },
+        "column_649zdL": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/BRACKET.jpg",
+            "title": "",
+            "text": "",
+            "link_label": "SHOP S-5! BRACKETS",
+            "link": "shopify://collections/s-5-brackets"
+          }
+        },
+        "column_hpDXMY": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/UTILITY.jpg",
+            "title": "",
+            "text": "",
+            "link_label": "SHOP UTILITY APPLICATION",
+            "link": "shopify://collections/utility-solutions"
+          }
+        }
+      },
+      "block_order": [
+        "column_Kq9Etp",
+        "column_pmfERY",
+        "column_649zdL",
+        "column_hpDXMY"
+      ],
+      "custom_css": [
+        ".media.media--transparent.media--square img {object-fit: contain;}",
+        ".multicolumn-card__info a {color: #000000; letter-spacing: 2px; font-weight: 600; background-color: #ffcd34; padding: 10px 10px; white-space: nowrap;}"
+      ],
+      "settings": {
+        "title": "Other Product Types",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "square",
+        "columns_desktop": 4,
+        "column_alignment": "center",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "",
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "padding_top": 4,
+        "padding_bottom": 4
+      }
+    },
+    "newsletter_wwgf3M": {
+      "type": "newsletter",
+      "blocks": {
+        "heading_86fxLP": {
+          "type": "heading",
+          "settings": {
+            "heading": "Subscribe to our Newsletter",
+            "heading_size": "h1"
+          }
+        },
+        "paragraph_eMnXyQ": {
+          "type": "paragraph",
+          "settings": {
+            "text": "<p>Get the latest deals and product information by signing up to our newsletter below</p>"
+          }
+        },
+        "email_form_aBKTDD": {
+          "type": "email_form",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "heading_86fxLP",
+        "paragraph_eMnXyQ",
+        "email_form_aBKTDD"
+      ],
+      "settings": {
+        "color_scheme": "scheme-5",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    }
+  },
+  "order": [
+    "image_banner_DNMpjA",
+    "rich_text_wDgwHL",
+    "column_image_with_text_CV89mG",
+    "main",
+    "column_image_with_text_bCfz3R",
+    "column_image_with_text_6Pifzp",
+    "column_image_with_text_ijwr8t",
+    "column_image_with_text_CiXzrX",
+    "column_image_with_text_9Bzqmx",
+    "column_image_with_text_wfVVYq",
+    "column_image_with_text_xnLVQD",
+    "column_image_with_text_LJy64F",
+    "column_image_with_text_nF3Wef",
+    "column_image_with_text_P8tm4R",
+    "column_image_with_text_zMFDm6",
+    "image_with_text_tWm7YL",
+    "column_image_with_text_nGwMbQ",
+    "newsletter_wwgf3M"
+  ]
+}
