@@ -92,9 +92,8 @@
         "button_9Qt44B"
       ],
       "custom_css": [
-        ".image-with-text__content.gradient {background-color: transparent;}",
-        ".image-with-text__media::after {position: absolute; top: 0; z-index: 10; width: 30%; height: 100%; background: rgb(254 206 52); transform: skew(200.25deg); left: 85%; border-left: 5px solid white;}",
-        ".image-with-text__text-item.grid__item {z-index: 100;}",
+        ".image-with-text__media::after {position: absolute; z-index: 10; width: 30%; height: 100%; background: rgb(254 206 52); transform: skew(200.25deg); left: 85%; border-left: 5px solid white;}",
+        ".image-with-text__text-item.grid__item {z-index: 100 !important;}",
         ".image-with-text__grid {align-items: center;}",
         "@media screen and (max-width: 749px) {.image-with-text--overlap .image-with-text__content {width: 100%; margin: 0 auto 0; } .image-with-text__media::after {display: none; }}"
       ],
