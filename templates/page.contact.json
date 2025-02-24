@@ -1,25 +1,118 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
+    "rich_text_tgCRmU": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_qjRbMN": {
+          "type": "heading",
+          "settings": {
+            "heading": "Contact Rapid Materials",
+            "heading_size": "h1"
+          }
+        },
+        "text_pKzQBd": {
+          "type": "text",
+          "settings": {
+            "text": "<p>We’re here to help! Whether you have questions about our products, need assistance with an order, or just want to learn more, our team is ready to connect with you.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_qjRbMN",
+        "text_pKzQBd"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 12
+      }
+    },
+    "1734561040a9aaddb4": {
+      "type": "apps",
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "contact_form_6HdzTj": {
+      "type": "contact-form",
+      "custom_css": [
+        ".contact {max-width: 600px;}",
+        "select#ContactForm-category {padding: 1.2rem 1.5rem 0.8rem 2rem;}"
+      ],
+      "settings": {
+        "heading": "",
+        "heading_size": "h1",
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "multicolumn_EHFrxr": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_fzNLnJ": {
+          "type": "column",
+          "settings": {
+            "title": "Location",
+            "text": "<p>Atlanta, GA, USA</p>"
+          }
+        },
+        "column_WRFzXf": {
+          "type": "column",
+          "settings": {
+            "title": "Call Us",
+            "text": "<p>(770) 405 - 1060</p>"
+          }
+        },
+        "column_bgTJYV": {
+          "type": "column",
+          "settings": {
+            "title": "Hours",
+            "text": "<p>Monday-Friday 8am-5pm EST</p>"
+          }
+        }
+      },
+      "block_order": [
+        "column_fzNLnJ",
+        "column_WRFzXf",
+        "column_bgTJYV"
+      ],
+      "settings": {
+        "title": "",
+        "image_width": "third",
+        "image_ratio": "adapt",
+        "button_label": "",
+        "button_link": "",
+        "column_alignment": "center",
+        "background_style": "primary",
+        "swipe_on_mobile": false
+      }
+    },
     "main": {
       "type": "main-page",
       "settings": {
         "padding_top": 36,
         "padding_bottom": 36
       }
-    },
-    "form": {
-      "type": "contact-form",
-      "settings": {
-        "heading": "",
-        "heading_size": "h1",
-        "color_scheme": "scheme-1",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
     }
   },
   "order": [
-    "main",
-    "form"
+    "rich_text_tgCRmU",
+    "1734561040a9aaddb4",
+    "contact_form_6HdzTj",
+    "multicolumn_EHFrxr",
+    "main"
   ]
 }
