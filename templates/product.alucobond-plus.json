@@ -26,6 +26,13 @@
           "type": "price",
           "settings": {}
         },
+        "text_RdfbYp": {
+          "type": "text",
+          "settings": {
+            "text": "Standard Size: 62.0\" x 196.0\", specific colors may vary. See tech specs below.",
+            "text_style": "uppercase"
+          }
+        },
         "variant_picker": {
           "type": "variant_picker",
           "settings": {
@@ -56,6 +63,7 @@
         "custom_liquid_9qzpnL",
         "title",
         "price",
+        "text_RdfbYp",
         "variant_picker",
         "quantity_selector",
         "buy_buttons",
@@ -145,7 +153,8 @@
             "title": "Dry Reveal",
             "text": "<p>The ALUCOBOND® Dry Reveal system creates seamless panel connections with reveal-joint splines, eliminating exposed fasteners and sealants. Designed as a pressure-equalized or back-ventilated rainscreen, it meets <strong>AAMA 508</strong> and <strong>AAMA 509</strong> standards. Offering large modular sizing and design versatility, the Dry Reveal system provides a durable, modern aesthetic ideal for facades with complex geometry.</p>",
             "link_label": "",
-            "link": ""
+            "link": "",
+            "link_target": "_self"
           }
         },
         "column_tDgrAr": {
@@ -155,7 +164,8 @@
             "title": "Wet Seal",
             "text": "<p>The ALUCOBOND® PLUS Wet Seal system features a rout-and-return design with silicone-sealed joints and foam backer rods for a reliable air and water barrier. Tested to AAMA 501 standards, it provides weather resistance and design versatility, accommodating curves, depth, and large panel sizes. Ideal for sloping walls, it offers a clean, economical solution without exposed fasteners.</p>",
             "link_label": "",
-            "link": ""
+            "link": "",
+            "link_target": "_self"
           }
         },
         "column_DnpaL8": {
@@ -165,7 +175,8 @@
             "title": "ALUCOBOND EasyFix",
             "text": "<p>The ALUCOBOND® EasyFix system streamlines the installation of ALUCOBOND® PLUS panels on wood-frame construction. Combining 135° and 90° folds, it delivers a sleek, modern look with quick, efficient attachment via clips or continuous rails. Compatible with all ALUCOBOND® PLUS finishes, EasyFix meets IBC fire standards and offers a durable, recyclable, and VOC-free solution for interiors and exteriors.</p><p></p>",
             "link_label": "More Details",
-            "link": "https://www.alucobondusa.com/systems-easyfix.html"
+            "link": "https://www.alucobondusa.com/systems-easyfix.html",
+            "link_target": "_self"
           }
         },
         "column_iftnMV": {
@@ -175,7 +186,8 @@
             "title": "ALUCOBOND FaceFastened",
             "text": "<p>The ALUCOBOND® FaceFastened system combines modern aesthetics with durability, featuring flush-mounted panels and color-coated fasteners. Tested to AAMA 509 standards, it uses flat panels on aluminum rails for clean shadow lines and low-maintenance performance. This cost-effective cladding solution offers design flexibility with matching or contrasting fasteners and meets ASTM E330 standards.</p>",
             "link_label": "More Details",
-            "link": "https://www.alucobondusa.com/systems-facefastened.html"
+            "link": "https://www.alucobondusa.com/systems-facefastened.html",
+            "link_target": "_self"
           }
         }
       },
@@ -196,6 +208,7 @@
         "background_style": "primary",
         "button_label": "",
         "button_link": "",
+        "link_target": "_self",
         "color_scheme": "",
         "columns_mobile": "1",
         "swipe_on_mobile": false,
@@ -213,7 +226,8 @@
             "title": "Architectural Flashing & Trim",
             "text": "<p>ALUCOBOND® AXCENT™ is perfect for architectural flashing and trim, offering strength and versatility. It can be roll-formed, pressed for interlocking joints, curved for rounded designs, or cut to accommodate airflow, lighting, or signage elements.</p>",
             "link_label": "",
-            "link": ""
+            "link": "",
+            "link_target": "_self"
           }
         },
         "column_PPbzEV": {
@@ -223,7 +237,8 @@
             "title": "Soffit, Canopy &  Parapet Cap",
             "text": "<p>ALUCOBOND® AXCENT™ is ideal for soffit, canopy, and parapet cap applications, offering exceptional flatness, lightweight strength, and seamless color matching with ALUCOBOND® PLUS. Panels can be shaped for interlocking joints, ventilation, and curved designs.</p>",
             "link_label": "",
-            "link": ""
+            "link": "",
+            "link_target": "_self"
           }
         },
         "column_Xnytr8": {
@@ -233,7 +248,8 @@
             "title": "Custom Signage & Art Installation",
             "text": "<p>ALUCOBOND® AXCENT™ is perfect for custom signage and art installations, offering vibrant finishes, exceptional flatness, and easy fabrication. Create striking, durable designs that capture attention and elevate any space.</p>",
             "link_label": "",
-            "link": ""
+            "link": "",
+            "link_target": "_self"
           }
         },
         "column_LyiTmp": {
@@ -243,7 +259,8 @@
             "title": "Interiors & Ceilings",
             "text": "<p>ALUCOBOND® AXCENT™ seamlessly transitions from exterior facades to interior spaces, offering customizable shapes and large, flat panels. Perfect for feature walls, ceilings, beam wraps, baffles, stairways, and more, AXCENT™ delivers clean, modern aesthetics that enhance any design.</p>",
             "link_label": "",
-            "link": ""
+            "link": "",
+            "link_target": "_self"
           }
         },
         "column_RFGE3i": {
@@ -253,7 +270,8 @@
             "title": "Column Covers",
             "text": "<p>ALUCOBOND® AXCENT™ is ideal for column covers, easily formed using route-and-return, rolling, or brake-bends. With the ability to achieve tight radii and maintain weather-tight sealed joints, AXCENT™ delivers both durability and sleek aesthetics.</p>",
             "link_label": "",
-            "link": ""
+            "link": "",
+            "link_target": "_self"
           }
         },
         "column_AjPY6f": {
@@ -263,7 +281,8 @@
             "title": "Wall Panels & Cladding",
             "text": "<p>ALUCOBOND® AXCENT™ is a lightweight, durable aluminum sheet ideal for wall panels and cladding. Its flatness and rigidity make it perfect for sleek facades, spandrel applications, and custom vertical designs.</p>",
             "link_label": "",
-            "link": ""
+            "link": "",
+            "link_target": "_self"
           }
         }
       },
@@ -290,6 +309,7 @@
         "background_style": "primary",
         "button_label": "",
         "button_link": "",
+        "link_target": "_self",
         "color_scheme": "",
         "columns_mobile": "2",
         "swipe_on_mobile": false,
