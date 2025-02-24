@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin language editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "general": {
     "password_page": {
@@ -253,8 +262,36 @@
         "name": "Name",
         "email": "Email",
         "phone": "Phone number",
-        "comment": "Comment",
+        "comment": "How can we help you?",
+        "quote_msg": "Quote Details",
+        "zip": "Delivery Zip Code",
+        "date": "Desired Delivery Date",
+        "category": "Support Type",
+        "option_order": "Order Inquiry",
+        "option_quote": "Quote",
+        "option_shipping": "Shipping Issue",
+        "option_product": "Product Advice",
+        "option_returns": "Returns",
+        "option_tech": "Technical Support",
+        "option_feedback": "Feedback",
+        "option_other": "Other",
         "send": "Send",
+        "select_option": "Select Support Type",
+        "post_success": "Thanks for contacting us. We'll get back to you as soon as possible.",
+        "error_heading": "Please adjust the following:"
+      },
+      "taxform": {
+        "title": "Tax Exempt form",
+        "name": "Your Name",
+        "email": "Your Email",
+        "bizname": "Legal Business/Organization Name",
+        "dba": "DBA (Doing Business As)",
+        "ten": "Tax-Exempt Number",
+        "ten_doc": "Tax-Exempt Certificate Upload",
+        "phone": "Phone number",
+        "order_number": "Order Number",
+        "comment": "Notes",
+        "send": "Submit Request",
         "post_success": "Thanks for contacting us. We'll get back to you as soon as possible.",
         "error_heading": "Please adjust the following:"
       }
