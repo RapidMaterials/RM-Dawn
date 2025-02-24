@@ -135,8 +135,8 @@
                     {% endif %}                    
                   >
                     {{- block.settings.link_label | escape -}}
-                    <span class="icon-wrap">&nbsp;{% render 'icon-arrow.svg' %}</span></a
-                  >
+                   <span class="svg-wrapper">{{'icon-arrow.svg' | inline_asset_content }}</span>
+                  </a>
                 {%- endif -%}
               </div>
             </div>
