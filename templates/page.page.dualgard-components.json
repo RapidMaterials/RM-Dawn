@@ -1,0 +1,487 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "image_banner_DNMpjA": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_bQNrE3": {
+          "type": "heading",
+          "settings": {
+            "heading": "{{ page.title }}",
+            "heading_size": "h1"
+          }
+        }
+      },
+      "block_order": [
+        "heading_bQNrE3"
+      ],
+      "custom_css": [
+        "h2.banner__heading.inline-richtext.h1 {font-weight: 600; font-size: 60px; line-height: 1.2em; color: #fff;}",
+        ".banner__text.rte.body p {word-wrap: break-word; text-align: center; color: #fff; line-height: 1.8em; max-width: 60%;}"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/colorgard-blue-back-high.jpg",
+        "image_overlay_opacity": 60,
+        "image_height": "small",
+        "desktop_content_position": "middle-left",
+        "show_text_box": false,
+        "desktop_content_alignment": "left",
+        "color_scheme": "scheme-1",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 76,
+        "padding_bottom": 52
+      }
+    },
+    "rich_text_yWB4Br": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_yRWwgV": {
+          "type": "heading",
+          "settings": {
+            "heading": "S-5! DualGuard System Components",
+            "heading_size": "h1"
+          }
+        },
+        "text_xMpUrK": {
+          "type": "text",
+          "settings": {
+            "text": "<p>DualGard is a complete, 2-pipe snow retention system using 1″ diameter pipes for all standing seam roof applications. DualGard can also be used with VersaGard and Corrubracket for corrugated exposed fastener roofs.</p><p>DualGard uses two S-5 mini clamps per each DualGard Bracket for superior strength when compared to other two-pipe systems.</p><p><strong>Need assistance selecting and calculating the required materials for your roof? Call us at 678-892-7208 or email info@buys-5.com</strong></p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_yRWwgV",
+        "text_xMpUrK"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "image_with_text_r7QjFi": {
+      "type": "image-with-text",
+      "blocks": {
+        "text_yTGLHQ": {
+          "type": "text",
+          "settings": {
+            "text": "<h2><strong>DualGard Bracket</strong></h2><p>The DualGard Bracket is manufactured from 5000-6000 series aluminum for superior strength and rigidity. The bracket features two slotted mounting holes for mounting to two (2) S-5 mini clamps of your choice, and two flanged holes that accept 1″ pipe. We recommend DualPipe in every instance.</p>",
+            "text_style": "subtitle"
+          }
+        }
+      },
+      "block_order": [
+        "text_yTGLHQ"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/DualGard-Bracket_2_489b1ae8-9c33-41ff-9f87-baf0cb54abc6.jpg",
+        "height": "adapt",
+        "desktop_image_width": "small",
+        "layout": "text_first",
+        "image_behavior": "none",
+        "content_layout": "overlap",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "image_with_text_BxTCDa": {
+      "type": "image-with-text",
+      "blocks": {
+        "text_BEPpKG": {
+          "type": "text",
+          "settings": {
+            "text": "<h2><strong>DualPipe</strong></h2><p>S-5! DualPipe is a 1″ diameter aluminum tube with a 1/8″ wall engineered to work perfectly with the DualGard snow retention system, but can also be used with any other that requires a 1″ pipe, including VersaGard. Sized to fit perfectly in the DualGard bracket.</p><p>Comes in standard 94″ lengths so it can be shipped via UPS.</p><p>Each Section of DualPipe includes one (1) splice.</p>",
+            "text_style": "subtitle"
+          }
+        }
+      },
+      "block_order": [
+        "text_BEPpKG"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/S-5-DualPipe-for-DualGard-Systems_1_ba919490-9e8a-4c07-982b-eaf396e70c70.jpg",
+        "height": "adapt",
+        "desktop_image_width": "small",
+        "layout": "text_first",
+        "image_behavior": "none",
+        "content_layout": "overlap",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "image_with_text_P3bj3w": {
+      "type": "image-with-text",
+      "blocks": {
+        "text_HGQd4D": {
+          "type": "text",
+          "settings": {
+            "text": "<h2><strong>DualCollar & DualPipe Endcap</strong></h2><p>DualCollar is used to prevent the DualPipe from  migrating out of the DualGard brackets. DualCollars should be used on both the top and bottom pipes within 7″ of each end of any run of DualGard assembly.</p><p>DualCollar is mounted on the inside of the first and last DualBracket.</p><p>Stainless steel DualPipe Endcaps snap into place and keep weather, debris and vermin out of the DualPipe.</p><p>DualCollar is sold in packs of four (4). Each pack also includes four (4) DualPipe Endcaps.</p>",
+            "text_style": "subtitle"
+          }
+        }
+      },
+      "block_order": [
+        "text_HGQd4D"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/S-5-DualCollars-Endcaps-for-DualGard-Pipe-Four-Pack_1_2ca6a188-0c83-40b4-9be5-8f79e3f16d3d.jpg",
+        "height": "adapt",
+        "desktop_image_width": "small",
+        "layout": "text_first",
+        "image_behavior": "none",
+        "content_layout": "overlap",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "image_with_text_dFBGw8": {
+      "type": "image-with-text",
+      "blocks": {
+        "text_CnDP6L": {
+          "type": "text",
+          "settings": {
+            "text": "<h2><strong>DualClipII & DualClip III</strong></h2><p>The DualClip II (image shown) & DualClip III  fit S-5 DualGard  snow guard/snow retention systems and mounts to DualPipe to prevent accumulated ice-dams from sliding under the snow guards uncontrolled.</p><p>DualClip II is designed to be used on roof panels with seam heights of 1″ to 1-1/2″. If your panel seam is taller you should use DualClip III which fits panels  1-3/4″ to 3-1/4″ tall. One DualClip is used at every panel between two DualGard brackets.</p><p>Manufactured from quality aluminum with a soft rubber foot on the bottom to prevent damage to the finish on your roof panel.</p>",
+            "text_style": "subtitle"
+          }
+        }
+      },
+      "block_order": [
+        "text_CnDP6L"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/S-5-DualClip-II-for-DualGard_1_a301a3ee-44f3-4c49-93a2-cdbb779d9cde.jpg",
+        "height": "adapt",
+        "desktop_image_width": "small",
+        "layout": "text_first",
+        "image_behavior": "none",
+        "content_layout": "overlap",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "image_with_text_rFHDwK": {
+      "type": "image-with-text",
+      "blocks": {
+        "text_GMkyhx": {
+          "type": "text",
+          "settings": {
+            "text": "<h2><strong>S-5 Mini Seam Clamps</strong></h2><p>DualGard is mounted directly to two (2) S-5 mini seam clamps for superior holding strength.</p><p>Because of the wide variety of metal roof panels on the market, we offer S-5 mini seam clamps to fit just about every profile.</p><p>Contact us for assistance in selecting the correct seam clamp for your application.</p><p>S-5-S mini seam clamp shown. The correct mini clamp for your application may differ in appearance.</p>",
+            "text_style": "subtitle"
+          }
+        }
+      },
+      "block_order": [
+        "text_GMkyhx"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/DualGard_1.jpg",
+        "height": "adapt",
+        "desktop_image_width": "small",
+        "layout": "text_first",
+        "image_behavior": "none",
+        "content_layout": "overlap",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "multicolumn_b3emMY": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_eDUjKa": {
+          "type": "column",
+          "settings": {
+            "title": "",
+            "text": ""
+          }
+        },
+        "column_UL63tU": {
+          "type": "column",
+          "settings": {
+            "title": "",
+            "text": ""
+          }
+        },
+        "column_8qeqmR": {
+          "type": "column",
+          "settings": {
+            "title": "",
+            "text": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_eDUjKa",
+        "column_UL63tU",
+        "column_8qeqmR"
+      ],
+      "custom_css": [
+        ".multicolumn-card__info a {background: #0c71c3; color: #fff; padding: 10px 15px; border-radius: 10px;}"
+      ],
+      "settings": {
+        "title": "",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "button_label": "",
+        "button_link": "",
+        "column_alignment": "center",
+        "background_style": "none",
+        "swipe_on_mobile": false
+      }
+    },
+    "featured_collection_HfRqfm": {
+      "type": "featured-collection",
+      "custom_css": [
+        "h2.inline-richtext.h1.scroll-trigger.animate--slide-in {color: rgba(0, 0, 0, 0.7);}"
+      ],
+      "settings": {
+        "collection": "s-5-dualgard",
+        "products_to_show": 4,
+        "title": "<strong>Products</strong>",
+        "heading_size": "h1",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "columns_desktop": 4,
+        "enable_desktop_slider": false,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "color_scheme": "",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "image_with_text_Xk9Pan": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_NbqmDL": {
+          "type": "heading",
+          "settings": {
+            "heading": "Industry Leader in Metal Roofing Attachments.",
+            "heading_size": "h1"
+          }
+        },
+        "text_mnJfNR": {
+          "type": "text",
+          "settings": {
+            "text": "<p>S-5! stays on top of the trends in the metal industry to provide the right products to fit virtually any metal roof profile. S-5! have developed clamps and brackets to support solar and utility installations, along with a top-of-the-line snow retention system to support and protect your metal roof investment.</p>",
+            "text_style": "body"
+          }
+        },
+        "button_qX6Bcb": {
+          "type": "button",
+          "settings": {
+            "button_label": "",
+            "button_link": "",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_NbqmDL",
+        "text_mnJfNR",
+        "button_qX6Bcb"
+      ],
+      "custom_css": [
+        ".media > img {object-fit: contain;}",
+        ".image-with-text__media.image-with-text__media--adapt.global-media-settings.gradient.color-scheme-1.media {background: #1e1d1c;}"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/dual-8_1.jpg",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "image_behavior": "none",
+        "content_layout": "no-overlap",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "section_color_scheme": "",
+        "color_scheme": "scheme-5",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "column_image_with_text_gbHthW": {
+      "type": "column-image-with-text",
+      "blocks": {
+        "column_FfHr34": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/clamp.jpg",
+            "title": "",
+            "text": "",
+            "link_label": "SHOP S-5! CLAMPS",
+            "link": "shopify://collections/s-5-clamps"
+          }
+        },
+        "column_GyUj7a": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/solar-3.jpg",
+            "title": "",
+            "text": "",
+            "link_label": "SHOP SOLAR SOLUTIONS",
+            "link": "shopify://collections/solar-mounting-solutions"
+          }
+        },
+        "column_JBUTqp": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/BRACKET.jpg",
+            "title": "",
+            "text": "",
+            "link_label": "SHOP S-5! BRACKETS",
+            "link": "shopify://collections/s-5-brackets"
+          }
+        },
+        "column_eEQhaR": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/UTILITY.jpg",
+            "title": "",
+            "text": "",
+            "link_label": "SHOP UTILITY APPLICATION",
+            "link": "shopify://collections/utility-solutions"
+          }
+        }
+      },
+      "block_order": [
+        "column_FfHr34",
+        "column_GyUj7a",
+        "column_JBUTqp",
+        "column_eEQhaR"
+      ],
+      "custom_css": [
+        ".media.media--transparent.media--square img {object-fit: contain;}",
+        ".multicolumn-card__info a {color: #000000; letter-spacing: 2px; font-weight: 600; background-color: #ffcd34; padding: 10px 10px; white-space: nowrap;}"
+      ],
+      "settings": {
+        "title": "Other Product Types",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 4,
+        "column_alignment": "center",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "custom_liquid_KQ9e8k": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<div class=\"yotpo-widget-instance\" data-yotpo-instance-id=\"638512\" data-yotpo-product-id=\"{{product.id}}\" data-yotpo-name=\"{{ product.title | escape }}\" data-yotpo-url=\"{{ shop.url }}{{ product.url }}\" data-yotpo-image-url=\"{{ product.featured_image | product_img_url: \"large\" | prepend: \"https:\" | replace: '?', '%3F' | replace: '&','%26'}}\" data-yotpo-price=\"{{ product.price | divided_by: 100.00 }}\" data-yotpo-currency=\"{{ shop.currency }}\" data-yotpo-description=\"{{ product.description | escape }}\"></div>",
+        "color_scheme": "scheme-1",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "newsletter_wwgf3M": {
+      "type": "newsletter",
+      "blocks": {
+        "heading_86fxLP": {
+          "type": "heading",
+          "settings": {
+            "heading": "Subscribe to our Newsletter",
+            "heading_size": "h1"
+          }
+        },
+        "paragraph_eMnXyQ": {
+          "type": "paragraph",
+          "settings": {
+            "text": "<p>Get the latest deals and product information by signing up to our newsletter below</p>"
+          }
+        },
+        "email_form_aBKTDD": {
+          "type": "email_form",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "heading_86fxLP",
+        "paragraph_eMnXyQ",
+        "email_form_aBKTDD"
+      ],
+      "settings": {
+        "color_scheme": "scheme-5",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    }
+  },
+  "order": [
+    "image_banner_DNMpjA",
+    "main",
+    "rich_text_yWB4Br",
+    "image_with_text_r7QjFi",
+    "image_with_text_BxTCDa",
+    "image_with_text_P3bj3w",
+    "image_with_text_dFBGw8",
+    "image_with_text_rFHDwK",
+    "multicolumn_b3emMY",
+    "featured_collection_HfRqfm",
+    "image_with_text_Xk9Pan",
+    "column_image_with_text_gbHthW",
+    "custom_liquid_KQ9e8k",
+    "newsletter_wwgf3M"
+  ]
+}
