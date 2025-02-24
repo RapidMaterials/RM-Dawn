@@ -83,7 +83,7 @@
         "form.installment {display: none !important;}",
         "#text_eanxjX {font-size: 0.9em; line-height: 1em; padding: 10px; background-color: #ffbd5f; letter-spacing: normal;}",
         ".grid {align-items: stretch;}",
-        ".swatch-input__input.disabled + .swatch-input__label {display: none;}"
+        ".product__info-wrapper.grid__item {background-color: #f0f0f0; padding: 3%;}"
       ],
       "settings": {
         "enable_sticky_info": true,
@@ -258,7 +258,8 @@
             "title": "Architectural Flashing & Trim",
             "text": "<p>ALUCOBOND® AXCENT™ is perfect for architectural flashing and trim, offering strength and versatility. It can be roll-formed, pressed for interlocking joints, curved for rounded designs, or cut to accommodate airflow, lighting, or signage elements.</p>",
             "link_label": "",
-            "link": ""
+            "link": "",
+            "link_target": "_self"
           }
         },
         "column_PPbzEV": {
@@ -268,7 +269,8 @@
             "title": "Soffit, Canopy &  Parapet Cap",
             "text": "<p>ALUCOBOND® AXCENT™ is ideal for soffit, canopy, and parapet cap applications, offering exceptional flatness, lightweight strength, and seamless color matching with ALUCOBOND® PLUS. Panels can be shaped for interlocking joints, ventilation, and curved designs.</p>",
             "link_label": "",
-            "link": ""
+            "link": "",
+            "link_target": "_self"
           }
         },
         "column_Xnytr8": {
@@ -278,7 +280,8 @@
             "title": "Custom Signage & Art Installation",
             "text": "<p>ALUCOBOND® AXCENT™ is perfect for custom signage and art installations, offering vibrant finishes, exceptional flatness, and easy fabrication. Create striking, durable designs that capture attention and elevate any space.</p>",
             "link_label": "",
-            "link": ""
+            "link": "",
+            "link_target": "_self"
           }
         },
         "column_LyiTmp": {
@@ -288,7 +291,8 @@
             "title": "Interiors & Ceilings",
             "text": "<p>ALUCOBOND® AXCENT™ seamlessly transitions from exterior facades to interior spaces, offering customizable shapes and large, flat panels. Perfect for feature walls, ceilings, beam wraps, baffles, stairways, and more, AXCENT™ delivers clean, modern aesthetics that enhance any design.</p>",
             "link_label": "",
-            "link": ""
+            "link": "",
+            "link_target": "_self"
           }
         },
         "column_RFGE3i": {
@@ -298,7 +302,8 @@
             "title": "Column Covers",
             "text": "<p>ALUCOBOND® AXCENT™ is ideal for column covers, easily formed using route-and-return, rolling, or brake-bends. With the ability to achieve tight radii and maintain weather-tight sealed joints, AXCENT™ delivers both durability and sleek aesthetics.</p>",
             "link_label": "",
-            "link": ""
+            "link": "",
+            "link_target": "_self"
           }
         },
         "column_AjPY6f": {
@@ -308,7 +313,8 @@
             "title": "Wall Panels & Cladding",
             "text": "<p>ALUCOBOND® AXCENT™ is a lightweight, durable aluminum sheet ideal for wall panels and cladding. Its flatness and rigidity make it perfect for sleek facades, spandrel applications, and custom vertical designs.</p>",
             "link_label": "",
-            "link": ""
+            "link": "",
+            "link_target": "_self"
           }
         }
       },
@@ -334,6 +340,7 @@
         "background_style": "primary",
         "button_label": "",
         "button_link": "",
+        "link_target": "_self",
         "color_scheme": "",
         "columns_mobile": "2",
         "swipe_on_mobile": false,
