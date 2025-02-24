@@ -6,8 +6,33 @@
 {% endcomment %}
 
 <nav class="header__inline-menu">
-  <ul class="list-menu list-menu--inline" role="list">
-    {%- for link in section.settings.menu.links -%}
+
+   {% if collection.metafields.custom.navigation_handle %}
+      {% assign link_handle = collection.metafields.custom.navigation_handle.value %}
+    {% elsif page.metafields.custom.navigation_handle %}
+      {% assign link_handle = page.metafields.custom.navigation_handle.value %}
+    {% elsif product.collections %}
+       {% for collection in product.collections %}
+          {% if collection.handle == 'buy-s-5' %}
+            {% assign link_handle = 's5' %}
+          {% elsif collection.handle == 'half-round-gutters' %}
+            {% assign link_handle = 'half-round-gutters' %}
+         {% elsif collection.handle == 'buy-metal-roofing-tools' %}
+            {% assign link_handle = 'metal-roofing-tools' %}
+        {% elsif collection.handle == 'alucobond' %}
+            {% assign link_handle = 'buy-alucobond' %} 
+           {% elsif collection.handle == 'buy-cladding-exterior-facade-systems' %}
+            {% assign link_handle = 'efs' %}
+          {% endif %}
+       {% endfor %}
+    {% else %}
+    {% assign link_handle = 'main-menu' %}
+   {% endif %}
+     
+
+{% if linklists[link_handle] %}
+    <ul class="list-menu list-menu--inline" role="list">
+      {% for link in linklists[link_handle].links %}
       <li>
         {%- if link.links != blank -%}
           <header-menu>
@@ -23,7 +48,7 @@
                 >
                   {{- link.title | escape -}}
                 </span>
-                {{- 'icon-caret.svg' | inline_asset_content -}}
+                {% render 'icon-caret' %}
               </summary>
               <ul
                 id="HeaderMenu-MenuList-{{ forloop.index }}"
@@ -51,7 +76,7 @@
                           class="header__menu-item link link--text list-menu__item focus-inset caption-large"
                         >
                           <span>{{ childlink.title | escape }}</span>
-                          {{- 'icon-caret.svg' | inline_asset_content -}}
+                          {% render 'icon-caret' %}
                         </summary>
                         <ul
                           id="HeaderMenu-SubMenuList-{{ link.handle }}-{{ childlink.handle }}-{{ grandchildlink.handle }}"
@@ -100,4 +125,8 @@
       </li>
     {%- endfor -%}
   </ul>
+    
+{% endif %}
+
 </nav>
+
