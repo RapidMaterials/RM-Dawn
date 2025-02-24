@@ -1,0 +1,143 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "rich_text_gpWPcW": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_PpHmzV": {
+          "type": "heading",
+          "settings": {
+            "heading": "Buy Metal Roofing Tools",
+            "heading_size": "h1"
+          }
+        },
+        "heading_pUUdJG": {
+          "type": "heading",
+          "settings": {
+            "heading": "Frequently Asked Questions",
+            "heading_size": "h1"
+          }
+        }
+      },
+      "block_order": ["heading_PpHmzV", "heading_pUUdJG"],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "collapsible_content_Y3yiWz": {
+      "type": "collapsible-content",
+      "blocks": {
+        "collapsible_row_wJ9TG8": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "When will my order ship?",
+            "icon": "none",
+            "row_content": "<p>All orders ship Monday thru Friday (excluding holidays). Orders usually ship within 1-2 business days (Saturday and Sunday are not business days) after the order was placed. Expedited orders (Next Day, 2-Day, etc.) will usually ship the same business day if the order is received before 1pm eastern time. </p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_4qPLYd": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "I need my order shipped overnight or expedited. What can I expect?",
+            "icon": "none",
+            "row_content": "<p>We ship all expedited orders same day as the order is received if the order is received before 1pm Eastern Time (EST) on a business day.</p><p>Orders received after 1pm EST will likely not ship until the following business day.</p><p>If you place an expedited order after 1pm EST on a Friday, on a weekend or holiday, it will ship the next business day, for example: You place your order for Next Day Air delivery at 4pm EST (1pm Pacific time) on a Friday afternoon, it will not ship until the following Monday, and will not be delivered until Tuesday. Holidays can be particularly tricky, so please refer to our Shipping Policy page to see what days we close, or call us at 678-932-0682 M-F, 8am to 4:30PM EST.</p><p>We always recommend calling us prior to placing an expedited order to confirm when it will ship.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_Y6iRaa": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How long will it take to get my order?",
+            "icon": "none",
+            "row_content": "<p>Most of our metal roofing tools ship from warehouses in Georgia, Indiana & Pennsylvania. Orders shipping from these warehouses are usually delivered within 3-5 days of order to most locations in the lower 48 US states, obviously dependant ont he delivery location of the product be shipped.</p><p>Swenson Shear replacement blade sets and Model 42 shears usually ship within 2-3 business days of order, with delivery within 4-7 business days. Swenson Shear Model 48 and Model 64 machines are manufactured to order and can take 2-3 weeks to delivery, depending on current backlog.</p><p>Depending on current inventory levels, we occasional ship direct from the manufacturer’s warehouse here in the US, and this generally has no effect on lead times. Buschmann tools are the exception. Though we keep very strong inventory levels of Buschmann at our Georgia warehouse, we do occasionally run low on inventory. Due to import regulations, we cannot ship Buschmann items directly from Europe to the customer, so replenishment times can be as much as 2 weeks, depending on where in the order cycle we are.</p><p>Please call us at 678-932-0682  with any questions.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_VnpeKE": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Where are your products manufactured?",
+            "icon": "none",
+            "row_content": "<p>Almost all of the metal roofing tool products we offer are manufactured in the United States or Europe.</p><p>US locations include California, Massachusetts and Pennsylvania. European locations include France, Germany and Latvia.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_yqf3RE": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "I need to return my order, what do I do?",
+            "icon": "none",
+            "row_content": "<p>If you ordered the wrong tool for your application and need to return it, we can accept many returns if intiated within thirty (30) days of date you ordered it. </p><p>To intiate a return, simply reply to your order confirmation email and request return information.</p><p>Note that we do not accept returns of used or damaged tools, and we do not accept returns of fall protection/roof top safety equipment under any circumstances, the sole exception being if we shipped you something other than what you ordered.</p><p>Please review our full Terms and Conditions of sale for complete information about our returns policy.</p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_row_wJ9TG8",
+        "collapsible_row_4qPLYd",
+        "collapsible_row_Y6iRaa",
+        "collapsible_row_VnpeKE",
+        "collapsible_row_yqf3RE"
+      ],
+      "settings": {
+        "caption": "",
+        "heading": "",
+        "heading_size": "h1",
+        "heading_alignment": "center",
+        "layout": "none",
+        "color_scheme": "",
+        "container_color_scheme": "",
+        "open_first_collapsible_row": false,
+        "image_ratio": "adapt",
+        "desktop_layout": "image_second",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "featured_blog_DJfTzN": {
+      "type": "featured-blog",
+      "custom_css": [],
+      "settings": {
+        "heading": "<strong>Explore More on our Rapid Resource Blog</strong>",
+        "heading_size": "h1",
+        "blog": "rapid-resource",
+        "post_limit": 3,
+        "columns_desktop": 3,
+        "color_scheme": "scheme-5",
+        "show_image": true,
+        "show_date": true,
+        "show_author": false,
+        "show_view_all": true,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "rich_text_gpWPcW",
+    "collapsible_content_Y3yiWz",
+    "main",
+    "featured_blog_DJfTzN"
+  ]
+}
