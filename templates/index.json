@@ -60,6 +60,60 @@
         "show_text_below": false
       }
     },
+    "image_with_text_idzyYK": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_x4xtFg": {
+          "type": "heading",
+          "settings": {
+            "heading": "S-5 Clamps & Mounting",
+            "heading_size": "h1"
+          }
+        },
+        "text_eNz3xK": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Shop the industry’s leading metal roof mounting solutions. S-5! products, including clamps, snow bars, and solar mounting systems, are designed for reliability and performance on metal roofs of all types.</p>",
+            "text_style": "body"
+          }
+        },
+        "button_PtcAcA": {
+          "type": "button",
+          "settings": {
+            "button_label": "Shop S-5!",
+            "button_link": "shopify://collections/buy-s-5",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_x4xtFg",
+        "text_eNz3xK",
+        "button_PtcAcA"
+      ],
+      "custom_css": [
+        ".image-with-text__content {background-color: transparent;}",
+        ".image-with-text__media::after {position: absolute; z-index: 10; width: 30%; height: 100%; background: rgb(254 206 52); transform: skew(200.25deg); left: 85%; border-left: 5px solid white;}",
+        ".image-with-text__text-item.grid__item {z-index: 100 !important;}",
+        ".image-with-text__grid {align-items: center;}",
+        "@media screen and (max-width: 749px) {.image-with-text--overlap .image-with-text__content {width: 100%; margin: 0 auto 0; } .image-with-text__media::after {display: none; }}"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/rm-site-home-full-img-buys-5.png",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "image_behavior": "none",
+        "content_layout": "overlap",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "center",
+        "section_color_scheme": "scheme-4193c3da-e497-4afa-91b7-12fbd16d7fb2",
+        "color_scheme": "scheme-4193c3da-e497-4afa-91b7-12fbd16d7fb2",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
     "image_with_text_full_3RwFNV": {
       "type": "image-with-text-full",
       "blocks": {
@@ -145,8 +199,9 @@
         "button_GMTB6w"
       ],
       "custom_css": [
-        ".image-with-text__content.gradient {background-color: transparent;}",
-        ".image-with-text__media::after {position: absolute; top: 0; z-index: 10; width: 100%; height: 100%; background: #ff5112; transform: skew(200.25deg); left: 85%; border-left: 5px solid white;}",
+        ".image-with-text__media::after {position: absolute; z-index: 10; width: 30%; height: 100%; background: #ff5112; transform: skew(200.25deg); left: 85%; border-left: 5px solid white;}",
+        ".image-with-text__text-item.grid__item {z-index: 100 !important;}",
+        ".image-with-text__grid {align-items: center;}",
         "@media screen and (max-width: 749px) {.image-with-text--overlap .image-with-text__content {width: 100%; margin: 0 auto 0; } .image-with-text__media::after {display: none; }}"
       ],
       "settings": {
@@ -197,8 +252,9 @@
         "button_QAFLXy"
       ],
       "custom_css": [
-        ".image-with-text__content.gradient {background-color: transparent;}",
-        ".image-with-text__media::after {position: absolute; top: 0; z-index: 10; width: 100%; height: 100%; background: #70ac47; transform: skew(200.25deg); left: 85%; border-left: 5px solid white;}",
+        ".image-with-text__media::after {position: absolute; z-index: 10; width: 30%; height: 100%; background: #70ac47; transform: skew(200.25deg); left: 85%; border-left: 5px solid white;}",
+        ".image-with-text__text-item.grid__item {z-index: 100 !important;}",
+        ".image-with-text__grid {align-items: center;}",
         "@media screen and (max-width: 749px) {.image-with-text--overlap .image-with-text__content {width: 100%; margin: 0 auto 0; } .image-with-text__media::after {display: none; }}"
       ],
       "settings": {
@@ -249,8 +305,9 @@
         "button_mfazRm"
       ],
       "custom_css": [
-        ".image-with-text__content.gradient {background-color: transparent;}",
-        ".image-with-text__media::after {position: absolute; top: 0; z-index: 10; width: 100%; height: 100%; background: #34a3fe; transform: skew(200.25deg); left: 85%; border-left: 5px solid white;}",
+        ".image-with-text__media::after {position: absolute; z-index: 10; width: 30%; height: 100%; background: #34a3fe; transform: skew(200.25deg); left: 85%; border-left: 5px solid white;}",
+        ".image-with-text__text-item.grid__item {z-index: 100 !important;}",
+        ".image-with-text__grid {align-items: center;}",
         "@media screen and (max-width: 749px) {.image-with-text--overlap .image-with-text__content {width: 100%; margin: 0 auto 0; } .image-with-text__media::after {display: none; }}"
       ],
       "settings": {
@@ -301,8 +358,9 @@
         "button_T3xDfR"
       ],
       "custom_css": [
-        ".image-with-text__content.gradient {background-color: transparent;}",
-        ".image-with-text__media::after {position: absolute; top: 0; z-index: 10; width: 100%; height: 100%; background: #eaa900; transform: skew(200.25deg); left: 85%; border-left: 5px solid white;}",
+        ".image-with-text__media::after {position: absolute; z-index: 10; width: 30%; height: 100%; background: #eaa900; transform: skew(200.25deg); left: 85%; border-left: 5px solid white;}",
+        ".image-with-text__text-item.grid__item {z-index: 100 !important;}",
+        ".image-with-text__grid {align-items: center;}",
         "@media screen and (max-width: 749px) {.image-with-text--overlap .image-with-text__content {width: 100%; margin: 0 auto 0; } .image-with-text__media::after {display: none; }}"
       ],
       "settings": {
@@ -324,6 +382,7 @@
   },
   "order": [
     "image_banner",
+    "image_with_text_idzyYK",
     "image_with_text_full_3RwFNV",
     "image_with_text_full_q6VVam",
     "image_with_text_full_kaPhMJ",
