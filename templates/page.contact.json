@@ -66,21 +66,27 @@
           "type": "column",
           "settings": {
             "title": "Location",
-            "text": "<p>Atlanta, GA, USA</p>"
+            "text": "<p>Atlanta, GA, USA</p>",
+            "link_label": "",
+            "link": ""
           }
         },
         "column_WRFzXf": {
           "type": "column",
           "settings": {
             "title": "Call Us",
-            "text": "<p>(770) 405 - 1060</p>"
+            "text": "<p>(770) 405 - 1060</p>",
+            "link_label": "",
+            "link": ""
           }
         },
         "column_bgTJYV": {
           "type": "column",
           "settings": {
             "title": "Hours",
-            "text": "<p>Monday-Friday 8am-5pm EST</p>"
+            "text": "<p>Monday-Friday 8am-5pm EST</p>",
+            "link_label": "",
+            "link": ""
           }
         }
       },
@@ -91,17 +97,24 @@
       ],
       "settings": {
         "title": "",
+        "heading_size": "h1",
         "image_width": "third",
         "image_ratio": "adapt",
         "button_label": "",
         "button_link": "",
+        "columns_desktop": 3,
         "column_alignment": "center",
         "background_style": "primary",
-        "swipe_on_mobile": false
+        "color_scheme": "",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     },
     "main": {
       "type": "main-page",
+      "disabled": true,
       "settings": {
         "padding_top": 36,
         "padding_bottom": 36
