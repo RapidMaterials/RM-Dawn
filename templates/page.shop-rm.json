@@ -19,7 +19,8 @@
             "title": "Buy S-5! Clamps & Mounting",
             "text": "<p>Trusted solutions for snow retention, solar panel mounting, and more, all made in the USA.</p><p></p>",
             "link_label": "Shop",
-            "link": "shopify://collections/buy-s-5"
+            "link": "shopify://collections/buy-s-5",
+            "link_target": "_self"
           }
         },
         "column_qQ9jBd": {
@@ -29,7 +30,8 @@
             "title": "Buy Metal Roofing Tools",
             "text": "<p>High-quality tools designed for metal roofing professionals and precision craftsmanship.</p><p></p>",
             "link_label": "Shop",
-            "link": "shopify://collections/buy-metal-roofing-tools"
+            "link": "shopify://collections/buy-metal-roofing-tools",
+            "link_target": "_self"
           }
         },
         "column_KMxAUn": {
@@ -39,7 +41,8 @@
             "title": "Buy Half Round Gutters",
             "text": "<p>Durable, German-made half-round gutters and accessories for reliable performance.</p><p></p>",
             "link_label": "Shop",
-            "link": "shopify://collections/half-round-gutters"
+            "link": "shopify://collections/half-round-gutters",
+            "link_target": "_self"
           }
         },
         "column_bybmHw": {
@@ -49,7 +52,8 @@
             "title": "Buy Cladding & Facades",
             "text": "<p>Premium materials for stunning, durable exterior walls and architectural designs.</p>",
             "link_label": "Shop",
-            "link": "shopify://collections/cladding"
+            "link": "shopify://collections/cladding",
+            "link_target": "_self"
           }
         },
         "column_DUycqp": {
@@ -59,7 +63,8 @@
             "title": "Buy Alucobond",
             "text": "<p>Innovative cladding and architectural solutions, trusted for over 50 years. Made in the USA.</p>",
             "link_label": "Shop",
-            "link": "shopify://collections/alucobond"
+            "link": "shopify://collections/alucobond",
+            "link_target": "_self"
           }
         }
       },
@@ -70,7 +75,13 @@
         "column_bybmHw",
         "column_DUycqp"
       ],
-      "custom_css": ["p {line-height: 1.2em; font-size: 0.9em;}"],
+      "custom_css": [
+        "p {line-height: 1.2em; font-size: 0.9em;}",
+        "ul.multicolumn-list li {background-color: #f5f5f5; padding: 2%;}",
+        ".svg-wrapper {height: 1rem; margin-left: 10px;}",
+        "a.link {text-decoration: none;}",
+        "a.button.button--primary {margin-top: 30px;}"
+      ],
       "settings": {
         "title": "Shop Rapid Materials",
         "heading_size": "h1",
@@ -81,6 +92,7 @@
         "background_style": "primary",
         "button_label": "Shop All Products",
         "button_link": "shopify://collections/rapid-materials-all",
+        "link_target": "_self",
         "color_scheme": "scheme-1",
         "columns_mobile": "2",
         "swipe_on_mobile": false,
@@ -90,11 +102,15 @@
     },
     "main": {
       "type": "main-page",
+      "disabled": true,
       "settings": {
         "padding_top": 28,
         "padding_bottom": 28
       }
     }
   },
-  "order": ["column_image_with_text_99R7aU", "main"]
+  "order": [
+    "column_image_with_text_99R7aU",
+    "main"
+  ]
 }
