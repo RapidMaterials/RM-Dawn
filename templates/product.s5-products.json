@@ -12,6 +12,12 @@
     "main": {
       "type": "main-product",
       "blocks": {
+        "custom_liquid_j8xX6b": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<img src=\"https://cdn.shopify.com/s/files/1/0645/2540/2290/files/Feb_2025_-_S-5_10_off_-thin-banner.png?v=1740585868\" style=\"max-width:100%; display:inline-block;margin-top:-2rem;\"/>"
+          }
+        },
         "custom_liquid_9qzpnL": {
           "type": "custom_liquid",
           "settings": {
@@ -77,6 +83,7 @@
         }
       },
       "block_order": [
+        "custom_liquid_j8xX6b",
         "custom_liquid_9qzpnL",
         "title",
         "price",
