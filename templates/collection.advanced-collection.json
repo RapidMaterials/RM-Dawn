@@ -1,0 +1,123 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "banner": {
+      "type": "main-collection-banner",
+      "custom_css": [
+        "p {text-align: Center; font-size: 0.8em; line-height: 1em;}",
+        ".collection-hero__description {margin: auto;}",
+        ".collection-hero__text-wrapper {text-align: center;}"
+      ],
+      "settings": {
+        "show_collection_description": true,
+        "show_collection_image": false,
+        "color_scheme": "scheme-1"
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "custom_css": [
+        "@media screen and (min-width: 750px) {.card__information {padding: 0; }}",
+        "h2#verticalTitle {display: none;}",
+        "div#FacetsWrapperDesktop {padding-top: 2rem;}"
+      ],
+      "settings": {
+        "products_per_page": 36,
+        "columns_desktop": 5,
+        "columns_mobile": "2",
+        "color_scheme": "scheme-1",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "enable_filtering": true,
+        "filter_type": "vertical",
+        "button_label": "Click Here",
+        "button_link": "",
+        "button_target": "_self",
+        "enable_sorting": true,
+        "padding_top": 20,
+        "padding_bottom": 36
+      }
+    },
+    "collapsible_content_NREkNz": {
+      "type": "collapsible-content",
+      "blocks": {
+        "collapsible_row_6mf8tM": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "{{ collection.metafields.custom.collapsible_row_1.value.title.value }}",
+            "icon": "check_mark",
+            "row_content": "{{ collection.metafields.custom.collapsible_row_1.value.description | metafield_tag }}",
+            "page": ""
+          }
+        },
+        "collapsible_row_grywxb": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "{{ collection.metafields.custom.collapsible_row_2.value.title.value }}",
+            "icon": "check_mark",
+            "row_content": "{{ collection.metafields.custom.collapsible_row_2.value.description | metafield_tag }}",
+            "page": ""
+          }
+        },
+        "collapsible_row_x7paHy": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "{{ collection.metafields.custom.collapsible_row_3.value.title.value }}",
+            "icon": "check_mark",
+            "row_content": "{{ collection.metafields.custom.collapsible_row_3.value.description | metafield_tag }}",
+            "page": ""
+          }
+        },
+        "collapsible_row_9tHfh7": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "{{ collection.metafields.custom.collapsible_row_warranty.value.title.value }}",
+            "icon": "check_mark",
+            "row_content": "<p>{{ collection.metafields.custom.collapsible_row_warranty.value.warranty_description | metafield_tag }}<br/>{{ collection.metafields.custom.collapsible_row_warranty.value.more_info_link | metafield_tag }}</p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_row_6mf8tM",
+        "collapsible_row_grywxb",
+        "collapsible_row_x7paHy",
+        "collapsible_row_9tHfh7"
+      ],
+      "custom_css": [
+        ".accordion__content {overflow-x: visible;}"
+      ],
+      "settings": {
+        "caption": "",
+        "heading": "More about {{ collection.title }}",
+        "heading_size": "h1",
+        "heading_alignment": "center",
+        "layout": "none",
+        "container_color_scheme": "",
+        "color_scheme": "",
+        "open_first_collapsible_row": false,
+        "image_ratio": "adapt",
+        "desktop_layout": "image_second",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "banner",
+    "product-grid",
+    "collapsible_content_NREkNz"
+  ]
+}
