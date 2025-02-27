@@ -85,7 +85,7 @@
           "settings": {
             "heading": "{{ collection.metafields.custom.collapsible_row_warranty.value.title.value }}",
             "icon": "check_mark",
-            "row_content": "<p>{{ collection.metafields.custom.collapsible_row_warranty.value.warranty_description | metafield_tag }}</p><p>{{ collection.metafields.custom.collapsible_row_warranty.value.more_info_link | metafield_tag }}</p>",
+            "row_content": "<p>{{ collection.metafields.custom.collapsible_row_warranty.value.warranty_description | metafield_tag }}<br/>{{ collection.metafields.custom.collapsible_row_warranty.value.more_info_link | metafield_tag }}</p>",
             "page": ""
           }
         }
