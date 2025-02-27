@@ -56,36 +56,36 @@
         "collapsible_row_6mf8tM": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "{{ collection.metafields.custom.collapsible_row_1.value.title.value }}",
+            "heading": "{{ collection.metafields.custom.collapsible_row_1_header.value }}",
             "icon": "check_mark",
-            "row_content": "{{ collection.metafields.custom.collapsible_row_1.value.description | metafield_tag }}",
+            "row_content": "{{ collection.metafields.custom.collapsible_row_1_description | metafield_tag }}",
             "page": ""
           }
         },
         "collapsible_row_grywxb": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "{{ collection.metafields.custom.collapsible_row_2.value.title.value }}",
+            "heading": "{{ collection.metafields.custom.collapsible_row_2_header.value }}",
             "icon": "check_mark",
-            "row_content": "{{ collection.metafields.custom.collapsible_row_2.value.description | metafield_tag }}",
+            "row_content": "{{ collection.metafields.custom.collapsible_row_2_description | metafield_tag }}",
             "page": ""
           }
         },
         "collapsible_row_x7paHy": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "{{ collection.metafields.custom.collapsible_row_3.value.title.value }}",
+            "heading": "{{ collection.metafields.custom.collapsible_row_3_header.value }}",
             "icon": "check_mark",
-            "row_content": "{{ collection.metafields.custom.collapsible_row_3.value.description | metafield_tag }}",
+            "row_content": "{{ collection.metafields.custom.collapsible_row_3_description | metafield_tag }}",
             "page": ""
           }
         },
         "collapsible_row_9tHfh7": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "{{ collection.metafields.custom.collapsible_row_warranty.value.title.value }}",
+            "heading": "{{ collection.metafields.custom.collapsible_row_4_header.value }}",
             "icon": "check_mark",
-            "row_content": "<p>{{ collection.metafields.custom.collapsible_row_warranty.value.warranty_description | metafield_tag }}<br/>{{ collection.metafields.custom.collapsible_row_warranty.value.more_info_link | metafield_tag }}</p>",
+            "row_content": "{{ collection.metafields.custom.collapsible_row_4_description | metafield_tag }}",
             "page": ""
           }
         }
