@@ -96,6 +96,9 @@
         "collapsible_row_x7paHy",
         "collapsible_row_9tHfh7"
       ],
+      "custom_css": [
+        ".accordion__content {overflow-x: visible;}"
+      ],
       "settings": {
         "caption": "",
         "heading": "More about {{ collection.title }}",
