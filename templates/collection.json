@@ -51,48 +51,48 @@
     "collapsible_content_NREkNz": {
       "type": "collapsible-content",
       "blocks": {
+        "collapsible_row_6mf8tM": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "{{ collection.metafields.custom.collapsible_row_1.value.title.value }}",
+            "icon": "check_mark",
+            "row_content": "{{ collection.metafields.custom.collapsible_row_1.value.description | metafield_tag }}",
+            "page": ""
+          }
+        },
         "collapsible_row_grywxb": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "{{ collection.metafields.custom.slice_1_heading.value }}",
-            "icon": "none",
-            "row_content": "{{ collection.metafields.custom.slice_1_body | metafield_tag }}",
+            "heading": "{{ collection.metafields.custom.collapsible_row_2.value.title.value }}",
+            "icon": "check_mark",
+            "row_content": "{{ collection.metafields.custom.collapsible_row_2.value.description | metafield_tag }}",
             "page": ""
           }
         },
         "collapsible_row_x7paHy": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "",
+            "heading": "{{ collection.metafields.custom.collapsible_row_3.value.title.value }}",
             "icon": "none",
-            "row_content": "",
+            "row_content": "{{ collection.metafields.custom.collapsible_row_3.value.description | metafield_tag }}",
             "page": ""
           }
         },
         "collapsible_row_9tHfh7": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Collapsible row",
+            "heading": "{{ collection.metafields.custom.collapsible_row_warranty.value.title.value }}",
             "icon": "check_mark",
-            "row_content": "",
-            "page": ""
-          }
-        },
-        "collapsible_row_jaDtNU": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "Collapsible row",
-            "icon": "check_mark",
-            "row_content": "",
+            "row_content": "<p>{{ collection.metafields.custom.collapsible_row_warranty.value.warranty_description | metafield_tag }}</p><p>{{ collection.metafields.custom.collapsible_row_warranty.value.more_info_link | metafield_tag }}</p>",
             "page": ""
           }
         }
       },
       "block_order": [
+        "collapsible_row_6mf8tM",
         "collapsible_row_grywxb",
         "collapsible_row_x7paHy",
-        "collapsible_row_9tHfh7",
-        "collapsible_row_jaDtNU"
+        "collapsible_row_9tHfh7"
       ],
       "settings": {
         "caption": "",
