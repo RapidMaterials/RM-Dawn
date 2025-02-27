@@ -12,7 +12,9 @@
     "banner": {
       "type": "main-collection-banner",
       "custom_css": [
-        "p {text-align: Center; font-size: 0.8em; line-height: 1em;}"
+        "p {text-align: Center; font-size: 0.8em; line-height: 1em;}",
+        ".collection-hero__description {margin: auto;}",
+        ".collection-hero__text-wrapper {text-align: center;}"
       ],
       "settings": {
         "show_collection_description": true,
