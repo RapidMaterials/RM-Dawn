@@ -28,6 +28,14 @@
             "heading_tag": "h1"
           }
         },
+        "caption_XVPREE": {
+          "type": "caption",
+          "settings": {
+            "caption": "Secure Attachments Without Penetration",
+            "text_style": "caption-with-letter-spacing",
+            "text_size": "medium"
+          }
+        },
         "text_3CeQjz": {
           "type": "text",
           "settings": {
@@ -48,6 +56,7 @@
       },
       "block_order": [
         "heading_bXjBmi",
+        "caption_XVPREE",
         "text_3CeQjz",
         "button_rP7QJ4"
       ],
