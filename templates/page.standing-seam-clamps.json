@@ -40,26 +40,14 @@
         "text_3CeQjz": {
           "type": "text",
           "settings": {
-            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.</p>"
-          }
-        },
-        "button_rP7QJ4": {
-          "type": "button",
-          "settings": {
-            "button_label": "Button label",
-            "button_link": "",
-            "button_style_secondary": false,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
+            "text": "<p>Standing seam metal roofs are a top choice for durability and weather resistance. However, mounting solar panels, snow retention systems, or other rooftop accessories requires a reliable solution that won’t compromise roof integrity. S-5! standing seam roof clamps provide a secure, non-penetrating attachment method designed to preserve your roof’s long-term performance.</p>"
           }
         }
       },
       "block_order": [
         "heading_bXjBmi",
         "caption_XVPREE",
-        "text_3CeQjz",
-        "button_rP7QJ4"
+        "text_3CeQjz"
       ],
       "settings": {
         "desktop_content_position": "center",
@@ -69,10 +57,222 @@
         "padding_top": 40,
         "padding_bottom": 52
       }
+    },
+    "custom_html_9N4LAR": {
+      "type": "custom-html",
+      "blocks": {
+        "heading_PqbfFQ": {
+          "type": "heading",
+          "settings": {
+            "heading": "Why Choose S-5! Standing Seam Roof Clamps?",
+            "heading_size": "h2"
+          }
+        },
+        "text_Bi9NVr": {
+          "type": "text",
+          "settings": {
+            "text": "<ul><li><strong>No Roof Penetration</strong> – Clamps attach securely without drilling holes, preserving the roof’s weather-tight seal.</li><li><strong>Strong & Durable</strong> – Made from high-quality, non-corrosive metals like aluminum and stainless steel.</li><li><strong>Versatile Applications</strong> – Ideal for solar panel mounting, snow retention, lightning protection, and more.</li><li><strong>Easy Installation</strong> – No specialized tools required, reducing labor costs and time.</li><li><strong>Engineered for Performance</strong> – Load-tested and designed for various standing seam profiles.</li></ul><h3></h3>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "heading_PqbfFQ",
+        "text_Bi9NVr"
+      ],
+      "custom_css": [],
+      "settings": {
+        "image": "shopify://shop_images/s5-home2.jpg",
+        "height": "large",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "color_scheme": "background-1",
+        "mobile_content_alignment": "left",
+        "padding_top": 16,
+        "padding_bottom": 16
+      }
+    },
+    "column_image_with_text_zQEpCN": {
+      "type": "column-image-with-text",
+      "blocks": {
+        "column_TFYFiT": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/s5-roof-profile-Snap_Lock.svg",
+            "title": "<strong>Snap-Lock Seam</strong>",
+            "text": "",
+            "link_label": "",
+            "link": "",
+            "link_target": "_self"
+          }
+        },
+        "column_CkAXqw": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/s5-roof-profile-Batten_Cap.svg",
+            "title": "<strong>Batten Seam </strong>",
+            "text": "",
+            "link_label": "",
+            "link": "",
+            "link_target": "_self"
+          }
+        },
+        "column_d78Hy6": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/s5-roof-profile-T_Seam.svg",
+            "title": "<strong>Tee Seam </strong>",
+            "text": "",
+            "link_label": "",
+            "link": "",
+            "link_target": "_self"
+          }
+        },
+        "column_QfAxQe": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/s5-roof-profile-bulb-seam-cap.svg",
+            "title": "<strong>Bulb Seam Cap</strong>",
+            "text": "",
+            "link_label": "",
+            "link": "",
+            "link_target": "_self"
+          }
+        },
+        "column_rtyKE9": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/s5-roof-profile-Double_Fold.svg",
+            "title": "<strong>Double Fold Seam</strong>",
+            "text": "",
+            "link_label": "",
+            "link": "",
+            "link_target": "_self"
+          }
+        },
+        "column_VkhyBy": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/s5-roof-profile-Single_Fold.svg",
+            "title": "<strong>Single Fold Seam</strong>",
+            "text": "",
+            "link_label": "",
+            "link": "",
+            "link_target": "_self"
+          }
+        },
+        "column_YcHWpi": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/s5-roof-profile-Nail_Strip.svg",
+            "title": "<strong>Nail Strip Seam</strong>",
+            "text": "",
+            "link_label": "",
+            "link": "",
+            "link_target": "_self"
+          }
+        },
+        "column_bWHeEg": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/s5-roof-profile-Bulb.svg",
+            "title": "<strong>Bulb Seam</strong>",
+            "text": "",
+            "link_label": "",
+            "link": "",
+            "link_target": "_self"
+          }
+        },
+        "column_gBCHV8": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/s5-roof-profile-Conceal_Fix_Narrow.svg",
+            "title": "<strong>Conceal Fix</strong>",
+            "text": "",
+            "link_label": "",
+            "link": "",
+            "link_target": "_self"
+          }
+        },
+        "column_icLikP": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/s5-roof-profile-Trap-Snap-Seam.svg",
+            "title": "<strong>Trap Snap Seam</strong>",
+            "text": "",
+            "link_label": "",
+            "link": "",
+            "link_target": "_self"
+          }
+        },
+        "column_V8gUyP": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/s5-roof-profile-trap-single-fold-3.svg",
+            "title": "<strong>Trap Single Fold </strong>",
+            "text": "",
+            "link_label": "",
+            "link": "",
+            "link_target": "_self"
+          }
+        },
+        "column_nA6Lz9": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/s5-roof-profile-trap-double-fold.svg",
+            "title": "<strong>Trap Double Fold</strong>",
+            "text": "",
+            "link_label": "",
+            "link": "",
+            "link_target": "_self"
+          }
+        }
+      },
+      "block_order": [
+        "column_TFYFiT",
+        "column_CkAXqw",
+        "column_d78Hy6",
+        "column_QfAxQe",
+        "column_rtyKE9",
+        "column_VkhyBy",
+        "column_YcHWpi",
+        "column_bWHeEg",
+        "column_gBCHV8",
+        "column_icLikP",
+        "column_V8gUyP",
+        "column_nA6Lz9"
+      ],
+      "custom_css": [
+        ".multicolumn-card__info {text-align: center;}",
+        ".media.media--transparent.media--adapt {border: 2px solid black; border-radius: 50%;}",
+        ".multicolumn-card__image-wrapper {padding: 20px;}"
+      ],
+      "settings": {
+        "title": "Compatible Standing Seam Roof Types",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 6,
+        "column_alignment": "left",
+        "background_style": "primary",
+        "button_label": "Shop Clamps",
+        "button_link": "https://rapidmaterials.com/collections/s-5-clamps",
+        "link_target": "_self",
+        "color_scheme": "scheme-ac6966eb-19fc-4393-83fc-c563081441a0",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 4,
+        "padding_bottom": 4
+      }
     }
   },
   "order": [
     "main",
-    "rich_text_fHXtd7"
+    "rich_text_fHXtd7",
+    "custom_html_9N4LAR",
+    "column_image_with_text_zQEpCN"
   ]
 }
