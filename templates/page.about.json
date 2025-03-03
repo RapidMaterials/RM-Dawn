@@ -62,7 +62,8 @@
           "type": "heading",
           "settings": {
             "heading": "Our Products & Services",
-            "heading_size": "h1"
+            "heading_size": "h1",
+            "heading_tag": "h1"
           }
         },
         "text_D7eNzd": {

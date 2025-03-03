@@ -16,7 +16,8 @@
           "type": "heading",
           "settings": {
             "heading": "Contact Rapid Materials",
-            "heading_size": "h1"
+            "heading_size": "h1",
+            "heading_tag": "h1"
           }
         },
         "text_pKzQBd": {
