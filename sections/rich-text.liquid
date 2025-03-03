@@ -32,7 +32,7 @@
                 {{ block.settings.heading }}
               </{{ block.settings.heading_tag }}>
             {%- when 'caption' -%}
-              <p
+              <{{ block.settings.heading_tag }}
                 class="rich-text__caption {{ block.settings.text_style }} {{ block.settings.text_style }}--{{ block.settings.text_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
                 {{ block.shopify_attributes }}
                 {% if settings.animations_reveal_on_scroll %}
@@ -41,7 +41,7 @@
                 {% endif %}
               >
                 {{ block.settings.caption | escape }}
-              </p>
+              </{{ block.settings.heading_tag }}>
             {%- when 'text' -%}
               <div
                 class="rich-text__text rte{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
@@ -251,10 +251,7 @@
         }
       ]
     },
-
-
-    
-    {
+  {
       "type": "caption",
       "name": "t:sections.rich-text.blocks.caption.name",
       "limit": 3,
