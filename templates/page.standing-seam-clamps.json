@@ -33,7 +33,8 @@
           "settings": {
             "caption": "Secure Attachments Without Penetration",
             "text_style": "caption-with-letter-spacing",
-            "text_size": "medium"
+            "text_size": "medium",
+            "heading_tag": "h2"
           }
         },
         "text_3CeQjz": {
