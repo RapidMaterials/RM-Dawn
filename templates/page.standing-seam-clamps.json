@@ -315,6 +315,15 @@
             "link_label": "",
             "link": ""
           }
+        },
+        "column_QwUFDz": {
+          "type": "column",
+          "settings": {
+            "title": "Much More",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
         }
       },
       "block_order": [
@@ -322,14 +331,15 @@
         "column_GfWN9R",
         "column_Xd76HR",
         "column_f679MJ",
-        "column_cHpCbj"
+        "column_cHpCbj",
+        "column_QwUFDz"
       ],
       "settings": {
         "title": "<strong>Applications for Standing Seam Clamps</strong>",
         "heading_size": "h1",
         "image_width": "full",
         "image_ratio": "adapt",
-        "button_label": "Button label",
+        "button_label": "",
         "button_link": "",
         "columns_desktop": 3,
         "column_alignment": "left",
