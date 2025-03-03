@@ -267,12 +267,86 @@
         "padding_top": 4,
         "padding_bottom": 4
       }
+    },
+    "multicolumn_xHeXAx": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_6WtXtq": {
+          "type": "column",
+          "settings": {
+            "title": "<strong>Solar Panel Installation</strong>",
+            "text": "<p>Rail-less PV mounting systems for standing seam roofs.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_GfWN9R": {
+          "type": "column",
+          "settings": {
+            "title": "<strong>Snow Retention Systems</strong>",
+            "text": "<p>Secure snow guards to prevent dangerous snow slides.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_Xd76HR": {
+          "type": "column",
+          "settings": {
+            "title": "<strong>HVAC & Mechanical Equipment</strong>",
+            "text": "<p>Mount conduit, piping, and more.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_f679MJ": {
+          "type": "column",
+          "settings": {
+            "title": "<strong>Signage & Walkways</strong>",
+            "text": "<p>Attach safety features without roof penetration.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_cHpCbj": {
+          "type": "column",
+          "settings": {
+            "title": "<strong>Lightning Protection & Antennas</strong>",
+            "text": "<p>Secure rooftop electrical components safely.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_6WtXtq",
+        "column_GfWN9R",
+        "column_Xd76HR",
+        "column_f679MJ",
+        "column_cHpCbj"
+      ],
+      "settings": {
+        "title": "<strong>Applications for Standing Seam Clamps</strong>",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "button_label": "Button label",
+        "button_link": "",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "background_style": "primary",
+        "color_scheme": "",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
     "main",
     "rich_text_fHXtd7",
     "custom_html_9N4LAR",
-    "column_image_with_text_zQEpCN"
+    "column_image_with_text_zQEpCN",
+    "multicolumn_xHeXAx"
   ]
 }
