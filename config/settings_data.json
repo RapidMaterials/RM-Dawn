@@ -187,11 +187,6 @@
           "ref": true
         }
       },
-      "5140161176031010482": {
-        "type": "shopify://apps/dr-cart-shipping-rates/blocks/instant-load/6fdcf202-26c0-4288-be36-8b389f5d262c",
-        "disabled": false,
-        "settings": {}
-      },
       "11320579242087869063": {
         "type": "shopify://apps/codify-order-cancel/blocks/cancel_button/f7f8a269-b6ea-461a-8e1b-d61167f44926",
         "disabled": false,
