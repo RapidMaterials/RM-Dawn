@@ -83,7 +83,7 @@
         "a.button.button--primary {margin-top: 30px;}"
       ],
       "settings": {
-        "title": "Shop Rapid Materials",
+        "title": "",
         "heading_size": "h1",
         "image_width": "full",
         "image_ratio": "adapt",
