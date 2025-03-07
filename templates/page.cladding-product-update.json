@@ -33,11 +33,23 @@
           "settings": {
             "text": "<p>We’ve recently updated our cladding product offerings to better serve our customers. While we no longer carry <strong>Equitone, Reynobond, ALPOLIC, Alucoil, or Pac-Clad</strong>, we continue to offer high-quality cladding solutions with <strong>Alucobond and Trespa</strong>.</p><h2></h2>"
           }
+        },
+        "button_n9kDig": {
+          "type": "button",
+          "settings": {
+            "button_label": "Shop All Cladding",
+            "button_link": "https://rapidmaterials.com/collections/buy-cladding-exterior-facade-systems",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
         }
       },
       "block_order": [
         "heading_P6UKt6",
-        "text_EhJ7jR"
+        "text_EhJ7jR",
+        "button_n9kDig"
       ],
       "settings": {
         "desktop_content_position": "center",
