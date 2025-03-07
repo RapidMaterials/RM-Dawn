@@ -11,13 +11,103 @@
   "sections": {
     "main": {
       "type": "main-page",
+      "disabled": true,
       "settings": {
         "padding_top": 28,
         "padding_bottom": 28
       }
+    },
+    "rich_text_4DdHPz": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_P6UKt6": {
+          "type": "heading",
+          "settings": {
+            "heading": "{{ page.title }}",
+            "heading_size": "h1",
+            "heading_tag": "h1"
+          }
+        },
+        "text_EhJ7jR": {
+          "type": "text",
+          "settings": {
+            "text": "<p>We’ve recently updated our cladding product offerings to better serve our customers. While we no longer carry <strong>Equitone, Reynobond, ALPOLIC, Alucoil, or Pac-Clad</strong>, we continue to offer high-quality cladding solutions with <strong>Alucobond and Trespa</strong>.</p><h2></h2>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_P6UKt6",
+        "text_EhJ7jR"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "multicolumn_hHzQLV": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_xdYcLx": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/buy-alucobond.png",
+            "title": "Alucobond",
+            "text": "<p>A top choice for aluminum composite panels, known for its durability and design flexibility.</p>",
+            "link_label": "Shop",
+            "link": "shopify://collections/alucobond"
+          }
+        },
+        "column_michtp": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Trespa_logo_Transparent-SQ.png",
+            "title": "Trespa",
+            "text": "<p>A premium option for high-pressure laminate (HPL) panels, offering outstanding performance and aesthetics.</p>",
+            "link_label": "Shop",
+            "link": "https://rapidmaterials.com/collections/trespa"
+          }
+        },
+        "column_cNe8PM": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Plasti-Grip-PMF-Anchor-sizes.png",
+            "title": "Accessories & Hardware",
+            "text": "<p>A full selection of fasteners, sub-framing, trims, and installation components to ensure a seamless cladding system.</p>",
+            "link_label": "Shop",
+            "link": "https://rapidmaterials.com/collections/cladding-facades-accessories-hardware"
+          }
+        }
+      },
+      "block_order": [
+        "column_xdYcLx",
+        "column_michtp",
+        "column_cNe8PM"
+      ],
+      "settings": {
+        "title": "Our Cladding Offerings",
+        "heading_size": "h2",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "button_label": "",
+        "button_link": "",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "background_style": "primary",
+        "color_scheme": "",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "rich_text_4DdHPz",
+    "multicolumn_hHzQLV"
   ]
 }
