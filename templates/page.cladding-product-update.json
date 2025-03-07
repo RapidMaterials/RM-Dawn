@@ -54,7 +54,7 @@
         "column_xdYcLx": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/buy-alucobond.png",
+            "image": "shopify://shop_images/alucobond-logo-lg-gray.png",
             "title": "Alucobond",
             "text": "<p>A top choice for aluminum composite panels, known for its durability and design flexibility.</p>",
             "link_label": "Shop",
@@ -64,7 +64,7 @@
         "column_michtp": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/Trespa_logo_Transparent-SQ.png",
+            "image": "shopify://shop_images/trespa-logo.png",
             "title": "Trespa",
             "text": "<p>A premium option for high-pressure laminate (HPL) panels, offering outstanding performance and aesthetics.</p>",
             "link_label": "Shop",
@@ -74,7 +74,7 @@
         "column_cNe8PM": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/Plasti-Grip-PMF-Anchor-sizes.png",
+            "image": "shopify://shop_images/trufast-sfs.png",
             "title": "Accessories & Hardware",
             "text": "<p>A full selection of fasteners, sub-framing, trims, and installation components to ensure a seamless cladding system.</p>",
             "link_label": "Shop",
