@@ -484,7 +484,7 @@
       "shipping_address": "Shipping Address",
       "fulfillment_status": "Fulfillment Status",
       "discount": "Discount",
-      "shipping": "Shipping",
+      "shipping": "Shipping Deposit. You will be contacted if actual shipping is significantly different.",
       "tax": "Tax",
       "product": "Product",
       "sku": "SKU",
