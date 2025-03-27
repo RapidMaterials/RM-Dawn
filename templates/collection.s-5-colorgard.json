@@ -22,6 +22,17 @@
         "color_scheme": "scheme-1"
       }
     },
+    "custom_liquid_awMT8b": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<div data-instabuy data-widget-id=\"9afaf0aa-5d4d-42ae-a228-6d758d279ffc\"></div>",
+        "color_scheme": "",
+        "padding_top": 8,
+        "padding_bottom": 8,
+        "padding_left": 4,
+        "padding_right": 4
+      }
+    },
     "product-grid": {
       "type": "main-collection-product-grid",
       "disabled": true,
@@ -49,15 +60,6 @@
         "enable_sorting": true,
         "padding_top": 20,
         "padding_bottom": 36
-      }
-    },
-    "custom_liquid_awMT8b": {
-      "type": "custom-liquid",
-      "settings": {
-        "custom_liquid": "<div data-instabuy data-widget-id=\"9afaf0aa-5d4d-42ae-a228-6d758d279ffc\"></div>",
-        "color_scheme": "",
-        "padding_top": 40,
-        "padding_bottom": 52
       }
     }
   },
