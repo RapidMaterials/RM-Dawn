@@ -40,35 +40,135 @@
         "show_text_below": true
       }
     },
-    "rich_text_WfkEqK": {
-      "type": "rich-text",
+    "image_with_text_zeHAbY": {
+      "type": "image-with-text",
       "blocks": {
-        "heading_zHm7m4": {
+        "heading_bdbMjy": {
           "type": "heading",
           "settings": {
-            "heading": "S-5! ColorGard 2.0 Snow System",
-            "heading_size": "h1",
-            "heading_tag": "h1"
+            "heading": "S-5! ColorGard 2.0 Snow Rail",
+            "heading_size": "h1"
+          }
+        },
+        "text_Vpcx7b": {
+          "type": "text",
+          "settings": {
+            "text": "<p>ColorGard® 2.0 improves on the original with faster installation, no pre-assembly required, and simplified field adjustments — all while maintaining the same trusted strength and color-match finish. It’s a true lay-and-play upgrade built for both new construction and retrofit projects.</p>",
+            "text_style": "body"
           }
         }
       },
       "block_order": [
-        "heading_zHm7m4"
+        "heading_bdbMjy",
+        "text_Vpcx7b"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/670F997D-F7CC-4CCE-8978-338102C1D209-e1739309461776.png",
+        "height": "adapt",
+        "desktop_image_width": "small",
+        "layout": "image_first",
+        "image_behavior": "none",
+        "content_layout": "no-overlap",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "element-width": 100,
+        "padding_top": 20,
+        "padding_bottom": 20,
+        "side-padding": "no-padding"
+      }
+    },
+    "multicolumn_ARiLGw": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_KntxHR": {
+          "type": "column",
+          "settings": {
+            "title": "Column",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_pBKarN": {
+          "type": "column",
+          "settings": {
+            "title": "Column",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_BTHpfb": {
+          "type": "column",
+          "settings": {
+            "title": "Column",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_KntxHR",
+        "column_pBKarN",
+        "column_BTHpfb"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "button_label": "",
+        "button_link": "",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "background_style": "primary",
+        "color_scheme": "",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "rich_text_EeCJeG": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_Nm6NDK": {
+          "type": "heading",
+          "settings": {
+            "heading": "Order ColorGard 2.0",
+            "heading_size": "h1",
+            "heading_tag": "h2"
+          }
+        },
+        "text_Dt6Fb3": {
+          "type": "text",
+          "settings": {
+            "text": ""
+          }
+        }
+      },
+      "block_order": [
+        "heading_Nm6NDK",
+        "text_Dt6Fb3"
       ],
       "settings": {
         "desktop_content_position": "center",
         "content_alignment": "center",
-        "color_scheme": "",
+        "color_scheme": "scheme-2",
         "full_width": true,
         "padding_top": 40,
-        "padding_bottom": 0
+        "padding_bottom": 16
       }
     },
     "custom_liquid_awMT8b": {
       "type": "custom-liquid",
       "settings": {
         "custom_liquid": "<div data-instabuy data-widget-id=\"9afaf0aa-5d4d-42ae-a228-6d758d279ffc\"></div>",
-        "color_scheme": "",
+        "color_scheme": "scheme-2",
         "padding_top": 0,
         "padding_bottom": 8,
         "padding_left": 4,
@@ -108,7 +208,9 @@
   "order": [
     "banner",
     "image_banner_NHkXKX",
-    "rich_text_WfkEqK",
+    "image_with_text_zeHAbY",
+    "multicolumn_ARiLGw",
+    "rich_text_EeCJeG",
     "custom_liquid_awMT8b",
     "product-grid"
   ]
