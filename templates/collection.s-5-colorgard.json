@@ -11,6 +11,7 @@
   "sections": {
     "banner": {
       "type": "main-collection-banner",
+      "disabled": true,
       "custom_css": [
         "p {text-align: Center; font-size: 0.8em; line-height: 1em;}",
         ".collection-hero__description {margin: auto;}",
@@ -20,6 +21,30 @@
         "show_collection_description": true,
         "show_collection_image": false,
         "color_scheme": "scheme-1"
+      }
+    },
+    "rich_text_WfkEqK": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_zHm7m4": {
+          "type": "heading",
+          "settings": {
+            "heading": "S-5! ColorGard 2.0 Snow System",
+            "heading_size": "h1",
+            "heading_tag": "h2"
+          }
+        }
+      },
+      "block_order": [
+        "heading_zHm7m4"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 0
       }
     },
     "custom_liquid_awMT8b": {
@@ -65,6 +90,7 @@
   },
   "order": [
     "banner",
+    "rich_text_WfkEqK",
     "custom_liquid_awMT8b",
     "product-grid"
   ]
