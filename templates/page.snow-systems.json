@@ -288,6 +288,9 @@
         "column_NUacd3",
         "column_8cgizi"
       ],
+      "custom_css": [
+        "#Slide-template--18379335696562__multicolumn_3TeXiV-2 .multicolumn-card.content-container {background-color: #fff !important;}"
+      ],
       "settings": {
         "title": "",
         "heading_size": "h1",
