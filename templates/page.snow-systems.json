@@ -289,7 +289,7 @@
         "column_8cgizi"
       ],
       "custom_css": [
-        "#Slide-template--18379335696562__multicolumn_3TeXiV-2 .multicolumn-card.content-container {background-color: #fff !important;}"
+        ".grid li:nth-child(2) .multicolumn-card.content-container {background-color: #fff;}"
       ],
       "settings": {
         "title": "",
