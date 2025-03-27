@@ -86,8 +86,8 @@
         "column_KntxHR": {
           "type": "column",
           "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "title": "<strong> Faster, Easier Installation</strong>",
+            "text": "<ul><li>No pre-assembly needed — lay-and-play design saves time on the roof</li><li>VersaClip™ installs directly over internal splices, eliminating in-field cutting at splice points</li><li>Ideal for both new metal roof installs and retrofit applications</li></ul>",
             "link_label": "",
             "link": ""
           }
@@ -95,8 +95,8 @@
         "column_pBKarN": {
           "type": "column",
           "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "title": "<strong>Engineered for Performance</strong>",
+            "text": "<ul><li>Load-tested on 500+ metal roof profiles</li><li>Corrosion-resistant materials built to last the life of the roof</li><li>Site-specific engineering for exposed-fastened and standing seam systems</li></ul>",
             "link_label": "",
             "link": ""
           }
@@ -104,8 +104,8 @@
         "column_BTHpfb": {
           "type": "column",
           "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "title": "<strong>Seamless Aesthetics</strong>",
+            "text": "<ul><li>Maintains the clean look of your metal roof</li><li>Uses your roof material for an exact color and finish match.</li><li>Sleek design reduces visual impact while improving safety<br/></li></ul>",
             "link_label": "",
             "link": ""
           }
@@ -115,6 +115,11 @@
         "column_KntxHR",
         "column_pBKarN",
         "column_BTHpfb"
+      ],
+      "custom_css": [
+        "li {font-size: 14px; line-height: 1.2em;}",
+        ".rte ul,.rte ol {list-style-position: outside;}",
+        ".rte li {margin-bottom: 5px;}"
       ],
       "settings": {
         "title": "",
