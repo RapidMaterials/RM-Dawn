@@ -289,7 +289,8 @@
         "column_8cgizi"
       ],
       "custom_css": [
-        ".grid li:nth-child(2) .multicolumn-card.content-container {background-color: #fff;}"
+        ".grid li:nth-child(2) .multicolumn-card.content-container,.grid li:nth-child(2) {background: none;}",
+        ".grid li:nth-child(2) .media.media--transparent.media--adapt {height: 150px; }"
       ],
       "settings": {
         "title": "",
