@@ -110,12 +110,300 @@
         "padding_top": 40,
         "padding_bottom": 52
       }
+    },
+    "image_with_text_fNNbaj": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_ryh6wU": {
+          "type": "heading",
+          "settings": {
+            "heading": "S-5! ColorGard®",
+            "heading_size": "h1"
+          }
+        },
+        "text_hHy9RX": {
+          "type": "text",
+          "settings": {
+            "text": "<p>ColorGard® 2.0 offers strong, single-bar snow retention with perfect color matching. Designed for standing seam roofs, it preserves appearance and performance.</p>",
+            "text_style": "body"
+          }
+        },
+        "button_BVErdz": {
+          "type": "button",
+          "settings": {
+            "button_label": "Shop ColorGard 2.0",
+            "button_link": "",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_ryh6wU",
+        "text_hHy9RX",
+        "button_BVErdz"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/ColorGard2.0.png",
+        "height": "adapt",
+        "desktop_image_width": "small",
+        "layout": "image_first",
+        "image_behavior": "none",
+        "content_layout": "no-overlap",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "padding_top": 12,
+        "padding_bottom": 0
+      }
+    },
+    "image_with_text_mXF7aB": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_qeV4jd": {
+          "type": "heading",
+          "settings": {
+            "heading": "X-Gard™ 1.0",
+            "heading_size": "h1"
+          }
+        },
+        "text_VNJDCL": {
+          "type": "text",
+          "settings": {
+            "text": "<p>X-Gard™ 1.0 is a single-pipe snow retention system built for high-performance on standing seam roofs. Ideal for both light and moderate snow loads.</p><p></p>",
+            "text_style": "body"
+          }
+        },
+        "button_DdV9NM": {
+          "type": "button",
+          "settings": {
+            "button_label": "Shop X-Gard 1.0",
+            "button_link": "",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_qeV4jd",
+        "text_VNJDCL",
+        "button_DdV9NM"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/X-Gard1.png",
+        "height": "adapt",
+        "desktop_image_width": "small",
+        "layout": "image_first",
+        "image_behavior": "none",
+        "content_layout": "no-overlap",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "padding_top": 12,
+        "padding_bottom": 0
+      }
+    },
+    "image_with_text_3RFLWa": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_BRXYzq": {
+          "type": "heading",
+          "settings": {
+            "heading": "X-Gard™ 2.0",
+            "heading_size": "h1"
+          }
+        },
+        "text_wkhyAR": {
+          "type": "text",
+          "settings": {
+            "text": "<p>X-Gard™ 2.0 uses a two-pipe design for maximum strength and wider spans. A solid choice for heavy snow loads and long roof runs.</p><p></p>",
+            "text_style": "body"
+          }
+        },
+        "button_RTKkda": {
+          "type": "button",
+          "settings": {
+            "button_label": "Shop X-Gard 2.0",
+            "button_link": "",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_BRXYzq",
+        "text_wkhyAR",
+        "button_RTKkda"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/X-Gard2.png",
+        "height": "adapt",
+        "desktop_image_width": "small",
+        "layout": "image_first",
+        "image_behavior": "none",
+        "content_layout": "no-overlap",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "padding_top": 12,
+        "padding_bottom": 0
+      }
+    },
+    "image_with_text_EqcHeU": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_rKcCPK": {
+          "type": "heading",
+          "settings": {
+            "heading": "DualGard™",
+            "heading_size": "h1"
+          }
+        },
+        "text_HHmXUX": {
+          "type": "text",
+          "settings": {
+            "text": "<p>DualGard™ is a versatile two-pipe snow retention system that spans up to 48\". Compatible with both standing seam and exposed-fastened metal roofs.</p><p></p>",
+            "text_style": "body"
+          }
+        },
+        "button_jRiGjk": {
+          "type": "button",
+          "settings": {
+            "button_label": "Shop DualGard",
+            "button_link": "",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_rKcCPK",
+        "text_HHmXUX",
+        "button_jRiGjk"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/DualGard.png",
+        "height": "adapt",
+        "desktop_image_width": "small",
+        "layout": "image_first",
+        "image_behavior": "none",
+        "content_layout": "no-overlap",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "padding_top": 12,
+        "padding_bottom": 0
+      }
+    },
+    "image_with_text_D4EGMH": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_wjhwgk": {
+          "type": "heading",
+          "settings": {
+            "heading": "VersaGard™",
+            "heading_size": "h1"
+          }
+        },
+        "text_DdU8Cf": {
+          "type": "text",
+          "settings": {
+            "text": "<p>VersaGard™ is a compact, single-component solution for light-duty snow retention. Installs easily on most exposed-fastened metal roof panels.</p>",
+            "text_style": "body"
+          }
+        },
+        "button_ihHeFm": {
+          "type": "button",
+          "settings": {
+            "button_label": "Shop VersaGard",
+            "button_link": "",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_wjhwgk",
+        "text_DdU8Cf",
+        "button_ihHeFm"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/VersaGard.png",
+        "height": "adapt",
+        "desktop_image_width": "small",
+        "layout": "image_first",
+        "image_behavior": "none",
+        "content_layout": "no-overlap",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "padding_top": 12,
+        "padding_bottom": 0
+      }
+    },
+    "image_with_text_YYrPQg": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_yjqgBt": {
+          "type": "heading",
+          "settings": {
+            "heading": "SnoRail™ Brass",
+            "heading_size": "h1"
+          }
+        },
+        "text_9FVtt9": {
+          "type": "text",
+          "settings": {
+            "text": "<p>SnoRail™ Brass is a premium snow rail system designed for copper metal roofs. It helps prevent snow slides while preserving the roof’s architectural look and integrity.</p>",
+            "text_style": "body"
+          }
+        },
+        "button_kf7ft8": {
+          "type": "button",
+          "settings": {
+            "button_label": "SnoRail Brass",
+            "button_link": "",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_yjqgBt",
+        "text_9FVtt9",
+        "button_kf7ft8"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/SnoRail_Brass.png",
+        "height": "adapt",
+        "desktop_image_width": "small",
+        "layout": "image_first",
+        "image_behavior": "none",
+        "content_layout": "no-overlap",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "padding_top": 12,
+        "padding_bottom": 0
+      }
     }
   },
   "order": [
     "main",
     "image_banner_ca3EtW",
     "rich_text_XWAg7J",
-    "rich_text_eK8tGy"
+    "rich_text_eK8tGy",
+    "image_with_text_fNNbaj",
+    "image_with_text_mXF7aB",
+    "image_with_text_3RFLWa",
+    "image_with_text_EqcHeU",
+    "image_with_text_D4EGMH",
+    "image_with_text_YYrPQg"
   ]
 }
