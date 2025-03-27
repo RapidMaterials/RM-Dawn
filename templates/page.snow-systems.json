@@ -142,6 +142,7 @@
         "text_hHy9RX",
         "button_BVErdz"
       ],
+      "custom_css": [],
       "settings": {
         "image": "shopify://shop_images/ColorGard2.0.png",
         "height": "adapt",
@@ -290,7 +291,8 @@
       ],
       "custom_css": [
         ".grid li:nth-child(2) .multicolumn-card.content-container,.grid li:nth-child(2) {background: none;}",
-        ".grid li:nth-child(2) .media.media--transparent.media--adapt {height: 150px; }"
+        ".grid li:nth-child(2) .media.media--transparent.media--adapt {height: 150px;}",
+        ".grid li:nth-child(2) .multicolumn-card-spacing {padding-bottom: 2.5rem;}"
       ],
       "settings": {
         "title": "",
