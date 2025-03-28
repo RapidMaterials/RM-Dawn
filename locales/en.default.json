@@ -565,7 +565,10 @@
   "shopify": {
     "checkout": {
       "shipping_errors": {
-        "title": "Shipping Rate Unavailable"
+        "title": "Shipping Rate Unavailable",
+        "shipping_method_not_available_generic": {
+          "one": "Shipping rates cannot be returned at this time. Please contact us at info@rapidmaterials.com and include a screenshot of your cart so we can provide you with a quote."
+        }
       }
     }
   }
