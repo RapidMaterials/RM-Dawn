@@ -313,6 +313,15 @@
             "row_content": "<p>It all comes down to your seam height:</p><ul><li>1\" and 2\", you’ll need the <strong>SnoClip 2.0 II</strong>.</li><li>2\" and 3-1/4\", you’ll need the <strong>SnoClip 2.0 III</strong>.</li></ul><p>SnoClips are sized to match the vertical dimension of your roof’s seam, so they fit snugly and do their job of controlling snow and ice movement under the ColorGard 2.0 bar.</p>",
             "page": ""
           }
+        },
+        "collapsible_row_E9eyeN": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Is ColorGard 1.0 compatible with ColorGard 2.0?",
+            "icon": "check_mark",
+            "row_content": "<p>Not directly. ColorGard 1.0 and 2.0 have different bar profiles and components, so they aren’t designed to be mixed together on the same section of roof. The parts don’t physically connect, and things like splice connectors, SnoClips, and end caps are not interchangeable.</p><p>However, if you have a new section of roof that needs snow retention, you <em>can</em> use ColorGard 2.0 on that section, while leaving your existing ColorGard 1.0 system in place elsewhere. Both systems will function properly as long as each section is installed as a complete system.</p>",
+            "page": ""
+          }
         }
       },
       "block_order": [
@@ -321,7 +330,8 @@
         "collapsible_row_ckxnPL",
         "collapsible_row_yeiJUw",
         "collapsible_row_jxzWPR",
-        "collapsible_row_NDG8AL"
+        "collapsible_row_NDG8AL",
+        "collapsible_row_E9eyeN"
       ],
       "settings": {
         "caption": "",
