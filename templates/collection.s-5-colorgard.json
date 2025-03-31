@@ -166,7 +166,8 @@
       ],
       "custom_css": [
         ".multicolumn-card a {line-height: 2; background-color: black; padding: 10px; color: white; text-decoration: none;}",
-        "li#Slide-template--18380191006898__multicolumn_NbLt7K-2 p{padding:10px;}"
+        "li#Slide-template--18380191006898__multicolumn_NbLt7K-2 p {padding: 10px;}",
+        "h3.inline-richtext {font-size: 23px; font-weight: bold;}"
       ],
       "settings": {
         "title": "",
