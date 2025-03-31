@@ -27,7 +27,7 @@
       "type": "image-banner",
       "custom_css": [],
       "settings": {
-        "image": "shopify://shop_images/ColorGard2.0.png",
+        "image": "shopify://shop_images/DualGard.png",
         "image_overlay_opacity": 0,
         "image_height": "adapt",
         "desktop_content_position": "middle-center",
@@ -46,7 +46,7 @@
         "heading_bdbMjy": {
           "type": "heading",
           "settings": {
-            "heading": "S-5! ColorGard 2.0 Snow System for Metal Roofs",
+            "heading": "S-5! DualGard 2.0 Snow System for Metal Roofs",
             "heading_size": "h1"
           }
         },
@@ -63,19 +63,19 @@
         "text_Vpcx7b"
       ],
       "settings": {
-        "image": "shopify://shop_images/670F997D-F7CC-4CCE-8978-338102C1D209-e1739309461776.png",
+        "image": "shopify://shop_images/DualGard-1.jpg",
         "height": "adapt",
         "desktop_image_width": "small",
         "layout": "image_first",
         "image_behavior": "none",
         "content_layout": "no-overlap",
-        "desktop_content_position": "top",
+        "desktop_content_position": "middle",
         "desktop_content_alignment": "left",
         "mobile_content_alignment": "left",
         "section_color_scheme": "",
         "color_scheme": "",
         "element-width": 100,
-        "padding_top": 0,
+        "padding_top": 40,
         "padding_bottom": 0,
         "side-padding": "no-padding"
       }
@@ -145,7 +145,7 @@
           "type": "column",
           "settings": {
             "title": "Need help figuring what you need?",
-            "text": "<p>Not sure which ColorGard® 2.0 setup or SnoClips are right for your roof? We've got you covered.</p>",
+            "text": "<p>Not sure which configuration of DualGard you need for your roof? We've got you covered.</p>",
             "link_label": "",
             "link": ""
           }
@@ -166,7 +166,7 @@
       ],
       "custom_css": [
         ".multicolumn-card a {line-height: 2; background-color: black; padding: 10px; color: white; text-decoration: none;}",
-        "li#Slide-template--18380191006898__multicolumn_NbLt7K-2 p {padding: 10px;}",
+        "li#Slide-template--18397934289074__multicolumn_NbLt7K-2 p {padding: 10px;}",
         "h3.inline-richtext {font-size: 23px; font-weight: bold;}"
       ],
       "settings": {
@@ -192,7 +192,7 @@
         "heading_Nm6NDK": {
           "type": "heading",
           "settings": {
-            "heading": "Order ColorGard 2.0",
+            "heading": "Order DualGard",
             "heading_size": "h1",
             "heading_tag": "h2"
           }
@@ -220,7 +220,7 @@
     "custom_liquid_awMT8b": {
       "type": "custom-liquid",
       "settings": {
-        "custom_liquid": "<div data-instabuy data-widget-id=\"9afaf0aa-5d4d-42ae-a228-6d758d279ffc\"></div>",
+        "custom_liquid": "<div data-instabuy data-widget-id=\"0d7ee2c3-55cf-4935-823f-bf1eddf12181\"></div>",
         "color_scheme": "scheme-2",
         "padding_top": 0,
         "padding_bottom": 8,
@@ -333,6 +333,7 @@
         "collapsible_row_NDG8AL",
         "collapsible_row_E9eyeN"
       ],
+      "disabled": true,
       "settings": {
         "caption": "",
         "heading": "ColorGard 2.0 FAQ",
