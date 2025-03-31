@@ -88,8 +88,8 @@
           "settings": {
             "title": "<strong> Faster, Easier Installation</strong>",
             "text": "<ul><li>No pre-assembly needed — lay-and-play design saves time on the roof</li><li>VersaClip™ installs directly over internal splices, eliminating in-field cutting at splice points</li><li>Ideal for both new metal roof installs and retrofit applications</li></ul>",
-            "link_label": "",
-            "link": ""
+            "link_label": "View Instructions",
+            "link": "https://cdn.shopify.com/s/files/1/0645/2540/2290/files/ColorGard-2-0-Installation-Instructions_RapidMaterials.pdf?v=1743440011"
           }
         },
         "column_pBKarN": {
@@ -208,6 +208,87 @@
         "padding_top": 20,
         "padding_bottom": 36
       }
+    },
+    "collapsible_content_Xec8tV": {
+      "type": "collapsible-content",
+      "blocks": {
+        "collapsible_row_XqLp8E": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Can I just put snow guards over doors and call it good?",
+            "icon": "check_mark",
+            "row_content": "<p>Not really — and here's why. Snow doesn't break off neatly just because you block a small section. It will shear diagonally, often leaving you with a giant wedge of snow sitting above your doorway instead of a safe little patch. This wedge can overload the system, shift unexpectedly, and still cause damage. Snow retention should usually run the full eave line, not just the areas over doors or walkways.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_mXiRpB": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Why is it important to keep snow on the roof instead of letting it slide off?",
+            "icon": "check_mark",
+            "row_content": "<p>Letting snow dump off all at once can cause serious problems. We're talking about thousands of pounds sliding down suddenly — wrecking gutters, damaging vehicles, tearing up landscaping, or even hurting people below. Snow tends to stick to metal roofs until just enough melting happens to make it slippery. When it finally lets go, it often releases in a dangerous avalanche. Snow retention systems like ColorGard 2.0 let the snow melt gradually and safely, preventing sudden dumps and all the trouble they bring.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_ckxnPL": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What makes ColorGard 2.0 better than other color-matched snow guards?",
+            "icon": "check_mark",
+            "row_content": "<p>The key is long-term color matching. Sure, anyone can match a roof color when the roof is brand new — that part is easy. The real test is how it looks 5, 10, or even 20 years down the line. ColorGard 2.0 uses the <em>exact same</em> material as your roof to achieve a permanent match. Other systems use paints or coatings that age differently than the roof, leading to noticeable mismatches over time. ColorGard stays consistent because it ages right along with the roof.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_yeiJUw": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Why is ColorGard 2.0 less noticeable than clear plastic snow guards?",
+            "icon": "check_mark",
+            "row_content": "<p>Plastic might seem \"invisible\" at first, but they don’t stay that way. UV rays from the sun break down plastic over time, causing yellowing, cloudiness, and brittleness. Eventually, they stand out in a bad way. ColorGard 2.0, on the other hand, is designed to <em>blend in</em> with the roof from day one and still look great decades later. Plus, it has clean, architectural lines that complement the roof instead of distracting from it. Not to </p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_jxzWPR": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Do I need more ColorGard than plastic snow guards?",
+            "icon": "check_mark",
+            "row_content": "<p>Nope — actually, you need less. Many plastic snow guard systems require a <em>lot</em> of parts to reach the strength you get from just one row of ColorGard 2.0. Plastic parts can’t handle the same loads, so they need to be installed in dense patterns. ColorGard’s tested strength means you use fewer components while still getting superior snow retention.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_NDG8AL": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Which SnoClip® 2.0 is right for me?",
+            "icon": "check_mark",
+            "row_content": "<p>It all comes down to your seam height:</p><ul><li>1\" and 2\", you’ll need the <strong>SnoClip 2.0 II</strong>.</li><li>2\" and 3-1/4\", you’ll need the <strong>SnoClip 2.0 III</strong>.</li></ul><p>SnoClips are sized to match the vertical dimension of your roof’s seam, so they fit snugly and do their job of controlling snow and ice movement under the ColorGard 2.0 bar.</p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_row_XqLp8E",
+        "collapsible_row_mXiRpB",
+        "collapsible_row_ckxnPL",
+        "collapsible_row_yeiJUw",
+        "collapsible_row_jxzWPR",
+        "collapsible_row_NDG8AL"
+      ],
+      "settings": {
+        "caption": "",
+        "heading": "ColorGard 2.0 FAQ",
+        "heading_size": "h1",
+        "heading_alignment": "center",
+        "layout": "none",
+        "container_color_scheme": "",
+        "color_scheme": "",
+        "open_first_collapsible_row": false,
+        "image_ratio": "adapt",
+        "desktop_layout": "image_second",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
@@ -217,6 +298,7 @@
     "multicolumn_ARiLGw",
     "rich_text_EeCJeG",
     "custom_liquid_awMT8b",
-    "product-grid"
+    "product-grid",
+    "collapsible_content_Xec8tV"
   ]
 }
