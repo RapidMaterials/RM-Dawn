@@ -167,7 +167,7 @@
       ],
       "custom_css": [
         ".multicolumn-card a {line-height: 2; background-color: black; padding: 10px; color: white; text-decoration: none;}",
-        "li#Slide-template--18402617491634__multicolumn_NbLt7K-2 p {padding: 10px;}",
+        "li#Slide-template--18402734899378__multicolumn_NbLt7K-2 p {padding: 10px;}",
         "h3.inline-richtext {font-size: 23px; font-weight: bold;}"
       ],
       "settings": {
@@ -193,7 +193,7 @@
         "heading_Nm6NDK": {
           "type": "heading",
           "settings": {
-            "heading": "Order X-Gard 2.0",
+            "heading": "Order X-Gard 1.0",
             "heading_size": "h1",
             "heading_tag": "h2"
           }
