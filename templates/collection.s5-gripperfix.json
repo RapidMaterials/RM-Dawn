@@ -11,6 +11,7 @@
   "sections": {
     "banner": {
       "type": "main-collection-banner",
+      "disabled": true,
       "custom_css": [
         "p {text-align: Center; font-size: 0.8em; line-height: 1em;}"
       ],
@@ -29,6 +30,127 @@
         "full_width": true,
         "padding_top": 0,
         "padding_bottom": 0
+      }
+    },
+    "rich_text_wCgYjP": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_CQgVgi": {
+          "type": "heading",
+          "settings": {
+            "heading": "{{ collection.title }}",
+            "heading_size": "h1",
+            "heading_tag": "h1"
+          }
+        },
+        "text_VDhraz": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Maintain roof warranties, avoid destructive corrosion and build a system to last the life of the roof, with the S-5!® GRIPPERFIX System.</p><p>Stop mounting rooftop ancillary items using concrete blocks for ballast. GRIPPERFIX ensures a secure and dependable attachment solution – with no penetration of standing seam roof required. Our system is quick and simple to install and helps preserve the integrity of your metal roof.</p><p>S-5!’s universal GRIPPERFIX System makes mounting almost anything on standing seam and exposed fastener roof profiles a cinch!</p>"
+          }
+        },
+        "button_MEW8yt": {
+          "type": "button",
+          "settings": {
+            "button_label": "",
+            "button_link": "",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_CQgVgi",
+        "text_VDhraz",
+        "button_MEW8yt"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "left",
+        "color_scheme": "scheme-2",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "multicolumn_dgDVC7": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_pTfcW3": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/gripperfix-conduit-1.webp",
+            "title": "Conduits",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_b6GD7t": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/gripperfix-dish-attachment.webp",
+            "title": "Satellite Dishes",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_P33cVe": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/gripperfix-hvac-ssr-1.webp",
+            "title": "HVAC Units",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_dyUHBK": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/gripperfix-micro-inverter-e1561067327552.webp",
+            "title": "Micro Inverters",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_6TGJXb": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/GripperFix-Junction-Box-Exposed-Fastened-2.webp",
+            "title": "Junction Boxes",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_pTfcW3",
+        "column_b6GD7t",
+        "column_P33cVe",
+        "column_dyUHBK",
+        "column_6TGJXb"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "circle",
+        "button_label": "",
+        "button_link": "",
+        "columns_desktop": 5,
+        "column_alignment": "center",
+        "background_style": "none",
+        "color_scheme": "",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     },
     "product-grid": {
@@ -126,6 +248,8 @@
   "order": [
     "banner",
     "rich_text_LybBb9",
+    "rich_text_wCgYjP",
+    "multicolumn_dgDVC7",
     "product-grid",
     "collapsible_content_rxqiPH"
   ]
