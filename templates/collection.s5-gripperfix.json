@@ -1,0 +1,132 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "banner": {
+      "type": "main-collection-banner",
+      "custom_css": [
+        "p {text-align: Center; font-size: 0.8em; line-height: 1em;}"
+      ],
+      "settings": {
+        "show_collection_description": true,
+        "show_collection_image": false,
+        "color_scheme": "scheme-1"
+      }
+    },
+    "rich_text_LybBb9": {
+      "type": "rich-text",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "custom_css": [
+        "@media screen and (min-width: 750px) {.card__information {padding: 0; }}",
+        "h2#verticalTitle {display: none;}",
+        "div#FacetsWrapperDesktop {padding-top: 2rem;}",
+        "details#Details-filter\\.p\\.m\\.custom\\.roof_profiles-template--18176096895154__product-grid .facets-layout-grid {grid-template-columns: repeat(2, 1fr); padding: 2rem 2.4rem;}",
+        "details#Details-filter\\.p\\.m\\.custom\\.roof_profiles-template--18176096895154__product-grid .visual-display--presentation-swatch {--visual-display__size: min(8rem, 100%);}"
+      ],
+      "settings": {
+        "products_per_page": 36,
+        "columns_desktop": 4,
+        "columns_mobile": "2",
+        "color_scheme": "scheme-1",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "enable_filtering": true,
+        "filter_type": "vertical",
+        "button_label": "Find Your Clamp",
+        "button_link": "https://rapidmaterials.com/pages/find-your-clamp-by-manufacturer",
+        "button_target": "_self",
+        "enable_sorting": true,
+        "padding_top": 20,
+        "padding_bottom": 36
+      }
+    },
+    "collapsible_content_rxqiPH": {
+      "type": "collapsible-content",
+      "blocks": {
+        "collapsible_row_jYBDdV": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "{{ collection.metafields.custom.collapsible_row_1_header.value }}",
+            "icon": "check_mark",
+            "row_content": "{{ collection.metafields.custom.collapsible_row_1_description | metafield_tag }}",
+            "page": ""
+          }
+        },
+        "collapsible_row_cp8KU4": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "{{ collection.metafields.custom.collapsible_row_2_header.value }}",
+            "icon": "check_mark",
+            "row_content": "{{ collection.metafields.custom.collapsible_row_2_description | metafield_tag }}",
+            "page": ""
+          }
+        },
+        "collapsible_row_JrUEFg": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "{{ collection.metafields.custom.collapsible_row_3_header.value }}",
+            "icon": "check_mark",
+            "row_content": "{{ collection.metafields.custom.collapsible_row_3_description | metafield_tag }}",
+            "page": ""
+          }
+        },
+        "collapsible_row_3zzh6C": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "{{ collection.metafields.custom.collapsible_row_4_header.value }}",
+            "icon": "check_mark",
+            "row_content": "{{ collection.metafields.custom.collapsible_row_4_description | metafield_tag }}",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_row_jYBDdV",
+        "collapsible_row_cp8KU4",
+        "collapsible_row_JrUEFg",
+        "collapsible_row_3zzh6C"
+      ],
+      "settings": {
+        "caption": "",
+        "heading": "More About {{ collection.title }}",
+        "heading_size": "h1",
+        "heading_alignment": "center",
+        "layout": "none",
+        "container_color_scheme": "",
+        "color_scheme": "scheme-2",
+        "open_first_collapsible_row": false,
+        "image_ratio": "adapt",
+        "desktop_layout": "image_second",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "banner",
+    "rich_text_LybBb9",
+    "product-grid",
+    "collapsible_content_rxqiPH"
+  ]
+}
