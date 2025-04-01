@@ -24,6 +24,7 @@
           "type": "heading",
           "settings": {
             "heading": "Metal Roof Snow Guards & Retention Systems",
+            "heading_tag": "h2",
             "heading_size": "h1"
           }
         },
@@ -118,6 +119,7 @@
           "type": "heading",
           "settings": {
             "heading": "S-5! ColorGard®",
+            "heading_tag": "h2",
             "heading_size": "h1"
           }
         },
@@ -181,7 +183,7 @@
             "title": "S-5! X-Gard™ 2.0",
             "text": "<p>X-Gard™ 2.0 uses a two-pipe design for maximum strength and wider spans. A solid choice for heavy snow loads and long roof runs.</p><p></p>",
             "link_label": "Shop",
-            "link": "shopify://collections/s-5-x-gard"
+            "link": "shopify://collections/s-5-x-gard-2-0-snow-retention-system"
           }
         }
       },
