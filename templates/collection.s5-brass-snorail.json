@@ -29,7 +29,7 @@
         "heading_bdbMjy": {
           "type": "heading",
           "settings": {
-            "heading": "S-5! X-Gard 2.0 Snow System for Metal Roofs",
+            "heading": "S-5! SnoRail and SnoFence for Copper Metal Roofs",
             "heading_tag": "h1",
             "heading_size": "h1"
           }
@@ -37,7 +37,7 @@
         "text_Vpcx7b": {
           "type": "text",
           "settings": {
-            "text": "<p>The X-Gard™ 2.0 snow retention system is the strongest two-pipe solution on the market, built to handle even the heaviest snow loads. Designed for standing seam metal roofs, it delivers unmatched holding strength without compromising roof integrity. Whether you’re working on new construction or retrofitting an existing roof, X-Gard 2.0 provides a reliable, engineered solution to keep snow safely in place—and people, property, and landscapes protected below.</p>",
+            "text": "<p>SnoRail™ and SnoFence™ offer a timeless, architecturally refined snow retention system specifically designed for copper standing seam and batten seam roofs. Crafted from brass components and mechanically attached without soldering, these systems preserve both the performance and aesthetics of traditional copper roofing. Whether for historic renovations or new copper roofing projects, SnoRail™ and SnoFence™ provide lasting protection against dangerous rooftop avalanches — all while maintaining the clean lines and beauty of the roof.</p>",
             "text_style": "body"
           }
         }
@@ -68,7 +68,7 @@
       "type": "image-banner",
       "custom_css": [],
       "settings": {
-        "image": "shopify://shop_images/X-Gard2.png",
+        "image": "shopify://shop_images/SnoRail_Brass.png",
         "image_overlay_opacity": 0,
         "image_height": "adapt",
         "desktop_content_position": "middle-center",
@@ -84,20 +84,20 @@
     "multicolumn_ARiLGw": {
       "type": "multicolumn",
       "blocks": {
-        "column_KntxHR": {
+        "column_xtaRVq": {
           "type": "column",
           "settings": {
-            "title": "<strong>Strong & Stable</strong>",
-            "text": "<ul><li>Proprietary NEX® 2” octagonal pipe provides superior beam strength and prevents pipe rotation</li><li>Double-clamp design delivers unprecedented holding strength for standing seam metal roofs</li><li>Spans up to 4' between brackets and cantilevers up to 20\" past the last clamp</li></ul>",
+            "title": "<strong>Designed for Copper Roofs</strong>",
+            "text": "<ul><li>Brass components ensure metallurgical compatibility with copper roofs</li><li>Compatible with copper batten seam and standing seam profiles</li><li>Mechanically attached without soldering or adhesives to preserve roof integrity</li></ul>",
             "link_label": "",
-            "link": "https://cdn.shopify.com/s/files/1/0645/2540/2290/files/ColorGard-2-0-Installation-Instructions_RapidMaterials.pdf?v=1743440011"
+            "link": ""
           }
         },
         "column_pBKarN": {
           "type": "column",
           "settings": {
-            "title": "<strong>Versatile & Compatible</strong>",
-            "text": "<ul><li>Non-penetrating design preserves roof warranties</li><li>Ideal for use on insulated metal panel (IMP) roofs with 36\"–48\" seam spacing</li><li>Compatible with standard S-5! clamps and X-Clip for added snow migration control</li><li>Can be used as a one- or two-pipe system depending on project needs</li></ul>",
+            "title": "<strong>Flexible System Options</strong>",
+            "text": "<ul><li>SnoRail™ uses a single brass SnoRod™ positioned just above the seam for minimalist snow control</li><li>SnoFence™ adds a second brass SnoRod™ via the SnoPost™ for enhanced snow retention</li><li>Both systems blend seamlessly with the traditional look of copper roofing</li></ul>",
             "link_label": "",
             "link": ""
           }
@@ -105,15 +105,15 @@
         "column_BTHpfb": {
           "type": "column",
           "settings": {
-            "title": "<strong>Durable & Easy</strong>",
-            "text": "<ul><li>Easily retrofitted to existing roofs or integrated into new construction</li><li>Precision-machined, aircraft-grade aluminum components with stainless steel hardware</li><li>7' 8\" nominal pipe length simplifies shipping, handling, and installation</li><li>Can be painted, powder-coated, or anodized for aesthetic flexibility</li></ul>",
+            "title": "<strong>Durable & Dependable</strong>",
+            "text": "<ul><li>Engineered for long-term performance — lasts as long as the copper roof itself</li><li>Non-penetrating attachment using patented S-5!® round-point setscrews</li><li>Superior holding strength without compromising roof warranties or weather-tightness</li></ul>",
             "link_label": "",
             "link": ""
           }
         }
       },
       "block_order": [
-        "column_KntxHR",
+        "column_xtaRVq",
         "column_pBKarN",
         "column_BTHpfb"
       ],
