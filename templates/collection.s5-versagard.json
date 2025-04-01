@@ -27,7 +27,7 @@
       "type": "image-banner",
       "custom_css": [],
       "settings": {
-        "image": "shopify://shop_images/DualGard.png",
+        "image": "shopify://shop_images/VersaGard.png",
         "image_overlay_opacity": 0,
         "image_height": "adapt",
         "desktop_content_position": "middle-center",
@@ -46,14 +46,14 @@
         "heading_bdbMjy": {
           "type": "heading",
           "settings": {
-            "heading": "S-5! DualGard Snow System for Metal Roofs",
+            "heading": "S-5! VersaGard Snow System for Metal Roofs",
             "heading_size": "h1"
           }
         },
         "text_Vpcx7b": {
           "type": "text",
           "settings": {
-            "text": "<p>DualGard™ is a tough, two-pipe snow guard system made for standing seam and corrugated metal roofs. It helps control snow loads, protecting people, property, and roof edges from dangerous snow slides.</p><p>DualGard fits most metal panel profiles and can be engineered for site-specific conditions using the free S-5! Snow Guard Calculator. It’s a smart, affordable choice for both residential and commercial roofs.</p>",
+            "text": "<p>VersaGard snow retention systems are a versatile and economical two-pipe snow retention system designed to be attached to exposed-fastened or face-fastened metal roofs. VersaGard features a unique  “well” built into its base with a factory applied self adhesive butyl sealant for leak-free attachment that will not crack or split. Upon removal of the protective seal, the bracket is also fastened with gasketed fasteners for a lifetime of worry-free performance. Simple installation makes this a popular choice. </p>",
             "text_style": "body"
           }
         }
@@ -63,8 +63,8 @@
         "text_Vpcx7b"
       ],
       "settings": {
-        "image": "shopify://shop_images/DualGard-1.jpg",
-        "height": "small",
+        "image": "shopify://shop_images/VersaBracketwithcolorgard.jpg",
+        "height": "medium",
         "desktop_image_width": "small",
         "layout": "image_first",
         "image_behavior": "none",
@@ -75,7 +75,7 @@
         "section_color_scheme": "",
         "color_scheme": "",
         "element-width": 100,
-        "padding_top": 40,
+        "padding_top": 0,
         "padding_bottom": 0,
         "side-padding": "no-padding"
       }
@@ -88,7 +88,7 @@
           "settings": {
             "title": "<strong>Strong & Stable</strong>",
             "text": "<ul><li>Two-pipe system with 1” diameter aluminum crossmembers</li><li>Dual anchoring points per bracket reduce the moment arm for superior holding strength</li><li>Bracket design adds lateral stability to the entire system</li></ul>",
-            "link_label": "View Instructions",
+            "link_label": "",
             "link": "https://cdn.shopify.com/s/files/1/0645/2540/2290/files/ColorGard-2-0-Installation-Instructions_RapidMaterials.pdf?v=1743440011"
           }
         },
@@ -192,7 +192,7 @@
         "heading_Nm6NDK": {
           "type": "heading",
           "settings": {
-            "heading": "Order DualGard",
+            "heading": "Order VersaGard",
             "heading_size": "h1",
             "heading_tag": "h2"
           }
