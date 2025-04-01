@@ -60,11 +60,73 @@
         "padding_top": 20,
         "padding_bottom": 36
       }
+    },
+    "collapsible_content_rxqiPH": {
+      "type": "collapsible-content",
+      "blocks": {
+        "collapsible_row_jYBDdV": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "{{ collection.metafields.custom.collapsible_row_1_header.value }}",
+            "icon": "check_mark",
+            "row_content": "{{ collection.metafields.custom.collapsible_row_1_description | metafield_tag }}",
+            "page": ""
+          }
+        },
+        "collapsible_row_cp8KU4": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "{{ collection.metafields.custom.collapsible_row_2_header.value }}",
+            "icon": "check_mark",
+            "row_content": "{{ collection.metafields.custom.collapsible_row_2_description | metafield_tag }}",
+            "page": ""
+          }
+        },
+        "collapsible_row_JrUEFg": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "{{ collection.metafields.custom.collapsible_row_3_header.value }}",
+            "icon": "check_mark",
+            "row_content": "{{ collection.metafields.custom.collapsible_row_3_description | metafield_tag }}",
+            "page": ""
+          }
+        },
+        "collapsible_row_3zzh6C": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "{{ collection.metafields.custom.collapsible_row_4_header.value }}",
+            "icon": "check_mark",
+            "row_content": "{{ collection.metafields.custom.collapsible_row_4_description | metafield_tag }}",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_row_jYBDdV",
+        "collapsible_row_cp8KU4",
+        "collapsible_row_JrUEFg",
+        "collapsible_row_3zzh6C"
+      ],
+      "settings": {
+        "caption": "",
+        "heading": "More About {{ collection.title }}",
+        "heading_size": "h1",
+        "heading_alignment": "center",
+        "layout": "none",
+        "container_color_scheme": "",
+        "color_scheme": "",
+        "open_first_collapsible_row": false,
+        "image_ratio": "adapt",
+        "desktop_layout": "image_second",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
     "banner",
     "rich_text_LybBb9",
-    "product-grid"
+    "product-grid",
+    "collapsible_content_rxqiPH"
   ]
 }
