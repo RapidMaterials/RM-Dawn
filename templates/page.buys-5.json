@@ -52,6 +52,10 @@
         "text_fx4cxE",
         "buttons_9HrRJQ"
       ],
+      "custom_css": [
+        "h1,.banner__text.rte.body {color: #fff;}",
+        ".banner__buttons {font-weight: bold;}"
+      ],
       "settings": {
         "image": "shopify://shop_images/banner.webp",
         "image_overlay_opacity": 40,
@@ -65,10 +69,257 @@
         "stack_images_on_mobile": false,
         "show_text_below": false
       }
+    },
+    "image_with_text_d9wf86": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_GaC3Ma": {
+          "type": "heading",
+          "settings": {
+            "heading": "Snow Retention",
+            "heading_size": "h1"
+          }
+        },
+        "text_7UUKgd": {
+          "type": "text",
+          "settings": {
+            "text": "<p>All of S-5!’s snow retention systems dramatically reduce risks associated with rooftop avalanches while maintaining the clean lines of the roof.</p>",
+            "text_style": "body"
+          }
+        },
+        "button_AaVbF6": {
+          "type": "button",
+          "settings": {
+            "button_label": "Shop Snow Retention",
+            "button_link": "shopify://pages/metal-roof-snow-guards-retention-systems",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_GaC3Ma",
+        "text_7UUKgd",
+        "button_AaVbF6"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/X-Gard20Snowguard.jpg",
+        "height": "medium",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "image_behavior": "none",
+        "content_layout": "no-overlap",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "section_color_scheme": "scheme-7a5e53d3-2546-4764-9bf3-9990c01f5156",
+        "color_scheme": "scheme-7a5e53d3-2546-4764-9bf3-9990c01f5156",
+        "element-width": 100,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "side-padding": "no-padding"
+      }
+    },
+    "image_with_text_UYLBw6": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_pit7cX": {
+          "type": "heading",
+          "settings": {
+            "heading": "Metal Roofing Attachments",
+            "heading_size": "h1"
+          }
+        },
+        "text_tqCdxB": {
+          "type": "text",
+          "settings": {
+            "text": "<p>S-5! stays on top of the trends in the metal industry to provide the right products to fit virtually any metal roof profile. S-5! have developed clamps and brackets to support solar and utility installations, along with a top-of-the-line snow retention system to support and protect your metal roof investment.</p>",
+            "text_style": "body"
+          }
+        },
+        "button_Abnt4x": {
+          "type": "button",
+          "settings": {
+            "button_label": "",
+            "button_link": "",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_pit7cX",
+        "text_tqCdxB",
+        "button_Abnt4x"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/xgard-double-nex-high_07fdfcdd-46b9-4fad-8a92-c9380d33001f.webp",
+        "height": "medium",
+        "desktop_image_width": "medium",
+        "layout": "text_first",
+        "image_behavior": "none",
+        "content_layout": "no-overlap",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "section_color_scheme": "scheme-7a5e53d3-2546-4764-9bf3-9990c01f5156",
+        "color_scheme": "scheme-7a5e53d3-2546-4764-9bf3-9990c01f5156",
+        "element-width": 100,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "side-padding": "no-padding"
+      }
+    },
+    "image_with_text_LpqBfU": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_XinBie": {
+          "type": "heading",
+          "settings": {
+            "heading": "Culture of Innovation",
+            "heading_size": "h1"
+          }
+        },
+        "text_VFfgzF": {
+          "type": "text",
+          "settings": {
+            "text": "<p>S-5! supports continued research, development, and testing of their offerings to ensure quality end-products for metal roofs. Always manufactured in the U.S.A., S-5! oversee every aspect of production for unequaled quality assurance at the best price.</p>",
+            "text_style": "body"
+          }
+        },
+        "button_qWiFnf": {
+          "type": "button",
+          "settings": {
+            "button_label": "",
+            "button_link": "",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_XinBie",
+        "text_VFfgzF",
+        "button_qWiFnf"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/ribbracket-1-high-2.webp",
+        "height": "medium",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "image_behavior": "none",
+        "content_layout": "no-overlap",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "section_color_scheme": "scheme-7a5e53d3-2546-4764-9bf3-9990c01f5156",
+        "color_scheme": "scheme-7a5e53d3-2546-4764-9bf3-9990c01f5156",
+        "element-width": 100,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "side-padding": "no-padding"
+      }
+    },
+    "featured_collection_mKh3Cr": {
+      "type": "featured-collection",
+      "settings": {
+        "collection": "s-5-clamps",
+        "products_to_show": 4,
+        "title": "POPULAR CLAMPS & BRACKETS",
+        "heading_size": "h1",
+        "description": "<p>S-5! clamps attach to the panel seam by tightening the “bullet-nosed” stainless steel setscrews against the seam material.</p>",
+        "show_description": false,
+        "description_style": "body",
+        "columns_desktop": 4,
+        "enable_desktop_slider": false,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "color_scheme": "",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "multicolumn_epwbkH": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_h7AwyD": {
+          "type": "column",
+          "settings": {
+            "title": "",
+            "text": "<h3><strong>25</strong> <br/>Years of Experience</h3>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_q9wdfn": {
+          "type": "column",
+          "settings": {
+            "title": "",
+            "text": "<h3><strong>85</strong><br/>Products Available</h3>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_NUTjbQ": {
+          "type": "column",
+          "settings": {
+            "title": "",
+            "text": "<h3><strong>50</strong><br/>States Serviced</h3>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_AQgz74": {
+          "type": "column",
+          "settings": {
+            "title": "",
+            "text": "<h3><strong>2+</strong><br/>Million Projects</h3>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_h7AwyD",
+        "column_q9wdfn",
+        "column_NUTjbQ",
+        "column_AQgz74"
+      ],
+      "custom_css": [
+        ".multicolumn-card__info {padding: 10px;}",
+        "h3 {font-size: 1.25em;}"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "hxl",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "button_label": "",
+        "button_link": "",
+        "columns_desktop": 4,
+        "column_alignment": "center",
+        "background_style": "primary",
+        "color_scheme": "scheme-4193c3da-e497-4afa-91b7-12fbd16d7fb2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
     "main",
-    "image_banner_gpMf3q"
+    "image_banner_gpMf3q",
+    "image_with_text_d9wf86",
+    "image_with_text_UYLBw6",
+    "image_with_text_LpqBfU",
+    "featured_collection_mKh3Cr",
+    "multicolumn_epwbkH"
   ]
 }
