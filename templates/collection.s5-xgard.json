@@ -29,7 +29,7 @@
         "heading_bdbMjy": {
           "type": "heading",
           "settings": {
-            "heading": "S-5! VersaGard Snow System for Metal Roofs",
+            "heading": "S-5! X-Gard 2.0 Snow System for Metal Roofs",
             "heading_tag": "h1",
             "heading_size": "h1"
           }
@@ -47,7 +47,7 @@
         "text_Vpcx7b"
       ],
       "settings": {
-        "image": "shopify://shop_images/VersaBracketwithcolorgard.jpg",
+        "image": "shopify://shop_images/X-Gard20Snowguard.jpg",
         "height": "medium",
         "desktop_image_width": "small",
         "layout": "image_first",
@@ -68,7 +68,7 @@
       "type": "image-banner",
       "custom_css": [],
       "settings": {
-        "image": "shopify://shop_images/VersaGard.png",
+        "image": "shopify://shop_images/X-Gard2.png",
         "image_overlay_opacity": 0,
         "image_height": "adapt",
         "desktop_content_position": "middle-center",
