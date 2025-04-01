@@ -24,6 +24,7 @@
           "type": "heading",
           "settings": {
             "heading": "<strong>WE SELL EVERYTHING S-5!</strong>",
+            "heading_tag": "h1",
             "heading_size": "h0"
           }
         },
