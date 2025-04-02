@@ -76,7 +76,7 @@
           "type": "column",
           "settings": {
             "title": "Call Us",
-            "text": "<p>(770) 405 - 1060<br/><em><strong>(Closed March 10-13)</strong></em></p>",
+            "text": "<p>(770) 405 - 1060</p>",
             "link_label": "",
             "link": ""
           }
