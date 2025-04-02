@@ -29,7 +29,7 @@
         "heading_bdbMjy": {
           "type": "heading",
           "settings": {
-            "heading": "S-5! ColorGard 2.0 Snow System for Metal Roofs",
+            "heading": "S-5! PVKIT® 2.0 Rail-less Solar Mounting System",
             "heading_tag": "h2",
             "heading_size": "h1"
           }
@@ -37,7 +37,7 @@
         "text_Vpcx7b": {
           "type": "text",
           "settings": {
-            "text": "<p>ColorGard® 2.0 improves on the original with faster installation, no pre-assembly required, and simplified field adjustments — all while maintaining the same trusted strength and color-match finish. It’s a true lay-and-play upgrade built for both new construction and retrofit projects.</p>",
+            "text": "<p>Mount solar modules faster, cheaper, and smarter with the S-5!® PVKIT® — the original rail-less solar mounting solution for metal roofs. By using the roof's existing seams or ribs as the mounting structure, PVKIT eliminates the need for bulky rails, cutting your material costs, installation time, and project headaches. Whether you're working on standing seam or exposed-fastened metal roofs, PVKIT delivers a streamlined, lightweight system that’s engineered for speed, strength, and simplicity.</p>",
             "text_style": "body"
           }
         }
@@ -47,7 +47,7 @@
         "text_Vpcx7b"
       ],
       "settings": {
-        "image": "shopify://shop_images/670F997D-F7CC-4CCE-8978-338102C1D209-e1739309461776.png",
+        "image": "shopify://shop_images/MILL-PV-KIT-2.0-EDGEGRAB-ASSEMBLY.jpg",
         "height": "adapt",
         "desktop_image_width": "small",
         "layout": "image_first",
@@ -68,7 +68,7 @@
       "type": "image-banner",
       "custom_css": [],
       "settings": {
-        "image": "shopify://shop_images/ColorGard2.0.png",
+        "image": "shopify://shop_images/PVKIT.png",
         "image_overlay_opacity": 0,
         "image_height": "adapt",
         "desktop_content_position": "middle-center",
@@ -88,7 +88,7 @@
           "type": "column",
           "settings": {
             "title": "<strong> Faster, Easier Installation</strong>",
-            "text": "<ul><li>No pre-assembly needed — lay-and-play design saves time on the roof</li><li>VersaClip™ installs directly over internal splices, eliminating in-field cutting at splice points</li><li>Ideal for both new metal roof installs and retrofit applications</li></ul>",
+            "text": "<p>Pre-assembled components, automatic electrical bonding, and one-tool installation slash labor time by 30-50%. Installers can quickly locate modules without worrying about rail alignment, resulting in quicker, more flexible layouts.</p>",
             "link_label": "",
             "link": "https://cdn.shopify.com/s/files/1/0645/2540/2290/files/ColorGard-2-0-Installation-Instructions_RapidMaterials.pdf?v=1743440011"
           }
@@ -96,8 +96,8 @@
         "column_pBKarN": {
           "type": "column",
           "settings": {
-            "title": "<strong>Proven Strength</strong>",
-            "text": "<ul><li>Load-tested on 500+ metal roof profiles</li><li>Corrosion-resistant materials built to last the life of the roof</li><li>Site-specific engineering for exposed-fastened and standing seam systems</li></ul>",
+            "title": "<strong>Direct-Attach</strong>",
+            "text": "<p>PVKIT mounts solar modules directly to the roof's seams or ribs — no need for traditional rails. This cuts down on materials, reduces system weight by up to 85%, and simplifies logistics. Less to buy, less to carry, less to install.</p>",
             "link_label": "",
             "link": ""
           }
@@ -105,8 +105,8 @@
         "column_BTHpfb": {
           "type": "column",
           "settings": {
-            "title": "<strong>Seamless Aesthetics</strong>",
-            "text": "<ul><li>Maintains the clean look of your metal roof</li><li>Uses your roof material for an exact color and finish match.</li><li>Sleek design reduces visual impact while improving safety<br/></li></ul>",
+            "title": "<strong>Universal Compatibility</strong>",
+            "text": "<p>PVKIT works with nearly any metal roof. Pair it with any S-5! clamp (for standing seam) or bracket (for exposed-fastened panels). It accommodates module frames from 30-46mm and is available with an optional black architectural finish for a clean, professional look.</p>",
             "link_label": "",
             "link": ""
           }
@@ -139,61 +139,13 @@
         "padding_bottom": 36
       }
     },
-    "multicolumn_NbLt7K": {
-      "type": "multicolumn",
-      "blocks": {
-        "column_9bPxNG": {
-          "type": "column",
-          "settings": {
-            "title": "Need help figuring what you need?",
-            "text": "<p>Not sure which ColorGard® 2.0 setup or SnoClips are right for your roof? We've got you covered.</p>",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "column_e3K794": {
-          "type": "column",
-          "settings": {
-            "title": "",
-            "text": "<p><a href=\"https://www.s-5.com/snow-calculator/?step=snow_calculator&screen=existing_projects\" target=\"_blank\" title=\"https://www.s-5.com/snow-calculator/?step=snow_calculator&screen=existing_projects\">Use S-5!'s Snow Calculator</a></p><p><a href=\"/pages/contact\" title=\"Contact\">Contact Rapid Materials Support </a></p>",
-            "link_label": "",
-            "link": "https://www.s-5.com/snow-calculator/?step=snow_calculator&screen=existing_projects"
-          }
-        }
-      },
-      "block_order": [
-        "column_9bPxNG",
-        "column_e3K794"
-      ],
-      "custom_css": [
-        ".multicolumn-card a {line-height: 2; background-color: black; padding: 10px; color: white; text-decoration: none;}",
-        "li#Slide-template--18380191006898__multicolumn_NbLt7K-2 p {padding: 10px;}",
-        "h3.inline-richtext {font-size: 23px; font-weight: bold;}"
-      ],
-      "settings": {
-        "title": "",
-        "heading_size": "h1",
-        "image_width": "full",
-        "image_ratio": "adapt",
-        "button_label": "",
-        "button_link": "",
-        "columns_desktop": 2,
-        "column_alignment": "left",
-        "background_style": "primary",
-        "color_scheme": "scheme-4193c3da-e497-4afa-91b7-12fbd16d7fb2",
-        "columns_mobile": "1",
-        "swipe_on_mobile": false,
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
     "rich_text_EeCJeG": {
       "type": "rich-text",
       "blocks": {
         "heading_Nm6NDK": {
           "type": "heading",
           "settings": {
-            "heading": "Order ColorGard 2.0",
+            "heading": "Order S-5! PVKIT® 2.0 Solar",
             "heading_size": "h1",
             "heading_tag": "h2"
           }
@@ -258,69 +210,99 @@
         "padding_bottom": 36
       }
     },
+    "multicolumn_NbLt7K": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_9bPxNG": {
+          "type": "column",
+          "settings": {
+            "title": "Need help figuring what you need?",
+            "text": "<p>Not sure which ColorGard® 2.0 setup or SnoClips are right for your roof? We've got you covered.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_e3K794": {
+          "type": "column",
+          "settings": {
+            "title": "",
+            "text": "<p><a href=\"https://www.s-5.com/snow-calculator/?step=snow_calculator&screen=existing_projects\" target=\"_blank\" title=\"https://www.s-5.com/snow-calculator/?step=snow_calculator&screen=existing_projects\">Use S-5!'s Snow Calculator</a></p><p><a href=\"/pages/contact\" title=\"Contact\">Contact Rapid Materials Support </a></p>",
+            "link_label": "",
+            "link": "https://www.s-5.com/snow-calculator/?step=snow_calculator&screen=existing_projects"
+          }
+        }
+      },
+      "block_order": [
+        "column_9bPxNG",
+        "column_e3K794"
+      ],
+      "custom_css": [
+        ".multicolumn-card a {line-height: 2; background-color: black; padding: 10px; color: white; text-decoration: none;}",
+        "li#Slide-template--18380191006898__multicolumn_NbLt7K-2 p {padding: 10px;}",
+        "h3.inline-richtext {font-size: 23px; font-weight: bold;}"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "button_label": "",
+        "button_link": "",
+        "columns_desktop": 2,
+        "column_alignment": "left",
+        "background_style": "primary",
+        "color_scheme": "scheme-4193c3da-e497-4afa-91b7-12fbd16d7fb2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
     "collapsible_content_Xec8tV": {
       "type": "collapsible-content",
       "blocks": {
         "collapsible_row_XqLp8E": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Can I just put snow guards over doors and call it good?",
+            "heading": "What type of roofs can I use the PVKIT on?",
             "icon": "check_mark",
-            "row_content": "<p>Not really — and here's why. Snow doesn't break off neatly just because you block a small section. It will shear diagonally, often leaving you with a giant wedge of snow sitting above your doorway instead of a safe little patch. This wedge can overload the system, shift unexpectedly, and still cause damage. Snow retention should usually run the full eave line, not just the areas over doors or walkways.</p>",
+            "row_content": "<p>PVKIT works on most metal roofs — standing seam or exposed-fastened. Just pair it with the correct S-5! clamp or bracket for your specific roof profile.</p>",
             "page": ""
           }
         },
         "collapsible_row_mXiRpB": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Why is it important to keep snow on the roof instead of letting it slide off?",
+            "heading": "How much weight does the PVKIT system add to my roof?",
             "icon": "check_mark",
-            "row_content": "<p>Letting snow dump off all at once can cause serious problems. We're talking about thousands of pounds sliding down suddenly — wrecking gutters, damaging vehicles, tearing up landscaping, or even hurting people below. Snow tends to stick to metal roofs until just enough melting happens to make it slippery. When it finally lets go, it often releases in a dangerous avalanche. Snow retention systems like ColorGard 2.0 let the snow melt gradually and safely, preventing sudden dumps and all the trouble they bring.</p>",
+            "row_content": "<p>Less than <strong>3.5 lbs. per kilowatt</strong>. Compared to traditional rail systems that often exceed <strong>19 lbs. per kilowatt</strong>, the PVKIT keeps your roof load light and manageable.</p>",
             "page": ""
           }
         },
         "collapsible_row_ckxnPL": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "What makes ColorGard 2.0 better than other color-matched snow guards?",
+            "heading": "Will using PVKIT void my metal roof warranty?",
             "icon": "check_mark",
-            "row_content": "<p>The key is long-term color matching. Sure, anyone can match a roof color when the roof is brand new — that part is easy. The real test is how it looks 5, 10, or even 20 years down the line. ColorGard 2.0 uses the <em>exact same</em> material as your roof to achieve a permanent match. Other systems use paints or coatings that age differently than the roof, leading to noticeable mismatches over time. ColorGard stays consistent because it ages right along with the roof.</p>",
+            "row_content": "<p>Nope. S-5! attachment solutions are designed to work <em>without</em> compromising roof warranties, when properly installed.</p>",
             "page": ""
           }
         },
         "collapsible_row_yeiJUw": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Why is ColorGard 2.0 less noticeable than clear plastic snow guards?",
+            "heading": "What size solar modules does PVKIT support?",
             "icon": "check_mark",
-            "row_content": "<p>Plastic might seem \"invisible\" at first, but they don’t stay that way. UV rays from the sun break down plastic over time, causing yellowing, cloudiness, and brittleness. Eventually, they stand out in a bad way. ColorGard 2.0, on the other hand, is designed to <em>blend in</em> with the roof from day one and still look great decades later. Plus, it has clean, architectural lines that complement the roof instead of distracting from it. Not to </p>",
+            "row_content": "<p>PVKIT is adjustable and fits module frames from <strong>30mm to 46mm</strong> thick, making it compatible with most common solar panels.</p>",
             "page": ""
           }
         },
         "collapsible_row_jxzWPR": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Do I need more ColorGard than plastic snow guards?",
+            "heading": "Can a homeowner install PVKIT themselves (DIY)?",
             "icon": "check_mark",
-            "row_content": "<p>Nope — actually, you need less. Many plastic snow guard systems require a <em>lot</em> of parts to reach the strength you get from just one row of ColorGard 2.0. Plastic parts can’t handle the same loads, so they need to be installed in dense patterns. ColorGard’s tested strength means you use fewer components while still getting superior snow retention.</p>",
-            "page": ""
-          }
-        },
-        "collapsible_row_NDG8AL": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "Which SnoClip® 2.0 is right for me?",
-            "icon": "check_mark",
-            "row_content": "<p>It all comes down to your seam height:</p><ul><li>1\" and 2\", you’ll need the <strong>SnoClip 2.0 II</strong>.</li><li>2\" and 3-1/4\", you’ll need the <strong>SnoClip 2.0 III</strong>.</li></ul><p>SnoClips are sized to match the vertical dimension of your roof’s seam, so they fit snugly and do their job of controlling snow and ice movement under the ColorGard 2.0 bar.</p>",
-            "page": ""
-          }
-        },
-        "collapsible_row_E9eyeN": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "Is ColorGard 1.0 compatible with ColorGard 2.0?",
-            "icon": "check_mark",
-            "row_content": "<p>Not directly. ColorGard 1.0 and 2.0 have different bar profiles and components, so they aren’t designed to be mixed together on the same section of roof. The parts don’t physically connect, and things like splice connectors, SnoClips, and end caps are not interchangeable.</p><p>However, if you have a new section of roof that needs snow retention, you <em>can</em> use ColorGard 2.0 on that section, while leaving your existing ColorGard 1.0 system in place elsewhere. Both systems will function properly as long as each section is installed as a complete system.</p>",
+            "row_content": "<p>Yes — if you're comfortable working safely on metal roofs and have basic solar installation knowledge. The PVKIT is simple by design, with pre-assembled parts and a one-tool install, but you'll still need to properly handle electrical connections and follow all code requirements. Many homeowners team up with a licensed electrician or solar pro for final wiring and inspections.</p>",
             "page": ""
           }
         }
@@ -330,13 +312,11 @@
         "collapsible_row_mXiRpB",
         "collapsible_row_ckxnPL",
         "collapsible_row_yeiJUw",
-        "collapsible_row_jxzWPR",
-        "collapsible_row_NDG8AL",
-        "collapsible_row_E9eyeN"
+        "collapsible_row_jxzWPR"
       ],
       "settings": {
         "caption": "",
-        "heading": "ColorGard 2.0 FAQ",
+        "heading": "PVKIT 2.0 FAQ",
         "heading_size": "h1",
         "heading_alignment": "center",
         "layout": "none",
@@ -355,10 +335,10 @@
     "image_with_text_zeHAbY",
     "image_banner_NHkXKX",
     "multicolumn_ARiLGw",
-    "multicolumn_NbLt7K",
     "rich_text_EeCJeG",
     "custom_liquid_awMT8b",
     "product-grid",
+    "multicolumn_NbLt7K",
     "collapsible_content_Xec8tV"
   ]
 }
