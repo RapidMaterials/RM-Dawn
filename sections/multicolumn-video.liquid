@@ -108,7 +108,7 @@
                 {% if section.settings.image_ratio == 'adapt' or section.settings.image_ratio == 'circle' %}
                   {% assign spaced_image = true %}
                 {% endif %}
-            {%- if block.settings.video_url != blank -%}
+  
              <div class="color-{{ section.settings.color_scheme }} gradient {{ section.settings.section_float }}">
   <div class="video-section isolate{% unless section.settings.full_width %} page-width{% endunless %} section-{{ section.id }}-padding">
     <div
@@ -190,7 +190,7 @@
     </deferred-media>
   </div>
 </div>
-                {% endif %}
+
                 <div class="multicolumn-card__image-wrapper multicolumn-card__image-wrapper--{{ section.settings.image_width }}-width{% if section.settings.image_width != 'full' or spaced_image %} multicolumn-card-spacing{% endif %}">
                   <div
                     class="media media--transparent media--{{ section.settings.image_ratio }}"
