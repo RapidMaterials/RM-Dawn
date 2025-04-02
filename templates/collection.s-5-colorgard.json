@@ -124,6 +124,7 @@
       ],
       "settings": {
         "title": "",
+        "section_float": "clear",
         "heading_size": "h1",
         "image_width": "full",
         "image_ratio": "adapt",
@@ -147,6 +148,7 @@
       "settings": {
         "heading": "",
         "heading_size": "h1",
+        "section_float": "left",
         "enable_video_looping": false,
         "video_url": "https://youtu.be/x9CkJRF748Y",
         "cover_image": "shopify://shop_images/Screenshot-2025-02-20-at-2.13.53_PM-e1740171615481-1024x568.png",
@@ -196,6 +198,7 @@
       "custom_css": [],
       "settings": {
         "title": "",
+        "section_float": "right",
         "heading_size": "h1",
         "image_width": "full",
         "image_ratio": "adapt",
@@ -244,6 +247,7 @@
       ],
       "settings": {
         "title": "",
+        "section_float": "clear",
         "heading_size": "h1",
         "image_width": "full",
         "image_ratio": "adapt",
