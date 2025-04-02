@@ -97,7 +97,7 @@
           "type": "column",
           "settings": {
             "title": "<strong>Proven Strength</strong>",
-            "text": "<ul><li>Load-tested on 500+ metal roof profiles</li><li>Corrosion-resistant materials built to last the life of the roof</li><li>Site-specific engineering for exposed-fastened and standing seam systems</li></ul>",
+            "text": "<ul><li>Load-tested on 500+ metal roof profiles</li><li>Corrosion-resistant materials built to last the life of the roof</li><li>Profile-specific engineering for exposed-fastened and standing seam systems</li></ul>",
             "link_label": "",
             "link": ""
           }
@@ -135,6 +135,20 @@
         "color_scheme": "",
         "columns_mobile": "1",
         "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "video_nMgp6g": {
+      "type": "video",
+      "settings": {
+        "heading": "",
+        "heading_size": "h1",
+        "enable_video_looping": false,
+        "video_url": "https://youtu.be/x9CkJRF748Y",
+        "description": "Introducing ColorGard 2.0",
+        "full_width": false,
+        "color_scheme": "",
         "padding_top": 36,
         "padding_bottom": 36
       }
@@ -355,6 +369,7 @@
     "image_with_text_zeHAbY",
     "image_banner_NHkXKX",
     "multicolumn_ARiLGw",
+    "video_nMgp6g",
     "multicolumn_NbLt7K",
     "rich_text_EeCJeG",
     "custom_liquid_awMT8b",
