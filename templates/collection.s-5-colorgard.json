@@ -179,35 +179,27 @@
             "link_label": "ColorGard 2.0 Brochure",
             "link": "https://3482954.fs1.hubspotusercontent-na1.net/hubfs/3482954/Resources/Product%20Documents/Snow%20Retention/ColorGard%202.0/ColorGard2.0%20Product%20Sheet.pdf"
           }
-        },
-        "column_Qj6B9b": {
-          "type": "column",
-          "settings": {
-            "title": "",
-            "text": "",
-            "link_label": "",
-            "link": ""
-          }
         }
       },
       "block_order": [
         "column_XCRHxA",
-        "column_TxErCF",
-        "column_Qj6B9b"
+        "column_TxErCF"
       ],
-      "custom_css": [],
+      "custom_css": [
+        "a.link.animate-arrow {margin-top: 0;}"
+      ],
       "settings": {
         "title": "",
         "section_float": "right",
-        "heading_size": "h1",
+        "heading_size": "h2",
         "image_width": "full",
         "image_ratio": "adapt",
         "button_label": "",
         "button_link": "",
         "columns_desktop": 1,
-        "column_alignment": "left",
+        "column_alignment": "center",
         "background_style": "primary",
-        "color_scheme": "",
+        "color_scheme": "scheme-1",
         "columns_mobile": "1",
         "swipe_on_mobile": false,
         "padding_top": 20,
