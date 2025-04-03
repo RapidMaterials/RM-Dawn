@@ -40,45 +40,35 @@
         "show_text_below": true
       }
     },
-    "image_with_text_zeHAbY": {
-      "type": "image-with-text",
+    "rich_text_g36RmH": {
+      "type": "rich-text",
       "blocks": {
-        "heading_bdbMjy": {
+        "heading_xYr9hc": {
           "type": "heading",
           "settings": {
             "heading": "{{ collection.title }}",
-            "heading_tag": "h1",
-            "heading_size": "h1"
+            "heading_size": "h1",
+            "heading_tag": "h1"
           }
         },
-        "text_Vpcx7b": {
+        "text_nCjfjd": {
           "type": "text",
           "settings": {
-            "text": "<p>{{ collection.metafields.custom.description | metafield_tag }}</p>",
-            "text_style": "body"
+            "text": "{{ collection.description }}"
           }
         }
       },
       "block_order": [
-        "heading_bdbMjy",
-        "text_Vpcx7b"
+        "heading_xYr9hc",
+        "text_nCjfjd"
       ],
       "settings": {
-        "image": "shopify://shop_images/670F997D-F7CC-4CCE-8978-338102C1D209-e1739309461776.png",
-        "height": "adapt",
-        "desktop_image_width": "small",
-        "layout": "image_first",
-        "image_behavior": "none",
-        "content_layout": "no-overlap",
-        "desktop_content_position": "top",
-        "desktop_content_alignment": "left",
-        "mobile_content_alignment": "left",
-        "section_color_scheme": "",
+        "desktop_content_position": "center",
+        "content_alignment": "center",
         "color_scheme": "",
-        "element-width": 100,
-        "padding_top": 0,
-        "padding_bottom": 0,
-        "side-padding": "no-padding"
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
       }
     },
     "rich_text_EeCJeG": {
@@ -95,8 +85,8 @@
         "text_Dt6Fb3"
       ],
       "settings": {
-        "desktop_content_position": "center",
-        "content_alignment": "center",
+        "desktop_content_position": "left",
+        "content_alignment": "left",
         "color_scheme": "scheme-1",
         "full_width": true,
         "padding_top": 40,
@@ -197,7 +187,7 @@
   "order": [
     "banner",
     "image_banner_NHkXKX",
-    "image_with_text_zeHAbY",
+    "rich_text_g36RmH",
     "rich_text_EeCJeG",
     "product-grid",
     "collapsible_content_Xec8tV"
