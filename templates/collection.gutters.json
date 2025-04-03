@@ -54,7 +54,7 @@
         "text_nCjfjd": {
           "type": "text",
           "settings": {
-            "text": "{{ collection.description }}"
+            "text": "<p>{{ collection.metafields.custom.description | metafield_tag }}</p>"
           }
         }
       },
