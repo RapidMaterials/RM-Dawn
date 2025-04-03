@@ -11,13 +11,58 @@
   "sections": {
     "main": {
       "type": "main-page",
+      "disabled": true,
       "settings": {
         "padding_top": 28,
         "padding_bottom": 28
       }
+    },
+    "rich_text_d94XHW": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_MDndFA": {
+          "type": "heading",
+          "settings": {
+            "heading": "{{ page.title }}",
+            "heading_size": "h1",
+            "heading_tag": "h1"
+          }
+        },
+        "text_rbJ7aR": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Bring classic elegance and long-term performance to your project with our 6\" Copper Half-Round Gutter System. Built for durability and timeless appeal, this system is ideal for both residential and light commercial buildings. Whether you're restoring a historic home or upgrading your current setup, copper offers unmatched longevity and a natural patina that gets better with time. Order exactly what you need—gutter lengths, downspouts, hangers, and all the essential accessories, right here in one place.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_MDndFA",
+        "text_rbJ7aR"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "custom_liquid_HznEDU": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<div data-instabuy data-widget-id=\"1ed579b3-3dcb-4d5b-a6a6-d09c419b90ed\"></div>",
+        "color_scheme": "",
+        "padding_top": 4,
+        "padding_bottom": 4,
+        "padding_left": 4,
+        "padding_right": 4
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "rich_text_d94XHW",
+    "custom_liquid_HznEDU"
   ]
 }
