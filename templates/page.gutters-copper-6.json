@@ -75,12 +75,74 @@
         "padding_left": 4,
         "padding_right": 4
       }
+    },
+    "collapsible_content_9wrzKp": {
+      "type": "collapsible-content",
+      "blocks": {
+        "collapsible_row_XgKqka": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What downspout size should I use with a 6\" copper half-round gutter?",
+            "icon": "check_mark",
+            "row_content": "<p>The standard match is a <strong>3\" round downspout</strong>, which works well for most residential applications. For larger roof areas or heavy rainfall, consider upgrading to a <strong>4\" or even 5\" round downspout</strong> for increased drainage capacity. All options are compatible with our 6\" copper gutter system.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_Whet9w": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What’s the difference between 16 oz. and 20 oz. copper?",
+            "icon": "check_mark",
+            "row_content": "<p><strong>16 oz. copper</strong> is suitable for most homes and provides excellent durability. <strong>20 oz. copper</strong> is thicker and better suited for commercial buildings, slate roofs, or regions with heavy snow and ice.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_PxPiPk": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Will the copper change color over time?",
+            "icon": "check_mark",
+            "row_content": "<p>Yes. Copper will naturally age and develop a patina. It starts with a bright finish, then transitions to a darker bronze, and eventually to a greenish tone. This aging process protects the material and adds character over time.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_gfqPxj": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Do I need sealant for copper gutter joints?",
+            "icon": "check_mark",
+            "row_content": "<p>For best results, <strong>soldering</strong> is the recommended method for joining copper components. It creates a permanent, watertight bond. If soldering isn’t feasible, a high-quality metal gutter sealant can be used, but it may require future maintenance.</p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_row_XgKqka",
+        "collapsible_row_Whet9w",
+        "collapsible_row_PxPiPk",
+        "collapsible_row_gfqPxj"
+      ],
+      "settings": {
+        "caption": "",
+        "heading": "{{ page.title }} FAQ",
+        "heading_size": "h2",
+        "heading_alignment": "center",
+        "layout": "none",
+        "container_color_scheme": "scheme-2",
+        "color_scheme": "scheme-2",
+        "open_first_collapsible_row": false,
+        "image_ratio": "adapt",
+        "desktop_layout": "image_second",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
     "main",
     "image_banner_AA7b43",
     "rich_text_d94XHW",
-    "custom_liquid_HznEDU"
+    "custom_liquid_HznEDU",
+    "collapsible_content_9wrzKp"
   ]
 }
