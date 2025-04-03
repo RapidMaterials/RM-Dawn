@@ -84,6 +84,9 @@
       "block_order": [
         "text_Dt6Fb3"
       ],
+      "custom_css": [
+        "h3.widget-collection-title {background-color: #dddddd; padding: 10px;}"
+      ],
       "settings": {
         "desktop_content_position": "left",
         "content_alignment": "left",
