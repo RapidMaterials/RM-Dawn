@@ -30,7 +30,7 @@
           "type": "heading",
           "settings": {
             "heading": "S-5! DualGard Snow System for Metal Roofs",
-            "heading_tag": "h2",
+            "heading_tag": "h1",
             "heading_size": "h1"
           }
         },
@@ -124,6 +124,7 @@
       ],
       "settings": {
         "title": "",
+        "section_float": "clear",
         "heading_size": "h1",
         "image_width": "full",
         "image_ratio": "adapt",
@@ -172,6 +173,7 @@
       ],
       "settings": {
         "title": "",
+        "section_float": "clear",
         "heading_size": "h1",
         "image_width": "full",
         "image_ratio": "adapt",
