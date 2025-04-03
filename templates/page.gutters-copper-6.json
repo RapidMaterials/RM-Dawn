@@ -47,7 +47,7 @@
         "text_rbJ7aR": {
           "type": "text",
           "settings": {
-            "text": "<p>Bring classic elegance and long-term performance to your project with our 6\" Copper Half-Round Gutter System. Built for durability and timeless appeal, this system is ideal for both residential and light commercial buildings. Whether you're restoring a historic home or upgrading your current setup, copper offers unmatched longevity and a natural patina that gets better with time. Order exactly what you need—gutter lengths, downspouts, hangers, and all the essential accessories, right here in one place.</p>"
+            "text": "<p>{{ page.metafields.custom.description | metafield_tag }}</p>"
           }
         }
       },
@@ -64,38 +64,26 @@
         "padding_bottom": 12
       }
     },
-    "multicolumn_Ah7YL9": {
-      "type": "multicolumn",
+    "rich_text_RxAhpY": {
+      "type": "rich-text",
       "blocks": {
-        "column_wfbymF": {
-          "type": "column",
+        "text_WhV9Ff": {
+          "type": "text",
           "settings": {
-            "title": "",
-            "text": "{{ page.content }}",
-            "link_label": "",
-            "link": ""
+            "text": "{{ page.content }}"
           }
         }
       },
       "block_order": [
-        "column_wfbymF"
+        "text_WhV9Ff"
       ],
       "settings": {
-        "title": "",
-        "section_float": "clear",
-        "heading_size": "h1",
-        "image_width": "full",
-        "image_ratio": "adapt",
-        "button_label": "",
-        "button_link": "",
-        "columns_desktop": 1,
-        "column_alignment": "left",
-        "background_style": "primary",
+        "desktop_content_position": "center",
+        "content_alignment": "center",
         "color_scheme": "",
-        "columns_mobile": "1",
-        "swipe_on_mobile": false,
-        "padding_top": 36,
-        "padding_bottom": 36
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
       }
     },
     "collapsible_content_9wrzKp": {
@@ -104,36 +92,36 @@
         "collapsible_row_XgKqka": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "What downspout size should I use with a 6\" copper half-round gutter?",
+            "heading": "{{ block.settings.page.metafields.custom.faq_q1.value }}",
             "icon": "check_mark",
-            "row_content": "<p>The standard match is a <strong>3\" round downspout</strong>, which works well for most residential applications. For larger roof areas or heavy rainfall, consider upgrading to a <strong>4\" or even 5\" round downspout</strong> for increased drainage capacity. All options are compatible with our 6\" copper gutter system.</p>",
+            "row_content": "<p>{{ block.settings.page.metafields.custom.faq_a1 | metafield_tag }}</p>",
             "page": ""
           }
         },
         "collapsible_row_Whet9w": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "What’s the difference between 16 oz. and 20 oz. copper?",
+            "heading": "{{ block.settings.page.metafields.custom.faq_q2.value }}",
             "icon": "check_mark",
-            "row_content": "<p><strong>16 oz. copper</strong> is suitable for most homes and provides excellent durability. <strong>20 oz. copper</strong> is thicker and better suited for commercial buildings, slate roofs, or regions with heavy snow and ice.</p>",
+            "row_content": "<p>{{ block.settings.page.metafields.custom.faq_a2 | metafield_tag }}</p>",
             "page": ""
           }
         },
         "collapsible_row_PxPiPk": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Will the copper change color over time?",
+            "heading": "{{ block.settings.page.metafields.custom.faq_q3.value }}",
             "icon": "check_mark",
-            "row_content": "<p>Yes. Copper will naturally age and develop a patina. It starts with a bright finish, then transitions to a darker bronze, and eventually to a greenish tone. This aging process protects the material and adds character over time.</p>",
+            "row_content": "<p>{{ block.settings.page.metafields.custom.faq_a3 | metafield_tag }}</p>",
             "page": ""
           }
         },
         "collapsible_row_gfqPxj": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Do I need sealant for copper gutter joints?",
+            "heading": "{{ block.settings.page.metafields.custom.faq_q4.value }}",
             "icon": "check_mark",
-            "row_content": "<p>For best results, <strong>soldering</strong> is the recommended method for joining copper components. It creates a permanent, watertight bond. If soldering isn’t feasible, a high-quality metal gutter sealant can be used, but it may require future maintenance.</p>",
+            "row_content": "<p>{{ block.settings.page.metafields.custom.faq_a4 | metafield_tag }}</p>",
             "page": ""
           }
         }
@@ -192,7 +180,7 @@
     "main",
     "image_banner_AA7b43",
     "rich_text_d94XHW",
-    "multicolumn_Ah7YL9",
+    "rich_text_RxAhpY",
     "collapsible_content_9wrzKp",
     "featured_collection_iEWDMQ"
   ]
