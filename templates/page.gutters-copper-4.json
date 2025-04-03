@@ -9,14 +9,6 @@
  */
 {
   "sections": {
-    "main": {
-      "type": "main-page",
-      "disabled": true,
-      "settings": {
-        "padding_top": 28,
-        "padding_bottom": 28
-      }
-    },
     "image_banner_AA7b43": {
       "type": "image-banner",
       "settings": {
@@ -64,16 +56,34 @@
         "padding_bottom": 12
       }
     },
-    "custom_liquid_HznEDU": {
-      "type": "custom-liquid",
-      "custom_css": [],
+    "rich_text_Qn8nDy": {
+      "type": "rich-text",
+      "blocks": {
+        "text_WbRGBk": {
+          "type": "text",
+          "settings": {
+            "text": "{{ page.content }}"
+          }
+        }
+      },
+      "block_order": [
+        "text_WbRGBk"
+      ],
       "settings": {
-        "custom_liquid": "<div data-instabuy data-widget-id=\"1ed579b3-3dcb-4d5b-a6a6-d09c419b90ed\"></div>",
+        "desktop_content_position": "center",
+        "content_alignment": "center",
         "color_scheme": "",
-        "padding_top": 4,
-        "padding_bottom": 4,
-        "padding_left": 4,
-        "padding_right": 4
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
       }
     },
     "collapsible_content_9wrzKp": {
@@ -167,10 +177,10 @@
     }
   },
   "order": [
-    "main",
     "image_banner_AA7b43",
     "rich_text_d94XHW",
-    "custom_liquid_HznEDU",
+    "rich_text_Qn8nDy",
+    "main",
     "collapsible_content_9wrzKp",
     "featured_collection_iEWDMQ"
   ]
