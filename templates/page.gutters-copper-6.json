@@ -66,9 +66,7 @@
     },
     "custom_liquid_HznEDU": {
       "type": "custom-liquid",
-      "custom_css": [
-        "./34 3003811,./34 3003801,./34 3003808,./34 3003807,./34 3003810,./34 3003811,./34 3003830,./34 3003829 {display: none;}"
-      ],
+      "custom_css": [],
       "settings": {
         "custom_liquid": "<div data-instabuy data-widget-id=\"1ed579b3-3dcb-4d5b-a6a6-d09c419b90ed\"></div>",
         "color_scheme": "",
