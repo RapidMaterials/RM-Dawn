@@ -2,8 +2,8 @@
   .section-{{ section.id }}-padding {
     padding-top: calc({{ section.settings.padding_top }}% * 0.75);
     padding-bottom: calc({{ section.settings.padding_bottom }}%  * 0.75);
-    padding-right: 30px;
-    padding-left: 30px;
+      padding-right: {{ section.settings.padding_right }}%;
+      padding-left: {{ section.settings.padding_left }}%;
   }
 
   @media screen and (min-width: 750px) {
