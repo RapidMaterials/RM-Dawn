@@ -56,31 +56,8 @@
         "padding_bottom": 12
       }
     },
-    "rich_text_Qn8nDy": {
-      "type": "rich-text",
-      "blocks": {
-        "text_WbRGBk": {
-          "type": "text",
-          "settings": {
-            "text": "{{ page.content }}"
-          }
-        }
-      },
-      "block_order": [
-        "text_WbRGBk"
-      ],
-      "settings": {
-        "desktop_content_position": "center",
-        "content_alignment": "center",
-        "color_scheme": "",
-        "full_width": true,
-        "padding_top": 40,
-        "padding_bottom": 52
-      }
-    },
     "main": {
       "type": "main-page",
-      "disabled": true,
       "settings": {
         "padding_top": 28,
         "padding_bottom": 28
@@ -179,7 +156,6 @@
   "order": [
     "image_banner_AA7b43",
     "rich_text_d94XHW",
-    "rich_text_Qn8nDy",
     "main",
     "collapsible_content_9wrzKp",
     "featured_collection_iEWDMQ"
