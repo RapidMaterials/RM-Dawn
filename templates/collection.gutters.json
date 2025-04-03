@@ -1,0 +1,434 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "banner": {
+      "type": "main-collection-banner",
+      "disabled": true,
+      "custom_css": [
+        "p {text-align: Center; font-size: 0.8em; line-height: 1em;}",
+        ".collection-hero__description {margin: auto;}",
+        ".collection-hero__text-wrapper {text-align: center;}"
+      ],
+      "settings": {
+        "show_collection_description": true,
+        "show_collection_image": false,
+        "color_scheme": "scheme-1"
+      }
+    },
+    "image_with_text_zeHAbY": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_bdbMjy": {
+          "type": "heading",
+          "settings": {
+            "heading": "S-5! ColorGard 2.0 Snow System for Metal Roofs",
+            "heading_tag": "h2",
+            "heading_size": "h1"
+          }
+        },
+        "text_Vpcx7b": {
+          "type": "text",
+          "settings": {
+            "text": "<p>ColorGard® 2.0 improves on the original with faster installation, no pre-assembly required, and simplified field adjustments — all while maintaining the same trusted strength and color-match finish. It’s a true lay-and-play upgrade built for both new construction and retrofit projects.</p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "heading_bdbMjy",
+        "text_Vpcx7b"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/670F997D-F7CC-4CCE-8978-338102C1D209-e1739309461776.png",
+        "height": "adapt",
+        "desktop_image_width": "small",
+        "layout": "image_first",
+        "image_behavior": "none",
+        "content_layout": "no-overlap",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "element-width": 100,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "side-padding": "no-padding"
+      }
+    },
+    "image_banner_NHkXKX": {
+      "type": "image-banner",
+      "custom_css": [],
+      "settings": {
+        "image": "shopify://shop_images/ColorGard2.0.png",
+        "image_overlay_opacity": 0,
+        "image_height": "adapt",
+        "desktop_content_position": "middle-center",
+        "show_text_box": false,
+        "desktop_content_alignment": "center",
+        "color_scheme": "scheme-3ecab526-23df-438e-a281-3ae133d61365",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
+      }
+    },
+    "multicolumn_ARiLGw": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_KntxHR": {
+          "type": "column",
+          "settings": {
+            "title": "<strong> Faster, Easier Installation</strong>",
+            "text": "<ul><li>No pre-assembly needed — lay-and-play design saves time on the roof</li><li>VersaClip™ installs directly over internal splices, eliminating in-field cutting at splice points</li><li>Ideal for both new metal roof installs and retrofit applications</li></ul>",
+            "link_label": "",
+            "link": "https://cdn.shopify.com/s/files/1/0645/2540/2290/files/ColorGard-2-0-Installation-Instructions_RapidMaterials.pdf?v=1743440011"
+          }
+        },
+        "column_pBKarN": {
+          "type": "column",
+          "settings": {
+            "title": "<strong>Proven Strength</strong>",
+            "text": "<ul><li>Load-tested on 500+ metal roof profiles</li><li>Corrosion-resistant materials built to last the life of the roof</li><li>Profile-specific engineering for exposed-fastened and standing seam systems</li></ul>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_BTHpfb": {
+          "type": "column",
+          "settings": {
+            "title": "<strong>Seamless Aesthetics</strong>",
+            "text": "<ul><li>Maintains the clean look of your metal roof</li><li>Uses your roof material for an exact color and finish match.</li><li>Sleek design reduces visual impact while improving safety<br/></li></ul>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_KntxHR",
+        "column_pBKarN",
+        "column_BTHpfb"
+      ],
+      "custom_css": [
+        "li {font-size: 14px; line-height: 1.2em;}",
+        ".rte ul,.rte ol {list-style-position: outside;}",
+        ".rte li {margin-bottom: 5px;}"
+      ],
+      "settings": {
+        "title": "",
+        "section_float": "clear",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "button_label": "",
+        "button_link": "",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "background_style": "primary",
+        "color_scheme": "",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "video_nMgp6g": {
+      "type": "video",
+      "custom_css": [
+        ".video-section {max-width: 600px;}"
+      ],
+      "settings": {
+        "heading": "",
+        "heading_size": "h1",
+        "section_float": "left",
+        "enable_video_looping": false,
+        "video_url": "https://youtu.be/x9CkJRF748Y",
+        "cover_image": "shopify://shop_images/Screenshot-2025-02-20-at-2.13.53_PM-e1740171615481-1024x568.png",
+        "description": "Introducing ColorGard 2.0",
+        "full_width": false,
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "multicolumn_Tk3QLK": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_XCRHxA": {
+          "type": "column",
+          "settings": {
+            "title": "",
+            "text": "",
+            "link_label": "Download Instructions >",
+            "link": "https://cdn.shopify.com/s/files/1/0712/5726/0271/files/ColorGard-2-0-Installation-Instructions_RapidMaterials.pdf?v=1743621824"
+          }
+        },
+        "column_TxErCF": {
+          "type": "column",
+          "settings": {
+            "title": "",
+            "text": "",
+            "link_label": "ColorGard 2.0 Brochure",
+            "link": "https://3482954.fs1.hubspotusercontent-na1.net/hubfs/3482954/Resources/Product%20Documents/Snow%20Retention/ColorGard%202.0/ColorGard2.0%20Product%20Sheet.pdf"
+          }
+        }
+      },
+      "block_order": [
+        "column_XCRHxA",
+        "column_TxErCF"
+      ],
+      "custom_css": [
+        "a.link.animate-arrow {margin-top: 0;}"
+      ],
+      "settings": {
+        "title": "",
+        "section_float": "right",
+        "heading_size": "h2",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "button_label": "",
+        "button_link": "",
+        "columns_desktop": 1,
+        "column_alignment": "center",
+        "background_style": "primary",
+        "color_scheme": "scheme-1",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 44,
+        "padding_bottom": 20
+      }
+    },
+    "multicolumn_NbLt7K": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_9bPxNG": {
+          "type": "column",
+          "settings": {
+            "title": "Need help figuring what you need?",
+            "text": "<p>Not sure which ColorGard® 2.0 setup or SnoClips are right for your roof? We've got you covered.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_e3K794": {
+          "type": "column",
+          "settings": {
+            "title": "",
+            "text": "<p><a href=\"https://www.s-5.com/snow-calculator/?step=snow_calculator&screen=existing_projects\" target=\"_blank\" title=\"https://www.s-5.com/snow-calculator/?step=snow_calculator&screen=existing_projects\">Use S-5!'s Snow Calculator</a></p><p><a href=\"/pages/contact\" title=\"Contact\">Contact Rapid Materials</a></p>",
+            "link_label": "",
+            "link": "https://www.s-5.com/snow-calculator/?step=snow_calculator&screen=existing_projects"
+          }
+        }
+      },
+      "block_order": [
+        "column_9bPxNG",
+        "column_e3K794"
+      ],
+      "custom_css": [
+        ".multicolumn-card a {line-height: 2; background-color: black; padding: 10px; color: white; text-decoration: none;}",
+        "li#Slide-template--18380191006898__multicolumn_NbLt7K-2 p {padding: 10px;}",
+        "h3.inline-richtext {font-size: 23px; font-weight: bold;}"
+      ],
+      "settings": {
+        "title": "",
+        "section_float": "clear",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "button_label": "",
+        "button_link": "",
+        "columns_desktop": 2,
+        "column_alignment": "left",
+        "background_style": "primary",
+        "color_scheme": "scheme-4193c3da-e497-4afa-91b7-12fbd16d7fb2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "rich_text_EeCJeG": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_Nm6NDK": {
+          "type": "heading",
+          "settings": {
+            "heading": "Order ColorGard 2.0",
+            "heading_size": "h1",
+            "heading_tag": "h2"
+          }
+        },
+        "text_Dt6Fb3": {
+          "type": "text",
+          "settings": {
+            "text": ""
+          }
+        }
+      },
+      "block_order": [
+        "heading_Nm6NDK",
+        "text_Dt6Fb3"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-2",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 16
+      }
+    },
+    "custom_liquid_awMT8b": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<div data-instabuy data-widget-id=\"9afaf0aa-5d4d-42ae-a228-6d758d279ffc\"></div>",
+        "color_scheme": "scheme-2",
+        "padding_top": 0,
+        "padding_bottom": 4,
+        "padding_left": 4,
+        "padding_right": 4
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "disabled": true,
+      "custom_css": [
+        "@media screen and (min-width: 750px) {.card__information {padding: 0; }}",
+        "h2#verticalTitle {display: none;}",
+        "div#FacetsWrapperDesktop {padding-top: 2rem;}"
+      ],
+      "settings": {
+        "products_per_page": 36,
+        "columns_desktop": 4,
+        "columns_mobile": "2",
+        "color_scheme": "scheme-1",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "enable_filtering": true,
+        "filter_type": "vertical",
+        "button_label": "Click Here",
+        "button_link": "",
+        "button_target": "_self",
+        "enable_sorting": true,
+        "padding_top": 20,
+        "padding_bottom": 36
+      }
+    },
+    "collapsible_content_Xec8tV": {
+      "type": "collapsible-content",
+      "blocks": {
+        "collapsible_row_XqLp8E": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Can I just put snow guards over doors and call it good?",
+            "icon": "check_mark",
+            "row_content": "<p>Not really — and here's why. Snow doesn't break off neatly just because you block a small section. It will shear diagonally, often leaving you with a giant wedge of snow sitting above your doorway instead of a safe little patch. This wedge can overload the system, shift unexpectedly, and still cause damage. Snow retention should usually run the full eave line, not just the areas over doors or walkways.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_mXiRpB": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Why is it important to keep snow on the roof instead of letting it slide off?",
+            "icon": "check_mark",
+            "row_content": "<p>Letting snow dump off all at once can cause serious problems. We're talking about thousands of pounds sliding down suddenly — wrecking gutters, damaging vehicles, tearing up landscaping, or even hurting people below. Snow tends to stick to metal roofs until just enough melting happens to make it slippery. When it finally lets go, it often releases in a dangerous avalanche. Snow retention systems like ColorGard 2.0 let the snow melt gradually and safely, preventing sudden dumps and all the trouble they bring.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_ckxnPL": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What makes ColorGard 2.0 better than other color-matched snow guards?",
+            "icon": "check_mark",
+            "row_content": "<p>The key is long-term color matching. Sure, anyone can match a roof color when the roof is brand new — that part is easy. The real test is how it looks 5, 10, or even 20 years down the line. ColorGard 2.0 uses the <em>exact same</em> material as your roof to achieve a permanent match. Other systems use paints or coatings that age differently than the roof, leading to noticeable mismatches over time. ColorGard stays consistent because it ages right along with the roof.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_yeiJUw": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Why is ColorGard 2.0 less noticeable than clear plastic snow guards?",
+            "icon": "check_mark",
+            "row_content": "<p>Plastic might seem \"invisible\" at first, but they don’t stay that way. UV rays from the sun break down plastic over time, causing yellowing, cloudiness, and brittleness. Eventually, they stand out in a bad way. ColorGard 2.0, on the other hand, is designed to <em>blend in</em> with the roof from day one and still look great decades later. Plus, it has clean, architectural lines that complement the roof instead of distracting from it. Not to </p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_jxzWPR": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Do I need more ColorGard than plastic snow guards?",
+            "icon": "check_mark",
+            "row_content": "<p>Nope — actually, you need less. Many plastic snow guard systems require a <em>lot</em> of parts to reach the strength you get from just one row of ColorGard 2.0. Plastic parts can’t handle the same loads, so they need to be installed in dense patterns. ColorGard’s tested strength means you use fewer components while still getting superior snow retention.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_NDG8AL": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Which SnoClip® 2.0 is right for me?",
+            "icon": "check_mark",
+            "row_content": "<p>It all comes down to your seam height:</p><ul><li>1\" and 2\", you’ll need the <strong>SnoClip 2.0 II</strong>.</li><li>2\" and 3-1/4\", you’ll need the <strong>SnoClip 2.0 III</strong>.</li></ul><p>SnoClips are sized to match the vertical dimension of your roof’s seam, so they fit snugly and do their job of controlling snow and ice movement under the ColorGard 2.0 bar.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_E9eyeN": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Is ColorGard 1.0 compatible with ColorGard 2.0?",
+            "icon": "check_mark",
+            "row_content": "<p>Not directly. ColorGard 1.0 and 2.0 have different bar profiles and components, so they aren’t designed to be mixed together on the same section of roof. The parts don’t physically connect, and things like splice connectors, SnoClips, and end caps are not interchangeable.</p><p>However, if you have a new section of roof that needs snow retention, you <em>can</em> use ColorGard 2.0 on that section, while leaving your existing ColorGard 1.0 system in place elsewhere. Both systems will function properly as long as each section is installed as a complete system.</p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_row_XqLp8E",
+        "collapsible_row_mXiRpB",
+        "collapsible_row_ckxnPL",
+        "collapsible_row_yeiJUw",
+        "collapsible_row_jxzWPR",
+        "collapsible_row_NDG8AL",
+        "collapsible_row_E9eyeN"
+      ],
+      "settings": {
+        "caption": "",
+        "heading": "ColorGard 2.0 FAQ",
+        "heading_size": "h1",
+        "heading_alignment": "center",
+        "layout": "none",
+        "container_color_scheme": "",
+        "color_scheme": "",
+        "open_first_collapsible_row": false,
+        "image_ratio": "adapt",
+        "desktop_layout": "image_second",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "banner",
+    "image_with_text_zeHAbY",
+    "image_banner_NHkXKX",
+    "multicolumn_ARiLGw",
+    "video_nMgp6g",
+    "multicolumn_Tk3QLK",
+    "multicolumn_NbLt7K",
+    "rich_text_EeCJeG",
+    "custom_liquid_awMT8b",
+    "product-grid",
+    "collapsible_content_Xec8tV"
+  ]
+}
