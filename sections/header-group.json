@@ -14,13 +14,15 @@
     "custom_liquid_kf8mBb": {
       "type": "custom-liquid",
       "custom_css": [
-        "@media (max-width: 768px) {ul.list-menu > li:nth-child(1) {display: none; } .info a {padding: 5px 8px; }}"
+        "@media (max-width: 768px) {ul.list-menu > li:nth-child(1) {display: none; } .info a {padding: 4px 5px; } .section-sections--18210573713586__custom_liquid_kf8mBb-padding {padding: 0;}}"
       ],
       "settings": {
         "custom_liquid": "<div class=\"bar\" style=\"display: flex;\n  align-items: center;justify-content: space-between;\">\n  <div class=\"logo\">\n<a href=\"{{shop.url}}\"><img src=\"https://cdn.shopify.com/s/files/1/0645/2540/2290/files/Rapid-Logo-Wide-White-600px_430x.png?v=1733173150\" alt=\"Rapid Materials Logo\"></a>\n  </div>\n  <div class=\"info\">\n   <ul class=\"list-menu list-menu--inline\" role=\"list\">\n          {% for link in linklists.top-rm-menu.links %}\n            <li><a  id=\"HeaderMenu-{{ link.handle }}\" class=\"header__menu-item list-menu__item link link--text focus-inset\" href=\"{{ link.url }}\">{{ link.title }}</a></li>\n          {% endfor %}\n        </ul>\n  </div>\n</div>",
         "color_scheme": "scheme-5",
         "padding_top": 0,
-        "padding_bottom": 0
+        "padding_bottom": 0,
+        "padding_left": 0,
+        "padding_right": 0
       }
     },
     "header": {
