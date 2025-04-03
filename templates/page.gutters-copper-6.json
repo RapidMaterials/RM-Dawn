@@ -66,6 +66,9 @@
     },
     "custom_liquid_HznEDU": {
       "type": "custom-liquid",
+      "custom_css": [
+        ".43003811 {display: none;}"
+      ],
       "settings": {
         "custom_liquid": "<div data-instabuy data-widget-id=\"1ed579b3-3dcb-4d5b-a6a6-d09c419b90ed\"></div>",
         "color_scheme": "",
