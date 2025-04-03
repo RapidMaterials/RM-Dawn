@@ -124,6 +124,7 @@
       ],
       "settings": {
         "title": "",
+        "section_float": "clear",
         "heading_size": "h1",
         "image_width": "full",
         "image_ratio": "adapt",
@@ -217,7 +218,7 @@
           "type": "column",
           "settings": {
             "title": "Need help figuring what you need?",
-            "text": "<p>Not sure which ColorGard® 2.0 setup or SnoClips are right for your roof? We've got you covered.</p>",
+            "text": "<p>Not sure exactly what you need to mount your solar panels to your roof?</p>",
             "link_label": "",
             "link": ""
           }
@@ -226,7 +227,7 @@
           "type": "column",
           "settings": {
             "title": "",
-            "text": "<p><a href=\"https://www.s-5.com/snow-calculator/?step=snow_calculator&screen=existing_projects\" target=\"_blank\" title=\"https://www.s-5.com/snow-calculator/?step=snow_calculator&screen=existing_projects\">Use S-5!'s Snow Calculator</a></p><p><a href=\"/pages/contact\" title=\"Contact\">Contact Rapid Materials Support </a></p>",
+            "text": "<p><a href=\"https://www.s-5.com/solar-calculator/?step=solar_calculator&screen=existing_projects\" target=\"_blank\" title=\"S-5 Solar Calculator\">Use S-5!'s Solar Calculator</a></p><p><a href=\"/pages/contact\" title=\"Contact\">Contact Rapid Materials Support </a></p>",
             "link_label": "",
             "link": "https://www.s-5.com/snow-calculator/?step=snow_calculator&screen=existing_projects"
           }
@@ -243,6 +244,7 @@
       ],
       "settings": {
         "title": "",
+        "section_float": "clear",
         "heading_size": "h1",
         "image_width": "full",
         "image_ratio": "adapt",
