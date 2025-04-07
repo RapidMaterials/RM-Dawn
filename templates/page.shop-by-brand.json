@@ -55,7 +55,7 @@
           "type": "column",
           "settings": {
             "image": "shopify://shop_images/lmcurbs-horizontal.png",
-            "title": "",
+            "title": "LM Curbs",
             "heading_tag": "h2",
             "text": "",
             "link_label": "",
@@ -66,7 +66,7 @@
           "type": "column",
           "settings": {
             "image": "shopify://shop_images/midwest_tools_logo-Horizontal.png",
-            "title": "",
+            "title": "MidWest Tools",
             "heading_tag": "h2",
             "text": "",
             "link_label": "",
@@ -77,7 +77,7 @@
           "type": "column",
           "settings": {
             "image": "shopify://shop_images/sfs_logo_horizontal.png",
-            "title": "",
+            "title": "SFS",
             "heading_tag": "h2",
             "text": "",
             "link_label": "",
@@ -88,7 +88,7 @@
           "type": "column",
           "settings": {
             "image": "shopify://shop_images/amg-horizontal.png",
-            "title": "",
+            "title": "American Master Gutter",
             "heading_tag": "h2",
             "text": "",
             "link_label": "",
@@ -102,11 +102,15 @@
         "column_VGnPij",
         "column_LWtCBx"
       ],
+      "custom_css": [
+        ".multicolumn-card__info {padding: 0 !important;}",
+        "h2.inline-richtext {margin: 5px; font-size: 1em;}"
+      ],
       "settings": {
         "title": "",
         "heading_tag": "h2",
         "section_float": "clear",
-        "heading_size": "h1",
+        "heading_size": "h2",
         "image_width": "full",
         "image_ratio": "adapt",
         "button_label": "",
