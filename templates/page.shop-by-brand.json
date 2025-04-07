@@ -11,13 +11,120 @@
   "sections": {
     "main": {
       "type": "main-page",
+      "disabled": true,
       "settings": {
         "padding_top": 28,
         "padding_bottom": 28
       }
+    },
+    "rich_text_MUpjYN": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_wk6hG6": {
+          "type": "heading",
+          "settings": {
+            "heading": "Shop by Brand",
+            "heading_size": "h1",
+            "heading_tag": "h1"
+          }
+        },
+        "text_jUTxAC": {
+          "type": "text",
+          "settings": {
+            "text": ""
+          }
+        }
+      },
+      "block_order": [
+        "heading_wk6hG6",
+        "text_jUTxAC"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "multicolumn_CGjQNW": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_kUVcRa": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/lmcurbs-horizontal.png",
+            "title": "",
+            "heading_tag": "h2",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_GiTaEN": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/midwest_tools_logo-Horizontal.png",
+            "title": "",
+            "heading_tag": "h2",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_VGnPij": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/sfs_logo_horizontal.png",
+            "title": "",
+            "heading_tag": "h2",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_LWtCBx": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/amg-horizontal.png",
+            "title": "",
+            "heading_tag": "h2",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_kUVcRa",
+        "column_GiTaEN",
+        "column_VGnPij",
+        "column_LWtCBx"
+      ],
+      "settings": {
+        "title": "",
+        "heading_tag": "h2",
+        "section_float": "clear",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "button_label": "",
+        "button_link": "",
+        "columns_desktop": 4,
+        "column_alignment": "center",
+        "background_style": "none",
+        "color_scheme": "",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "rich_text_MUpjYN",
+    "multicolumn_CGjQNW"
   ]
 }
