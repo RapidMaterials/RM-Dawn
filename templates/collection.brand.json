@@ -25,7 +25,7 @@
         "column_AUHj47": {
           "type": "column",
           "settings": {
-            "title": "",
+            "title": "{{ collection.metafields.custom.brand.value.name.value }}",
             "text": "<p>{{ collection.metafields.custom.brand.value.bio | metafield_tag }}</p>",
             "link_label": "",
             "link": ""
@@ -40,7 +40,7 @@
         "li#Slide-template--18236750004402__multicolumn_4a9t7b-1 {width: 20% !important; max-width: 20% !important;}",
         "li#Slide-template--18236750004402__multicolumn_4a9t7b-2 {width: 75%; max-width: 75%;}",
         ".multicolumn-card__info {padding: 10px;}",
-        ".grid{align-items: center;}"
+        ".grid {align-items: center;}"
       ],
       "settings": {
         "title": "",
