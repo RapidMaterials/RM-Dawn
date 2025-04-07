@@ -148,14 +148,14 @@
                 {% if product.collections %}
                   {% for collection in product.collections %}
                        {% if collection.metafields.custom.logo_url %}
-                            <a href="{{ collection.url }}" style="text-decoration:none;">
+                            <a href="{{ collection.metafields.custom.collection_url }}}" style="text-decoration:none;">
                               <img src="{{ collection.metafields.custom.logo_url | file_url }}" alt="{{ collection.title }} Logo" class="header-logo">
                             </a>
                             {% break %}
                        {% endif %}
                      {% endfor %}
                 {% elsif collection.metafields.custom.logo_url %}
-                        <a href="{{ collection.url }}" style="text-decoration:none;">
+                        <a href="{{ collection.metafields.custom.collection_url }}}" style="text-decoration:none;">
                           <img src="{{ collection.metafields.custom.logo_url | file_url }}" alt="{{ collection.title }} Logo" class="header-logo">
                         </a>
                 {% elsif page.metafields.custom.logo_url %}
