@@ -65,7 +65,7 @@
         "column_LWtCBx": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/amg-horizontal.png",
+            "image": "shopify://shop_images/amg-horizontal_6531ee6d-2616-42c6-a3df-51cfc2916ecb.png",
             "title": "American Master Gutter",
             "heading_tag": "h2",
             "text": "",
@@ -109,7 +109,7 @@
         "column_8CrDq4": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/express-logo-vertical.png",
+            "image": "shopify://shop_images/express-logo-vertical_cc164bf3-6c37-4099-b6d3-aa4b6296055a.png",
             "title": "Express",
             "heading_tag": "h2",
             "text": "",
@@ -153,7 +153,7 @@
         "column_kUVcRa": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/lmcurbs-horizontal.png",
+            "image": "shopify://shop_images/lmcurbs-horizontal_cc2e51ef-9bdd-45c3-9d66-38bbb71a9061.png",
             "title": "LM Curbs",
             "heading_tag": "h2",
             "text": "",
@@ -186,7 +186,7 @@
         "column_GiTaEN": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/midwest_tools_logo-Horizontal.png",
+            "image": "shopify://shop_images/midwest_tools_logo-Horizontal_9ea95022-7f0f-4295-810c-5024b0702cb1.png",
             "title": "MidWest Tools",
             "heading_tag": "h2",
             "text": "",
@@ -197,7 +197,7 @@
         "column_aVrAAP": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/perkeo_transparent.png",
+            "image": "shopify://shop_images/perkeo_transparent_dc47107c-cbff-4cde-9e11-9bd8507a5e8c.png",
             "title": "Perkeo",
             "heading_tag": "h2",
             "text": "",
@@ -208,7 +208,7 @@
         "column_pmWFmc": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/rau_logo_transparent.png",
+            "image": "shopify://shop_images/rau_logo_transparent_36d25e2c-69d5-4c99-aec9-6d89aa7e2c77.png",
             "title": "Rau Tools",
             "heading_tag": "h2",
             "text": "",
@@ -308,7 +308,7 @@
       ],
       "custom_css": [
         ".multicolumn-card__info {padding: 0 !important;}",
-        "h2.inline-richtext {margin: 5px; font-size: .9em;}",
+        "h2.inline-richtext {margin: 5px; font-size: 0.9em;}",
         ".grid {row-gap: 40px;}",
         ".multicolumn-card.content-container {padding-bottom: 20px;}"
       ],
