@@ -308,8 +308,9 @@
       ],
       "custom_css": [
         ".multicolumn-card__info {padding: 0 !important;}",
-        "h2.inline-richtext {margin: 5px; font-size: 1em;}",
-        ".grid {row-gap: 40px;}"
+        "h2.inline-richtext {margin: 5px; font-size: .9em;}",
+        ".grid {row-gap: 40px;}",
+        ".multicolumn-card.content-container {padding-bottom: 20px;}"
       ],
       "settings": {
         "title": "",
@@ -322,8 +323,8 @@
         "button_link": "",
         "columns_desktop": 4,
         "column_alignment": "center",
-        "background_style": "none",
-        "color_scheme": "",
+        "background_style": "primary",
+        "color_scheme": "scheme-1",
         "columns_mobile": "1",
         "swipe_on_mobile": false,
         "padding_top": 36,
