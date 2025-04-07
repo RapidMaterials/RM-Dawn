@@ -43,7 +43,8 @@
         ".grid {align-items: center;}"
       ],
       "settings": {
-        "title": "",
+        "title": "t",
+        "heading_tag": "h2",
         "section_float": "clear",
         "heading_size": "h1",
         "image_width": "full",
