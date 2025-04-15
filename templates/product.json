@@ -26,6 +26,13 @@
           "type": "price",
           "settings": {}
         },
+        "text_XdzqLY": {
+          "type": "text",
+          "settings": {
+            "text": "{{ product.metafields.custom.shipping_note.value }}",
+            "text_style": "body"
+          }
+        },
         "variant_picker": {
           "type": "variant_picker",
           "settings": {
@@ -67,6 +74,7 @@
         "custom_liquid_9qzpnL",
         "title",
         "price",
+        "text_XdzqLY",
         "variant_picker",
         "bss_variant_options_option_set_dEcH69",
         "quantity_selector",
@@ -103,7 +111,8 @@
           "type": "heading",
           "settings": {
             "heading": "Description",
-            "heading_size": "h1"
+            "heading_size": "h1",
+            "heading_tag": "h2"
           }
         },
         "text_i4wifU": {
