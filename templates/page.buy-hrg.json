@@ -17,20 +17,55 @@
         "padding_bottom": 28
       }
     },
-    "image_banner_AA7b43": {
-      "type": "image-banner",
+    "image_with_text_HQphDH": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_R46kLe": {
+          "type": "heading",
+          "settings": {
+            "heading": "{{ page.title }}",
+            "heading_tag": "h1",
+            "heading_size": "h1"
+          }
+        },
+        "text_JikeRi": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Half Round Gutter Systems Made Simple. Quality Parts. Fast Shipping.</p>",
+            "text_style": "body"
+          }
+        },
+        "button_8TyEW7": {
+          "type": "button",
+          "settings": {
+            "button_label": "Shop All",
+            "button_link": "",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_R46kLe",
+        "text_JikeRi",
+        "button_8TyEW7"
+      ],
+      "name": "t:sections.image-with-text.presets.name",
       "settings": {
-        "image": "shopify://shop_images/copper-gutters.png",
-        "image_overlay_opacity": 0,
-        "image_height": "adapt",
-        "desktop_content_position": "middle-center",
-        "show_text_box": true,
-        "desktop_content_alignment": "center",
-        "color_scheme": "",
+        "image": "shopify://shop_images/buy-hrg-main-img.png",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
         "image_behavior": "none",
-        "mobile_content_alignment": "center",
-        "stack_images_on_mobile": true,
-        "show_text_below": true
+        "content_layout": "no-overlap",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "element-width": 100,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "side-padding": "no-padding"
       }
     },
     "rich_text_d94XHW": {
@@ -44,6 +79,15 @@
             "heading_tag": "h1"
           }
         },
+        "caption_gV7b9H": {
+          "type": "caption",
+          "settings": {
+            "caption": "Half Round Gutter Systems Made Simple. Quality Parts. Fast Shipping.",
+            "text_style": "caption-with-letter-spacing",
+            "text_size": "medium",
+            "heading_tag": "h2"
+          }
+        },
         "text_rbJ7aR": {
           "type": "text",
           "settings": {
@@ -53,6 +97,7 @@
       },
       "block_order": [
         "heading_MDndFA",
+        "caption_gV7b9H",
         "text_rbJ7aR"
       ],
       "settings": {
@@ -178,7 +223,7 @@
   },
   "order": [
     "main",
-    "image_banner_AA7b43",
+    "image_with_text_HQphDH",
     "rich_text_d94XHW",
     "rich_text_RxAhpY",
     "collapsible_content_9wrzKp",
