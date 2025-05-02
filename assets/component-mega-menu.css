@@ -95,8 +95,7 @@ ul#HeaderMenu-gutters{
     grid-template-columns: repeat(5, minmax(0, 1fr));
 }
 .mega-menu__link--level-2, li#HeaderMenu-utility-mounting-solutions{
-    font-size: color;
-    color: black;
+    color: black !important;
     text-decoration: none;
     border-bottom: 1px solid #a5a5a5;
     background-color: #e0e0e0;
