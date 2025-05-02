@@ -49,7 +49,7 @@
                       {%- if childlink.links != blank -%}
                         <ul class="list-unstyled" role="list">
                           {%- for grandchildlink in childlink.links -%}
-                            <li id="3-HeaderMenu-{{ link.handle }}-{{ childlink.handle }}-{{ grandchildlink.handle }}">
+                            <li id="3-HeaderMenu-{{ grandchildlink.handle }}">
                               <a
                                 id="HeaderMenu-{{ link.handle }}-{{ childlink.handle }}-{{ grandchildlink.handle }}"
                                 href="{{ grandchildlink.url }}"
