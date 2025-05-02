@@ -117,7 +117,7 @@ a.mega-menu__link:hover{
 }
 
 li#HeaderMenu-quick-order-s-5, li#HeaderMenu-gutters-quick-order-gutters{
-    background-color: #73bf42;
+    background-color: #73bf42 !important;
     border: none;
 }
 li#HeaderMenu-5-lead-coated-system {
