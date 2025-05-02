@@ -113,7 +113,7 @@ a#HeaderMenu-gutters-shop-all-gutters-quick-order-gutters, a#HeaderMenu-s-5-moun
   color:black;
 }
 a.mega-menu__link:hover{
-  text-decoration:underline;
+  text-decoration:underline !important;
 }
 
 li#HeaderMenu-quick-order-s-5, li#HeaderMenu-gutters-quick-order-gutters{
