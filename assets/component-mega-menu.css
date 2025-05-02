@@ -112,6 +112,9 @@ a#HeaderMenu-gutters-shop-all-gutters-quick-order-gutters, a#HeaderMenu-s-5-moun
   text-decoration:none;
   color:black;
 }
+a.mega-menu__link:hover{
+  text-decoration:underline;
+}
 
 li#HeaderMenu-quick-order-s-5, li#HeaderMenu-gutters-quick-order-gutters{
     background-color: #73bf42;
