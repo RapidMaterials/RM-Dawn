@@ -94,7 +94,7 @@ ul#HeaderMenu-s-5-mounting {
 ul#HeaderMenu-gutters{
     grid-template-columns: repeat(5, minmax(0, 1fr));
 }
-.mega-menu__link--level-2, li#HeaderMenu-utility-mounting-solutions, a#HeaderMenu-gutters-painted-steel-gutters-gutter-tools, li#HeaderMenu-quick-order-s-5, li#HeaderMenu-zinc-gutters, li#HeaderMenu-quick-order-gutters, li#HeaderMenu-gutter-tools, li#HeaderMenu-rain-chains{
+.mega-menu__link--level-2, li#HeaderMenu-utility-mounting-solutions, li#HeaderMenu-quick-order-s-5, li#HeaderMenu-zinc-gutters, li#HeaderMenu-quick-order-gutters, li#HeaderMenu-gutter-tools, li#HeaderMenu-rain-chains{
     color: black !important;
     text-decoration: none;
     border-bottom: 1px solid #a5a5a5;
@@ -109,6 +109,8 @@ li#HeaderMenu-utility-mounting-solutions, li#HeaderMenu-quick-order-gutters, li#
 a#HeaderMenu-gutters-shop-all-gutters-quick-order-gutters, a#HeaderMenu-s-5-mounting-solar-mounting-solutions-utility-mounting-solutions, a#HeaderMenu-gutters-painted-steel-gutters-rain-chains, a#HeaderMenu-gutters-painted-steel-gutters-gutter-tools, a#HeaderMenu-s-5-mounting-shop-all-s-5-quick-order-s-5, a#HeaderMenu-gutters-galvanized-steel-gutters-zinc-gutters {
     padding: 0 !important;
     font-weight: bold !important;
+  text-decoration:none;
+  color:black;
 }
 
 li#HeaderMenu-quick-order-s-5, li#HeaderMenu-gutters-quick-order-gutters{
