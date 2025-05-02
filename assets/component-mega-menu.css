@@ -124,3 +124,7 @@ li#HeaderMenu-quick-order-s-5, li#HeaderMenu-quick-order-gutters{
 li#HeaderMenu-5-lead-coated-system {
     border-top: 1px solid #a5a5a5;
 }
+.mega-menu__list--condensed {
+    display: flex !important;
+    justify-content: center;
+}
