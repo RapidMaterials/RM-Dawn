@@ -111,7 +111,7 @@ a#HeaderMenu-s-5-mounting-solar-mounting-solutions-utility-mounting-solutions, a
     font-weight: bold !important;
 }
 
-li#HeaderMenu-quick-order-s-5 {
+li#HeaderMenu-quick-order-s-5, li#HeaderMenu-gutters-quick-order-gutters {
     background-color: #73bf42;
     border: none;
 }
