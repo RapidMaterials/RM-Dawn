@@ -151,6 +151,10 @@ li#HeaderMenu-5-lead-coated-system {
       float: left;
       padding: 0 10px;
   }
+
+  li#HeaderMenu-dark-bronze, li#HeaderMenu-dark-charcoal, li#HeaderMenu-gray-metallic, li#HeaderMenu-white {
+    clear: both;
+}
 }
 
 
