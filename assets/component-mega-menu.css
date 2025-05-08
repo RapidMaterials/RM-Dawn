@@ -135,11 +135,7 @@ li#HeaderMenu-black-painted, li#HeaderMenu-dark-bronze-painted {
     padding-right: 10px;
 }
 
-li#HeaderMenu-5,#HeaderMenu-6, #HeaderMenu-7-6 {
-    width: auto;
-    float: left;
-    padding: 0 10px;
-}
+
 
     li#HeaderMenu-dark-bronze-painted {
     clear: both;
@@ -153,4 +149,10 @@ a#HeaderMenu-gutters-painted-steel-gutters-black-painted::after, a#HeaderMenu-gu
     clear: both;
     display: block;
     content: ' ';
+}
+
+li#HeaderMenu-5,#HeaderMenu-6, #HeaderMenu-7-6 {
+    width: auto;
+    float: left;
+    padding: 0 10px;
 }
