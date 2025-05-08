@@ -20,9 +20,9 @@
       <div class="menu-drawer__inner-container">
         <div class="menu-drawer__navigation-container">
           <nav class="menu-drawer__navigation">
-            <ul class="menu-drawer__menu has-submenu list-menu" role="list">
+            <ul class="menu-drawer__menu has-submenu list-menu" id="HeaderMenu-{{ link.handle }}" role="list">
               {%- for link in section.settings.menu.links -%}
-                <li>
+                <li id="HeaderMenu-{{ link.handle }}" >
                   {%- if link.links != blank -%}
                     <details id="Details-menu-drawer-menu-item-{{ forloop.index }}">
                       <summary
@@ -49,9 +49,9 @@
                             </span>
                             {{ link.title | escape }}
                           </button>
-                          <ul class="menu-drawer__menu list-menu" role="list" tabindex="-1">
+                          <ul class="menu-drawer__menu list-menu" role="list" id="HeaderMenu-{{ link.handle }}" tabindex="-1">
                             {%- for childlink in link.links -%}
-                              <li>
+                              <li id="HeaderMenu-{{ link.handle }}">
                                 {%- if childlink.links == blank -%}
                                   <a
                                     id="HeaderDrawer-{{ link.handle }}-{{ childlink.handle }}"
@@ -96,7 +96,7 @@
                                         tabindex="-1"
                                       >
                                         {%- for grandchildlink in childlink.links -%}
-                                          <li>
+                                          <li id="HeaderMenu-{{ link.handle }}">
                                             <a
                                               id="HeaderDrawer-{{ link.handle }}-{{ childlink.handle }}-{{ grandchildlink.handle }}"
                                               href="{{ grandchildlink.url }}"
