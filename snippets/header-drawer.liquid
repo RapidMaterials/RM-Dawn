@@ -96,7 +96,7 @@
                                         tabindex="-1"
                                       >
                                         {%- for grandchildlink in childlink.links -%}
-                                          <li id="HeaderMenu-{{ link.handle }}">
+                                          <li id="HeaderMenu-{{ grandchildlink.handle }}">
                                             <a
                                               id="HeaderDrawer-{{ link.handle }}-{{ childlink.handle }}-{{ grandchildlink.handle }}"
                                               href="{{ grandchildlink.url }}"
