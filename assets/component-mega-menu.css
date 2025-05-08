@@ -152,4 +152,5 @@ a#HeaderMenu-gutters-painted-steel-gutters-black-painted::after, a#HeaderMenu-gu
 #HeaderMenu-gutters-painted-steel-gutters > ul > li::before {
     clear: both;
     display: block;
+    content: ' ';
 }
