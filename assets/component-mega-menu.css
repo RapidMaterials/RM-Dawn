@@ -128,3 +128,23 @@ li#HeaderMenu-5-lead-coated-system {
     display: flex !important;
     justify-content: center;
 }
+
+li#HeaderMenu-black-painted {
+    width: auto;
+    float: left;
+    padding-right: 10px;
+}
+
+li#HeaderMenu-5,#HeaderMenu-6 {
+    width: auto;
+    float: left;
+    padding: 0 10px;
+}
+
+    li#HeaderMenu-dark-bronze-painted {
+    clear: both;
+}
+
+a#HeaderMenu-gutters-painted-steel-gutters-black-painted::after {
+    content: ':';
+}
