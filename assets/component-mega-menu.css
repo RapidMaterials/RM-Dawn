@@ -130,7 +130,7 @@ li#HeaderMenu-5-lead-coated-system {
 }
 
 @media only screen and (min-width: 990px) {
-  li#HeaderMenu-black-painted, li#HeaderMenu-dark-bronze-painted, li#HeaderMenu-dark-charcoal-painted, li#HeaderMenu-gray-metallic-painted, li#HeaderMenu-white-painted {
+  li#HeaderMenu-black, li#HeaderMenu-dark-bronze, li#HeaderMenu-dark-charcoal, li#HeaderMenu-gray-metallic, li#HeaderMenu-white {
       width: auto;
       float: left;
       padding-right: 10px;
