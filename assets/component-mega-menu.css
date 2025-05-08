@@ -129,30 +129,29 @@ li#HeaderMenu-5-lead-coated-system {
     justify-content: center;
 }
 
-li#HeaderMenu-black-painted, li#HeaderMenu-dark-bronze-painted, li#HeaderMenu-dark-charcoal-painted, li#HeaderMenu-gray-metallic-painted, li#HeaderMenu-white-painted {
-    width: auto;
-    float: left;
-    padding-right: 10px;
-}
-
-
-
-    li#HeaderMenu-dark-bronze-painted {
-    clear: both;
-}
-
-a#HeaderMenu-gutters-painted-steel-gutters-black-painted::after, a#HeaderMenu-gutters-painted-steel-gutters-dark-bronze-painted::after, a#HeaderMenu-gutters-painted-steel-gutters-dark-charcoal-painted::after, a#HeaderMenu-gutters-painted-steel-gutters-gray-metallic-painted::after, a#HeaderMenu-gutters-painted-steel-gutters-white-painted::after {
-    content: ':';
-}
-
-#HeaderMenu-gutters-painted-steel-gutters > ul > li::before {
-    clear: both;
-    display: block;
-    content: ' ';
-}
-
-li#HeaderMenu-5,#HeaderMenu-6, #HeaderMenu-7-6 {
-    width: auto;
-    float: left;
-    padding: 0 10px;
+@media only screen and (min-width: 750px) {
+  li#HeaderMenu-black-painted, li#HeaderMenu-dark-bronze-painted, li#HeaderMenu-dark-charcoal-painted, li#HeaderMenu-gray-metallic-painted, li#HeaderMenu-white-painted {
+      width: auto;
+      float: left;
+      padding-right: 10px;
+  }
+      li#HeaderMenu-dark-bronze-painted {
+      clear: both;
+  }
+  
+  a#HeaderMenu-gutters-painted-steel-gutters-black-painted::after, a#HeaderMenu-gutters-painted-steel-gutters-dark-bronze-painted::after, a#HeaderMenu-gutters-painted-steel-gutters-dark-charcoal-painted::after, a#HeaderMenu-gutters-painted-steel-gutters-gray-metallic-painted::after, a#HeaderMenu-gutters-painted-steel-gutters-white-painted::after {
+      content: ':';
+  }
+  
+  #HeaderMenu-gutters-painted-steel-gutters > ul > li::before {
+      clear: both;
+      display: block;
+      content: ' ';
+  }
+  
+  li#HeaderMenu-5,#HeaderMenu-6, #HeaderMenu-7-6 {
+      width: auto;
+      float: left;
+      padding: 0 10px;
+  }
 }
