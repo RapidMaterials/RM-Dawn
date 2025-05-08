@@ -136,7 +136,7 @@ li#HeaderMenu-5-lead-coated-system {
       padding-right: 10px;
   }
   
-  a#HeaderMenu-gutters-painted-steel-gutters-black-painted::after, a#HeaderMenu-gutters-painted-steel-gutters-dark-bronze-painted::after, a#HeaderMenu-gutters-painted-steel-gutters-dark-charcoal-painted::after, a#HeaderMenu-gutters-painted-steel-gutters-gray-metallic-painted::after, a#HeaderMenu-gutters-painted-steel-gutters-white-painted::after {
+  a#HeaderMenu-gutters-painted-steel-gutters-black::after, a#HeaderMenu-gutters-painted-steel-gutters-dark-bronze::after, a#HeaderMenu-gutters-painted-steel-gutters-dark-charcoal::after, a#HeaderMenu-gutters-painted-steel-gutters-gray-metallic::after, a#HeaderMenu-gutters-painted-steel-gutters-white::after {
       content: ':';
   }
   
