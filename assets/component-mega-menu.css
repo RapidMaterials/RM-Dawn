@@ -148,3 +148,8 @@ li#HeaderMenu-5,#HeaderMenu-6, #HeaderMenu-7-6 {
 a#HeaderMenu-gutters-painted-steel-gutters-black-painted::after, a#HeaderMenu-gutters-painted-steel-gutters-dark-bronze-painted {
     content: ':';
 }
+
+#HeaderMenu-gutters-painted-steel-gutters > ul > li::before {
+    clear: both;
+    display: block;
+}
