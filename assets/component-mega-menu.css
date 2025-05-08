@@ -129,7 +129,7 @@ li#HeaderMenu-5-lead-coated-system {
     justify-content: center;
 }
 
-li#HeaderMenu-black-painted {
+li#HeaderMenu-black-painted, li#HeaderMenu-dark-bronze-painted {
     width: auto;
     float: left;
     padding-right: 10px;
