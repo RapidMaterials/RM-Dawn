@@ -15,8 +15,7 @@
         "p {text-align: Center; font-size: 0.8em; line-height: 1em;}",
         ".collection-hero__description {margin: auto;}",
         ".collection-hero__text-wrapper {text-align: center;}",
-        ".collection-hero__title {margin: 1rem;}",
-        "h1 {font-size: 2em;}"
+        ".collection-hero__title{margin:.4em;}"
       ],
       "settings": {
         "show_collection_description": true,
@@ -29,7 +28,8 @@
       "custom_css": [
         "@media screen and (min-width: 750px) {.card__information {padding: 0; }}",
         "h2#verticalTitle {display: none;}",
-        "div#FacetsWrapperDesktop {padding-top: 2rem;}"
+        "div#FacetsWrapperDesktop {padding-top: 2rem;}",
+        "}h1{font-size:2em;}"
       ],
       "settings": {
         "products_per_page": 36,
