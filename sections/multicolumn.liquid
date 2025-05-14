@@ -141,7 +141,7 @@
               {%- endif -%}
               <div class="multicolumn-card__info">
                 {%- if block.settings.title != blank -%}
-                  <{{ block.settings.heading_tag }} class="inline-richtext">{{ block.settings.title }}</{{ block.settings.heading_tag }}>
+                  <{{ block.settings.heading_tag }} class="inline-richtext {% if block.settings.col_alignment == 'center' %} center{% endif %}">{{ block.settings.title }}</{{ block.settings.heading_tag }}>
                 {%- endif -%}
                 {%- if block.settings.text != blank -%}
                   <div class="rte">{{ block.settings.text }}</div>
@@ -301,6 +301,22 @@
       ],
       "default": "h1",
       "label": "t:sections.all.heading_size.label"
+    },
+    {
+      "type": "select",
+      "id": "col_alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "t:sections.all.settings.column_alignment.options__1.label"
+        },
+        {
+          "value": "center",
+          "label": "t:sections.all.settings.column_alignment.options__2.label"
+        }
+      ],
+      "default": "left",
+      "label": "t:sections.all.settings.column_alignment.label"
     },
     {
       "type": "header",
