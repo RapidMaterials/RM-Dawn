@@ -14,7 +14,8 @@
       "custom_css": [
         "h2.widget-title {display: none;}",
         ".widget-header {justify-content: center;}",
-        "h3.widget-collection-title {background-color: #cacaca; padding: 1%; margin: 0 !important;}"
+        "h3.widget-collection-title {background-color: #cacaca; padding: 1%; margin: 0 !important;}",
+        "h1 {font-size: 2em !important; text-align: center; margin: 0 !important;}"
       ],
       "settings": {
         "padding_top": 12,
@@ -28,7 +29,8 @@
           "type": "heading",
           "settings": {
             "heading": "{{ page.title }}",
-            "heading_size": "h1"
+            "heading_size": "h1",
+            "heading_tag": "h2"
           }
         },
         "caption_4mtGer": {
@@ -36,7 +38,8 @@
           "settings": {
             "caption": "",
             "text_style": "caption-with-letter-spacing",
-            "text_size": "medium"
+            "text_size": "medium",
+            "heading_tag": "p"
           }
         }
       },
