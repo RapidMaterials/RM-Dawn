@@ -52,7 +52,7 @@
     {% endif %}
   >
     {%- unless section.settings.title == blank -%}
-      <div class="title-wrapper-with-link title-wrapper--self-padded-mobile title-wrapper--no-top-margin multicolumn__title">
+      <div class="title-wrapper-with-link title-wrapper--self-padded-mobile title-wrapper--no-top-margin multicolumn__title {% if block.settings.col_alignment == 'center' %} center{% endif %}">
         <{{ section.settings.heading_tag }} class="title inline-richtext {{ section.settings.heading_size }}">
           {{ section.settings.title }}
         </{{ section.settings.heading_tag }}>
@@ -141,7 +141,7 @@
               {%- endif -%}
               <div class="multicolumn-card__info">
                 {%- if block.settings.title != blank -%}
-                  <{{ block.settings.heading_tag }} class="inline-richtext {% if block.settings.col_alignment == 'center' %} center{% endif %}">{{ block.settings.title }}</{{ block.settings.heading_tag }}>
+                  <{{ block.settings.heading_tag }} class="inline-richtext">{{ block.settings.title }}</{{ block.settings.heading_tag }}>
                 {%- endif -%}
                 {%- if block.settings.text != blank -%}
                   <div class="rte">{{ block.settings.text }}</div>
