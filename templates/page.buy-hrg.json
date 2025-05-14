@@ -157,10 +157,11 @@
       ],
       "name": "t:sections.multicolumn.presets.name",
       "settings": {
-        "title": "Shop Half Round Gutters by Size & Material",
+        "title": "<strong>Find the Right Finish for Your Project</strong>",
         "heading_tag": "h2",
         "section_float": "clear",
         "heading_size": "h2",
+        "col_alignment": "left",
         "image_width": "full",
         "image_ratio": "adapt",
         "button_label": "",
