@@ -51,6 +51,7 @@
       ],
       "custom_css": [
         ".image-with-text__media::after {position: absolute; z-index: 10; width: 30%; height: 100%; background: #75a75d; transform: skew(200.25deg); left: 85%; border-left: 5px solid white;}",
+        ".image-with-text--overlap .image-with-text__text-item{padding:0;}",
         "@media screen and (max-width: 749px) {.image-with-text--overlap .image-with-text__content {width: 100%; margin: 0 auto 0; } .image-with-text__media::after {display: none; }}",
         "div#ImageWithText--template--18536930082994__image_with_text_HQphDH {background-color: transparent;}"
       ],
@@ -61,7 +62,7 @@
         "desktop_image_width": "medium",
         "layout": "image_first",
         "image_behavior": "none",
-        "content_layout": "no-overlap",
+        "content_layout": "overlap",
         "desktop_content_position": "top",
         "desktop_content_alignment": "left",
         "mobile_content_alignment": "left",
