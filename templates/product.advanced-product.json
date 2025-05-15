@@ -112,7 +112,7 @@
           "type": "heading",
           "settings": {
             "heading": "Description",
-            "heading_size": "h1",
+            "heading_size": "h2",
             "heading_tag": "h2"
           }
         },
@@ -147,6 +147,9 @@
       },
       "block_order": [
         "judge_me_reviews_review_widget_q3ip3c"
+      ],
+      "custom_css": [
+        ".pag{background-color:#f0f0f0;}"
       ],
       "settings": {
         "include_margins": true
