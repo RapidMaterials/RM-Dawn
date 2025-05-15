@@ -31,7 +31,7 @@
         "text_JikeRi": {
           "type": "text",
           "settings": {
-            "text": "<p>Timeless style. Built to last. Whether you're a contractor or homeowner, get everything you need to build or upgrade your half round gutter system.</p>",
+            "text": "<p>Every gutter system we offer is made by <strong>Zambelli</strong>, Europe’s leading manufacturer of architectural-grade half round gutters. Whether you're a contractor needing job-ready materials or a homeowner upgrading curb appeal, you'll get premium fit, finish, and long-term performance — all in one order.</p>",
             "text_style": "body"
           }
         },
@@ -51,7 +51,7 @@
       ],
       "custom_css": [
         ".image-with-text__media::after {position: absolute; z-index: 10; width: 30%; height: 100%; background: #75a75d; transform: skew(200.25deg); left: 85%; border-left: 5px solid white;}",
-        ".image-with-text--overlap .image-with-text__text-item{padding:0;}",
+        ".image-with-text__text-item {padding: 0;}",
         "@media screen and (max-width: 749px) {.image-with-text--overlap .image-with-text__content {width: 100%; margin: 0 auto 0; } .image-with-text__media::after {display: none; }}",
         "div#ImageWithText--template--18536930082994__image_with_text_HQphDH {background-color: transparent;}"
       ],
