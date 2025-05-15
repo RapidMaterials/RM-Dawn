@@ -149,7 +149,7 @@
         "judge_me_reviews_review_widget_q3ip3c"
       ],
       "custom_css": [
-        ".pag{background-color:#f0f0f0;}"
+        ".shopify-block {background-color: #f0f0f0;}"
       ],
       "settings": {
         "include_margins": true
