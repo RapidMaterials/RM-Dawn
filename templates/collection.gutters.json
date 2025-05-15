@@ -46,8 +46,8 @@
         "heading_xYr9hc": {
           "type": "heading",
           "settings": {
-            "heading": "{{ collection.title }}",
-            "heading_size": "h1",
+            "heading": "<strong>{{ collection.title }}</strong>",
+            "heading_size": "h2",
             "heading_tag": "h1"
           }
         },
