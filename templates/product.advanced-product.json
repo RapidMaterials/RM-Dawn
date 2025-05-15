@@ -105,36 +105,53 @@
         "padding_bottom": 8
       }
     },
-    "rich_text_i3cP8r": {
-      "type": "rich-text",
+    "multicolumn_MVTCB4": {
+      "type": "multicolumn",
       "blocks": {
-        "heading_kWt4NN": {
-          "type": "heading",
+        "column_zFYpmq": {
+          "type": "column",
           "settings": {
-            "heading": "Description",
-            "heading_size": "h2",
-            "heading_tag": "h2"
+            "title": "Description",
+            "heading_tag": "h2",
+            "text": "{{ product.description }}",
+            "link_label": "",
+            "link": ""
           }
         },
-        "text_i4wifU": {
-          "type": "text",
+        "column_mLQJPE": {
+          "type": "column",
           "settings": {
-            "text": "{{ product.description }}"
+            "title": "Column",
+            "heading_tag": "h2",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "link_label": "",
+            "link": ""
           }
         }
       },
       "block_order": [
-        "heading_kWt4NN",
-        "text_i4wifU"
+        "column_zFYpmq",
+        "column_mLQJPE"
       ],
-      "custom_css": [],
+      "name": "t:sections.multicolumn.presets.name",
       "settings": {
-        "desktop_content_position": "left",
-        "content_alignment": "left",
+        "title": "",
+        "heading_tag": "h2",
+        "section_float": "clear",
+        "heading_size": "h1",
+        "col_alignment": "left",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "button_label": "",
+        "button_link": "",
+        "columns_desktop": 2,
+        "column_alignment": "left",
+        "background_style": "primary",
         "color_scheme": "",
-        "full_width": true,
-        "padding_top": 40,
-        "padding_bottom": 52
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 20,
+        "padding_bottom": 20
       }
     },
     "173773221725050421": {
@@ -177,7 +194,7 @@
   },
   "order": [
     "main",
-    "rich_text_i3cP8r",
+    "multicolumn_MVTCB4",
     "173773221725050421",
     "related-products"
   ]
