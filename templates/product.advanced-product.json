@@ -12,10 +12,10 @@
     "main": {
       "type": "main-product",
       "blocks": {
-        "custom_liquid_9qzpnL": {
-          "type": "custom_liquid",
+        "sku_ibtQ6p": {
+          "type": "sku",
           "settings": {
-            "custom_liquid": "<p             class=\"product__sku no-js-hidden caption-with-letter-spacing {% if product.selected_or_first_available_variant.sku.size == 0 %} visibility-hidden{% endif %}\" id=\"Sku-line\" style=\"letter-spacing:1px;margin-bottom:-1rem;;\"\nrole=\"status\"<span>{{ 'products.product.sku' | t }}: </span>{{- product.selected_or_first_available_variant.sku -}} {%- assign brand = product.metafields.custom.brand.value -%}&nbsp;| Brand: {{ brand.name }}\n              </p>"
+            "text_style": "uppercase"
           }
         },
         "title": {
@@ -71,7 +71,7 @@
         }
       },
       "block_order": [
-        "custom_liquid_9qzpnL",
+        "sku_ibtQ6p",
         "title",
         "price",
         "text_XdzqLY",
