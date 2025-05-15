@@ -39,7 +39,7 @@
           "type": "button",
           "settings": {
             "button_label": "Shop All",
-            "button_link": "",
+            "button_link": "shopify://collections/half-round-gutters",
             "button_style_secondary": false
           }
         }
@@ -50,7 +50,7 @@
         "button_8TyEW7"
       ],
       "custom_css": [
-        ".image-with-text__media::after {position: absolute; z-index: 10; width: 30%; height: 100%; background: #ffffff; transform: skew(200.25deg); left: 85%; border-left: 5px solid white;}",
+        ".image-with-text__media::after {position: absolute; z-index: 10; width: 30%; height: 100%; background: #75a75d; transform: skew(200.25deg); left: 85%; border-left: 5px solid white;}",
         "@media screen and (max-width: 749px) {.image-with-text--overlap .image-with-text__content {width: 100%; margin: 0 auto 0; } .image-with-text__media::after {display: none; }}",
         "div#ImageWithText--template--18536930082994__image_with_text_HQphDH {background-color: transparent;}"
       ],
@@ -65,7 +65,7 @@
         "desktop_content_position": "top",
         "desktop_content_alignment": "left",
         "mobile_content_alignment": "left",
-        "section_color_scheme": "scheme-1",
+        "section_color_scheme": "scheme-3ecab526-23df-438e-a281-3ae133d61365",
         "color_scheme": "scheme-1",
         "element-width": 100,
         "padding_top": 0,
@@ -153,7 +153,8 @@
       "custom_css": [
         ".multicolumn-card__info {padding: 1em;}",
         ".rte {font-size: 0.8em;}",
-        "h3.inline-richtext {line-height: 1em;}"
+        "h3.inline-richtext {line-height: 1em;}",
+        ".title-wrapper-with-link {justify-content: center;}"
       ],
       "name": "t:sections.multicolumn.presets.name",
       "settings": {
@@ -176,14 +177,59 @@
         "padding_bottom": 36
       }
     },
+    "image_with_text_rFmby4": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_DFNdbi": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>Premium Gutters, Made by Zambelli</strong>",
+            "heading_tag": "h2",
+            "heading_size": "h2"
+          }
+        },
+        "text_EpNLGG": {
+          "type": "text",
+          "settings": {
+            "text": "<p>All of our half round gutter systems come straight from <strong>Zambelli</strong> — one of Europe’s most trusted names in gutter manufacturing.</p><p>We don’t offer generic, low-grade imports. When you order from Rapid Materials, you're getting <strong>precision-made components</strong> engineered by Zambelli for long-term durability, consistent fit, and clean installation.</p><ul><li><strong>Top-Tier Materials: </strong>Available in copper, zinc, painted steel, galvanized steel, lead-coated copper, and more.</li><li><strong>Perfect Fit: </strong>Every component — from hangers to end caps — is built to work seamlessly together.</li><li><strong>Proven Performance: </strong>Trusted by roofing contractors, builders, and architects worldwide.<br/></li></ul><p>Zambelli is the backbone of our gutter offering — and that’s exactly why our customers keep coming back.</p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "heading_DFNdbi",
+        "text_EpNLGG"
+      ],
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/zambelli-gutter-schema.png",
+        "height": "adapt",
+        "desktop_image_width": "small",
+        "layout": "text_first",
+        "image_behavior": "none",
+        "content_layout": "no-overlap",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "center",
+        "section_color_scheme": "scheme-1",
+        "color_scheme": "scheme-1",
+        "element-width": 100,
+        "padding_top": 12,
+        "padding_bottom": 12,
+        "side-padding": "no-padding"
+      }
+    },
     "featured_collection_iEWDMQ": {
       "type": "featured-collection",
+      "custom_css": [
+        "h2.title.inline-richtext.h2 {text-align: center;}"
+      ],
       "settings": {
         "collection": "gutter-tools",
         "products_to_show": 12,
-        "title": "Gutter Tools & Supplies",
-        "heading_size": "h1",
-        "description": "<p>Get the job done right with professional-grade tools designed specifically for copper gutter installation. From snips and seamers to soldering irons and flux, we’ve got the essentials to ensure a clean, secure fit every time.</p>",
+        "title": "<strong>Gutter Tools & Supplies</strong>",
+        "heading_size": "h2",
+        "description": "<p>Get the job done right with professional-grade tools designed specifically for gutter installation. From snips and seamers to soldering irons and flux, we’ve got the essentials to ensure a clean, secure fit every time.</p>",
         "show_description": false,
         "description_style": "body",
         "columns_desktop": 4,
@@ -250,6 +296,7 @@
         "collapsible_row_PxPiPk",
         "collapsible_row_gfqPxj"
       ],
+      "disabled": true,
       "settings": {
         "caption": "",
         "heading": "{{ page.title }} FAQ",
@@ -270,6 +317,7 @@
     "main",
     "image_with_text_HQphDH",
     "multicolumn_7xK7Dc",
+    "image_with_text_rFmby4",
     "featured_collection_iEWDMQ",
     "collapsible_content_9wrzKp"
   ]
