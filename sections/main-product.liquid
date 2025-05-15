@@ -205,7 +205,7 @@
                   {{ block.shopify_attributes }}
                 >
                   <span>{{ 'products.product.sku' | t }}:</span>
-                  {{- product.selected_or_first_available_variant.sku -}}
+                  {{- product.selected_or_first_available_variant.sku -}} | {{ brand.name }}
                 </p>
               {%- when 'custom_liquid' -%}
                 {{ block.settings.custom_liquid }}
