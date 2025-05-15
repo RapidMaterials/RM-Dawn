@@ -133,6 +133,9 @@
         "column_zFYpmq",
         "column_mLQJPE"
       ],
+      "custom_css": [
+        ".multicolumn-card h2.inline-richtext {margin-top: 0; font-weight: bold; font-size: 1.2em;}"
+      ],
       "name": "t:sections.multicolumn.presets.name",
       "settings": {
         "title": "",
