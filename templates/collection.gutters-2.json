@@ -98,7 +98,6 @@
     },
     "product-grid": {
       "type": "main-collection-product-grid",
-      "disabled": true,
       "custom_css": [
         "@media screen and (min-width: 750px) {.card__information {padding: 0; }}",
         "h2#verticalTitle {display: none;}",
