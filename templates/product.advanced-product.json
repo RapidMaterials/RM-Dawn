@@ -218,7 +218,7 @@
         "custom_key_value": "",
         "conditional": "no",
         "caption": "{{ product.title }}",
-        "heading": "{{ product.metafields.custom.short_title.value }} FAQ",
+        "heading": "Frequently Asked Questions",
         "heading_size": "h2",
         "heading_alignment": "center",
         "layout": "none",
