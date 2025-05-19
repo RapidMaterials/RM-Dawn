@@ -163,9 +163,9 @@
         "collapsible_row_EXjwY3": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Collapsible row",
+            "heading": "{{ product.metafields.custom.faq_1_q.value }}",
             "icon": "check_mark",
-            "row_content": "",
+            "row_content": "<p>{{ product.metafields.custom.faq_1_a | metafield_tag }}</p>",
             "page": ""
           }
         },
