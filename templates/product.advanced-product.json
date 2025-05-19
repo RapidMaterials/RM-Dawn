@@ -213,6 +213,9 @@
         "collapsible_row_yNdLLH",
         "collapsible_row_ncippM"
       ],
+      "custom_css": [
+        "@media screen and (min-width: 750px) {.collapsible-section-layout {padding-bottom: 20px; padding-top: 20px; }}"
+      ],
       "name": "FAQ",
       "settings": {
         "custom_key_value": "",
@@ -221,14 +224,14 @@
         "heading": "<strong>Frequently Asked Questions</strong>",
         "heading_size": "h2",
         "heading_alignment": "center",
-        "layout": "none",
-        "container_color_scheme": "scheme-1",
+        "layout": "section",
+        "container_color_scheme": "scheme-2",
         "color_scheme": "scheme-1",
         "open_first_collapsible_row": false,
         "image_ratio": "adapt",
         "desktop_layout": "image_second",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "padding_top": 20,
+        "padding_bottom": 20
       }
     },
     "173773221725050421": {
@@ -243,7 +246,7 @@
         "judge_me_reviews_review_widget_q3ip3c"
       ],
       "custom_css": [
-        ".shopify-block {background-color: #f0f0f0; padding: 2%;}"
+        ".shopify-block {background-color: #f0f0f0; padding: 2%; margin-top:20px;}"
       ],
       "settings": {
         "include_margins": true
