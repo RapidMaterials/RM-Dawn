@@ -165,7 +165,7 @@
           "settings": {
             "heading": "{{ product.metafields.custom.faq_1_q.value }}",
             "icon": "check_mark",
-            "row_content": "<p>{{ product.metafields.custom.faq_1_a | metafield_tag }}</p>",
+            "row_content": "{{ product.metafields.custom.faq_1_a | metafield_tag }}",
             "page": ""
           }
         },
@@ -174,25 +174,34 @@
           "settings": {
             "heading": "{{ block.settings.page.metafields.custom.faq_q2.value }}",
             "icon": "check_mark",
-            "row_content": "{{ product.metafields.custom.faq_2_a2 | metafield_tag }}",
+            "row_content": "{{ product.metafields.custom.faq_2_a | metafield_tag }}",
             "page": ""
           }
         },
         "collapsible_row_9cPNwR": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Collapsible row",
+            "heading": "{{ product.metafields.custom.faq_3_q.value }}",
             "icon": "check_mark",
-            "row_content": "",
+            "row_content": "{{ product.metafields.custom.faq_3_a | metafield_tag }}",
             "page": ""
           }
         },
         "collapsible_row_yNdLLH": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Collapsible row",
+            "heading": "{{ product.metafields.custom.faq_4_q.value }}",
             "icon": "check_mark",
-            "row_content": "",
+            "row_content": "{{ product.metafields.custom.faq_4_a | metafield_tag }}",
+            "page": ""
+          }
+        },
+        "collapsible_row_ncippM": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "{{ product.metafields.custom.faq_5_q.value }}",
+            "icon": "check_mark",
+            "row_content": "{{ product.metafields.custom.faq_5_a | metafield_tag }}",
             "page": ""
           }
         }
@@ -201,7 +210,8 @@
         "collapsible_row_EXjwY3",
         "collapsible_row_dKcxEc",
         "collapsible_row_9cPNwR",
-        "collapsible_row_yNdLLH"
+        "collapsible_row_yNdLLH",
+        "collapsible_row_ncippM"
       ],
       "name": "t:sections.collapsible_content.presets.name",
       "settings": {
