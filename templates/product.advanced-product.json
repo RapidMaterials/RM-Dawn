@@ -217,7 +217,7 @@
       "settings": {
         "custom_key_value": "",
         "conditional": "no",
-        "caption": "",
+        "caption": "{{ product.title }} by {{ product.metafields.custom.brand.value.name.value }}",
         "heading": "{{ product.metafields.custom.short_title.value }} FAQ",
         "heading_size": "h2",
         "heading_alignment": "center",
