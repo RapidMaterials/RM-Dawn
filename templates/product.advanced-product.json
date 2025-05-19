@@ -224,7 +224,7 @@
         "heading": "<strong>Frequently Asked Questions</strong>",
         "heading_size": "h2",
         "heading_alignment": "center",
-        "layout": "section",
+        "layout": "none",
         "container_color_scheme": "scheme-2",
         "color_scheme": "scheme-1",
         "open_first_collapsible_row": false,
@@ -246,7 +246,7 @@
         "judge_me_reviews_review_widget_q3ip3c"
       ],
       "custom_css": [
-        ".shopify-block {background-color: #f0f0f0; padding: 2%; margin-top:20px;}"
+        ".shopify-block {background-color: #f0f0f0; padding: 2%; margin-top: 20px;}"
       ],
       "settings": {
         "include_margins": true
