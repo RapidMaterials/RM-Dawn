@@ -174,7 +174,7 @@
           "settings": {
             "heading": "{{ block.settings.page.metafields.custom.faq_q2.value }}",
             "icon": "check_mark",
-            "row_content": "<p>{{ block.settings.page.metafields.custom.faq_a2 | metafield_tag }}</p>",
+            "row_content": "{{ product.metafields.custom.faq_2_a2 | metafield_tag }}",
             "page": ""
           }
         },
