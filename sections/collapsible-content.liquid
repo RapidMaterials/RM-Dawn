@@ -15,6 +15,18 @@
   }
 {%- endstyle -%}
 
+{% assign custom_sections = product.metafields.custom.sections %}
+{% assign input_value = section.settings.custom_key_value %}
+{% assign conditional = section.settings.conditional %}
+{% assign show_content = false %}
+
+{% if conditional == 'no' %}
+  {% assign show_content = true %}
+{% elsif conditional == 'yes' and custom_sections contains input_value %}
+  {% assign show_content = true %}
+{% endif %}
+
+{% if show_content %}
 <div class="color-{{ section.settings.color_scheme }} gradient">
   <div class="collapsible-content collapsible-{{ section.settings.layout }}-layout isolate{% if section.settings.layout == 'section' %} page-width{% elsif section.settings.layout == 'none' %} content-container content-container--full-width{% endif %}">
     <div class="collapsible-content__wrapper section-{{ section.id }}-padding{% if section.settings.layout == 'section' %} content-container color-{{ section.settings.container_color_scheme }} gradient{% endif %}">
@@ -104,7 +116,7 @@
       </div>
     </div>
   </div>
-</div>
+</div>{% endif %}
 
 {% schema %}
 {
@@ -115,6 +127,27 @@
     "groups": ["header", "footer"]
   },
   "settings": [
+     {
+      "type": "text",
+      "id": "custom_key_value",
+      "label": "custom.sections Value"
+    },
+    {
+      "type": "select",
+      "id": "conditional",
+      "options": [
+        {
+          "value": "yes",
+          "label": "Yes"
+        },
+        {
+          "value": "no",
+          "label": "No"
+        }
+      ],
+      "default": "no",
+      "label": "Make Field Conditional"
+    },
     {
       "type": "text",
       "id": "caption",
