@@ -172,7 +172,7 @@
         "collapsible_row_dKcxEc": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "{{ block.settings.page.metafields.custom.faq_q2.value }}",
+            "heading": "{{ product.metafields.custom.faq_2_q.value }}",
             "icon": "check_mark",
             "row_content": "{{ product.metafields.custom.faq_2_a | metafield_tag }}",
             "page": ""
@@ -213,7 +213,7 @@
         "collapsible_row_yNdLLH",
         "collapsible_row_ncippM"
       ],
-      "name": "t:sections.collapsible_content.presets.name",
+      "name": "FAQ",
       "settings": {
         "custom_key_value": "",
         "conditional": "no",
