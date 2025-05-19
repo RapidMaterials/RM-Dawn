@@ -157,6 +157,70 @@
         "padding_bottom": 20
       }
     },
+    "collapsible_content_aqAAzG": {
+      "type": "collapsible-content",
+      "blocks": {
+        "collapsible_row_EXjwY3": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Collapsible row",
+            "icon": "check_mark",
+            "row_content": "",
+            "page": ""
+          }
+        },
+        "collapsible_row_dKcxEc": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Collapsible row",
+            "icon": "check_mark",
+            "row_content": "",
+            "page": ""
+          }
+        },
+        "collapsible_row_9cPNwR": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Collapsible row",
+            "icon": "check_mark",
+            "row_content": "",
+            "page": ""
+          }
+        },
+        "collapsible_row_yNdLLH": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Collapsible row",
+            "icon": "check_mark",
+            "row_content": "",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_row_EXjwY3",
+        "collapsible_row_dKcxEc",
+        "collapsible_row_9cPNwR",
+        "collapsible_row_yNdLLH"
+      ],
+      "name": "t:sections.collapsible_content.presets.name",
+      "settings": {
+        "custom_key_value": "",
+        "conditional": "no",
+        "caption": "",
+        "heading": "{{ product.title }} FAQ",
+        "heading_size": "h2",
+        "heading_alignment": "center",
+        "layout": "none",
+        "container_color_scheme": "scheme-1",
+        "color_scheme": "scheme-1",
+        "open_first_collapsible_row": false,
+        "image_ratio": "adapt",
+        "desktop_layout": "image_second",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
     "173773221725050421": {
       "type": "apps",
       "blocks": {
@@ -198,6 +262,7 @@
   "order": [
     "main",
     "multicolumn_MVTCB4",
+    "collapsible_content_aqAAzG",
     "173773221725050421",
     "related-products"
   ]
