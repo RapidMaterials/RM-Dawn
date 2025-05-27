@@ -569,6 +569,9 @@
         "shipping_method_not_available_generic": {
           "one": "Shipping rates cannot be returned at this time. Please contact us at info@rapidmaterials.com and include a screenshot of your cart so we can provide you with a quote."
         }
+      },
+      "delivery_options": {
+        "ship_to_address": "Ship to address (Note: We cannot ship to PO Boxes)"
       }
     }
   }
