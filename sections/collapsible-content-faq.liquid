@@ -112,7 +112,7 @@
           {{- 'icon-caret.svg' | inline_asset_content -}}
         </summary>
         <div class="accordion__content rte metafield-rich_text_field">
-          {{ faq.answer.value }}
+          {{ faq.answer | metafield_tag }}
         </div>
       </details>
     </div>
