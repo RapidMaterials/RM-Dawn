@@ -69,6 +69,9 @@
             </div>
           {% endif %}
 
+
+
+
 {%- assign faqs = product.metafields.custom.faqs.value -%}
 {%- if section.blocks.size > 0 or faqs != blank -%}
   <div class="grid__item">
@@ -119,12 +122,31 @@
           </details>
         </div>
       {%- endfor -%}
+
+      <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {%- for faq in faqs -%}
+            {
+              "@type": "Question",
+              "name": {{ faq.question.value | strip_newlines | escape | json }},
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": {{ faq.answer | metafield_tag | strip_newlines | escape | json }}
+              }
+            }{%- unless forloop.last %},{% endunless -%}
+          {%- endfor -%}
+        ]
+      }
+      </script>
     {%- endif -%}
   </div>
 {%- else -%}
   <div class="grid__item">
     <p class="rte" style="text-align: center;">
-      No FAQs yet. Got a question? <a href="https://rapidmaterials.com/pages/contact">Reach out</a>.
+     No FAQs yet. Got a question? <a href="https://rapidmaterials.com/pages/contact">Reach out</a>.
     </p>
   </div>
 {%- endif -%}
