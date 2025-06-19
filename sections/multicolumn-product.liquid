@@ -174,15 +174,6 @@
  {% if section.settings.include_brand %}
   {%- assign brand = product.metafields.custom.brand.value -%}
   {%- if brand != blank -%}
-    <div class="product-brand-block">
-      <p class="product-brand">
-        Brand:
-        {%- if brand.collection_url != blank -%}
-          <a href="{{ brand.collection_url }}">{{ brand.name }}</a>
-        {%- else -%}
-          {{ brand.name }}
-        {%- endif -%}
-      </p>
 
       {%- if brand.logo != blank -%}
         <div class="brand-logo">
