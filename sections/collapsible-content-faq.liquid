@@ -134,7 +134,7 @@
               "name": {{ faq.question.value | strip_newlines | escape | json }},
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": {{ faq.answer | metafield_tag | strip_newlines | escape | json }}
+                 "text": {{ faq.answer.value | strip_html | strip_newlines | escape | json }}
               }
             }{%- unless forloop.last %},{% endunless -%}
           {%- endfor -%}
