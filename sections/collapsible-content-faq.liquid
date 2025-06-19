@@ -1,4 +1,3 @@
-
 {{ 'component-accordion.css' | asset_url | stylesheet_tag }}
 {{ 'collapsible-content.css' | asset_url | stylesheet_tag }}
 
@@ -16,6 +15,18 @@
   }
 {%- endstyle -%}
 
+{% assign custom_sections = product.metafields.custom.sections %}
+{% assign input_value = section.settings.custom_key_value %}
+{% assign conditional = section.settings.conditional %}
+{% assign show_content = false %}
+
+{% if conditional == 'no' %}
+  {% assign show_content = true %}
+{% elsif conditional == 'yes' and custom_sections contains input_value %}
+  {% assign show_content = true %}
+{% endif %}
+
+{% if show_content %}
 <div class="color-{{ section.settings.color_scheme }} gradient">
   <div class="collapsible-content collapsible-{{ section.settings.layout }}-layout isolate{% if section.settings.layout == 'section' %} page-width{% elsif section.settings.layout == 'none' %} content-container content-container--full-width{% endif %}">
     <div class="collapsible-content__wrapper section-{{ section.id }}-padding{% if section.settings.layout == 'section' %} content-container color-{{ section.settings.container_color_scheme }} gradient{% endif %}">
@@ -24,7 +35,11 @@
           class="collapsible-content__header{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
           style="text-align: {{ section.settings.heading_alignment }};"
         >
-          
+          {%- if section.settings.caption != blank -%}
+            <p class="caption-with-letter-spacing">
+              {{ section.settings.caption | escape }}
+            </p>
+          {% endif %}
           {%- if section.settings.heading != blank -%}
             <h2 class="collapsible-content__heading inline-richtext {{ section.settings.heading_size }}">
               {{ section.settings.heading }}
@@ -63,70 +78,94 @@
                     widths: '50, 75, 100, 150, 200, 300, 400, 500, 750, 1000, 1250, 1500, 1750, 2000, 2250, 2500, 2750, 3000, 3200'
                 }}
               </div>
-              {%- if section.settings.caption != blank -%}
-            <p class="rich-text">
-              {{ section.settings.caption | escape }}
-            </p>
-          {% endif %}
             </div>
           {% endif %}
           <div class="grid__item">
-            {%- for block in section.blocks -%}
-              <div
-                class="accordion{% if section.settings.layout == 'row' %} content-container color-{{ section.settings.container_color_scheme }} gradient{% endif %}"
-                {{ block.shopify_attributes }}
-              >
-                <details
-                  id="Details-{{ block.id }}-{{ section.id }}"
-                  {% if section.settings.open_first_collapsible_row and forloop.first %}
-                    open
-                  {% endif %}
-                >
-                  <summary id="Summary-{{ block.id }}-{{ section.id }}">
-                    {% render 'icon-accordion', icon: block.settings.icon %}
-                    <h3 class="accordion__title inline-richtext h4">
-                      {{ block.settings.heading | default: block.settings.page.title }}
-                    </h3>
-                    {% render 'icon-caret' %}
-                  </summary>
-                  <div
-                    class="accordion__content rte"
-                    id="CollapsibleAccordion-{{ block.id }}-{{ section.id }}"
-                    role="region"
-                    aria-labelledby="Summary-{{ block.id }}-{{ section.id }}"
-                  >
-                    {{ block.settings.row_content }}
-                    {{ block.settings.page.content }}
-                  </div>
-                </details>
-              </div>
-            {%- endfor -%}
+           {%- for block in section.blocks -%}
+  {% assign has_content = false %}
+
+  {% if block.settings.row_content != blank or block.settings.page.content != blank %}
+    {% assign has_content = true %}
+  {% endif %}
+
+  {% if has_content %}
+    <div
+      class="accordion{% if section.settings.layout == 'row' %} content-container color-{{ section.settings.container_color_scheme }} gradient{% endif %}"
+      {{ block.shopify_attributes }}
+    >
+      <details
+        id="Details-{{ block.id }}-{{ section.id }}"
+        {% if section.settings.open_first_collapsible_row and forloop.first %}
+          open
+        {% endif %}
+      >
+        <summary id="Summary-{{ block.id }}-{{ section.id }}">
+          {% render 'icon-accordion', icon: block.settings.icon %}
+          <h3 class="accordion__title inline-richtext h4">
+            {{ block.settings.heading | default: block.settings.page.title | escape }}
+          </h3>
+          {{- 'icon-caret.svg' | inline_asset_content -}}
+        </summary>
+        <div
+          class="accordion__content rte"
+          id="CollapsibleAccordion-{{ block.id }}-{{ section.id }}"
+          role="region"
+          aria-labelledby="Summary-{{ block.id }}-{{ section.id }}"
+        >
+          {{ block.settings.row_content }}
+          {{ block.settings.page.content }}
+        </div>
+      </details>
+    </div>
+  {% endif %}
+{%- endfor -%}
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
+</div>{% endif %}
 
 {% schema %}
 {
-  "name": "Collapsible Content Plus",
+  "name": "t:sections.collapsible_content.name",
   "tag": "section",
   "class": "section",
   "disabled_on": {
     "groups": ["header", "footer"]
   },
   "settings": [
+     {
+      "type": "text",
+      "id": "custom_key_value",
+      "label": "custom.sections Value"
+    },
     {
-      "type": "inline_richtext",
+      "type": "select",
+      "id": "conditional",
+      "options": [
+        {
+          "value": "yes",
+          "label": "Yes"
+        },
+        {
+          "value": "no",
+          "label": "No"
+        }
+      ],
+      "default": "no",
+      "label": "Make Field Conditional"
+    },
+    {
+      "type": "text",
       "id": "caption",
-      "label": "Paragraph"
+      "label": "t:sections.collapsible_content.settings.caption.label"
     },
     {
       "type": "inline_richtext",
       "id": "heading",
       "label": "t:sections.collapsible_content.settings.heading.label",
-      "default": "Collapsible content"
+      "default": "t:sections.collapsible_content.settings.heading.default"
     },
     {
       "type": "select",
@@ -143,6 +182,14 @@
         {
           "value": "h0",
           "label": "t:sections.all.heading_size.options__3.label"
+        },
+        {
+          "value": "hxl",
+          "label": "t:sections.all.heading_size.options__4.label"
+        },
+        {
+          "value": "hxxl",
+          "label": "t:sections.all.heading_size.options__5.label"
         }
       ],
       "default": "h1",
@@ -169,6 +216,10 @@
       "default": "center"
     },
     {
+      "type": "header",
+      "content": "t:sections.collapsible_content.settings.layout_header.content"
+    },    
+    {
       "type": "select",
       "id": "layout",
       "label": "t:sections.collapsible_content.settings.layout.label",
@@ -190,16 +241,15 @@
     },
     {
       "type": "color_scheme",
-      "id": "color_scheme",
-      "label": "t:sections.all.colors.label",
-      "default": "scheme-1"
-    },
-    {
-      "type": "color_scheme",
       "id": "container_color_scheme",
       "label": "t:sections.collapsible_content.settings.container_color_scheme.label",
-      "info": "t:sections.collapsible_content.settings.container_color_scheme.info",
       "default": "scheme-2"
+    },    
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.collapsible_content.settings.section_color_scheme.label",
+      "default": "scheme-1"
     },
     {
       "type": "checkbox",
@@ -250,8 +300,7 @@
         }
       ],
       "default": "image_second",
-      "label": "t:sections.collapsible_content.settings.desktop_layout.label",
-      "info": "t:sections.collapsible_content.settings.desktop_layout.info"
+      "label": "t:sections.collapsible_content.settings.desktop_layout.label"
     },
     {
       "type": "header",
@@ -286,9 +335,8 @@
         {
           "type": "text",
           "id": "heading",
-          "default": "Collapsible row",
-          "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.heading.label",
-          "info": "t:sections.collapsible_content.blocks.collapsible_row.settings.heading.info"
+          "default": "t:sections.collapsible_content.blocks.collapsible_row.settings.heading.default",
+          "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.heading.label"
         },
         {
           "type": "select",
