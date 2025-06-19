@@ -169,7 +169,7 @@
             </div>
           </li>
         {%- endfor -%}
-<li>
+<li class="multicolumn-list__item grid__item{% if section.settings.swipe_on_mobile %} slider__slide{% endif %}{% if section.settings.column_alignment == 'center' %} center{% endif %}{{ empty_column }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
   {% if section.settings.include_brand %}
  {% if section.settings.include_brand %}
   {%- assign brand = product.metafields.custom.brand.value -%}
