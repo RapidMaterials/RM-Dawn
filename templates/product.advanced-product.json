@@ -52,7 +52,7 @@
           "type": "buy_buttons",
           "settings": {
             "show_dynamic_checkout": false,
-            "show_gift_card_recipient": true
+            "show_gift_card_recipient": false
           }
         },
         "text_eanxjX": {
@@ -195,12 +195,14 @@
     },
     "related-products": {
       "type": "related-products",
-      "custom_css": [],
+      "custom_css": [
+        "h2 {margin: 0; text-align: center;}"
+      ],
       "settings": {
-        "heading": "Related Products",
+        "heading": "<strong>You May Also Like...</strong>",
         "heading_size": "h2",
-        "products_to_show": 4,
-        "columns_desktop": 4,
+        "products_to_show": 6,
+        "columns_desktop": 6,
         "columns_mobile": "2",
         "color_scheme": "scheme-1",
         "image_ratio": "square",
@@ -208,8 +210,8 @@
         "show_secondary_image": true,
         "show_vendor": false,
         "show_rating": false,
-        "padding_top": 36,
-        "padding_bottom": 28
+        "padding_top": 24,
+        "padding_bottom": 12
       }
     }
   },
