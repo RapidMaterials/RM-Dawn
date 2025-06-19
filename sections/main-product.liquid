@@ -207,7 +207,7 @@
                   <span>{{ 'products.product.sku' | t }}: </span>
                   {{- product.selected_or_first_available_variant.sku -}}
 &nbsp;{%- assign brand = product.metafields.custom.brand.value -%}{%- if brand != blank -%}|&nbsp; 
-  <p class="product-brand">
+  <p class="product-brand {% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}">
     Brand:
     {%- if brand.collection_url != blank -%}
       <a href="{{ brand.collection_url }}">{{ brand.name }}</a>
