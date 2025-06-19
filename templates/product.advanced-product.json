@@ -105,47 +105,41 @@
         "padding_bottom": 8
       }
     },
-    "multicolumn_MVTCB4": {
-      "type": "multicolumn",
+    "multicolumn_product_JpGMnV": {
+      "type": "multicolumn-product",
       "blocks": {
-        "column_zFYpmq": {
+        "column_6cGNwi": {
           "type": "column",
           "settings": {
-            "title": "Description",
+            "title": "<strong>Description</strong>",
             "heading_tag": "h2",
             "text": "{{ product.description }}",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "column_mLQJPE": {
-          "type": "column",
-          "settings": {
-            "title": "",
-            "heading_tag": "h2",
-            "text": "",
             "link_label": "",
             "link": ""
           }
         }
       },
       "block_order": [
-        "column_zFYpmq",
-        "column_mLQJPE"
+        "column_6cGNwi"
       ],
       "custom_css": [
         ".multicolumn-card h2.inline-richtext {margin-top: 0; font-weight: bold; font-size: 1.2em;}"
       ],
-      "name": "t:sections.multicolumn.presets.name",
+      "name": "MultiColumn Product",
       "settings": {
         "title": "",
         "heading_tag": "h2",
         "section_float": "clear",
-        "heading_size": "h1",
+        "heading_size": "h2",
         "col_alignment": "left",
+        "include_brand": true,
+        "include_resources": false,
+        "include_video": false,
+        "include_specs": false,
+        "certs": false,
         "image_width": "full",
         "image_ratio": "adapt",
-        "button_label": "",
+        "button_label": "Button label",
         "button_link": "",
         "columns_desktop": 2,
         "column_alignment": "left",
@@ -153,8 +147,8 @@
         "color_scheme": "",
         "columns_mobile": "1",
         "swipe_on_mobile": false,
-        "padding_top": 20,
-        "padding_bottom": 20
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     },
     "collapsible_content_faq_TKA83N": {
@@ -220,7 +214,7 @@
   },
   "order": [
     "main",
-    "multicolumn_MVTCB4",
+    "multicolumn_product_JpGMnV",
     "collapsible_content_faq_TKA83N",
     "173773221725050421",
     "related-products"
