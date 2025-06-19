@@ -206,8 +206,7 @@
                 >
                   <span>{{ 'products.product.sku' | t }}: </span>
                   {{- product.selected_or_first_available_variant.sku -}}
-&nbsp;|&nbsp; {%- assign brand = product.metafields.custom.brand.value -%}
-{%- if brand != blank -%}
+&nbsp;{%- assign brand = product.metafields.custom.brand.value -%}{%- if brand != blank -%}|&nbsp; 
   <p class="product-brand">
     Brand:
     {%- if brand.collection_url != blank -%}
