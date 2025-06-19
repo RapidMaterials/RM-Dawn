@@ -204,8 +204,19 @@
                   role="status"
                   {{ block.shopify_attributes }}
                 >
-                  <span>{{ 'products.product.sku' | t }}:</span>
+                  <span>{{ 'products.product.sku' | t }}: </span>
                   {{- product.selected_or_first_available_variant.sku -}}
+&nbsp;|&nbsp; {%- assign brand = product.metafields.custom.brand.value -%}
+{%- if brand != blank -%}
+  <p class="product-brand">
+    Brand:
+    {%- if brand.collection_url != blank -%}
+      <a href="{{ brand.collection_url }}">{{ brand.name }}</a>
+    {%- else -%}
+      {{ brand.name }}
+    {%- endif -%}
+  </p>
+{%- endif -%}
                 </p>
               {%- when 'custom_liquid' -%}
                 {{ block.settings.custom_liquid }}
