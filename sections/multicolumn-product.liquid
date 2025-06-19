@@ -169,6 +169,54 @@
             </div>
           </li>
         {%- endfor -%}
+<li>
+  {% if section.settings.include_brand %}
+ {% if section.settings.include_brand %}
+  {%- assign brand = product.metafields.custom.brand.value -%}
+  {%- if brand != blank -%}
+    <div class="product-brand-block">
+      <p class="product-brand">
+        Brand:
+        {%- if brand.collection_url != blank -%}
+          <a href="{{ brand.collection_url }}">{{ brand.name }}</a>
+        {%- else -%}
+          {{ brand.name }}
+        {%- endif -%}
+      </p>
+
+      {%- if brand.logo != blank -%}
+        <div class="brand-logo">
+          {%- if brand.collection_url != blank -%}
+            <a href="{{ brand.collection_url }}">
+              <img src="{{ brand.logo | image_url: width: 300 }}" alt="{{ brand.name }}">
+            </a>
+          {%- else -%}
+            <img src="{{ brand.logo | image_url: width: 300 }}" alt="{{ brand.name }}">
+          {%- endif -%}
+        </div>
+      {%- endif -%}
+    </div>
+  {%- endif -%}
+{% endif %}
+{% endif %}
+
+{% if section.settings.include_resources %}
+  <!-- Resources content here -->
+{% endif %}
+
+{% if section.settings.include_video %}
+  <!-- Video content here -->
+{% endif %}
+
+{% if section.settings.include_specs %}
+  <!-- Specs content here -->
+{% endif %}
+
+{% if section.settings.certs %}
+  <!-- Certs content here -->
+{% endif %}
+</li>
+                    
       </ul>
 
       {%- if show_mobile_slider -%}
