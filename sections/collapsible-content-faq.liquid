@@ -15,18 +15,6 @@
   }
 {%- endstyle -%}
 
-{% assign custom_sections = product.metafields.custom.sections %}
-{% assign input_value = section.settings.custom_key_value %}
-{% assign conditional = section.settings.conditional %}
-{% assign show_content = false %}
-
-{% if conditional == 'no' %}
-  {% assign show_content = true %}
-{% elsif conditional == 'yes' and custom_sections contains input_value %}
-  {% assign show_content = true %}
-{% endif %}
-
-{% if show_content %}
 <div class="color-{{ section.settings.color_scheme }} gradient">
   <div class="collapsible-content collapsible-{{ section.settings.layout }}-layout isolate{% if section.settings.layout == 'section' %} page-width{% elsif section.settings.layout == 'none' %} content-container content-container--full-width{% endif %}">
     <div class="collapsible-content__wrapper section-{{ section.id }}-padding{% if section.settings.layout == 'section' %} content-container color-{{ section.settings.container_color_scheme }} gradient{% endif %}">
@@ -82,49 +70,61 @@
           {% endif %}
           <div class="grid__item">
            {%- for block in section.blocks -%}
-  {% assign has_content = false %}
-
-  {% if block.settings.row_content != blank or block.settings.page.content != blank %}
-    {% assign has_content = true %}
-  {% endif %}
-
-  {% if has_content %}
-    <div
-      class="accordion{% if section.settings.layout == 'row' %} content-container color-{{ section.settings.container_color_scheme }} gradient{% endif %}"
-      {{ block.shopify_attributes }}
+  <div
+    class="accordion{% if section.settings.layout == 'row' %} content-container color-{{ section.settings.container_color_scheme }} gradient{% endif %}"
+    {{ block.shopify_attributes }}
+  >
+    <details
+      id="Details-{{ block.id }}-{{ section.id }}"
+      {% if section.settings.open_first_collapsible_row and forloop.first %}
+        open
+      {% endif %}
     >
-      <details
-        id="Details-{{ block.id }}-{{ section.id }}"
-        {% if section.settings.open_first_collapsible_row and forloop.first %}
-          open
-        {% endif %}
+      <summary id="Summary-{{ block.id }}-{{ section.id }}">
+        {% render 'icon-accordion', icon: block.settings.icon %}
+        <h3 class="accordion__title inline-richtext h4">
+          {{ block.settings.heading | default: block.settings.page.title | escape }}
+        </h3>
+        {{- 'icon-caret.svg' | inline_asset_content -}}
+      </summary>
+      <div
+        class="accordion__content rte"
+        id="CollapsibleAccordion-{{ block.id }}-{{ section.id }}"
+        role="region"
+        aria-labelledby="Summary-{{ block.id }}-{{ section.id }}"
       >
-        <summary id="Summary-{{ block.id }}-{{ section.id }}">
-          {% render 'icon-accordion', icon: block.settings.icon %}
+        {{ block.settings.row_content }}
+        {{ block.settings.page.content }}
+      </div>
+    </details>
+  </div>
+{%- endfor -%}
+
+{%- assign faqs = product.metafields.custom.faqs.value -%}
+{%- if faqs != blank -%}
+  {%- for faq in faqs -%}
+    <div class="accordion{% if section.settings.layout == 'row' %} content-container color-{{ section.settings.container_color_scheme }} gradient{% endif %}">
+      <details>
+        <summary>
           <h3 class="accordion__title inline-richtext h4">
-            {{ block.settings.heading | default: block.settings.page.title | escape }}
+            {{ faq.question.value }}
           </h3>
           {{- 'icon-caret.svg' | inline_asset_content -}}
         </summary>
-        <div
-          class="accordion__content rte"
-          id="CollapsibleAccordion-{{ block.id }}-{{ section.id }}"
-          role="region"
-          aria-labelledby="Summary-{{ block.id }}-{{ section.id }}"
-        >
-          {{ block.settings.row_content }}
-          {{ block.settings.page.content }}
+        <div class="accordion__content rte metafield-rich_text_field">
+          {{ faq.answer.value }}
         </div>
       </details>
     </div>
-  {% endif %}
-{%- endfor -%}
+  {%- endfor -%}
+{%- endif -%}
+
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>{% endif %}
+</div>
 
 {% schema %}
 {
@@ -135,27 +135,6 @@
     "groups": ["header", "footer"]
   },
   "settings": [
-     {
-      "type": "text",
-      "id": "custom_key_value",
-      "label": "custom.sections Value"
-    },
-    {
-      "type": "select",
-      "id": "conditional",
-      "options": [
-        {
-          "value": "yes",
-          "label": "Yes"
-        },
-        {
-          "value": "no",
-          "label": "No"
-        }
-      ],
-      "default": "no",
-      "label": "Make Field Conditional"
-    },
     {
       "type": "text",
       "id": "caption",
