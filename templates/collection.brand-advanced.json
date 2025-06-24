@@ -1,0 +1,113 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "multicolumn_4a9t7b": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_mKc3gN": {
+          "type": "column",
+          "settings": {
+            "image": "{{ collection.metafields.custom.brand.value.logo_square.value }}",
+            "title": "",
+            "heading_tag": "h2",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_AUHj47": {
+          "type": "column",
+          "settings": {
+            "title": "{{ collection.metafields.custom.brand.value.name.value }}",
+            "heading_tag": "h1",
+            "text": "<p>{{ collection.metafields.custom.brand.value.bio | metafield_tag }}</p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_mKc3gN",
+        "column_AUHj47"
+      ],
+      "custom_css": [
+        "li#Slide-template--18236750004402__multicolumn_4a9t7b-1 {width: 20% !important; max-width: 20% !important;}",
+        "li#Slide-template--18236750004402__multicolumn_4a9t7b-2 {width: 75%; max-width: 75%;}",
+        ".multicolumn-card__info {padding: 10px;}",
+        ".grid {align-items: center;}",
+        "h1.inline-richtext {margin: 0; font-size: 1.8em;}"
+      ],
+      "settings": {
+        "title": "",
+        "heading_tag": "h2",
+        "section_float": "clear",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "button_label": "",
+        "button_link": "",
+        "columns_desktop": 2,
+        "column_alignment": "left",
+        "background_style": "none",
+        "color_scheme": "",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 8,
+        "padding_bottom": 8
+      }
+    },
+    "banner": {
+      "type": "main-collection-banner",
+      "disabled": true,
+      "custom_css": [
+        "p {text-align: Center; font-size: 0.8em; line-height: 1em;}"
+      ],
+      "settings": {
+        "show_collection_description": true,
+        "show_collection_image": false,
+        "color_scheme": "scheme-1"
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "custom_css": [
+        "@media screen and (min-width: 750px) {.card__information {padding: 0; }}",
+        "h2#verticalTitle {display: none;}",
+        "div#FacetsWrapperDesktop {padding-top: 2rem;}"
+      ],
+      "settings": {
+        "products_per_page": 36,
+        "columns_desktop": 4,
+        "columns_mobile": "2",
+        "color_scheme": "scheme-1",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "enable_filtering": true,
+        "filter_type": "vertical",
+        "button_label": "Click Here",
+        "button_link": "",
+        "button_target": "_self",
+        "enable_sorting": true,
+        "padding_top": 20,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "multicolumn_4a9t7b",
+    "banner",
+    "product-grid"
+  ]
+}
