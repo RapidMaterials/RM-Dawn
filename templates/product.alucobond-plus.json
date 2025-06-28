@@ -48,7 +48,7 @@
           "type": "buy_buttons",
           "settings": {
             "show_dynamic_checkout": false,
-            "show_gift_card_recipient": true
+            "show_gift_card_recipient": false
           }
         },
         "text_eanxjX": {
@@ -420,6 +420,7 @@
           "type": "heading",
           "settings": {
             "heading": "Need a Custom Color or Size?",
+            "heading_tag": "h2",
             "heading_size": "h1"
           }
         },
