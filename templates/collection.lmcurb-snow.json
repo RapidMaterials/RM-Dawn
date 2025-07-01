@@ -23,62 +23,66 @@
         "color_scheme": "scheme-1"
       }
     },
-    "image_with_text_zeHAbY": {
-      "type": "image-with-text",
-      "blocks": {
-        "heading_bdbMjy": {
-          "type": "heading",
-          "settings": {
-            "heading": "S-5! ColorGard 2.0 Snow System for Metal Roofs",
-            "heading_tag": "h1",
-            "heading_size": "h1"
-          }
-        },
-        "text_Vpcx7b": {
-          "type": "text",
-          "settings": {
-            "text": "<p>ColorGard® 2.0 improves on the original with faster installation, no pre-assembly required, and simplified field adjustments — all while maintaining the same trusted strength and color-match finish. It’s a true lay-and-play upgrade built for both new construction and retrofit projects.</p>",
-            "text_style": "body"
-          }
-        }
-      },
-      "block_order": [
-        "heading_bdbMjy",
-        "text_Vpcx7b"
-      ],
-      "settings": {
-        "image": "shopify://shop_images/670F997D-F7CC-4CCE-8978-338102C1D209-e1739309461776.png",
-        "height": "adapt",
-        "desktop_image_width": "small",
-        "layout": "image_first",
-        "image_behavior": "none",
-        "content_layout": "no-overlap",
-        "desktop_content_position": "top",
-        "desktop_content_alignment": "left",
-        "mobile_content_alignment": "left",
-        "section_color_scheme": "",
-        "color_scheme": "",
-        "element-width": 100,
-        "padding_top": 0,
-        "padding_bottom": 0,
-        "side-padding": "no-padding"
-      }
-    },
     "image_banner_NHkXKX": {
       "type": "image-banner",
       "custom_css": [],
       "settings": {
-        "image": "shopify://shop_images/ColorGard2.0.png",
+        "image": "shopify://shop_images/LM-snow-rail-indv_1.png",
         "image_overlay_opacity": 0,
         "image_height": "adapt",
         "desktop_content_position": "middle-center",
         "show_text_box": false,
         "desktop_content_alignment": "center",
-        "color_scheme": "scheme-3ecab526-23df-438e-a281-3ae133d61365",
+        "color_scheme": "scheme-dd1ea1f1-da37-4a01-9698-c601054d2161",
         "image_behavior": "none",
         "mobile_content_alignment": "center",
         "stack_images_on_mobile": true,
         "show_text_below": true
+      }
+    },
+    "rich_text_yMLLLX": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_TEApjP": {
+          "type": "heading",
+          "settings": {
+            "heading": "LMCurbs SnowGuard",
+            "heading_size": "h1",
+            "heading_tag": "h1"
+          }
+        },
+        "caption_XYVQyc": {
+          "type": "caption",
+          "settings": {
+            "caption": "Reliable Snow Retention for Standing Seam Metal Roofs",
+            "text_style": "subtitle",
+            "text_size": "large",
+            "heading_tag": "h2"
+          }
+        },
+        "text_DRmNRA": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Prevent rooftop snow slides and protect everything below — from gutters to landscaping — with a proven, non-penetrating system built to last.<br/></p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_TEApjP",
+        "caption_XYVQyc",
+        "text_DRmNRA"
+      ],
+      "custom_css": [
+        ".rich-text__blocks {max-width: 100%;}"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 20,
+        "padding_bottom": 20
       }
     },
     "multicolumn_ARiLGw": {
@@ -87,8 +91,9 @@
         "column_KntxHR": {
           "type": "column",
           "settings": {
-            "title": "<strong> Faster, Easier Installation</strong>",
-            "text": "<ul><li>No pre-assembly needed — lay-and-play design saves time on the roof</li><li>VersaClip™ installs directly over internal splices, eliminating in-field cutting at splice points</li><li>Ideal for both new metal roof installs and retrofit applications</li></ul>",
+            "title": "<strong>Non-Penetrating Clamps</strong>",
+            "heading_tag": "h2",
+            "text": "<p>Secure attachment that won’t damage panels — installs year-round without adhesives.</p>",
             "link_label": "",
             "link": "https://cdn.shopify.com/s/files/1/0645/2540/2290/files/ColorGard-2-0-Installation-Instructions_RapidMaterials.pdf?v=1743440011"
           }
@@ -96,8 +101,9 @@
         "column_pBKarN": {
           "type": "column",
           "settings": {
-            "title": "<strong>Proven Strength</strong>",
-            "text": "<ul><li>Load-tested on 500+ metal roof profiles</li><li>Corrosion-resistant materials built to last the life of the roof</li><li>Profile-specific engineering for exposed-fastened and standing seam systems</li></ul>",
+            "title": "<strong>Proven Snow Retention</strong>",
+            "heading_tag": "h2",
+            "text": "<p>Engineered to hold heavy snow loads with continuous rods and lab-tested clamp strength.</p>",
             "link_label": "",
             "link": ""
           }
@@ -105,8 +111,9 @@
         "column_BTHpfb": {
           "type": "column",
           "settings": {
-            "title": "<strong>Seamless Aesthetics</strong>",
-            "text": "<ul><li>Maintains the clean look of your metal roof</li><li>Uses your roof material for an exact color and finish match.</li><li>Sleek design reduces visual impact while improving safety<br/></li></ul>",
+            "title": "<strong>Long-Lasting Materials</strong>",
+            "heading_tag": "h2",
+            "text": "<p>Made from 6061-T6 aluminum and stainless steel for decades of reliable performance.</p>",
             "link_label": "",
             "link": ""
           }
@@ -120,12 +127,15 @@
       "custom_css": [
         "li {font-size: 14px; line-height: 1.2em;}",
         ".rte ul,.rte ol {list-style-position: outside;}",
-        ".rte li {margin-bottom: 5px;}"
+        ".rte li {margin-bottom: 5px;}",
+        "h2 {font-size: 2rem !important; margin-top: 0;}"
       ],
       "settings": {
         "title": "",
+        "heading_tag": "h2",
         "section_float": "clear",
         "heading_size": "h1",
+        "col_alignment": "left",
         "image_width": "full",
         "image_ratio": "adapt",
         "button_label": "",
@@ -136,111 +146,51 @@
         "color_scheme": "",
         "columns_mobile": "1",
         "swipe_on_mobile": false,
-        "padding_top": 36,
+        "padding_top": 20,
         "padding_bottom": 36
       }
     },
-    "video_nMgp6g": {
-      "type": "video",
-      "custom_css": [
-        ".video-section {max-width: 600px;}"
-      ],
-      "settings": {
-        "heading": "",
-        "heading_size": "h1",
-        "section_float": "left",
-        "enable_video_looping": false,
-        "video_url": "https://youtu.be/x9CkJRF748Y",
-        "cover_image": "shopify://shop_images/Screenshot-2025-02-20-at-2.13.53_PM-e1740171615481-1024x568.png",
-        "description": "Introducing ColorGard 2.0",
-        "full_width": false,
-        "color_scheme": "",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "multicolumn_Tk3QLK": {
+    "multicolumn_nrn6EQ": {
       "type": "multicolumn",
       "blocks": {
-        "column_XCRHxA": {
+        "column_yGYwxw": {
           "type": "column",
           "settings": {
-            "title": "",
-            "text": "",
-            "link_label": "Download Instructions >",
-            "link": "https://cdn.shopify.com/s/files/1/0712/5726/0271/files/ColorGard-2-0-Installation-Instructions_RapidMaterials.pdf?v=1743621824"
-          }
-        },
-        "column_TxErCF": {
-          "type": "column",
-          "settings": {
-            "title": "",
-            "text": "",
-            "link_label": "ColorGard 2.0 Brochure",
-            "link": "https://3482954.fs1.hubspotusercontent-na1.net/hubfs/3482954/Resources/Product%20Documents/Snow%20Retention/ColorGard%202.0/ColorGard2.0%20Product%20Sheet.pdf"
-          }
-        }
-      },
-      "block_order": [
-        "column_XCRHxA",
-        "column_TxErCF"
-      ],
-      "custom_css": [
-        "a.link.animate-arrow {margin-top: 0;}"
-      ],
-      "settings": {
-        "title": "",
-        "section_float": "right",
-        "heading_size": "h2",
-        "image_width": "full",
-        "image_ratio": "adapt",
-        "button_label": "",
-        "button_link": "",
-        "columns_desktop": 1,
-        "column_alignment": "center",
-        "background_style": "primary",
-        "color_scheme": "scheme-1",
-        "columns_mobile": "1",
-        "swipe_on_mobile": false,
-        "padding_top": 44,
-        "padding_bottom": 20
-      }
-    },
-    "multicolumn_NbLt7K": {
-      "type": "multicolumn",
-      "blocks": {
-        "column_9bPxNG": {
-          "type": "column",
-          "settings": {
-            "title": "Need help figuring what you need?",
-            "text": "<p>Not sure which ColorGard® 2.0 setup or SnoClips are right for your roof? We've got you covered.</p>",
+            "image": "shopify://shop_images/single-rod.png",
+            "title": "Single Rod System",
+            "heading_tag": "h2",
+            "text": "<p>Ideal for standard snow loads on low to moderate slope roofs.</p><ul><li>Uses <strong>one SnoRod</strong></li><li>Installs with <strong>Lower Snow Strap only</strong></li><li>Lower profile and more budget-friendly<br/></li></ul>",
             "link_label": "",
             "link": ""
           }
         },
-        "column_e3K794": {
+        "column_xKrbVk": {
           "type": "column",
           "settings": {
-            "title": "",
-            "text": "<p><a href=\"https://www.s-5.com/snow-calculator/?step=snow_calculator&screen=existing_projects\" target=\"_blank\" title=\"https://www.s-5.com/snow-calculator/?step=snow_calculator&screen=existing_projects\">Use S-5!'s Snow Calculator</a></p><p><a href=\"/pages/contact\" title=\"Contact\">Contact Rapid Materials</a></p>",
+            "image": "shopify://shop_images/double-rod.png",
+            "title": "Double Rod System",
+            "heading_tag": "h2",
+            "text": "<p>Designed for steep slopes or heavy snow regions.</p><ul><li>Uses <strong>two SnoRods</strong></li><li>Installs with <strong>Upper and Lower Snow Straps</strong></li><li>Adds height for increased snow retention</li></ul>",
             "link_label": "",
-            "link": "https://www.s-5.com/snow-calculator/?step=snow_calculator&screen=existing_projects"
+            "link": ""
           }
         }
       },
       "block_order": [
-        "column_9bPxNG",
-        "column_e3K794"
+        "column_yGYwxw",
+        "column_xKrbVk"
       ],
       "custom_css": [
-        ".multicolumn-card a {line-height: 2; background-color: black; padding: 10px; color: white; text-decoration: none;}",
-        "li#Slide-template--18380191006898__multicolumn_NbLt7K-2 p {padding: 10px;}",
-        "h3.inline-richtext {font-size: 23px; font-weight: bold;}"
+        "h2 {margin-top: 0;}",
+        ".multicolumn-card-spacing {padding: 0; margin: 0;}"
       ],
+      "name": "t:sections.multicolumn.presets.name",
       "settings": {
         "title": "",
+        "heading_tag": "h2",
         "section_float": "clear",
-        "heading_size": "h1",
+        "heading_size": "h2",
+        "col_alignment": "left",
         "image_width": "full",
         "image_ratio": "adapt",
         "button_label": "",
@@ -248,10 +198,10 @@
         "columns_desktop": 2,
         "column_alignment": "left",
         "background_style": "primary",
-        "color_scheme": "scheme-4193c3da-e497-4afa-91b7-12fbd16d7fb2",
-        "columns_mobile": "1",
+        "color_scheme": "",
+        "columns_mobile": "2",
         "swipe_on_mobile": false,
-        "padding_top": 36,
+        "padding_top": 12,
         "padding_bottom": 36
       }
     },
@@ -261,7 +211,7 @@
         "heading_Nm6NDK": {
           "type": "heading",
           "settings": {
-            "heading": "Order ColorGard 2.0",
+            "heading": "Order LMCurbs SnowGuard",
             "heading_size": "h1",
             "heading_tag": "h2"
           }
@@ -404,7 +354,7 @@
       ],
       "settings": {
         "caption": "",
-        "heading": "ColorGard 2.0 FAQ",
+        "heading": "LMCurbs SnowGuard FAQ",
         "heading_size": "h1",
         "heading_alignment": "center",
         "layout": "none",
@@ -420,12 +370,10 @@
   },
   "order": [
     "banner",
-    "image_with_text_zeHAbY",
     "image_banner_NHkXKX",
+    "rich_text_yMLLLX",
     "multicolumn_ARiLGw",
-    "video_nMgp6g",
-    "multicolumn_Tk3QLK",
-    "multicolumn_NbLt7K",
+    "multicolumn_nrn6EQ",
     "rich_text_EeCJeG",
     "custom_liquid_awMT8b",
     "product-grid",
