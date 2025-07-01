@@ -46,10 +46,10 @@
       "settings": {
         "desktop_content_position": "center",
         "content_alignment": "center",
-        "color_scheme": "",
+        "color_scheme": "scheme-2",
         "full_width": true,
         "padding_top": 20,
-        "padding_bottom": 20
+        "padding_bottom": 12
       }
     },
     "rich_text_LybBb9": {
