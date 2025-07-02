@@ -137,55 +137,45 @@
         "padding_bottom": 36
       }
     },
-    "video_96RPTa": {
-      "type": "video",
-      "name": "t:sections.video.presets.name",
+    "video_gallery_HFrkVT": {
+      "type": "video-gallery",
+      "blocks": {
+        "video_block_3UHbtf": {
+          "type": "video_block",
+          "settings": {
+            "video_url": "https://youtu.be/55JXSEy0GaE?si=3fcrxt70ocEFj_G7",
+            "poster_image": "shopify://shop_images/pvkit2.jpg",
+            "alt_text": ""
+          }
+        },
+        "video_block_6LH4FM": {
+          "type": "video_block",
+          "settings": {
+            "video_url": "https://youtu.be/TTJD9E2apXU?si=Lyl18ChQ2VR6my7f",
+            "poster_image": "shopify://shop_images/save-on-pvkit.jpg",
+            "alt_text": ""
+          }
+        },
+        "video_block_dwirnJ": {
+          "type": "video_block",
+          "settings": {
+            "video_url": "https://youtu.be/NZHrHjxzkYQ?si=1z1pUrAH42RIZG1G",
+            "poster_image": "shopify://shop_images/hqdefault.jpg",
+            "alt_text": ""
+          }
+        }
+      },
+      "block_order": [
+        "video_block_3UHbtf",
+        "video_block_6LH4FM",
+        "video_block_dwirnJ"
+      ],
+      "name": "Multi Video Lightbox",
       "settings": {
-        "heading": "",
+        "heading": "Our Featured Videos",
         "heading_size": "h1",
         "section_float": "clear",
-        "enable_video_looping": false,
-        "video_url": "https://youtu.be/55JXSEy0GaE?si=RwEx_0mexnu1EWNX",
-        "cover_image": "shopify://shop_images/pvkit2.jpg",
-        "description": "",
-        "full_width": false,
-        "color_scheme": "",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "video_tppztD": {
-      "type": "video",
-      "name": "t:sections.video.presets.name",
-      "settings": {
-        "heading": "",
-        "heading_size": "h1",
-        "section_float": "clear",
-        "enable_video_looping": false,
-        "video_url": "https://youtu.be/TTJD9E2apXU?si=kZcPD0c8pGk1zhT9",
-        "cover_image": "shopify://shop_images/save-on-pvkit.jpg",
-        "description": "",
-        "full_width": false,
-        "color_scheme": "",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "video_JAFTLc": {
-      "type": "video",
-      "name": "t:sections.video.presets.name",
-      "settings": {
-        "heading": "",
-        "heading_size": "h1",
-        "section_float": "clear",
-        "enable_video_looping": false,
-        "video_url": "https://youtu.be/TTJD9E2apXU?si=kZcPD0c8pGk1zhT9",
-        "cover_image": "shopify://shop_images/save-on-pvkit.jpg",
-        "description": "",
-        "full_width": false,
-        "color_scheme": "",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "color_scheme": ""
       }
     },
     "rich_text_EeCJeG": {
@@ -389,9 +379,7 @@
     "image_banner_NHkXKX",
     "rich_text_q3tHeN",
     "multicolumn_ARiLGw",
-    "video_96RPTa",
-    "video_tppztD",
-    "video_JAFTLc",
+    "video_gallery_HFrkVT",
     "rich_text_EeCJeG",
     "custom_liquid_awMT8b",
     "product-grid",
