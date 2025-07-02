@@ -170,9 +170,10 @@
         "video_block_6LH4FM",
         "video_block_dwirnJ"
       ],
+      "custom_css": [],
       "name": "Multi Video Lightbox",
       "settings": {
-        "heading": "Our Featured Videos",
+        "heading": "",
         "heading_size": "h1",
         "section_float": "clear",
         "color_scheme": ""
