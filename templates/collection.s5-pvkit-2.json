@@ -134,7 +134,7 @@
         "columns_mobile": "1",
         "swipe_on_mobile": false,
         "padding_top": 12,
-        "padding_bottom": 36
+        "padding_bottom": 32
       }
     },
     "video_gallery_HFrkVT": {
@@ -258,7 +258,7 @@
           "settings": {
             "title": "Need help figuring what you need?",
             "heading_tag": "h2",
-            "text": "<p>Not sure exactly what you need to mount your solar panels to your roof?</p>",
+            "text": "<p>Not sure exactly what you need to mount your solar panels to your roof? Let us help.</p>",
             "link_label": "",
             "link": ""
           }
