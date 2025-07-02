@@ -66,7 +66,7 @@
       "settings": {
         "desktop_content_position": "center",
         "content_alignment": "center",
-        "color_scheme": "",
+        "color_scheme": "scheme-1",
         "full_width": true,
         "padding_top": 20,
         "padding_bottom": 12
@@ -176,7 +176,7 @@
         "heading": "",
         "heading_size": "h1",
         "section_float": "clear",
-        "color_scheme": ""
+        "color_scheme": "scheme-4"
       }
     },
     "rich_text_EeCJeG": {
