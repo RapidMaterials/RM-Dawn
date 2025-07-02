@@ -23,47 +23,6 @@
         "color_scheme": "scheme-1"
       }
     },
-    "image_with_text_zeHAbY": {
-      "type": "image-with-text",
-      "blocks": {
-        "heading_bdbMjy": {
-          "type": "heading",
-          "settings": {
-            "heading": "S-5! PVKIT® 2.0 Rail-less Solar Mounting System",
-            "heading_tag": "h1",
-            "heading_size": "h1"
-          }
-        },
-        "text_Vpcx7b": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Mount solar modules faster, cheaper, and smarter with the S-5!® PVKIT® — the original rail-less solar mounting solution for metal roofs. By using the roof's existing seams or ribs as the mounting structure, PVKIT eliminates the need for bulky rails, cutting your material costs, installation time, and project headaches. Whether you're working on standing seam or exposed-fastened metal roofs, PVKIT delivers a streamlined, lightweight system that’s engineered for speed, strength, and simplicity.</p>",
-            "text_style": "body"
-          }
-        }
-      },
-      "block_order": [
-        "heading_bdbMjy",
-        "text_Vpcx7b"
-      ],
-      "settings": {
-        "image": "shopify://shop_images/MILL-PV-KIT-2.0-EDGEGRAB-ASSEMBLY.jpg",
-        "height": "adapt",
-        "desktop_image_width": "small",
-        "layout": "image_first",
-        "image_behavior": "none",
-        "content_layout": "no-overlap",
-        "desktop_content_position": "top",
-        "desktop_content_alignment": "left",
-        "mobile_content_alignment": "left",
-        "section_color_scheme": "",
-        "color_scheme": "",
-        "element-width": 100,
-        "padding_top": 0,
-        "padding_bottom": 0,
-        "side-padding": "no-padding"
-      }
-    },
     "image_banner_NHkXKX": {
       "type": "image-banner",
       "custom_css": [],
@@ -81,6 +40,38 @@
         "show_text_below": true
       }
     },
+    "rich_text_q3tHeN": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_HhArGW": {
+          "type": "heading",
+          "settings": {
+            "heading": "S-5! PVKIT® 2.0 Rail-less Solar Mounting System",
+            "heading_size": "h1",
+            "heading_tag": "h1"
+          }
+        },
+        "text_dyBEc9": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Mount solar modules faster, cheaper, and smarter with the S-5!® PVKIT® — the original rail-less solar mounting solution for metal roofs. By using the roof's existing seams or ribs as the mounting structure, PVKIT eliminates the need for bulky rails, cutting your material costs, installation time, and project headaches. Whether you're working on standing seam or exposed-fastened metal roofs, PVKIT delivers a streamlined, lightweight system that’s engineered for speed, strength, and simplicity.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_HhArGW",
+        "text_dyBEc9"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 20,
+        "padding_bottom": 12
+      }
+    },
     "multicolumn_ARiLGw": {
       "type": "multicolumn",
       "blocks": {
@@ -88,7 +79,8 @@
           "type": "column",
           "settings": {
             "title": "<strong> Faster, Easier Installation</strong>",
-            "text": "<p>Pre-assembled components, automatic electrical bonding, and one-tool installation slash labor time by 30-50%. Installers can quickly locate modules without worrying about rail alignment, resulting in quicker, more flexible layouts.</p>",
+            "heading_tag": "h2",
+            "text": "<p>Pre-assembled components, and one-tool installation slash labor time by 30-50%. Installers can quickly locate modules without worrying about rail alignment, resulting in quicker, more flexible layouts.</p>",
             "link_label": "",
             "link": "https://cdn.shopify.com/s/files/1/0645/2540/2290/files/ColorGard-2-0-Installation-Instructions_RapidMaterials.pdf?v=1743440011"
           }
@@ -97,6 +89,7 @@
           "type": "column",
           "settings": {
             "title": "<strong>Direct-Attach</strong>",
+            "heading_tag": "h2",
             "text": "<p>PVKIT mounts solar modules directly to the roof's seams or ribs — no need for traditional rails. This cuts down on materials, reduces system weight by up to 85%, and simplifies logistics. Less to buy, less to carry, less to install.</p>",
             "link_label": "",
             "link": ""
@@ -106,6 +99,7 @@
           "type": "column",
           "settings": {
             "title": "<strong>Universal Compatibility</strong>",
+            "heading_tag": "h2",
             "text": "<p>PVKIT works with nearly any metal roof. Pair it with any S-5! clamp (for standing seam) or bracket (for exposed-fastened panels). It accommodates module frames from 30-46mm and is available with an optional black architectural finish for a clean, professional look.</p>",
             "link_label": "",
             "link": ""
@@ -120,12 +114,15 @@
       "custom_css": [
         "li {font-size: 14px; line-height: 1.2em;}",
         ".rte ul,.rte ol {list-style-position: outside;}",
-        ".rte li {margin-bottom: 5px;}"
+        ".rte li {margin-bottom: 5px;}",
+        "h2 {margin-top: 0; font-size: 2rem;}"
       ],
       "settings": {
         "title": "",
+        "heading_tag": "h2",
         "section_float": "clear",
         "heading_size": "h1",
+        "col_alignment": "left",
         "image_width": "full",
         "image_ratio": "adapt",
         "button_label": "",
@@ -136,6 +133,57 @@
         "color_scheme": "",
         "columns_mobile": "1",
         "swipe_on_mobile": false,
+        "padding_top": 12,
+        "padding_bottom": 36
+      }
+    },
+    "video_96RPTa": {
+      "type": "video",
+      "name": "t:sections.video.presets.name",
+      "settings": {
+        "heading": "",
+        "heading_size": "h1",
+        "section_float": "clear",
+        "enable_video_looping": false,
+        "video_url": "https://youtu.be/55JXSEy0GaE?si=RwEx_0mexnu1EWNX",
+        "cover_image": "shopify://shop_images/pvkit2.jpg",
+        "description": "",
+        "full_width": false,
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "video_tppztD": {
+      "type": "video",
+      "name": "t:sections.video.presets.name",
+      "settings": {
+        "heading": "",
+        "heading_size": "h1",
+        "section_float": "clear",
+        "enable_video_looping": false,
+        "video_url": "https://youtu.be/TTJD9E2apXU?si=kZcPD0c8pGk1zhT9",
+        "cover_image": "shopify://shop_images/save-on-pvkit.jpg",
+        "description": "",
+        "full_width": false,
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "video_JAFTLc": {
+      "type": "video",
+      "name": "t:sections.video.presets.name",
+      "settings": {
+        "heading": "",
+        "heading_size": "h1",
+        "section_float": "clear",
+        "enable_video_looping": false,
+        "video_url": "https://youtu.be/TTJD9E2apXU?si=kZcPD0c8pGk1zhT9",
+        "cover_image": "shopify://shop_images/save-on-pvkit.jpg",
+        "description": "",
+        "full_width": false,
+        "color_scheme": "",
         "padding_top": 36,
         "padding_bottom": 36
       }
@@ -218,6 +266,7 @@
           "type": "column",
           "settings": {
             "title": "Need help figuring what you need?",
+            "heading_tag": "h2",
             "text": "<p>Not sure exactly what you need to mount your solar panels to your roof?</p>",
             "link_label": "",
             "link": ""
@@ -227,6 +276,7 @@
           "type": "column",
           "settings": {
             "title": "",
+            "heading_tag": "h2",
             "text": "<p><a href=\"https://www.s-5.com/solar-calculator/?step=solar_calculator&screen=existing_projects\" target=\"_blank\" title=\"S-5 Solar Calculator\">Use S-5!'s Solar Calculator</a></p><p><a href=\"/pages/contact\" title=\"Contact\">Contact Rapid Materials Support </a></p>",
             "link_label": "",
             "link": "https://www.s-5.com/snow-calculator/?step=snow_calculator&screen=existing_projects"
@@ -244,8 +294,10 @@
       ],
       "settings": {
         "title": "",
+        "heading_tag": "h2",
         "section_float": "clear",
         "heading_size": "h1",
+        "col_alignment": "left",
         "image_width": "full",
         "image_ratio": "adapt",
         "button_label": "",
@@ -334,9 +386,12 @@
   },
   "order": [
     "banner",
-    "image_with_text_zeHAbY",
     "image_banner_NHkXKX",
+    "rich_text_q3tHeN",
     "multicolumn_ARiLGw",
+    "video_96RPTa",
+    "video_tppztD",
+    "video_JAFTLc",
     "rich_text_EeCJeG",
     "custom_liquid_awMT8b",
     "product-grid",

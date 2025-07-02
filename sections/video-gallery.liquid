@@ -1,6 +1,209 @@
+{% stylesheet %}
+{{ 'video-section.css' | asset_url | stylesheet_tag }}
+{{ 'component-deferred-media.css' | asset_url | stylesheet_tag }}
+
+.video-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.video-gallery__item {
+  flex: 1 1 calc(33.333% - 1rem);
+  position: relative;
+}
+.video-gallery__thumb {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: block;
+  position: relative;
+}
+.video-play-button {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+
+.video-lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.8);
+  z-index: 9999;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+.video-lightbox__content {
+  position: relative;
+  width: 90%;
+  max-width: 800px;
+}
+.video-lightbox__close {
+  position: absolute;
+  top: -30px;
+  right: 0;
+  font-size: 2rem;
+  background: none;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+#video-container iframe {
+  width: 100%;
+  height: 450px;
+}
+{% endstylesheet %}
+
+<div class="color-{{ section.settings.color_scheme }} gradient {{ section.settings.section_float }} section-{{ section.id }}-padding">
+  <div class="video-section isolate{% unless section.settings.full_width %} page-width{% endunless %}">
+    {%- unless section.settings.heading == blank -%}
+      <div class="title-wrapper title-wrapper--no-top-margin{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+        <h2 class="title inline-richtext {{ section.settings.heading_size }}">{{ section.settings.heading }}</h2>
+      </div>
+    {%- endunless -%}
+
+    <div class="video-gallery">
+      {% for block in section.blocks %}
+        {% assign video_id = block.settings.video_url.id %}
+        {% assign alt = block.settings.alt_text | escape %}
+        {% assign poster = block.settings.poster_image %}
+
+        <div class="video-gallery__item">
+          <button
+            class="video-gallery__thumb"
+            data-video-type="{{ block.settings.video_url.type }}"
+            data-video-id="{{ video_id }}"
+            aria-label="{{ alt }}"
+          >
+            {% if poster %}
+              {{ poster | image_url: width: 800 | image_tag: alt: alt }}
+            {% else %}
+              {{ 'hero-apparel-3' | placeholder_svg_tag: 'placeholder-svg placeholder' }}
+            {% endif %}
+            <span class="video-play-button">
+              {{ 'icon-play.svg' | inline_asset_content }}
+            </span>
+          </button>
+        </div>
+      {% endfor %}
+    </div>
+
+    <div id="video-lightbox" class="video-lightbox">
+      <div class="video-lightbox__content">
+        <button class="video-lightbox__close">×</button>
+        <div id="video-container"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const buttons = document.querySelectorAll('.video-gallery__thumb');
+    const lightbox = document.getElementById('video-lightbox');
+    const container = document.getElementById('video-container');
+    const closeBtn = document.querySelector('.video-lightbox__close');
+
+    buttons.forEach(btn => {
+      btn.addEventListener('click', function () {
+        const type = btn.dataset.videoType;
+        const id = btn.dataset.videoId;
+        let iframeSrc = '';
+
+        if (type === 'youtube') {
+          iframeSrc = `https://www.youtube.com/embed/${id}?autoplay=1`;
+        } else {
+          iframeSrc = `https://player.vimeo.com/video/${id}?autoplay=1`;
+        }
+
+        container.innerHTML = `<iframe src="${iframeSrc}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>`;
+        lightbox.style.display = 'flex';
+      });
+    });
+
+    closeBtn.addEventListener('click', () => {
+      container.innerHTML = '';
+      lightbox.style.display = 'none';
+    });
+  });
+</script>
+
 {% schema %}
-  {
-    "name": "Section name",
-    "settings": []
-  }
+{
+  "name": "Multi Video Lightbox",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "default": "Our Featured Videos",
+      "label": "Section Heading"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "options": [
+        {"value": "h2", "label": "Heading 2"},
+        {"value": "h1", "label": "Heading 1"},
+        {"value": "h0", "label": "Heading 0"},
+        {"value": "hxl", "label": "Extra Large"},
+        {"value": "hxxl", "label": "Double Extra Large"}
+      ],
+      "default": "h1",
+      "label": "Heading Size"
+    },
+    {
+      "type": "select",
+      "id": "section_float",
+      "options": [
+        {"value": "clear", "label": "None - Full Width"},
+        {"value": "left", "label": "Float Left"},
+        {"value": "right", "label": "Float Right"}
+      ],
+      "default": "clear",
+      "label": "Float Option"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color Scheme",
+      "default": "scheme-1"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "video_block",
+      "name": "Video",
+      "settings": [
+        {
+          "type": "video_url",
+          "id": "video_url",
+          "accept": ["youtube", "vimeo"],
+          "label": "Video URL"
+        },
+        {
+          "type": "image_picker",
+          "id": "poster_image",
+          "label": "Poster Image"
+        },
+        {
+          "type": "text",
+          "id": "alt_text",
+          "label": "Video Description"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Multi Video Lightbox",
+      "category": "Media"
+    }
+  ]
+}
 {% endschema %}
