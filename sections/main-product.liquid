@@ -700,28 +700,31 @@
                 </product-recommendations>
               {%- when 'icon-with-text' -%}
                 {% render 'icon-with-text', block: block %}
-              {%- when 'features_with_icons' -%}
-              <p class="test"></p>
-                {% if icon_features and icon_features.size > 0 %}
-                  <div class="product-icon-features quick-add-hidden" {{ block.shopify_attributes }}>
-                    <ul class="icon-features-list">
-                      {% for feature in icon_features %}
-              {% assign meta = feature.value %}
-              <li class="icon-feature">
-                {% if meta.icon %}
-                  <img src="{{ meta.icon | image_url: width: 64 }}" alt="{{ meta.feature | escape }}" class="icon-feature__image" />
-                {% endif %}
-                <div class="icon-feature__text">
-                  <h3 class="icon-feature__title">{{ meta.feature }}</h3>
-                  {% if meta.sub_headline %}
-                    <p class="icon-feature__subtitle">{{ meta.sub_headline }}</p>
-                  {% endif %}
-                </div>
-              </li>
-            {% endfor %}
-                    </ul>
-                  </div>
-                {% endif %}
+  {%- when 'features_with_icons' -%}
+  {%- assign icon_features = product.metafields.custom.icon_features -%}
+  <p class="test">Features block hit</p>
+  {% if icon_features and icon_features.size > 0 %}
+    <div class="product-icon-features quick-add-hidden" {{ block.shopify_attributes }}>
+      <ul class="icon-features-list">
+        {% for feature in icon_features %}
+          {% assign meta = feature.value %}
+          <li class="icon-feature">
+            {% if meta.icon %}
+              <img src="{{ meta.icon | image_url: width: 64 }}" alt="{{ meta.feature | escape }}" class="icon-feature__image" />
+            {% endif %}
+            <div class="icon-feature__text">
+              <h3 class="icon-feature__title">{{ meta.feature }}</h3>
+              {% if meta.sub_headline %}
+                <p class="icon-feature__subtitle">{{ meta.sub_headline }}</p>
+              {% endif %}
+            </div>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  {% else %}
+    <p class="test">No features available or not connected</p>
+  {% endif %}
 
 
           
