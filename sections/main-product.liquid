@@ -705,9 +705,9 @@
   {% if icon_features != blank%}
     <div class="product-icon-features quick-add-hidden" >
       <ul class="icon-features-list">
-
         {% for icf in icon_features %}
           <li class="icon-feature">
+             <pre>{{ icf | inspect }}</pre>
             {% if icf.icon %}
               <img
                 src="{{ icf.icon.value | image_url: width: 64 }}"
