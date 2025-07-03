@@ -799,7 +799,29 @@ p.product__text.inline-richtext.prod-ship-note {
         </modal-opener>
     {%- endcase -%}
   {%- endfor -%}
-</div>
+
+
+<modal-opener
+  class="product-popup-modal__opener quick-add-hidden"
+  data-modal="#PopupModal-ReturnDetails"
+>
+  <button
+    id="ProductPopup-ReturnDetails"
+    class="product-popup-modal__button link"
+    type="button"
+    aria-haspopup="dialog"
+  >
+    Return Details
+  </button>
+</modal-opener>
+
+<template id="PopupModal-ReturnDetails">
+  <div role="dialog" aria-modal="true" class="product-popup-modal__content">
+    {{ product.metafields.custom.info_return_refund_policy }}
+    <p>View entire return details</p>
+  </div>
+</template>
+  </div>
     
         
       </div>
