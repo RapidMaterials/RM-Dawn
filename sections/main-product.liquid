@@ -31,38 +31,6 @@
       padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
     }
 
-    .icon-features-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 1.5rem;
-}
-
-.icon-feature {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.75rem;
-}
-
-.icon-feature__image {
-  width: 48px;
-  height: 48px;
-  object-fit: contain;
-}
-
-.icon-feature__title {
-  margin: 0;
-  font-weight: bold;
-}
-
-.icon-feature__subtitle {
-  margin: 0;
-  font-size: 0.875rem;
-  color: #555;
-}
-
     @media screen and (min-width: 750px) {
       .section-{{ section.id }}-padding {
         padding-top: {{ section.settings.padding_top }}px;
@@ -239,7 +207,7 @@
                   <span>{{ 'products.product.sku' | t }}: </span>
                   {{- product.selected_or_first_available_variant.sku -}}
 &nbsp;{%- assign brand = product.metafields.custom.brand.value -%}{%- if brand != blank -%}|&nbsp; 
-  <span class="product-brand rte {% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}">
+  <span class="product-brand {% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}">
     {%- if brand.collection_url != blank -%}
       <a href="{{ brand.collection_url }}">{{ brand.name }}</a>
     {%- else -%}
@@ -701,29 +669,6 @@
                 </product-recommendations>
               {%- when 'icon-with-text' -%}
                 {% render 'icon-with-text', block: block %}
-              {%- when 'features_with_icons' -%}
-              {%- assign icon_features = product.metafields.custom.icon_features.value -%}
-              {% if icon_features and icon_features.size > 0 %}
-                <div class="product-icon-features quick-add-hidden" {{ block.shopify_attributes }}>
-                  <ul class="icon-features-list">
-                    {% for feature in icon_features %}
-                      <li class="icon-feature">
-                        {% if feature.icon %}
-                          <img src="{{ feature.icon | image_url: width: 64 }}" alt="{{ feature.feature | escape }}" class="icon-feature__image" />
-                        {% endif %}
-                        <div class="icon-feature__text">
-                          <h3 class="icon-feature__title">{{ feature.feature }}</h3>
-                          {% if feature.sub_headline %}
-                            <p class="icon-feature__subtitle">{{ feature.sub_headline }}</p>
-                          {% endif %}
-                        </div>
-                      </li>
-                    {% endfor %}
-                  </ul>
-                </div>
-              {% endif %}
-
-          
             {%- endcase -%}
           {%- endfor -%}
           <a href="{{ product.url }}" class="link product__view-details animate-arrow">
@@ -1513,10 +1458,6 @@
           "default": false
         }
       ]
-        },{
-      "type": "features_with_icons",
-      "name": "Features with Icons",
-      "limit": 1
     },
     {
       "type": "icon-with-text",
