@@ -701,6 +701,9 @@
               {%- when 'icon-with-text' -%}
                 {% render 'icon-with-text', block: block %}
   {%- when 'features_with_icons' -%}
+              <pre>
+icon_features: {{ product.metafields.custom.icon_features | inspect }}
+</pre>
   {%- assign icon_features = product.metafields.custom.icon_features -%}
   {% if icon_features != blank%}
     <div class="product-icon-features quick-add-hidden" >
