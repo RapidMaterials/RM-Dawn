@@ -707,15 +707,22 @@
     <div class="product-icon-features quick-add-hidden" {{ block.shopify_attributes }}>
       <ul class="icon-features-list">
         {% for feature in icon_features %}
-          {% assign meta = feature.value %}
           <li class="icon-feature">
-            {% if meta.icon %}
-              <img src="{{ meta.icon | image_url: width: 64 }}" alt="{{ meta.feature | escape }}" class="icon-feature__image" />
+            {% if feature.icon.value %}
+              <img
+                src="{{ feature.icon.value | image_url: width: 64 }}"
+                alt="{{ feature.feature.value | escape }}"
+                class="icon-feature__image"
+              />
             {% endif %}
             <div class="icon-feature__text">
-              <h3 class="icon-feature__title">{{ meta.feature }}</h3>
-              {% if meta.sub_headline %}
-                <p class="icon-feature__subtitle">{{ meta.sub_headline }}</p>
+              <h3 class="icon-feature__title">
+                {{ feature.feature.value }}
+              </h3>
+              {% if feature.sub_headline %}
+                <p class="icon-feature__subtitle">
+                  {{ feature.sub_headline.value }}
+                </p>
               {% endif %}
             </div>
           </li>
@@ -725,8 +732,6 @@
   {% else %}
     <p class="test">No features available or not connected</p>
   {% endif %}
-
-
           
             {%- endcase -%}
           {%- endfor -%}
