@@ -17,6 +17,7 @@
           "name": "Alert",
           "settings": {
             "text": "{{ product.metafields.custom.alert.value }}",
+            "txtclass": "prod-alert",
             "text_style": "body"
           }
         },
@@ -34,19 +35,21 @@
           "type": "price",
           "settings": {}
         },
-        "text_XdzqLY": {
-          "type": "text",
-          "name": "Shipping Note",
-          "settings": {
-            "text": "{{ product.metafields.custom.shipping_note.value }}",
-            "text_style": "body"
-          }
-        },
         "text_eanxjX": {
           "type": "text",
           "name": "Condition",
           "settings": {
             "text": "{{ product.metafields.custom.info_condition_details.value }}",
+            "txtclass": "prod-condition",
+            "text_style": "body"
+          }
+        },
+        "text_XdzqLY": {
+          "type": "text",
+          "name": "Shipping Note",
+          "settings": {
+            "text": "{{ product.metafields.custom.shipping_note.value }}",
+            "txtclass": "prod-ship-note",
             "text_style": "body"
           }
         },
@@ -89,8 +92,8 @@
         "sku_ibtQ6p",
         "title",
         "price",
-        "text_XdzqLY",
         "text_eanxjX",
+        "text_XdzqLY",
         "variant_picker",
         "bss_variant_options_option_set_dEcH69",
         "quantity_selector",
