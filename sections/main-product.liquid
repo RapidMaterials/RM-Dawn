@@ -705,6 +705,8 @@
   {% if icon_features != blank%}
     <div class="product-icon-features quick-add-hidden" >
       <ul class="icon-features-list">
+    <pre>{{ product.metafields.custom.icon_features | inspect }}</pre>
+
         {% for feature in icon_features %}
           <li class="icon-feature">
             {% if features.icon.value %}
