@@ -701,6 +701,10 @@
               {%- when 'icon-with-text' -%}
                 {% render 'icon-with-text', block: block %}
               {%- when 'features_with_icons' -%}
+               <div>Metafield output test:</div>
+  <pre>
+    {{ product.metafields.custom.icon_features | json }}
+  </pre>
                 {%- assign icon_features = product.metafields.custom.icon_features.value -%}
                 {% if icon_features and icon_features.size > 0 %}
                   <div class="product-icon-features quick-add-hidden" {{ block.shopify_attributes }}>
@@ -1517,7 +1521,7 @@
     "type": "features_with_icons",
     "name": "Features with Icons",
     "limit": 1
-  },
+  },             
     {
       "type": "icon-with-text",
       "name": "t:sections.main-product.blocks.icon_with_text.name",
