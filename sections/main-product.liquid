@@ -701,20 +701,35 @@
               {%- when 'icon-with-text' -%}
                 {% render 'icon-with-text', block: block %}
           {%- when 'features_with_icons' -%}
-          {%- assign icon_features = product.metafields.custom.icon_features -%}
-          {% if icon_features != blank %}
-            <div class="product-icon-features quick-add-hidden">
-              <ul>
-  {% for feature_ref in product.metafields.custom.icon_features %}
-    <li>
-      Ref: {{ feature_ref }}<br>
-      Value: {{ feature_ref.value | inspect }}<br>
-      Headline: {{ feature_ref.value.fields.headline.value }}<br>
-    </li>
-  {% endfor %}
-</ul>
-            </div>
+         {% assign icf = shop.metaobjects.icf['in-stock'] %}
+
+{% if icf %}
+  <div class="product-icon-features quick-add-hidden">
+    <ul class="icon-features-list">
+      <li class="icon-feature">
+        {% if icf.fields.icon.value %}
+          <img
+            src="{{ icf.fields.icon.value | image_url: width: 64 }}"
+            alt="{{ icf.fields.headline.value | escape }}"
+            class="icon-feature__image"
+          />
+        {% endif %}
+        <div class="icon-feature__text">
+          <h3 class="icon-feature__title">
+            {{ icf.fields.headline.value }}
+          </h3>
+          {% if icf.fields.sub_headline.value %}
+            <p class="icon-feature__subtitle">
+              {{ icf.fields.sub_headline.value }}
+            </p>
           {% endif %}
+        </div>
+      </li>
+    </ul>
+  </div>
+{% else %}
+  <p>Metaobject with handle 'in-stock' not found</p>
+{% endif %}
           
             {%- endcase -%}
           {%- endfor -%}
