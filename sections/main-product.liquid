@@ -701,8 +701,7 @@
               {%- when 'icon-with-text' -%}
                 {% render 'icon-with-text', block: block %}
               {%- when 'features_with_icons' -%}
-              
-                {%- assign icon_features = product.metafields.custom.icon_features -%}
+              <p class="test"></p>
                 {% if icon_features and icon_features.size > 0 %}
                   <div class="product-icon-features quick-add-hidden" {{ block.shopify_attributes }}>
                     <ul class="icon-features-list">
