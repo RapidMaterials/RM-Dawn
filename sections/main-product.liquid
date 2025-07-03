@@ -702,26 +702,25 @@
                 {% render 'icon-with-text', block: block %}
   {%- when 'features_with_icons' -%}
   {%- assign icon_features = product.metafields.custom.icon_features -%}
-  <p class="test">Features block hit</p>
-  {% if icon_features and icon_features.size > 0 %}
-    <div class="product-icon-features quick-add-hidden" {{ block.shopify_attributes }}>
+  {% if icon_features != blank%}
+    <div class="product-icon-features quick-add-hidden" >
       <ul class="icon-features-list">
-        {% for feature in icon_features %}
+        {% for features in icon_features %}
           <li class="icon-feature">
             {% if feature.icon.value %}
               <img
-                src="{{ feature.icon.value | image_url: width: 64 }}"
-                alt="{{ feature.feature.value | escape }}"
+                src="{{ features.icon.value | image_url: width: 64 }}"
+                alt="{{ features.feature.value | escape }}"
                 class="icon-feature__image"
               />
             {% endif %}
             <div class="icon-feature__text">
               <h3 class="icon-feature__title">
-                {{ feature.feature.value }}
+                {{ features.feature.value }}
               </h3>
-              {% if feature.sub_headline %}
+              {% if features.sub_headline %}
                 <p class="icon-feature__subtitle">
-                  {{ feature.sub_headline.value }}
+                  {{ features.sub_headline.value }}
                 </p>
               {% endif %}
             </div>
@@ -730,7 +729,7 @@
       </ul>
     </div>
   {% else %}
-    <p class="test">No features available or not connected</p>
+    <p class="test">..</p>
   {% endif %}
           
             {%- endcase -%}
