@@ -797,14 +797,14 @@ p.product__text.inline-richtext.prod-ship-note {
           </button>
         </modal-opener>
 
-        <modal-dialog id="PopupModal-{{ block.id }}" class="product-popup-modal">
-          <div role="dialog" aria-modal="true" class="product-popup-modal__content">
-            {%- if block.settings.text == 'Return Details' -%}
+        {%- if block.settings.text == 'Return Details' -%}
+          <template id="PopupModal-{{ block.id }}">
+            <div role="dialog" aria-modal="true" class="product-popup-modal__content">
               {{ product.metafields.custom.info_return_refund_policy }}
               <p>View entire return details</p>
-            {%- endif -%}
-          </div>
-        </modal-dialog>
+            </div>
+          </template>
+        {%- endif -%}
     {%- endcase -%}
   {%- endfor -%}
 </div>
