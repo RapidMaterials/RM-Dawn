@@ -144,7 +144,7 @@
                 {% render block %}
               {%- when 'text' -%}
                 <p
-                  class="product__text inline-richtext{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}"
+                  class="product__text inline-richtext {{block.settings.txtclass}} {% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}"
                   {{ block.shopify_attributes }}
                 >
                   {{- block.settings.text -}}
@@ -850,7 +850,7 @@
         {
           "type": "text",
           "id": "txtclass",
-          "default": "Class",
+          "default": "cl",
           "label": "CSS Class"
         },
         {
