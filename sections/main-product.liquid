@@ -705,9 +705,9 @@
   {% if icon_features != blank%}
     <div class="product-icon-features quick-add-hidden" >
       <ul class="icon-features-list">
-        {% for features in icon_features %}
+        {% for feature in icon_features %}
           <li class="icon-feature">
-            {% if feature.icon.value %}
+            {% if features.icon.value %}
               <img
                 src="{{ features.icon.value | image_url: width: 64 }}"
                 alt="{{ features.feature.value | escape }}"
