@@ -704,27 +704,10 @@
   {%- assign icon_features = product.metafields.custom.icon_features -%}
   {% if icon_features != blank%}
     <div class="product-icon-features quick-add-hidden" >
-      <ul class="icon-features-list">
+     <ul class="icon-features-list">
         {% for icf in icon_features %}
-          <li class="icon-feature">
-             <pre>{{ icf | inspect }}</pre>
-            {% if icf.icon %}
-              <img
-                src="{{ icf.icon.value | image_url: width: 64 }}"
-                alt="{{ icf.headline.value | escape }}"
-                class="icon-feature__image"
-              />
-            {% endif %}
-            <div class="icon-feature__text">
-              <h3 class="icon-feature__title">
-                {{ icf.headline.value }}
-              </h3>
-              {% if icf.sub_headline %}
-                <p class="icon-feature__subtitle">
-                  {{ icf.sub_headline.value }}
-                </p>
-              {% endif %}
-            </div>
+          <li>
+            <pre>{{ icf | inspect }}</pre>
           </li>
         {% endfor %}
       </ul>
