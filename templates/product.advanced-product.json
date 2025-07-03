@@ -85,6 +85,13 @@
             "text": "Shipping Details",
             "page": "shipping-details"
           }
+        },
+        "popup_KXWNi7": {
+          "type": "popup",
+          "settings": {
+            "text": "Return Details",
+            "page": ""
+          }
         }
       },
       "block_order": [
@@ -99,7 +106,8 @@
         "buy_buttons",
         "text_XdzqLY",
         "features_with_icons_qLjpdB",
-        "popup_JJ8bWY"
+        "popup_JJ8bWY",
+        "popup_KXWNi7"
       ],
       "custom_css": [
         "h1 {font-size: 2.5rem; line-height: 2.5rem;}",
