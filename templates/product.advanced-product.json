@@ -41,7 +41,7 @@
           }
         },
         "bss_variant_options_option_set_dEcH69": {
-          "type": "shopify://apps/optis-product-options-variant/blocks/option-set/2c446099-c349-4e73-80cd-49c9770b7807",
+          "type": "shopify://apps/optis-product-options/blocks/option-set/2c446099-c349-4e73-80cd-49c9770b7807",
           "settings": {}
         },
         "quantity_selector": {
@@ -62,6 +62,10 @@
             "text_style": "body"
           }
         },
+        "features_with_icons_qLjpdB": {
+          "type": "features_with_icons",
+          "settings": {}
+        },
         "popup_JJ8bWY": {
           "type": "popup",
           "settings": {
@@ -80,6 +84,7 @@
         "quantity_selector",
         "buy_buttons",
         "text_eanxjX",
+        "features_with_icons_qLjpdB",
         "popup_JJ8bWY"
       ],
       "custom_css": [
