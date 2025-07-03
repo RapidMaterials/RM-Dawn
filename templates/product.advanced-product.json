@@ -62,16 +62,16 @@
             "text_style": "body"
           }
         },
+        "features_with_icons_qLjpdB": {
+          "type": "features_with_icons",
+          "settings": {}
+        },
         "popup_JJ8bWY": {
           "type": "popup",
           "settings": {
             "text": "Shipping Details",
             "page": "shipping-details"
           }
-        },
-        "features_with_icons_qLjpdB": {
-          "type": "features_with_icons",
-          "settings": {}
         }
       },
       "block_order": [
@@ -84,8 +84,8 @@
         "quantity_selector",
         "buy_buttons",
         "text_eanxjX",
-        "popup_JJ8bWY",
-        "features_with_icons_qLjpdB"
+        "features_with_icons_qLjpdB",
+        "popup_JJ8bWY"
       ],
       "custom_css": [
         "h1 {font-size: 2.5rem; line-height: 2.5rem;}",
