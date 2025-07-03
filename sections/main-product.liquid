@@ -775,9 +775,10 @@ p.product__text.inline-richtext.prod-ship-note {
                 </ul>
             </div>
             {% endif %}
-            
-                 {%- endcase -%}
+              
+       {%- endcase -%}
              {%- endfor -%}
+
 <div class="info-footer">
   {%- for block in section.blocks -%}
     {%- case block.type -%}
@@ -796,19 +797,9 @@ p.product__text.inline-richtext.prod-ship-note {
             {{ block.settings.text | default: block.settings.page.title | escape }}
           </button>
         </modal-opener>
-
-        {%- if block.settings.text == 'Return Details' -%}
-          <template id="PopupModal-{{ block.id }}">
-            <div role="dialog" aria-modal="true" class="product-popup-modal__content">
-              {{ product.metafields.custom.info_return_refund_policy }}
-              <p>View entire return details</p>
-            </div>
-          </template>
-        {%- endif -%}
     {%- endcase -%}
   {%- endfor -%}
 </div>
-
     
         
       </div>
