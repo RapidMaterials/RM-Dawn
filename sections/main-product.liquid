@@ -69,7 +69,6 @@
 .icon-feature__subtitle {
   margin: 0;
      font-size: 1.2rem;
-  color: #555;
 }
 
 .product-popup-modal__opener {
@@ -776,25 +775,30 @@ p.product__text.inline-richtext.prod-ship-note {
                 </ul>
             </div>
             {% endif %}
-              <div class="info-footer">
-              {%- when 'popup' -%}
-                    <modal-opener
-                      class="product-popup-modal__opener quick-add-hidden"
-                      data-modal="#PopupModal-{{ block.id }}"
-                      {{ block.shopify_attributes }}
-                    >
-                      <button
-                        id="ProductPopup-{{ block.id }}"
-                        class="product-popup-modal__button link"
-                        type="button"
-                        aria-haspopup="dialog"
-                      >
-                        {{ block.settings.text | default: block.settings.page.title | escape }}
-                      </button>
-                    </modal-opener>
-                 </div>
-       {%- endcase -%}
+            
+                 {%- endcase -%}
              {%- endfor -%}
+<div class="info-footer">
+  {%- for block in section.blocks -%}
+    {%- case block.type -%}
+      {%- when 'popup' -%}
+        <modal-opener
+          class="product-popup-modal__opener quick-add-hidden"
+          data-modal="#PopupModal-{{ block.id }}"
+          {{ block.shopify_attributes }}
+        >
+          <button
+            id="ProductPopup-{{ block.id }}"
+            class="product-popup-modal__button link"
+            type="button"
+            aria-haspopup="dialog"
+          >
+            {{ block.settings.text | default: block.settings.page.title | escape }}
+          </button>
+        </modal-opener>
+    {%- endcase -%}
+  {%- endfor -%}
+</div>
 
 
     
