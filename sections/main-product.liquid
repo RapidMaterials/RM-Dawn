@@ -239,15 +239,15 @@
                 >
                   <span>{{ 'products.product.sku' | t }}: </span>
                   {{- product.selected_or_first_available_variant.sku -}}
-&nbsp;{%- assign brand = product.metafields.custom.brand.value -%}{%- if brand != blank -%}|&nbsp; 
-  <span class="product-brand {% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}">
-    {%- if brand.collection_url != blank -%}
-      <a href="{{ brand.collection_url }}">{{ brand.name }}</a>
-    {%- else -%}
-      {{ brand.name }}
-    {%- endif -%}
-  </span>
-{%- endif -%}
+                  &nbsp;{%- assign brand = product.metafields.custom.brand.value -%}{%- if brand != blank -%}|&nbsp; 
+                    <span class="product-brand {% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}">
+                      {%- if brand.collection_url != blank -%}
+                        <a href="{{ brand.collection_url }}">{{ brand.name }}</a>
+                      {%- else -%}
+                        {{ brand.name }}
+                      {%- endif -%}
+                    </span>
+                  {%- endif -%}
                 </p>
               {%- when 'custom_liquid' -%}
                 {{ block.settings.custom_liquid }}
@@ -702,7 +702,19 @@
                 </product-recommendations>
               {%- when 'icon-with-text' -%}
                 {% render 'icon-with-text', block: block %}
-          {%- when 'features_with_icons' -%}
+        
+          
+            {%- endcase -%}
+          {%- endfor -%}
+          <a href="{{ product.url }}" class="link product__view-details animate-arrow">
+            {{ 'products.product.view_full_details' | t }}
+            {{- 'icon-arrow.svg' | inline_asset_content -}}
+          </a>
+        </section>
+      </div>
+  {%- for block in section.blocks -%}
+            {%- case block.type -%}
+  {%- when 'features_with_icons' -%}
          {%- if iconfs != blank -%}
              <div class="product-icon-features quick-add-hidden">
                 <ul class="icon-features-list">
@@ -730,15 +742,8 @@
                 </ul>
             </div>
             {% endif %}
-          
-            {%- endcase -%}
-          {%- endfor -%}
-          <a href="{{ product.url }}" class="link product__view-details animate-arrow">
-            {{ 'products.product.view_full_details' | t }}
-            {{- 'icon-arrow.svg' | inline_asset_content -}}
-          </a>
-        </section>
-      </div>
+       {%- endcase -%}
+             {%- endfor -%}
     </div>
 
     {% render 'product-media-modal', variant_images: variant_images %}
