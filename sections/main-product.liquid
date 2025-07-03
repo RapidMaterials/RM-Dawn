@@ -700,24 +700,38 @@
                 </product-recommendations>
               {%- when 'icon-with-text' -%}
                 {% render 'icon-with-text', block: block %}
-  {%- when 'features_with_icons' -%}
-              <pre>
-icon_features: {{ product.metafields.custom.icon_features | inspect }}
-</pre>
-  {%- assign icon_features = product.metafields.custom.icon_features -%}
-  {% if icon_features != blank%}
-    <div class="product-icon-features quick-add-hidden" >
-     <ul class="icon-features-list">
-        {% for icf in icon_features %}
-          <li>
-            <pre>{{ icf | inspect }}</pre>
-          </li>
-        {% endfor %}
-      </ul>
-    </div>
-  {% else %}
-    <p class="test">..</p>
-  {% endif %}
+          {%- when 'features_with_icons' -%}
+          {%- assign icon_features = product.metafields.custom.icon_features -%}
+          {% if icon_features != blank %}
+            <div class="product-icon-features quick-add-hidden">
+              <ul class="icon-features-list">
+                {% for feature_ref in icon_features %}
+                  {% assign icf = feature_ref.value %}
+                  {% if icf %}
+                    <li class="icon-feature">
+                      {% if icf.fields.icon.value %}
+                        <img
+                          src="{{ icf.fields.icon.value | image_url: width: 64 }}"
+                          alt="{{ icf.fields.headline.value | escape }}"
+                          class="icon-feature__image"
+                        />
+                      {% endif %}
+                      <div class="icon-feature__text">
+                        <h3 class="icon-feature__title">
+                          {{ icf.fields.headline.value }}
+                        </h3>
+                        {% if icf.fields.sub_headline.value %}
+                          <p class="icon-feature__subtitle">
+                            {{ icf.fields.sub_headline.value }}
+                          </p>
+                        {% endif %}
+                      </div>
+                    </li>
+                  {% endif %}
+                {% endfor %}
+              </ul>
+            </div>
+          {% endif %}
           
             {%- endcase -%}
           {%- endfor -%}
