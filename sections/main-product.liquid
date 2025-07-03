@@ -711,8 +711,7 @@
             {{- 'icon-arrow.svg' | inline_asset_content -}}
           </a>
         </section>
-      </div>
-  {%- for block in section.blocks -%}
+         {%- for block in section.blocks -%}
             {%- case block.type -%}
   {%- when 'features_with_icons' -%}
          {%- if iconfs != blank -%}
@@ -744,6 +743,8 @@
             {% endif %}
        {%- endcase -%}
              {%- endfor -%}
+      </div>
+ 
     </div>
 
     {% render 'product-media-modal', variant_images: variant_images %}
