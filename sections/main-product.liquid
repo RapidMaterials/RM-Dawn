@@ -492,21 +492,7 @@
                     </volume-pricing>
                   {%- endif -%}
                 </div>
-              {%- when 'popup' -%}
-                <modal-opener
-                  class="product-popup-modal__opener quick-add-hidden"
-                  data-modal="#PopupModal-{{ block.id }}"
-                  {{ block.shopify_attributes }}
-                >
-                  <button
-                    id="ProductPopup-{{ block.id }}"
-                    class="product-popup-modal__button link"
-                    type="button"
-                    aria-haspopup="dialog"
-                  >
-                    {{ block.settings.text | default: block.settings.page.title | escape }}
-                  </button>
-                </modal-opener>
+              
               {%- when 'share' -%}
                 {% liquid
                   assign share_url = product.selected_variant.url | default: product.url | prepend: request.origin
@@ -723,19 +709,19 @@
         </section>
          {%- for block in section.blocks -%}
             {%- case block.type -%}
-  {%- when 'features_with_icons' -%}
-         {%- if iconfs != blank -%}
-             <div class="product-icon-features quick-add-hidden">
-                <ul class="icon-features-list">
-                  {% for icf in iconfs %}
-                      <li class="icon-feature">
-                        {% if icf.icon.value %}
-                          <img
-                            src="{{ icf.icon.value | image_url: width: 64 }}"
-                            alt="{{ icf.headline.value | escape }}"
-                            class="icon-feature__image"
-                          />
-                        {% endif %}
+            {%- when 'features_with_icons' -%}
+                   {%- if iconfs != blank -%}
+                       <div class="product-icon-features quick-add-hidden">
+                          <ul class="icon-features-list">
+                            {% for icf in iconfs %}
+                                <li class="icon-feature">
+                                  {% if icf.icon.value %}
+                                    <img
+                                      src="{{ icf.icon.value | image_url: width: 64 }}"
+                                      alt="{{ icf.headline.value | escape }}"
+                                      class="icon-feature__image"
+                                    />
+                                  {% endif %}
                         <div class="icon-feature__text">
                           <h3 class="icon-feature__title">
                             {{ icf.headline.value }}
@@ -751,8 +737,27 @@
                 </ul>
             </div>
             {% endif %}
+              {%- when 'popup' -%}
+                    <modal-opener
+                      class="product-popup-modal__opener quick-add-hidden"
+                      data-modal="#PopupModal-{{ block.id }}"
+                      {{ block.shopify_attributes }}
+                    >
+                      <button
+                        id="ProductPopup-{{ block.id }}"
+                        class="product-popup-modal__button link"
+                        type="button"
+                        aria-haspopup="dialog"
+                      >
+                        {{ block.settings.text | default: block.settings.page.title | escape }}
+                      </button>
+                    </modal-opener>
        {%- endcase -%}
              {%- endfor -%}
+
+
+    
+        
       </div>
  
     </div>
