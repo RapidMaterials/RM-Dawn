@@ -171,6 +171,16 @@
         "padding_bottom": 36
       }
     },
+    "video_gallery_KVeXnq": {
+      "type": "video-gallery",
+      "name": "Multi Video Lightbox",
+      "settings": {
+        "heading": "",
+        "heading_size": "h1",
+        "section_float": "clear",
+        "color_scheme": "scheme-3"
+      }
+    },
     "collapsible_content_faq_TKA83N": {
       "type": "collapsible-content-faq",
       "custom_css": [
@@ -235,6 +245,7 @@
   "order": [
     "main",
     "multicolumn_product_JpGMnV",
+    "video_gallery_KVeXnq",
     "collapsible_content_faq_TKA83N",
     "173773221725050421",
     "related-products"
