@@ -94,27 +94,7 @@
     {%- endunless -%}
 
     <div class="video-gallery">
-      {% for block in section.blocks %}
-        {% assign video_id = block.settings.video_url.id %}
-        {% assign alt = block.settings.alt_text | escape %}
-        {% assign poster = block.settings.poster_image %}
-
-        <div class="video-gallery__item">
-          <button
-            class="video-gallery__thumb"
-            data-video-type="{{ block.settings.video_url.type }}"
-            data-video-id="{{ video_id }}"
-            aria-label="{{ alt }}"
-          >
-            {% if poster %}
-              {{ poster | image_url: width: 480 | image_tag: alt: alt }}
-            {% else %}
-              {{ 'hero-apparel-3' | placeholder_svg_tag: 'placeholder-svg placeholder' }}
-            {% endif %}
-            <span class="video-play-button"></span>
-          </button>
-        </div>
-      {% endfor %}
+    
     </div>
 
     <div id="video-lightbox" class="video-lightbox">
