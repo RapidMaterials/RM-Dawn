@@ -34,7 +34,7 @@
           }
         },
         "bss_variant_options_option_set_dEcH69": {
-          "type": "shopify://apps/optis-product-options-variant/blocks/option-set/2c446099-c349-4e73-80cd-49c9770b7807",
+          "type": "shopify://apps/optis-product-options/blocks/option-set/2c446099-c349-4e73-80cd-49c9770b7807",
           "settings": {}
         },
         "quantity_selector": {
@@ -52,6 +52,7 @@
           "type": "text",
           "settings": {
             "text": "{{ product.metafields.custom.alert.value }}{{ product.metafields.custom.info_condition_details.value }}",
+            "txtclass": "cl",
             "text_style": "body"
           }
         },
@@ -68,12 +69,6 @@
             "text": "Find your Clamp",
             "page": "find-your-clamp-by-manufacturer"
           }
-        },
-        "custom_liquid_EnPkML": {
-          "type": "custom_liquid",
-          "settings": {
-            "custom_liquid": "<img src=\"https://cdn.shopify.com/s/files/1/0645/2540/2290/files/made-in-usa-s5.png?v=1739390366\" style=\"width: 80px;margin: 0 !important;position: absolute;right: 0;\">"
-          }
         }
       },
       "block_order": [
@@ -86,8 +81,7 @@
         "buy_buttons",
         "text_eanxjX",
         "popup_JJ8bWY",
-        "popup_ieja3e",
-        "custom_liquid_EnPkML"
+        "popup_ieja3e"
       ],
       "custom_css": [
         "h1 {font-size: 2.5rem; line-height: 2.5rem;}",
@@ -95,7 +89,7 @@
         "#text_eanxjX {font-size: 0.9em; line-height: 1em; padding: 10px; background-color: #ffbd5f; letter-spacing: normal;}"
       ],
       "settings": {
-        "enable_sticky_info": true,
+        "enable_sticky_info": false,
         "color_scheme": "scheme-1",
         "media_size": "small",
         "constrain_to_viewport": true,
