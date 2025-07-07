@@ -128,6 +128,7 @@
       "blocks": {
         "column_6cGNwi": {
           "type": "column",
+          "name": "Description",
           "settings": {
             "title": "<strong>Description</strong>",
             "heading_tag": "h2",
@@ -141,7 +142,8 @@
         "column_6cGNwi"
       ],
       "custom_css": [
-        ".multicolumn-card h2.inline-richtext {margin-top: 0; font-weight: bold; font-size: 1.2em;}"
+        ".multicolumn-card h2.inline-richtext {margin-top: 0; font-weight: bold; font-size: 1.2em;}",
+        ".multicolumn-list__item .rte p {font-size: 1.2rem; line-height: 1.5rem !important;}"
       ],
       "name": "MultiColumn Product",
       "settings": {
@@ -157,7 +159,7 @@
         "certs": false,
         "image_width": "full",
         "image_ratio": "adapt",
-        "button_label": "Button label",
+        "button_label": "",
         "button_link": "",
         "columns_desktop": 2,
         "column_alignment": "left",
