@@ -154,7 +154,7 @@
         "heading_size": "h2",
         "col_alignment": "left",
         "include_brand": true,
-        "include_resources": false,
+        "include_resources": true,
         "include_specs": true,
         "certs": false,
         "image_width": "full",
