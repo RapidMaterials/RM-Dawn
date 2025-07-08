@@ -197,10 +197,6 @@
   <!-- Resources content here -->
 {% endif %}
 
-{% if section.settings.include_video %}
-  <!-- Video content here -->
-{% endif %}
-
 {% if section.settings.include_specs %}
   <!-- Specs content here -->
 {% endif %}
@@ -378,12 +374,6 @@
         "type": "checkbox",
         "id": "include_resources",
         "label": "Include Resources",
-        "default": false
-      },
-      {
-        "type": "checkbox",
-        "id": "include_video",
-        "label": "Include Video",
         "default": false
       },
       {
