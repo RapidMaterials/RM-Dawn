@@ -185,10 +185,10 @@
      {%- if brand.logo != blank -%}
        {%- if brand.collection_url != blank -%}
               <a href="{{ brand.collection_url }}">
-                <img src="{{ brand.logo | image_url: width: 300 }}" alt="{{ brand.name }} Logo"  style="width: 64px; height: 64px; object-fit: contain;">
+                <img src="{{ brand.logo_square | image_url: width: 300 }}" alt="{{ brand.name }} Logo"  style="width: 64px; height: 64px; object-fit: contain;">
               </a>
        {%- else -%}
-              <img src="{{ brand.logo | image_url: width: 300 }}" alt="{{ brand.name }} Logo"  style="width: 64px; height: 64px; object-fit: contain;">
+              <img src="{{ brand.logo_square | image_url: width: 300 }}" alt="{{ brand.name }} Logo"  style="width: 64px; height: 64px; object-fit: contain;">
        {%- endif -%}
     {%- endif -%}
   </div>
