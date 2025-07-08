@@ -142,8 +142,8 @@
         "column_6cGNwi"
       ],
       "custom_css": [
-        ".multicolumn-card h2.inline-richtext {margin-top: 0; font-weight: bold; font-size: 1.2em;}",
-        ".multicolumn-card .rte {font-size: 1.2rem !important; line-height: 1.5rem !important;}"
+        ".multicolumn-card h2.inline-richtext {margin-top: 0; font-weight: bold; font-size: 1.25em;}",
+        ".multicolumn-card .rte {font-size: 1.25rem !important; line-height: 1.5rem !important;}"
       ],
       "name": "MultiColumn Product",
       "settings": {
