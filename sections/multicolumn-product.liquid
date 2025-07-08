@@ -232,7 +232,7 @@
     <div class="certs-box" style="display: flex; gap: 4px; flex-wrap: wrap;align-items: end;">
       {%- for certifications in certs -%}
         <div class="indv-cert" >
-          {%- if certifications.document.url != blank -%}
+          {%- if certifications.document != blank -%}
             <a href="{{ certifications.document.url }}" style="text-decoration: none; color: inherit;">
           {%- endif -%}
 
@@ -242,7 +242,7 @@
 
           {{ certifications.name.value }}
 
-          {%- if certifications.document.url != blank -%}
+          {%- if certifications.document != blank -%}
             </a>
           {%- endif -%}
         </div>
