@@ -143,8 +143,9 @@
       ],
       "custom_css": [
         ".multicolumn-card h2.inline-richtext {margin-top: 0; font-weight: bold; font-size: 1.8rem;}",
-        "h3{font-size:1.8rem;}",
-        ".multicolumn-card .rte,.brand-bio {font-size: 1.25rem !important; line-height: 1.5rem !important;}"
+        "h3 {font-size: 1.8rem;}",
+        ".multicolumn-card .rte,.brand-bio {font-size: 1.25rem !important; line-height: 1.5rem !important;}",
+        ".specs li{font-size:1.25rem; line-height:1.5rem;}"
       ],
       "name": "MultiColumn Product",
       "settings": {
