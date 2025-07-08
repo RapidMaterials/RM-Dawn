@@ -176,17 +176,7 @@
   {%- assign brand = product.metafields.custom.brand.value -%}
   {%- if brand != blank -%}
 
-      {%- if brand.logo != blank -%}
-        <div class="brand-logo">
-          {%- if brand.collection_url != blank -%}
-            <a href="{{ brand.collection_url }}">
-              <img src="{{ brand.logo | image_url: width: 300 }}" alt="{{ brand.name }}">
-            </a>
-          {%- else -%}
-            <img src="{{ brand.logo | image_url: width: 300 }}" alt="{{ brand.name }}">
-          {%- endif -%}
-        </div>
-      {%- endif -%}
+      
     </div>
 
 <div style="display: flex; align-items: center; padding: 16px; background-color: #f5f5f5;">
