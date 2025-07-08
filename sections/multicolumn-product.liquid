@@ -221,7 +221,7 @@
            {%- if product.selected_or_first_available_variant.barcode != blank -%}<li><strong>UPC:</strong> {{ product.selected_or_first_available_variant.barcode }}</li>{%- endif -%}
            {%- if certs != blank -%}<li><strong>Certifications:</strong>
            {%- for certifications in certs -%}
-              {%- if certifications.document.url != blank -%} <a href="{{ certifications.document.url }}"> {%- endif -%}{%- if certifications.icon != blank -%}<img src="{{ certifications.icon | image_url: width: 40 }}" alt="{{ certifications.name.value }} Icon"  >{%- endif -%}{{ certifications.name.value }}{%- if certifications.document.url != blank -%}</a>{%- endif -%}
+              {%- if certifications.document != blank -%} <a href="{{ certifications.document.url }}"> {%- endif -%}{%- if certifications.icon != blank -%}<img src="{{ certifications.icon | image_url: width: 40 }}" alt="{{ certifications.name.value }} Icon"  >{%- endif -%}{{ certifications.name.value }}{%- if certifications.document.url != blank -%}</a>{%- endif -%}
             {%- endfor -%}
            </li>{%- endif -%}
         </ul>
