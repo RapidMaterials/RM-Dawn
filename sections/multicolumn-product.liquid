@@ -233,7 +233,7 @@
       {%- for certifications in certs -%}
         <div class="indv-cert" >
           {%- if certifications.document != blank -%}
-            <a href="{{ certifications.document.url }}" style="text-decoration: none; color: inherit;">
+            <a href="{{ certifications.document.value.url }}" style="text-decoration: none; color: inherit;">
           {%- endif -%}
 
           {%- if certifications.icon != blank -%}
@@ -262,7 +262,7 @@
               <ul style="list-style: none; padding: 0; margin: 0;">
                  {%- for resources in res -%}
                    <li>
-                    <a href="{{ resources.file.url }}" style="text-decoration: none; color: inherit;">
+                    <a href="{{ resources.file.value.url }}" style="text-decoration: none; color: inherit;">
                       {{ resources.button_text.value }}
                     </a>                     
                    </li>
