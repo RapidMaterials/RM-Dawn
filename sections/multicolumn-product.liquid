@@ -220,10 +220,13 @@
           <li><strong>Material:</strong> {{product.metafields.custom.filter_material}}</li>
            {%- if product.selected_or_first_available_variant.barcode != blank -%}<li><strong>UPC:</strong> {{ product.selected_or_first_available_variant.barcode }}</li>{%- endif -%}
            {%- if certs != blank -%}<li><strong>Certifications:</strong>
+            <div class="certs-box">
            {%- for certifications in certs -%}
+             <div class="indv-cert">
               {%- if certifications.document != blank -%} <a href="{{ certifications.document }}"> {%- endif -%}{%- if certifications.icon != blank -%}<img src="{{ certifications.icon | image_url: width: 40 }}" alt="{{ certifications.name.value }} Icon"  >{%- endif -%}{{ certifications.name.value }}{%- if certifications.document.url != blank -%}</a>{%- endif -%}
+             </div>
             {%- endfor -%}
-           </li>{%- endif -%}
+            </div></li>{%- endif -%}
         </ul>
       </div>
 {% endif %}
