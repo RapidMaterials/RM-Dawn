@@ -219,14 +219,29 @@
           <li><strong>SKU:</strong> {{ product.selected_or_first_available_variant.sku }} </li>
           <li><strong>Material:</strong> {{product.metafields.custom.filter_material}}</li>
            {%- if product.selected_or_first_available_variant.barcode != blank -%}<li><strong>UPC:</strong> {{ product.selected_or_first_available_variant.barcode }}</li>{%- endif -%}
-           {%- if certs != blank -%}<li><strong>Certifications:</strong>
-            <div class="certs-box">
-           {%- for certifications in certs -%}
-             <div class="indv-cert">
-              {%- if certifications.document != blank -%} <a href="{{ certifications.document }}"> {%- endif -%}{%- if certifications.icon != blank -%}<img src="{{ certifications.icon | image_url: width: 40 }}" alt="{{ certifications.name.value }} Icon"  >{%- endif -%}{{ certifications.name.value }}{%- if certifications.document.url != blank -%}</a>{%- endif -%}
-             </div>
-            {%- endfor -%}
-            </div></li>{%- endif -%}
+          {%- if certs != blank -%}
+  <li><strong>Certifications:</strong>
+    <div class="certs-box" style="display: flex; gap: 5px; flex-wrap: wrap;">
+      {%- for certifications in certs -%}
+        <div class="indv-cert" style="border: 1px solid #ccc; padding: 8px; text-align: center; width: 80px; font-size: 12px;">
+          {%- if certifications.document.url != blank -%}
+            <a href="{{ certifications.document.url }}" style="text-decoration: none; color: inherit;">
+          {%- endif -%}
+
+          {%- if certifications.icon != blank -%}
+            <img src="{{ certifications.icon | image_url: width: 40 }}" alt="{{ certifications.name.value }} Icon" style="display: block; margin: 0 auto 5px;">
+          {%- endif -%}
+
+          {{ certifications.name.value }}
+
+          {%- if certifications.document.url != blank -%}
+            </a>
+          {%- endif -%}
+        </div>
+      {%- endfor -%}
+    </div>
+  </li>
+{%- endif -%}
         </ul>
       </div>
 {% endif %}
