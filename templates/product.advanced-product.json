@@ -143,7 +143,7 @@
       ],
       "custom_css": [
         ".multicolumn-card h2.inline-richtext {margin-top: 0; font-weight: bold; font-size: 1.25em;}",
-        ".multicolumn-card .rte, .brand-bio {font-size: 1.25rem !important; line-height: 1.5rem !important;}"
+        ".multicolumn-card .rte,.brand-bio {font-size: 1.25rem !important; line-height: 1.5rem !important;}"
       ],
       "name": "MultiColumn Product",
       "settings": {
@@ -154,7 +154,7 @@
         "col_alignment": "left",
         "include_brand": true,
         "include_resources": false,
-        "include_specs": false,
+        "include_specs": true,
         "certs": false,
         "image_width": "full",
         "image_ratio": "adapt",
