@@ -181,14 +181,14 @@
 
 <div style="display: flex; align-items: center; padding: 16px; background-color: #f5f5f5;">
   <!-- Brand Logo -->
-  <div style="flex: 0 0 64px; margin-right: 16px;">
+  <div style="flex: 0 0 86px; margin-right: 16px;">
      {%- if brand.logo != blank -%}
        {%- if brand.collection_url != blank -%}
               <a href="{{ brand.collection_url }}">
-                <img src="{{ brand.logo_square | image_url: width: 300 }}" alt="{{ brand.name }} Logo"  style="width: 64px; height: 64px; object-fit: contain;">
+                <img src="{{ brand.logo_square | image_url: width: 300 }}" alt="{{ brand.name }} Logo"  style="width: 86px; height: 86px; object-fit: contain;">
               </a>
        {%- else -%}
-              <img src="{{ brand.logo_square | image_url: width: 300 }}" alt="{{ brand.name }} Logo"  style="width: 64px; height: 64px; object-fit: contain;">
+              <img src="{{ brand.logo_square | image_url: width: 300 }}" alt="{{ brand.name }} Logo"  style="width: 86px; height: 86px; object-fit: contain;">
        {%- endif -%}
     {%- endif -%}
   </div>
@@ -196,7 +196,7 @@
   <!-- Brand Info -->
   <div style="flex: 1;" ">
     <div style="font-weight: 600;  margin-bottom: 2px;">{{ brand.name }}</div>
-    <div style="margin-bottom: 2px;" class="brand-bio">
+    <div class="brand-bio">
       {{ brand.one_line_bio }}
     </div>
     <a href="{{ brand.collection_url }}" style="font-size: 1.25rem; color: #000; text-decoration: none;">
