@@ -188,6 +188,35 @@
         </div>
       {%- endif -%}
     </div>
+
+<div style="display: flex; align-items: center; border: 1px solid #e0e0e0; padding: 16px; border-radius: 8px; background-color: #f9f9f9;">
+  <!-- Brand Logo -->
+  <div style="flex: 0 0 64px; margin-right: 16px;">
+     {%- if brand.logo != blank -%}
+       {%- if brand.collection_url != blank -%}
+              <a href="{{ brand.collection_url }}">
+                <img src="{{ brand.logo | image_url: width: 300 }}" alt="{{ brand.name }} Logo"  style="width: 64px; height: 64px; object-fit: contain;">
+              </a>
+       {%- else -%}
+              <img src="{{ brand.logo | image_url: width: 300 }}" alt="{{ brand.name }} Logo"  style="width: 64px; height: 64px; object-fit: contain;">
+       {%- endif -%}
+    {%- endif -%}
+  </div>
+
+  <!-- Brand Info -->
+  <div style="flex: 1;">
+    <div style="font-weight: 600; font-size: 1.1em; margin-bottom: 4px;">{{ brand.name }}</div>
+    <div style="font-size: 0.95em; color: #555; margin-bottom: 8px;">
+      {{ brand.bio }}
+    </div>
+    <a href="{{ brand.collection_url }}" style="font-size: 0.9em; color: #0073e6; text-decoration: none;">
+      Shop more from {{ brand.name }} →
+    </a>
+  </div>
+</div>
+
+
+  
   {%- endif -%}
                   </div>
 {% endif %}
