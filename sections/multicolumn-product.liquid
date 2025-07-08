@@ -24,7 +24,8 @@
   }
 
 .indv-cert{
-  border: 1px solid #ccc; padding: 8px; text-align: center; width: 80px;}
+  border: 1px solid #ccc; padding: 8px; text-align: center; width: 80px;
+}
   
 @media screen and (max-width: 749px){
   .right,.left{
@@ -225,7 +226,7 @@
            {%- if product.selected_or_first_available_variant.barcode != blank -%}<li><strong>UPC:</strong> {{ product.selected_or_first_available_variant.barcode }}</li>{%- endif -%}
           {%- if certs != blank -%}
   <li><strong>Certifications:</strong>
-    <div class="certs-box" style="display: flex; gap: 5px; flex-wrap: wrap;">
+    <div class="certs-box" style="display: flex; gap: 4px; flex-wrap: wrap;align-items: end;">
       {%- for certifications in certs -%}
         <div class="indv-cert" >
           {%- if certifications.document.url != blank -%}
