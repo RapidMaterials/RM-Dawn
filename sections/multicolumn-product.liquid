@@ -22,6 +22,10 @@
     float:left;
     width:50%;
   }
+
+.idv-cert{
+  border: 1px solid #ccc; padding: 8px; text-align: center; width: 80px;}
+  
 @media screen and (max-width: 749px){
   .right,.left{
     width:100%;
@@ -223,7 +227,7 @@
   <li><strong>Certifications:</strong>
     <div class="certs-box" style="display: flex; gap: 5px; flex-wrap: wrap;">
       {%- for certifications in certs -%}
-        <div class="indv-cert" style="border: 1px solid #ccc; padding: 8px; text-align: center; width: 80px; font-size: 12px;">
+        <div class="indv-cert" >
           {%- if certifications.document.url != blank -%}
             <a href="{{ certifications.document.url }}" style="text-decoration: none; color: inherit;">
           {%- endif -%}
