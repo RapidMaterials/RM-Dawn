@@ -15,7 +15,7 @@
         "column_mKc3gN": {
           "type": "column",
           "settings": {
-            "image": "{{ collection.metafields.custom.brand.value.logo_square.value }}",
+            "image": "{{ collection.metafields.custom.brand.value.logo.value }}",
             "title": "",
             "heading_tag": "h2",
             "text": "",
