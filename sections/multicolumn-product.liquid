@@ -277,15 +277,13 @@
 {%- endif -%}
 
 {%- if roofprofs != blank -%}
-  <li><strong>Compatible Roof Profiles:</strong>
-    <div class="roof-box" style="display: flex; gap: 4px; flex-wrap: wrap;align-items: end;">
+  <li><strong>Compatible Roof Profiles: </strong>
       {%- assign total = roofprofs.size -%}
       {%- for roof_profile in roofprofs -%}
         {{ roof_profile.name.value }}
         {%- if total == 2 and forloop.index == 1 -%},{% endif -%}
         {%- if total > 2 and forloop.index < total -%},{% endif -%}
       {%- endfor -%}
-    </div>
   </li>
 {%- endif -%}
 
