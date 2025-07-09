@@ -41,6 +41,7 @@
           "type": "text",
           "settings": {
             "text": "Minimum 10 sheets per color.",
+            "txtclass": "cl",
             "text_style": "uppercase"
           }
         },
@@ -55,6 +56,7 @@
           "type": "text",
           "settings": {
             "text": "{{ product.metafields.custom.alert.value }}",
+            "txtclass": "cl",
             "text_style": "body"
           }
         },
@@ -86,7 +88,7 @@
         ".product__info-wrapper.grid__item {background-color: #f0f0f0; padding: 3%;}"
       ],
       "settings": {
-        "enable_sticky_info": true,
+        "enable_sticky_info": false,
         "color_scheme": "scheme-1",
         "media_size": "small",
         "constrain_to_viewport": true,
@@ -355,6 +357,7 @@
           "type": "heading",
           "settings": {
             "heading": "Looking for Even More Variety?",
+            "heading_tag": "h2",
             "heading_size": "h1"
           }
         },
