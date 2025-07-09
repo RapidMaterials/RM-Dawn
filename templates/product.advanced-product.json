@@ -144,8 +144,9 @@
       ],
       "custom_css": [
         "h2,h3 {margin-top: 0; font-weight: bold; font-size: 1.8rem; color: #235da9;}",
-        "h4, h5{margin:0;}",
+        "h4,h5 {margin: 0;}",
         ".multicolumn-card .rte,.brand-bio,p {font-size: 1.25rem !important; line-height: 1.5rem !important;}",
+        "p{margin:10px 0 !important;}",
         ".specs li {font-size: 1.25rem; line-height: 1.5rem;}",
         "iframe {max-width: 400px;}"
       ],
