@@ -105,7 +105,8 @@
         "h1 {font-size: 2.5rem; line-height: 2.5rem;}",
         "form.installment {display: none !important;}",
         "#text_eanxjX {font-size: 0.9em; line-height: 1em; padding: 10px; background-color: #ffbd5f; letter-spacing: normal;}",
-        ".product__info-wrapper.grid__item {background-color: #f0f0f0; padding: 3%;}"
+        ".product__info-wrapper.grid__item {background-color: #f0f0f0; padding: 3%;}",
+        ".grid {align-items: start; justify-content: center;}"
       ],
       "settings": {
         "enable_sticky_info": false,
