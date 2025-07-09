@@ -250,7 +250,7 @@
         <ul style="list-style: none; padding: 0; margin: 0;">
           <li><strong>SKU: </strong>   {{- product.selected_or_first_available_variant.sku -}} </li
 
-   {%- if product.selected_or_first_available_variant.mm-google-shopping.mpn != blank -%}<li><strong>MPN:</strong>  {{- product.selected_or_first_available_variant.mm-google-shopping.mpn -}}</li>{%- endif -%}
+   {%- if product.mm-google-shopping.mpn != blank -%}<li><strong>MPN:</strong>  {{- product.selected_or_first_available_variant.mm-google-shopping.mpn -}}</li>{%- endif -%}
           
            {%- if product.selected_or_first_available_variant.barcode != blank -%}<li><strong>UPC:</strong> {{ product.selected_or_first_available_variant.barcode }}</li>{%- endif -%}
           {%- if certs != blank -%}
