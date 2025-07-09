@@ -274,6 +274,23 @@
     </div>
   </li>
 {%- endif -%}
+
+  {%- if roofprofs != blank -%}
+  <li><strong>Compatible Roof Profiles:</strong>
+    <div class="roof-box" style="display: flex; gap: 4px; flex-wrap: wrap;align-items: end;">
+      {%- for roof_profiles in roofprofs -%}
+        <div class="indv-roof" >
+          {%- if roof_profiles.icon != blank -%}
+            <img src="{{ roof_profiles.icon | image_url: width: 32 }}" alt="{{ roof_profiles.name.value }} Icon" style="display: block; margin: 0 auto 5px;">
+          {%- endif -%}
+          {{ roof_profiles.name.value }}
+        </div>
+      {%- endfor -%}
+    </div>
+  </li>
+{%- endif -%}
+
+          
         </ul>
       </div>
 {% endif %}
