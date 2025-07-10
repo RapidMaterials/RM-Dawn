@@ -310,7 +310,8 @@
         ".multicolumn-card__info {padding: 0 !important;}",
         "h2.inline-richtext {margin: 5px; font-size: 0.9em;}",
         ".grid {row-gap: 40px;}",
-        ".multicolumn-card.content-container {padding-bottom: 20px;}"
+        ".multicolumn-card.content-container {padding-bottom: 20px;}",
+        "a.link.animate-arrow {margin-top: 0;}"
       ],
       "settings": {
         "title": "",
