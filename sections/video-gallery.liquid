@@ -60,10 +60,15 @@
   width: 100%;
   height: 100%;
   background: rgba(0,0,0,0.8);
-  z-index: 9999;
+  z-index:2147483647 !important;
   display: none;
   align-items: center;
   justify-content: center;
+}
+  body.lightbox-open {
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
 }
 .video-lightbox__content {
   position: relative;
@@ -158,33 +163,36 @@
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {
-    const buttons = document.querySelectorAll('.video-gallery__thumb');
-    const lightbox = document.getElementById('video-lightbox');
-    const container = document.getElementById('video-container');
-    const closeBtn = document.querySelector('.video-lightbox__close');
+  const buttons = document.querySelectorAll('.video-gallery__thumb');
+  const lightbox = document.getElementById('video-lightbox');
+  const container = document.getElementById('video-container');
+  const closeBtn = document.querySelector('.video-lightbox__close');
 
-    buttons.forEach(btn => {
-      btn.addEventListener('click', function () {
-        const type = btn.dataset.videoType;
-        const id = btn.dataset.videoId;
-        let iframeSrc = '';
+  buttons.forEach(btn => {
+    btn.addEventListener('click', function () {
+      const type = btn.dataset.videoType;
+      const id = btn.dataset.videoId;
+      let iframeSrc = '';
 
-        if (type === 'youtube') {
-          iframeSrc = `https://www.youtube.com/embed/${id}?autoplay=1`;
-        } else {
-          iframeSrc = `https://player.vimeo.com/video/${id}?autoplay=1`;
-        }
+      if (type === 'youtube') {
+        iframeSrc = `https://www.youtube.com/embed/${id}?autoplay=1&mute=1&enablejsapi=1`;
+      } else {
+        iframeSrc = `https://player.vimeo.com/video/${id}?autoplay=1`;
+      }
 
-        container.innerHTML = `<iframe src="${iframeSrc}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>`;
-        lightbox.style.display = 'flex';
-      });
-    });
-
-    closeBtn.addEventListener('click', () => {
-      container.innerHTML = '';
-      lightbox.style.display = 'none';
+      container.innerHTML = `<iframe src="${iframeSrc}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>`;
+      lightbox.style.display = 'flex';
+      document.body.classList.add('lightbox-open'); // 🔒 prevent scroll
     });
   });
+
+  closeBtn.addEventListener('click', () => {
+    container.innerHTML = '';
+    lightbox.style.display = 'none';
+    document.body.classList.remove('lightbox-open'); // 🔓 restore scroll
+  });
+});
+
 </script>
 
 {% schema %}
