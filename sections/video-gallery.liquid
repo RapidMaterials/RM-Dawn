@@ -99,7 +99,9 @@
         {%- assign vids = product.metafields.custom.videos.value -%}
               {%- if vids != blank -%} 
                 {% for videos in vids %}
-                {% assign video_id = videos.video_url.id %}
+                {% assign raw_url = videos.video_url %}
+                {% assign id_with_params = raw_url | split: '/' | last %}
+                {% assign video_id = id_with_params | split: '?' | first %}
                 {% assign video_type = videos.video_url.provider %}
                 {% assign alt = videos.video_description | escape %}
                 {% assign poster = videos.poster_image %}
