@@ -167,10 +167,14 @@
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {
+    
     const buttons = document.querySelectorAll('.video-gallery__thumb');
     const lightbox = document.getElementById('video-lightbox');
     const container = document.getElementById('video-container');
     const closeBtn = document.querySelector('.video-lightbox__close');
+
+    // 🔧 Move lightbox to end of <body> to avoid stacking context issues
+  document.body.appendChild(lightbox);
 
     let scrollPosition = 0;
 
