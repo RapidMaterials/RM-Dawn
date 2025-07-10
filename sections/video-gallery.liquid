@@ -167,36 +167,65 @@
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {
-  const buttons = document.querySelectorAll('.video-gallery__thumb');
-  const lightbox = document.getElementById('video-lightbox');
-  const container = document.getElementById('video-container');
-  const closeBtn = document.querySelector('.video-lightbox__close');
+    const buttons = document.querySelectorAll('.video-gallery__thumb');
+    const lightbox = document.getElementById('video-lightbox');
+    const container = document.getElementById('video-container');
+    const closeBtn = document.querySelector('.video-lightbox__close');
 
-  buttons.forEach(btn => {
-    btn.addEventListener('click', function () {
-      const type = btn.dataset.videoType;
-      const id = btn.dataset.videoId;
-      let iframeSrc = '';
+    let scrollPosition = 0;
 
-      if (type === 'youtube') {
-        iframeSrc = `https://www.youtube.com/embed/${id}?autoplay=1&mute=1&enablejsapi=1`;
-      } else {
-        iframeSrc = `https://player.vimeo.com/video/${id}?autoplay=1`;
-      }
+    function openLightbox(iframeSrc) {
+      // Save scroll position
+      scrollPosition = window.scrollY;
 
+      // Lock scroll without jumping
+      document.body.style.position = 'fixed';
+      document.body.style.top = `-${scrollPosition}px`;
+      document.body.style.left = '0';
+      document.body.style.right = '0';
+      document.body.style.overflow = 'hidden';
+      document.body.classList.add('lightbox-open');
+
+      // Show lightbox with iframe
       container.innerHTML = `<iframe src="${iframeSrc}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>`;
       lightbox.style.display = 'flex';
-      document.body.classList.add('lightbox-open'); // 🔒 prevent scroll
+    }
+
+    function closeLightbox() {
+      // Remove iframe and hide
+      container.innerHTML = '';
+      lightbox.style.display = 'none';
+
+      // Restore scroll
+      document.body.style.position = '';
+      document.body.style.top = '';
+      document.body.style.left = '';
+      document.body.style.right = '';
+      document.body.style.overflow = '';
+      document.body.classList.remove('lightbox-open');
+
+      // Reset scroll
+      window.scrollTo(0, scrollPosition);
+    }
+
+    buttons.forEach(btn => {
+      btn.addEventListener('click', function () {
+        const type = btn.dataset.videoType;
+        const id = btn.dataset.videoId;
+        let iframeSrc = '';
+
+        if (type === 'youtube') {
+          iframeSrc = `https://www.youtube.com/embed/${id}?autoplay=1&mute=1&enablejsapi=1`;
+        } else {
+          iframeSrc = `https://player.vimeo.com/video/${id}?autoplay=1`;
+        }
+
+        openLightbox(iframeSrc);
+      });
     });
-  });
 
-  closeBtn.addEventListener('click', () => {
-    container.innerHTML = '';
-    lightbox.style.display = 'none';
-    document.body.classList.remove('lightbox-open'); // 🔓 restore scroll
+    closeBtn.addEventListener('click', closeLightbox);
   });
-});
-
 </script>
 
 {% schema %}
