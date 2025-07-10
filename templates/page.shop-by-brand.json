@@ -58,7 +58,7 @@
             "title": "Alucobond",
             "heading_tag": "h2",
             "text": "",
-            "link_label": "",
+            "link_label": "Shop",
             "link": "shopify://collections/alucobond"
           }
         },
@@ -69,7 +69,7 @@
             "title": "American Master Gutter",
             "heading_tag": "h2",
             "text": "",
-            "link_label": "",
+            "link_label": "Shop",
             "link": "shopify://collections/brand-american-master-gutters"
           }
         },
@@ -80,7 +80,7 @@
             "title": "Buschmann Tools",
             "heading_tag": "h2",
             "text": "",
-            "link_label": "",
+            "link_label": "Shop",
             "link": "shopify://collections/buschmann-tools"
           }
         },
@@ -91,7 +91,7 @@
             "title": "Equitone",
             "heading_tag": "h2",
             "text": "",
-            "link_label": "",
+            "link_label": "Shop",
             "link": "shopify://collections/brand-equitone"
           }
         },
@@ -102,7 +102,7 @@
             "title": "ESE Machines",
             "heading_tag": "h2",
             "text": "",
-            "link_label": "",
+            "link_label": "Shop",
             "link": "shopify://collections/brand-ese"
           }
         },
@@ -113,7 +113,7 @@
             "title": "Express",
             "heading_tag": "h2",
             "text": "",
-            "link_label": "",
+            "link_label": "Shop",
             "link": "shopify://collections/brand-express"
           }
         },
@@ -124,7 +124,7 @@
             "title": "Freund",
             "heading_tag": "h2",
             "text": "",
-            "link_label": "",
+            "link_label": "Shop",
             "link": "shopify://collections/freund-tools"
           }
         },
@@ -135,7 +135,7 @@
             "title": "JS Design",
             "heading_tag": "h2",
             "text": "",
-            "link_label": "",
+            "link_label": "Shop",
             "link": "shopify://collections/brand-js-design"
           }
         },
@@ -146,7 +146,7 @@
             "title": "Levi's Building Components",
             "heading_tag": "h2",
             "text": "",
-            "link_label": "",
+            "link_label": "Shop",
             "link": "shopify://collections/brand-levis"
           }
         },
@@ -157,7 +157,7 @@
             "title": "LM Curbs",
             "heading_tag": "h2",
             "text": "",
-            "link_label": "",
+            "link_label": "Shop",
             "link": "shopify://collections/brand-lmcurbs"
           }
         },
@@ -168,7 +168,7 @@
             "title": "Malco Tools",
             "heading_tag": "h2",
             "text": "",
-            "link_label": "",
+            "link_label": "Shop",
             "link": "shopify://collections/malco-tools"
           }
         },
@@ -179,7 +179,7 @@
             "title": "Metal Plus",
             "heading_tag": "h2",
             "text": "",
-            "link_label": "",
+            "link_label": "Shop",
             "link": "shopify://collections/brand-metal-plus"
           }
         },
@@ -190,7 +190,7 @@
             "title": "MidWest Tools",
             "heading_tag": "h2",
             "text": "",
-            "link_label": "",
+            "link_label": "Shop",
             "link": "shopify://collections/brand-midwest-tools"
           }
         },
@@ -201,7 +201,7 @@
             "title": "Perkeo",
             "heading_tag": "h2",
             "text": "",
-            "link_label": "",
+            "link_label": "Shop",
             "link": "shopify://collections/brand-perkeo"
           }
         },
@@ -212,7 +212,7 @@
             "title": "Rau Tools",
             "heading_tag": "h2",
             "text": "",
-            "link_label": "",
+            "link_label": "Shop",
             "link": "shopify://collections/brand-rau-tools"
           }
         },
@@ -223,7 +223,7 @@
             "title": "S-5!",
             "heading_tag": "h2",
             "text": "",
-            "link_label": "",
+            "link_label": "Shop",
             "link": "shopify://collections/brand-s-5"
           }
         },
@@ -234,7 +234,7 @@
             "title": "SFS",
             "heading_tag": "h2",
             "text": "",
-            "link_label": "",
+            "link_label": "Shop",
             "link": "shopify://collections/brand-sfs"
           }
         },
@@ -245,7 +245,7 @@
             "title": "Stubai",
             "heading_tag": "h2",
             "text": "",
-            "link_label": "",
+            "link_label": "Shop",
             "link": "shopify://collections/brand-stubai"
           }
         },
@@ -256,7 +256,7 @@
             "title": "Swenson Shear",
             "heading_tag": "h2",
             "text": "",
-            "link_label": "",
+            "link_label": "Shop",
             "link": "shopify://collections/swenson-shear"
           }
         },
@@ -267,7 +267,7 @@
             "title": "TruFast",
             "heading_tag": "h2",
             "text": "",
-            "link_label": "",
+            "link_label": "Shop",
             "link": "shopify://collections/brand-trufast"
           }
         },
@@ -278,7 +278,7 @@
             "title": "Zambelli",
             "heading_tag": "h2",
             "text": "",
-            "link_label": "",
+            "link_label": "Shop",
             "link": "shopify://collections/brand-zambelli"
           }
         }
@@ -317,6 +317,7 @@
         "heading_tag": "h2",
         "section_float": "clear",
         "heading_size": "h2",
+        "col_alignment": "left",
         "image_width": "full",
         "image_ratio": "adapt",
         "button_label": "",
