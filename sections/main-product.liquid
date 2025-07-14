@@ -30,6 +30,118 @@
       padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
       padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
     }
+.product__info-wrapper.grid__item {
+    padding: 0 !important;
+}
+    .product__info-container{
+      padding:3%;
+    }
+   
+    .icon-features-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1.5rem;
+}
+.product-icon-features{
+   background-color: #d9d9d9;
+  padding:3%;
+}
+.icon-feature {
+  gap: 0.75rem;
+      text-align: center;
+}
+
+.icon-feature__image {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+}
+
+.icon-feature__title {
+  margin: 0;
+  font-weight: bold;
+  font-size: 1.4rem;
+}
+
+.icon-feature__subtitle {
+  margin: 0;
+     font-size: 1.2rem;
+}
+
+.product-popup-modal__opener {
+    padding: 0 3%;
+}
+
+    .info-footer{
+      background-color:#fff;
+    }
+
+    .product__info-wrapper.grid__item {
+    max-width: 60rem !important;
+}
+
+.prod-alert {
+      margin-top: calc(-3% - 2px) !important;
+    margin-left: calc(-3% - 2px);
+    margin-right: calc(-3% - 2px);
+    background-color: #ffd396 !important;
+    padding: 2%;
+  margin-bottom: 10px;
+}
+
+.prod-condition {
+    background-color: #d9d9d9;
+    padding: 3px;
+    font-size: 1.25rem;
+    font-style: italic;
+}
+    .product__tax.caption.rte {
+    display: none;
+}
+.product-popup-modal__button{
+  font-size:1.4rem;
+}
+
+    p.product__text.inline-richtext.prod-ship-note::before {
+    content: '⛟ ';
+}
+
+p.product__text.inline-richtext.prod-ship-note {
+    margin-top: -10px;
+}
+    
+.product-popup-modal__content {
+    width: auto;
+    height: auto;
+    padding: 20px;
+}
+    .grid__item.product__media-wrapper {
+    margin-right: 20px;
+}
+
+button#ModalClose-ReturnDetails, .product-popup-modal__toggle {
+    position: absolute !important;
+    right: 10px !important;
+}
+    .product-popup-modal__content-info {
+    color: black;
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+}
+    
+.product-popup-modal__content-info p {
+    padding: 5px 0;
+}
+
+.product-popup-modal__content-info h1{ font-weight:bold;}
+
+    .product__sku {
+    margin-top: 0;
+}
+
 
     @media screen and (min-width: 750px) {
       .section-{{ section.id }}-padding {
@@ -71,7 +183,7 @@
       onload="this.media='all'"
     >
   {%- endif -%}
-
+{%- assign iconfs = product.metafields.custom.icon_features.value -%}
   {% assign variant_images = product.images | where: 'attached_to_variant?', true | map: 'src' %}
   <div class="page-width">
     <div class="product product--{{ section.settings.media_size }} product--{{ section.settings.media_position }} product--{{ section.settings.gallery_layout }} product--mobile-{{ section.settings.mobile_thumbnails }} grid grid--1-col {% if product.media.size > 0 %}grid--2-col-tablet{% else %}product--no-media{% endif %}">
@@ -91,7 +203,7 @@
                 {% render block %}
               {%- when 'text' -%}
                 <p
-                  class="product__text inline-richtext{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}"
+                  class="product__text inline-richtext {{block.settings.txtclass}} {% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}"
                   {{ block.shopify_attributes }}
                 >
                   {{- block.settings.text -}}
@@ -204,8 +316,17 @@
                   role="status"
                   {{ block.shopify_attributes }}
                 >
-                  <span class="visually-hidden">{{ 'products.product.sku' | t }}:</span>
+                  <span>{{ 'products.product.sku' | t }}: </span>
                   {{- product.selected_or_first_available_variant.sku -}}
+                  &nbsp;{%- assign brand = product.metafields.custom.brand.value -%}{%- if brand != blank -%}|&nbsp; 
+                    <span class="product-brand {% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}">
+                      {%- if brand.collection_url != blank -%}
+                        <a href="{{ brand.collection_url }}">{{ brand.name }}</a>
+                      {%- else -%}
+                        {{ brand.name }}
+                      {%- endif -%}
+                    </span>
+                  {%- endif -%}
                 </p>
               {%- when 'custom_liquid' -%}
                 {{ block.settings.custom_liquid }}
@@ -239,20 +360,9 @@
                     | item_count_for_variant: product.selected_or_first_available_variant.id
                   -%}
                   {% # theme-check-enable %}
-                  <span class="visually-hidden" id="quantity-label-{{ section.id }}">
-                    {%- if cart_qty > 0 -%}
-                      {{- 'products.product.quantity.in_cart_aria_label' | t: quantity: cart_qty -}}
-                    {%- else -%}
-                      {{- 'products.product.quantity.label' | t -}}
-                    {%- endif -%}
-                  </span>
-                  <label
-                    class="quantity__label form__label"
-                    for="Quantity-{{ section.id }}"
-                    aria-labelledby="quantity-label-{{ section.id }}"
-                  >
-                    <span aria-hidden="true">{{ 'products.product.quantity.label' | t }}</span>
-                    <span class="quantity__rules-cart{% if cart_qty == 0 %} hidden{% endif %}" aria-hidden="true">
+                  <label class="quantity__label form__label" for="Quantity-{{ section.id }}">
+                    {{ 'products.product.quantity.label' | t }}
+                    <span class="quantity__rules-cart{% if cart_qty == 0 %} hidden{% endif %}">
                       {%- render 'loading-spinner' -%}
                       <span
                         >(
@@ -329,7 +439,7 @@
                                 | money_with_currency
                               -%}
                               <span class="price-per-item--current">
-                                {{- 'products.product.volume_pricing.price_at_each_html' | t: price: variant_price -}}
+                                {{- 'products.product.volume_pricing.price_at_each' | t: price: variant_price -}}
                               </span>
                             {%- else -%}
                               {%- for price_break in volume_pricing_array -%}
@@ -337,7 +447,7 @@
                                   {%- assign price_break_price = price_break.price | money_with_currency -%}
                                   <span class="price-per-item--current">
                                     {{-
-                                      'products.product.volume_pricing.price_at_each_html'
+                                      'products.product.volume_pricing.price_at_each'
                                       | t: price: price_break_price
                                     -}}
                                   </span>
@@ -367,16 +477,13 @@
                                 </dt>
                                 <dd>
                                   <span class="price-per-item--current">
-                                    {{-
-                                      'products.product.volume_pricing.price_at_each_html'
-                                      | t: price: variant_price
-                                    -}}
+                                    {{- 'products.product.volume_pricing.price_at_each' | t: price: variant_price -}}
                                   </span>
                                 </dd>
                               </dl>
                             {%- else -%}
                               <span class="price-per-item--current">
-                                {{- 'products.product.volume_pricing.price_at_each_html' | t: price: variant_price -}}
+                                {{- 'products.product.volume_pricing.price_at_each' | t: price: variant_price -}}
                               </span>
                             {%- endif -%}
                           </div>
@@ -420,7 +527,7 @@
                             {%- assign price = product.selected_or_first_available_variant.price
                               | money_with_currency
                             -%}
-                            <span data-text="{{ 'products.product.volume_pricing.price_at_each_html' | t: price: variant_price }}">
+                            <span data-text="{{ 'products.product.volume_pricing.price_at_each' | t: price: variant_price }}">
                               {{- 'sections.quick_order_list.each' | t: money: price -}}
                             </span>
                           </li>
@@ -431,7 +538,7 @@
                                 {{- price_break.minimum_quantity -}}
                                 <span aria-hidden="true">+</span></span
                               >
-                              <span data-text="{{ 'products.product.volume_pricing.price_at_each_html' | t: price: price_break_price }}">
+                              <span data-text="{{ 'products.product.volume_pricing.price_at_each' | t: price: price_break_price }}">
                                 {{- 'sections.quick_order_list.each' | t: money: price_break_price -}}
                               </span>
                             </li>
@@ -454,21 +561,7 @@
                     </volume-pricing>
                   {%- endif -%}
                 </div>
-              {%- when 'popup' -%}
-                <modal-opener
-                  class="product-popup-modal__opener quick-add-hidden"
-                  data-modal="#PopupModal-{{ block.id }}"
-                  {{ block.shopify_attributes }}
-                >
-                  <button
-                    id="ProductPopup-{{ block.id }}"
-                    class="product-popup-modal__button link"
-                    type="button"
-                    aria-haspopup="dialog"
-                  >
-                    {{ block.settings.text | default: block.settings.page.title | escape }}
-                  </button>
-                </modal-opener>
+              
               {%- when 'share' -%}
                 {% liquid
                   assign share_url = product.selected_variant.url | default: product.url | prepend: request.origin
@@ -674,6 +767,8 @@
                 </product-recommendations>
               {%- when 'icon-with-text' -%}
                 {% render 'icon-with-text', block: block %}
+        
+          
             {%- endcase -%}
           {%- endfor -%}
           <a href="{{ product.url }}" class="link product__view-details animate-arrow">
@@ -681,7 +776,97 @@
             {{- 'icon-arrow.svg' | inline_asset_content -}}
           </a>
         </section>
+         {%- for block in section.blocks -%}
+            {%- case block.type -%}
+            {%- when 'features_with_icons' -%}
+                   {%- if iconfs != blank -%}
+                       <div class="product-icon-features quick-add-hidden">
+                          <ul class="icon-features-list">
+                            {% for icf in iconfs %}
+                                <li class="icon-feature">
+                                  {% if icf.icon.value %}
+                                    <img
+                                      src="{{ icf.icon.value | image_url: width: 64 }}"
+                                      alt="{{ icf.headline.value | escape }}"
+                                      class="icon-feature__image"
+                                    />
+                                  {% endif %}
+                        <div class="icon-feature__text">
+                          <h3 class="icon-feature__title">
+                            {{ icf.headline.value }}
+                          </h3>
+                          {% if icf.sub_headline.value %}
+                            <p class="icon-feature__subtitle">
+                              {{ icf.sub_headline.value }}
+                            </p>
+                          {% endif %}
+                        </div>
+                      </li>
+                  {% endfor %}
+                </ul>
+            </div>
+            {% endif %}
+              
+       {%- endcase -%}
+             {%- endfor -%}
+
+<div class="info-footer">
+  {%- for block in section.blocks -%}
+    {%- case block.type -%}
+      {%- when 'popup' -%}
+        <modal-opener
+          class="product-popup-modal__opener quick-add-hidden"
+          data-modal="#PopupModal-{{ block.id }}"
+          {{ block.shopify_attributes }}
+        >
+          <button
+            id="ProductPopup-{{ block.id }}"
+            class="product-popup-modal__button link"
+            type="button"
+            aria-haspopup="dialog"
+          >
+            {{ block.settings.text | default: block.settings.page.title | escape }}
+          </button>
+        </modal-opener>
+    {%- endcase -%}
+  {%- endfor -%}
+
+
+{%- if product.metafields.custom.info_return_refund_policy -%}
+  <modal-opener
+    class="product-popup-modal__opener quick-add-hidden"
+    data-modal="#PopupModal-ReturnDetails"
+  >
+    <button
+      id="ProductPopup-ReturnDetails"
+      class="product-popup-modal__button link"
+      type="button"
+      aria-haspopup="dialog"
+    >
+      Return Details
+    </button>
+  </modal-opener>
+
+  <modal-dialog id="PopupModal-ReturnDetails" class="product-popup-modal" data-section="{{ section.id }}">
+    <div role="dialog" aria-label="Return Details" aria-modal="true" class="product-popup-modal__content" tabindex="-1">
+      <button id="ModalClose-ReturnDetails" type="button" class="product-popup-modal__toggle" aria-label="Close">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" class="icon icon-close" viewBox="0 0 18 17">
+          <path fill="currentColor" d="M.865 15.978a.5.5 0 0 0 .707.707l7.433-7.431 7.579 7.282a.501.501 0 0 0 .846-.37.5.5 0 0 0-.153-.351L9.712 8.546l7.417-7.416a.5.5 0 1 0-.707-.708L8.991 7.853 1.413.573a.5.5 0 1 0-.693.72l7.563 7.268z"/>
+        </svg>
+      </button>
+      <div class="product-popup-modal__content-info">
+        <h2 class="h2">Return Details</h2>
+        <p>{{ product.metafields.custom.info_return_refund_policy }}</p>
+        <p><a class="button" style="margin-top:20px;" href="https://rapidmaterials.com/policies/refund-policy">View full return policy</a></p>
       </div>
+    </div>
+  </modal-dialog>
+{%- endif -%}
+
+    
+        
+      </div>
+ 
     </div>
 
     {% render 'product-media-modal', variant_images: variant_images %}
@@ -756,6 +941,12 @@
           "id": "text",
           "default": "t:sections.main-product.blocks.text.settings.text.default",
           "label": "t:sections.main-product.blocks.text.settings.text.label"
+        },
+        {
+          "type": "text",
+          "id": "txtclass",
+          "default": "cl",
+          "label": "CSS Class"
         },
         {
           "type": "select",
@@ -1463,7 +1654,11 @@
           "default": false
         }
       ]
-    },
+      },{
+    "type": "features_with_icons",
+    "name": "Features with Icons",
+    "limit": 1
+  },             
     {
       "type": "icon-with-text",
       "name": "t:sections.main-product.blocks.icon_with_text.name",
@@ -1688,7 +1883,7 @@
         {
           "type": "header",
           "content": "t:sections.main-product.blocks.icon_with_text.settings.pairing_2.label"
-        },
+        },        
         {
           "type": "select",
           "id": "icon_2",
@@ -1888,7 +2083,7 @@
         {
           "type": "header",
           "content": "t:sections.main-product.blocks.icon_with_text.settings.pairing_3.label"
-        },
+        },        
         {
           "type": "select",
           "id": "icon_3",
@@ -2190,7 +2385,7 @@
       ],
       "default": "hide",
       "label": "t:sections.main-product.settings.mobile_thumbnails.label"
-    },
+    },    
     {
       "type": "select",
       "id": "media_position",
