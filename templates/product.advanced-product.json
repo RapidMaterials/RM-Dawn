@@ -55,6 +55,10 @@
           "type": "shopify://apps/optis-product-options/blocks/option-set/2c446099-c349-4e73-80cd-49c9770b7807",
           "settings": {}
         },
+        "yanet_volume_discount_promo_table_j8A3Tx": {
+          "type": "shopify://apps/yanet-volume-discount/blocks/promo-table/bb8aa9c5-8095-4b62-b73a-92eaddef81d1",
+          "settings": {}
+        },
         "quantity_selector": {
           "type": "quantity_selector",
           "settings": {}
@@ -95,6 +99,7 @@
         "text_eanxjX",
         "variant_picker",
         "bss_variant_options_option_set_dEcH69",
+        "yanet_volume_discount_promo_table_j8A3Tx",
         "quantity_selector",
         "buy_buttons",
         "text_XdzqLY",
@@ -146,7 +151,7 @@
         "h2,h3 {margin-top: 0; font-weight: bold; font-size: 1.8rem; color: #235da9;}",
         "h4,h5 {margin: 0;}",
         ".multicolumn-card .rte,.brand-bio,p {font-size: 1.25rem !important; line-height: 1.5rem !important;}",
-        "p{margin:10px 0 !important;}",
+        "p {margin: 10px 0 !important;}",
         ".specs li {font-size: 1.25rem; line-height: 1.5rem;}",
         "iframe {max-width: 400px;}"
       ],
