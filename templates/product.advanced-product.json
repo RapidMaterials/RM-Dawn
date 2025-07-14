@@ -55,10 +55,6 @@
           "type": "shopify://apps/optis-product-options/blocks/option-set/2c446099-c349-4e73-80cd-49c9770b7807",
           "settings": {}
         },
-        "yanet_volume_discount_promo_table_j8A3Tx": {
-          "type": "shopify://apps/yanet-volume-discount/blocks/promo-table/bb8aa9c5-8095-4b62-b73a-92eaddef81d1",
-          "settings": {}
-        },
         "quantity_selector": {
           "type": "quantity_selector",
           "settings": {}
@@ -99,7 +95,6 @@
         "text_eanxjX",
         "variant_picker",
         "bss_variant_options_option_set_dEcH69",
-        "yanet_volume_discount_promo_table_j8A3Tx",
         "quantity_selector",
         "buy_buttons",
         "text_XdzqLY",
