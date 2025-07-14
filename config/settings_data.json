@@ -160,11 +160,6 @@
         "disabled": false,
         "settings": {}
       },
-      "8171265131012698934": {
-        "type": "shopify://apps/oc-quantity-breaks-limit/blocks/orichi-discount/3f38eaa3-2a3f-4e55-bcc9-df5d3f75e351",
-        "disabled": false,
-        "settings": {}
-      },
       "11320579242087869063": {
         "type": "shopify://apps/codify-order-cancel/blocks/cancel_button/f7f8a269-b6ea-461a-8e1b-d61167f44926",
         "disabled": false,
@@ -182,6 +177,11 @@
       },
       "9513407616245537438": {
         "type": "shopify://apps/sami-wholesale/blocks/app-embed-block/799b9db0-2c2b-4b20-8675-98acd123fbb2",
+        "disabled": false,
+        "settings": {}
+      },
+      "8171265131012698934": {
+        "type": "shopify://apps/oc-quantity-breaks-limit/blocks/orichi-discount/3f38eaa3-2a3f-4e55-bcc9-df5d3f75e351",
         "disabled": false,
         "settings": {}
       }
