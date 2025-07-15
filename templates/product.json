@@ -70,6 +70,10 @@
             "text": "Shipping Details",
             "page": "shipping-details"
           }
+        },
+        "oscp_wholesale_b2b_cancelled_block_CH3WUt": {
+          "type": "shopify://apps/oscp-wholesale-b2b/blocks/cancelled-block/4d1d9eb6-630d-4c84-ad8e-14dfd07f94ed",
+          "settings": {}
         }
       },
       "block_order": [
@@ -82,7 +86,8 @@
         "quantity_selector",
         "buy_buttons",
         "text_eanxjX",
-        "popup_JJ8bWY"
+        "popup_JJ8bWY",
+        "oscp_wholesale_b2b_cancelled_block_CH3WUt"
       ],
       "custom_css": [
         "h1 {font-size: 2.5rem; line-height: 2.5rem;}",

@@ -79,6 +79,15 @@
           "type": "features_with_icons",
           "settings": {}
         },
+        "oscp_wholesale_b2b_app_block_k7JUnx": {
+          "type": "shopify://apps/oscp-wholesale-b2b/blocks/app-block/4d1d9eb6-630d-4c84-ad8e-14dfd07f94ed",
+          "settings": {
+            "PGBC": "#d5d9e0",
+            "PGH": "#000000",
+            "PGB": "#d5d9e0",
+            "PGT": "#000000"
+          }
+        },
         "popup_JJ8bWY": {
           "type": "popup",
           "settings": {
@@ -99,6 +108,7 @@
         "buy_buttons",
         "text_XdzqLY",
         "features_with_icons_qLjpdB",
+        "oscp_wholesale_b2b_app_block_k7JUnx",
         "popup_JJ8bWY"
       ],
       "custom_css": [
