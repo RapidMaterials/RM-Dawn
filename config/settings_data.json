@@ -175,13 +175,8 @@
         "disabled": false,
         "settings": {}
       },
-      "9513407616245537438": {
-        "type": "shopify://apps/sami-wholesale/blocks/app-embed-block/799b9db0-2c2b-4b20-8675-98acd123fbb2",
-        "disabled": false,
-        "settings": {}
-      },
-      "17282384578088071192": {
-        "type": "shopify://apps/pricebazi-volume-tiered-price/blocks/main/f9fdf687-a1a9-4ff1-b989-48b63808bddc",
+      "12971296166409603227": {
+        "type": "shopify://apps/oscp-wholesale-b2b/blocks/app-embed/4d1d9eb6-630d-4c84-ad8e-14dfd07f94ed",
         "disabled": false,
         "settings": {}
       }
