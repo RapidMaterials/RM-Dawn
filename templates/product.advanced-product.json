@@ -35,6 +35,15 @@
           "type": "price",
           "settings": {}
         },
+        "oscp_wholesale_b2b_app_block_k7JUnx": {
+          "type": "shopify://apps/oscp-wholesale-b2b/blocks/app-block/4d1d9eb6-630d-4c84-ad8e-14dfd07f94ed",
+          "settings": {
+            "PGBC": "#d5d9e0",
+            "PGH": "#000000",
+            "PGB": "#a5a5a5",
+            "PGT": "#000000"
+          }
+        },
         "text_eanxjX": {
           "type": "text",
           "name": "Condition",
@@ -79,15 +88,6 @@
           "type": "features_with_icons",
           "settings": {}
         },
-        "oscp_wholesale_b2b_app_block_k7JUnx": {
-          "type": "shopify://apps/oscp-wholesale-b2b/blocks/app-block/4d1d9eb6-630d-4c84-ad8e-14dfd07f94ed",
-          "settings": {
-            "PGBC": "#d5d9e0",
-            "PGH": "#000000",
-            "PGB": "#d5d9e0",
-            "PGT": "#000000"
-          }
-        },
         "popup_JJ8bWY": {
           "type": "popup",
           "settings": {
@@ -101,6 +101,7 @@
         "sku_ibtQ6p",
         "title",
         "price",
+        "oscp_wholesale_b2b_app_block_k7JUnx",
         "text_eanxjX",
         "variant_picker",
         "bss_variant_options_option_set_dEcH69",
@@ -108,15 +109,18 @@
         "buy_buttons",
         "text_XdzqLY",
         "features_with_icons_qLjpdB",
-        "oscp_wholesale_b2b_app_block_k7JUnx",
         "popup_JJ8bWY"
       ],
       "custom_css": [
         "h1 {font-size: 2.5rem; line-height: 2.5rem;}",
         "form.installment {display: none !important;}",
-        "#text_eanxjX {font-size: 0.9em; line-height: 1em; padding: 10px; background-color: #ffbd5f; letter-spacing: normal;}",
         ".product__info-wrapper.grid__item {background-color: #f0f0f0; padding: 3%;}",
-        ".grid {align-items: start; justify-content: center;}"
+        ".grid {align-items: start; justify-content: center;}",
+        "table.oscp-price-grid.oscp-variant-level-grid.oscp-active td {font-size: 1.25rem !important;}",
+        ".oscp-price-grid th {font-size: 1.25rem; padding: 5px;}",
+        ".oscp-active td {padding: 5px;}",
+        "table.oscp-price-grid.oscp-variant-level-grid {max-width: 250px;}",
+        ".oscp-price-grid input {display: none;}"
       ],
       "settings": {
         "enable_sticky_info": false,
