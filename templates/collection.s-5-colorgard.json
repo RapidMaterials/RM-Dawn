@@ -231,6 +231,9 @@
       "block_order": [
         "heading_Nm6NDK"
       ],
+      "custom_css": [
+        ".rich-text.content-container.color-scheme-2.gradient.rich-text--full-width.content-container--full-width.section-template--18380191006898__rich_text_EeCJeG-padding{clear:both;}"
+      ],
       "settings": {
         "desktop_content_position": "center",
         "content_alignment": "center",
