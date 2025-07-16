@@ -118,7 +118,7 @@
         "heading_ryh6wU": {
           "type": "heading",
           "settings": {
-            "heading": "S-5! ColorGard®",
+            "heading": "S-5! ColorGard® 2.0",
             "heading_tag": "h3",
             "heading_size": "h1"
           }
@@ -171,6 +171,7 @@
           "settings": {
             "image": "shopify://shop_images/X-Gard1.png",
             "title": "S-5! X-Gard™ 1.0",
+            "heading_tag": "h2",
             "text": "<p>X-Gard™ 1.0 is a single-pipe snow retention system built for high-performance on standing seam roofs. Ideal for both light and moderate snow loads.</p>",
             "link_label": "Shop",
             "link": "shopify://collections/s-5-x-gard"
@@ -181,6 +182,7 @@
           "settings": {
             "image": "shopify://shop_images/X-Gard2.png",
             "title": "S-5! X-Gard™ 2.0",
+            "heading_tag": "h2",
             "text": "<p>X-Gard™ 2.0 uses a two-pipe design for maximum strength and wider spans. A solid choice for heavy snow loads and long roof runs.</p><p></p>",
             "link_label": "Shop",
             "link": "shopify://collections/s-5-x-gard-2-0-snow-retention-system"
@@ -193,8 +195,10 @@
       ],
       "settings": {
         "title": "",
+        "heading_tag": "h2",
         "section_float": "clear",
         "heading_size": "h1",
+        "col_alignment": "left",
         "image_width": "full",
         "image_ratio": "adapt",
         "button_label": "",
@@ -217,6 +221,7 @@
           "settings": {
             "image": "shopify://shop_images/DualGard.png",
             "title": "S-5! DualGard™",
+            "heading_tag": "h2",
             "text": "<p>DualGard™ is a versatile two-pipe snow retention system that spans up to 48\". Compatible with both standing seam and exposed-fastened metal roofs.</p><p></p>",
             "link_label": "Shop",
             "link": "shopify://collections/s-5-dualgard"
@@ -227,6 +232,7 @@
           "settings": {
             "image": "shopify://shop_images/VersaGard.png",
             "title": "S-5! VersaGard™",
+            "heading_tag": "h2",
             "text": "<p>VersaGard™ is a compact, single-component solution for light-duty snow retention. Installs easily on most exposed-fastened metal roof panels.</p>",
             "link_label": "Shop",
             "link": "shopify://collections/s-5-versagard"
@@ -239,8 +245,10 @@
       ],
       "settings": {
         "title": "",
+        "heading_tag": "h2",
         "section_float": "clear",
         "heading_size": "h1",
+        "col_alignment": "left",
         "image_width": "full",
         "image_ratio": "adapt",
         "button_label": "",
@@ -263,35 +271,35 @@
           "settings": {
             "image": "shopify://shop_images/SnoRail_Brass.png",
             "title": "S-5! SnoRail™ Brass",
+            "heading_tag": "h2",
             "text": "<p>SnoRail™ Brass is a premium snow rail system designed for copper metal roofs. It helps prevent snow slides while preserving the roof’s architectural look and integrity.</p>",
             "link_label": "Shop",
             "link": "shopify://collections/s-5-snorail-snowfence"
           }
         },
-        "column_NUacd3": {
+        "column_8ykDz4": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/s-5-logo-round.png",
-            "title": "",
-            "text": "",
-            "link_label": "",
-            "link": ""
+            "image": "shopify://shop_images/LM-snow-rail-indv_1.png",
+            "title": "LMCurbs® Snow Guard",
+            "heading_tag": "h2",
+            "text": "<p>The LM Curbs SnowGuard System uses mechanical clamps with round-nose set screws that dimple — not pierce — the seam, preserving panel integrity. This non-penetrating design delivers lab-tested holding strength and installs in any season without adhesives or cure times.</p>",
+            "link_label": "Shop",
+            "link": "shopify://collections/lmcurbs-snowguard-system"
           }
         }
       },
       "block_order": [
         "column_QKxKUH",
-        "column_NUacd3"
+        "column_8ykDz4"
       ],
-      "custom_css": [
-        ".grid li:nth-child(2) .multicolumn-card.content-container,.grid li:nth-child(2) {background: none;}",
-        ".grid li:nth-child(2) .media.media--transparent.media--adapt {height: 150px;}",
-        ".grid li:nth-child(2) .multicolumn-card-spacing {padding-bottom: 2.5rem;}"
-      ],
+      "custom_css": [],
       "settings": {
         "title": "",
+        "heading_tag": "h2",
         "section_float": "clear",
         "heading_size": "h1",
+        "col_alignment": "left",
         "image_width": "full",
         "image_ratio": "adapt",
         "button_label": "",
