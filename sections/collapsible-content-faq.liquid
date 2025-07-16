@@ -76,6 +76,9 @@
 {%- if faqs == blank and collection -%}
   {%- assign faqs = collection.metafields.custom.faq.value -%}
 {%- endif -%}
+{%- if faqs == blank and page -%}
+  {%- assign faqs = page.metafields.custom.faq.value -%}
+{%- endif -%}
 {%- if section.blocks.size > 0 or faqs != blank -%}
   <div class="grid__item">
     {%- for block in section.blocks -%}
