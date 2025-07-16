@@ -87,7 +87,7 @@
         "heading_LMRDhj": {
           "type": "heading",
           "settings": {
-            "heading": "<strong>S-5! Snow Retention Systems</strong>",
+            "heading": "<strong>Snow Retention Systems</strong>",
             "heading_size": "h1",
             "heading_tag": "h2"
           }
@@ -95,7 +95,7 @@
         "text_LYGqTm": {
           "type": "text",
           "settings": {
-            "text": "<p>S-5! is a leading name in metal roof attachments — and for good reason. Their snow guards are engineered, tested, and built to last the life of your roof. </p>"
+            "text": ""
           }
         }
       },
