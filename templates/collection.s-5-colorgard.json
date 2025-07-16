@@ -9,6 +9,23 @@
  */
 {
   "sections": {
+    "image_banner_NHkXKX": {
+      "type": "image-banner",
+      "custom_css": [],
+      "settings": {
+        "image": "shopify://shop_images/ColorGard2.0.png",
+        "image_overlay_opacity": 0,
+        "image_height": "adapt",
+        "desktop_content_position": "middle-center",
+        "show_text_box": false,
+        "desktop_content_alignment": "center",
+        "color_scheme": "scheme-3ecab526-23df-438e-a281-3ae133d61365",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
+      }
+    },
     "banner": {
       "type": "main-collection-banner",
       "disabled": true,
@@ -64,23 +81,6 @@
         "side-padding": "no-padding"
       }
     },
-    "image_banner_NHkXKX": {
-      "type": "image-banner",
-      "custom_css": [],
-      "settings": {
-        "image": "shopify://shop_images/ColorGard2.0.png",
-        "image_overlay_opacity": 0,
-        "image_height": "adapt",
-        "desktop_content_position": "middle-center",
-        "show_text_box": false,
-        "desktop_content_alignment": "center",
-        "color_scheme": "scheme-3ecab526-23df-438e-a281-3ae133d61365",
-        "image_behavior": "none",
-        "mobile_content_alignment": "center",
-        "stack_images_on_mobile": true,
-        "show_text_below": true
-      }
-    },
     "multicolumn_ARiLGw": {
       "type": "multicolumn",
       "blocks": {
@@ -88,6 +88,7 @@
           "type": "column",
           "settings": {
             "title": "<strong> Faster, Easier Installation</strong>",
+            "heading_tag": "h2",
             "text": "<ul><li>No pre-assembly needed — lay-and-play design saves time on the roof</li><li>VersaClip™ installs directly over internal splices, eliminating in-field cutting at splice points</li><li>Ideal for both new metal roof installs and retrofit applications</li></ul>",
             "link_label": "",
             "link": "https://cdn.shopify.com/s/files/1/0645/2540/2290/files/ColorGard-2-0-Installation-Instructions_RapidMaterials.pdf?v=1743440011"
@@ -97,6 +98,7 @@
           "type": "column",
           "settings": {
             "title": "<strong>Proven Strength</strong>",
+            "heading_tag": "h2",
             "text": "<ul><li>Load-tested on 500+ metal roof profiles</li><li>Corrosion-resistant materials built to last the life of the roof</li><li>Profile-specific engineering for exposed-fastened and standing seam systems</li></ul>",
             "link_label": "",
             "link": ""
@@ -106,6 +108,7 @@
           "type": "column",
           "settings": {
             "title": "<strong>Seamless Aesthetics</strong>",
+            "heading_tag": "h2",
             "text": "<ul><li>Maintains the clean look of your metal roof</li><li>Uses your roof material for an exact color and finish match.</li><li>Sleek design reduces visual impact while improving safety<br/></li></ul>",
             "link_label": "",
             "link": ""
@@ -124,8 +127,10 @@
       ],
       "settings": {
         "title": "",
+        "heading_tag": "h2",
         "section_float": "clear",
         "heading_size": "h1",
+        "col_alignment": "left",
         "image_width": "full",
         "image_ratio": "adapt",
         "button_label": "",
@@ -166,6 +171,7 @@
           "type": "column",
           "settings": {
             "title": "",
+            "heading_tag": "h2",
             "text": "",
             "link_label": "Download Instructions >",
             "link": "https://cdn.shopify.com/s/files/1/0712/5726/0271/files/ColorGard-2-0-Installation-Instructions_RapidMaterials.pdf?v=1743621824"
@@ -175,6 +181,7 @@
           "type": "column",
           "settings": {
             "title": "",
+            "heading_tag": "h2",
             "text": "",
             "link_label": "ColorGard 2.0 Brochure",
             "link": "https://3482954.fs1.hubspotusercontent-na1.net/hubfs/3482954/Resources/Product%20Documents/Snow%20Retention/ColorGard%202.0/ColorGard2.0%20Product%20Sheet.pdf"
@@ -190,8 +197,10 @@
       ],
       "settings": {
         "title": "",
+        "heading_tag": "h2",
         "section_float": "right",
         "heading_size": "h2",
+        "col_alignment": "left",
         "image_width": "full",
         "image_ratio": "adapt",
         "button_label": "",
@@ -213,6 +222,7 @@
           "type": "column",
           "settings": {
             "title": "Need help figuring what you need?",
+            "heading_tag": "h2",
             "text": "<p>Not sure which ColorGard® 2.0 setup or SnoClips are right for your roof? We've got you covered.</p>",
             "link_label": "",
             "link": ""
@@ -222,6 +232,7 @@
           "type": "column",
           "settings": {
             "title": "",
+            "heading_tag": "h2",
             "text": "<p><a href=\"https://www.s-5.com/snow-calculator/?step=snow_calculator&screen=existing_projects\" target=\"_blank\" title=\"https://www.s-5.com/snow-calculator/?step=snow_calculator&screen=existing_projects\">Use S-5!'s Snow Calculator</a></p><p><a href=\"/pages/contact\" title=\"Contact\">Contact Rapid Materials</a></p>",
             "link_label": "",
             "link": "https://www.s-5.com/snow-calculator/?step=snow_calculator&screen=existing_projects"
@@ -239,8 +250,10 @@
       ],
       "settings": {
         "title": "",
+        "heading_tag": "h2",
         "section_float": "clear",
         "heading_size": "h1",
+        "col_alignment": "left",
         "image_width": "full",
         "image_ratio": "adapt",
         "button_label": "",
@@ -419,9 +432,9 @@
     }
   },
   "order": [
+    "image_banner_NHkXKX",
     "banner",
     "image_with_text_zeHAbY",
-    "image_banner_NHkXKX",
     "multicolumn_ARiLGw",
     "video_nMgp6g",
     "multicolumn_Tk3QLK",
