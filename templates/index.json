@@ -68,7 +68,7 @@
           "type": "column",
           "settings": {
             "image": "shopify://shop_images/logo-buy-s5.png",
-            "title": "Buy S-5! Clamps & Mounting",
+            "title": "Buy S-5! Mounting",
             "heading_tag": "h2",
             "text": "<p>Trusted solutions for snow retention, solar panel mounting, and more, all made in the USA.</p>",
             "link_label": "",
@@ -114,6 +114,9 @@
         "column_weTzHY",
         "column_Ay7qV4",
         "column_DxyhbN"
+      ],
+      "custom_css": [
+        "h2 {font-size: 2rem;}"
       ],
       "name": "t:sections.multicolumn.presets.name",
       "settings": {
