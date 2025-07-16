@@ -16,6 +16,7 @@
           "type": "heading",
           "settings": {
             "heading": "Solutions That Build Better.",
+            "heading_tag": "h2",
             "heading_size": "h1"
           }
         },
@@ -60,6 +61,69 @@
         "show_text_below": false
       }
     },
+    "multicolumn_KdhDjH": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_PUV3zC": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/logo-buy-s5.png",
+            "title": "Buy S-5! Clamps & Mounting",
+            "heading_tag": "h2",
+            "text": "<p>Trusted solutions for snow retention, solar panel mounting, and more, all made in the USA.</p>",
+            "link_label": "",
+            "link": "shopify://collections/buy-s-5"
+          }
+        },
+        "column_weTzHY": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/logo-buy-hrg.png",
+            "title": "Buy Half Round Gutters",
+            "heading_tag": "h2",
+            "text": "<p>Durable, German-made half-round gutters and accessories for reliable performance.</p>",
+            "link_label": "",
+            "link": "shopify://collections/half-round-gutters"
+          }
+        },
+        "column_Ay7qV4": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/logo-buy-mrt.png",
+            "title": "Buy Metal Roofing Tools",
+            "heading_tag": "h2",
+            "text": "<p>High-quality tools designed for metal roofing professionals and precision craftsmanship.</p>",
+            "link_label": "",
+            "link": "shopify://collections/buy-metal-roofing-tools"
+          }
+        }
+      },
+      "block_order": [
+        "column_PUV3zC",
+        "column_weTzHY",
+        "column_Ay7qV4"
+      ],
+      "name": "t:sections.multicolumn.presets.name",
+      "settings": {
+        "title": "",
+        "heading_tag": "h2",
+        "section_float": "clear",
+        "heading_size": "h1",
+        "col_alignment": "left",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "button_label": "",
+        "button_link": "",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "background_style": "primary",
+        "color_scheme": "",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
     "image_with_text_idzyYK": {
       "type": "image-with-text",
       "blocks": {
@@ -67,6 +131,7 @@
           "type": "heading",
           "settings": {
             "heading": "S-5 Clamps & Mounting",
+            "heading_tag": "h2",
             "heading_size": "h1"
           }
         },
@@ -111,8 +176,10 @@
         "mobile_content_alignment": "center",
         "section_color_scheme": "scheme-4193c3da-e497-4afa-91b7-12fbd16d7fb2",
         "color_scheme": "scheme-4193c3da-e497-4afa-91b7-12fbd16d7fb2",
+        "element-width": 100,
         "padding_top": 0,
-        "padding_bottom": 0
+        "padding_bottom": 0,
+        "side-padding": "default"
       }
     },
     "image_with_text_full_3RwFNV": {
@@ -383,6 +450,7 @@
   },
   "order": [
     "image_banner",
+    "multicolumn_KdhDjH",
     "image_with_text_idzyYK",
     "image_with_text_full_3RwFNV",
     "image_with_text_full_q6VVam",
