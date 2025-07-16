@@ -23,8 +23,181 @@
         "color_scheme": "scheme-1"
       }
     },
+    "featured_product_g7Jbik": {
+      "type": "featured-product",
+      "blocks": {
+        "title_yUQBn7": {
+          "type": "title",
+          "settings": {
+            "heading_size": "h1"
+          }
+        },
+        "price_rmJrhe": {
+          "type": "price",
+          "settings": {}
+        },
+        "variant_picker_MCHCi6": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "circle"
+          }
+        },
+        "quantity_selector_La4pGe": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "buy_buttons_kcUHXD": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false,
+            "show_gift_card_recipient": false
+          }
+        }
+      },
+      "block_order": [
+        "title_yUQBn7",
+        "price_rmJrhe",
+        "variant_picker_MCHCi6",
+        "quantity_selector_La4pGe",
+        "buy_buttons_kcUHXD"
+      ],
+      "custom_css": [
+        "p#shopify-installments {display: none !important;}",
+        "shopify-payment-terms,.product__tax.caption.rte {display: none;}",
+        ".grid__item.product__media-wrapper {max-width: 35% !important;}",
+        ".product__info-wrapper.grid__item {padding: 3rem !important;}",
+        "a.link.product__view-details.animate-arrow {margin-bottom: 0 !important;}"
+      ],
+      "name": "t:sections.featured-product.presets.name",
+      "settings": {
+        "product": "satellite-dish-mounting-kit-for-r-panel-trapezoidal-metal-roof-panels",
+        "color_scheme": "scheme-1",
+        "secondary_background": false,
+        "media_size": "small",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "media_position": "left",
+        "image_zoom": "none",
+        "hide_variants": false,
+        "enable_video_looping": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "featured_product_RFwByt": {
+      "type": "featured-product",
+      "blocks": {
+        "title_EKRWjK": {
+          "type": "title",
+          "settings": {
+            "heading_size": "h1"
+          }
+        },
+        "price_89WRyQ": {
+          "type": "price",
+          "settings": {}
+        },
+        "variant_picker_jgdD7K": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "circle"
+          }
+        },
+        "quantity_selector_x9CaHD": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "buy_buttons_cgRB7K": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false,
+            "show_gift_card_recipient": false
+          }
+        }
+      },
+      "block_order": [
+        "title_EKRWjK",
+        "price_89WRyQ",
+        "variant_picker_jgdD7K",
+        "quantity_selector_x9CaHD",
+        "buy_buttons_cgRB7K"
+      ],
+      "name": "t:sections.featured-product.presets.name",
+      "settings": {
+        "product": "satellite-dish-mounting-kit-for-borga-panel-6-rib-spacing",
+        "color_scheme": "scheme-1",
+        "secondary_background": false,
+        "media_size": "small",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "media_position": "left",
+        "image_zoom": "none",
+        "hide_variants": false,
+        "enable_video_looping": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "featured_product_TqdNxC": {
+      "type": "featured-product",
+      "blocks": {
+        "title_xMNFqG": {
+          "type": "title",
+          "settings": {
+            "heading_size": "h1"
+          }
+        },
+        "price_gYxfKQ": {
+          "type": "price",
+          "settings": {}
+        },
+        "variant_picker_RWyQAz": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "circle"
+          }
+        },
+        "quantity_selector_TyJmeE": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "buy_buttons_Hwi8YY": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false,
+            "show_gift_card_recipient": false
+          }
+        }
+      },
+      "block_order": [
+        "title_xMNFqG",
+        "price_gYxfKQ",
+        "variant_picker_RWyQAz",
+        "quantity_selector_TyJmeE",
+        "buy_buttons_Hwi8YY"
+      ],
+      "name": "t:sections.featured-product.presets.name",
+      "settings": {
+        "product": "satellite-dish-mounting-kit-for-ag-panel-residential-metal-roofs",
+        "color_scheme": "scheme-1",
+        "secondary_background": false,
+        "media_size": "small",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "media_position": "left",
+        "image_zoom": "none",
+        "hide_variants": false,
+        "enable_video_looping": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
     "product-grid": {
       "type": "main-collection-product-grid",
+      "disabled": true,
       "custom_css": [
         "@media screen and (min-width: 750px) {.card__information {padding: 0; }}",
         "h2#verticalTitle {display: none;}",
@@ -55,6 +228,9 @@
   },
   "order": [
     "banner",
+    "featured_product_g7Jbik",
+    "featured_product_RFwByt",
+    "featured_product_TqdNxC",
     "product-grid"
   ]
 }
