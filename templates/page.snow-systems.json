@@ -313,6 +313,24 @@
         "padding_top": 12,
         "padding_bottom": 36
       }
+    },
+    "collapsible_content_faq_MQUKFA": {
+      "type": "collapsible-content-faq",
+      "name": "FAQ Accordion",
+      "settings": {
+        "caption": "",
+        "heading": "Snow Retention FAQ",
+        "heading_size": "h1",
+        "heading_alignment": "center",
+        "layout": "none",
+        "container_color_scheme": "",
+        "color_scheme": "",
+        "open_first_collapsible_row": false,
+        "image_ratio": "adapt",
+        "desktop_layout": "image_second",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
@@ -323,6 +341,7 @@
     "image_with_text_fNNbaj",
     "multicolumn_gew8HA",
     "multicolumn_bXaKjA",
-    "multicolumn_3TeXiV"
+    "multicolumn_3TeXiV",
+    "collapsible_content_faq_MQUKFA"
   ]
 }
