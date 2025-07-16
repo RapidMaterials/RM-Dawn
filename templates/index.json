@@ -50,7 +50,7 @@
       "settings": {
         "image": "shopify://shop_images/Metal_roof_install.jpg",
         "image_overlay_opacity": 70,
-        "image_height": "medium",
+        "image_height": "small",
         "desktop_content_position": "middle-center",
         "show_text_box": false,
         "desktop_content_alignment": "center",
@@ -71,7 +71,7 @@
             "title": "Buy S-5! Mounting",
             "heading_tag": "h2",
             "text": "<p>Trusted solutions for snow retention, solar panel mounting, and more, all made in the USA.</p>",
-            "link_label": "",
+            "link_label": "Shop Now",
             "link": "shopify://collections/buy-s-5"
           }
         },
@@ -82,7 +82,7 @@
             "title": "Buy Half Round Gutters",
             "heading_tag": "h2",
             "text": "<p>Durable, German-made half-round gutters and accessories for reliable performance.</p>",
-            "link_label": "",
+            "link_label": "Shop Now",
             "link": "shopify://collections/half-round-gutters"
           }
         },
@@ -93,7 +93,7 @@
             "title": "Buy Metal Roofing Tools",
             "heading_tag": "h2",
             "text": "<p>High-quality tools designed for metal roofing professionals and precision craftsmanship.</p>",
-            "link_label": "",
+            "link_label": "Shop Now",
             "link": "shopify://collections/buy-metal-roofing-tools"
           }
         },
@@ -104,7 +104,7 @@
             "title": "Buy Cladding & Facades",
             "heading_tag": "h2",
             "text": "<p>Premium materials for stunning, durable exterior walls and architectural designs.</p>",
-            "link_label": "",
+            "link_label": "Shop Now",
             "link": ""
           }
         }
