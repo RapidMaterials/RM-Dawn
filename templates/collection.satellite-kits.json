@@ -11,6 +11,7 @@
   "sections": {
     "banner": {
       "type": "main-collection-banner",
+      "disabled": true,
       "custom_css": [
         "p {text-align: Center; font-size: 0.8em; line-height: 1em;}",
         ".collection-hero__description {margin: auto;}",
@@ -20,7 +21,39 @@
       "settings": {
         "show_collection_description": false,
         "show_collection_image": false,
-        "color_scheme": "scheme-1"
+        "color_scheme": "scheme-2"
+      }
+    },
+    "rich_text_9h99d9": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_ceK873": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>Satellite Dish Mounting Kits for Metal Roofs</strong>",
+            "heading_size": "h2",
+            "heading_tag": "h1"
+          }
+        },
+        "text_fJTW4f": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Need to mount a satellite dish on a metal roof without poking holes in it? These kits make it easy to do it right. They're built to fit your roof, whether it's standing seam or corrugated, and they clamp on without any drilling. That means no leaks, no damage, and no stress about voiding warranties. Just a solid, secure setup that keeps your signal strong and your roof intact.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_ceK873",
+        "text_fJTW4f"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-2",
+        "full_width": true,
+        "padding_top": 20,
+        "padding_bottom": 20
       }
     },
     "featured_product_g7Jbik": {
@@ -308,6 +341,7 @@
   },
   "order": [
     "banner",
+    "rich_text_9h99d9",
     "featured_product_g7Jbik",
     "featured_product_TqdNxC",
     "featured_product_RFwByt",
