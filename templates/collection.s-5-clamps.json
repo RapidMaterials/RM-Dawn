@@ -26,6 +26,7 @@
       "name": "Promo Banner",
       "settings": {
         "desktop_image": "shopify://shop_images/Website_-_Collections_Banner_-_S5_More_Solar.png",
+        "mobile_image": "shopify://shop_images/Website_-_Home_Banner_Mobile_-_S5_More_Solar_1.gif",
         "link": "https://rapidmaterials.com/collections/solar-mounting-solutions"
       }
     },
