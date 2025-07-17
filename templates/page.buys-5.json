@@ -17,6 +17,15 @@
         "padding_bottom": 28
       }
     },
+    "promo_banner_eG4YGj": {
+      "type": "promo-banner",
+      "name": "Promo Banner",
+      "settings": {
+        "desktop_image": "shopify://shop_images/Website_-_Home_Banner_Desktop_-_S5_More_Solar.gif",
+        "mobile_image": "shopify://shop_images/Website_-_Home_Banner_Mobile_-_S5_More_Solar_1.gif",
+        "link": "https://rapidmaterials.com/collections/s-5-pvkit-rail-less-metal-roof-solar-mounting-system"
+      }
+    },
     "image_banner_gpMf3q": {
       "type": "image-banner",
       "blocks": {
@@ -52,6 +61,7 @@
         "text_fx4cxE",
         "buttons_9HrRJQ"
       ],
+      "disabled": true,
       "custom_css": [
         "h1,.banner__text.rte.body {color: #fff;}",
         ".banner__buttons {font-weight: bold;}"
@@ -77,6 +87,7 @@
           "type": "heading",
           "settings": {
             "heading": "Snow Retention",
+            "heading_tag": "h2",
             "heading_size": "h1"
           }
         },
@@ -126,6 +137,7 @@
           "type": "heading",
           "settings": {
             "heading": "Metal Roofing Attachments",
+            "heading_tag": "h2",
             "heading_size": "h1"
           }
         },
@@ -175,6 +187,7 @@
           "type": "heading",
           "settings": {
             "heading": "Culture of Innovation",
+            "heading_tag": "h2",
             "heading_size": "h1"
           }
         },
@@ -252,6 +265,7 @@
           "type": "column",
           "settings": {
             "title": "",
+            "heading_tag": "h2",
             "text": "<h3><strong>25</strong> <br/>Years of Experience</h3>",
             "link_label": "",
             "link": ""
@@ -261,6 +275,7 @@
           "type": "column",
           "settings": {
             "title": "",
+            "heading_tag": "h2",
             "text": "<h3><strong>85</strong><br/>Products Available</h3>",
             "link_label": "",
             "link": ""
@@ -270,6 +285,7 @@
           "type": "column",
           "settings": {
             "title": "",
+            "heading_tag": "h2",
             "text": "<h3><strong>50</strong><br/>States Serviced</h3>",
             "link_label": "",
             "link": ""
@@ -279,6 +295,7 @@
           "type": "column",
           "settings": {
             "title": "",
+            "heading_tag": "h2",
             "text": "<h3><strong>2+</strong><br/>Million Projects</h3>",
             "link_label": "",
             "link": ""
@@ -297,7 +314,12 @@
       ],
       "settings": {
         "title": "",
+        "heading_tag": "h2",
+        "section_float": "clear",
+        "mobile_display": "mobile-show",
+        "desktop_display": "desktop-show",
         "heading_size": "hxl",
+        "col_alignment": "left",
         "image_width": "full",
         "image_ratio": "adapt",
         "button_label": "",
@@ -315,6 +337,7 @@
   },
   "order": [
     "main",
+    "promo_banner_eG4YGj",
     "image_banner_gpMf3q",
     "image_with_text_d9wf86",
     "image_with_text_UYLBw6",
