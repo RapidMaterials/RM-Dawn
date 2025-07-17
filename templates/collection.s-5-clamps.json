@@ -21,6 +21,14 @@
         "color_scheme": "scheme-1"
       }
     },
+    "promo_banner_UWBzRG": {
+      "type": "promo-banner",
+      "name": "Promo Banner",
+      "settings": {
+        "desktop_image": "shopify://shop_images/Website_-_Collections_Banner_-_S5_More_Solar_1.gif",
+        "link": "https://rapidmaterials.com/collections/solar-mounting-solutions"
+      }
+    },
     "rich_text_HWUwjR": {
       "type": "rich-text",
       "blocks": {
@@ -157,6 +165,7 @@
   },
   "order": [
     "banner",
+    "promo_banner_UWBzRG",
     "rich_text_HWUwjR",
     "rich_text_LybBb9",
     "product-grid",
