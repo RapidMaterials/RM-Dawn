@@ -32,6 +32,18 @@
         "padding_bottom": 0
       }
     },
+    "promo_banner_JyekYd": {
+      "type": "promo-banner",
+      "custom_css": [
+        "img {max-width: 1000px; margin: 20px auto;}"
+      ],
+      "name": "Promo Banner",
+      "settings": {
+        "desktop_image": "shopify://shop_images/Website_-_Product_Banner_-_S5_More_Solar.png",
+        "mobile_image": "shopify://shop_images/Website_-_Collections_Banner_-_S5_More_Solar.png",
+        "link": "https://rapidmaterials.com/collections/s-5-pvkit-rail-less-metal-roof-solar-mounting-system"
+      }
+    },
     "rich_text_wCgYjP": {
       "type": "rich-text",
       "blocks": {
@@ -73,18 +85,6 @@
         "full_width": true,
         "padding_top": 40,
         "padding_bottom": 52
-      }
-    },
-    "promo_banner_JyekYd": {
-      "type": "promo-banner",
-      "custom_css": [
-        "img {max-width: 1000px; margin: auto;}"
-      ],
-      "name": "Promo Banner",
-      "settings": {
-        "desktop_image": "shopify://shop_images/Website_-_Product_Banner_-_S5_More_Solar.png",
-        "mobile_image": "shopify://shop_images/Website_-_Collections_Banner_-_S5_More_Solar.png",
-        "link": "https://rapidmaterials.com/collections/s-5-pvkit-rail-less-metal-roof-solar-mounting-system"
       }
     },
     "multicolumn_dgDVC7": {
