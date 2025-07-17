@@ -23,6 +23,15 @@
         "color_scheme": "scheme-1"
       }
     },
+    "promo_banner_XKRxMX": {
+      "type": "promo-banner",
+      "name": "Promo Banner",
+      "settings": {
+        "desktop_image": "shopify://shop_images/Website_-_Product_Banner_-_S5_More_Solar.png",
+        "mobile_image": "shopify://shop_images/Website_-_Collections_Banner_-_S5_More_Solar.png",
+        "link": "https://rapidmaterials.com/collections/s-5-pvkit-rail-less-metal-roof-solar-mounting-system"
+      }
+    },
     "image_with_text_zeHAbY": {
       "type": "image-with-text",
       "blocks": {
@@ -88,6 +97,7 @@
           "type": "column",
           "settings": {
             "title": "<strong>Heavy-Duty & High Capacity</strong>",
+            "heading_tag": "h2",
             "text": "<ul><li>Proprietary NEX® 2” octagonal pipe provides superior beam strength and prevents pipe rotation</li><li>Double-clamp design delivers unprecedented holding strength for standing seam metal roofs</li><li>Spans up to 4' between brackets and cantilevers up to 20\" past the last clamp</li></ul>",
             "link_label": "",
             "link": "https://cdn.shopify.com/s/files/1/0645/2540/2290/files/ColorGard-2-0-Installation-Instructions_RapidMaterials.pdf?v=1743440011"
@@ -97,6 +107,7 @@
           "type": "column",
           "settings": {
             "title": "<strong>Versatile & Compatible</strong>",
+            "heading_tag": "h2",
             "text": "<ul><li>Non-penetrating design preserves roof warranties</li><li>Ideal for use on insulated metal panel (IMP) roofs with 36\"–48\" seam spacing</li><li>Compatible with standard S-5! clamps and X-Clip for added snow migration control</li><li>Can be used as a one- or two-pipe system depending on project needs</li></ul>",
             "link_label": "",
             "link": ""
@@ -106,6 +117,7 @@
           "type": "column",
           "settings": {
             "title": "<strong>Installer-Friendly & Durable</strong>",
+            "heading_tag": "h2",
             "text": "<ul><li>Easily retrofitted to existing roofs or integrated into new construction</li><li>Precision-machined, aircraft-grade aluminum components with stainless steel hardware</li><li>7' 8\" nominal pipe length simplifies shipping, handling, and installation</li><li>Can be painted, powder-coated, or anodized for aesthetic flexibility</li></ul>",
             "link_label": "",
             "link": ""
@@ -124,7 +136,12 @@
       ],
       "settings": {
         "title": "",
+        "heading_tag": "h2",
+        "section_float": "clear",
+        "mobile_display": "mobile-show",
+        "desktop_display": "desktop-show",
         "heading_size": "h1",
+        "col_alignment": "left",
         "image_width": "full",
         "image_ratio": "adapt",
         "button_label": "",
@@ -146,6 +163,7 @@
           "type": "column",
           "settings": {
             "title": "Need help figuring what you need?",
+            "heading_tag": "h2",
             "text": "<p>Not sure which configuration of DualGard you need for your roof? We've got you covered.</p>",
             "link_label": "",
             "link": ""
@@ -155,6 +173,7 @@
           "type": "column",
           "settings": {
             "title": "",
+            "heading_tag": "h2",
             "text": "<p><a href=\"https://www.s-5.com/snow-calculator/?step=snow_calculator&screen=existing_projects\" target=\"_blank\" title=\"https://www.s-5.com/snow-calculator/?step=snow_calculator&screen=existing_projects\">Use S-5!'s Snow Calculator</a></p><p><a href=\"/pages/contact\" title=\"Contact\">Contact Rapid Materials Support </a></p>",
             "link_label": "",
             "link": "https://www.s-5.com/snow-calculator/?step=snow_calculator&screen=existing_projects"
@@ -172,7 +191,12 @@
       ],
       "settings": {
         "title": "",
+        "heading_tag": "h2",
+        "section_float": "clear",
+        "mobile_display": "mobile-show",
+        "desktop_display": "desktop-show",
         "heading_size": "h1",
+        "col_alignment": "left",
         "image_width": "full",
         "image_ratio": "adapt",
         "button_label": "",
@@ -353,6 +377,7 @@
   },
   "order": [
     "banner",
+    "promo_banner_XKRxMX",
     "image_with_text_zeHAbY",
     "image_banner_NHkXKX",
     "multicolumn_ARiLGw",
