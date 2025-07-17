@@ -23,6 +23,15 @@
         "color_scheme": "scheme-1"
       }
     },
+    "promo_banner_h8ikwb": {
+      "type": "promo-banner",
+      "name": "Promo Banner",
+      "settings": {
+        "desktop_image": "shopify://shop_images/Website_-_Product_Banner_-_S5_More_Solar.png",
+        "mobile_image": "shopify://shop_images/Website_-_Collections_Banner_-_S5_More_Solar.png",
+        "link": "https://rapidmaterials.com/collections/s-5-pvkit-rail-less-metal-roof-solar-mounting-system"
+      }
+    },
     "image_with_text_zeHAbY": {
       "type": "image-with-text",
       "blocks": {
@@ -71,6 +80,7 @@
           "type": "column",
           "settings": {
             "title": "<strong>Designed for Copper Roofs</strong>",
+            "heading_tag": "h2",
             "text": "<ul><li>Brass components ensure metallurgical compatibility with copper roofs</li><li>Compatible with copper batten seam and standing seam profiles</li><li>Mechanically attached without soldering or adhesives to preserve roof integrity</li></ul>",
             "link_label": "",
             "link": ""
@@ -80,6 +90,7 @@
           "type": "column",
           "settings": {
             "title": "<strong>Flexible System Options</strong>",
+            "heading_tag": "h2",
             "text": "<ul><li>SnoRail™ uses a single brass SnoRod™ positioned just above the seam for minimalist snow control</li><li>SnoFence™ adds a second brass SnoRod™ via the SnoPost™ for enhanced snow retention</li><li>Both systems blend seamlessly with the traditional look of copper roofing</li></ul>",
             "link_label": "",
             "link": ""
@@ -89,6 +100,7 @@
           "type": "column",
           "settings": {
             "title": "<strong>Durable & Dependable</strong>",
+            "heading_tag": "h2",
             "text": "<ul><li>Engineered for long-term performance — lasts as long as the copper roof itself</li><li>Non-penetrating attachment using patented S-5!® round-point setscrews</li><li>Superior holding strength without compromising roof warranties or weather-tightness</li></ul>",
             "link_label": "",
             "link": ""
@@ -107,7 +119,12 @@
       ],
       "settings": {
         "title": "",
+        "heading_tag": "h2",
+        "section_float": "clear",
+        "mobile_display": "mobile-show",
+        "desktop_display": "desktop-show",
         "heading_size": "h1",
+        "col_alignment": "left",
         "image_width": "full",
         "image_ratio": "adapt",
         "button_label": "",
@@ -129,6 +146,7 @@
           "type": "column",
           "settings": {
             "title": "Need help figuring what you need?",
+            "heading_tag": "h2",
             "text": "<p>Not sure which configuration of DualGard you need for your roof? We've got you covered.</p>",
             "link_label": "",
             "link": ""
@@ -138,6 +156,7 @@
           "type": "column",
           "settings": {
             "title": "",
+            "heading_tag": "h2",
             "text": "<p><a href=\"https://www.s-5.com/snow-calculator/?step=snow_calculator&screen=existing_projects\" target=\"_blank\" title=\"https://www.s-5.com/snow-calculator/?step=snow_calculator&screen=existing_projects\">Use S-5!'s Snow Calculator</a></p><p><a href=\"/pages/contact\" title=\"Contact\">Contact Rapid Materials Support </a></p>",
             "link_label": "",
             "link": "https://www.s-5.com/snow-calculator/?step=snow_calculator&screen=existing_projects"
@@ -150,12 +169,17 @@
       ],
       "custom_css": [
         ".multicolumn-card a {line-height: 2; background-color: black; padding: 10px; color: white; text-decoration: none;}",
-        "li#Slide-template--18402692366514__multicolumn_NbLt7K-2 p {padding: 10px;}",
+        "li#Slide-template--18403283501234__multicolumn_NbLt7K-2 p {padding: 10px;}",
         "h3.inline-richtext {font-size: 23px; font-weight: bold;}"
       ],
       "settings": {
         "title": "",
+        "heading_tag": "h2",
+        "section_float": "clear",
+        "mobile_display": "mobile-show",
+        "desktop_display": "desktop-show",
         "heading_size": "h1",
+        "col_alignment": "left",
         "image_width": "full",
         "image_ratio": "adapt",
         "button_label": "",
@@ -336,6 +360,7 @@
   },
   "order": [
     "banner",
+    "promo_banner_h8ikwb",
     "image_with_text_zeHAbY",
     "multicolumn_ARiLGw",
     "multicolumn_NbLt7K",
