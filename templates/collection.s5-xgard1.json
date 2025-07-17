@@ -25,6 +25,9 @@
     },
     "promo_banner_nkiJbD": {
       "type": "promo-banner",
+      "custom_css": [
+        "img {max-width: 1000px; margin: auto;}"
+      ],
       "name": "Promo Banner",
       "settings": {
         "desktop_image": "shopify://shop_images/Website_-_Product_Banner_-_S5_More_Solar.png",
