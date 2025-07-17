@@ -28,8 +28,8 @@
         "column_XYVwF8"
       ],
       "custom_css": [
-        ".section-template--18210574237874__multicolumn_wPzhRq-padding .multicolumn-card__image-wrapper {margin: 0 !important; padding: 0 !important;}",
-        ".multicolumn-list__item:only-child{max-width:100% !important;}"
+        ".multicolumn-card-spacing {margin: 0 !important; padding: 0 !important;}",
+        ".multicolumn-list__item:only-child {max-width: 100% !important;}"
       ],
       "name": "t:sections.multicolumn.presets.name",
       "settings": {
