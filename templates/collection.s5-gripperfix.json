@@ -21,6 +21,15 @@
         "color_scheme": "scheme-1"
       }
     },
+    "promo_banner_JyekYd": {
+      "type": "promo-banner",
+      "name": "Promo Banner",
+      "settings": {
+        "desktop_image": "shopify://shop_images/Website_-_Product_Banner_-_S5_More_Solar.png",
+        "mobile_image": "shopify://shop_images/Website_-_Collections_Banner_-_S5_More_Solar.png",
+        "link": "https://rapidmaterials.com/collections/s-5-pvkit-rail-less-metal-roof-solar-mounting-system"
+      }
+    },
     "rich_text_LybBb9": {
       "type": "rich-text",
       "settings": {
@@ -83,6 +92,7 @@
           "settings": {
             "image": "shopify://shop_images/gripperfix-conduit-1.webp",
             "title": "Conduits",
+            "heading_tag": "h2",
             "text": "",
             "link_label": "",
             "link": ""
@@ -93,6 +103,7 @@
           "settings": {
             "image": "shopify://shop_images/gripperfix-dish-attachment.webp",
             "title": "Satellite Dishes",
+            "heading_tag": "h2",
             "text": "",
             "link_label": "",
             "link": ""
@@ -103,6 +114,7 @@
           "settings": {
             "image": "shopify://shop_images/gripperfix-hvac-ssr-1.webp",
             "title": "HVAC Units",
+            "heading_tag": "h2",
             "text": "",
             "link_label": "",
             "link": ""
@@ -113,6 +125,7 @@
           "settings": {
             "image": "shopify://shop_images/gripperfix-micro-inverter-e1561067327552.webp",
             "title": "Micro Inverters",
+            "heading_tag": "h2",
             "text": "",
             "link_label": "",
             "link": ""
@@ -123,6 +136,7 @@
           "settings": {
             "image": "shopify://shop_images/GripperFix-Junction-Box-Exposed-Fastened-2.webp",
             "title": "Junction Boxes",
+            "heading_tag": "h2",
             "text": "",
             "link_label": "",
             "link": ""
@@ -138,7 +152,12 @@
       ],
       "settings": {
         "title": "",
+        "heading_tag": "h2",
+        "section_float": "clear",
+        "mobile_display": "mobile-show",
+        "desktop_display": "desktop-show",
         "heading_size": "h1",
+        "col_alignment": "left",
         "image_width": "full",
         "image_ratio": "circle",
         "button_label": "",
@@ -247,6 +266,7 @@
   },
   "order": [
     "banner",
+    "promo_banner_JyekYd",
     "rich_text_LybBb9",
     "rich_text_wCgYjP",
     "multicolumn_dgDVC7",
