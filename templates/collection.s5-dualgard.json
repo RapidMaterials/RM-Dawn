@@ -23,6 +23,15 @@
         "color_scheme": "scheme-1"
       }
     },
+    "promo_banner_7kaAYP": {
+      "type": "promo-banner",
+      "name": "Promo Banner",
+      "settings": {
+        "desktop_image": "shopify://shop_images/Website_-_Product_Banner_-_S5_More_Solar.png",
+        "mobile_image": "shopify://shop_images/Website_-_Collections_Banner_-_S5_More_Solar.png",
+        "link": "https://rapidmaterials.com/collections/s-5-pvkit-rail-less-metal-roof-solar-mounting-system"
+      }
+    },
     "image_with_text_zeHAbY": {
       "type": "image-with-text",
       "blocks": {
@@ -88,6 +97,7 @@
           "type": "column",
           "settings": {
             "title": "<strong>Strong & Stable</strong>",
+            "heading_tag": "h2",
             "text": "<ul><li>Two-pipe system with 1” diameter aluminum crossmembers</li><li>Dual anchoring points per bracket reduce the moment arm for superior holding strength</li><li>Bracket design adds lateral stability to the entire system</li></ul>",
             "link_label": "",
             "link": "https://cdn.shopify.com/s/files/1/0645/2540/2290/files/ColorGard-2-0-Installation-Instructions_RapidMaterials.pdf?v=1743440011"
@@ -97,6 +107,7 @@
           "type": "column",
           "settings": {
             "title": "<strong>Engineered for Performance</strong>",
+            "heading_tag": "h2",
             "text": "<ul><li>Load-tested on 500+ metal roof profiles</li><li>Corrosion-resistant materials built to last the life of the roof</li><li>Site-specific engineering for exposed-fastened and standing seam systems</li></ul>",
             "link_label": "",
             "link": ""
@@ -106,6 +117,7 @@
           "type": "column",
           "settings": {
             "title": "<strong>Multiple Roof Types</strong>",
+            "heading_tag": "h2",
             "text": "<ul><li>Fits virtually all standing seam panels using S-5! Mini clamps</li><li>Attaches to exposed-fastened corrugated roofs with CorruBracket™</li><li>Strong, tested, and engineered for metal roofing applications</li></ul>",
             "link_label": "",
             "link": ""
@@ -124,8 +136,12 @@
       ],
       "settings": {
         "title": "",
+        "heading_tag": "h2",
         "section_float": "clear",
+        "mobile_display": "mobile-show",
+        "desktop_display": "desktop-show",
         "heading_size": "h1",
+        "col_alignment": "left",
         "image_width": "full",
         "image_ratio": "adapt",
         "button_label": "",
@@ -147,6 +163,7 @@
           "type": "column",
           "settings": {
             "title": "Need help figuring what you need?",
+            "heading_tag": "h2",
             "text": "<p>Not sure which configuration of DualGard you need for your roof? We've got you covered.</p>",
             "link_label": "",
             "link": ""
@@ -156,6 +173,7 @@
           "type": "column",
           "settings": {
             "title": "",
+            "heading_tag": "h2",
             "text": "<p><a href=\"https://www.s-5.com/snow-calculator/?step=snow_calculator&screen=existing_projects\" target=\"_blank\" title=\"https://www.s-5.com/snow-calculator/?step=snow_calculator&screen=existing_projects\">Use S-5!'s Snow Calculator</a></p><p><a href=\"/pages/contact\" title=\"Contact\">Contact Rapid Materials Support </a></p>",
             "link_label": "",
             "link": "https://www.s-5.com/snow-calculator/?step=snow_calculator&screen=existing_projects"
@@ -173,8 +191,12 @@
       ],
       "settings": {
         "title": "",
+        "heading_tag": "h2",
         "section_float": "clear",
+        "mobile_display": "mobile-show",
+        "desktop_display": "desktop-show",
         "heading_size": "h1",
+        "col_alignment": "left",
         "image_width": "full",
         "image_ratio": "adapt",
         "button_label": "",
@@ -355,6 +377,7 @@
   },
   "order": [
     "banner",
+    "promo_banner_7kaAYP",
     "image_with_text_zeHAbY",
     "image_banner_NHkXKX",
     "multicolumn_ARiLGw",
