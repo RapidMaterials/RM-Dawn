@@ -12,10 +12,11 @@
     "banner": {
       "type": "main-collection-banner",
       "custom_css": [
-        "p {text-align: Center; font-size: 0.8em; line-height: 1em;}",
+        "p {text-align: Center; font-size: 0.8em; line-height: 1.2em;}",
         ".collection-hero__description {margin: 0 auto 20px;}",
         ".collection-hero__text-wrapper {text-align: center;}",
-        "h1{margin: 0.4em; font-size: 3rem;}"
+        "h1 {margin: 0.4em; font-size: 3rem; margin: 10px 0 0;}",
+        ".collection-hero__description {max-width: 100%;}"
       ],
       "settings": {
         "show_collection_description": true,
