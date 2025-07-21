@@ -11,132 +11,51 @@
   "sections": {
     "banner": {
       "type": "main-collection-banner",
-      "disabled": true,
       "custom_css": [
-        "p {text-align: Center; font-size: 0.8em; line-height: 1em;}"
+        "p {text-align: Center; font-size: 0.8em; line-height: 1em;}",
+        ".collection-hero__description {margin: 0 auto 20px;}",
+        ".collection-hero__text-wrapper {text-align: center;}",
+        "h1 {margin: 10px 0 0;}",
+        ".collection-hero__description {max-width: 100%;}"
       ],
       "settings": {
         "show_collection_description": true,
-        "show_collection_image": false,
-        "color_scheme": "scheme-1"
-      }
-    },
-    "rich_text_HWUwjR": {
-      "type": "rich-text",
-      "blocks": {
-        "heading_rdCWrz": {
-          "type": "heading",
-          "settings": {
-            "heading": "{{ collection.title }}",
-            "heading_size": "h1",
-            "heading_tag": "h1"
-          }
-        },
-        "text_nwYbKj": {
-          "type": "text",
-          "settings": {
-            "text": "{{ collection.description }}"
-          }
-        }
-      },
-      "block_order": [
-        "heading_rdCWrz",
-        "text_nwYbKj"
-      ],
-      "settings": {
-        "desktop_content_position": "center",
-        "content_alignment": "center",
-        "color_scheme": "scheme-2",
-        "full_width": true,
-        "padding_top": 20,
-        "padding_bottom": 12
-      }
-    },
-    "rich_text_LybBb9": {
-      "type": "rich-text",
-      "settings": {
-        "desktop_content_position": "center",
-        "content_alignment": "center",
-        "color_scheme": "",
-        "full_width": true,
-        "padding_top": 0,
-        "padding_bottom": 0
+        "show_collection_image": true,
+        "color_scheme": "scheme-2"
       }
     },
     "product-grid": {
-      "type": "collection-product-list",
+      "type": "main-collection-product-grid",
       "custom_css": [
-        "details#Details-filter\\.p\\.m\\.custom\\.roof_profiles-template--18176096895154__product-grid .facets-layout-grid {grid-template-columns: repeat(2, 1fr); padding: 2rem 2.4rem;}",
-        "details#Details-filter\\.p\\.m\\.custom\\.roof_profiles-template--18176096895154__product-grid .visual-display--presentation-swatch {--visual-display__size: min(8rem, 100%);}"
+        "@media screen and (min-width: 750px) {.card__information {padding: 0; }}",
+        "h2#verticalTitle {display: none;}",
+        "div#FacetsWrapperDesktop {padding-top: 2rem;}"
       ],
       "settings": {
-        "products_per_page": 36,
+        "products_per_page": 72,
         "color_scheme": "scheme-1",
         "image_ratio": "square",
         "image_shape": "default",
-        "show_secondary_image": false,
+        "show_secondary_image": true,
         "show_vendor": false,
         "show_rating": false,
         "quick_add": "bulk",
         "enable_filtering": true,
         "filter_type": "vertical",
-        "button_label": "Find Your Clamp",
-        "button_link": "https://rapidmaterials.com/pages/find-your-clamp-by-manufacturer",
+        "button_label": "",
+        "button_link": "",
         "button_target": "_self",
         "enable_sorting": true,
-        "padding_top": 12,
-        "padding_bottom": 20
+        "padding_top": 20,
+        "padding_bottom": 24
       }
     },
-    "collapsible_content_rxqiPH": {
-      "type": "collapsible-content",
-      "blocks": {
-        "collapsible_row_jYBDdV": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "{{ collection.metafields.custom.collapsible_row_1_header.value }}",
-            "icon": "check_mark",
-            "row_content": "{{ collection.metafields.custom.collapsible_row_1_description | metafield_tag }}",
-            "page": ""
-          }
-        },
-        "collapsible_row_cp8KU4": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "{{ collection.metafields.custom.collapsible_row_2_header.value }}",
-            "icon": "check_mark",
-            "row_content": "{{ collection.metafields.custom.collapsible_row_2_description | metafield_tag }}",
-            "page": ""
-          }
-        },
-        "collapsible_row_JrUEFg": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "{{ collection.metafields.custom.collapsible_row_3_header.value }}",
-            "icon": "check_mark",
-            "row_content": "{{ collection.metafields.custom.collapsible_row_3_description | metafield_tag }}",
-            "page": ""
-          }
-        },
-        "collapsible_row_3zzh6C": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "{{ collection.metafields.custom.collapsible_row_4_header.value }}",
-            "icon": "check_mark",
-            "row_content": "{{ collection.metafields.custom.collapsible_row_4_description | metafield_tag }}",
-            "page": ""
-          }
-        }
-      },
-      "block_order": [
-        "collapsible_row_jYBDdV",
-        "collapsible_row_cp8KU4",
-        "collapsible_row_JrUEFg",
-        "collapsible_row_3zzh6C"
-      ],
+    "collapsible_content_faq_P8N8E4": {
+      "type": "collapsible-content-faq",
+      "name": "FAQ Accordion",
       "settings": {
         "caption": "",
-        "heading": "More About {{ collection.title }}",
+        "heading": "Collapsible content",
         "heading_size": "h1",
         "heading_alignment": "center",
         "layout": "none",
@@ -150,11 +69,5 @@
       }
     }
   },
-  "order": [
-    "banner",
-    "rich_text_HWUwjR",
-    "rich_text_LybBb9",
-    "product-grid",
-    "collapsible_content_rxqiPH"
-  ]
+  "order": ["banner", "product-grid", "collapsible_content_faq_P8N8E4"]
 }
