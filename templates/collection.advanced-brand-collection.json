@@ -40,7 +40,7 @@
       ],
       "custom_css": [
         "li#Slide-template--18806921101490__multicolumn_4a9t7b-1 {width: 20% !important; max-width: 20% !important;}",
-        "li#Slide-template--18806921101490__multicolumn_4a9t7b-2 {width: 78%; max-width: 78%;}",
+        "li#Slide-template--18806921101490__multicolumn_4a9t7b-2 {width: 75%; max-width: 75%;}",
         ".multicolumn-card__info {padding: 10px;}",
         ".grid {align-items: center;}",
         "h1.inline-richtext {margin: 0; font-size: 1.8em;}"
