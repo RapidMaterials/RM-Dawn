@@ -27,7 +27,7 @@
       "type": "collection-product-list-qo",
       "custom_css": [],
       "settings": {
-        "products_per_page": 36,
+        "products_per_page": 72,
         "color_scheme": "scheme-1",
         "image_ratio": "square",
         "image_shape": "default",
