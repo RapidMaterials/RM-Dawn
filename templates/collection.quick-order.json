@@ -1,0 +1,77 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "banner": {
+      "type": "main-collection-banner",
+      "custom_css": [
+        "p {text-align: Center; font-size: 0.8em; line-height: 1em;}",
+        ".collection-hero__description {margin: 0 auto 20px;}",
+        ".collection-hero__text-wrapper {text-align: center;}",
+        "h1 {margin: 10px 0 0;}",
+        ".collection-hero__description {max-width: 100%;}"
+      ],
+      "settings": {
+        "show_collection_description": true,
+        "show_collection_image": true,
+        "color_scheme": "scheme-2"
+      }
+    },
+    "product-grid": {
+      "type": "collection-product-list",
+      "custom_css": [
+        "@media screen and (min-width: 750px) {.card__information {padding: 0; }}",
+        "h2#verticalTitle {display: none;}",
+        "div#FacetsWrapperDesktop {padding-top: 2rem;}"
+      ],
+      "settings": {
+        "products_per_page": 72,
+        "color_scheme": "scheme-1",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "bulk",
+        "enable_filtering": true,
+        "filter_type": "vertical",
+        "button_label": "{{ collection.metafields.custom.sidebar_button_text.value }}",
+        "button_link": "{{ collection.metafields.custom.sidebar_button_url.value }}",
+        "button_target": "_self",
+        "enable_sorting": true,
+        "padding_top": 20,
+        "padding_bottom": 24
+      }
+    },
+    "collapsible_content_faq_P8N8E4": {
+      "type": "collapsible-content-faq",
+      "name": "FAQ Accordion",
+      "settings": {
+        "caption": "",
+        "heading": "More About {{ collection.title }}",
+        "heading_size": "h1",
+        "heading_alignment": "center",
+        "layout": "none",
+        "container_color_scheme": "",
+        "color_scheme": "scheme-2",
+        "open_first_collapsible_row": false,
+        "image_ratio": "adapt",
+        "desktop_layout": "image_second",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "banner",
+    "product-grid",
+    "collapsible_content_faq_P8N8E4"
+  ]
+}
