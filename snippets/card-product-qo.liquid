@@ -20,6 +20,17 @@
   Usage:
   {% render 'card-product', show_vendor: section.settings.show_vendor %}
 {% endcomment %}
+
+<script>
+  document.querySelectorAll('.quick-add-toggle').forEach(button => {
+    button.addEventListener('click', () => {
+      const formId = button.dataset.toggleId;
+      const form = document.getElementById(formId);
+      form.classList.toggle('hidden');
+    });
+  });
+</script>
+
 {%- unless skip_styles -%}
   {{ 'component-rating.css' | asset_url | stylesheet_tag }}
   {{ 'component-volume-pricing.css' | asset_url | stylesheet_tag }}
