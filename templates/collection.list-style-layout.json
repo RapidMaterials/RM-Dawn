@@ -25,12 +25,7 @@
     },
     "product-grid": {
       "type": "collection-product-list-qo",
-      "custom_css": [
-        "@media screen and (min-width: 750px) {.card__information {padding: 0; }}",
-        "h2#verticalTitle {display: none;}",
-        "div#FacetsWrapperDesktop {padding-top: 2rem;}",
-        "}h1{font-size:2em;}"
-      ],
+      "custom_css": [],
       "settings": {
         "products_per_page": 36,
         "color_scheme": "scheme-1",
@@ -39,8 +34,8 @@
         "show_secondary_image": false,
         "show_vendor": false,
         "show_rating": false,
-        "quick_add": "none",
-        "enable_filtering": true,
+        "quick_add": "bulk",
+        "enable_filtering": false,
         "filter_type": "vertical",
         "button_label": "Click Here",
         "button_link": "",
