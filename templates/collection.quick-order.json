@@ -40,7 +40,7 @@
         "show_vendor": false,
         "show_rating": false,
         "quick_add": "bulk",
-        "enable_filtering": true,
+        "enable_filtering": false,
         "filter_type": "vertical",
         "button_label": "{{ collection.metafields.custom.sidebar_button_text.value }}",
         "button_link": "{{ collection.metafields.custom.sidebar_button_url.value }}",
@@ -69,5 +69,9 @@
       }
     }
   },
-  "order": ["banner", "product-grid", "collapsible_content_faq_P8N8E4"]
+  "order": [
+    "banner",
+    "product-grid",
+    "collapsible_content_faq_P8N8E4"
+  ]
 }
