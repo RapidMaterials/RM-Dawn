@@ -43,7 +43,7 @@
         "quick_add": "none",
         "enable_filtering": true,
         "filter_type": "vertical",
-        "button_label": "Click Here",
+        "button_label": "",
         "button_link": "",
         "button_target": "_self",
         "enable_sorting": true,
