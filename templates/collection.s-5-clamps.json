@@ -39,7 +39,10 @@
           }
         }
       },
-      "block_order": ["heading_rdCWrz", "text_nwYbKj"],
+      "block_order": [
+        "heading_rdCWrz",
+        "text_nwYbKj"
+      ],
       "settings": {
         "desktop_content_position": "center",
         "content_alignment": "center",
@@ -61,15 +64,13 @@
       }
     },
     "product-grid": {
-      "type": "main-collection-product-grid",
+      "type": "collection-product-list",
       "custom_css": [
         "details#Details-filter\\.p\\.m\\.custom\\.roof_profiles-template--18176096895154__product-grid .facets-layout-grid {grid-template-columns: repeat(2, 1fr); padding: 2rem 2.4rem;}",
         "details#Details-filter\\.p\\.m\\.custom\\.roof_profiles-template--18176096895154__product-grid .visual-display--presentation-swatch {--visual-display__size: min(8rem, 100%);}"
       ],
       "settings": {
         "products_per_page": 36,
-        "columns_desktop": 4,
-        "columns_mobile": "2",
         "color_scheme": "scheme-1",
         "image_ratio": "square",
         "image_shape": "default",
