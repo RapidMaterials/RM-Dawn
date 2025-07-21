@@ -436,7 +436,11 @@
           </div>
         {%- endif -%}
       </form>
-    </facet-filters-form>
+    </facet-filters-form>'      {%- if shop.metafields.custom.campaign_square != blank -%}
+            <a href="{{ shop.metafields.custom.campaign_url}}">
+          <img src="{{ shop.metafields.custom.campaign_square | image_url: width: 260 }}" alt="Campaign Image" style="padding-top:30px;">
+            </a>
+           {%- endif -%}'
   {%- endif -%}
   {% comment %}  Drawer and mobile filter {% endcomment %}
   <menu-drawer
