@@ -25,7 +25,7 @@
       }
     },
     "product-grid": {
-      "type": "collection-product-list",
+      "type": "quick-order-list",
       "custom_css": [
         "@media screen and (min-width: 750px) {.card__information {padding: 0; }}",
         "h2#verticalTitle {display: none;}",
@@ -69,9 +69,5 @@
       }
     }
   },
-  "order": [
-    "banner",
-    "product-grid",
-    "collapsible_content_faq_P8N8E4"
-  ]
+  "order": ["banner", "product-grid", "collapsible_content_faq_P8N8E4"]
 }
