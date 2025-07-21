@@ -272,7 +272,11 @@
             filter_type: section.settings.filter_type,
             paginate: paginate
           %}
-          <img src="{{ shop.metafields.custom.campaign_square | image_url: width: 290 }}" alt="Campaign Image">
+          {%- if shop.metafields.custom.campaign_square != blank -%}
+            <a href="{{ shop.metafields.custom.campaign_url}}">
+          <img src="{{ shop.metafields.custom.campaign_square | image_url: width: 260 }}" alt="Campaign Image">
+            </a>
+           {%- endif -%}
 
         </aside>
         
