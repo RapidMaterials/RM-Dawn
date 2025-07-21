@@ -51,70 +51,6 @@
         "padding_bottom": 36
       }
     },
-    "collapsible_content_NREkNz": {
-      "type": "collapsible-content",
-      "blocks": {
-        "collapsible_row_6mf8tM": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "{{ collection.metafields.custom.collapsible_row_1_header.value }}",
-            "icon": "check_mark",
-            "row_content": "{{ collection.metafields.custom.collapsible_row_1_description | metafield_tag }}",
-            "page": ""
-          }
-        },
-        "collapsible_row_grywxb": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "{{ collection.metafields.custom.collapsible_row_2_header.value }}",
-            "icon": "check_mark",
-            "row_content": "{{ collection.metafields.custom.collapsible_row_2_description | metafield_tag }}",
-            "page": ""
-          }
-        },
-        "collapsible_row_x7paHy": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "{{ collection.metafields.custom.collapsible_row_3_header.value }}",
-            "icon": "check_mark",
-            "row_content": "{{ collection.metafields.custom.collapsible_row_3_description | metafield_tag }}",
-            "page": ""
-          }
-        },
-        "collapsible_row_9tHfh7": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "{{ collection.metafields.custom.collapsible_row_4_header.value }}",
-            "icon": "check_mark",
-            "row_content": "{{ collection.metafields.custom.collapsible_row_4_description | metafield_tag }}",
-            "page": ""
-          }
-        }
-      },
-      "block_order": [
-        "collapsible_row_6mf8tM",
-        "collapsible_row_grywxb",
-        "collapsible_row_x7paHy",
-        "collapsible_row_9tHfh7"
-      ],
-      "custom_css": [
-        ".accordion__content {overflow-x: visible;}"
-      ],
-      "settings": {
-        "caption": "",
-        "heading": "More about {{ collection.title }}",
-        "heading_size": "h1",
-        "heading_alignment": "center",
-        "layout": "none",
-        "container_color_scheme": "scheme-2",
-        "color_scheme": "scheme-2",
-        "open_first_collapsible_row": false,
-        "image_ratio": "adapt",
-        "desktop_layout": "image_second",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
     "collapsible_content_faq_P8N8E4": {
       "type": "collapsible-content-faq",
       "name": "FAQ Accordion",
@@ -125,7 +61,7 @@
         "heading_alignment": "center",
         "layout": "none",
         "container_color_scheme": "",
-        "color_scheme": "",
+        "color_scheme": "scheme-2",
         "open_first_collapsible_row": false,
         "image_ratio": "adapt",
         "desktop_layout": "image_second",
@@ -137,7 +73,6 @@
   "order": [
     "banner",
     "product-grid",
-    "collapsible_content_NREkNz",
     "collapsible_content_faq_P8N8E4"
   ]
 }
