@@ -39,7 +39,7 @@
     flex-direction: column;
   }
 
-  .product-grid .grid__item {
+  .product-grid .list__item {
     display: flex;
     align-items: center;
     border-bottom: 1px solid #e1e1e1;
@@ -47,7 +47,7 @@
     gap: 16px;
   }
 
-  .product-grid .grid__item .card-wrapper {
+  .product-grid .list__item .card-wrapper {
     display: flex;
     align-items: center;
     width: 100%;
@@ -228,7 +228,7 @@
                   {%- assign lazy_load = true -%}
                 {%- endif -%}
                 <li
-                  class="grid__item{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+                  class="list__item{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
                   {% if settings.animations_reveal_on_scroll %}
                     data-cascade
                     style="--animation-order: {{ forloop.index }};"
