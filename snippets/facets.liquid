@@ -931,12 +931,12 @@
             </a>
           </facet-remove>
         </div>
-      </form>
-      {%- if shop.metafields.custom.campaign_square != blank -%}
+              {%- if shop.metafields.custom.campaign_square != blank -%}
             <a href="{{ shop.metafields.custom.campaign_url}}">
           <img src="{{ shop.metafields.custom.campaign_square | image_url: width: 260 }}" alt="Campaign Image" style="padding-top:30px;">
             </a>
            {%- endif -%}
+      </form>
     </facet-filters-form>
   {%- endif -%}
 </div>
