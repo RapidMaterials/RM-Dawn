@@ -34,45 +34,58 @@
       padding-bottom: {{ section.settings.padding_bottom }}px;
     }
   }
-
-
   .product-grid {
     display: flex;
     flex-direction: column;
-    gap: 0;
   }
 
-  .product-grid .list__item {
+  .product-grid .grid__item {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 12px 16px;
     border-bottom: 1px solid #e1e1e1;
+    padding: 12px 16px;
+    gap: 16px;
   }
 
-  .product-grid .list__item > * {
+  .product-grid .grid__item .card-wrapper {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 16px;
+  }
+
+  .product-grid .card__media {
+    flex: 0 0 80px;
+  }
+
+  .product-grid .card__content {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .product-grid .card__information {
+    flex: 2;
+  }
+
+  .product-grid .card-information {
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+    align-items: center;
+  }
+
+  .product-grid .card-information .price,
+  .product-grid .card-information .caption-large,
+  .product-grid .quick-add {
     flex: 1;
   }
 
-  .card:not(.ratio) {
-    flex-direction: row;
-}
-
-  /* Optional: customize column widths */
-  .product-grid .list__item .list-item-wrapper {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    flex: 1 1 auto;
-  }
-
-  .product-grid .list__item .list-item-wrapper .card__media {
-    flex-shrink: 0;
-    width: 80px;
-  }
-
-  .product-grid .list__item .list-item-wrapper .card__content {
-    flex-grow: 1;
+  .product-grid .quick-add {
+    text-align: right;
   }
 {%- endstyle -%}
 
@@ -202,7 +215,9 @@
             <ul
               id="product-grid"
               data-id="{{ section.id }}"
-              class=" product-grid
+              class="
+                grid product-grid grid--{{ section.settings.columns_mobile }}-col-tablet-down
+                grid--{{ section.settings.columns_desktop }}-col-desktop
                 {% if section.settings.quick_add == 'bulk' %} collection-quick-add-bulk{% endif %}
               "
             >
@@ -213,13 +228,13 @@
                   {%- assign lazy_load = true -%}
                 {%- endif -%}
                 <li
-                  class="list__item{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+                  class="grid__item{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
                   {% if settings.animations_reveal_on_scroll %}
                     data-cascade
                     style="--animation-order: {{ forloop.index }};"
                   {% endif %}
                 >
-                  {% render 'list-product',
+                  {% render 'card-product',
                     card_product: product,
                     media_aspect_ratio: section.settings.image_ratio,
                     image_shape: section.settings.image_shape,
@@ -258,10 +273,35 @@
       "type": "range",
       "id": "products_per_page",
       "min": 8,
-      "max": 36,
+      "max": 72,
       "step": 4,
-      "default": 16,
+      "default": 72,
       "label": "t:sections.main-collection-product-grid.settings.products_per_page.label"
+    },
+    {
+      "type": "range",
+      "id": "columns_desktop",
+      "min": 1,
+      "max": 6,
+      "step": 1,
+      "default": 4,
+      "label": "t:sections.main-collection-product-grid.settings.columns_desktop.label"
+    },
+    {
+      "type": "select",
+      "id": "columns_mobile",
+      "default": "2",
+      "label": "t:sections.main-collection-product-grid.settings.columns_mobile.label",
+      "options": [
+        {
+          "value": "1",
+          "label": "t:sections.main-collection-product-grid.settings.columns_mobile.options__1.label"
+        },
+        {
+          "value": "2",
+          "label": "t:sections.main-collection-product-grid.settings.columns_mobile.options__2.label"
+        }
+      ]
     },    
     {
       "type": "color_scheme",
