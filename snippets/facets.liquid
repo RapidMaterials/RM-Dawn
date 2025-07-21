@@ -644,11 +644,7 @@
                               </li>
                             {%- endfor -%}
                           </ul>
- {%- if shop.metafields.custom.campaign_square != blank -%}
-            <a href="{{ shop.metafields.custom.campaign_url}}">
-          <img src="{{ shop.metafields.custom.campaign_square | image_url: width: 260 }}" alt="Campaign Image" style="padding-top:30px;">
-            </a>
-           {%- endif -%}
+
                           <div class="mobile-facets__footer gradient">
                             <facet-remove class="mobile-facets__clear-wrapper">
                               <a href="{{ filter.url_to_remove }}" class="mobile-facets__clear underlined-link">
@@ -872,6 +868,11 @@
           <input name="options[prefix]" type="hidden" value="last">
         {%- endif -%}
       </form>
+       {%- if shop.metafields.custom.campaign_square != blank -%}
+            <a href="{{ shop.metafields.custom.campaign_url}}">
+          <img src="{{ shop.metafields.custom.campaign_square | image_url: width: 260 }}" alt="Campaign Image" style="padding-top:30px;">
+            </a>
+           {%- endif -%}
     </facet-filters-form>
   {%- endif -%}
   <div
