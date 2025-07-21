@@ -175,7 +175,7 @@
             <div id="quick-add-form-{{ card_product.id }}" class="quick-add-form hidden">
               <product-form data-section-id="{{ section.id }}">
                 {%- form 'product', card_product, id: product_form_id, class: 'form', novalidate: 'novalidate', data-type: 'add-to-cart-form' -%}
-                  {% if not card_product.has_only_default_variant %}
+                 {% unless card_product.has_only_default_variant %}
                     {% for option in card_product.options_with_values %}
                       <label>{{ option.name }}</label>
                       <select name="options[{{ option.name }}]">
@@ -184,7 +184,7 @@
                         {% endfor %}
                       </select>
                     {% endfor %}
-                  {% endif %}
+                  {% endunless %}
                   <label>{{ 'products.product.quantity.label' | t }}</label>
                   <input type="number" name="quantity" value="1" min="1">
                   <input type="hidden" name="id" value="{{ card_product.selected_or_first_available_variant.id }}">
