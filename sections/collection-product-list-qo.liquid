@@ -34,7 +34,9 @@
       padding-bottom: {{ section.settings.padding_bottom }}px;
     }
   }
-
+.card--card .quick-add{
+  margin:0;
+}
   h3, .price, button{
     font-size:14px !important;
   }
@@ -61,7 +63,9 @@
     flex: 1;
   }
 
-  /* Optional: customize column widths */
+  .card--card.card--media>.card__content{
+    margin-top:0;
+  }
 
   .product-grid .list__item .card-wrapper .card__media {
     flex-shrink: 0;
