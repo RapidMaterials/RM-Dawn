@@ -13,9 +13,9 @@
       "type": "main-collection-banner",
       "custom_css": [
         "p {text-align: Center; font-size: 0.8em; line-height: 1em;}",
-        ".collection-hero__description {margin: auto;}",
+        ".collection-hero__description {margin: 0 auto 20px;}",
         ".collection-hero__text-wrapper {text-align: center;}",
-        ".collection-hero__title {margin: 0.4em;}"
+        "h1{margin: 0.4em; font-size: 3rem;}"
       ],
       "settings": {
         "show_collection_description": true,
