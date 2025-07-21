@@ -104,6 +104,47 @@
   .ratio{
     display:inline;
   }
+
+
+  @media screen and (max-width: 749px) {
+  .product-grid .grid__item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .product-grid .grid__item .card-wrapper {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  .product-grid .card__content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .product-grid .card-information {
+    flex-direction: column;
+    gap: 4px;
+    width: 100%;
+  }
+
+  .product-grid .quick-add {
+    width: 100%;
+    text-align: left;
+    margin-top: 8px;
+  }
+
+  .product-grid .card__media {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .product-grid .card__information {
+    width: 100%;
+  }
+}
 {%- endstyle -%}
 
 <div class="section-{{ section.id }}-padding gradient color-{{ section.settings.color_scheme }}">
