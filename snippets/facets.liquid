@@ -816,6 +816,11 @@
         {%- endif -%}
       {%- endif -%}
     {%- endfor -%}
+     {%- if shop.metafields.custom.campaign_square != blank -%}
+            <a href="{{ shop.metafields.custom.campaign_url}}">
+          <img src="{{ shop.metafields.custom.campaign_square | image_url: width: 260 }}" alt="Campaign Image" style="padding-top:30px;">
+            </a>
+           {%- endif -%}
     <facet-remove class="active-facets__button-wrapper">
       <a href="{{ results_url }}" class="active-facets__button-remove underlined-link">
         <span>{{ 'products.facets.clear_all' | t }}</span>
