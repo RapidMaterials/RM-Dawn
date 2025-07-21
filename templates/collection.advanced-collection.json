@@ -16,7 +16,7 @@
         ".collection-hero__description {margin: 0 auto 20px;}",
         ".collection-hero__text-wrapper {text-align: center;}",
         "h1 {margin: 10px 0 0;}",
-        ".collection-hero__description{max-width:80%;}"
+        ".collection-hero__description {max-width: 100%;}"
       ],
       "settings": {
         "show_collection_description": true,
