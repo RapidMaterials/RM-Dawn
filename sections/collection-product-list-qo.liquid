@@ -272,8 +272,10 @@
             filter_type: section.settings.filter_type,
             paginate: paginate
           %}
+          <img src="{{ shop.metafields.custom.campaign_square | image_url: width: 290 }}" alt="Campaign Image">
+
         </aside>
-        <img src="{{ shop.metafields.custom.campaign_square | image_url: width: 400 }}" alt="Campaign Image">
+        
       {%- endif -%}
 
       <div
