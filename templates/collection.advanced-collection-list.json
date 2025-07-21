@@ -55,7 +55,7 @@
       "name": "FAQ Accordion",
       "settings": {
         "caption": "",
-        "heading": "Collapsible content",
+        "heading": "More About {{ collection.title }}",
         "heading_size": "h1",
         "heading_alignment": "center",
         "layout": "none",
