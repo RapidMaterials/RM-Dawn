@@ -15,11 +15,12 @@
         "p {text-align: Center; font-size: 0.8em; line-height: 1em;}",
         ".collection-hero__description {margin: 0 auto 20px;}",
         ".collection-hero__text-wrapper {text-align: center;}",
-        "h1 {margin: 10px 0 0;}"
+        "h1 {margin: 10px 0 0;}",
+        ".collection-hero__description{max-width:80%;}"
       ],
       "settings": {
         "show_collection_description": true,
-        "show_collection_image": false,
+        "show_collection_image": true,
         "color_scheme": "scheme-2"
       }
     },
