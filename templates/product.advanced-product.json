@@ -53,6 +53,15 @@
             "text_style": "body"
           }
         },
+        "text_XdzqLY": {
+          "type": "text",
+          "name": "Shipping Note",
+          "settings": {
+            "text": "{{ product.metafields.custom.shipping_note.value }}",
+            "txtclass": "prod-ship-note",
+            "text_style": "body"
+          }
+        },
         "variant_picker": {
           "type": "variant_picker",
           "settings": {
@@ -73,15 +82,6 @@
           "settings": {
             "show_dynamic_checkout": false,
             "show_gift_card_recipient": false
-          }
-        },
-        "text_XdzqLY": {
-          "type": "text",
-          "name": "Shipping Note",
-          "settings": {
-            "text": "{{ product.metafields.custom.shipping_note.value }}",
-            "txtclass": "prod-ship-note",
-            "text_style": "body"
           }
         },
         "custom_liquid_YYehhG": {
@@ -109,11 +109,11 @@
         "price",
         "oscp_wholesale_b2b_app_block_k7JUnx",
         "text_eanxjX",
+        "text_XdzqLY",
         "variant_picker",
         "bss_variant_options_option_set_dEcH69",
         "quantity_selector",
         "buy_buttons",
-        "text_XdzqLY",
         "custom_liquid_YYehhG",
         "features_with_icons_qLjpdB",
         "popup_JJ8bWY"
