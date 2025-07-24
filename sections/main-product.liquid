@@ -854,7 +854,7 @@ button#ModalClose-ReturnDetails, .product-popup-modal__toggle {
         </svg>
       </button>
       <div class="product-popup-modal__content-info">
-        <p>{{ product.metafields.custom.shipping_details.value }}</p>
+        <p>{{ product.metafields.custom.shipping_details | metafield_tag }}</p>
       </div>
     </div>
   </modal-dialog>
