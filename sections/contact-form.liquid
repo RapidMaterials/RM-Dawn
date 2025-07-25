@@ -140,7 +140,6 @@ small#ContactForm-email-error {
   </select>
 <script>
   document.addEventListener('DOMContentLoaded', function () {
-    const form = document.getElementById('ContactForm');
     const categorySelect = document.getElementById('ContactForm-category');
     const returnsField = document.getElementById('returns-reason-field');
     const returnReasonSelect = document.getElementById('ContactForm-returns-reason');
@@ -165,6 +164,7 @@ small#ContactForm-email-error {
       }
     }
 
+    // Run on page load
     toggleReturnsField();
     updateCommentLabel();
 
@@ -174,24 +174,8 @@ small#ContactForm-email-error {
     });
 
     returnReasonSelect?.addEventListener('change', updateCommentLabel);
-
-    form.onsubmit = function (event) {
-      const isReturns = categorySelect.value === 'Returns / Refunds';
-      const returnReason = returnReasonSelect.value;
-
-      if (isReturns && (!returnReason || returnReason === 'Unselected')) {
-        returnReasonSelect.setCustomValidity('Please select a reason for return');
-        returnReasonSelect.reportValidity();
-        return false; // blocks form submission
-      }
-
-      returnReasonSelect.setCustomValidity('');
-      return true; // allow submission
-    };
   });
 </script>
-
-
 
 
 
