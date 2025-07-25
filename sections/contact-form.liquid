@@ -153,20 +153,76 @@ small#ContactForm-email-error {
     {{ 'templates.contact.form.enter-order-number' | t }}
   </label>
 
+</div>
+      <div class="field">
+        <textarea
+          rows="10"
+          id="ContactForm-body"
+          aria-required="true"
+          class="text-area field__input"
+          name="contact[{{ 'templates.contact.form.comment' | t }}]"
+          placeholder="{{ 'templates.contact.form.comment' | t }}"
+          required
+        >
+          {{- form.body -}}
+        </textarea>
+        <label class="form__label field__label" for="ContactForm-body">
+          {{- 'templates.contact.form.comment' | t -}}<span aria-hidden="true">*</span>
+        </label>
+      </div>
 
-        <script>
+
+      
+    <div class="field" id="returns-terms-field" style="display: none;">
+      <label class="checkbox__label">
+        <input
+          type="checkbox"
+          id="ContactForm-returns-terms"
+          name="contact[{{ 'templates.contact.form.return_terms' | t }}]"
+          class="checkbox"
+          required
+        >
+        <span>
+          {{ 'templates.contact.form.return_terms_label' | t }}
+        </span>
+      </label>
+    </div>
+
+
+
+
+      
+      <div class="contact__button">
+        <button type="submit" class="button">
+          {{ 'templates.contact.form.send' | t }}
+        </button>
+      </div>
+       {%- if form.posted_successfully? -%}
+        <h2 class="form-status form-status-list form__message" tabindex="-1" autofocus>
+          {{ 'templates.contact.form.post_success' | t }}
+        </h2>
+      {%- elsif form.errors -%}
+        
+      {%- endif -%}
+    {%- endform -%}
+
+<script>
   document.addEventListener('DOMContentLoaded', function () {
     const form = document.getElementById('ContactForm');
     const categorySelect = document.getElementById('ContactForm-category');
     const returnsField = document.getElementById('returns-reason-field');
     const returnReasonSelect = document.getElementById('ContactForm-returns-reason');
     const orderNumberField = document.getElementById('order-number-field');
+    const returnsTermsField = document.getElementById('returns-terms-field');
     const commentLabel = document.querySelector('label[for="ContactForm-body"]');
 
     function toggleReturnsField() {
       const isReturns = categorySelect.value === 'Returns / Refunds';
+
       if (returnsField) returnsField.style.display = isReturns ? 'block' : 'none';
       if (orderNumberField) orderNumberField.style.display = isReturns ? 'block' : 'none';
+      if (returnsTermsField) returnsTermsField.style.display = isReturns ? 'block' : 'none';
+
       if (returnReasonSelect) returnReasonSelect.required = isReturns;
     }
 
@@ -195,38 +251,8 @@ small#ContactForm-email-error {
   });
 </script>
 
-</div>
 
-      
-      <div class="field">
-        <textarea
-          rows="10"
-          id="ContactForm-body"
-          aria-required="true"
-          class="text-area field__input"
-          name="contact[{{ 'templates.contact.form.comment' | t }}]"
-          placeholder="{{ 'templates.contact.form.comment' | t }}"
-          required
-        >
-          {{- form.body -}}
-        </textarea>
-        <label class="form__label field__label" for="ContactForm-body">
-          {{- 'templates.contact.form.comment' | t -}}<span aria-hidden="true">*</span>
-        </label>
-      </div>
-      <div class="contact__button">
-        <button type="submit" class="button">
-          {{ 'templates.contact.form.send' | t }}
-        </button>
-      </div>
-       {%- if form.posted_successfully? -%}
-        <h2 class="form-status form-status-list form__message" tabindex="-1" autofocus>
-          {{ 'templates.contact.form.post_success' | t }}
-        </h2>
-      {%- elsif form.errors -%}
-        
-      {%- endif -%}
-    {%- endform -%}
+    
   </div>
 </div>
 
