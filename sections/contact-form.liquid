@@ -144,7 +144,7 @@ small#ContactForm-email-error {
     rows="3"
     id="ContactForm-other-reason"
     class="text-area field__input"
-    
+    name="contact[{{ 'templates.contact.form.other_reason_explain' | t }}]"
     placeholder="{{ 'templates.contact.form.other_reason_explain' | t }}"
   ></textarea>
   <label class="form__label field__label" for="ContactForm-other-reason">
@@ -251,8 +251,6 @@ small#ContactForm-email-error {
     const commentInput = document.getElementById('ContactForm-body');
     const commentWrapper = commentInput?.closest('.field');
 
-
-    
     function toggleReturnsField() {
       const isReturns = categorySelect.value === 'Returns / Refunds';
 
@@ -277,21 +275,14 @@ small#ContactForm-email-error {
       }
     }
 
-   function toggleOtherReason() {
-  const isOther = returnReasonSelect?.value === 'Other (please explain below)';
-  if (otherReasonField) otherReasonField.style.display = isOther ? 'block' : 'none';
-
-  if (otherReasonInput) {
-    otherReasonInput.required = isOther;
-    if (isOther) {
-      otherReasonInput.setAttribute('name', 'contact[Other reason explanation]');
-    } else {
-      otherReasonInput.removeAttribute('name');
-      otherReasonInput.value = '';
+    function toggleOtherReason() {
+      const isOther = returnReasonSelect?.value === 'Other (please explain below)';
+      if (otherReasonField) otherReasonField.style.display = isOther ? 'block' : 'none';
+      if (otherReasonInput) {
+        otherReasonInput.required = isOther;
+        if (!isOther) otherReasonInput.value = '';
+      }
     }
-  }
-}
-}
 
     // Initialize on page load
     toggleReturnsField();
