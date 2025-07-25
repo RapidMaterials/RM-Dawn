@@ -51,7 +51,8 @@
       "custom_css": [
         ".contact {max-width: 600px;}",
         "select {padding: 1.2rem 1.5rem 0.8rem 2rem;}",
-        "h2.form-status.form-status-list.form__message {background-color: #e3e3e3; padding: 10px;}"
+        "h2.form-status.form-status-list.form__message {background-color: #e3e3e3; padding: 10px;}",
+        "label.checkbox__label {display: block; line-height: 1.4em; padding: 5px 0;}"
       ],
       "settings": {
         "heading": "",
