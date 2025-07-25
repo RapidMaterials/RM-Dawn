@@ -165,18 +165,6 @@ small#ContactForm-email-error {
       }
     }
 
-    function validateReturnReason(event) {
-      const isReturns = categorySelect.value === 'Returns / Refunds';
-      const returnReason = returnReasonSelect.value;
-      if (isReturns && (!returnReason || returnReason === 'Unselected')) {
-        returnReasonSelect.setCustomValidity('Please select a reason for return');
-        returnReasonSelect.reportValidity();
-        event.preventDefault();
-      } else {
-        returnReasonSelect.setCustomValidity('');
-      }
-    }
-
     toggleReturnsField();
     updateCommentLabel();
 
@@ -187,9 +175,22 @@ small#ContactForm-email-error {
 
     returnReasonSelect?.addEventListener('change', updateCommentLabel);
 
-    form?.addEventListener('submit', validateReturnReason);
+    form.onsubmit = function (event) {
+      const isReturns = categorySelect.value === 'Returns / Refunds';
+      const returnReason = returnReasonSelect.value;
+
+      if (isReturns && (!returnReason || returnReason === 'Unselected')) {
+        returnReasonSelect.setCustomValidity('Please select a reason for return');
+        returnReasonSelect.reportValidity();
+        return false; // blocks form submission
+      }
+
+      returnReasonSelect.setCustomValidity('');
+      return true; // allow submission
+    };
   });
 </script>
+
 
 
 
