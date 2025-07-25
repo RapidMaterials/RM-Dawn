@@ -271,12 +271,20 @@ small#ContactForm-email-error {
       }
     }
 
-    function toggleOtherReason() {
-      const isOther = returnReasonSelect?.value === 'Other (please explain below)';
-      otherReasonField.style.display = isOther ? 'block' : 'none';
-      otherReasonInput.required = isOther;
-      if (!isOther) otherReasonInput.value = '';
+function toggleOtherReason() {
+  const isOther = returnReasonSelect?.value === 'Other (please explain below)';
+  if (otherReasonField) otherReasonField.style.display = isOther ? 'block' : 'none';
+
+  if (otherReasonInput) {
+    otherReasonInput.required = isOther;
+    if (isOther) {
+      otherReasonInput.setAttribute('name', 'contact[Other Reason]');
+    } else {
+      otherReasonInput.removeAttribute('name');
+      otherReasonInput.value = '';
     }
+  }
+}
 
     // Init
     toggleReturnsField();
