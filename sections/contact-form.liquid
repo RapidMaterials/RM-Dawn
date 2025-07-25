@@ -173,22 +173,32 @@ small#ContactForm-email-error {
 
 
       
-    <div class="field" id="returns-terms-field" style="display: none;">
-      <label class="checkbox__label">
-        <input
-          type="checkbox"
-          id="ContactForm-returns-terms"
-          name="contact[{{ 'templates.contact.form.return_terms' | t }}]"
-          class="checkbox"
-          required
-        >
-        <span>
-          {{ 'templates.contact.form.return_terms_label' | t }}
-        </span>
-      </label>
-    </div>
+<div class="field" id="returns-terms-field" style="display: none;">
+  <label class="checkbox__label">
+    <input
+      type="checkbox"
+      id="returns-term-1"
+      name="contact[{{ 'templates.contact.form.returns_terms' | t }}]"
+      class="checkbox"
+    >
+    <span>
+      {{ 'templates.contact.form.returns_terms_label' | t }}
+      
+    </span>
+  </label>
 
-
+  <label class="checkbox__label">
+    <input
+      type="checkbox"
+      id="returns-term-2"
+      name="contact[{{ 'templates.contact.form.return_terms_condition' | t }}]"
+      class="checkbox"
+    >
+    <span>
+      {{ 'templates.contact.form.returns_terms_condition_label' | t }}
+    </span>
+  </label>
+</div>
 
 
       
@@ -216,6 +226,10 @@ small#ContactForm-email-error {
     const returnsTermsField = document.getElementById('returns-terms-field');
     const commentLabel = document.querySelector('label[for="ContactForm-body"]');
 
+    // Optional: checkbox elements if validation is needed later
+    const returnTerm1 = document.getElementById('returns-term-1');
+    const returnTerm2 = document.getElementById('returns-term-2');
+
     function toggleReturnsField() {
       const isReturns = categorySelect.value === 'Returns / Refunds';
 
@@ -224,6 +238,12 @@ small#ContactForm-email-error {
       if (returnsTermsField) returnsTermsField.style.display = isReturns ? 'block' : 'none';
 
       if (returnReasonSelect) returnReasonSelect.required = isReturns;
+
+      // Reset checkboxes if not returns
+      if (!isReturns) {
+        returnTerm1?.checked && (returnTerm1.checked = false);
+        returnTerm2?.checked && (returnTerm2.checked = false);
+      }
     }
 
     function updateCommentLabel() {
@@ -250,6 +270,7 @@ small#ContactForm-email-error {
     returnReasonSelect?.addEventListener('change', updateCommentLabel);
   });
 </script>
+
 
 
     
