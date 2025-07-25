@@ -117,7 +117,35 @@ small#ContactForm-email-error {
            <option value="Other">{{ 'templates.contact.form.option_other' | t }}</option>
         </select>
       </div>
+      <div class="field" id="returns-reason-field" style="display: none;">
+        <label class="field__label" for="ContactForm-returns-reason">
+          {{ 'Reason for return' }}
+        </label>
+        <textarea
+          rows="4"
+          id="ContactForm-returns-reason"
+          class="text-area field__input"
+          name="contact[Reason for return]"
+          placeholder="Please explain the reason for your return"
+        ></textarea>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const categorySelect = document.getElementById('ContactForm-category');
+    const returnsField = document.getElementById('returns-reason-field');
 
+    if (categorySelect) {
+      categorySelect.addEventListener('change', function () {
+        if (categorySelect.value === 'Returns / Refunds') {
+          returnsField.style.display = 'block';
+        } else {
+          returnsField.style.display = 'none';
+        }
+      });
+    }
+  });
+</script>
+        
+      </div>
       
       <div class="field">
         <textarea
