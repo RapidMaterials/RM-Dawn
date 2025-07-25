@@ -116,23 +116,6 @@ small#ContactForm-email-error {
            <option value="Other">{{ 'templates.contact.form.option_other' | t }}</option>
         </select>
       </div>
-
-<div class="field" id="order-number-field" style="display: none;">
-  <input
-    class="field__input"
-    type="text"
-    id="ContactForm-order-number"
-    name="contact[{{ 'templates.contact.form.order-number' | t }}]"
-    value=""
-    placeholder="{{ 'templates.contact.form.order-number' | t }}"
-  >
-  <label class="field__label" for="ContactForm-order-number">
-    {{ 'templates.contact.form.order-number' | t }}
-  </label>
-
-</div>
-
-      
      <div class="field" id="returns-reason-field" style="display: none;">
   <label class="field__label" for="ContactForm-returns-reason">
     {{ 'templates.contact.form.return_reason' | t }}<span aria-hidden="true">*</span>
@@ -161,7 +144,7 @@ small#ContactForm-email-error {
     rows="3"
     id="ContactForm-other-reason"
     class="text-area field__input"
-    name="contact[{{ 'templates.contact.form.generic_message' | t }}]"
+    name="contact[{{ 'templates.contact.form.other_reason_explain' | t }}]"
     placeholder="{{ 'templates.contact.form.other_reason_explain' | t }}"
   ></textarea>
   <label class="form__label field__label" for="ContactForm-other-reason">
@@ -169,7 +152,23 @@ small#ContactForm-email-error {
   </label>
 </div>
 
-      <div class="field">
+      <div class="field" id="order-number-field" style="display: none;">
+  <input
+    class="field__input"
+    type="text"
+    id="ContactForm-order-number"
+    name="contact[{{ 'templates.contact.form.order-number' | t }}]"
+    value=""
+    placeholder="{{ 'templates.contact.form.order-number' | t }}"
+  >
+  <label class="field__label" for="ContactForm-order-number">
+    {{ 'templates.contact.form.enter-order-number' | t }}
+  </label>
+
+</div>
+
+
+            <div class="field">
         <textarea
           rows="10"
           id="ContactForm-body"
