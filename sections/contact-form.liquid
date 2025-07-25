@@ -279,7 +279,7 @@ function toggleOtherReason() {
     if (isOther) {
       otherReasonInput.setAttribute('name', 'contact[Other Reason]');
     } else {
-      otherReasonInput.removeAttribute('name');
+      otherReasonInput.setAttribute('name', '');
       otherReasonInput.value = '';
     }
   }
