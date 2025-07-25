@@ -50,7 +50,7 @@
       "type": "contact-form",
       "custom_css": [
         ".contact {max-width: 600px;}",
-        "select#ContactForm-category {padding: 1.2rem 1.5rem 0.8rem 2rem;}"
+        "select {padding: 1.2rem 1.5rem 0.8rem 2rem;}"
       ],
       "settings": {
         "heading": "",
@@ -67,6 +67,7 @@
           "type": "column",
           "settings": {
             "title": "Location",
+            "heading_tag": "h2",
             "text": "<p>Atlanta, GA, USA</p>",
             "link_label": "",
             "link": ""
@@ -76,6 +77,7 @@
           "type": "column",
           "settings": {
             "title": "Call Us",
+            "heading_tag": "h2",
             "text": "<p>(770) 405 - 1060</p>",
             "link_label": "",
             "link": ""
@@ -85,6 +87,7 @@
           "type": "column",
           "settings": {
             "title": "Hours",
+            "heading_tag": "h2",
             "text": "<p>Monday-Friday 8am-5pm EST</p>",
             "link_label": "",
             "link": ""
@@ -98,7 +101,12 @@
       ],
       "settings": {
         "title": "",
+        "heading_tag": "h2",
+        "section_float": "clear",
+        "mobile_display": "mobile-show",
+        "desktop_display": "desktop-show",
         "heading_size": "h1",
+        "col_alignment": "left",
         "image_width": "third",
         "image_ratio": "adapt",
         "button_label": "",
