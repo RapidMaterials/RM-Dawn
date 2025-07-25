@@ -197,6 +197,7 @@ small#ContactForm-email-error {
       name="contact[{{ 'templates.contact.form.return_terms_condition' | t }}]"
       value="{{ 'templates.contact.form.returns_terms_condition_label' | t }}"
       class="checkbox"
+      req
     >
     <span>
       {{ 'templates.contact.form.returns_terms_condition_label' | t }}
@@ -242,6 +243,8 @@ small#ContactForm-email-error {
       if (returnsTermsField) returnsTermsField.style.display = isReturns ? 'block' : 'none';
 
       if (returnReasonSelect) returnReasonSelect.required = isReturns;
+      if (returnTerm1) returnTerm1.required = isReturns;
+      if (returnTerm2) returnTerm2.required = isReturns;
 
       // Reset checkboxes if not returns
       if (!isReturns) {
