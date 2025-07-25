@@ -146,7 +146,11 @@ small#ContactForm-email-error {
     const commentLabel = document.querySelector('label[for="ContactForm-body"]');
 
     function toggleReturnsField() {
-      returnsField.style.display = categorySelect.value === 'Returns / Refunds' ? 'block' : 'none';
+      const isReturns = categorySelect.value === 'Returns / Refunds';
+      returnsField.style.display = isReturns ? 'block' : 'none';
+      if (returnReasonSelect) {
+        returnReasonSelect.required = isReturns;
+      }
     }
 
     function updateCommentLabel() {
@@ -160,22 +164,19 @@ small#ContactForm-email-error {
       }
     }
 
-    // Initialize on page load
+    // Run on page load
     toggleReturnsField();
     updateCommentLabel();
 
-    if (categorySelect) {
-      categorySelect.addEventListener('change', function () {
-        toggleReturnsField();
-        updateCommentLabel(); // in case visibility and value change together
-      });
-    }
+    categorySelect?.addEventListener('change', function () {
+      toggleReturnsField();
+      updateCommentLabel();
+    });
 
-    if (returnReasonSelect) {
-      returnReasonSelect.addEventListener('change', updateCommentLabel);
-    }
+    returnReasonSelect?.addEventListener('change', updateCommentLabel);
   });
 </script>
+
 
 
        
