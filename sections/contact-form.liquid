@@ -173,6 +173,7 @@ small#ContactForm-email-error {
           id="ContactForm-body"
           aria-required="true"
           class="text-area field__input"
+          name="contact[{{ 'templates.contact.form.comment' | t }}]"
           placeholder="{{ 'templates.contact.form.comment' | t }}"
         >
           {{- form.body -}}
@@ -271,16 +272,6 @@ small#ContactForm-email-error {
           otherReasonInput.value = '';
         }
       }
-
-        if (commentInput) {
-    commentInput.required = !isReturns;
-    if (isReturns) {
-      commentInput.removeAttribute('name');
-      commentInput.value = '';
-    } else {
-      commentInput.setAttribute('name', 'contact[{{ "templates.contact.form.comment" | t }}]');
-    }
-  }
     }
 function toggleOtherReason() {
   const isOther = returnReasonSelect?.value === 'Other (please explain below)';
