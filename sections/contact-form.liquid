@@ -169,6 +169,22 @@ small#ContactForm-email-error {
 </div>
 
 
+            <div class="field">
+        <textarea
+          rows="10"
+          id="ContactForm-body"
+          aria-required="true"
+          class="text-area field__input"
+          name="contact[{{ 'templates.contact.form.comment' | t }}]"
+          placeholder="{{ 'templates.contact.form.comment' | t }}"
+        >
+          {{- form.body -}}
+        </textarea>
+       <label id="ContactForm-body-label" class="form__label field__label" for="ContactForm-body">
+          {{- 'templates.contact.form.comment' | t -}}<span aria-hidden="true">*</span>
+        </label>
+      </div>
+
       
 <div class="field" id="returns-terms-field" style="display: none; padding:1.5rem;">
   <h3 style="margin:0;">Return Policy Acknowledgement</h3>
@@ -202,22 +218,6 @@ small#ContactForm-email-error {
     </span>
   </label>
 </div>
-
-            <div class="field">
-        <textarea
-          rows="10"
-          id="ContactForm-body"
-          aria-required="true"
-          class="text-area field__input"
-          name="contact[{{ 'templates.contact.form.comment' | t }}]"
-          placeholder="{{ 'templates.contact.form.comment' | t }}"
-        >
-          {{- form.body -}}
-        </textarea>
-        <label class="form__label field__label" for="ContactForm-body">
-          {{- 'templates.contact.form.comment' | t -}}<span aria-hidden="true">*</span>
-        </label>
-      </div>
 
 
       
