@@ -248,8 +248,9 @@ small#ContactForm-email-error {
 
     const returnTerm1 = document.getElementById('returns-term-1');
     const returnTerm2 = document.getElementById('returns-term-2');
+
     const commentInput = document.getElementById('ContactForm-body');
-    const commentLabel = document.getElementById('ContactForm-body-label');
+    const commentWrapper = commentInput?.closest('.field');
 
     function toggleReturnsField() {
       const isReturns = categorySelect.value === 'Returns / Refunds';
@@ -257,17 +258,12 @@ small#ContactForm-email-error {
       if (returnsField) returnsField.style.display = isReturns ? 'block' : 'none';
       if (orderNumberField) orderNumberField.style.display = isReturns ? 'block' : 'none';
       if (returnsTermsField) returnsTermsField.style.display = isReturns ? 'block' : 'none';
+      if (commentWrapper) commentWrapper.style.display = isReturns ? 'none' : 'block';
 
       if (returnReasonSelect) returnReasonSelect.required = isReturns;
       if (returnTerm1) returnTerm1.required = isReturns;
       if (returnTerm2) returnTerm2.required = isReturns;
       if (commentInput) commentInput.required = !isReturns;
-
-      if (commentLabel) {
-        commentLabel.innerHTML = isReturns
-          ? '{{ "templates.contact.form.anything_else" | t }}'
-          : '{{ "templates.contact.form.comment" | t }}<span aria-hidden="true">*</span>';
-      }
 
       if (!isReturns) {
         returnTerm1?.checked && (returnTerm1.checked = false);
@@ -301,6 +297,7 @@ small#ContactForm-email-error {
     returnReasonSelect?.addEventListener('change', toggleOtherReason);
   });
 </script>
+
 
 
 
