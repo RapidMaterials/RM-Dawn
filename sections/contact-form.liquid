@@ -138,19 +138,36 @@ small#ContactForm-email-error {
     <option value="Product broken or defective">{{ 'templates.contact.form.defective' | t }}</option>
     <option value="Other (please explain below)">{{ 'templates.contact.form.other' | t }}</option>
   </select>
-<script>
+</div>
+
+      <div class="field" id="order-number-field" style="display: none;">
+  <input
+    class="field__input"
+    type="text"
+    id="ContactForm-order-number"
+    name="contact[{{ 'templates.contact.form.order-number' | t }}]"
+    value=""
+    placeholder="{{ 'templates.contact.form.order-number' | t }}"
+  >
+  <label class="field__label" for="ContactForm-order-number">
+    {{ 'templates.contact.form.enter-order-number' | t }}
+  </label>
+
+
+        <script>
   document.addEventListener('DOMContentLoaded', function () {
+    const form = document.getElementById('ContactForm');
     const categorySelect = document.getElementById('ContactForm-category');
     const returnsField = document.getElementById('returns-reason-field');
     const returnReasonSelect = document.getElementById('ContactForm-returns-reason');
+    const orderNumberField = document.getElementById('order-number-field');
     const commentLabel = document.querySelector('label[for="ContactForm-body"]');
 
     function toggleReturnsField() {
       const isReturns = categorySelect.value === 'Returns / Refunds';
-      returnsField.style.display = isReturns ? 'block' : 'none';
-      if (returnReasonSelect) {
-        returnReasonSelect.required = isReturns;
-      }
+      if (returnsField) returnsField.style.display = isReturns ? 'block' : 'none';
+      if (orderNumberField) orderNumberField.style.display = isReturns ? 'block' : 'none';
+      if (returnReasonSelect) returnReasonSelect.required = isReturns;
     }
 
     function updateCommentLabel() {
@@ -164,10 +181,11 @@ small#ContactForm-email-error {
       }
     }
 
-    // Run on page load
+    // Initialize on page load
     toggleReturnsField();
     updateCommentLabel();
 
+    // Event listeners
     categorySelect?.addEventListener('change', function () {
       toggleReturnsField();
       updateCommentLabel();
@@ -177,9 +195,6 @@ small#ContactForm-email-error {
   });
 </script>
 
-
-
-       
 </div>
 
       
