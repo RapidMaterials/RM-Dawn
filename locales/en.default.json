@@ -285,6 +285,7 @@
         "defective": "Product broken or defective",
         "other": "Other (please explain below)",
         "select_return": "Select Return Reason",
+        "other_reason_explain": "Please explain why you're returning.",
         "send": "Send",
         "select_option": "Select Support Type",
         "post_success": "Thanks for contacting us. We'll get back to you as soon as possible.",

@@ -142,19 +142,41 @@ small#ContactForm-email-error {
   document.addEventListener('DOMContentLoaded', function () {
     const categorySelect = document.getElementById('ContactForm-category');
     const returnsField = document.getElementById('returns-reason-field');
+    const returnReasonSelect = document.getElementById('ContactForm-returns-reason');
+    const commentLabel = document.querySelector('label[for="ContactForm-body"]');
+
+    function toggleReturnsField() {
+      returnsField.style.display = categorySelect.value === 'Returns / Refunds' ? 'block' : 'none';
+    }
+
+    function updateCommentLabel() {
+      if (returnReasonSelect && commentLabel) {
+        const selectedValue = returnReasonSelect.value;
+        if (selectedValue === 'Other (please explain below)') {
+          commentLabel.innerHTML = '{{ "templates.contact.form.other_reason_explain" | t }}<span aria-hidden="true">*</span>';
+        } else {
+          commentLabel.innerHTML = '{{ "templates.contact.form.comment" | t }}<span aria-hidden="true">*</span>';
+        }
+      }
+    }
+
+    // Initialize on page load
+    toggleReturnsField();
+    updateCommentLabel();
 
     if (categorySelect) {
-      function toggleReturnsField() {
-        returnsField.style.display = categorySelect.value === 'Returns / Refunds' ? 'block' : 'none';
-      }
+      categorySelect.addEventListener('change', function () {
+        toggleReturnsField();
+        updateCommentLabel(); // in case visibility and value change together
+      });
+    }
 
-      // Run on load in case of browser remembering form state
-      toggleReturnsField();
-
-      categorySelect.addEventListener('change', toggleReturnsField);
+    if (returnReasonSelect) {
+      returnReasonSelect.addEventListener('change', updateCommentLabel);
     }
   });
 </script>
+
 
        
 </div>
