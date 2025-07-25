@@ -118,9 +118,6 @@ small#ContactForm-email-error {
         </select>
       </div>
       <div class="field" id="returns-reason-field" style="display: none;">
-        <label class="field__label" for="ContactForm-returns-reason">
-          Reason for return
-        </label>
         <textarea
           rows="4"
           id="ContactForm-returns-reason"
@@ -128,6 +125,10 @@ small#ContactForm-email-error {
           name="contact[Reason for return]"
           placeholder="Please explain the reason for your return"
         ></textarea>
+
+        <label class="form__label field__label" for="ContactForm-returns-reason">
+           Reason for return
+        </label>
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     const categorySelect = document.getElementById('ContactForm-category');
