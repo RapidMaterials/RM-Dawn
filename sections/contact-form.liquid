@@ -178,9 +178,11 @@ small#ContactForm-email-error {
     <input
       type="checkbox"
       id="returns-term-1"
+      aria-required="true"
       name="contact[{{ 'templates.contact.form.returns_terms' | t }}]"
       value="{{ 'templates.contact.form.returns_terms' | t }}"
       class="checkbox"
+      required
     >
     <span>
       {{ 'templates.contact.form.returns_terms_label' | t }}
@@ -192,9 +194,11 @@ small#ContactForm-email-error {
     <input
       type="checkbox"
       id="returns-term-2"
+      aria-required="true"
       name="contact[{{ 'templates.contact.form.return_terms_condition' | t }}]"
       value="{{ 'templates.contact.form.returns_terms_condition_label' | t }}"
       class="checkbox"
+      required
     >
     <span>
       {{ 'templates.contact.form.returns_terms_condition_label' | t }}
