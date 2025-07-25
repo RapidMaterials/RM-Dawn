@@ -144,7 +144,6 @@ small#ContactForm-email-error {
     rows="3"
     id="ContactForm-other-reason"
     class="text-area field__input"
-    name="contact[{{ 'templates.contact.form.other_reason_explain' | t }}]"
     placeholder="{{ 'templates.contact.form.other_reason_explain' | t }}"
   ></textarea>
   <label class="form__label field__label" for="ContactForm-other-reason">
@@ -271,7 +270,7 @@ small#ContactForm-email-error {
       }
     }
 
-function toggleOtherReason() {
+ function toggleOtherReason() {
   const isOther = returnReasonSelect?.value === 'Other (please explain below)';
   if (otherReasonField) otherReasonField.style.display = isOther ? 'block' : 'none';
 
