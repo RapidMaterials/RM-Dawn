@@ -277,19 +277,20 @@ small#ContactForm-email-error {
       }
     }
 
-    function toggleOtherReason() {
+   function toggleOtherReason() {
   const isOther = returnReasonSelect?.value === 'Other (please explain below)';
   if (otherReasonField) otherReasonField.style.display = isOther ? 'block' : 'none';
 
   if (otherReasonInput) {
     otherReasonInput.required = isOther;
     if (isOther) {
-      otherReasonInput.setAttribute('name', 'contact[{{ "templates.contact.form.other_reason_explain" | t }}]');
+      otherReasonInput.setAttribute('name', 'contact[Other reason explanation]');
     } else {
       otherReasonInput.removeAttribute('name');
       otherReasonInput.value = '';
     }
   }
+}
 }
 
     // Initialize on page load
