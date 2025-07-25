@@ -236,7 +236,6 @@ small#ContactForm-email-error {
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {
-    const form = document.getElementById('ContactForm');
     const categorySelect = document.getElementById('ContactForm-category');
     const returnsField = document.getElementById('returns-reason-field');
     const returnReasonSelect = document.getElementById('ContactForm-returns-reason');
@@ -247,48 +246,43 @@ small#ContactForm-email-error {
 
     const returnTerm1 = document.getElementById('returns-term-1');
     const returnTerm2 = document.getElementById('returns-term-2');
-
     const commentInput = document.getElementById('ContactForm-body');
     const commentWrapper = commentInput?.closest('.field');
 
     function toggleReturnsField() {
       const isReturns = categorySelect.value === 'Returns / Refunds';
 
-      if (returnsField) returnsField.style.display = isReturns ? 'block' : 'none';
-      if (orderNumberField) orderNumberField.style.display = isReturns ? 'block' : 'none';
-      if (returnsTermsField) returnsTermsField.style.display = isReturns ? 'block' : 'none';
-      if (commentWrapper) commentWrapper.style.display = isReturns ? 'none' : 'block';
+      returnsField.style.display = isReturns ? 'block' : 'none';
+      orderNumberField.style.display = isReturns ? 'block' : 'none';
+      returnsTermsField.style.display = isReturns ? 'block' : 'none';
+      commentWrapper.style.display = isReturns ? 'none' : 'block';
 
-      if (returnReasonSelect) returnReasonSelect.required = isReturns;
-      if (returnTerm1) returnTerm1.required = isReturns;
-      if (returnTerm2) returnTerm2.required = isReturns;
-      if (commentInput) commentInput.required = !isReturns;
+      returnReasonSelect.required = isReturns;
+      returnTerm1.required = isReturns;
+      returnTerm2.required = isReturns;
+      commentInput.required = !isReturns;
 
       if (!isReturns) {
-        returnTerm1?.checked && (returnTerm1.checked = false);
-        returnTerm2?.checked && (returnTerm2.checked = false);
-        if (otherReasonField) otherReasonField.style.display = 'none';
-        if (otherReasonInput) {
-          otherReasonInput.required = false;
-          otherReasonInput.value = '';
-        }
+        returnTerm1.checked = false;
+        returnTerm2.checked = false;
+        otherReasonField.style.display = 'none';
+        otherReasonInput.required = false;
+        otherReasonInput.value = '';
       }
     }
 
     function toggleOtherReason() {
       const isOther = returnReasonSelect?.value === 'Other (please explain below)';
-      if (otherReasonField) otherReasonField.style.display = isOther ? 'block' : 'none';
-      if (otherReasonInput) {
-        otherReasonInput.required = isOther;
-        if (!isOther) otherReasonInput.value = '';
-      }
+      otherReasonField.style.display = isOther ? 'block' : 'none';
+      otherReasonInput.required = isOther;
+      if (!isOther) otherReasonInput.value = '';
     }
 
-    // Initialize on page load
+    // Init
     toggleReturnsField();
     toggleOtherReason();
 
-    categorySelect?.addEventListener('change', function () {
+    categorySelect.addEventListener('change', function () {
       toggleReturnsField();
       toggleOtherReason();
     });
@@ -296,8 +290,6 @@ small#ContactForm-email-error {
     returnReasonSelect?.addEventListener('change', toggleOtherReason);
   });
 </script>
-
-
 
 
 
