@@ -5,6 +5,7 @@
   <h3 style="font-weight: bold; margin-bottom: 8px;">Specs</h3>
   <ul style="list-style: none; padding: 0; margin: 0;">
     <li><strong>SKU:</strong> {{- product.selected_or_first_available_variant.sku -}}</li>
+    {{ product.selected_or_first_available_variant.id }}
 
     {%- if product.selected_or_first_available_variant.barcode != blank -%}
       <li><strong>UPC:</strong> {{ product.selected_or_first_available_variant.barcode }}</li>
