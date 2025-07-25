@@ -140,6 +140,19 @@ small#ContactForm-email-error {
   </select>
 </div>
 
+<div class="field" id="other-reason-field" style="display: none;">
+  <textarea
+    rows="3"
+    id="ContactForm-other-reason"
+    class="text-area field__input"
+    name="contact[{{ 'templates.contact.form.other_reason_explain' | t }}]"
+    placeholder="{{ 'templates.contact.form.other_reason_explain' | t }}"
+  ></textarea>
+  <label class="form__label field__label" for="ContactForm-other-reason">
+    {{ 'templates.contact.form.other_reason_explain' | t }}
+  </label>
+</div>
+
       <div class="field" id="order-number-field" style="display: none;">
   <input
     class="field__input"
@@ -230,9 +243,9 @@ small#ContactForm-email-error {
     const returnReasonSelect = document.getElementById('ContactForm-returns-reason');
     const orderNumberField = document.getElementById('order-number-field');
     const returnsTermsField = document.getElementById('returns-terms-field');
-    const commentLabel = document.querySelector('label[for="ContactForm-body"]');
+    const otherReasonField = document.getElementById('other-reason-field');
+    const otherReasonInput = document.getElementById('ContactForm-other-reason');
 
-    // Optional: checkbox elements if validation is needed later
     const returnTerm1 = document.getElementById('returns-term-1');
     const returnTerm2 = document.getElementById('returns-term-2');
 
@@ -247,37 +260,39 @@ small#ContactForm-email-error {
       if (returnTerm1) returnTerm1.required = isReturns;
       if (returnTerm2) returnTerm2.required = isReturns;
 
-      // Reset checkboxes if not returns
       if (!isReturns) {
         returnTerm1?.checked && (returnTerm1.checked = false);
         returnTerm2?.checked && (returnTerm2.checked = false);
+        if (otherReasonField) otherReasonField.style.display = 'none';
+        if (otherReasonInput) {
+          otherReasonInput.required = false;
+          otherReasonInput.value = '';
+        }
       }
     }
 
-    function updateCommentLabel() {
-      if (returnReasonSelect && commentLabel) {
-        const selectedValue = returnReasonSelect.value;
-        if (selectedValue === 'Other (please explain below)') {
-          commentLabel.innerHTML = '{{ "templates.contact.form.other_reason_explain" | t }}<span aria-hidden="true">*</span>';
-        } else {
-          commentLabel.innerHTML = '{{ "templates.contact.form.comment" | t }}<span aria-hidden="true">*</span>';
-        }
+    function toggleOtherReason() {
+      const isOther = returnReasonSelect?.value === 'Other (please explain below)';
+      if (otherReasonField) otherReasonField.style.display = isOther ? 'block' : 'none';
+      if (otherReasonInput) {
+        otherReasonInput.required = isOther;
+        if (!isOther) otherReasonInput.value = '';
       }
     }
 
     // Initialize on page load
     toggleReturnsField();
-    updateCommentLabel();
+    toggleOtherReason();
 
-    // Event listeners
     categorySelect?.addEventListener('change', function () {
       toggleReturnsField();
-      updateCommentLabel();
+      toggleOtherReason();
     });
 
-    returnReasonSelect?.addEventListener('change', updateCommentLabel);
+    returnReasonSelect?.addEventListener('change', toggleOtherReason);
   });
 </script>
+
 
 
 
