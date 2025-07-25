@@ -122,12 +122,12 @@ small#ContactForm-email-error {
           rows="4"
           id="ContactForm-returns-reason"
           class="text-area field__input"
-          name="contact[Reason for return]"
+          name="contact[{{ 'templates.contact.form.return_reason' | t }}]"
           placeholder="Please explain the reason for your return"
         ></textarea>
 
         <label class="form__label field__label" for="ContactForm-returns-reason">
-           Reason for return
+          {{ 'templates.contact.form.return_reason' | t }}
         </label>
 <script>
   document.addEventListener('DOMContentLoaded', function () {
