@@ -275,6 +275,7 @@
         "option_tech": "Technical Support",
         "option_feedback": "Feedback",
         "option_other": "Other",
+        "return_reason": "Reason for Return",
         "send": "Send",
         "select_option": "Select Support Type",
         "post_success": "Thanks for contacting us. We'll get back to you as soon as possible.",
