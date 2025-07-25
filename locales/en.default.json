@@ -286,6 +286,7 @@
         "other": "Other (please explain below)",
         "select_return": "Select Return Reason",
         "other_reason_explain": "Please explain why you're requesting a return.",
+        "generic_message": "Message",
         "anything_else": "Is there anything else we need to know?",
         "enter-order-number": "Rapid Materials Order Number",
         "order-number": "Rapid Materials Order Number",
