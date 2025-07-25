@@ -242,8 +242,7 @@
           {% endif %} <!-- End if section include brand -->
 
 {% if section.settings.include_specs %}
-  {{ product | json }}
-
+  
   {% render 'multicolumn-product-tech-specs', product: product %}
 {% endif %}
   
