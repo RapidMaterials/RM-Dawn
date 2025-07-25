@@ -117,36 +117,48 @@ small#ContactForm-email-error {
            <option value="Other">{{ 'templates.contact.form.option_other' | t }}</option>
         </select>
       </div>
-      <div class="field" id="returns-reason-field" style="display: none;">
-        <textarea
-          rows="4"
-          id="ContactForm-returns-reason"
-          class="text-area field__input"
-          name="contact[{{ 'templates.contact.form.return_reason' | t }}]"
-          placeholder="Please explain the reason for your return"
-        ></textarea>
-
-        <label class="form__label field__label" for="ContactForm-returns-reason">
-          {{ 'templates.contact.form.return_reason' | t }}
-        </label>
+     <div class="field" id="returns-reason-field" style="display: none;">
+  <label class="field__label" for="ContactForm-returns-reason">
+    {{ 'templates.contact.form.return_reason' | t }}<span aria-hidden="true">*</span>
+  </label>
+  <select
+    class="field__input"
+    id="ContactForm-returns-reason"
+    aria-required="true"
+    name="contact[{{ 'templates.contact.form.return_reason' | t }}]"
+    required
+  >
+    <option value="Unselected" disabled selected>{{ 'templates.contact.form.select_option' | t }}</option>
+    <option value="I received the wrong item">{{ 'templates.contact.form.wrong_item' | t }}</option>
+    <option value="Item(s) arrived damaged in shipping">{{ 'templates.contact.form.ship_damage' | t }}</option>
+    <option value="I no longer need the item">{{ 'templates.contact.form.not_needed' | t }}</option>
+    <option value="I ordered the wrong product">{{ 'templates.contact.form.ordered_wrong' | t }}</option>
+    <option value="Product is incompatible">{{ 'templates.contact.form.incompatible' | t }}</option>
+    <option value="Product arrived late">{{ 'templates.contact.form.late' | t }}</option>
+    <option value="Product broken or defective">{{ 'templates.contact.form.defective' | t }}</option>
+    <option value="Other (please explain below)">{{ 'templates.contact.form.other' | t }}</option>
+  </select>
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     const categorySelect = document.getElementById('ContactForm-category');
     const returnsField = document.getElementById('returns-reason-field');
 
     if (categorySelect) {
-      categorySelect.addEventListener('change', function () {
-        if (categorySelect.value === 'Returns / Refunds') {
-          returnsField.style.display = 'block';
-        } else {
-          returnsField.style.display = 'none';
-        }
-      });
+      function toggleReturnsField() {
+        returnsField.style.display = categorySelect.value === 'Returns / Refunds' ? 'block' : 'none';
+      }
+
+      // Run on load in case of browser remembering form state
+      toggleReturnsField();
+
+      categorySelect.addEventListener('change', toggleReturnsField);
     }
   });
 </script>
-        
-      </div>
+
+       
+</div>
+
       
       <div class="field">
         <textarea
