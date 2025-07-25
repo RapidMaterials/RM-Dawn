@@ -123,6 +123,7 @@ small#ContactForm-email-error {
   <select
     class="field__input"
     id="ContactForm-returns-reason"
+    aria-required="true"
     name="contact[{{ 'templates.contact.form.return_reason' | t }}]"
     required
   >
@@ -273,21 +274,15 @@ small#ContactForm-email-error {
         }
       }
     }
-function toggleOtherReason() {
-  const isOther = returnReasonSelect?.value === 'Other (please explain below)';
-  if (otherReasonField) otherReasonField.style.display = isOther ? 'block' : 'none';
 
-  if (otherReasonInput) {
-    otherReasonInput.required = isOther;
-
-    if (isOther) {
-      otherReasonInput.setAttribute('name', 'contact[{{ "templates.contact.form.other_reason_explain" | t }}]');
-    } else {
-      otherReasonInput.removeAttribute('name');
-      otherReasonInput.value = '';
+    function toggleOtherReason() {
+      const isOther = returnReasonSelect?.value === 'Other (please explain below)';
+      if (otherReasonField) otherReasonField.style.display = isOther ? 'block' : 'none';
+      if (otherReasonInput) {
+        otherReasonInput.required = isOther;
+        if (!isOther) otherReasonInput.value = '';
+      }
     }
-  }
-}
 
     // Initialize on page load
     toggleReturnsField();
