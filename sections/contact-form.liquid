@@ -167,22 +167,6 @@ small#ContactForm-email-error {
   </label>
 
 </div>
-      <div class="field">
-        <textarea
-          rows="10"
-          id="ContactForm-body"
-          aria-required="true"
-          class="text-area field__input"
-          name="contact[{{ 'templates.contact.form.comment' | t }}]"
-          placeholder="{{ 'templates.contact.form.comment' | t }}"
-          required
-        >
-          {{- form.body -}}
-        </textarea>
-        <label class="form__label field__label" for="ContactForm-body">
-          {{- 'templates.contact.form.comment' | t -}}<span aria-hidden="true">*</span>
-        </label>
-      </div>
 
 
       
@@ -219,6 +203,22 @@ small#ContactForm-email-error {
   </label>
 </div>
 
+            <div class="field">
+        <textarea
+          rows="10"
+          id="ContactForm-body"
+          aria-required="true"
+          class="text-area field__input"
+          name="contact[{{ 'templates.contact.form.comment' | t }}]"
+          placeholder="{{ 'templates.contact.form.comment' | t }}"
+        >
+          {{- form.body -}}
+        </textarea>
+        <label class="form__label field__label" for="ContactForm-body">
+          {{- 'templates.contact.form.comment' | t -}}<span aria-hidden="true">*</span>
+        </label>
+      </div>
+
 
       
       <div class="contact__button">
@@ -248,6 +248,8 @@ small#ContactForm-email-error {
 
     const returnTerm1 = document.getElementById('returns-term-1');
     const returnTerm2 = document.getElementById('returns-term-2');
+    const commentInput = document.getElementById('ContactForm-body');
+    const commentLabel = document.getElementById('ContactForm-body-label');
 
     function toggleReturnsField() {
       const isReturns = categorySelect.value === 'Returns / Refunds';
@@ -259,6 +261,13 @@ small#ContactForm-email-error {
       if (returnReasonSelect) returnReasonSelect.required = isReturns;
       if (returnTerm1) returnTerm1.required = isReturns;
       if (returnTerm2) returnTerm2.required = isReturns;
+      if (commentInput) commentInput.required = !isReturns;
+
+      if (commentLabel) {
+        commentLabel.innerHTML = isReturns
+          ? '{{ "templates.contact.form.anything_else" | t }}<span aria-hidden="true">*</span>'
+          : '{{ "templates.contact.form.comment" | t }}<span aria-hidden="true">*</span>';
+      }
 
       if (!isReturns) {
         returnTerm1?.checked && (returnTerm1.checked = false);
@@ -292,6 +301,7 @@ small#ContactForm-email-error {
     returnReasonSelect?.addEventListener('change', toggleOtherReason);
   });
 </script>
+
 
 
 
