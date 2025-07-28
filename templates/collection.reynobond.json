@@ -37,6 +37,9 @@
         "quick_add": "none",
         "enable_filtering": true,
         "filter_type": "vertical",
+        "button_label": "Click Here",
+        "button_link": "",
+        "button_target": "_self",
         "enable_sorting": true,
         "padding_top": 36,
         "padding_bottom": 36
@@ -48,22 +51,22 @@
         "column_HwFFbH": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/alucobond-plus-logo.png",
-            "title": "Ready-to-ship 4mm ACM Panels",
-            "text": "<p>4mm aluminum composite panels with a fire-retardant core, offering superior fire performance and sleek versatility for architectural applications.</p><p></p>",
+            "image": "shopify://shop_images/reynobond-4mm-core_8b5ebe50-073b-4a67-973c-6f0b071b22b5.png",
+            "title": "Reynobond 4mm Composite Material",
+            "text": "<p></p><p>4mm aluminum composite panels with a fire-retardant core, offering superior fire performance and sleek versatility for architectural applications.</p><p></p>",
             "link_label": "Shop",
-            "link": "shopify://products/alucobond-plus-ready-to-ship-4mm-acm-panels",
+            "link": "shopify://products/reynobond-4mm-fr-composite-material-sheets",
             "link_target": "_self"
           }
         },
         "column_xHicRn": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/alucobond-axcent-logo_a0b5c089-d865-4a83-bafe-31d7e96685d0.png",
-            "title": "Ready-to-ship Aluminum Sheets",
+            "image": "shopify://shop_images/reynoclad.png",
+            "title": "Reynoclad .040 Aluminum Sheets",
             "text": "<p>Flat aluminum sheets in .040\" thickness, perfect for trim, soffits, columns, and cladding. Durable and versatile for dynamic designs.</p><p></p>",
             "link_label": "Shop",
-            "link": "shopify://products/alucobond-axcent-ready-to-ship-aluminum-sheets",
+            "link": "shopify://products/reynoclad-aluminum-sheets-040",
             "link_target": "_self"
           }
         }
@@ -73,16 +76,15 @@
         "column_xHicRn"
       ],
       "custom_css": [
-        ".multicolumn {background: url(\"https://cdn.shopify.com/s/files/1/0645/2540/2290/files/alucobond-project-photo-13.png?v=1737046166&width=3840\") no-repeat center center; background-size: cover;}",
         ".multicolumn-list li {background: #fff; padding: 1%;}",
         "p,h3 {color: #4d4d4d !important;}",
         "p,a {font-family: arial;}",
         "h3 {font-family: Georgia, serif;}",
         "a.link {background-color: #de4826; padding: 5px 30px; border-radius: 0.25rem; color: #fff; text-decoration: none;}",
-        ".svg-wrapper{display:none;}"
+        ".svg-wrapper {display: none;}"
       ],
       "settings": {
-        "title": "",
+        "title": "Reynobond",
         "heading_size": "h1",
         "image_width": "full",
         "image_ratio": "adapt",
@@ -92,10 +94,10 @@
         "button_label": "",
         "button_link": "",
         "link_target": "_self",
-        "color_scheme": "scheme-1",
+        "color_scheme": "scheme-2",
         "columns_mobile": "1",
         "swipe_on_mobile": false,
-        "padding_top": 12,
+        "padding_top": 4,
         "padding_bottom": 12
       }
     }
