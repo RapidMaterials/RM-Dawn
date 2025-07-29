@@ -12,7 +12,8 @@
     "main": {
       "type": "main-search",
       "custom_css": [
-        ".media img {max-height: 180px !important; object-fit: contain !important;}"
+        ".media img {max-height: 180px !important; object-fit: contain !important;}",
+        ".card__inner {max-height: 220px;}"
       ],
       "settings": {
         "columns_desktop": 4,
