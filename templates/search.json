@@ -11,6 +11,9 @@
   "sections": {
     "main": {
       "type": "main-search",
+      "custom_css": [
+        ".media img {max-height: 180px !important; object-fit: contain !important;}"
+      ],
       "settings": {
         "columns_desktop": 4,
         "columns_mobile": "2",
