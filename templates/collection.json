@@ -25,7 +25,9 @@
     },
     "product-grid": {
       "type": "main-collection-product-grid",
-      "custom_css": [],
+      "custom_css": [
+        ".media img {max-height: 180px !important; object-fit: contain !important;}"
+      ],
       "settings": {
         "products_per_page": 36,
         "columns_desktop": 4,
@@ -48,5 +50,8 @@
       }
     }
   },
-  "order": ["banner", "product-grid"]
+  "order": [
+    "banner",
+    "product-grid"
+  ]
 }
