@@ -79,24 +79,6 @@
         "color_scheme": "scheme-1"
       }
     },
-    "collapsible_content_faq_DPyYjd": {
-      "type": "collapsible-content-faq",
-      "name": "FAQ Accordion",
-      "settings": {
-        "caption": "",
-        "heading": "Collapsible content",
-        "heading_size": "h1",
-        "heading_alignment": "center",
-        "layout": "none",
-        "container_color_scheme": "",
-        "color_scheme": "scheme-2",
-        "open_first_collapsible_row": false,
-        "image_ratio": "adapt",
-        "desktop_layout": "image_second",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
     "product-grid": {
       "type": "main-collection-product-grid",
       "custom_css": [
@@ -124,12 +106,30 @@
         "padding_top": 20,
         "padding_bottom": 36
       }
+    },
+    "collapsible_content_faq_DPyYjd": {
+      "type": "collapsible-content-faq",
+      "name": "FAQ Accordion",
+      "settings": {
+        "caption": "",
+        "heading": "{{ collection.title }} FAQ",
+        "heading_size": "h1",
+        "heading_alignment": "center",
+        "layout": "none",
+        "container_color_scheme": "",
+        "color_scheme": "scheme-2",
+        "open_first_collapsible_row": false,
+        "image_ratio": "adapt",
+        "desktop_layout": "image_second",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
     "multicolumn_4a9t7b",
     "banner",
-    "collapsible_content_faq_DPyYjd",
-    "product-grid"
+    "product-grid",
+    "collapsible_content_faq_DPyYjd"
   ]
 }
