@@ -38,6 +38,17 @@
         "oscp_wholesale_b2b_app_block_k7JUnx": {
           "type": "shopify://apps/oscp-wholesale-b2b/blocks/app-block/4d1d9eb6-630d-4c84-ad8e-14dfd07f94ed",
           "settings": {
+            "qty_title": "Qty",
+            "price_title": "Price",
+            "buy_text": "Buy",
+            "off_text": "Off",
+            "each_text": "Each",
+            "discount_value": "Discount Value",
+            "incl_tax_title": "Incl. Tax",
+            "excl_tax_title": "Excl. Tax",
+            "disableruleclmn": false,
+            "disableinclpriceclmn": false,
+            "disableexclpriceclmn": false,
             "PGBC": "#d5d9e0",
             "PGH": "#000000",
             "PGB": "#a5a5a5",
@@ -86,6 +97,7 @@
         },
         "custom_liquid_YYehhG": {
           "type": "custom_liquid",
+          "disabled": true,
           "settings": {
             "custom_liquid": "<a href=\"https://rapidmaterials.com/collections/s-5-pvkit-rail-less-metal-roof-solar-mounting-system\"><img src=https://cdn.shopify.com/s/files/1/0645/2540/2290/files/Website_-_Product_Banner_-_S5_More_Solar.png?v=1752765821\" style=\"display:block;width:100%;margin-bottom:0;\"></a>"
           }
