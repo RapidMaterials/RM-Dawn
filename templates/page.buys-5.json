@@ -19,6 +19,7 @@
     },
     "promo_banner_eG4YGj": {
       "type": "promo-banner",
+      "disabled": true,
       "name": "Promo Banner",
       "settings": {
         "desktop_image": "shopify://shop_images/Website_-_Home_Banner_Desktop_-_S5_More_Solar.gif",
