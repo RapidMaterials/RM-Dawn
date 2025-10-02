@@ -179,6 +179,11 @@
         "type": "shopify://apps/oscp-wholesale-b2b/blocks/app-embed/4d1d9eb6-630d-4c84-ad8e-14dfd07f94ed",
         "disabled": false,
         "settings": {}
+      },
+      "8171265131012698934": {
+        "type": "shopify://apps/oc-quantity-breaks-limit/blocks/orichi-discount/3f38eaa3-2a3f-4e55-bcc9-df5d3f75e351",
+        "disabled": false,
+        "settings": {}
       }
     },
     "color_schemes": {
