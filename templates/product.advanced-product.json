@@ -181,7 +181,8 @@
         ".multicolumn-card .rte,.brand-bio,p {font-size: 1.25rem !important; line-height: 1.5rem !important;}",
         "p {margin: 10px 0 !important;}",
         ".specs li {font-size: 1.25rem; line-height: 1.5rem;}",
-        "iframe {max-width: 400px;}"
+        "iframe {max-width: 400px;}",
+        ".multicolumn-card__info h3, .multicolumn-card__info h4 {margin-top: 2.5% !important;}"
       ],
       "name": "MultiColumn Product",
       "settings": {
@@ -246,6 +247,8 @@
           "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
           "settings": {
             "review_data": "sample_data",
+            "show_shop_reviews": false,
+            "empty_state": "empty_widget",
             "max_width": 1200
           }
         }
