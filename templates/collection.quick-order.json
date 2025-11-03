@@ -9,6 +9,22 @@
  */
 {
   "sections": {
+    "image_banner_73ia4L": {
+      "type": "image-banner",
+      "settings": {
+        "image": "{{ collection.metafields.custom.header_image.value }}",
+        "image_overlay_opacity": 0,
+        "image_height": "adapt",
+        "desktop_content_position": "middle-center",
+        "show_text_box": false,
+        "desktop_content_alignment": "center",
+        "color_scheme": "scheme-1",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
+      }
+    },
     "banner": {
       "type": "main-collection-banner",
       "custom_css": [
@@ -99,6 +115,7 @@
     }
   },
   "order": [
+    "image_banner_73ia4L",
     "banner",
     "product-grid",
     "featured_collection_r9nDbh",
