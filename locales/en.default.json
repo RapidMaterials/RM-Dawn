@@ -592,7 +592,7 @@
         "ship_to_address": "Ship to address (Note: We cannot ship to PO Boxes)"
       },
       "contact": {
-        "address1_label": "Ship to address (Note: We cannot ship to PO Boxes)"
+        "address1_label": "Address (Note: We cannot ship to PO Boxes)"
       }
     }
   }
