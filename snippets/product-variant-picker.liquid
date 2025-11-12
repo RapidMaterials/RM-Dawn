@@ -19,11 +19,11 @@
       {%- liquid
         assign swatch_count = option.values | map: 'swatch' | compact | size
 
-        assign variant_override = product.metafields.custom['variant_style'] | default: '' | strip | downcase
+        assign variant_override = product.metafields.custom.variant_style
 
-          if variant_override == 'swatch'
+          if variant_override == 'Swatch'
             assign picker_type = 'swatch'
-          elsif variant_override == 'button'
+          elsif variant_override == 'Button'
             assign picker_type = 'button'
           else
             assign picker_type = block.settings.picker_type
