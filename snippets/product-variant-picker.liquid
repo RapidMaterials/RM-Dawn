@@ -29,7 +29,7 @@
           endif
         endif
       -%}
-      {%- if picker_type == 'swatch' -%}
+      {%- if picker_type == 'swatch' or variant_override == 'Swatch' -%}
         <fieldset class="js product-form__input product-form__input--swatch">
           <legend class="form__label">
             {{ option.name }}:
