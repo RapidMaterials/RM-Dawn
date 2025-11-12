@@ -18,22 +18,21 @@
     {%- for option in product.options_with_values -%}
       {%- liquid
         assign swatch_count = option.values | map: 'swatch' | compact | size
-
         assign variant_override = product.metafields.custom.variant_style
 
-          if variant_override == 'Swatch'
-            assign picker_type = 'swatch'
-          elsif variant_override == 'Button'
-            assign picker_type = 'button'
-          else
-            assign picker_type = block.settings.picker_type
-          endif
+        if variant_override == 'Swatch'
+          assign picker_type = 'swatch'
+        elsif variant_override == 'Button'
+          assign picker_type = 'button'
+        else
+          assign picker_type = block.settings.picker_type
 
-        if swatch_count > 0 and block.settings.swatch_shape != 'none'
-          if block.settings.picker_type == 'dropdown'
-            assign picker_type = 'swatch_dropdown'
-          else
-            assign picker_type = 'swatch'
+          if swatch_count > 0 and block.settings.swatch_shape != 'none'
+            if block.settings.picker_type == 'dropdown'
+              assign picker_type = 'swatch_dropdown'
+            else
+              assign picker_type = 'swatch'
+            endif
           endif
         endif
       -%}
