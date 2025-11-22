@@ -145,11 +145,6 @@
     },
     "content_for_index": [],
     "blocks": {
-      "5918707185744429496": {
-        "type": "shopify://apps/bss-variant-options/blocks/bss-po-script/2c446099-c349-4e73-80cd-49c9770b7807",
-        "disabled": false,
-        "settings": {}
-      },
       "10384935893930344104": {
         "type": "shopify://apps/seoant-redirects/blocks/brokenlink-404/cc7b1996-e567-42d0-8862-356092041863",
         "disabled": false,
@@ -175,11 +170,6 @@
         "disabled": false,
         "settings": {}
       },
-      "8171265131012698934": {
-        "type": "shopify://apps/oc-quantity-breaks-limit/blocks/orichi-discount/3f38eaa3-2a3f-4e55-bcc9-df5d3f75e351",
-        "disabled": false,
-        "settings": {}
-      },
       "15132424025755801183": {
         "type": "shopify://apps/upload-lift/blocks/app-embed/3c98bdcb-7587-4ade-bfe4-7d8af00d05ca",
         "disabled": false,
@@ -187,6 +177,16 @@
       },
       "12971296166409603227": {
         "type": "shopify://apps/oscp-wholesale/blocks/app-embed/4d1d9eb6-630d-4c84-ad8e-14dfd07f94ed",
+        "disabled": true,
+        "settings": {}
+      },
+      "5918707185744429496": {
+        "type": "shopify://apps/optis-product-options/blocks/bss-po-script/2c446099-c349-4e73-80cd-49c9770b7807",
+        "disabled": true,
+        "settings": {}
+      },
+      "8171265131012698934": {
+        "type": "shopify://apps/oc-quantity-breaks-limit/blocks/orichi-discount/3f38eaa3-2a3f-4e55-bcc9-df5d3f75e351",
         "disabled": true,
         "settings": {}
       }
