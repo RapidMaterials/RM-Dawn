@@ -110,33 +110,26 @@ h3, .price, button { font-size: 14px !important; }
             <p>No products found in this collection.</p>
           {% else %}
             <ul class="product-grid{% if section.settings.quick_add == 'bulk' %} collection-quick-add-bulk{% endif %}">
-  {% assign skip_card_product_styles = false %}
+              {% assign skip_card_product_styles = false %}
 
-  {% for product in related_collection.products %}
-    <li class="list__item">
-      {% render 'card-product',
-        card_product: product,
-        media_aspect_ratio: section.settings.image_ratio,
-        image_shape: section.settings.image_shape,
-        show_secondary_image: section.settings.show_secondary_image,
-        show_vendor: section.settings.show_vendor,
-        show_rating: section.settings.show_rating,
-        skip_styles: skip_card_product_styles,
-        quick_add: section.settings.quick_add,
-        section_id: section.id
-      %}
-    </li>
+              {% for product in related_collection.products %}
+                <li class="list__item">
+                  {% render 'card-product',
+                    card_product: product,
+                    media_aspect_ratio: section.settings.image_ratio,
+                    image_shape: section.settings.image_shape,
+                    show_secondary_image: section.settings.show_secondary_image,
+                    show_vendor: section.settings.show_vendor,
+                    show_rating: section.settings.show_rating,
+                    skip_styles: skip_card_product_styles,
+                    quick_add: section.settings.quick_add,
+                    section_id: section.id
+                  %}
+                </li>
 
-    {% assign skip_card_product_styles = true %}
-  {% endfor %}
-</ul>
-
-
-            <div style="margin-top: 16px;">
-              <a href="{{ related_collection.url }}" class="button button--secondary">
-                View all {{ related_collection.title }}
-              </a>
-            </div>
+                {% assign skip_card_product_styles = true %}
+              {% endfor %}
+            </ul>
           {% endif %}
         </div>
 
@@ -156,17 +149,7 @@ h3, .price, button { font-size: 14px !important; }
 {
   "name": "Compatible Collections",
   "class": "section",
-  "templates": ["collection"],
   "settings": [
-    {
-      "type": "range",
-      "id": "products_per_page",
-      "min": 4,
-      "max": 48,
-      "step": 4,
-      "default": 12,
-      "label": "Products per collection"
-    },
     {
       "type": "color_scheme",
       "id": "color_scheme",
