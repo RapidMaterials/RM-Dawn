@@ -3,38 +3,32 @@
 {{ 'component-price.css' | asset_url | stylesheet_tag }}
 
 {% style %}
-
 .section-{{ section.id }}-padding {
   padding-top: {{ section.settings.padding_top }}px;
   padding-bottom: {{ section.settings.padding_bottom }}px;
 }
 
-/* FORCE LIST BEHAVIOR */
-.compatible-list {
+.product-grid {
   display: flex;
   flex-direction: column;
-  margin: 0;
-  padding: 0;
-  list-style: none;
+  gap: 0;
 }
 
-/* ONE PRODUCT PER ROW */
-.compatible-list .list__item {
+.product-grid .list__item {
   display: flex;
   align-items: center;
-  gap: 16px;
-  padding: 14px 16px;
+  justify-content: space-between;
+  padding: 12px 16px;
   border-bottom: 1px solid #e1e1e1;
 }
 
-/* Card layout fixes */
 .card {
   min-height: 124px;
 }
 
 .card__content {
   display: flex;
-  flex: 1;
+  width: calc(100% - 124px);
   justify-content: space-between;
   align-items: center;
 }
@@ -46,35 +40,26 @@
   align-items: center;
 }
 
-/* Quantity + button */
 .quick-add-form {
   display: flex;
   align-items: center;
   gap: 8px;
-  margin-left: auto;
 }
 
-.card .quantity,
-.card .quantity__input,
-.card .quantity__button {
-  display: flex !important;
-  visibility: visible !important;
-  opacity: 1 !important;
+.quick-add-form input[type="number"] {
+  width: 64px;
 }
 
-/* Mobile */
-@media (max-width: 749px) {
-  .compatible-list .list__item {
+@media screen and (max-width: 749px) {
+  .product-grid .list__item {
     flex-direction: column;
     align-items: flex-start;
   }
 
   .quick-add-form {
     margin-top: 8px;
-    margin-left: 0;
   }
 }
-
 {% endstyle %}
 
 {% assign compatible_collections = collection.metafields.custom.compatible_collections.value %}
@@ -86,12 +71,10 @@
       {% for related_collection in compatible_collections %}
 
         <div class="collection">
-          <h2 class="title title--primary">
-            {{ related_collection.title }}
-          </h2>
+          <h2 class="title title--primary">{{ related_collection.title }}</h2>
 
           {% if related_collection.products.size > 0 %}
-            <ul class="compatible-list">
+            <ul class="product-grid">
 
               {% for product in related_collection.products %}
                 {% assign variant = product.selected_or_first_available_variant %}
@@ -109,16 +92,26 @@
                   %}
 
                   {% if variant.available %}
-                    <form method="post" action="/cart/add" class="quick-add-form">
+                    <form
+                      method="post"
+                      action="/cart/add"
+                      class="quick-add-form"
+                    >
                       <input type="hidden" name="id" value="{{ variant.id }}">
 
-                      {% render 'quantity-input',
-                        id: section.id | append: '-' | append: product.id,
-                        min: 1,
-                        value: 1
-                      %}
+                      <input
+                        type="number"
+                        name="quantity"
+                        value="1"
+                        min="1"
+                        class="quantity__input"
+                        aria-label="Quantity"
+                      >
 
-                      <button type="submit" class="button button--primary">
+                      <button
+                        type="submit"
+                        class="button button--primary"
+                      >
                         Add to cart
                       </button>
                     </form>
@@ -126,7 +119,6 @@
                     <span class="badge badge--sold-out">Out of stock</span>
                   {% endif %}
                 </li>
-
               {% endfor %}
 
             </ul>
@@ -146,7 +138,6 @@
 {% schema %}
 {
   "name": "Compatible Collections",
-  "tag": "section",
   "class": "section",
   "settings": [
     {
