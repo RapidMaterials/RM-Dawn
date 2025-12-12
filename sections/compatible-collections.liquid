@@ -15,13 +15,6 @@
   <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
 {% endif %}
 
-{% if section.settings.quick_add == 'bulk' %}
-  <script src="{{ 'quick-add-bulk.js' | asset_url }}" defer="defer"></script>
-  <script src="{{ 'quantity-popover.js' | asset_url }}" defer="defer"></script>
-  <script src="{{ 'price-per-item.js' | asset_url }}" defer="defer"></script>
-  <script src="{{ 'quick-order-list.js' | asset_url }}" defer="defer"></script>
-{% endif %}
-
 {% style %}
 .section-{{ section.id }}-padding {
   padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
@@ -109,7 +102,7 @@ h3, .price, button { font-size: 14px !important; }
           {% if related_collection.products.size == 0 %}
             <p>No products found in this collection.</p>
           {% else %}
-            <ul class="product-grid{% if section.settings.quick_add == 'bulk' %} collection-quick-add-bulk{% endif %}">
+            <ul class="product-grid">
               {% assign skip_card_product_styles = false %}
 
               {% for product in related_collection.products %}
@@ -122,8 +115,8 @@ h3, .price, button { font-size: 14px !important; }
                     show_vendor: section.settings.show_vendor,
                     show_rating: section.settings.show_rating,
                     skip_styles: skip_card_product_styles,
-                    quick_add: section.settings.quick_add,
-                    section_id: 'main-collection-product-grid'
+                    quick_add: 'standard',
+                    section_id: section.id
                   %}
                 </li>
 
@@ -199,12 +192,11 @@ h3, .price, button { font-size: 14px !important; }
     {
       "type": "select",
       "id": "quick_add",
-      "default": "none",
+      "default": "standard",
       "label": "Quick add",
       "options": [
         { "value": "none", "label": "None" },
-        { "value": "standard", "label": "Standard" },
-        { "value": "bulk", "label": "Bulk" }
+        { "value": "standard", "label": "Standard" }
       ]
     },
     {
