@@ -2,36 +2,11 @@
 {{ 'component-card.css' | asset_url | stylesheet_tag }}
 {{ 'component-price.css' | asset_url | stylesheet_tag }}
 
-{% if section.settings.image_shape == 'blob' %}
-  {{ 'mask-blobs.css' | asset_url | stylesheet_tag }}
-{% endif %}
-
-{% unless section.settings.quick_add == 'none' %}
-  {{ 'quick-add.css' | asset_url | stylesheet_tag }}
-{% endunless %}
-
-{% if section.settings.quick_add == 'standard' %}
-  <script src="{{ 'quick-add.js' | asset_url }}" defer="defer"></script>
-  <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
-{% endif %}
-
 {% style %}
 .section-{{ section.id }}-padding {
-  padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
-  padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  padding-top: {{ section.settings.padding_top }}px;
+  padding-bottom: {{ section.settings.padding_bottom }}px;
 }
-
-@media screen and (min-width: 750px) {
-  .section-{{ section.id }}-padding {
-    padding-top: {{ section.settings.padding_top }}px;
-    padding-bottom: {{ section.settings.padding_bottom }}px;
-  }
-}
-
-.card--card .quick-add { margin: 0; }
-h3, .price, button { font-size: 14px !important; }
-.price { margin-top: 0 !important; text-align: right; }
-.card__heading { text-align: left !important; }
 
 .product-grid {
   display: flex;
@@ -51,37 +26,38 @@ h3, .price, button { font-size: 14px !important; }
   min-height: 124px;
 }
 
-.card > .card__content {
+.card__content {
   display: flex;
   width: calc(100% - 124px);
   justify-content: space-between;
   align-items: center;
 }
 
-.card__content > .card__information {
+.card__information {
   display: flex;
   justify-content: space-between;
   width: 100%;
   align-items: center;
 }
 
-.card__inner {
-  max-width: 140px;
+.quick-add-form {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.quick-add-form input[type="number"] {
+  width: 64px;
 }
 
 @media screen and (max-width: 749px) {
   .product-grid .list__item {
     flex-direction: column;
-    padding: 8px;
+    align-items: flex-start;
   }
 
-  .price {
-    margin-top: 10px !important;
-    text-align: left;
-  }
-
-  .card__inner {
-    max-width: 100px;
+  .quick-add-form {
+    margin-top: 8px;
   }
 }
 {% endstyle %}
@@ -95,17 +71,14 @@ h3, .price, button { font-size: 14px !important; }
       {% for related_collection in compatible_collections %}
 
         <div class="collection">
-          <h2 class="title title--primary">
-            {{ related_collection.title }}
-          </h2>
+          <h2 class="title title--primary">{{ related_collection.title }}</h2>
 
-          {% if related_collection.products.size == 0 %}
-            <p>No products found in this collection.</p>
-          {% else %}
+          {% if related_collection.products.size > 0 %}
             <ul class="product-grid">
-              {% assign skip_card_product_styles = false %}
 
               {% for product in related_collection.products %}
+                {% assign variant = product.selected_or_first_available_variant %}
+
                 <li class="list__item">
                   {% render 'card-product',
                     card_product: product,
@@ -114,17 +87,43 @@ h3, .price, button { font-size: 14px !important; }
                     show_secondary_image: section.settings.show_secondary_image,
                     show_vendor: section.settings.show_vendor,
                     show_rating: section.settings.show_rating,
-                    skip_styles: skip_card_product_styles,
-                    quick_add: 'standard',
-                    show_quantity: true,
+                    quick_add: 'none',
                     section_id: section.id
                   %}
 
-                </li>
+                  {% if variant.available %}
+                    <form
+                      method="post"
+                      action="/cart/add"
+                      class="quick-add-form"
+                    >
+                      <input type="hidden" name="id" value="{{ variant.id }}">
 
-                {% assign skip_card_product_styles = true %}
+                      <input
+                        type="number"
+                        name="quantity"
+                        value="1"
+                        min="1"
+                        class="quantity__input"
+                        aria-label="Quantity"
+                      >
+
+                      <button
+                        type="submit"
+                        class="button button--primary"
+                      >
+                        Add to cart
+                      </button>
+                    </form>
+                  {% else %}
+                    <span class="badge badge--sold-out">Out of stock</span>
+                  {% endif %}
+                </li>
               {% endfor %}
+
             </ul>
+          {% else %}
+            <p>No products found in this collection.</p>
           {% endif %}
         </div>
 
@@ -134,10 +133,6 @@ h3, .price, button { font-size: 14px !important; }
     {% endif %}
 
   </div>
-
-  {% if section.settings.image_shape == 'arch' %}
-    {{ 'mask-arch.svg' | inline_asset_content }}
-  {% endif %}
 </div>
 
 {% schema %}
@@ -190,16 +185,6 @@ h3, .price, button { font-size: 14px !important; }
       "id": "show_rating",
       "default": false,
       "label": "Show rating"
-    },
-    {
-      "type": "select",
-      "id": "quick_add",
-      "default": "standard",
-      "label": "Quick add",
-      "options": [
-        { "value": "none", "label": "None" },
-        { "value": "standard", "label": "Standard" }
-      ]
     },
     {
       "type": "range",
