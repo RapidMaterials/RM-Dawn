@@ -24,6 +24,7 @@
         "color_scheme": "scheme-2"
       }
     },
+
     "product-grid": {
       "type": "collection-product-list",
       "custom_css": [
@@ -51,6 +52,12 @@
         "padding_bottom": 24
       }
     },
+
+    "compatible_collections": {
+      "type": "compatible-collections",
+      "settings": {}
+    },
+
     "collapsible_content_faq_P8N8E4": {
       "type": "collapsible-content-faq",
       "name": "FAQ Accordion",
@@ -70,9 +77,11 @@
       }
     }
   },
+
   "order": [
     "banner",
     "product-grid",
+    "compatible_collections",
     "collapsible_content_faq_P8N8E4"
   ]
 }
