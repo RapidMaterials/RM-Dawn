@@ -100,26 +100,16 @@
                   %}
 
                   {% if variant.available %}
-                    <form
-                      method="post"
-                      action="/cart/add"
-                      class="quick-add-form"
-                    >
+                    <form method="post" action="/cart/add" class="quick-add-form">
                       <input type="hidden" name="id" value="{{ variant.id }}">
 
-                      <input
-                        type="number"
-                        name="quantity"
-                        value="1"
-                        min="1"
-                        class="quantity__input"
-                        aria-label="Quantity"
-                      >
+                      {% render 'quantity-input',
+                        id: section.id | append: '-' | append: product.id,
+                        min: 1,
+                        value: 1
+                      %}
 
-                      <button
-                        type="submit"
-                        class="button button--primary"
-                      >
+                      <button type="submit" class="button button--primary">
                         Add to cart
                       </button>
                     </form>
