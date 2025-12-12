@@ -4,38 +4,30 @@
 
 {% style %}
 
-/* Section padding */
 .section-{{ section.id }}-padding {
   padding-top: {{ section.settings.padding_top }}px;
   padding-bottom: {{ section.settings.padding_bottom }}px;
 }
 
-/* Force quantity selector visible inside cards */
-.card .quantity,
-.card .quantity__input,
-.card .quantity__button {
-  display: flex !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-}
-
-/* Independent grid (no dependency on main product list) */
-.compatible-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  padding: 0;
+/* FORCE LIST BEHAVIOR */
+.compatible-list {
+  display: flex;
+  flex-direction: column;
   margin: 0;
+  padding: 0;
   list-style: none;
 }
 
-.compatible-grid .list__item {
+/* ONE PRODUCT PER ROW */
+.compatible-list .list__item {
   display: flex;
   align-items: center;
-  padding: 12px 16px;
+  gap: 16px;
+  padding: 14px 16px;
   border-bottom: 1px solid #e1e1e1;
 }
 
-/* Card layout fixes for grid context */
+/* Card layout fixes */
 .card {
   min-height: 124px;
 }
@@ -54,32 +46,32 @@
   align-items: center;
 }
 
-/* Qty + ATC */
+/* Quantity + button */
 .quick-add-form {
   display: flex;
   align-items: center;
   gap: 8px;
+  margin-left: auto;
 }
 
-.quick-add-form .quantity {
-  margin: 0;
-}
-
-/* Tablet */
-@media (max-width: 990px) {
-  .compatible-grid {
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  }
+.card .quantity,
+.card .quantity__input,
+.card .quantity__button {
+  display: flex !important;
+  visibility: visible !important;
+  opacity: 1 !important;
 }
 
 /* Mobile */
 @media (max-width: 749px) {
-  .compatible-grid {
-    grid-template-columns: 1fr;
+  .compatible-list .list__item {
+    flex-direction: column;
+    align-items: flex-start;
   }
 
   .quick-add-form {
     margin-top: 8px;
+    margin-left: 0;
   }
 }
 
@@ -93,13 +85,13 @@
     {% if compatible_collections != blank %}
       {% for related_collection in compatible_collections %}
 
-        <div class="collection page-width">
+        <div class="collection">
           <h2 class="title title--primary">
             {{ related_collection.title }}
           </h2>
 
           {% if related_collection.products.size > 0 %}
-            <ul class="compatible-grid">
+            <ul class="compatible-list">
 
               {% for product in related_collection.products %}
                 {% assign variant = product.selected_or_first_available_variant %}
@@ -117,11 +109,7 @@
                   %}
 
                   {% if variant.available %}
-                    <form
-                      method="post"
-                      action="/cart/add"
-                      class="quick-add-form"
-                    >
+                    <form method="post" action="/cart/add" class="quick-add-form">
                       <input type="hidden" name="id" value="{{ variant.id }}">
 
                       {% render 'quantity-input',
@@ -130,17 +118,12 @@
                         value: 1
                       %}
 
-                      <button
-                        type="submit"
-                        class="button button--primary"
-                      >
+                      <button type="submit" class="button button--primary">
                         Add to cart
                       </button>
                     </form>
                   {% else %}
-                    <span class="badge badge--sold-out">
-                      Out of stock
-                    </span>
+                    <span class="badge badge--sold-out">Out of stock</span>
                   {% endif %}
                 </li>
 
@@ -163,6 +146,7 @@
 {% schema %}
 {
   "name": "Compatible Collections",
+  "tag": "section",
   "class": "section",
   "settings": [
     {
