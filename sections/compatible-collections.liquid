@@ -68,6 +68,94 @@
   }
 }
 
+.product-grid .list__item {
+		
+		    display: flex;
+		
+		    align-items: center;
+		
+		    justify-content: space-between;
+		
+		    padding: 12px 16px;
+		
+		    border-bottom: 1px solid #e1e1e1;
+}
+
+
+.product-grid {
+		
+		    display: flex;
+		
+		    flex-direction: column;
+		
+		    gap: 0;
+}
+
+
+.card-wrapper {
+		
+		    color: inherit;
+		
+		    height: 100%;
+		
+		    position: relative;
+		
+		    text-decoration: none;
+}
+
+
+.card:not(.ratio) {
+		
+		    flex-direction: row !important;
+}
+
+
+.ratio {
+		
+		    display: inline;
+}
+
+.product-grid .list__item .card-wrapper .card__media {
+		
+		    flex-shrink: 0;
+		
+		    width: 124px;
+		
+		    margin: 0;
+}
+
+.card__media, .card .media {
+		
+		    bottom: 0;
+		
+		    position: absolute;
+		
+		    top: 0;
+}
+
+.card__content {
+		
+		    display: flex;
+		
+		    flex: 1;
+		
+		    justify-content: space-between;
+		
+		    align-items: center;
+}
+
+.card__content > .card__information {
+		
+		    display: flex;
+		
+		    justify-content: space-between;
+		
+		    width: 100%;
+		
+		    align-items: center;
+}
+
+
 {% endstyle %}
 
 {% assign compatible_collections = collection.metafields.custom.compatible_collections.value %}
