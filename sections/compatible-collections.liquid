@@ -22,6 +22,14 @@
   border-bottom: 1px solid #e1e1e1;
 }
 
+.card .quantity,
+.card .quantity__input,
+.card .quantity__button {
+  display: flex !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
 .card {
   min-height: 124px;
 }
@@ -92,29 +100,19 @@
                   %}
 
                   {% if variant.available %}
-                    <form
-                      method="post"
-                      action="/cart/add"
-                      class="quick-add-form"
-                    >
-                      <input type="hidden" name="id" value="{{ variant.id }}">
+                    <form method="post" action="/cart/add" class="quick-add-form">
+                        <input type="hidden" name="id" value="{{ variant.id }}">
 
-                      <input
-                        type="number"
-                        name="quantity"
-                        value="1"
-                        min="1"
-                        class="quantity__input"
-                        aria-label="Quantity"
-                      >
+                        {% render 'quantity-input',
+                          id: section.id | append: '-' | append: product.id,
+                          min: 1,
+                          value: 1
+                        %}
 
-                      <button
-                        type="submit"
-                        class="button button--primary"
-                      >
-                        Add to cart
-                      </button>
-                    </form>
+                        <button type="submit" class="button button--primary">
+                          Add to cart
+                        </button>
+                      </form>
                   {% else %}
                     <span class="badge badge--sold-out">Out of stock</span>
                   {% endif %}
