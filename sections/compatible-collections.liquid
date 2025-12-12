@@ -27,7 +27,7 @@
           <h2 class="title title--primary">{{ related_collection.title }}</h2>
 
           {% if related_collection.products.size > 0 %}
-            <ul class="product-grid">
+            <ul class="list-grid">
 
               {% for product in related_collection.products %}
                 {% assign variant = product.selected_or_first_available_variant %}
