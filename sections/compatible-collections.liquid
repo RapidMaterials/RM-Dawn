@@ -26,15 +26,6 @@ ul.list-grid {
   padding: 10px 0;
 }
 
-.list-grid .quick-add-bulk {
-  width: 120px;
-  align-items: center;
-}
-
-button.quantity__button {
-  width: 25px;
-}
-
 .list-grid .card {
   display: flex;
   flex-direction: row;
@@ -44,44 +35,18 @@ button.quantity__button {
   width: 120px;
 }
 
-.list-grid .card__heading,
-.list-grid .card-information .price {
-  font-size: 1.1em;
-  text-align: left;
-}
-
 .list-grid .card__content {
-  align-items: center;
   width: calc(100% - 120px);
   display: flex;
   justify-content: space-between;
-}
-
-.card--card.card--media > .card__content {
-  margin-top: 0;
-}
-
-.card__badge > span {
-  font-size: 0.8em;
-  justify-content: center;
-  margin: 0 auto;
-}
-
-.card__media {
-  margin: 0.5em;
-  width: calc(100% - 1em);
-}
-
-.list-grid .card--media .card__inner .card__content {
-  padding: 20px;
-  font-size: 0.75em;
+  align-items: center;
 }
 
 quick-add-bulk {
   margin: 0;
 }
 
-.active quick-add-bulk.quick-add-bulk::after {
+.active quick-add-bulk::after {
   content: 'ADD TO CART';
   font-size: 0.75em;
   font-style: italic;
@@ -95,33 +60,39 @@ quick-add-bulk {
   <div class="page-width">
 
     {% if compatible_collections != blank %}
+
       {% for related_collection in compatible_collections %}
         <div class="collection">
-            <h3 class="title title--primary">
+
+          <h3 class="title title--primary">
             {{ related_collection.title }}
-            </h3>
+          </h3>
 
-            {% assign sorted_products = related_collection.products | sort: 'title' %}
+          {% assign sorted_products = related_collection.products | sort_natural: 'title' %}
+          {% assign rendered_ids = ',' %}
 
-            <ul class="product-grid list-grid collection-quick-add-bulk">
-            {% assign rendered_ids = '' %}
+          <ul class="product-grid list-grid collection-quick-add-bulk">
 
             {% for product in sorted_products %}
-                {% unless rendered_ids contains product.id %}
+              {% assign id_token = ',' | append: product.id | append: ',' %}
+
+              {% unless rendered_ids contains id_token %}
                 {% assign rendered_ids = rendered_ids | append: product.id | append: ',' %}
 
                 <li class="list__item">
-                    {% render 'card-product',
+                  {% render 'card-product',
                     card_product: product,
                     quick_add: section.settings.quick_add,
                     section_id: section.id
-                    %}
+                  %}
                 </li>
-                {% endunless %}
+
+              {% endunless %}
             {% endfor %}
-            </ul>
+
+          </ul>
         </div>
-        {% endfor %}
+      {% endfor %}
 
     {% else %}
       <p>No compatible collections assigned.</p>
