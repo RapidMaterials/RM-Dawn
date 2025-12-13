@@ -85,6 +85,59 @@
   align-items: center;
   gap: 14px;
 }
+
+
+/* --- INLINE EXPANDING SEARCH (Dawn Modal Override) --- */
+
+.header__search-expand details-modal {
+  position: relative;
+}
+
+/* Remove modal backdrop */
+.header__search-expand .search-modal {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  background: transparent;
+  box-shadow: none;
+  padding: 0;
+  max-width: none;
+  width: 0;
+  overflow: hidden;
+  transition: width 0.25s ease;
+}
+
+/* Hide modal overlay */
+.header__search-expand .search-modal__overlay {
+  display: none !important;
+}
+
+/* When open → expand inline */
+.header__search-expand details[open] .search-modal {
+  width: 320px; /* adjust */
+}
+
+/* Input styling */
+.header__search-expand .search__input {
+  height: 44px;
+  border-radius: 4px;
+  background: white;
+  border: 1px solid #ccc;
+}
+
+/* Prevent modal centering */
+.header__search-expand .search-modal__content {
+  position: static;
+  padding: 0;
+  margin: 0;
+}
+
+/* Hide close button (optional) */
+.header__search-expand .search-modal__close-button {
+  display: none;
+}
+
 {% endstyle %}
 
 {% schema %}
