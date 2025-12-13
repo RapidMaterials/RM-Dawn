@@ -6,19 +6,21 @@
   <div class="logo-bar-header__logo">
     <a href="{{ routes.root_url }}">
       <img
-        src="{{ 'rapid-logo.svg' | asset_url }}"
+        src="{{ section.settings.logo | image_url: width: 600 }}"
         alt="{{ shop.name }}"
         loading="eager"
       >
     </a>
   </div>
 
-  <!-- HEADER ICONS (REUSED FROM DAWN) -->
+  <!-- ICONS -->
   <div class="logo-bar-header__icons header__icons">
 
-    {% render 'header-search', input_id: 'Search-In-Modal-Top' %}
+    {% if section.settings.enable_search %}
+      {% render 'header-search', input_id: 'Search-In-Modal-Top' %}
+    {% endif %}
 
-    {% if shop.customer_accounts_enabled %}
+    {% if section.settings.enable_account and shop.customer_accounts_enabled %}
       <a
         href="{% if customer %}{{ routes.account_url }}{% else %}{{ routes.account_login_url }}{% endif %}"
         class="header__icon header__icon--account link focus-inset"
@@ -33,32 +35,34 @@
       </a>
     {% endif %}
 
-    <a
-      href="{{ routes.cart_url }}"
-      class="header__icon header__icon--cart link focus-inset"
-      id="cart-icon-bubble"
-    >
-      {% if cart == empty %}
-        <span class="svg-wrapper">
-          {{ 'icon-cart-empty.svg' | inline_asset_content }}
-        </span>
-      {% else %}
-        <span class="svg-wrapper">
-          {{ 'icon-cart.svg' | inline_asset_content }}
-        </span>
-      {% endif %}
-
-      {% if cart != empty %}
-        <div class="cart-count-bubble">
-          {% if cart.item_count < 100 %}
-            <span aria-hidden="true">{{ cart.item_count }}</span>
-          {% endif %}
-          <span class="visually-hidden">
-            {{ 'sections.header.cart_count' | t: count: cart.item_count }}
+    {% if section.settings.enable_cart %}
+      <a
+        href="{{ routes.cart_url }}"
+        class="header__icon header__icon--cart link focus-inset"
+        id="cart-icon-bubble"
+      >
+        {% if cart == empty %}
+          <span class="svg-wrapper">
+            {{ 'icon-cart-empty.svg' | inline_asset_content }}
           </span>
-        </div>
-      {% endif %}
-    </a>
+        {% else %}
+          <span class="svg-wrapper">
+            {{ 'icon-cart.svg' | inline_asset_content }}
+          </span>
+        {% endif %}
+
+        {% if cart != empty %}
+          <div class="cart-count-bubble">
+            {% if cart.item_count < 100 %}
+              <span aria-hidden="true">{{ cart.item_count }}</span>
+            {% endif %}
+            <span class="visually-hidden">
+              {{ 'sections.header.cart_count' | t: count: cart.item_count }}
+            </span>
+          </div>
+        {% endif %}
+      </a>
+    {% endif %}
 
   </div>
 </div>
@@ -88,6 +92,35 @@
   "name": "Logo Bar Header",
   "tag": "section",
   "class": "logo-bar-header-section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo image"
+    },
+    {
+      "type": "header",
+      "content": "Header icons"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_search",
+      "label": "Enable search",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_account",
+      "label": "Enable account",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_cart",
+      "label": "Enable cart",
+      "default": true
+    }
+  ],
   "presets": [
     {
       "name": "Logo Bar Header"
