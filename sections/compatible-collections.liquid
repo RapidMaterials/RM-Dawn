@@ -1,3 +1,5 @@
+{{ 'component-card.css' | asset_url | stylesheet_tag }}
+{{ 'component-price.css' | asset_url | stylesheet_tag }}
 {{ 'quick-add.css' | asset_url | stylesheet_tag }}
 {{ 'quick-order-list.css' | asset_url | stylesheet_tag }}
 
@@ -6,67 +8,30 @@
 <script src="{{ 'price-per-item.js' | asset_url }}" defer></script>
 <script src="{{ 'quick-order-list.js' | asset_url }}" defer></script>
 
-
 {% assign compatible_collections = collection.metafields.custom.compatible_collections.value %}
 
-<div class="section-{{ section.id }}-padding page-width">
-  {% if compatible_collections != blank %}
+<div class="page-width">
+  <ul
+    id="product-grid"
+    class="product-grid collection-quick-add-bulk"
+  >
+    {% assign rendered_ids = '' %}
 
-    <ul id="product-grid" class="product-grid">
-      {% assign rendered_product_ids = '' %}
+    {% for related_collection in compatible_collections %}
+      {% for product in related_collection.products %}
+        {% unless rendered_ids contains product.id %}
+          {% assign rendered_ids = rendered_ids | append: product.id | append: ',' %}
 
-      {% for related_collection in compatible_collections %}
-        {% for product in related_collection.products %}
+          <li class="list__item">
+            {% render 'card-product',
+              card_product: product,
+              quick_add: 'bulk',
+              section_id: section.id
+            %}
+          </li>
 
-          {%- unless rendered_product_ids contains product.id -%}
-            {% assign rendered_product_ids = rendered_product_ids | append: product.id | append: ',' %}
-
-            <li class="list__item">
-              {% render 'card-product',
-                card_product: product,
-                media_aspect_ratio: section.settings.image_ratio,
-                image_shape: section.settings.image_shape,
-                show_secondary_image: section.settings.show_secondary_image,
-                show_vendor: false,
-                show_rating: false,
-                quick_add: 'standard',
-                section_id: section.id
-              %}
-            </li>
-
-          {%- endunless -%}
-
-        {% endfor %}
+        {% endunless %}
       {% endfor %}
-    </ul>
-
-  {% else %}
-    <p>No compatible products found.</p>
-  {% endif %}
+    {% endfor %}
+  </ul>
 </div>
-
-{% schema %}
-{
-  "name": "Compatible Quick Add",
-  "tag": "section",
-  "class": "section",
-  "settings": [
-    {
-      "type": "select",
-      "id": "image_ratio",
-      "options": [
-        { "value": "adapt", "label": "Adapt" },
-        { "value": "square", "label": "Square" }
-      ],
-      "default": "square",
-      "label": "Image ratio"
-    },
-    {
-      "type": "checkbox",
-      "id": "show_secondary_image",
-      "default": false,
-      "label": "Show secondary image"
-    }
-  ]
-}
-{% endschema %}
