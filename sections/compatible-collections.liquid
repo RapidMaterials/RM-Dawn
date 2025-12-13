@@ -1,208 +1,69 @@
-{{ 'template-collection.css' | asset_url | stylesheet_tag }}
 {{ 'component-card.css' | asset_url | stylesheet_tag }}
 {{ 'component-price.css' | asset_url | stylesheet_tag }}
+{{ 'quick-add.css' | asset_url | stylesheet_tag }}
 
-{% style %}
- .section-{{ section.id }}-padding {
-  padding-top: {{ section.settings.padding_top }}px;
-  padding-bottom: {{ section.settings.padding_bottom }}px;
-}
-ul.list-grid {
-    max-width: 1200px;
-    margin: auto;
-}
-
-.list-grid li.list__item {
-    display: flex;
-    flex-direction: row;
-}
-.list-grid form.quick-add-form {
-    width: 320px;
-    display: flex;
-    align-items:center;
-    margin-bottom:30px;
-}
-.list-grid .card-wrapper {
-    width: calc(100% - 320px);
-}
-.list-grid .card{
-    display: flex;
-    flex-direction: row;
-}
-
-.list-grid .card__inner.ratio {
-    width: 140px;
-}
-.list-grid .card__heading, .list-grid .card-information .price {
-    font-size: 1.1em;
-    text-align: left;
-}
-.list-grid  .card__content{
-  align-items:center;
-}
-.list-grid > .list__item > span.badge {
-    border: 0;
-    align-items: center;
-    display: flex;
-    font-size: 1em;
-    max-height:30px;
-    padding-top: 30px;
-}
-.card__badge > span{
-    font-size: .8em;
-    justify-content: center;
-    margin: 0 auto;
-}
-.card__media {
-    margin: .5em;
-    width: calc(100% - 2 * .5em);
-}
-
-.list-grid .card--media .card__inner .card__content{
-  padding:20px;
-  font-size: .75em;
-}
-
-/* Mobile */
-@media (max-width: 749px) {
-  
-}
-
-{% endstyle %}
+<script src="{{ 'quick-add.js' | asset_url }}" defer></script>
+<script src="{{ 'product-form.js' | asset_url }}" defer></script>
 
 {% assign compatible_collections = collection.metafields.custom.compatible_collections.value %}
 
-<div class="section-{{ section.id }}-padding gradient color-{{ section.settings.color_scheme }}">
-  <div class="page-width">
+<div class="section-{{ section.id }}-padding page-width">
+  {% if compatible_collections != blank %}
 
-    {% if compatible_collections != blank %}
+    <ul id="product-grid" class="product-grid">
+      {% assign rendered_product_ids = '' %}
+
       {% for related_collection in compatible_collections %}
+        {% for product in related_collection.products %}
 
-        <div class="collection">
-          <h2 class="title title--primary">{{ related_collection.title }}</h2>
+          {%- unless rendered_product_ids contains product.id -%}
+            {% assign rendered_product_ids = rendered_product_ids | append: product.id | append: ',' %}
 
-          {% if related_collection.products.size > 0 %}
-            <ul class="list-grid">
+            <li class="list__item">
+              {% render 'card-product',
+                card_product: product,
+                media_aspect_ratio: section.settings.image_ratio,
+                image_shape: section.settings.image_shape,
+                show_secondary_image: section.settings.show_secondary_image,
+                show_vendor: false,
+                show_rating: false,
+                quick_add: 'standard',
+                section_id: section.id
+              %}
+            </li>
 
-              {% for product in related_collection.products %}
-                {% assign variant = product.selected_or_first_available_variant %}
+          {%- endunless -%}
 
-                <li class="list__item">
-                  {% render 'card-product',
-                    card_product: product,
-                    media_aspect_ratio: section.settings.image_ratio,
-                    image_shape: section.settings.image_shape,
-                    show_secondary_image: section.settings.show_secondary_image,
-                    show_vendor: section.settings.show_vendor,
-                    show_rating: section.settings.show_rating,
-                    quick_add: 'none',
-                    section_id: section.id
-                  %}
-
-                  {% if variant.available %}
-                    <form method="post" action="/cart/add" class="quick-add-form">
-                        <input type="hidden" name="id" value="{{ variant.id }}">
-
-                        {% render 'quantity-input',
-                          id: section.id | append: '-' | append: product.id,
-                          min: 0,
-                          value: 1
-                        %}
-
-                        <button type="submit" class="button button--primary">
-                          Add to cart
-                        </button>
-                      </form>
-                  {% else %}
-                    <span class="badge badge--sold-out">Out of stock</span>
-                  {% endif %}
-                </li>
-              {% endfor %}
-
-            </ul>
-          {% else %}
-            <p>No products found in this collection.</p>
-          {% endif %}
-        </div>
-
+        {% endfor %}
       {% endfor %}
-    {% else %}
-      <p>No compatible collections assigned.</p>
-    {% endif %}
+    </ul>
 
-  </div>
+  {% else %}
+    <p>No compatible products found.</p>
+  {% endif %}
 </div>
 
 {% schema %}
 {
-  "name": "Compatible Collections",
+  "name": "Compatible Quick Add",
+  "tag": "section",
   "class": "section",
   "settings": [
-    {
-      "type": "color_scheme",
-      "id": "color_scheme",
-      "label": "Color scheme",
-      "default": "scheme-1"
-    },
     {
       "type": "select",
       "id": "image_ratio",
       "options": [
         { "value": "adapt", "label": "Adapt" },
-        { "value": "portrait", "label": "Portrait" },
         { "value": "square", "label": "Square" }
       ],
-      "default": "adapt",
+      "default": "square",
       "label": "Image ratio"
-    },
-    {
-      "type": "select",
-      "id": "image_shape",
-      "options": [
-        { "value": "default", "label": "Default" },
-        { "value": "arch", "label": "Arch" },
-        { "value": "blob", "label": "Blob" }
-      ],
-      "default": "default",
-      "label": "Image shape"
     },
     {
       "type": "checkbox",
       "id": "show_secondary_image",
       "default": false,
       "label": "Show secondary image"
-    },
-    {
-      "type": "checkbox",
-      "id": "show_vendor",
-      "default": false,
-      "label": "Show vendor"
-    },
-    {
-      "type": "checkbox",
-      "id": "show_rating",
-      "default": false,
-      "label": "Show rating"
-    },
-    {
-      "type": "range",
-      "id": "padding_top",
-      "min": 0,
-      "max": 100,
-      "step": 4,
-      "unit": "px",
-      "label": "Padding top",
-      "default": 36
-    },
-    {
-      "type": "range",
-      "id": "padding_bottom",
-      "min": 0,
-      "max": 100,
-      "step": 4,
-      "unit": "px",
-      "label": "Padding bottom",
-      "default": 36
     }
   ]
 }
