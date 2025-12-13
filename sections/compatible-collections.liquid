@@ -70,39 +70,20 @@ quick-add-bulk {
             {{ related_collection.title }}
           </h3>
 
-          {%- comment -%}
-            STEP 1: Extract & sort titles (this ALWAYS works)
-          {%- endcomment -%}
-          {% assign sorted_titles = related_collection.products | map: 'title' | sort_natural %}
-          {% assign rendered_ids = ',' %}
+          {% assign sorted_products = related_collection.products | sort_natural: 'title' %}
 
           <ul class="product-grid list-grid collection-quick-add-bulk">
-
-            {%- comment -%}
-              STEP 2: Loop titles, then match products back
-            {%- endcomment -%}
-            {% for title in sorted_titles %}
-              {% for product in related_collection.products %}
-                {% if product.title == title %}
-                  {% assign id_token = ',' | append: product.id | append: ',' %}
-
-                  {% unless rendered_ids contains id_token %}
-                    {% assign rendered_ids = rendered_ids | append: product.id | append: ',' %}
-
-                    <li class="list__item">
-                      {% render 'card-product',
-                        card_product: product,
-                        quick_add: section.settings.quick_add,
-                        section_id: section.id
-                      %}
-                    </li>
-
-                  {% endunless %}
-                {% endif %}
-              {% endfor %}
+            {% for product in sorted_products %}
+              <li class="list__item">
+                {% render 'card-product',
+                  card_product: product,
+                  quick_add: section.settings.quick_add,
+                  section_id: section.id
+                %}
+              </li>
             {% endfor %}
-
           </ul>
+
         </div>
       {% endfor %}
 
