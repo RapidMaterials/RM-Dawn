@@ -9,85 +9,54 @@
 <script src="{{ 'quick-order-list.js' | asset_url }}" defer></script>
 
 {% style %}
- .section-{{ section.id }}-padding {
+.section-{{ section.id }}-padding {
   padding-top: {{ section.settings.padding_top }}px;
   padding-bottom: {{ section.settings.padding_bottom }}px;
 }
-ul.list-grid {
-    max-width: 1200px;
-    margin: auto;
-}
 
-.list-grid li.list__item {
-    display: flex;
-    flex-direction: column;
-    border-bottom: 1px solid #a5a5a5;
-    padding: 10px 0;
-}
-.list-grid .quick-add-bulk {
-    width: 120px;
-    align-items:center;
-}
-button.quantity__button{
-  width:25px;
-}
-
-.list-grid .card{
-    display: flex;
-    flex-direction: row;
-}
-
-.list-grid .card__inner.ratio {
-    width: 120px;
-}
-.list-grid .card__heading, .list-grid .card-information .price {
-    font-size: 1.1em;
-    text-align: left;
-}
-.list-grid  .card__content{
-  align-items:center;
-  width:calc(100% - 120px);
+/* List layout */
+.product-grid {
   display: flex;
-  justify-content:space-between;
-}
-.list-grid > .list__item > span.badge {
-    border: 0;
-    align-items: center;
-    display: flex;
-    font-size: 1em;
-    max-height:30px;
-    padding-top: 30px;
-}
-.card__badge > span{
-    font-size: .8em;
-    justify-content: center;
-    margin: 0 auto;
-}
-.card__media {
-    margin: .5em;
-    width: calc(100% - 2 * .5em);
+  flex-direction: column;
+  gap: 0;
+  padding: 0;
+  margin: 0;
+  list-style: none;
 }
 
-.list-grid .card--media .card__inner .card__content{
-  padding:20px;
-  font-size: .75em;
+.product-grid .list__item {
+  display: flex;
+  padding: 14px 16px;
+  border-bottom: 1px solid #e1e1e1;
 }
 
-quick-add-bulk{
-  margin:0;
-}
-quick-add-bulk.quick-add-bulk:after {
-    content: 'ADD TO CART';
-    font-size: .75em;
-    font-style: italic;
-    color: gray;
+.card {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
 }
 
-/* Mobile */
-@media (max-width: 749px) {
-  
+.card__inner.ratio {
+  width: 120px;
 }
 
+.card__content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: calc(100% - 120px);
+}
+
+quick-add-bulk {
+  margin-left: 12px;
+}
+
+quick-add-bulk::after {
+  content: 'ADD TO CART';
+  font-size: 0.75em;
+  font-style: italic;
+  color: gray;
+}
 {% endstyle %}
 
 {% assign compatible_collections = collection.metafields.custom.compatible_collections.value %}
@@ -96,76 +65,116 @@ quick-add-bulk.quick-add-bulk:after {
   <div class="page-width">
 
     {% if compatible_collections != blank %}
-      <div class="collection-sort" style="margin-bottom: 16px;">
+
+      <!-- SORT -->
+      <div style="margin-bottom:16px;">
         <label for="CompatibleSort" class="visually-hidden">Sort products</label>
         <select id="CompatibleSort" class="select__select">
-          <option value="title-asc" selected>Alphabetical, A–Z</option>
-          <option value="title-desc">Alphabetical, Z–A</option>
+          <option value="asc" selected>Alphabetical, A–Z</option>
+          <option value="desc">Alphabetical, Z–A</option>
         </select>
       </div>
+
+      <!-- PRODUCT LIST -->
       <ul
-        id=""
-        class="product-grid list-grid collection-quick-add-bulk"
+        id="product-grid"
+        class="product-grid collection-quick-add-bulk"
         data-id="{{ section.id }}"
       >
         {% assign rendered_ids = '' %}
 
         {% for related_collection in compatible_collections %}
-         <h3 class="title title--primary">{{ related_collection.title }}</h3>
           {% for product in related_collection.products %}
             {% unless rendered_ids contains product.id %}
               {% assign rendered_ids = rendered_ids | append: product.id | append: ',' %}
 
-              <li class="list__item"  data-title="{{ product.title | escape | downcase }}">
-                {% render 'card-product',
-                  card_product: product,
-                  quick_add: section.settings.quick_add,
-                  section_id: section.id
-                %}
+              <li
+                class="list__item"
+                data-title="{{ product.title | downcase }}"
+              >
+                <div class="card-wrapper product-card-wrapper underline-links-hover">
+                  <div class="card card--card card--media color-{{ section.settings.color_scheme }} gradient">
+                    
+                    <!-- IMAGE -->
+                    <div class="card__inner ratio">
+                      <div class="card__media">
+                        {% if product.featured_media %}
+                          {{ product.featured_media | image_url: width: 300 | image_tag:
+                            loading: 'lazy',
+                            class: 'motion-reduce'
+                          }}
+                        {% endif %}
+                      </div>
+                    </div>
+
+                    <!-- INFO -->
+                    <div class="card__content">
+                      <div class="card__information">
+                        <h3 class="card__heading h5">
+                          <a href="{{ product.url }}" class="full-unstyled-link">
+                            {{ product.title }}
+                          </a>
+                        </h3>
+
+                        {% render 'price',
+                          product: product,
+                          use_variant: true,
+                          show_badges: false
+                        %}
+                      </div>
+
+                      <!-- BULK QUICK ADD -->
+                      <quick-add-bulk
+                        class="quick-add-bulk"
+                        data-min="1"
+                        data-index="{{ product.selected_or_first_available_variant.id }}"
+                        id="quick-add-bulk-{{ product.id }}-{{ section.id }}"
+                      >
+                        {% render 'quantity-input',
+                          variant: product.selected_or_first_available_variant,
+                          min: 0
+                        %}
+                      </quick-add-bulk>
+
+                    </div>
+                  </div>
+                </div>
               </li>
 
             {% endunless %}
           {% endfor %}
         {% endfor %}
       </ul>
+
     {% else %}
       <p>No compatible collections assigned.</p>
     {% endif %}
-
   </div>
-  <script>
+</div>
+
+<script>
 document.addEventListener('DOMContentLoaded', function () {
-  const sortSelect = document.getElementById('CompatibleSort');
+  const select = document.getElementById('CompatibleSort');
   const grid = document.getElementById('product-grid');
+  if (!select || !grid) return;
 
-  if (!sortSelect || !grid) return;
-
-  function sortItems(direction = 'asc') {
-    const items = Array.from(grid.children);
-
-    items.sort((a, b) => {
-      const titleA = a.dataset.title || '';
-      const titleB = b.dataset.title || '';
-
-      if (direction === 'asc') {
-        return titleA.localeCompare(titleB);
-      } else {
-        return titleB.localeCompare(titleA);
-      }
-    });
-
+  function sortItems(dir) {
+    const items = Array.from(grid.querySelectorAll('.list__item'));
+    items.sort((a, b) =>
+      dir === 'asc'
+        ? a.dataset.title.localeCompare(b.dataset.title)
+        : b.dataset.title.localeCompare(a.dataset.title)
+    );
     items.forEach(item => grid.appendChild(item));
   }
 
-  // Default sort A–Z on load
   sortItems('asc');
 
-  sortSelect.addEventListener('change', function () {
-    sortItems(this.value === 'title-desc' ? 'desc' : 'asc');
+  select.addEventListener('change', () => {
+    sortItems(select.value);
   });
 });
 </script>
-</div>
 
 {% schema %}
 {
@@ -178,8 +187,6 @@ document.addEventListener('DOMContentLoaded', function () {
       "label": "Quick add",
       "default": "bulk",
       "options": [
-        { "value": "none", "label": "None" },
-        { "value": "standard", "label": "Standard" },
         { "value": "bulk", "label": "Bulk (Qty + Modal)" }
       ]
     },
