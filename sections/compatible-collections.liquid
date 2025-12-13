@@ -17,6 +17,8 @@
 ul.list-grid {
   max-width: 1200px;
   margin: auto;
+  padding: 0;
+  list-style: none;
 }
 
 .list-grid li.list__item {
@@ -68,26 +70,36 @@ quick-add-bulk {
             {{ related_collection.title }}
           </h3>
 
-          {% assign sorted_products = related_collection.products | sort_natural: 'title' %}
+          {%- comment -%}
+            STEP 1: Extract & sort titles (this ALWAYS works)
+          {%- endcomment -%}
+          {% assign sorted_titles = related_collection.products | map: 'title' | sort_natural %}
           {% assign rendered_ids = ',' %}
 
           <ul class="product-grid list-grid collection-quick-add-bulk">
 
-            {% for product in sorted_products %}
-              {% assign id_token = ',' | append: product.id | append: ',' %}
+            {%- comment -%}
+              STEP 2: Loop titles, then match products back
+            {%- endcomment -%}
+            {% for title in sorted_titles %}
+              {% for product in related_collection.products %}
+                {% if product.title == title %}
+                  {% assign id_token = ',' | append: product.id | append: ',' %}
 
-              {% unless rendered_ids contains id_token %}
-                {% assign rendered_ids = rendered_ids | append: product.id | append: ',' %}
+                  {% unless rendered_ids contains id_token %}
+                    {% assign rendered_ids = rendered_ids | append: product.id | append: ',' %}
 
-                <li class="list__item">
-                  {% render 'card-product',
-                    card_product: product,
-                    quick_add: section.settings.quick_add,
-                    section_id: section.id
-                  %}
-                </li>
+                    <li class="list__item">
+                      {% render 'card-product',
+                        card_product: product,
+                        quick_add: section.settings.quick_add,
+                        section_id: section.id
+                      %}
+                    </li>
 
-              {% endunless %}
+                  {% endunless %}
+                {% endif %}
+              {% endfor %}
             {% endfor %}
 
           </ul>
