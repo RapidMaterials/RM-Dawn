@@ -116,7 +116,7 @@ quick-add-bulk.quick-add-bulk:after {
             {% unless rendered_ids contains product.id %}
               {% assign rendered_ids = rendered_ids | append: product.id | append: ',' %}
 
-              <li class="list__item">
+              <li class="list__item"  data-title="{{ product.title | escape | downcase }}">
                 {% render 'card-product',
                   card_product: product,
                   quick_add: section.settings.quick_add,
@@ -133,6 +133,38 @@ quick-add-bulk.quick-add-bulk:after {
     {% endif %}
 
   </div>
+  <script>
+document.addEventListener('DOMContentLoaded', function () {
+  const sortSelect = document.getElementById('CompatibleSort');
+  const grid = document.getElementById('product-grid');
+
+  if (!sortSelect || !grid) return;
+
+  function sortItems(direction = 'asc') {
+    const items = Array.from(grid.children);
+
+    items.sort((a, b) => {
+      const titleA = a.dataset.title || '';
+      const titleB = b.dataset.title || '';
+
+      if (direction === 'asc') {
+        return titleA.localeCompare(titleB);
+      } else {
+        return titleB.localeCompare(titleA);
+      }
+    });
+
+    items.forEach(item => grid.appendChild(item));
+  }
+
+  // Default sort A–Z on load
+  sortItems('asc');
+
+  sortSelect.addEventListener('change', function () {
+    sortItems(this.value === 'title-desc' ? 'desc' : 'asc');
+  });
+});
+</script>
 </div>
 
 {% schema %}
