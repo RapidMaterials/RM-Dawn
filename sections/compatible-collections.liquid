@@ -104,15 +104,6 @@ quick-add-bulk.quick-add-bulk::after {
   <div class="page-width">
 
     {% if compatible_collections != blank %}
-
-      <div class="collection-sort" style="margin-bottom: 16px;">
-        <label for="CompatibleSort" class="visually-hidden">Sort products</label>
-        <select id="CompatibleSort" class="select__select">
-          <option value="title-asc" selected>Alphabetical, A–Z</option>
-          <option value="title-desc">Alphabetical, Z–A</option>
-        </select>
-      </div>
-
       <ul
         class="product-grid list-grid collection-quick-add-bulk"
         data-id="{{ section.id }}"
@@ -120,7 +111,7 @@ quick-add-bulk.quick-add-bulk::after {
         {% assign rendered_ids = '' %}
 
         {% for related_collection in compatible_collections %}
-          <h3 class="title title--primary">{{ related_collection.title }}</h3>
+          
 
           {% for product in related_collection.products %}
             {% unless rendered_ids contains product.id %}
