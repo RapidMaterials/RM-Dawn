@@ -17,6 +17,8 @@
 ul.list-grid {
   max-width: 1200px;
   margin: auto;
+  padding: 0;
+  list-style: none;
 }
 
 .list-grid li.list__item {
@@ -24,15 +26,6 @@ ul.list-grid {
   flex-direction: column;
   border-bottom: 1px solid #a5a5a5;
   padding: 10px 0;
-}
-
-.list-grid .quick-add-bulk {
-  width: 120px;
-  align-items: center;
-}
-
-button.quantity__button {
-  width: 25px;
 }
 
 .list-grid .card {
@@ -44,26 +37,11 @@ button.quantity__button {
   width: 120px;
 }
 
-.list-grid .card__heading,
-.list-grid .card-information .price {
-  font-size: 1.1em;
-  text-align: left;
-}
-
 .list-grid .card__content {
-  align-items: center;
   width: calc(100% - 120px);
   display: flex;
   justify-content: space-between;
-}
-
-.card--card.card--media > .card__content {
-  margin-top: 0;
-}
-
-.card__media {
-  margin: 0.5em;
-  width: calc(100% - 1em);
+  align-items: center;
 }
 
 quick-add-bulk {
@@ -85,24 +63,16 @@ quick-add-bulk {
 
     {% if compatible_collections != blank %}
 
-      <ul
-        class="product-grid list-grid collection-quick-add-bulk"
-        data-id="{{ section.id }}"
-      >
+      {% for related_collection in compatible_collections %}
+        <div class="collection">
 
-        {% assign rendered_ids = ',' %}
-
-        {% for related_collection in compatible_collections %}
           <h3 class="title title--primary">
             {{ related_collection.title }}
           </h3>
 
-          {% for product in related_collection.products %}
-            {% assign id_token = ',' | append: product.id | append: ',' %}
+          <ul class="product-grid list-grid collection-quick-add-bulk">
 
-            {% unless rendered_ids contains id_token %}
-              {% assign rendered_ids = rendered_ids | append: product.id | append: ',' %}
-
+            {% for product in related_collection.products %}
               <li
                 class="list__item"
                 data-sort-title="{% if product.metafields.custom.short_quick_order_title != blank %}
@@ -117,36 +87,37 @@ quick-add-bulk {
                   section_id: section.id
                 %}
               </li>
+            {% endfor %}
 
-            {% endunless %}
-          {% endfor %}
-        {% endfor %}
-
-      </ul>
+          </ul>
+        </div>
+      {% endfor %}
 
     {% else %}
       <p>No compatible collections assigned.</p>
     {% endif %}
 
   </div>
-
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const grid = document.querySelector('.product-grid');
-      if (!grid) return;
-
-      const items = Array.from(grid.querySelectorAll('.list__item'));
-
-      items
-        .sort((a, b) => {
-          const aTitle = a.dataset.sortTitle || '';
-          const bTitle = b.dataset.sortTitle || '';
-          return aTitle.localeCompare(bTitle);
-        })
-        .forEach(item => grid.appendChild(item));
-    });
-  </script>
 </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  document.querySelectorAll('.collection').forEach(function (collection) {
+    const grid = collection.querySelector('ul.product-grid');
+    if (!grid) return;
+
+    const items = Array.from(grid.querySelectorAll('.list__item'));
+
+    items
+      .sort((a, b) => {
+        const aTitle = a.dataset.sortTitle || '';
+        const bTitle = b.dataset.sortTitle || '';
+        return aTitle.localeCompare(bTitle);
+      })
+      .forEach(item => grid.appendChild(item));
+  });
+});
+</script>
 
 {% schema %}
 {
