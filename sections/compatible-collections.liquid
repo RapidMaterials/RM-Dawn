@@ -60,93 +60,65 @@ quick-add-bulk {
 
 <div class="section-{{ section.id }}-padding color-{{ section.settings.color_scheme }}">
   <div class="page-width">
+
     {% if compatible_collections != blank %}
 
       {% for related_collection in compatible_collections %}
         <div class="collection">
 
-          <h3 class="title title--primary">{{ related_collection.title }}</h3>
+          <h3 class="title title--primary">
+            {{ related_collection.title }}
+          </h3>
 
           <ul class="product-grid list-grid collection-quick-add-bulk">
+
             {% for product in related_collection.products %}
               {%- capture sort_key -%}
                 {%- if product.metafields.custom.short_quick_order_title != blank -%}
-                  {{ product.metafields.custom.short_quick_order_title }}
+                  {{ product.metafields.custom.short_quick_order_title.value }}
                 {%- else -%}
                   {{ product.title }}
                 {%- endif -%}
               {%- endcapture -%}
 
-              <li class="list__item" data-sort-title="{{ sort_key | strip | downcase | escape }}">
+              <li
+                class="list__item"
+                data-sort-title="{{ sort_key | strip | downcase | escape }}"
+              >
                 {% render 'card-product',
                   card_product: product,
                   quick_add: section.settings.quick_add,
                   section_id: section.id
                 %}
               </li>
-            {% endfor %}
-          </ul>
 
+            {% endfor %}
+
+          </ul>
         </div>
       {% endfor %}
 
     {% else %}
       <p>No compatible collections assigned.</p>
     {% endif %}
+
   </div>
 </div>
 
 <script>
-(function () {
-  function sortOneGrid(grid) {
-    const items = Array.from(grid.querySelectorAll(':scope > .list__item'));
-    if (items.length < 2) return;
+document.addEventListener('DOMContentLoaded', function () {
+  document.querySelectorAll('.collection ul.product-grid').forEach(function (grid) {
+    const items = Array.from(grid.querySelectorAll('.list__item'));
 
-    items.sort((a, b) => {
-      const aKey = (a.dataset.sortTitle || '').trim();
-      const bKey = (b.dataset.sortTitle || '').trim();
-      return aKey.localeCompare(bKey, undefined, { numeric: true, sensitivity: 'base' });
-    });
-
-    items.forEach((li) => grid.appendChild(li));
-  }
-
-  function sortAllCollections() {
-    document.querySelectorAll('.collection ul.product-grid').forEach(sortOneGrid);
-  }
-
-  // Run once after everything settles (defer scripts, web components, etc.)
-  window.requestAnimationFrame(() => {
-    window.requestAnimationFrame(sortAllCollections);
+    items
+      .sort((a, b) => {
+        const aKey = a.dataset.sortTitle || '';
+        const bKey = b.dataset.sortTitle || '';
+        return aKey.localeCompare(bKey);
+      })
+      .forEach(item => grid.appendChild(item));
   });
-
-  // Re-run if Dawn/quick-add re-renders list contents
-  const observer = new MutationObserver((mutations) => {
-    const touchedGrids = new Set();
-
-    mutations.forEach((m) => {
-      if (m.type !== 'childList') return;
-
-      // Find nearest UL.product-grid that changed
-      const grid =
-        (m.target && m.target.matches && m.target.matches('ul.product-grid') && m.target) ||
-        (m.target && m.target.closest && m.target.closest('ul.product-grid'));
-
-      if (grid && grid.closest('.collection')) touchedGrids.add(grid);
-    });
-
-    touchedGrids.forEach(sortOneGrid);
-  });
-
-  // Observe each collection grid
-  document.querySelectorAll('.collection ul.product-grid').forEach((grid) => {
-    observer.observe(grid, { childList: true });
-  });
-
-  // Also re-run when Shopify theme editor loads/changes sections
-  document.addEventListener('shopify:section:load', sortAllCollections);
-  document.addEventListener('shopify:section:reorder', sortAllCollections);
-})();
+});
 </script>
 
 {% schema %}
