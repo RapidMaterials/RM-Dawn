@@ -124,6 +124,18 @@ tbody tr:nth-child(even of .variant-item) > td {
 
     {% if compatible_collections != blank %}
 
+        <div class="compatible-jump-nav">
+        {% for related_collection in compatible_collections %}
+            <a
+            href="#collection-{{ related_collection.handle }}"
+            class="compatible-jump-button"
+            >
+            {{ related_collection.title }}
+            </a>
+        {% endfor %}
+        </div>
+
+
       {% for related_collection in compatible_collections %}
   <div
     class="collection"
