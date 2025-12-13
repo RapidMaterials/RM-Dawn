@@ -96,6 +96,13 @@ quick-add-bulk.quick-add-bulk:after {
   <div class="page-width">
 
     {% if compatible_collections != blank %}
+      <div class="collection-sort" style="margin-bottom: 16px;">
+        <label for="CompatibleSort" class="visually-hidden">Sort products</label>
+        <select id="CompatibleSort" class="select__select">
+          <option value="title-asc" selected>Alphabetical, A–Z</option>
+          <option value="title-desc">Alphabetical, Z–A</option>
+        </select>
+      </div>
       <ul
         id=""
         class="product-grid list-grid collection-quick-add-bulk"
