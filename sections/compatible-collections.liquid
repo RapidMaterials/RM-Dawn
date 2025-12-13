@@ -54,7 +54,7 @@ quick-add-bulk.quick-add-bulk:after {
         {% assign rendered_ids = '' %}
 
         {% for related_collection in compatible_collections %}
-          <H3>TEST</H3>
+         <h3 class="title title--primary">{{ related_collection.title }}</h3>
           {% for product in related_collection.products %}
             {% unless rendered_ids contains product.id %}
               {% assign rendered_ids = rendered_ids | append: product.id | append: ',' %}
