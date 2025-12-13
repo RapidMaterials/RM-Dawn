@@ -16,11 +16,30 @@
   <!-- ICONS -->
   <div class="logo-bar-header__icons header__icons">
 
-    {% if section.settings.enable_search %}
-  <div class="header__search-inline">
-    {% render 'search-form', input_id: 'Search-Inline' %}
-  </div>
-    {% endif %}
+   {% if section.settings.enable_search %}
+  <form
+    action="{{ routes.search_url }}"
+    method="get"
+    role="search"
+    class="header__search-inline"
+  >
+    <input type="hidden" name="type" value="product">
+
+    <input
+      type="search"
+      name="q"
+      placeholder="Search products or SKUs"
+      class="search__input field__input"
+      aria-label="Search"
+    >
+
+    <button type="submit" class="search__button button">
+      <span class="svg-wrapper">
+        {{ 'icon-search.svg' | inline_asset_content }}
+      </span>
+    </button>
+  </form>
+{% endif %}
 
     {% if section.settings.enable_account and shop.customer_accounts_enabled %}
       <a
