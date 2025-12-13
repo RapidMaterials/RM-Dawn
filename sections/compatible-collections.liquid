@@ -144,19 +144,29 @@ quick-add-bulk {
 
   </div>
 <script>
-document.addEventListener('DOMContentLoaded', function () {
-  document.querySelectorAll('.collection ul.product-grid').forEach((grid) => {
-    const items = Array.from(grid.querySelectorAll('.list__item'));
+(function sortCompatibleCollections() {
+  function sortAllCollections() {
+    document.querySelectorAll('.collection ul.product-grid').forEach((grid) => {
+      const items = Array.from(grid.querySelectorAll('.list__item'));
 
-    items
-      .sort((a, b) => {
-        const titleA = a.dataset.title || '';
-        const titleB = b.dataset.title || '';
-        return titleA.localeCompare(titleB);
-      })
-      .forEach(item => grid.appendChild(item));
+      items
+        .sort((a, b) => {
+          const titleA = a.dataset.title || '';
+          const titleB = b.dataset.title || '';
+          return titleA.localeCompare(titleB);
+        })
+        .forEach(item => grid.appendChild(item));
+    });
+  }
+
+  // Run after Dawn finishes DOM mutations
+  requestAnimationFrame(() => {
+    setTimeout(sortAllCollections, 0);
   });
-});
+
+  // Safety net: run again after full page load
+  window.addEventListener('load', sortAllCollections);
+})();
 </script>
 
 </div>
