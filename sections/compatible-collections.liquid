@@ -57,16 +57,8 @@ button.quantity__button {
   justify-content: space-between;
 }
 
-.list-grid > .list__item > span.badge {
-  border: 0;
-  align-items: center;
-  display: flex;
-  font-size: 1em;
-  max-height: 30px;
-  padding-top: 30px;
-}
-.card--card.card--media>.card__content{
-    margin-top:0;
+.card--card.card--media > .card__content {
+  margin-top: 0;
 }
 
 .card__badge > span {
@@ -95,10 +87,6 @@ quick-add-bulk {
   font-style: italic;
   color: gray;
 }
-
-/* Mobile */
-@media (max-width: 749px) {
-}
 {% endstyle %}
 
 {% assign compatible_collections = collection.metafields.custom.compatible_collections.value %}
@@ -107,92 +95,36 @@ quick-add-bulk {
   <div class="page-width">
 
     {% if compatible_collections != blank %}
+      {% for related_collection in compatible_collections %}
+        <div class="collection">
+          <h3 class="title title--primary">
+            {{ related_collection.title }}
+          </h3>
 
-     {% for related_collection in compatible_collections %}
-  <div class="collection">
-    <h3 class="title title--primary">
-      {{ related_collection.title }}
-    </h3>
+          <ul class="product-grid list-grid collection-quick-add-bulk">
+            {% assign rendered_ids = '' %}
 
-    <ul class="product-grid list-grid collection-quick-add-bulk">
-      {% assign rendered_ids = '' %}
+            {% for product in related_collection.products %}
+              {% unless rendered_ids contains product.id %}
+                {% assign rendered_ids = rendered_ids | append: product.id | append: ',' %}
 
-      {% for product in related_collection.products %}
-        {% unless rendered_ids contains product.id %}
-          {% assign rendered_ids = rendered_ids | append: product.id | append: ',' %}
-
-          <li
-            class="list__item"
-            data-title="{{ product.title | escape | downcase }}"
-          >
-            {% render 'card-product',
-              card_product: product,
-              quick_add: section.settings.quick_add,
-              section_id: section.id
-            %}
-          </li>
-
-        {% endunless %}
+                <li class="list__item">
+                  {% render 'card-product',
+                    card_product: product,
+                    quick_add: section.settings.quick_add,
+                    section_id: section.id
+                  %}
+                </li>
+              {% endunless %}
+            {% endfor %}
+          </ul>
+        </div>
       {% endfor %}
-    </ul>
-  </div>
-{% endfor %}
-
     {% else %}
       <p>No compatible collections assigned.</p>
     {% endif %}
 
   </div>
-<script>
-(function () {
-  function sortGrid(grid) {
-    const items = Array.from(grid.querySelectorAll('.list__item'));
-
-    items
-      .sort((a, b) => {
-        const titleA = a.dataset.title || '';
-        const titleB = b.dataset.title || '';
-        return titleA.localeCompare(titleB);
-      })
-      .forEach(item => grid.appendChild(item));
-  }
-
-  function initSorting() {
-    document.querySelectorAll('.collection ul.product-grid').forEach(sortGrid);
-  }
-
-  // Initial sort
-  initSorting();
-
-  // Watch for Dawn re-rendering products
-  const observer = new MutationObserver((mutations) => {
-    let needsSort = false;
-
-    mutations.forEach(mutation => {
-      if (
-        mutation.type === 'childList' &&
-        mutation.target.classList &&
-        mutation.target.classList.contains('product-grid')
-      ) {
-        needsSort = true;
-      }
-    });
-
-    if (needsSort) {
-      initSorting();
-    }
-  });
-
-  document.querySelectorAll('.collection ul.product-grid').forEach(grid => {
-    observer.observe(grid, {
-      childList: true,
-      subtree: false
-    });
-  });
-})();
-</script>
-
-
 </div>
 
 {% schema %}
