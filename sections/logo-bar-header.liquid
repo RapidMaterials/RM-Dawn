@@ -17,7 +17,9 @@
   <div class="logo-bar-header__icons header__icons">
 
     {% if section.settings.enable_search %}
-      {% render 'header-search', input_id: 'Search-In-Modal-Top' %}
+  <div class="header__search-inline">
+    {% render 'search-form', input_id: 'Search-Inline' %}
+  </div>
     {% endif %}
 
     {% if section.settings.enable_account and shop.customer_accounts_enabled %}
