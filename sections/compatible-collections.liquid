@@ -125,39 +125,43 @@ tbody tr:nth-child(even of .variant-item) > td {
     {% if compatible_collections != blank %}
 
       {% for related_collection in compatible_collections %}
-        <div class="collection">
+  <div
+    class="collection"
+    id="collection-{{ related_collection.handle }}"
+  >
 
-          <h2 class="title title--primary">
-            {{ related_collection.title }}
-          </h2>
+    <h2 class="title title--primary">
+      {{ related_collection.title }}
+    </h2>
 
-          <ul class="product-grid list-grid collection-quick-add-bulk">
+    <ul class="product-grid list-grid collection-quick-add-bulk">
 
-            {% for product in related_collection.products %}
-              {%- capture sort_key -%}
-                {%- if product.metafields.custom.short_quick_order_title != blank -%}
-                  {{ product.metafields.custom.short_quick_order_title.value }}
-                {%- else -%}
-                  {{ product.title }}
-                {%- endif -%}
-              {%- endcapture -%}
+      {% for product in related_collection.products %}
+        {%- capture sort_key -%}
+          {%- if product.metafields.custom.short_quick_order_title != blank -%}
+            {{ product.metafields.custom.short_quick_order_title.value }}
+          {%- else -%}
+            {{ product.title }}
+          {%- endif -%}
+        {%- endcapture -%}
 
-              <li
-                class="list__item"
-                data-sort-title="{{ sort_key | strip | downcase | escape }}"
-              >
-                {% render 'card-product',
-                  card_product: product,
-                  quick_add: section.settings.quick_add,
-                  section_id: section.id
-                %}
-              </li>
+        <li
+          class="list__item"
+          data-sort-title="{{ sort_key | strip | downcase | escape }}"
+        >
+          {% render 'card-product',
+            card_product: product,
+            quick_add: section.settings.quick_add,
+            section_id: section.id
+          %}
+        </li>
 
-            {% endfor %}
-
-          </ul>
-        </div>
       {% endfor %}
+
+    </ul>
+  </div>
+{% endfor %}
+
 
     {% else %}
       <p>No compatible collections assigned.</p>
