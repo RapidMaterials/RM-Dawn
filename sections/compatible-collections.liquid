@@ -108,34 +108,35 @@ quick-add-bulk {
 
     {% if compatible_collections != blank %}
 
-      <ul
-        class="product-grid list-grid collection-quick-add-bulk"
-        data-id="{{ section.id }}"
-      >
-        {% assign rendered_ids = '' %}
+     {% for related_collection in compatible_collections %}
+  <div class="collection">
+    <h3 class="title title--primary">
+      {{ related_collection.title }}
+    </h3>
 
-        {% for related_collection in compatible_collections %}
-           <h3 class="title title--primary">{{ related_collection.title }}</h3>
+    <ul class="product-grid list-grid collection-quick-add-bulk">
+      {% assign rendered_ids = '' %}
 
-          {% for product in related_collection.products %}
-            {% unless rendered_ids contains product.id %}
-              {% assign rendered_ids = rendered_ids | append: product.id | append: ',' %}
+      {% for product in related_collection.products %}
+        {% unless rendered_ids contains product.id %}
+          {% assign rendered_ids = rendered_ids | append: product.id | append: ',' %}
 
-              <li
-                class="list__item"
-                data-title="{{ product.title | escape | downcase }}"
-              >
-                {% render 'card-product',
-                  card_product: product,
-                  quick_add: section.settings.quick_add,
-                  section_id: section.id
-                %}
-              </li>
+          <li
+            class="list__item"
+            data-title="{{ product.title | escape | downcase }}"
+          >
+            {% render 'card-product',
+              card_product: product,
+              quick_add: section.settings.quick_add,
+              section_id: section.id
+            %}
+          </li>
 
-            {% endunless %}
-          {% endfor %}
-        {% endfor %}
-      </ul>
+        {% endunless %}
+      {% endfor %}
+    </ul>
+  </div>
+{% endfor %}
 
     {% else %}
       <p>No compatible collections assigned.</p>
@@ -143,21 +144,21 @@ quick-add-bulk {
 
   </div>
 <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const grid = document.querySelector('.product-grid');
-    if (!grid) return;
-
+document.addEventListener('DOMContentLoaded', function () {
+  document.querySelectorAll('.collection ul.product-grid').forEach((grid) => {
     const items = Array.from(grid.querySelectorAll('.list__item'));
 
-    items.sort((a, b) => {
-      const titleA = a.dataset.title || '';
-      const titleB = b.dataset.title || '';
-      return titleA.localeCompare(titleB);
-    });
-
-    items.forEach(item => grid.appendChild(item));
+    items
+      .sort((a, b) => {
+        const titleA = a.dataset.title || '';
+        const titleB = b.dataset.title || '';
+        return titleA.localeCompare(titleB);
+      })
+      .forEach(item => grid.appendChild(item));
   });
+});
 </script>
+
 </div>
 
 {% schema %}
