@@ -142,37 +142,22 @@ quick-add-bulk {
     {% endif %}
 
   </div>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const grid = document.querySelector('.product-grid');
+    if (!grid) return;
 
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const sortSelect = document.getElementById('CompatibleSort');
-      const grid = document.querySelector('.product-grid');
+    const items = Array.from(grid.querySelectorAll('.list__item'));
 
-      if (!sortSelect || !grid) return;
-
-      function sortItems(direction = 'asc') {
-        const items = Array.from(grid.querySelectorAll('.list__item'));
-
-        items.sort((a, b) => {
-          const titleA = a.dataset.title || '';
-          const titleB = b.dataset.title || '';
-
-          return direction === 'asc'
-            ? titleA.localeCompare(titleB)
-            : titleB.localeCompare(titleA);
-        });
-
-        items.forEach(item => grid.appendChild(item));
-      }
-
-      // Default sort A–Z
-      sortItems('asc');
-
-      sortSelect.addEventListener('change', function () {
-        sortItems(this.value === 'title-desc' ? 'desc' : 'asc');
-      });
+    items.sort((a, b) => {
+      const titleA = a.dataset.title || '';
+      const titleB = b.dataset.title || '';
+      return titleA.localeCompare(titleB);
     });
-  </script>
+
+    items.forEach(item => grid.appendChild(item));
+  });
+</script>
 </div>
 
 {% schema %}
