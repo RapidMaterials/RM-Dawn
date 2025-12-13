@@ -26,6 +26,37 @@
         "show_text_below": true
       }
     },
+    "rich_text_cDKn9n": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_xaPwfV": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>{{ collection.title }}</strong>",
+            "heading_size": "h2",
+            "heading_tag": "h1"
+          }
+        },
+        "text_9d7iRK": {
+          "type": "text",
+          "settings": {
+            "text": "<p>{{ collection.metafields.custom.description | metafield_tag }}</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_xaPwfV",
+        "text_9d7iRK"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-2",
+        "full_width": true,
+        "padding_top": 20,
+        "padding_bottom": 20
+      }
+    },
     "banner": {
       "type": "main-collection-banner",
       "disabled": true,
@@ -96,6 +127,7 @@
   },
   "order": [
     "image_banner_BmK8YF",
+    "rich_text_cDKn9n",
     "banner",
     "product-grid",
     "compatible_collections",
