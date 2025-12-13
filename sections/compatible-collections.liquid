@@ -97,29 +97,32 @@ quick-add-bulk {
     {% if compatible_collections != blank %}
       {% for related_collection in compatible_collections %}
         <div class="collection">
-          <h3 class="title title--primary">
+            <h3 class="title title--primary">
             {{ related_collection.title }}
-          </h3>
+            </h3>
 
-          <ul class="product-grid list-grid collection-quick-add-bulk">
+            {% assign sorted_products = related_collection.products | sort: 'title' %}
+
+            <ul class="product-grid list-grid collection-quick-add-bulk">
             {% assign rendered_ids = '' %}
 
-            {% for product in related_collection.products %}
-              {% unless rendered_ids contains product.id %}
+            {% for product in sorted_products %}
+                {% unless rendered_ids contains product.id %}
                 {% assign rendered_ids = rendered_ids | append: product.id | append: ',' %}
 
                 <li class="list__item">
-                  {% render 'card-product',
+                    {% render 'card-product',
                     card_product: product,
                     quick_add: section.settings.quick_add,
                     section_id: section.id
-                  %}
+                    %}
                 </li>
-              {% endunless %}
+                {% endunless %}
             {% endfor %}
-          </ul>
+            </ul>
         </div>
-      {% endfor %}
+        {% endfor %}
+
     {% else %}
       <p>No compatible collections assigned.</p>
     {% endif %}
