@@ -9,33 +9,75 @@
 <script src="{{ 'quick-order-list.js' | asset_url }}" defer></script>
 
 {% style %}
-.section-{{ section.id }}-padding {
+ .section-{{ section.id }}-padding {
   padding-top: {{ section.settings.padding_top }}px;
   padding-bottom: {{ section.settings.padding_bottom }}px;
 }
-
-/* Force list layout (one product per row) */
-.product-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-  padding: 0;
-  margin: 0;
-  list-style: none;
+ul.list-grid {
+    max-width: 1200px;
+    margin: auto;
 }
 
-.product-grid .list__item {
-  display: flex;
-  align-items: center;
-  padding: 14px 16px;
-  border-bottom: 1px solid #e1e1e1;
+.list-grid li.list__item {
+    display: flex;
+    flex-direction: row;
+}
+.list-grid form.quick-add-form {
+    width: 320px;
+    display: flex;
+    align-items:center;
+    margin-bottom:30px;
+}
+.list-grid .card-wrapper {
+    width: calc(100% - 320px);
+}
+.list-grid .card{
+    display: flex;
+    flex-direction: row;
 }
 
+.list-grid .card__inner.ratio {
+    width: 140px;
+}
+.list-grid .card__heading, .list-grid .card-information .price {
+    font-size: 1.1em;
+    text-align: left;
+}
+.list-grid  .card__content{
+  align-items:center;
+}
+.list-grid > .list__item > span.badge {
+    border: 0;
+    align-items: center;
+    display: flex;
+    font-size: 1em;
+    max-height:30px;
+    padding-top: 30px;
+}
+.card__badge > span{
+    font-size: .8em;
+    justify-content: center;
+    margin: 0 auto;
+}
+.card__media {
+    margin: .5em;
+    width: calc(100% - 2 * .5em);
+}
+
+.list-grid .card--media .card__inner .card__content{
+  padding:20px;
+  font-size: .75em;
+}
 quick-add-bulk.quick-add-bulk:after {
     content: 'ADD TO CART';
     font-size: .75em;
     font-style: italic;
     color: gray;
+}
+
+/* Mobile */
+@media (max-width: 749px) {
+  
 }
 
 {% endstyle %}
