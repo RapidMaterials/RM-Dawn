@@ -1,42 +1,93 @@
+{{ 'component-search.css' | asset_url | stylesheet_tag }}
+{{ 'component-cart-notification.css' | asset_url | stylesheet_tag }}
+
+<div class="logo-bar-header page-width">
+  <!-- LOGO -->
+  <div class="logo-bar-header__logo">
+    <a href="{{ routes.root_url }}">
+      <img
+        src="{{ 'rapid-logo.svg' | asset_url }}"
+        alt="{{ shop.name }}"
+        loading="eager"
+      >
+    </a>
+  </div>
+
+  <!-- HEADER ICONS (REUSED FROM DAWN) -->
+  <div class="logo-bar-header__icons header__icons">
+
+    {% render 'header-search', input_id: 'Search-In-Modal-Top' %}
+
+    {% if shop.customer_accounts_enabled %}
+      <a
+        href="{% if customer %}{{ routes.account_url }}{% else %}{{ routes.account_login_url }}{% endif %}"
+        class="header__icon header__icon--account link focus-inset"
+        rel="nofollow"
+      >
+        <span class="svg-wrapper">
+          {{ 'icon-account.svg' | inline_asset_content }}
+        </span>
+        <span class="visually-hidden">
+          {% if customer %}Account{% else %}Log in{% endif %}
+        </span>
+      </a>
+    {% endif %}
+
+    <a
+      href="{{ routes.cart_url }}"
+      class="header__icon header__icon--cart link focus-inset"
+      id="cart-icon-bubble"
+    >
+      {% if cart == empty %}
+        <span class="svg-wrapper">
+          {{ 'icon-cart-empty.svg' | inline_asset_content }}
+        </span>
+      {% else %}
+        <span class="svg-wrapper">
+          {{ 'icon-cart.svg' | inline_asset_content }}
+        </span>
+      {% endif %}
+
+      {% if cart != empty %}
+        <div class="cart-count-bubble">
+          {% if cart.item_count < 100 %}
+            <span aria-hidden="true">{{ cart.item_count }}</span>
+          {% endif %}
+          <span class="visually-hidden">
+            {{ 'sections.header.cart_count' | t: count: cart.item_count }}
+          </span>
+        </div>
+      {% endif %}
+    </a>
+
+  </div>
+</div>
+
 {% style %}
 .logo-bar-header {
   display: flex;
   align-items: center;
-  justify-content: center;
-  padding: 16px 20px;
+  justify-content: space-between;
+  padding: 12px 24px;
 }
 
-.logo-bar-header img {
-  max-height: 60px;
+.logo-bar-header__logo img {
+  max-height: 56px;
   width: auto;
-  display: block;
+}
+
+.logo-bar-header__icons {
+  display: flex;
+  align-items: center;
+  gap: 14px;
 }
 {% endstyle %}
-
-<div class="logo-bar-header">
-  {% if section.settings.logo != blank %}
-    <a href="{{ shop.url }}">
-      <img
-        src="{{ section.settings.logo | image_url: width: 800 }}"
-        alt="{{ shop.name }}"
-        loading="lazy"
-      >
-    </a>
-  {% endif %}
-</div>
 
 {% schema %}
 {
   "name": "Logo Bar Header",
   "tag": "section",
-  "class": "section-logo-bar-header",
-  "settings": [
-    {
-      "type": "image_picker",
-      "id": "logo",
-      "label": "Logo image"
-    }
-  ],
+  "class": "logo-bar-header-section",
   "presets": [
     {
       "name": "Logo Bar Header"
