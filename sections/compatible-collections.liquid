@@ -115,6 +115,36 @@ tbody tr:nth-child(even of .variant-item) > td {
   background-color: #f5f5f5;
 }
 
+.compatible-jump-nav {
+  max-width: 1000px;
+  margin: 0 auto 30px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.compatible-jump-button {
+  padding: 8px 14px;
+  background-color: #efefef;
+  border: 1px solid #ccc;
+  text-decoration: none;
+  color: #000;
+  font-size: 0.85em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.compatible-jump-button:hover {
+  background-color: #414141;
+  color: #fff;
+}
+
+/* Prevent sticky header overlap */
+.collection {
+  scroll-margin-top: 140px; /* adjust if header height changes */
+}
+
 {% endstyle %}
 
 {% assign compatible_collections = collection.metafields.custom.compatible_collections.value %}
