@@ -64,9 +64,7 @@
         ".contact {max-width: 600px; padding: 0 4rem;}",
         "select {padding: 1.2rem 1.5rem 0.8rem 2rem;}",
         "h2.form-status.form-status-list.form__message {background-color: #e3e3e3; padding: 10px;}",
-        "label.checkbox__label {display: block; line-height: 1.4em; padding: 5px 0;}",
-        "h2.form-status.form-status-list.form__message {float: right; width: calc(100% - 140px);}",
-        ".contact__button {float: left; margin-top: 2rem; width: 140px;}"
+        "label.checkbox__label {display: block; line-height: 1.4em; padding: 5px 0;}"
       ],
       "settings": {
         "heading": "",
