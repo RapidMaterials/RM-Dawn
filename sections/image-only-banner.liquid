@@ -34,6 +34,48 @@
   .rm-banner-{{ section.id }} a {
     display: block;
   }
+
+  {%- style -%}
+  .rm-banner-{{ section.id }} {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: {{ section.settings.border_radius }}px;
+  }
+
+  .rm-banner-{{ section.id }} .rm-banner__media {
+    position: relative;
+    width: 100%;
+    height: {{ section.settings.desktop_height }}px;
+  }
+
+  /* Image fill */
+  .rm-banner-{{ section.id }} img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: {{ section.settings.object_fit }};
+    object-position: center; /* desktop default */
+    display: block;
+  }
+
+  @media screen and (max-width: 749px) {
+    .rm-banner-{{ section.id }} .rm-banner__media {
+      height: {{ section.settings.mobile_height }}px;
+    }
+
+    /* Mobile: keep LEFT side visible, crop overflow on right */
+    .rm-banner-{{ section.id }} img {
+      object-position: left center;
+    }
+  }
+
+  .rm-banner-{{ section.id }} a {
+    display: block;
+  }
+{%- endstyle -%}
+
 {%- endstyle -%}
 
 <div class="rm-banner-{{ section.id }}">
