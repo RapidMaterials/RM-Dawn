@@ -161,7 +161,8 @@ tbody tr:nth-child(even of .variant-item) > td {
             class="compatible-jump-button"
             >
             {{ related_collection.title }}
-            {{ related_collection.collection_short_title }}
+            {{ related_collection.metafields.custom.collection_short_title | metafield_text }}
+
             </a>
         {% endfor %}
         </div>
