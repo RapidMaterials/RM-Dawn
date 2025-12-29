@@ -150,6 +150,43 @@ tbody tr:nth-child(even of .variant-item) > td {
   scroll-margin-top: 140px; /* adjust if header height changes */
 }
 
+
+
+@media screen and (max-width: 989px){
+.quick-add__info {
+    display: none !important;
+    width: 0;
+}
+
+.section-bulk-quick-order-list-padding {
+    padding: 10px;
+}
+
+.quick-add-modal__content-info--bulk-details {
+    padding-left: 0;
+}
+
+.quick-order-list__table thead tr {
+    margin: 0;
+}
+
+th.caption-with-letter-spacing {
+    padding-bottom: 10px;
+}
+
+td.variant-item__inner {
+    width: 1px !important;
+    padding: 0 !important;
+}
+
+.variant-item {
+    gap: .5rem;
+    margin-bottom: 10px;
+    display: list-item;
+}
+}
+
+
 {% endstyle %}
 
 {% assign compatible_collections = collection.metafields.custom.compatible_collections.value %}
