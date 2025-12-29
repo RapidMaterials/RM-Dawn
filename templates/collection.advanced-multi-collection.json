@@ -49,6 +49,7 @@
       "settings": {
         "desktop_content_position": "center",
         "content_alignment": "center",
+        "content_max_width": 1140,
         "color_scheme": "scheme-2",
         "full_width": true,
         "padding_top": 20,
@@ -109,8 +110,8 @@
       "name": "FAQ Accordion",
       "settings": {
         "caption": "",
-        "heading": "More About {{ collection.title }}",
-        "heading_size": "h1",
+        "heading": "{{ collection.title }} FAQ",
+        "heading_size": "h2",
         "heading_alignment": "center",
         "layout": "none",
         "container_color_scheme": "",
