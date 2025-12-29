@@ -9,6 +9,9 @@
 <script src="{{ 'quick-order-list.js' | asset_url }}" defer></script>
 
 {% style %}
+html {
+  scroll-behavior: smooth;
+}
 .section-{{ section.id }}-padding {
   padding-top: {{ section.settings.padding_top }}px;
   padding-bottom: {{ section.settings.padding_bottom }}px;
