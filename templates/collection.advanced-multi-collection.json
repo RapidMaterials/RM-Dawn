@@ -110,7 +110,7 @@
       "name": "FAQ Accordion",
       "settings": {
         "caption": "",
-        "heading": "{{ collection.title }} FAQ",
+        "heading": "{{ collection.metafields.custom.faq_title.value }} FAQ",
         "heading_size": "h2",
         "heading_alignment": "center",
         "layout": "none",
