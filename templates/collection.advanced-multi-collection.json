@@ -13,8 +13,8 @@
       "type": "image-only-banner",
       "name": "Simple Banner Image",
       "settings": {
-        "desktop_image": "shopify://shop_images/cat_head_Nordic_bronze_2.png",
-        "mobile_image": "shopify://shop_images/cat_head_Nordic_bronze_2.png",
+        "desktop_image": "{{ collection.metafields.custom.header_image.value }}",
+        "mobile_image": "{{ collection.metafields.custom.header_image_mobile.value }}",
         "alt_text": "Banner image",
         "link": "",
         "desktop_height": 130,
