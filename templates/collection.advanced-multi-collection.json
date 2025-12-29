@@ -13,10 +13,11 @@
       "type": "image-only-banner",
       "name": "Simple Banner Image",
       "settings": {
-        "desktop_image": "shopify://shop_images/cat_head_Nordic_bronze_3c07a90f-da51-4ccd-8d9b-9bedbafda5e9.png",
+        "desktop_image": "shopify://shop_images/cat_head_Nordic_bronze_2.png",
+        "mobile_image": "shopify://shop_images/cat_head_Nordic_bronze_2.png",
         "alt_text": "Banner image",
         "link": "",
-        "desktop_height": 150,
+        "desktop_height": 120,
         "mobile_height": 120,
         "object_fit": "cover",
         "border_radius": 0,
