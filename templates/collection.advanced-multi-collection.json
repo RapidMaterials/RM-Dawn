@@ -105,12 +105,29 @@
         "padding_bottom": 36
       }
     },
+    "collection_feat_icons_pC3Jyc": {
+      "type": "collection-feat-icons",
+      "name": "Collection Icons",
+      "settings": {
+        "heading": "Key Features",
+        "default_alt": "Feature icon",
+        "color_scheme": "",
+        "use_background": false,
+        "background_color": "#d9d9d9",
+        "min_col_width": 160,
+        "grid_gap": 24,
+        "icon_size": 48,
+        "padding_top": 20,
+        "padding_bottom": 20,
+        "full_width": true
+      }
+    },
     "collapsible_content_faq_P8N8E4": {
       "type": "collapsible-content-faq",
       "name": "FAQ Accordion",
       "settings": {
         "caption": "",
-        "heading": "{{ collection.metafields.custom.faq_title.value }} FAQ",
+        "heading": "{{ collection.metafields.custom.collection_short_title.value }} FAQ",
         "heading_size": "h2",
         "heading_alignment": "center",
         "layout": "none",
@@ -127,6 +144,7 @@
   "order": [
     "image_only_banner_cnFKLU",
     "rich_text_cDKn9n",
+    "collection_feat_icons_pC3Jyc",
     "banner",
     "product-grid",
     "compatible_collections",
