@@ -156,7 +156,11 @@ tbody tr:nth-child(even of .variant-item) > td {
 .section-bulk-quick-order-list-padding{
   padding:0 !important;
 }
-
+.compatible-jump-row{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+}
 
 @media screen and (max-width: 989px) {
   .quick-add__info, td.variant-item__inner {
@@ -260,27 +264,65 @@ background-color: #d4d4d4;
 {% endstyle %}
 
 {% assign compatible_collections = collection.metafields.custom.compatible_collections.value %}
+{% assign has_gutters = false %}
+{% assign has_downspouts = false %}
 
-  {% if compatible_collections != blank %}
+{% for related_collection in compatible_collections %}
+  {% if related_collection.handle contains 'gutter' %}
+    {% assign has_gutters = true %}
+  {% endif %}
+  {% if related_collection.handle contains 'downspout' %}
+    {% assign has_downspouts = true %}
+  {% endif %}
+{% endfor %}
 
-        <div class="compatible-jump-nav">
+
+{% if compatible_collections != blank %}
+  <div class="compatible-jump-nav">
+
+    {%- if has_gutters -%}
+      <div class="compatible-jump-row gutters">
         {% for related_collection in compatible_collections %}
-            <a
-            href="#collection-{{ related_collection.handle }}"
-            class="compatible-jump-button  {{ short_title }}"
-            >
-           {% assign short_title = related_collection.metafields.custom.collection_short_title | metafield_text %}
-
-              {% if short_title != blank %}
-                {{ short_title }}
-              {% else %}
-                {{ related_collection.title }}
-              {% endif %}
-
-            ↓ </a>
+          {% if related_collection.handle contains 'gutter' %}
+            {% assign short_title = related_collection.metafields.custom.collection_short_title | metafield_text %}
+            <a href="#collection-{{ related_collection.handle }}"
+               class="compatible-jump-button gutter">
+              {{ short_title | default: related_collection.title }} ↓
+            </a>
+          {% endif %}
         {% endfor %}
-        </div>
- {% endif %}
+      </div>
+    {%- endif -%}
+
+    {%- if has_downspouts -%}
+      <div class="compatible-jump-row downspouts">
+        {% for related_collection in compatible_collections %}
+          {% if related_collection.handle contains 'downspout' %}
+            {% assign short_title = related_collection.metafields.custom.collection_short_title | metafield_text %}
+            <a href="#collection-{{ related_collection.handle }}"
+               class="compatible-jump-button downspout">
+              {{ short_title | default: related_collection.title }} ↓
+            </a>
+          {% endif %}
+        {% endfor %}
+      </div>
+    {%- endif -%}
+
+    {%- if has_gutters == false and has_downspouts == false -%}
+      <div class="compatible-jump-row misc">
+        {% for related_collection in compatible_collections %}
+          {% assign short_title = related_collection.metafields.custom.collection_short_title | metafield_text %}
+          <a href="#collection-{{ related_collection.handle }}"
+             class="compatible-jump-button">
+            {{ short_title | default: related_collection.title }} ↓
+          </a>
+        {% endfor %}
+      </div>
+    {%- endif -%}
+
+  </div>
+{% endif %}
+
 
 <div class="section-{{ section.id }}-padding color-{{ section.settings.color_scheme }}">
   <div class="page-width">
