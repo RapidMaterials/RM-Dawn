@@ -180,7 +180,14 @@ tbody tr:nth-child(even of .variant-item) > td {
   >
 
     <h2 class="title title--primary">
-      {{ related_collection.title }}
+              {% assign short_title = related_collection.metafields.custom.collection_short_title | metafield_text %}
+
+              {% if short_title != blank %}
+                {{ short_title }}
+              {% else %}
+                {{ related_collection.title }}
+              {% endif %}
+
     </h2>
 
     <ul class="product-grid list-grid collection-quick-add-bulk">
