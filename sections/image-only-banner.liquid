@@ -1,0 +1,166 @@
+{%- style -%}
+  .rm-banner-{{ section.id }} {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: {{ section.settings.border_radius }}px;
+  }
+
+  /* Height controls */
+  .rm-banner-{{ section.id }} .rm-banner__media {
+    position: relative;
+    width: 100%;
+    height: {{ section.settings.desktop_height }}px;
+  }
+
+  @media screen and (max-width: 749px) {
+    .rm-banner-{{ section.id }} .rm-banner__media {
+      height: {{ section.settings.mobile_height }}px;
+    }
+  }
+
+  /* Image fill */
+  .rm-banner-{{ section.id }} img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: {{ section.settings.object_fit }};
+    object-position: center;
+    display: block;
+  }
+
+  /* Optional link cursor */
+  .rm-banner-{{ section.id }} a {
+    display: block;
+  }
+{%- endstyle -%}
+
+<div class="rm-banner-{{ section.id }}">
+  {%- if section.settings.link != blank -%}
+    <a href="{{ section.settings.link }}">
+  {%- endif -%}
+
+  <div class="rm-banner__media">
+    {%- liquid
+      assign desktop_img = section.settings.desktop_image
+      assign mobile_img = section.settings.mobile_image
+
+      assign use_mobile = false
+      if mobile_img != blank
+        assign use_mobile = true
+      endif
+    -%}
+
+    {%- if desktop_img != blank -%}
+      <picture>
+        {%- if use_mobile -%}
+          <source
+            media="(max-width: 749px)"
+            srcset="{{ mobile_img | image_url: width: 1500 }}"
+          >
+        {%- endif -%}
+
+        <img
+          src="{{ desktop_img | image_url: width: 3000 }}"
+          alt="{{ section.settings.alt_text | escape }}"
+          loading="{{ section.settings.loading }}"
+          width="{{ desktop_img.width }}"
+          height="{{ desktop_img.height }}"
+        >
+      </picture>
+    {%- else -%}
+      {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' }}
+    {%- endif -%}
+  </div>
+
+  {%- if section.settings.link != blank -%}
+    </a>
+  {%- endif -%}
+</div>
+
+{% schema %}
+{
+  "name": "Simple Banner Image",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "desktop_image",
+      "label": "Desktop image"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_image",
+      "label": "Mobile image (optional)"
+    },
+    {
+      "type": "text",
+      "id": "alt_text",
+      "label": "Alt text",
+      "default": "Banner image"
+    },
+    {
+      "type": "url",
+      "id": "link",
+      "label": "Optional link"
+    },
+    {
+      "type": "range",
+      "id": "desktop_height",
+      "min": 150,
+      "max": 900,
+      "step": 10,
+      "unit": "px",
+      "label": "Desktop height",
+      "default": 420
+    },
+    {
+      "type": "range",
+      "id": "mobile_height",
+      "min": 120,
+      "max": 700,
+      "step": 10,
+      "unit": "px",
+      "label": "Mobile height",
+      "default": 260
+    },
+    {
+      "type": "select",
+      "id": "object_fit",
+      "label": "Image fit",
+      "default": "cover",
+      "options": [
+        { "value": "cover", "label": "Cover (recommended)" },
+        { "value": "contain", "label": "Contain" }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "border_radius",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "Border radius",
+      "default": 0
+    },
+    {
+      "type": "select",
+      "id": "loading",
+      "label": "Loading",
+      "default": "lazy",
+      "options": [
+        { "value": "lazy", "label": "Lazy" },
+        { "value": "eager", "label": "Eager" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Simple Banner Image"
+    }
+  ]
+}
+{% endschema %}
