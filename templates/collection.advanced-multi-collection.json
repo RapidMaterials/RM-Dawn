@@ -17,7 +17,7 @@
         "mobile_image": "shopify://shop_images/cat_head_Nordic_bronze_2.png",
         "alt_text": "Banner image",
         "link": "",
-        "desktop_height": 120,
+        "desktop_height": 130,
         "mobile_height": 120,
         "object_fit": "cover",
         "border_radius": 0,
