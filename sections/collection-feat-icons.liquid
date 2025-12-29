@@ -1,22 +1,16 @@
 {%- comment -%}
-  SECTION: Collection Feature Icons (Metaobject reference)
+  Collection Icons (supports multiple metafield shapes)
 
   Collection metafield:
-    collection.metafields.custom.features  (TYPE: metaobject reference)
+    collection.metafields.custom.features
 
-  The referenced metaobject (your "icf" container) should have:
-    - a field that is a LIST of feature metaobjects (default assumed id: "features")
-      Each feature metaobject item should have:
-        - icon (file/image)
-        - headline (text)
-        - sub_headline (text, optional)
-
-  If your container field id is NOT "features", change:
-    assign iconfs = icf_container.features.value
-  to match your actual field id.
-
-  Tip (optional debug):
-    <pre>{{ icf_container | json }}</pre>
+  Supported shapes:
+    A) LIST of feature metaobjects (icon/headline/sub_headline)
+    B) SINGLE "container" metaobject that has a LIST field like:
+       - features
+       - items
+       - icon_features
+    C) SINGLE feature metaobject (icon/headline/sub_headline)
 {%- endcomment -%}
 
 {%- style -%}
@@ -24,7 +18,6 @@
     padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
     padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
   }
-
   @media screen and (min-width: 750px) {
     .section-{{ section.id }}-padding {
       padding-top: {{ section.settings.padding_top }}px;
@@ -71,23 +64,57 @@
     font-size: 1.2rem;
     line-height: 1.3;
   }
+
+  .collection-icon-features-{{ section.id }} .debug-box {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    border: 1px solid rgba(0,0,0,.15);
+    background: rgba(0,0,0,.03);
+    overflow: auto;
+    max-width: 100%;
+  }
 {%- endstyle -%}
 
-{%- assign icf_container = collection.metafields.custom.features.value -%}
-{% assign compatible_collections = collection.metafields.custom.compatible_collections.value %}
+{%- assign raw = collection.metafields.custom.features -%}
+{%- assign val = raw.value -%}
+
+{%- assign iconfs = blank -%}
 
 {%- comment -%}
-  IMPORTANT: change ".features" below if your container field id is different
-  (example: icf_container.icon_features.value, icf_container.items.value, etc.)
+  Try to normalize into "iconfs" as a LIST of feature metaobjects.
 {%- endcomment -%}
-{%- assign iconfs = blank -%}
-{%- if icf_container != blank -%}
-  {%- assign iconfs = icf_container.features.value -%}
+
+{%- if val == blank -%}
+  {%- assign iconfs = blank -%}
+
+{%- elsif val.size != blank -%}
+  {%- comment -%} A) val is an array/list (LIST metafield) {%- endcomment -%}
+  {%- assign iconfs = val -%}
+
+{%- else -%}
+  {%- comment -%}
+    val is a single metaobject reference.
+    It could be:
+      B) a container with a list field, OR
+      C) a single feature item itself.
+  {%- endcomment -%}
+
+  {%- if val.features and val.features.value != blank -%}
+    {%- assign iconfs = val.features.value -%}
+  {%- elsif val.items and val.items.value != blank -%}
+    {%- assign iconfs = val.items.value -%}
+  {%- elsif val.icon_features and val.icon_features.value != blank -%}
+    {%- assign iconfs = val.icon_features.value -%}
+  {%- else -%}
+    {%- comment -%} C) assume this *is* a single feature item {%- endcomment -%}
+    {%- capture single_item_json -%}[{{ val | json }}]{%- endcapture -%}
+    {%- assign iconfs = single_item_json | parse_json -%}
+  {%- endif -%}
 {%- endif -%}
 
-{%- if collection != blank and iconfs != blank -%}
+{%- if iconfs != blank -%}
   <section class="collection-icon-features-{{ section.id }} section-{{ section.id }}-padding color-{{ section.settings.color_scheme }}">
-    <div class="{% if section.settings.full_width %}page-width{% else %}page-width{% endif %}">
+    <div class="page-width">
       {%- if section.settings.heading != blank -%}
         <h2 class="title title--primary" style="margin-top:0;">
           {{ section.settings.heading | escape }}
@@ -97,7 +124,7 @@
       <ul class="icon-features-list">
         {%- for icf in iconfs -%}
           <li class="icon-feature">
-            {%- if icf.icon.value != blank -%}
+            {%- if icf.icon and icf.icon.value != blank -%}
               <img
                 src="{{ icf.icon.value | image_url: width: 128 }}"
                 alt="{{ icf.headline.value | default: section.settings.default_alt | escape }}"
@@ -106,18 +133,40 @@
               >
             {%- endif -%}
 
-            {%- if icf.headline.value != blank -%}
+            {%- if icf.headline and icf.headline.value != blank -%}
               <h3 class="icon-feature__title">{{ icf.headline.value }}</h3>
             {%- endif -%}
 
-            {%- if icf.sub_headline.value != blank -%}
+            {%- if icf.sub_headline and icf.sub_headline.value != blank -%}
               <p class="icon-feature__subtitle">{{ icf.sub_headline.value }}</p>
             {%- endif -%}
           </li>
         {%- endfor -%}
       </ul>
+
+      {%- if section.settings.debug -%}
+        <div class="debug-box">
+          <strong>DEBUG:</strong><br>
+          <div><em>collection.metafields.custom.features</em></div>
+          <pre>{{ raw | json }}</pre>
+          <div><em>raw.value</em></div>
+          <pre>{{ val | json }}</pre>
+        </div>
+      {%- endif -%}
     </div>
   </section>
+{%- else -%}
+  {%- if section.settings.debug -%}
+    <section class="section-{{ section.id }}-padding">
+      <div class="page-width">
+        <div class="debug-box">
+          <strong>DEBUG (blank output):</strong><br>
+          <div><em>collection.metafields.custom.features</em></div>
+          <pre>{{ collection.metafields.custom.features | json }}</pre>
+        </div>
+      </div>
+    </section>
+  {%- endif -%}
 {%- endif -%}
 
 {% schema %}
@@ -212,9 +261,9 @@
     },
     {
       "type": "checkbox",
-      "id": "full_width",
-      "label": "Full width",
-      "default": true
+      "id": "debug",
+      "label": "Debug output",
+      "default": false
     }
   ],
   "presets": [
