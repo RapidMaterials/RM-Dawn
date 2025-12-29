@@ -1,16 +1,9 @@
 {{ 'section-rich-text.css' | asset_url | stylesheet_tag }}
 
 {%- style -%}
- .section-{{ section.id }}-padding {
+  .section-{{ section.id }}-padding {
     padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
     padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
-  }
-  /* Content width control */
-  #shopify-section-{{ section.id }} .rich-text__blocks {
-    max-width: {{ section.settings.content_max_width }}px;
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%;
   }
 
   @media screen and (min-width: 750px) {
@@ -18,6 +11,14 @@
       padding-top: {{ section.settings.padding_top }}px;
       padding-bottom: {{ section.settings.padding_bottom }}px;
     }
+  }
+
+  /* Content width control */
+  #shopify-section-{{ section.id }} .rich-text__blocks {
+    max-width: {{ section.settings.content_max_width }}px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
   }
 {%- endstyle -%}
 
@@ -38,6 +39,7 @@
               >
                 {{ block.settings.heading }}
               </{{ block.settings.heading_tag }}>
+
             {%- when 'caption' -%}
               <{{ block.settings.heading_tag }}
                 class="rich-text__caption {{ block.settings.text_style }} {{ block.settings.text_style }}--{{ block.settings.text_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
@@ -49,6 +51,7 @@
               >
                 {{ block.settings.caption | escape }}
               </{{ block.settings.heading_tag }}>
+
             {%- when 'text' -%}
               <div
                 class="rich-text__text rte{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
@@ -60,6 +63,7 @@
               >
                 {{ block.settings.text }}
               </div>
+
             {%- when 'button' -%}
               <div
                 class="rich-text__buttons{% if block.settings.button_label != blank and block.settings.button_label_2 != blank %} rich-text__buttons--multiple{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
@@ -81,6 +85,7 @@
                     {{- block.settings.button_label | escape -}}
                   </a>
                 {%- endif -%}
+
                 {%- if block.settings.button_label_2 != blank -%}
                   <a
                     {% if block.settings.button_link_2 == blank %}
@@ -103,7 +108,7 @@
 
 {% schema %}
 {
-  "name": "t:sections.rich-text.name",
+  "name": "Rich text (width control)",
   "tag": "section",
   "class": "section",
   "disabled_on": {
@@ -114,57 +119,49 @@
       "type": "select",
       "id": "desktop_content_position",
       "options": [
-        {
-          "value": "left",
-          "label": "t:sections.rich-text.settings.desktop_content_position.options__1.label"
-        },
-        {
-          "value": "center",
-          "label": "t:sections.rich-text.settings.desktop_content_position.options__2.label"
-        },
-        {
-          "value": "right",
-          "label": "t:sections.rich-text.settings.desktop_content_position.options__3.label"
-        }
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
       ],
       "default": "center",
-      "label": "t:sections.rich-text.settings.desktop_content_position.label"
+      "label": "Desktop content position"
     },
     {
       "type": "select",
       "id": "content_alignment",
       "options": [
-        {
-          "value": "left",
-          "label": "t:sections.rich-text.settings.content_alignment.options__1.label"
-        },
-        {
-          "value": "center",
-          "label": "t:sections.rich-text.settings.content_alignment.options__2.label"
-        },
-        {
-          "value": "right",
-          "label": "t:sections.rich-text.settings.content_alignment.options__3.label"
-        }
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
       ],
       "default": "center",
-      "label": "t:sections.rich-text.settings.content_alignment.label"
+      "label": "Content alignment"
+    },
+    {
+      "type": "range",
+      "id": "content_max_width",
+      "min": 400,
+      "max": 1400,
+      "step": 20,
+      "unit": "px",
+      "label": "Content max width",
+      "default": 900
     },
     {
       "type": "color_scheme",
       "id": "color_scheme",
-      "label": "t:sections.all.colors.label",
+      "label": "Color scheme",
       "default": "scheme-1"
     },
     {
       "type": "checkbox",
       "id": "full_width",
       "default": true,
-      "label": "t:sections.rich-text.settings.full_width.label"
+      "label": "Full width section"
     },
     {
       "type": "header",
-      "content": "t:sections.all.padding.section_padding_heading"
+      "content": "Padding"
     },
     {
       "type": "range",
@@ -173,7 +170,7 @@
       "max": 100,
       "step": 4,
       "unit": "px",
-      "label": "t:sections.all.padding.padding_top",
+      "label": "Padding top",
       "default": 40
     },
     {
@@ -183,155 +180,92 @@
       "max": 100,
       "step": 4,
       "unit": "px",
-      "label": "t:sections.all.padding.padding_bottom",
+      "label": "Padding bottom",
       "default": 52
     }
   ],
   "blocks": [
     {
       "type": "heading",
-      "name": "t:sections.rich-text.blocks.heading.name",
+      "name": "Heading",
       "limit": 3,
       "settings": [
         {
           "type": "inline_richtext",
           "id": "heading",
-          "default": "t:sections.rich-text.blocks.heading.settings.heading.default",
-          "label": "t:sections.rich-text.blocks.heading.settings.heading.label"
+          "default": "Heading",
+          "label": "Heading"
         },
         {
           "type": "select",
           "id": "heading_size",
           "options": [
-            {
-              "value": "h2",
-              "label": "t:sections.all.heading_size.options__1.label"
-            },
-            {
-              "value": "h1",
-              "label": "t:sections.all.heading_size.options__2.label"
-            },
-            {
-              "value": "h0",
-              "label": "t:sections.all.heading_size.options__3.label"
-            },
-            {
-              "value": "hxl",
-              "label": "t:sections.all.heading_size.options__4.label"
-            },
-            {
-              "value": "hxxl",
-              "label": "t:sections.all.heading_size.options__5.label"
-            }
+            { "value": "h2", "label": "Large" },
+            { "value": "h1", "label": "XL" },
+            { "value": "h0", "label": "XXL" },
+            { "value": "hxl", "label": "Huge" },
+            { "value": "hxxl", "label": "Max" }
           ],
           "default": "h1",
-          "label": "t:sections.all.heading_size.label"
+          "label": "Heading size"
         },
         {
           "type": "select",
           "id": "heading_tag",
           "options": [
-            {
-              "value": "h1",
-              "label": "h1"
-            },
-            {
-              "value": "h2",
-              "label": "h2"
-            },
-            {
-              "value": "h3",
-              "label": "h3"
-            },
-            {
-              "value": "h4",
-              "label": "h4"
-            },
-            {
-              "value": "h5",
-              "label": "h5"
-            }
+            { "value": "h1", "label": "h1" },
+            { "value": "h2", "label": "h2" },
+            { "value": "h3", "label": "h3" },
+            { "value": "h4", "label": "h4" },
+            { "value": "h5", "label": "h5" }
           ],
           "default": "h2",
-          "label": "Heading Tag"
+          "label": "Heading tag"
         }
       ]
     },
-  {
+    {
       "type": "caption",
-      "name": "t:sections.rich-text.blocks.caption.name",
+      "name": "Caption",
       "limit": 3,
       "settings": [
         {
           "type": "text",
           "id": "caption",
-          "default": "t:sections.rich-text.blocks.caption.settings.text.default",
-          "label": "t:sections.rich-text.blocks.caption.settings.text.label"
+          "default": "Caption",
+          "label": "Caption"
         },
         {
           "type": "select",
           "id": "text_style",
           "options": [
-            {
-              "value": "subtitle",
-              "label": "t:sections.rich-text.blocks.caption.settings.text_style.options__1.label"
-            },
-            {
-              "value": "caption-with-letter-spacing",
-              "label": "t:sections.rich-text.blocks.caption.settings.text_style.options__2.label"
-            }
+            { "value": "subtitle", "label": "Subtitle" },
+            { "value": "caption-with-letter-spacing", "label": "Caption w/ spacing" }
           ],
           "default": "caption-with-letter-spacing",
-          "label": "t:sections.rich-text.blocks.caption.settings.text_style.label"
+          "label": "Text style"
         },
         {
           "type": "select",
           "id": "text_size",
           "options": [
-            {
-              "value": "small",
-              "label": "t:sections.rich-text.blocks.caption.settings.caption_size.options__1.label"
-            },
-            {
-              "value": "medium",
-              "label": "t:sections.rich-text.blocks.caption.settings.caption_size.options__2.label"
-            },
-            {
-              "value": "large",
-              "label": "t:sections.rich-text.blocks.caption.settings.caption_size.options__3.label"
-            }
+            { "value": "small", "label": "Small" },
+            { "value": "medium", "label": "Medium" },
+            { "value": "large", "label": "Large" }
           ],
           "default": "medium",
-          "label": "t:sections.rich-text.blocks.caption.settings.caption_size.label"
+          "label": "Text size"
         },
         {
           "type": "select",
           "id": "heading_tag",
           "options": [
-            {
-              "value": "h1",
-              "label": "h1"
-            },
-            {
-              "value": "h2",
-              "label": "h2"
-            },
-            {
-              "value": "h3",
-              "label": "h3"
-            },
-            {
-              "value": "h4",
-              "label": "h4"
-            },
-            {
-              "value": "h5",
-              "label": "h5"
-            },
-            {
-              "value": "p",
-              "label": "p"
-            }
+            { "value": "p", "label": "p" },
+            { "value": "h1", "label": "h1" },
+            { "value": "h2", "label": "h2" },
+            { "value": "h3", "label": "h3" },
+            { "value": "h4", "label": "h4" },
+            { "value": "h5", "label": "h5" }
           ],
           "default": "p",
           "label": "Tag"
@@ -340,73 +274,66 @@
     },
     {
       "type": "text",
-      "name": "t:sections.rich-text.blocks.text.name",
+      "name": "Text",
       "limit": 3,
       "settings": [
         {
           "type": "richtext",
           "id": "text",
-          "default": "t:sections.rich-text.blocks.text.settings.text.default",
-          "label": "t:sections.rich-text.blocks.text.settings.text.label"
+          "default": "<p>Add your text here.</p>",
+          "label": "Text"
         }
       ]
     },
     {
       "type": "button",
-      "name": "t:sections.rich-text.blocks.buttons.name",
+      "name": "Buttons",
       "limit": 2,
       "settings": [
         {
           "type": "text",
           "id": "button_label",
-          "default": "t:sections.rich-text.blocks.buttons.settings.button_label_1.default",
-          "label": "t:sections.rich-text.blocks.buttons.settings.button_label_1.label",
-          "info": "t:sections.rich-text.blocks.buttons.settings.button_label_1.info"
+          "default": "Button",
+          "label": "Button label"
         },
         {
           "type": "url",
           "id": "button_link",
-          "label": "t:sections.rich-text.blocks.buttons.settings.button_link_1.label"
+          "label": "Button link"
         },
         {
           "type": "checkbox",
           "id": "button_style_secondary",
           "default": false,
-          "label": "t:sections.rich-text.blocks.buttons.settings.button_style_secondary_1.label"
+          "label": "Use secondary style"
         },
         {
           "type": "text",
           "id": "button_label_2",
-          "label": "t:sections.rich-text.blocks.buttons.settings.button_label_2.label",
-          "info": "t:sections.rich-text.blocks.buttons.settings.button_label_2.info"
+          "default": "Button 2",
+          "label": "Button 2 label"
         },
         {
           "type": "url",
           "id": "button_link_2",
-          "label": "t:sections.rich-text.blocks.buttons.settings.button_link_2.label"
+          "label": "Button 2 link"
         },
         {
           "type": "checkbox",
           "id": "button_style_secondary_2",
           "default": false,
-          "label": "t:sections.rich-text.blocks.buttons.settings.button_style_secondary_2.label"
+          "label": "Use secondary style (button 2)"
         }
       ]
     }
   ],
   "presets": [
     {
-      "name": "t:sections.rich-text.presets.name",
+      "name": "Rich text (width control)",
       "blocks": [
-        {
-          "type": "heading"
-        },
-        {
-          "type": "text"
-        },
-        {
-          "type": "button"
-        }
+        { "type": "heading" },
+        { "type": "text" },
+        { "type": "button" }
       ]
     }
   ]
