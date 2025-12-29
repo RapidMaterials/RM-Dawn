@@ -168,7 +168,7 @@ tbody tr:nth-child(even of .variant-item) > td {
                 {{ related_collection.title }}
               {% endif %}
 
-            </a>
+            ▼ </a>
         {% endfor %}
         </div>
 
@@ -183,7 +183,7 @@ tbody tr:nth-child(even of .variant-item) > td {
               {% assign short_title = related_collection.metafields.custom.collection_short_title | metafield_text %}
 
               {% if short_title != blank %}
-                {{ short_title }}
+                {{ short_title }} 
               {% else %}
                 {{ related_collection.title }}
               {% endif %}
