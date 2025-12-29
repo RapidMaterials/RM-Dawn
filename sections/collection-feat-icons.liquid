@@ -1,11 +1,22 @@
 {%- comment -%}
-  Section: Collection Features Icons (Metafield Driven)
+  SECTION: Collection Feature Icons (Metaobject reference)
 
-  Pulls from: collection.metafields.custom.features (list of metaobjects)
-  Expected fields on each metaobject:
-    - icon (file/image)
-    - headline (text)
-    - sub_headline (text)
+  Collection metafield:
+    collection.metafields.custom.features  (TYPE: metaobject reference)
+
+  The referenced metaobject (your "icf" container) should have:
+    - a field that is a LIST of feature metaobjects (default assumed id: "features")
+      Each feature metaobject item should have:
+        - icon (file/image)
+        - headline (text)
+        - sub_headline (text, optional)
+
+  If your container field id is NOT "features", change:
+    assign iconfs = icf_container.features.value
+  to match your actual field id.
+
+  Tip (optional debug):
+    <pre>{{ icf_container | json }}</pre>
 {%- endcomment -%}
 
 {%- style -%}
@@ -21,13 +32,13 @@
     }
   }
 
-  .collection-features-{{ section.id }} {
+  .collection-icon-features-{{ section.id }} {
     {% if section.settings.use_background %}
       background: {{ section.settings.background_color }};
     {% endif %}
   }
 
-  .collection-features-{{ section.id }} .features-list {
+  .collection-icon-features-{{ section.id }} .icon-features-list {
     list-style: none;
     padding: 0;
     margin: 0;
@@ -36,81 +47,95 @@
     gap: {{ section.settings.grid_gap }}px;
   }
 
-  .collection-features-{{ section.id }} .feature {
+  .collection-icon-features-{{ section.id }} .icon-feature {
     text-align: center;
   }
 
-  .collection-features-{{ section.id }} .feature__image {
+  .collection-icon-features-{{ section.id }} .icon-feature__image {
     width: {{ section.settings.icon_size }}px;
     height: {{ section.settings.icon_size }}px;
     object-fit: contain;
     display: inline-block;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.6rem;
   }
 
-  .collection-features-{{ section.id }} .feature__title {
+  .collection-icon-features-{{ section.id }} .icon-feature__title {
     margin: 0;
     font-weight: 700;
     font-size: 1.4rem;
     line-height: 1.2;
   }
 
-  .collection-features-{{ section.id }} .feature__subtitle {
+  .collection-icon-features-{{ section.id }} .icon-feature__subtitle {
     margin: 0.25rem 0 0;
     font-size: 1.2rem;
     line-height: 1.3;
   }
 {%- endstyle -%}
 
-{%- assign features = collection.metafields.custom.features.value -%}
+{%- assign icf_container = collection.metafields.custom.features.value -%}
 
-{%- if collection != blank and features != blank -%}
-  <div class="collection-features-{{ section.id }} section-{{ section.id }}-padding color-{{ section.settings.color_scheme }}">
-    <div class="page-width">
+{%- comment -%}
+  IMPORTANT: change ".features" below if your container field id is different
+  (example: icf_container.icon_features.value, icf_container.items.value, etc.)
+{%- endcomment -%}
+{%- assign iconfs = blank -%}
+{%- if icf_container != blank -%}
+  {%- assign iconfs = icf_container.features.value -%}
+{%- endif -%}
+
+{%- if collection != blank and iconfs != blank -%}
+  <section class="collection-icon-features-{{ section.id }} section-{{ section.id }}-padding color-{{ section.settings.color_scheme }}">
+    <div class="{% if section.settings.full_width %}page-width{% else %}page-width{% endif %}">
       {%- if section.settings.heading != blank -%}
         <h2 class="title title--primary" style="margin-top:0;">
           {{ section.settings.heading | escape }}
         </h2>
       {%- endif -%}
 
-      <ul class="features-list">
-        {%- for f in features -%}
-          <li class="feature">
-            {%- if f.icon.value != blank -%}
+      <ul class="icon-features-list">
+        {%- for icf in iconfs -%}
+          <li class="icon-feature">
+            {%- if icf.icon.value != blank -%}
               <img
-                src="{{ f.icon.value | image_url: width: 128 }}"
-                alt="{{ f.headline.value | escape }}"
-                class="feature__image"
+                src="{{ icf.icon.value | image_url: width: 128 }}"
+                alt="{{ icf.headline.value | default: section.settings.default_alt | escape }}"
+                class="icon-feature__image"
                 loading="lazy"
               >
             {%- endif -%}
 
-            {%- if f.headline.value != blank -%}
-              <h3 class="feature__title">{{ f.headline.value }}</h3>
+            {%- if icf.headline.value != blank -%}
+              <h3 class="icon-feature__title">{{ icf.headline.value }}</h3>
             {%- endif -%}
 
-            {%- if f.sub_headline.value != blank -%}
-              <p class="feature__subtitle">{{ f.sub_headline.value }}</p>
+            {%- if icf.sub_headline.value != blank -%}
+              <p class="icon-feature__subtitle">{{ icf.sub_headline.value }}</p>
             {%- endif -%}
           </li>
         {%- endfor -%}
       </ul>
     </div>
-  </div>
+  </section>
 {%- endif -%}
 
 {% schema %}
 {
-  "name": "Collection Icon List",
+  "name": "Collection Icons",
   "tag": "section",
   "class": "section",
-  "templates": ["collection"],
   "settings": [
     {
       "type": "inline_richtext",
       "id": "heading",
       "label": "Heading (optional)",
       "default": "Key Features"
+    },
+    {
+      "type": "text",
+      "id": "default_alt",
+      "label": "Fallback image alt text",
+      "default": "Feature icon"
     },
     {
       "type": "color_scheme",
@@ -134,7 +159,7 @@
       "type": "range",
       "id": "min_col_width",
       "min": 120,
-      "max": 320,
+      "max": 340,
       "step": 10,
       "unit": "px",
       "label": "Min column width",
@@ -144,7 +169,7 @@
       "type": "range",
       "id": "grid_gap",
       "min": 8,
-      "max": 40,
+      "max": 48,
       "step": 2,
       "unit": "px",
       "label": "Grid gap",
@@ -183,11 +208,17 @@
       "unit": "px",
       "label": "Padding bottom",
       "default": 20
+    },
+    {
+      "type": "checkbox",
+      "id": "full_width",
+      "label": "Full width",
+      "default": true
     }
   ],
   "presets": [
     {
-      "name": "Collection Icon List"
+      "name": "Collection Icons"
     }
   ]
 }
