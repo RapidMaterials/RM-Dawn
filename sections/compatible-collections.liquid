@@ -153,68 +153,71 @@ tbody tr:nth-child(even of .variant-item) > td {
 
 
 @media screen and (max-width: 989px) {
-  .quick-add__info, td.variant-item__inner {
+  .quick-order-list-container quick-order-list .quick-add__info, td.variant-item__inner {
     display: none !important;
     width: 0 !important;
   }
 
-  .section-bulk-quick-order-list-padding {
+  .quick-order-list-container quick-order-list .section-bulk-quick-order-list-padding {
     padding: 10px !important;
   }
 
-  .quick-add-modal__content-info--bulk-details {
+  .quick-order-list-container quick-order-list .quick-add-modal__content-info--bulk-details {
     padding-left: 0 !important;
   }
 
-  .quick-order-list__table thead tr {
+  .quick-order-list-container quick-order-list .quick-order-list__table thead tr {
     margin: 0 !important;
   }
 
-  th.caption-with-letter-spacing {
+  .quick-order-list-container quick-order-list th.caption-with-letter-spacing {
     padding-bottom: 10px;
   }
 
-  .variant-item {
+  .quick-order-list-container quick-order-list .variant-item {
     gap: 0 !important;
     margin-bottom: 10px !important;
     display: flex !important;
   }
-  td.variant-item__quantity{
+  .quick-order-list-container quick-order-list td.variant-item__quantity{
     width: 120px  !important;
   }
-  td.variant-item__totals {
+  .quick-order-list-container quick-order-list td.variant-item__totals {
     width: 80px  !important;
   }
-td.variant-item__details {
+.quick-order-list-container quick-order-list td.variant-item__details {
     width: calc(100% - 200px) !important;
   }
-  .variant-item td {
+.quick-order-list-container quick-order-list .variant-item td {
     padding: 5px !important;
 }
-span.variant-item__name, span.price {
+.quick-order-list-container quick-order-list span.variant-item__name, span.price {
     font-size: .8em !important;
 }
-span.variant-item__sku.break {
+.quick-order-list-container quick-order-list span.variant-item__sku.break {
     display: none;
 }
-.quantity-popover-container {
+.quick-order-list-container quick-order-list .quantity-popover-container {
     width: 100px;
 }
-quick-order-list-remove-button {
+.quick-order-list-container quick-order-list quick-order-list-remove-button {
     margin: 0 !important;
 }
-button.quantity__button {
+.quick-order-list-container quick-order-list button.quantity__button {
     width: 20px;
 }
-.variant-item__quantity-wrapper{
+.quick-order-list-container quick-order-list .variant-item__quantity-wrapper{
   flex-wrap:nowrap !important;
 }
-td.variant-item__totals {
+.quick-order-list-container quick-order-list td.variant-item__totals {
     display: flex;
     align-items: center;
 }
-input.quantity__input {
+.quick-order-list-container quick-order-list input.quantity__input {
     font-size: 1.2em !important;
+}
+.quick-order-list-container quick-order-list {
+    padding: 0 !important;
 }
 
 }
