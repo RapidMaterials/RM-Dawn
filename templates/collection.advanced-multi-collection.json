@@ -9,21 +9,18 @@
  */
 {
   "sections": {
-    "image_banner_BmK8YF": {
-      "type": "image-banner",
-      "name": "t:sections.image-banner.presets.name",
+    "image_only_banner_cnFKLU": {
+      "type": "image-only-banner",
+      "name": "Simple Banner Image",
       "settings": {
-        "image": "{{ collection.metafields.custom.header_image.value }}",
-        "image_overlay_opacity": 0,
-        "image_height": "adapt",
-        "desktop_content_position": "middle-center",
-        "show_text_box": true,
-        "desktop_content_alignment": "center",
-        "color_scheme": "",
-        "image_behavior": "none",
-        "mobile_content_alignment": "center",
-        "stack_images_on_mobile": false,
-        "show_text_below": true
+        "desktop_image": "shopify://shop_images/cat_head_Nordic_bronze_3c07a90f-da51-4ccd-8d9b-9bedbafda5e9.png",
+        "alt_text": "Banner image",
+        "link": "",
+        "desktop_height": 150,
+        "mobile_height": 120,
+        "object_fit": "cover",
+        "border_radius": 0,
+        "loading": "lazy"
       }
     },
     "rich_text_cDKn9n": {
@@ -126,7 +123,7 @@
     }
   },
   "order": [
-    "image_banner_BmK8YF",
+    "image_only_banner_cnFKLU",
     "rich_text_cDKn9n",
     "banner",
     "product-grid",
