@@ -149,10 +149,7 @@ tbody tr:nth-child(even of .variant-item) > td {
 
 {% assign compatible_collections = collection.metafields.custom.compatible_collections.value %}
 
-<div class="section-{{ section.id }}-padding color-{{ section.settings.color_scheme }}">
-  <div class="page-width">
-
-    {% if compatible_collections != blank %}
+  {% if compatible_collections != blank %}
 
         <div class="compatible-jump-nav">
         {% for related_collection in compatible_collections %}
@@ -171,6 +168,12 @@ tbody tr:nth-child(even of .variant-item) > td {
             ↓ </a>
         {% endfor %}
         </div>
+ {% endif %}
+
+<div class="section-{{ section.id }}-padding color-{{ section.settings.color_scheme }}">
+  <div class="page-width">
+
+    {% if compatible_collections != blank %}
 
 
       {% for related_collection in compatible_collections %}
