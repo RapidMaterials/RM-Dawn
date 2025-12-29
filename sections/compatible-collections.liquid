@@ -267,7 +267,7 @@ background-color: #d4d4d4;
         {% for related_collection in compatible_collections %}
             <a
             href="#collection-{{ related_collection.handle }}"
-            class="compatible-jump-button"
+            class="compatible-jump-button  {{ short_title }}"
             >
            {% assign short_title = related_collection.metafields.custom.collection_short_title | metafield_text %}
 
