@@ -9,18 +9,6 @@
  */
 {
   "sections": {
-    "custom_liquid_FrEHiB": {
-      "type": "custom-liquid",
-      "name": "t:sections.custom-liquid.presets.name",
-      "settings": {
-        "custom_liquid": "<div style=\"border: 1px solid #ccc; padding: 16px; background-color: #f9f9f9; border-radius: 6px; font-weight:boldfont-family: sans-serif;\">\n  <h3 style=\"font-weight:bold;margin-top: 0;\"> Holiday Support Notice</h3>\n  <p>Please note: Our phone support line will be closed from <strong>December 22 through January 2</strong> due to limited holiday staffing.</p>\n  <p>We’ll still be actively monitoring emails during this period (except on <strong>December 24, 25, and January 1</strong>), so feel free to reach out via our contact form or by emailing us directly.</p>\n  <p>Thanks for your understanding, and happy holidays from the Rapid Materials team.</p>\n</div>",
-        "color_scheme": "",
-        "padding_top": 4,
-        "padding_bottom": 4,
-        "padding_left": 4,
-        "padding_right": 4
-      }
-    },
     "rich_text_tgCRmU": {
       "type": "rich-text",
       "blocks": {
@@ -46,6 +34,7 @@
       "settings": {
         "desktop_content_position": "center",
         "content_alignment": "center",
+        "content_max_width": 900,
         "color_scheme": "",
         "full_width": true,
         "padding_top": 40,
@@ -145,7 +134,6 @@
     }
   },
   "order": [
-    "custom_liquid_FrEHiB",
     "rich_text_tgCRmU",
     "1734561040a9aaddb4",
     "contact_form_6HdzTj",
