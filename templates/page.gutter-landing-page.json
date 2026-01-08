@@ -185,9 +185,10 @@
         "H3.inline-richtext {text-align: CENTER; font-size: 1em; font-weight: bold;}",
         ".multicolumn-card-spacing {padding: 0.8rem; margin: 0;}",
         ".multicolumn-card__info {padding: 1rem;}",
-        "a.link.animate-arrow {margin: 0 auto; font-size: 0.8em; width: 100%; text-align: center;}",
-        "/* Make entire card feel clickable */.multicolumn-card {cursor: pointer; transition: transform 0.2s ease, box-shadow 0.2s ease;}",
-        "/* Lift + shadow on hover */.multicolumn-card:hover {transform: translateY(-6px); box-shadow: 0 14px 30px rgba(0, 0, 0, 0.12);}"
+        "a.link{width: 100%; text-align: center; margin: 0 auto;}",
+        "a.link.animate-arrow {font-size: 0.8em;}",
+        " /* Make entire card feel clickable */.multicolumn-card {cursor: pointer; transition: transform 0.2s ease, box-shadow 0.2s ease;}",
+        " /* Lift + shadow on hover */.multicolumn-card:hover {transform: translateY(-6px); box-shadow: 0 14px 30px rgba(0, 0, 0, 0.12);}"
       ],
       "name": "t:sections.multicolumn.presets.name",
       "settings": {
