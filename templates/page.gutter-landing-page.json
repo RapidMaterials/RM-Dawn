@@ -23,8 +23,143 @@
         "loading": "lazy"
       }
     },
+    "rich_text_UxBcdc": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_8UaKga": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>Zambelli 7.6″ European Painted Steel Half-Round Gutter System</strong>",
+            "heading_size": "h2",
+            "heading_tag": "h1"
+          }
+        },
+        "text_nNmbVY": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Add your text here.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_8UaKga",
+        "text_nNmbVY"
+      ],
+      "name": "Rich text (width control)",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "content_max_width": 900,
+        "color_scheme": "scheme-2",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "multicolumn_UaHhwa": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_kaGi7t": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/cat_head_zambelli-black.png",
+            "title": "Black",
+            "heading_tag": "h2",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_d9aaUJ": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/cat_head_zambelli-bronze.png",
+            "title": "Dark Bronze / Brown",
+            "heading_tag": "h2",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_zcWaaR": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/cat_head_zambelli-dark-charcoal.png",
+            "title": "Dark Charcoal",
+            "heading_tag": "h2",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_3ymCWL": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/cat_head_zambelli-white.png",
+            "title": "Antique White",
+            "heading_tag": "h2",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_PNpkQM": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/zambelli-natural-gray-painted-mobile.png",
+            "title": "Natural Gray Metallic",
+            "heading_tag": "h2",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_MwJ8Qr": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/cat_head_zambelli-lead-coated-copper-gutters.png",
+            "title": "Unpainted Steel",
+            "heading_tag": "h2",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_kaGi7t",
+        "column_d9aaUJ",
+        "column_zcWaaR",
+        "column_3ymCWL",
+        "column_PNpkQM",
+        "column_MwJ8Qr"
+      ],
+      "name": "t:sections.multicolumn.presets.name",
+      "settings": {
+        "title": "Multicolumn",
+        "heading_tag": "h2",
+        "section_float": "clear",
+        "mobile_display": "mobile-show",
+        "desktop_display": "desktop-show",
+        "heading_size": "h1",
+        "col_alignment": "left",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "button_label": "Button label",
+        "button_link": "",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "background_style": "primary",
+        "color_scheme": "",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
     "main": {
       "type": "main-page",
+      "disabled": true,
       "settings": {
         "padding_top": 28,
         "padding_bottom": 28
@@ -35,56 +170,12 @@
       "settings": {
         "include_margins": true
       }
-    },
-    "rich_text_UxBcdc": {
-      "type": "rich-text",
-      "blocks": {
-        "heading_8UaKga": {
-          "type": "heading",
-          "settings": {
-            "heading": "Zambelli 7.6″ European Painted Steel Half-Round Gutter System",
-            "heading_size": "h1",
-            "heading_tag": "h1"
-          }
-        },
-        "text_nNmbVY": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Add your text here.</p>"
-          }
-        },
-        "button_i8WzqA": {
-          "type": "button",
-          "settings": {
-            "button_label": "Button",
-            "button_link": "",
-            "button_style_secondary": false,
-            "button_label_2": "Button 2",
-            "button_link_2": "",
-            "button_style_secondary_2": false
-          }
-        }
-      },
-      "block_order": [
-        "heading_8UaKga",
-        "text_nNmbVY",
-        "button_i8WzqA"
-      ],
-      "name": "Rich text (width control)",
-      "settings": {
-        "desktop_content_position": "center",
-        "content_alignment": "center",
-        "content_max_width": 900,
-        "color_scheme": "",
-        "full_width": true,
-        "padding_top": 40,
-        "padding_bottom": 52
-      }
     }
   },
   "order": [
     "image_only_banner_yLndVH",
     "rich_text_UxBcdc",
+    "multicolumn_UaHhwa",
     "main",
     "1746734999386cf969"
   ]
