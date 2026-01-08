@@ -13,7 +13,7 @@
       "type": "image-only-banner",
       "name": "Simple Banner Image",
       "settings": {
-        "desktop_image": "shopify://shop_images/cat_head_zambelli-black.png",
+        "desktop_image": "shopify://shop_images/zambelli-7.6-in-colors.png",
         "alt_text": "Banner image",
         "link": "",
         "desktop_height": 110,
