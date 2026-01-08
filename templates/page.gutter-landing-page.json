@@ -210,6 +210,18 @@
         "padding_bottom": 48
       }
     },
+    "custom_liquid_9Tcxww": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<!-- CHOOSE A SIZE – ZAMBELLI -->\n\n<section class=\"zam-size-section\" aria-label=\"Choose Zambelli gutter size\">\n  <div class=\"zam-size-wrap\">\n\n    <header class=\"zam-size-header\">\n      <h2 class=\"zam-size-h2\">Choose the Right Zambelli Gutter Size</h2>\n      <p class=\"zam-size-sub\">\n        Quick guidance to help you select the correct system. Each size uses dedicated Zambelli components.\n      </p>\n    </header>\n\n    <div class=\"zam-size-grid\">\n\n      <!-- 5\" -->\n      <div class=\"zam-size-card\">\n        <h3 class=\"zam-size-h3\">5″ System <span>(280&nbsp;mm)</span></h3>\n        <ul>\n          <li>Smaller residential homes</li>\n          <li>Shorter roof runs</li>\n          <li>Compact appearance</li>\n        </ul>\n        <a href=\"#\" class=\"zam-size-btn\">Shop 5″ System</a>\n      </div>\n\n      <!-- 6\" MOST POPULAR -->\n      <div class=\"zam-size-card zam-featured\">\n        <span class=\"zam-pill\">Most Popular</span>\n        <h3 class=\"zam-size-h3\">6″ System <span>(333&nbsp;mm)</span></h3>\n        <ul>\n          <li>Larger homes & multi-story roofs</li>\n          <li>Higher water capacity</li>\n          <li>Balanced architectural profile</li>\n        </ul>\n        <a href=\"#\" class=\"zam-size-btn\">Shop 6″ System</a>\n      </div>\n\n      <!-- 7.6\" -->\n      <div class=\"zam-size-card\">\n        <h3 class=\"zam-size-h3\">7.6″ System <span>(400&nbsp;mm)</span></h3>\n        <ul>\n          <li>Large roofs & architectural projects</li>\n          <li>Maximum water handling</li>\n          <li>Bold European appearance</li>\n        </ul>\n        <a href=\"#\" class=\"zam-size-btn\">Shop 7.6″ System</a>\n      </div>\n\n    </div>\n\n    <p class=\"zam-size-note\">\n      <strong>Not sure which size is right?</strong> Our team can help you choose the correct Zambelli system before ordering.\n    </p>\n\n  </div>\n</section>\n\n<style>\n  .zam-size-section { padding: 32px 0; }\n  .zam-size-wrap { width: min(1100px, 92%); margin: 0 auto; }\n\n  .zam-size-header { text-align: center; margin-bottom: 18px; }\n  .zam-size-h2 { font-size: clamp(22px, 2.4vw, 30px); margin-bottom: 6px; }\n  .zam-size-sub { color: #666; max-width: 760px; margin: 0 auto; }\n\n  .zam-size-grid {\n    display: grid;\n    grid-template-columns: repeat(3, minmax(0,1fr));\n    gap: 16px;\n  }\n  @media (max-width: 900px) {\n    .zam-size-grid { grid-template-columns: 1fr; }\n  }\n\n  .zam-size-card {\n    position: relative;\n    border: 1px solid #e6e6e6;\n    border-radius: 14px;\n    padding: 18px;\n    background: #fff;\n  }\n\n  .zam-featured {\n    border-color: #cfcfcf;\n    box-shadow: 0 14px 28px rgba(0,0,0,.08);\n  }\n\n  .zam-pill {\n    position: absolute;\n    top: 12px;\n    right: 12px;\n    background: #111;\n    color: RogersWhite;\n    font-size: 12px;\n    font-weight: 700;\n    padding: 6px 10px;\n    border-radius: 999px;\n  }\n\n  .zam-size-h3 {\n    font-size: 18px;\n    margin-bottom: 10px;\n  }\n  .zam-size-h3 span {\n    font-weight: 500;\n    color: #666;\n    font-size: 14px;\n  }\n\n  .zam-size-card ul {\n    padding-left: 18px;\n    margin: 0 0 14px;\n    color: #333;\n  }\n  .zam-size-card li {\n    margin: 8px 0;\n  }\n\n  .zam-size-btn {\n    display: block;\n    text-align: center;\n    padding: 10px 12px;\n    border-radius: 10px;\n    border: 1px solid #ddd;\n    background: #f7f7f7;\n    font-weight: 700;\n    text-decoration: none;\n    color: #111;\n    transition: transform .15s ease, box-shadow .15s ease;\n  }\n  .zam-size-btn:hover {\n    transform: translateY(-2px);\n    box-shadow: 0 10px 18px rgba(0,0,0,.08);\n  }\n\n  .zam-size-note {\n    text-align: center;\n    margin-top: 16px;\n    color: #444;\n  }\n</style>",
+        "color_scheme": "",
+        "padding_top": 4,
+        "padding_bottom": 4,
+        "padding_left": 4,
+        "padding_right": 4
+      }
+    },
     "main": {
       "type": "main-page",
       "disabled": true,
@@ -263,6 +275,7 @@
     "slideshow_ND6WeX",
     "rich_text_UxBcdc",
     "multicolumn_UaHhwa",
+    "custom_liquid_9Tcxww",
     "main",
     "custom_liquid_3Ky7AG",
     "1746734999386cf969",
