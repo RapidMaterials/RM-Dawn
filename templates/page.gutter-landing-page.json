@@ -37,7 +37,7 @@
         "text_nNmbVY": {
           "type": "text",
           "settings": {
-            "text": "<p>Add your text here.</p>"
+            "text": "<p><strong>The Zambelli 6″ European Painted Steel Half-Round Gutter System</strong> is a high-capacity, architectural rainwater management solution engineered to European metric standards. Built around Zambelli’s <strong>333 mm system</strong>, this painted steel half-round profile offers performance and scale comparable to a traditional 6″ gutter while delivering the refined appearance, precise fit, and system-matched compatibility Zambelli is known for. All components are designed to work together as a complete system for consistent performance and a clean, finished installation.</p>"
           }
         }
       },
@@ -163,6 +163,24 @@
       "settings": {
         "include_margins": true
       }
+    },
+    "collapsible_content_faq_6NmqGH": {
+      "type": "collapsible-content-faq",
+      "name": "FAQ Accordion",
+      "settings": {
+        "caption": "",
+        "heading": "Collapsible content",
+        "heading_size": "h1",
+        "heading_alignment": "center",
+        "layout": "none",
+        "container_color_scheme": "",
+        "color_scheme": "",
+        "open_first_collapsible_row": false,
+        "image_ratio": "adapt",
+        "desktop_layout": "image_second",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
@@ -170,6 +188,7 @@
     "rich_text_UxBcdc",
     "multicolumn_UaHhwa",
     "main",
-    "1746734999386cf969"
+    "1746734999386cf969",
+    "collapsible_content_faq_6NmqGH"
   ]
 }
