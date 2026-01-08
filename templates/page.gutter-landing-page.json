@@ -9,6 +9,20 @@
  */
 {
   "sections": {
+    "image_only_banner_yLndVH": {
+      "type": "image-only-banner",
+      "name": "Simple Banner Image",
+      "settings": {
+        "desktop_image": "shopify://shop_images/cat_head_zambelli-black.png",
+        "alt_text": "Banner image",
+        "link": "",
+        "desktop_height": 110,
+        "mobile_height": 100,
+        "object_fit": "cover",
+        "border_radius": 0,
+        "loading": "lazy"
+      }
+    },
     "slideshow_ND6WeX": {
       "type": "slideshow",
       "blocks": {
@@ -91,7 +105,7 @@
         "desktop_content_position": "center",
         "content_alignment": "center",
         "content_max_width": 900,
-        "color_scheme": "scheme-2",
+        "color_scheme": "scheme-1",
         "full_width": true,
         "padding_top": 40,
         "padding_bottom": 52
@@ -108,7 +122,7 @@
             "heading_tag": "h3",
             "text": "",
             "link_label": "",
-            "link": ""
+            "link": "shopify://collections/black-painted-steel-6-gutter-system"
           }
         },
         "column_d9aaUJ": {
@@ -119,7 +133,7 @@
             "heading_tag": "h3",
             "text": "",
             "link_label": "",
-            "link": ""
+            "link": "shopify://collections/dark-bronze-painted-steel-6-gutter-system"
           }
         },
         "column_zcWaaR": {
@@ -130,7 +144,7 @@
             "heading_tag": "h3",
             "text": "",
             "link_label": "",
-            "link": ""
+            "link": "shopify://collections/dark-charcoal-painted-steel-6-gutter-system"
           }
         },
         "column_3ymCWL": {
@@ -141,7 +155,7 @@
             "heading_tag": "h3",
             "text": "",
             "link_label": "",
-            "link": ""
+            "link": "shopify://collections/white-painted-steel-6-inch-gutter-system"
           }
         },
         "column_PNpkQM": {
@@ -152,7 +166,7 @@
             "heading_tag": "h3",
             "text": "",
             "link_label": "",
-            "link": ""
+            "link": "shopify://collections/natural-gray-metallic-painted-steel-6-gutter-system"
           }
         }
       },
@@ -170,7 +184,7 @@
       ],
       "name": "t:sections.multicolumn.presets.name",
       "settings": {
-        "title": "<strong>Find the Right Finish for Your Project</strong>",
+        "title": "",
         "heading_tag": "h2",
         "section_float": "clear",
         "mobile_display": "mobile-show",
@@ -191,20 +205,6 @@
         "padding_bottom": 36
       }
     },
-    "image_only_banner_yLndVH": {
-      "type": "image-only-banner",
-      "name": "Simple Banner Image",
-      "settings": {
-        "desktop_image": "shopify://shop_images/cat_head_zambelli-black.png",
-        "alt_text": "Banner image",
-        "link": "",
-        "desktop_height": 110,
-        "mobile_height": 100,
-        "object_fit": "cover",
-        "border_radius": 0,
-        "loading": "lazy"
-      }
-    },
     "main": {
       "type": "main-page",
       "disabled": true,
@@ -219,58 +219,6 @@
         "include_margins": true
       }
     },
-    "image_with_text_d7VLPf": {
-      "type": "image-with-text",
-      "blocks": {
-        "heading_Yd9J4b": {
-          "type": "heading",
-          "settings": {
-            "heading": "Half Round Gutters",
-            "heading_tag": "h1",
-            "heading_size": "h1"
-          }
-        },
-        "text_6kV8Qj": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Every gutter system we offer is made by <strong>Zambelli</strong>, Europe’s leading manufacturer of architectural-grade half round gutters. Whether you're a contractor needing job-ready materials or a homeowner upgrading curb appeal, you'll get premium fit, finish, and long-term performance — all in one order.</p>",
-            "text_style": "body"
-          }
-        },
-        "button_rjmQgt": {
-          "type": "button",
-          "settings": {
-            "button_label": "Shop All",
-            "button_link": "shopify://collections/half-round-gutters",
-            "button_style_secondary": false
-          }
-        }
-      },
-      "block_order": [
-        "heading_Yd9J4b",
-        "text_6kV8Qj",
-        "button_rjmQgt"
-      ],
-      "custom_css": [],
-      "name": "t:sections.image-with-text.presets.name",
-      "settings": {
-        "image": "shopify://shop_images/Rainclear_Midsommer_Norton_Mi_Space_7_2-8773159a.jpg",
-        "height": "adapt",
-        "desktop_image_width": "medium",
-        "layout": "image_first",
-        "image_behavior": "none",
-        "content_layout": "overlap",
-        "desktop_content_position": "top",
-        "desktop_content_alignment": "left",
-        "mobile_content_alignment": "left",
-        "section_color_scheme": "scheme-1",
-        "color_scheme": "scheme-2",
-        "element-width": 100,
-        "padding_top": 0,
-        "padding_bottom": 0,
-        "side-padding": "no-padding"
-      }
-    },
     "collapsible_content_faq_6NmqGH": {
       "type": "collapsible-content-faq",
       "name": "FAQ Accordion",
@@ -281,7 +229,7 @@
         "heading_alignment": "center",
         "layout": "none",
         "container_color_scheme": "",
-        "color_scheme": "",
+        "color_scheme": "scheme-2",
         "open_first_collapsible_row": false,
         "image_ratio": "adapt",
         "desktop_layout": "image_second",
@@ -291,13 +239,12 @@
     }
   },
   "order": [
+    "image_only_banner_yLndVH",
     "slideshow_ND6WeX",
     "rich_text_UxBcdc",
     "multicolumn_UaHhwa",
-    "image_only_banner_yLndVH",
     "main",
     "1746734999386cf969",
-    "image_with_text_d7VLPf",
     "collapsible_content_faq_6NmqGH"
   ]
 }
