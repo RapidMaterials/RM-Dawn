@@ -29,7 +29,7 @@
         "heading_8UaKga": {
           "type": "heading",
           "settings": {
-            "heading": "<strong>Zambelli 7.6″ European Painted Steel Half-Round Gutter System</strong>",
+            "heading": "<strong>Zambelli 6″ European Painted Steel Half-Round Gutter System</strong>",
             "heading_size": "h2",
             "heading_tag": "h1"
           }
@@ -62,10 +62,10 @@
         "column_kaGi7t": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/cat_head_zambelli-black.png",
+            "image": "shopify://shop_images/zambelli-painted-black.png",
             "title": "Black",
-            "heading_tag": "h2",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "heading_tag": "h3",
+            "text": "",
             "link_label": "",
             "link": ""
           }
@@ -73,10 +73,10 @@
         "column_d9aaUJ": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/cat_head_zambelli-bronze.png",
-            "title": "Dark Bronze / Brown",
-            "heading_tag": "h2",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "image": "shopify://shop_images/zambelli-painted-dark-bronze.png",
+            "title": "Dark Bronze",
+            "heading_tag": "h3",
+            "text": "",
             "link_label": "",
             "link": ""
           }
@@ -84,10 +84,10 @@
         "column_zcWaaR": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/cat_head_zambelli-dark-charcoal.png",
+            "image": "shopify://shop_images/zambelli-painted-dark-charcoal.png",
             "title": "Dark Charcoal",
-            "heading_tag": "h2",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "heading_tag": "h3",
+            "text": "",
             "link_label": "",
             "link": ""
           }
@@ -95,10 +95,10 @@
         "column_3ymCWL": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/cat_head_zambelli-white.png",
+            "image": "shopify://shop_images/zambelli-painted-white.png",
             "title": "Antique White",
-            "heading_tag": "h2",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "heading_tag": "h3",
+            "text": "",
             "link_label": "",
             "link": ""
           }
@@ -106,21 +106,10 @@
         "column_PNpkQM": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/zambelli-natural-gray-painted-mobile.png",
-            "title": "Natural Gray Metallic",
-            "heading_tag": "h2",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "column_MwJ8Qr": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/cat_head_zambelli-lead-coated-copper-gutters.png",
-            "title": "Unpainted Steel",
-            "heading_tag": "h2",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "image": "shopify://shop_images/zambelli-painted-nat-gray.png",
+            "title": "Nat. Gray Metallic",
+            "heading_tag": "h3",
+            "text": "",
             "link_label": "",
             "link": ""
           }
@@ -131,27 +120,31 @@
         "column_d9aaUJ",
         "column_zcWaaR",
         "column_3ymCWL",
-        "column_PNpkQM",
-        "column_MwJ8Qr"
+        "column_PNpkQM"
+      ],
+      "custom_css": [
+        "H3.inline-richtext {text-align: CENTER; font-size: 0.8em;}",
+        ".multicolumn-card-spacing {padding: 0.8rem; margin: 0;}",
+        ".multicolumn-card__info {padding: 1rem;}"
       ],
       "name": "t:sections.multicolumn.presets.name",
       "settings": {
-        "title": "Multicolumn",
+        "title": "",
         "heading_tag": "h2",
         "section_float": "clear",
         "mobile_display": "mobile-show",
         "desktop_display": "desktop-show",
         "heading_size": "h1",
-        "col_alignment": "left",
+        "col_alignment": "center",
         "image_width": "full",
         "image_ratio": "adapt",
-        "button_label": "Button label",
+        "button_label": "",
         "button_link": "",
-        "columns_desktop": 3,
+        "columns_desktop": 5,
         "column_alignment": "left",
         "background_style": "primary",
         "color_scheme": "",
-        "columns_mobile": "1",
+        "columns_mobile": "2",
         "swipe_on_mobile": false,
         "padding_top": 36,
         "padding_bottom": 36
