@@ -1,0 +1,261 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "image_only_banner_yLndVH": {
+      "type": "image-only-banner",
+      "name": "Simple Banner Image",
+      "settings": {
+        "desktop_image": "shopify://shop_images/zambelli-5-in-colors.png",
+        "alt_text": "Banner image",
+        "link": "",
+        "desktop_height": 110,
+        "mobile_height": 100,
+        "object_fit": "cover",
+        "border_radius": 0,
+        "loading": "lazy"
+      }
+    },
+    "slideshow_ND6WeX": {
+      "type": "slideshow",
+      "blocks": {
+        "slide_8BXeE3": {
+          "type": "slide",
+          "settings": {
+            "image_overlay_opacity": 0,
+            "heading": "Image slide",
+            "heading_size": "h1",
+            "subheading": "Tell your brand's story through images",
+            "button_label": "Button label",
+            "link": "",
+            "button_style_secondary": false,
+            "show_text_box": true,
+            "box_align": "middle-center",
+            "text_alignment": "center",
+            "text_alignment_mobile": "center",
+            "color_scheme": ""
+          }
+        },
+        "slide_irwbHy": {
+          "type": "slide",
+          "settings": {
+            "image_overlay_opacity": 0,
+            "heading": "Image slide",
+            "heading_size": "h1",
+            "subheading": "Tell your brand's story through images",
+            "button_label": "Button label",
+            "link": "",
+            "button_style_secondary": false,
+            "show_text_box": true,
+            "box_align": "middle-center",
+            "text_alignment": "center",
+            "text_alignment_mobile": "center",
+            "color_scheme": ""
+          }
+        }
+      },
+      "block_order": [
+        "slide_8BXeE3",
+        "slide_irwbHy"
+      ],
+      "disabled": true,
+      "name": "t:sections.slideshow.presets.name",
+      "settings": {
+        "layout": "full_bleed",
+        "slide_height": "medium",
+        "slider_visual": "counter",
+        "auto_rotate": false,
+        "change_slides_speed": 5,
+        "image_behavior": "none",
+        "show_text_below": true,
+        "accessibility_info": "Slideshow about our brand"
+      }
+    },
+    "rich_text_UxBcdc": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_8UaKga": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>Zambelli 5″ European Painted Steel Half-Round Gutter System</strong>",
+            "heading_size": "h2",
+            "heading_tag": "h1"
+          }
+        },
+        "text_nNmbVY": {
+          "type": "text",
+          "settings": {
+            "text": "<p>The Zambelli 5″ European Painted Steel Half-Round Gutter System is a refined, European-style rainwater management solution engineered to European metric standards. Built around Zambelli’s <strong>280 mm system</strong>, this painted steel half-round profile offers performance and scale comparable to a traditional 5″ gutter while delivering the clean appearance, precise fit, and system-matched compatibility Zambelli is known for. All components are designed to work together as a complete system for reliable performance and a consistent, finished installation.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_8UaKga",
+        "text_nNmbVY"
+      ],
+      "custom_css": [
+        "h1 {font-size: 1.6em;}",
+        ".rich-text__text.rte {font-size: 0.9em;}"
+      ],
+      "name": "Rich text (width control)",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "content_max_width": 1200,
+        "color_scheme": "scheme-1",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 0
+      }
+    },
+    "multicolumn_UaHhwa": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_kaGi7t": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/zambelli-painted-black.png",
+            "title": "Black",
+            "heading_tag": "h3",
+            "text": "",
+            "link_label": "View System",
+            "link": "shopify://collections/black-painted-steel-5-gutter-system"
+          }
+        },
+        "column_d9aaUJ": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/zambelli-painted-dark-bronze.png",
+            "title": "Dark Bronze",
+            "heading_tag": "h3",
+            "text": "",
+            "link_label": "View System",
+            "link": "shopify://collections/dark-bronze-painted-steel-5-gutter-system"
+          }
+        },
+        "column_zcWaaR": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/zambelli-painted-dark-charcoal.png",
+            "title": "Dark Charcoal",
+            "heading_tag": "h3",
+            "text": "",
+            "link_label": "View System",
+            "link": "shopify://collections/dark-charcoal-painted-steel-5-gutter-system"
+          }
+        },
+        "column_3ymCWL": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/zambelli-painted-white.png",
+            "title": "Antique White",
+            "heading_tag": "h3",
+            "text": "",
+            "link_label": "View System",
+            "link": "shopify://collections/white-painted-steel-5-gutter-system"
+          }
+        },
+        "column_PNpkQM": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/zambelli-painted-nat-gray.png",
+            "title": "Nat. Gray Metallic",
+            "heading_tag": "h3",
+            "text": "",
+            "link_label": "View System",
+            "link": "shopify://collections/natural-gray-metallic-painted-steel-5-gutter-system"
+          }
+        }
+      },
+      "block_order": [
+        "column_kaGi7t",
+        "column_d9aaUJ",
+        "column_zcWaaR",
+        "column_3ymCWL",
+        "column_PNpkQM"
+      ],
+      "custom_css": [
+        "H3.inline-richtext {text-align: CENTER; font-size: 1em; font-weight: bold;}",
+        ".multicolumn-card-spacing {padding: 0.8rem; margin: 0;}",
+        ".multicolumn-card__info {padding: 1rem;}",
+        "a.link {width: 100%; text-align: center; margin: 0 auto;}",
+        "a.link.animate-arrow {font-size: 0.8em;}",
+        " /* Make entire card feel clickable */.multicolumn-card {cursor: pointer; transition: transform 0.2s ease, box-shadow 0.2s ease;}",
+        " /* Lift + shadow on hover */.multicolumn-card:hover {transform: translateY(-6px); box-shadow: 0 14px 30px rgba(0, 0, 0, 0.12);}"
+      ],
+      "name": "t:sections.multicolumn.presets.name",
+      "settings": {
+        "title": "",
+        "heading_tag": "h2",
+        "section_float": "clear",
+        "mobile_display": "mobile-show",
+        "desktop_display": "desktop-show",
+        "heading_size": "h1",
+        "col_alignment": "center",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "button_label": "",
+        "button_link": "",
+        "columns_desktop": 5,
+        "column_alignment": "left",
+        "background_style": "primary",
+        "color_scheme": "scheme-1",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 48
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "1746734999386cf969": {
+      "type": "apps",
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "collapsible_content_faq_6NmqGH": {
+      "type": "collapsible-content-faq",
+      "custom_css": [
+        "h2 {font-size: 1.4em;}"
+      ],
+      "name": "FAQ Accordion",
+      "settings": {
+        "caption": "",
+        "heading": "<strong>Frequently Asked Questions</strong>",
+        "heading_size": "h1",
+        "heading_alignment": "center",
+        "layout": "none",
+        "container_color_scheme": "",
+        "color_scheme": "scheme-2",
+        "open_first_collapsible_row": false,
+        "image_ratio": "adapt",
+        "desktop_layout": "image_second",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "image_only_banner_yLndVH",
+    "slideshow_ND6WeX",
+    "rich_text_UxBcdc",
+    "multicolumn_UaHhwa",
+    "main",
+    "1746734999386cf969",
+    "collapsible_content_faq_6NmqGH"
+  ]
+}
