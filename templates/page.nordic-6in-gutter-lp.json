@@ -13,7 +13,7 @@
       "type": "image-only-banner",
       "name": "Simple Banner Image",
       "settings": {
-        "desktop_image": "shopify://shop_images/zambelli-5-in-colors.png",
+        "desktop_image": "shopify://shop_images/nordic-6in-colors.png",
         "alt_text": "Banner image",
         "link": "",
         "desktop_height": 110,
@@ -84,7 +84,7 @@
         "heading_8UaKga": {
           "type": "heading",
           "settings": {
-            "heading": "<strong>Zambelli 5″ European Painted Steel Half-Round Gutter System</strong>",
+            "heading": "<strong>Nordic Steel 6″ European Painted Half-Round Gutter System</strong>",
             "heading_size": "h2",
             "heading_tag": "h1"
           }
@@ -92,7 +92,7 @@
         "text_nNmbVY": {
           "type": "text",
           "settings": {
-            "text": "<p>The Zambelli 5″ European Painted Steel Half-Round Gutter System is a refined, European-style rainwater management solution engineered to European metric standards. Built around Zambelli’s <strong>280 mm system</strong>, this painted steel half-round profile offers performance and scale comparable to a traditional 5″ gutter while delivering the clean appearance, precise fit, and system-matched compatibility Zambelli is known for. All components are designed to work together as a complete system for reliable performance and a consistent, finished installation.</p>"
+            "text": "<p>The Nordic Steel 6″ European Painted Steel Half-Round Gutter System is a durable, architectural rainwater management solution engineered to European metric standards. Built around the Lindab <strong>150 mm system</strong>, this painted steel half-round profile delivers performance and scale comparable to a traditional 6″ gutter while offering the clean appearance, precise fit, and system-matched compatibility Nordic Steel is known for. All components are designed to work together as a complete system for consistent performance and a clean, finished installation.</p>"
           }
         }
       },
