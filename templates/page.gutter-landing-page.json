@@ -9,6 +9,20 @@
  */
 {
   "sections": {
+    "image_only_banner_yLndVH": {
+      "type": "image-only-banner",
+      "name": "Simple Banner Image",
+      "settings": {
+        "desktop_image": "shopify://shop_images/cat_head_zambelli-black.png",
+        "alt_text": "Banner image",
+        "link": "",
+        "desktop_height": 110,
+        "mobile_height": 100,
+        "object_fit": "cover",
+        "border_radius": 0,
+        "loading": "lazy"
+      }
+    },
     "main": {
       "type": "main-page",
       "settings": {
@@ -21,9 +35,56 @@
       "settings": {
         "include_margins": true
       }
+    },
+    "rich_text_UxBcdc": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_8UaKga": {
+          "type": "heading",
+          "settings": {
+            "heading": "Zambelli 7.6″ European Painted Steel Half-Round Gutter System",
+            "heading_size": "h1",
+            "heading_tag": "h1"
+          }
+        },
+        "text_nNmbVY": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Add your text here.</p>"
+          }
+        },
+        "button_i8WzqA": {
+          "type": "button",
+          "settings": {
+            "button_label": "Button",
+            "button_link": "",
+            "button_style_secondary": false,
+            "button_label_2": "Button 2",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_8UaKga",
+        "text_nNmbVY",
+        "button_i8WzqA"
+      ],
+      "name": "Rich text (width control)",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "content_max_width": 900,
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
     }
   },
   "order": [
+    "image_only_banner_yLndVH",
+    "rich_text_UxBcdc",
     "main",
     "1746734999386cf969"
   ]
