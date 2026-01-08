@@ -1,0 +1,287 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "image_only_banner_yLndVH": {
+      "type": "image-only-banner",
+      "name": "Simple Banner Image",
+      "settings": {
+        "desktop_image": "shopify://shop_images/cat_head_zambelli-black.png",
+        "alt_text": "Banner image",
+        "link": "",
+        "desktop_height": 110,
+        "mobile_height": 100,
+        "object_fit": "cover",
+        "border_radius": 0,
+        "loading": "lazy"
+      }
+    },
+    "slideshow_ND6WeX": {
+      "type": "slideshow",
+      "blocks": {
+        "slide_8BXeE3": {
+          "type": "slide",
+          "settings": {
+            "image_overlay_opacity": 0,
+            "heading": "Image slide",
+            "heading_size": "h1",
+            "subheading": "Tell your brand's story through images",
+            "button_label": "Button label",
+            "link": "",
+            "button_style_secondary": false,
+            "show_text_box": true,
+            "box_align": "middle-center",
+            "text_alignment": "center",
+            "text_alignment_mobile": "center",
+            "color_scheme": ""
+          }
+        },
+        "slide_irwbHy": {
+          "type": "slide",
+          "settings": {
+            "image_overlay_opacity": 0,
+            "heading": "Image slide",
+            "heading_size": "h1",
+            "subheading": "Tell your brand's story through images",
+            "button_label": "Button label",
+            "link": "",
+            "button_style_secondary": false,
+            "show_text_box": true,
+            "box_align": "middle-center",
+            "text_alignment": "center",
+            "text_alignment_mobile": "center",
+            "color_scheme": ""
+          }
+        }
+      },
+      "block_order": [
+        "slide_8BXeE3",
+        "slide_irwbHy"
+      ],
+      "disabled": true,
+      "name": "t:sections.slideshow.presets.name",
+      "settings": {
+        "layout": "full_bleed",
+        "slide_height": "medium",
+        "slider_visual": "counter",
+        "auto_rotate": false,
+        "change_slides_speed": 5,
+        "image_behavior": "none",
+        "show_text_below": true,
+        "accessibility_info": "Slideshow about our brand"
+      }
+    },
+    "rich_text_UxBcdc": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_8UaKga": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>Zambelli 6″ European Painted Steel Half-Round Gutter System</strong>",
+            "heading_size": "h2",
+            "heading_tag": "h1"
+          }
+        },
+        "text_nNmbVY": {
+          "type": "text",
+          "settings": {
+            "text": "<p>The Zambelli 6″ European Painted Steel Half-Round Gutter System is a high-capacity, architectural rainwater management solution engineered to European metric standards. Built around Zambelli’s <strong>333 mm system</strong>, this painted steel half-round profile offers performance and scale comparable to a traditional 6″ gutter while delivering the refined appearance, precise fit, and system-matched compatibility Zambelli is known for. All components are designed to work together as a complete system for consistent performance and a clean, finished installation.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_8UaKga",
+        "text_nNmbVY"
+      ],
+      "custom_css": [
+        "h1 {font-size: 1.6em;}",
+        ".rich-text__text.rte {font-size: 0.9em;}"
+      ],
+      "name": "Rich text (width control)",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "content_max_width": 1200,
+        "color_scheme": "scheme-1",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 0
+      }
+    },
+    "multicolumn_UaHhwa": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_kaGi7t": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/zambelli-painted-black.png",
+            "title": "Black",
+            "heading_tag": "h3",
+            "text": "",
+            "link_label": "View System",
+            "link": "shopify://collections/black-painted-steel-6-gutter-system"
+          }
+        },
+        "column_d9aaUJ": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/zambelli-painted-dark-bronze.png",
+            "title": "Dark Bronze",
+            "heading_tag": "h3",
+            "text": "",
+            "link_label": "View System",
+            "link": "shopify://collections/dark-bronze-painted-steel-6-gutter-system"
+          }
+        },
+        "column_zcWaaR": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/zambelli-painted-dark-charcoal.png",
+            "title": "Dark Charcoal",
+            "heading_tag": "h3",
+            "text": "",
+            "link_label": "View System",
+            "link": "shopify://collections/dark-charcoal-painted-steel-6-gutter-system"
+          }
+        },
+        "column_3ymCWL": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/zambelli-painted-white.png",
+            "title": "Antique White",
+            "heading_tag": "h3",
+            "text": "",
+            "link_label": "View System",
+            "link": "shopify://collections/white-painted-steel-6-inch-gutter-system"
+          }
+        },
+        "column_PNpkQM": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/zambelli-painted-nat-gray.png",
+            "title": "Nat. Gray Metallic",
+            "heading_tag": "h3",
+            "text": "",
+            "link_label": "View System",
+            "link": "shopify://collections/natural-gray-metallic-painted-steel-6-gutter-system"
+          }
+        }
+      },
+      "block_order": [
+        "column_kaGi7t",
+        "column_d9aaUJ",
+        "column_zcWaaR",
+        "column_3ymCWL",
+        "column_PNpkQM"
+      ],
+      "custom_css": [
+        "H3.inline-richtext {text-align: CENTER; font-size: 1em; font-weight: bold;}",
+        ".multicolumn-card-spacing {padding: 0.8rem; margin: 0;}",
+        ".multicolumn-card__info {padding: 1rem;}",
+        "a.link{width: 100%; text-align: center; margin: 0 auto;}",
+        "a.link.animate-arrow {font-size: 0.8em;}",
+        " /* Make entire card feel clickable */.multicolumn-card {cursor: pointer; transition: transform 0.2s ease, box-shadow 0.2s ease;}",
+        " /* Lift + shadow on hover */.multicolumn-card:hover {transform: translateY(-6px); box-shadow: 0 14px 30px rgba(0, 0, 0, 0.12);}"
+      ],
+      "name": "t:sections.multicolumn.presets.name",
+      "settings": {
+        "title": "",
+        "heading_tag": "h2",
+        "section_float": "clear",
+        "mobile_display": "mobile-show",
+        "desktop_display": "desktop-show",
+        "heading_size": "h1",
+        "col_alignment": "center",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "button_label": "",
+        "button_link": "",
+        "columns_desktop": 5,
+        "column_alignment": "left",
+        "background_style": "primary",
+        "color_scheme": "scheme-1",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 48
+      }
+    },
+    "custom_liquid_9Tcxww": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<!-- CHOOSE A SIZE – ZAMBELLI -->\n\n<section class=\"zam-size-section\" aria-label=\"Choose Zambelli gutter size\">\n  <div class=\"zam-size-wrap\">\n\n    <header class=\"zam-size-header\">\n      <h2 class=\"zam-size-h2\">Choose the Right Zambelli Gutter Size</h2>\n      <p class=\"zam-size-sub\">\n        Quick guidance to help you select the correct system. Each size uses dedicated Zambelli components.\n      </p>\n    </header>\n\n    <div class=\"zam-size-grid\">\n\n      <!-- 5\" -->\n      <div class=\"zam-size-card\">\n        <h3 class=\"zam-size-h3\">5″ System <span>(280&nbsp;mm)</span></h3>\n        <ul>\n          <li>Smaller residential homes</li>\n          <li>Shorter roof runs</li>\n          <li>Compact appearance</li>\n        </ul>\n        <a href=\"#\" class=\"zam-size-btn\">Shop 5″ System</a>\n      </div>\n\n      <!-- 6\" MOST POPULAR -->\n      <div class=\"zam-size-card zam-featured\">\n        <span class=\"zam-pill\">Most Popular</span>\n        <h3 class=\"zam-size-h3\">6″ System <span>(333&nbsp;mm)</span></h3>\n        <ul>\n          <li>Larger homes & multi-story roofs</li>\n          <li>Higher water capacity</li>\n          <li>Balanced architectural profile</li>\n        </ul>\n        <a href=\"#\" class=\"zam-size-btn\">Shop 6″ System</a>\n      </div>\n\n      <!-- 7.6\" -->\n      <div class=\"zam-size-card\">\n        <h3 class=\"zam-size-h3\">7.6″ System <span>(400&nbsp;mm)</span></h3>\n        <ul>\n          <li>Large roofs & architectural projects</li>\n          <li>Maximum water handling</li>\n          <li>Bold European appearance</li>\n        </ul>\n        <a href=\"#\" class=\"zam-size-btn\">Shop 7.6″ System</a>\n      </div>\n\n    </div>\n\n    <p class=\"zam-size-note\">\n      <strong>Not sure which size is right?</strong> Our team can help you choose the correct Zambelli system before ordering.\n    </p>\n\n  </div>\n</section>\n\n<style>\n  .zam-size-section { padding: 32px 0; }\n  .zam-size-wrap { width: min(1100px, 92%); margin: 0 auto; }\n\n  .zam-size-header { text-align: center; margin-bottom: 18px; }\n  .zam-size-h2 { font-size: clamp(22px, 2.4vw, 30px); margin-bottom: 6px; }\n  .zam-size-sub { color: #666; max-width: 760px; margin: 0 auto; }\n\n  .zam-size-grid {\n    display: grid;\n    grid-template-columns: repeat(3, minmax(0,1fr));\n    gap: 16px;\n  }\n  @media (max-width: 900px) {\n    .zam-size-grid { grid-template-columns: 1fr; }\n  }\n\n  .zam-size-card {\n    position: relative;\n    border: 1px solid #e6e6e6;\n    border-radius: 14px;\n    padding: 18px;\n    background: #fff;\n  }\n\n  .zam-featured {\n    border-color: #cfcfcf;\n    box-shadow: 0 14px 28px rgba(0,0,0,.08);\n  }\n\n  .zam-pill {\n    position: absolute;\n    top: 12px;\n    right: 12px;\n    background: #111;\n    color: RogersWhite;\n    font-size: 12px;\n    font-weight: 700;\n    padding: 6px 10px;\n    border-radius: 999px;\n  }\n\n  .zam-size-h3 {\n    font-size: 18px;\n    margin-bottom: 10px;\n  }\n  .zam-size-h3 span {\n    font-weight: 500;\n    color: #666;\n    font-size: 14px;\n  }\n\n  .zam-size-card ul {\n    padding-left: 18px;\n    margin: 0 0 14px;\n    color: #333;\n  }\n  .zam-size-card li {\n    margin: 8px 0;\n  }\n\n  .zam-size-btn {\n    display: block;\n    text-align: center;\n    padding: 10px 12px;\n    border-radius: 10px;\n    border: 1px solid #ddd;\n    background: #f7f7f7;\n    font-weight: 700;\n    text-decoration: none;\n    color: #111;\n    transition: transform .15s ease, box-shadow .15s ease;\n  }\n  .zam-size-btn:hover {\n    transform: translateY(-2px);\n    box-shadow: 0 10px 18px rgba(0,0,0,.08);\n  }\n\n  .zam-size-note {\n    text-align: center;\n    margin-top: 16px;\n    color: #444;\n  }\n</style>",
+        "color_scheme": "",
+        "padding_top": 4,
+        "padding_bottom": 4,
+        "padding_left": 4,
+        "padding_right": 4
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "custom_liquid_3Ky7AG": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<!-- Zambelli Colors + Size Guide (Sales Section)\n     Paste into a Custom Liquid block or HTML section.\n     Notes:\n     - Uses simple CSS (no dependencies)\n     - Mobile-friendly grid\n     - Clickable \"cards\" pattern (swap links + images)\n-->\n\n<section class=\"zam-section\" aria-label=\"Zambelli color selector and size guide\">\n  <div class=\"zam-wrap\">\n\n    <!-- HERO -->\n    <header class=\"zam-hero\">\n      <h1 class=\"zam-h1\">Zambelli European Painted Steel Half-Round Gutter Systems</h1>\n      <p class=\"zam-sub\">\n        Precision-engineered, no-sealant gutter systems available in premium European colors — designed to install faster and last for decades.\n      </p>\n    </header>\n\n    <!-- COLOR SELECTOR -->\n    <div class=\"zam-block\">\n      <div class=\"zam-block-head\">\n        <h2 class=\"zam-h2\">Choose a Color</h2>\n        <p class=\"zam-help\">Select a color to view compatible Zambelli gutter components.</p>\n      </div>\n\n      <div class=\"zam-grid\" role=\"list\">\n        <!-- Card 1 -->\n        <a class=\"zam-card\" role=\"listitem\" href=\"#\" aria-label=\"Shop Zambelli in Black\">\n          <div class=\"zam-img\">\n            <img src=\"YOUR-BLACK-IMAGE.jpg\" alt=\"Zambelli painted steel half-round gutter in black\">\n            <span class=\"zam-overlay\" aria-hidden=\"true\">Shop this color</span>\n          </div>\n          <div class=\"zam-card-meta\">\n            <div class=\"zam-title\">Black</div>\n            <div class=\"zam-cta\">View system →</div>\n          </div>\n        </a>\n\n        <!-- Card 2 -->\n        <a class=\"zam-card\" role=\"listitem\" href=\"#\" aria-label=\"Shop Zambelli in Dark Bronze\">\n          <div class=\"zam-img\">\n            <img src=\"YOUR-DARK-BRONZE-IMAGE.jpg\" alt=\"Zambelli painted steel half-round gutter in dark bronze\">\n            <span class=\"zam-overlay\" aria-hidden=\"true\">Shop this color</span>\n          </div>\n          <div class=\"zam-card-meta\">\n            <div class=\"zam-title\">Dark Bronze</div>\n            <div class=\"zam-cta\">View system →</div>\n          </div>\n        </a>\n\n        <!-- Card 3 -->\n        <a class=\"zam-card\" role=\"listitem\" href=\"#\" aria-label=\"Shop Zambelli in Dark Charcoal\">\n          <div class=\"zam-img\">\n            <img src=\"YOUR-DARK-CHARCOAL-IMAGE.jpg\" alt=\"Zambelli painted steel half-round gutter in dark charcoal\">\n            <span class=\"zam-overlay\" aria-hidden=\"true\">Shop this color</span>\n          </div>\n          <div class=\"zam-card-meta\">\n            <div class=\"zam-title\">Dark Charcoal</div>\n            <div class=\"zam-cta\">View system →</div>\n          </div>\n        </a>\n\n        <!-- Card 4 -->\n        <a class=\"zam-card\" role=\"listitem\" href=\"#\" aria-label=\"Shop Zambelli in Antique White\">\n          <div class=\"zam-img\">\n            <img src=\"YOUR-ANTIQUE-WHITE-IMAGE.jpg\" alt=\"Zambelli painted steel half-round gutter in antique white\">\n            <span class=\"zam-overlay\" aria-hidden=\"true\">Shop this color</span>\n          </div>\n          <div class=\"zam-card-meta\">\n            <div class=\"zam-title\">Antique White</div>\n            <div class=\"zam-cta\">View system →</div>\n          </div>\n        </a>\n\n        <!-- Card 5 -->\n        <a class=\"zam-card\" role=\"listitem\" href=\"#\" aria-label=\"Shop Zambelli in Natural Gray Metallic\">\n          <div class=\"zam-img\">\n            <img src=\"YOUR-NAT-GRAY-IMAGE.jpg\" alt=\"Zambelli painted steel half-round gutter in natural gray metallic\">\n            <span class=\"zam-overlay\" aria-hidden=\"true\">Shop this color</span>\n          </div>\n          <div class=\"zam-card-meta\">\n            <div class=\"zam-title\">Nat. Gray Metallic</div>\n            <div class=\"zam-cta\">View system →</div>\n          </div>\n        </a>\n      </div>\n    </div>\n\n    <!-- WHY ZAMBELLI -->\n    <div class=\"zam-block zam-why\">\n      <h2 class=\"zam-h2\">Why Choose Zambelli</h2>\n      <ul class=\"zam-bullets\">\n        <li><strong>No caulking or sealants</strong> — mechanically sealed connections reduce long-term leak points.</li>\n        <li><strong>Faster installation</strong> — fewer steps, less cleanup, and a clean system fit.</li>\n        <li><strong>Painted steel durability</strong> — strong, rigid components with a refined architectural finish.</li>\n        <li><strong>System-matched compatibility</strong> — each size uses dedicated components engineered to work together.</li>\n      </ul>\n    </div>\n\n    <!-- SIZE GUIDE -->\n    <div class=\"zam-block zam-sizes\">\n      <div class=\"zam-block-head\">\n        <h2 class=\"zam-h2\">Choosing the Right Zambelli Gutter Size</h2>\n        <p class=\"zam-help\">Quick guidance to help pick the right system. Each size uses dedicated Zambelli components.</p>\n      </div>\n\n      <div class=\"zam-size-grid\">\n        <div class=\"zam-size\">\n          <div class=\"zam-size-top\">\n            <h3 class=\"zam-h3\">5″ System <span class=\"zam-mm\">(280 mm)</span></h3>\n          </div>\n          <ul class=\"zam-size-list\">\n            <li>Smaller residential homes</li>\n            <li>Shorter roof runs</li>\n            <li>Compact appearance</li>\n          </ul>\n          <a class=\"zam-btn\" href=\"#\">Shop 5″ System</a>\n        </div>\n\n        <div class=\"zam-size zam-feature\">\n          <div class=\"zam-pill\" aria-hidden=\"true\">Most Popular</div>\n          <div class=\"zam-size-top\">\n            <h3 class=\"zam-h3\">6″ System <span class=\"zam-mm\">(333 mm)</span></h3>\n          </div>\n          <ul class=\"zam-size-list\">\n            <li>Larger homes & multi-story roofs</li>\n            <li>Higher water capacity</li>\n            <li>Balanced architectural profile</li>\n          </ul>\n          <a class=\"zam-btn\" href=\"#\">Shop 6″ System</a>\n        </div>\n\n        <div class=\"zam-size\">\n          <div class=\"zam-size-top\">\n            <h3 class=\"zam-h3\">7.6″ System <span class=\"zam-mm\">(400 mm)</span></h3>\n          </div>\n          <ul class=\"zam-size-list\">\n            <li>Large roofs & architectural projects</li>\n            <li>Maximum water handling</li>\n            <li>Bold European appearance</li>\n          </ul>\n          <a class=\"zam-btn\" href=\"#\">Shop 7.6″ System</a>\n        </div>\n      </div>\n\n      <p class=\"zam-note\">\n        <strong>Not sure which size is right?</strong> Contact our team — we’ll help you select the correct Zambelli system before ordering.\n      </p>\n\n      <p class=\"zam-note zam-note-small\">\n        Zambelli systems are engineered as complete systems. Mixing sizes or brands is not recommended.\n      </p>\n    </div>\n\n    <!-- FINAL CTA -->\n    <div class=\"zam-final\">\n      <a class=\"zam-bigcta\" href=\"#zam-colors\">Choose a color above to view compatible Zambelli components →</a>\n    </div>\n\n  </div>\n</section>\n\n<style>\n  .zam-section { padding: 40px 0; }\n  .zam-wrap { width: min(1150px, 92%); margin: 0 auto; }\n  .zam-hero { text-align: center; padding: 10px 0 24px; }\n  .zam-h1 { font-size: clamp(26px, 3vw, 38px); margin: 0 0 10px; line-height: 1.15; }\n  .zam-sub { max-width: 820px; margin: 0 auto; color: #5b5b5b; font-size: 16px; line-height: 1.5; }\n\n  .zam-block { margin: 28px 0; }\n  .zam-block-head { text-align: center; margin-bottom: 14px; }\n  .zam-h2 { font-size: clamp(20px, 2.2vw, 28px); margin: 0 0 6px; }\n  .zam-help { margin: 0; color: #6a6a6a; }\n\n  /* COLOR GRID */\n  .zam-grid { display: grid; grid-template-columns: repeat(5, minmax(0,1fr)); gap: 16px; }\n  @media (max-width: 1050px) { .zam-grid { grid-template-columns: repeat(3, minmax(0,1fr)); } }\n  @media (max-width: 720px) { .zam-grid { grid-template-columns: repeat(2, minmax(0,1fr)); } }\n\n  .zam-card { display: block; text-decoration: none; color: inherit; border: 1px solid #e7e7e7; border-radius: 12px; background: #fafafa; overflow: hidden; transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease; }\n  .zam-card:focus { outline: 3px solid rgba(0,0,0,.18); outline-offset: 2px; }\n  .zam-card:hover { transform: translateY(-4px); box-shadow: 0 14px 28px rgba(0,0,0,.10); border-color: #d8d8d8; }\n\n  .zam-img { position: relative; background: #fff; aspect-ratio: 16 / 10; display: grid; place-items: center; }\n  .zam-img img { max-width: 92%; max-height: 92%; transition: transform .18s ease; }\n  .zam-card:hover .zam-img img { transform: scale(1.04); }\n\n  .zam-overlay { position: absolute; inset: auto 12px 12px 12px; text-align: center; padding: 8px 10px; border-radius: 10px; background: rgba(0,0,0,.72); color: #fff; font-weight: 600; font-size: 13px; opacity: 0; transform: translateY(6px); transition: opacity .18s ease, transform .18s ease; }\n  .zam-card:hover .zam-overlay { opacity: 1; transform: translateY(0); }\n\n  .zam-card-meta { padding: 12px 14px 14px; text-align: center; }\n  .zam-title { font-weight: 700; }\n  .zam-cta { margin-top: 6px; font-size: 13px; color: #4b4b4b; }\n\n  /* WHY */\n  .zam-why { border: 1px solid #eee; border-radius: 14px; padding: 18px 18px 10px; background: #fff; }\n  .zam-bullets { margin: 10px 0 0; padding-left: 18px; color: #3f3f3f; }\n  .zam-bullets li { margin: 10px 0; line-height: 1.5; }\n\n  /* SIZE GRID */\n  .zam-size-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 16px; align-items: stretch; }\n  @media (max-width: 900px) { .zam-size-grid { grid-template-columns: 1fr; } }\n\n  .zam-size { position: relative; border: 1px solid #e7e7e7; border-radius: 14px; background: #fff; padding: 16px; }\n  .zam-feature { border-color: #cfcfcf; box-shadow: 0 14px 28px rgba(0,0,0,.08); }\n  .zam-pill { position: absolute; top: 12px; right: 12px; font-size: 12px; font-weight: 700; padding: 6px 10px; border-radius: 999px; background: #111; color: #fff; }\n\n  .zam-h3 { margin: 0 0 10px; font-size: 18px; }\n  .zam-mm { font-weight: 600; color: #6a6a6a; font-size: 14px; }\n\n  .zam-size-list { margin: 0; paddin",
+        "color_scheme": "",
+        "padding_top": 4,
+        "padding_bottom": 4,
+        "padding_left": 4,
+        "padding_right": 4
+      }
+    },
+    "1746734999386cf969": {
+      "type": "apps",
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "collapsible_content_faq_6NmqGH": {
+      "type": "collapsible-content-faq",
+      "custom_css": [
+        "h2 {font-size: 1.4em;}"
+      ],
+      "name": "FAQ Accordion",
+      "settings": {
+        "caption": "",
+        "heading": "<strong>Frequently Asked Questions</strong>",
+        "heading_size": "h1",
+        "heading_alignment": "center",
+        "layout": "none",
+        "container_color_scheme": "",
+        "color_scheme": "scheme-2",
+        "open_first_collapsible_row": false,
+        "image_ratio": "adapt",
+        "desktop_layout": "image_second",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "image_only_banner_yLndVH",
+    "slideshow_ND6WeX",
+    "rich_text_UxBcdc",
+    "multicolumn_UaHhwa",
+    "custom_liquid_9Tcxww",
+    "main",
+    "custom_liquid_3Ky7AG",
+    "1746734999386cf969",
+    "collapsible_content_faq_6NmqGH"
+  ]
+}
