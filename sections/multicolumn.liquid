@@ -154,11 +154,22 @@
               <div class="multicolumn-card__info">
                 {%- if block.settings.title != blank -%}
                   <{{ block.settings.heading_tag }} class="inline-richtext">{{ block.settings.title }}</{{ block.settings.heading_tag }}>
+                        {%- if block.settings.link != blank -%}
+                          <a
+                            class="link animate-arrow"
+                            {% if block.settings.link == blank %}
+                              role="link" aria-disabled="true"
+                            {% else %}
+                              href="{{ block.settings.link }}"
+                            {% endif %}
+                          > {%- endif -%}
+                            <{{ block.settings.heading_tag }} class="inline-richtext">{{ block.settings.title }}</{{ block.settings.heading_tag }}>
+                         {%- if block.settings.link != blank -%} </a>{%- endif -%}
                 {%- endif -%}
                 {%- if block.settings.text != blank -%}
                   <div class="rte">{{ block.settings.text }}</div>
                 {%- endif -%}
-                {%- if block.settings.link_label != blank -%}
+                {%- if block.settings.link != blank -%}
                   <a
                     class="link animate-arrow"
                     {% if block.settings.link == blank %}
