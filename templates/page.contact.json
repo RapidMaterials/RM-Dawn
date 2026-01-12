@@ -9,6 +9,12 @@
  */
 {
   "sections": {
+    "1734561040a9aaddb4": {
+      "type": "apps",
+      "settings": {
+        "include_margins": true
+      }
+    },
     "rich_text_tgCRmU": {
       "type": "rich-text",
       "blocks": {
@@ -16,72 +22,72 @@
           "type": "heading",
           "settings": {
             "heading": "Contact Rapid Materials",
-            "heading_size": "h1",
+            "heading_size": "h2",
             "heading_tag": "h1"
+          }
+        },
+        "heading_dRQEr4": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>Submit a Support Ticket</strong>",
+            "heading_size": "h1",
+            "heading_tag": "h2"
           }
         },
         "text_pKzQBd": {
           "type": "text",
           "settings": {
-            "text": "<p>We’re here to help! Whether you have questions about our products, need assistance with an order, or just want to learn more, our team is ready to connect with you.</p>"
+            "text": "<p>We’ve recently <strong>launched a Support Portal </strong>to help you get more <strong>accurate, consistent support.</strong></p><p>Submitting a ticket keeps your order details and support history in one place, so our team can follow up faster and ensure nothing gets missed—even if a different team member is assisting you.</p>"
+          }
+        },
+        "button_rkyLtt": {
+          "type": "button",
+          "settings": {
+            "button_label": "Submit a Support Ticket",
+            "button_link": "https://rapidmaterials.freshdesk.com/support/tickets/new",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        },
+        "text_ELtryL": {
+          "type": "text",
+          "settings": {
+            "text": "<p>You can also use the “Contact Us” button in the bottom-left corner to submit a ticket.</p>"
           }
         }
       },
       "block_order": [
         "heading_qjRbMN",
-        "text_pKzQBd"
+        "heading_dRQEr4",
+        "text_pKzQBd",
+        "button_rkyLtt",
+        "text_ELtryL"
+      ],
+      "custom_css": [
+        ".rich-text__text.rte {color: white;}",
+        "h2.rich-text__heading.rte.inline-richtext.h1 {margin-top: 0; color: white;}"
       ],
       "settings": {
         "desktop_content_position": "center",
         "content_alignment": "center",
         "content_max_width": 900,
-        "color_scheme": "",
+        "color_scheme": "scheme-3ecab526-23df-438e-a281-3ae133d61365",
         "full_width": true,
         "padding_top": 40,
-        "padding_bottom": 12
-      }
-    },
-    "1734561040a9aaddb4": {
-      "type": "apps",
-      "settings": {
-        "include_margins": true
-      }
-    },
-    "contact_form_6HdzTj": {
-      "type": "contact-form",
-      "custom_css": [
-        ".contact {max-width: 600px; padding: 0 4rem;}",
-        "select {padding: 1.2rem 1.5rem 0.8rem 2rem;}",
-        "h2.form-status.form-status-list.form__message {background-color: #e3e3e3; padding: 10px;}",
-        "label.checkbox__label {display: block; line-height: 1.4em; padding: 5px 0;}"
-      ],
-      "settings": {
-        "heading": "",
-        "heading_size": "h1",
-        "color_scheme": "",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "padding_bottom": 40
       }
     },
     "multicolumn_EHFrxr": {
       "type": "multicolumn",
       "blocks": {
-        "column_fzNLnJ": {
-          "type": "column",
-          "settings": {
-            "title": "Location",
-            "heading_tag": "h2",
-            "text": "<p>Atlanta, GA, USA</p>",
-            "link_label": "",
-            "link": ""
-          }
-        },
         "column_WRFzXf": {
           "type": "column",
           "settings": {
-            "title": "Call Us",
+            "title": "<strong>What can we help with?</strong>",
             "heading_tag": "h2",
-            "text": "<p>(770) 405 - 1060</p>",
+            "text": "<p><strong>Submit a ticket for:</strong></p><ul><li>Returns & refunds</li><li>Shipping status and delivery issues</li><li>Damaged items or missing packages</li><li>Complex product or compatibility questions (photos/details recommended)</li><li>Quote requests & bulk orders</li></ul><p><strong>Call or leave a voicemail for: </strong></p><ul><li>You have an urgent pickup/delivery coordination issue</li><li>You need to change an order shipping address</li><li>You’re on-site and need real-time guidance</li></ul>",
             "link_label": "",
             "link": ""
           }
@@ -89,18 +95,22 @@
         "column_bgTJYV": {
           "type": "column",
           "settings": {
-            "title": "Hours",
+            "title": "<strong>Support Info</strong>",
             "heading_tag": "h2",
-            "text": "<p>Monday-Friday 8am-5pm EST</p>",
+            "text": "<p>Tickets help us keep your order details and support history in one place, making follow-ups easier and ensuring smooth handoffs between team members.<br/><br/><strong>Hours: </strong>Monday-Friday 8am-5pm EST</p><p><br/>Most tickets are answered within a few hours during business hours.<br/><br/><strong>Phone: </strong>(770) 405-1060</p><p>Phone support is available during business hours, but calls may go to voicemail during peak times.</p>",
             "link_label": "",
             "link": ""
           }
         }
       },
       "block_order": [
-        "column_fzNLnJ",
         "column_WRFzXf",
         "column_bgTJYV"
+      ],
+      "custom_css": [
+        "ul {line-height: 1.25em; margin-top: 10px;}",
+        "div.rte > p:nth-child(3) {padding-top: 10px;}",
+        "h2 {margin-top: 0;}"
       ],
       "settings": {
         "title": "",
@@ -114,8 +124,8 @@
         "image_ratio": "adapt",
         "button_label": "",
         "button_link": "",
-        "columns_desktop": 3,
-        "column_alignment": "center",
+        "columns_desktop": 2,
+        "column_alignment": "left",
         "background_style": "primary",
         "color_scheme": "",
         "columns_mobile": "1",
@@ -134,9 +144,8 @@
     }
   },
   "order": [
-    "rich_text_tgCRmU",
     "1734561040a9aaddb4",
-    "contact_form_6HdzTj",
+    "rich_text_tgCRmU",
     "multicolumn_EHFrxr",
     "main"
   ]
