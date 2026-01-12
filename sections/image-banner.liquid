@@ -28,6 +28,18 @@
     opacity: {{ section.settings.image_overlay_opacity | divided_by: 100.0 }};
   }
 {%- endstyle -%}
+{%- liquid
+  assign desktop_ratio = 1
+  if section.settings.image != blank
+    assign desktop_ratio = section.settings.image.aspect_ratio
+  endif
+
+  assign mobile_ratio = desktop_ratio
+  if section.settings.mobile_image != blank
+    assign mobile_ratio = section.settings.mobile_image.aspect_ratio
+  endif
+-%}
+
 
 {%- liquid
   assign full_width = '100vw'
