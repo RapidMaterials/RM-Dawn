@@ -10,26 +10,29 @@
   if section.settings.mobile_image != blank
     assign mobile_ratio = section.settings.mobile_image.aspect_ratio
   endif
+
+  assign desktop_padding = 100
+  if desktop_ratio != 0
+    assign desktop_padding = 1 | divided_by: desktop_ratio | times: 100
+  endif
+
+  assign mobile_padding = desktop_padding
+  if mobile_ratio != 0
+    assign mobile_padding = 1 | divided_by: mobile_ratio | times: 100
+  endif
 -%}
 
 {%- if section.settings.image_height == 'adapt' and section.settings.image != blank -%}
   {%- style -%}
     @media screen and (max-width: 749px) {
-      #Banner-{{ section.id }}::before,
-      #Banner-{{ section.id }} .banner__media::before,
-      #Banner-{{ section.id }}:not(.banner--mobile-bottom) .banner__content::before {
-        padding-bottom: {{ 1 | divided_by: mobile_ratio | times: 100 }}%;
-        content: '';
-        display: block;
+      #Banner-{{ section.id }} .banner__media::before {
+        padding-bottom: {{ mobile_padding }}% !important;
       }
     }
 
     @media screen and (min-width: 750px) {
-      #Banner-{{ section.id }}::before,
       #Banner-{{ section.id }} .banner__media::before {
-        padding-bottom: {{ 1 | divided_by: desktop_ratio | times: 100 }}%;
-        content: '';
-        display: block;
+        padding-bottom: {{ desktop_padding }}% !important;
       }
     }
   {%- endstyle -%}
