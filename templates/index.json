@@ -79,6 +79,7 @@
       ],
       "settings": {
         "image": "shopify://shop_images/noridc-bg-black.png",
+        "mobile_image": "shopify://shop_images/Anthracite-metallic_2-rotated.jpg",
         "image_overlay_opacity": 0,
         "image_height": "small",
         "desktop_content_position": "middle-center",
