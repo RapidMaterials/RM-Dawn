@@ -19,13 +19,31 @@
         "link": "https://rapidmaterials.com/collections/s-5-pvkit-rail-less-metal-roof-solar-mounting-system"
       }
     },
+    "image_only_banner_yJty6P": {
+      "type": "image-only-banner",
+      "custom_css": [
+        ".rm-banner-template--18210574237874__image_only_banner_yJty6P {margin-bottom: -120px; z-index: 1; padding-top: 20px;}",
+        "@media (max-width: 768px) {.rm-banner-template--18210574237874__image_only_banner_yJty6P img {height: 60px; }}"
+      ],
+      "name": "Simple Banner Image",
+      "settings": {
+        "desktop_image": "shopify://shop_images/NSG_LOGO_light_b1d30b90-46f3-43e8-afc9-92b00dbccd22.png",
+        "alt_text": "",
+        "link": "",
+        "desktop_height": 100,
+        "mobile_height": 100,
+        "object_fit": "contain",
+        "border_radius": 0,
+        "loading": "lazy"
+      }
+    },
     "image_banner": {
       "type": "image-banner",
       "blocks": {
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "Solutions That Build Better.",
+            "heading": "<strong>A New Name in Premium Euro Steel Gutters</strong>",
             "heading_tag": "h2",
             "heading_size": "h1"
           }
@@ -33,17 +51,17 @@
         "text_QeTPD4": {
           "type": "text",
           "settings": {
-            "text": "Your trusted source for premium tools, materials, and expert service for metal roofing, gutters, cladding, and more.",
+            "text": "Meet Nordic Steel — the clean, durable gutter system that’s giving the big brands a run for their money.Engineered for strength. Priced to compete.",
             "text_style": "body"
           }
         },
         "button": {
           "type": "buttons",
           "settings": {
-            "button_label_1": "Browse All",
-            "button_link_1": "shopify://collections/rapid-materials-all",
+            "button_label_1": "Shop Nordic Steel Gutters",
+            "button_link_1": "https://rapidmaterials.com/pages/nordic-6-painted-all-colors-landing-page",
             "button_style_secondary_1": false,
-            "button_label_2": "Quick Order",
+            "button_label_2": "",
             "button_link_2": "shopify://pages/quick-order-rapid-materials",
             "button_style_secondary_2": false
           }
@@ -55,11 +73,13 @@
         "button"
       ],
       "custom_css": [
-        "@media only screen and (min-width: 750px) {.banner--content-align-left.banner--desktop-transparent .banner__box, .banner--content-align-right.banner--desktop-transparent .banner__box, .banner--medium.banner--desktop-transparent .banner__box {max-width: 80rem; }}"
+        "@media only screen and (min-width: 750px) {.banner--content-align-left.banner--desktop-transparent .banner__box, .banner--content-align-right.banner--desktop-transparent .banner__box, .banner--medium.banner--desktop-transparent .banner__box {max-width: 80rem; } }",
+        "@media only screen and (max-width: 749px) {.banner-box{padding-bottom:0 !important;}}",
+        ".banner__content.banner__content--middle-center.page-width {margin-top: 50px; padding-bottom: 10px;}"
       ],
       "settings": {
-        "image": "shopify://shop_images/Metal_roof_install.jpg",
-        "image_overlay_opacity": 70,
+        "image": "shopify://shop_images/noridc-bg-black.png",
+        "image_overlay_opacity": 0,
         "image_height": "small",
         "desktop_content_position": "middle-center",
         "show_text_box": false,
@@ -212,6 +232,7 @@
   },
   "order": [
     "promo_banner_eiNQYt",
+    "image_only_banner_yJty6P",
     "image_banner",
     "multicolumn_KdhDjH",
     "image_with_text_idzyYK"
