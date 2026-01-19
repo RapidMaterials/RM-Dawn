@@ -189,6 +189,11 @@
         "type": "shopify://apps/oscp-wholesale/blocks/app-embed/4d1d9eb6-630d-4c84-ad8e-14dfd07f94ed",
         "disabled": false,
         "settings": {}
+      },
+      "12439146293631897289": {
+        "type": "shopify://apps/blockify-fraud-filter/blocks/app_embed/2e3e0ba5-0e70-447a-9ec5-3bf76b5ef12e",
+        "disabled": false,
+        "settings": {}
       }
     },
     "color_schemes": {
