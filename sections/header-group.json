@@ -13,18 +13,6 @@
   "sections": {
     "announcement_bar_9k9i4C": {
       "type": "announcement-bar",
-      "blocks": {
-        "announcement_cLBHrp": {
-          "type": "announcement",
-          "settings": {
-            "text": "Weather conditions are currently impacting carrier operations in parts of the U.S. As a result, some orders may experience a 1–2 business day shipping delay. Orders will resume moving as quickly as conditions allow, and tracking will be sent once your order ships. Thank you for your patience.",
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "announcement_cLBHrp"
-      ],
       "name": "t:sections.announcement-bar.presets.name",
       "settings": {
         "auto_rotate": false,
