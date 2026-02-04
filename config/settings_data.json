@@ -197,9 +197,9 @@
       },
       "2077346902331567362": {
         "type": "shopify://apps/meroxio-share-your-cart/blocks/share-cart-embed/9a651e45-a2e8-4ece-9102-9a67a2a9281d",
-        "disabled": false,
+        "disabled": true,
         "settings": {
-          "show-floting": true,
+          "show-floting": false,
           "floating-text": "Share Cart",
           "fl-share-btn-bg-color": "#000",
           "fl-share-btn-text-color": "#fff",
