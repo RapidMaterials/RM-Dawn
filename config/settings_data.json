@@ -194,6 +194,18 @@
         "type": "shopify://apps/blockify-fraud-filter/blocks/app_embed/2e3e0ba5-0e70-447a-9ec5-3bf76b5ef12e",
         "disabled": false,
         "settings": {}
+      },
+      "15188581332139481108": {
+        "type": "shopify://apps/scala-descontos/blocks/cartButton/24748891-1ee0-454d-bfde-d80e65983c18",
+        "disabled": false,
+        "settings": {
+          "textSelector": "Proceed to checkout",
+          "textSelector2": "Check out, checkout, check-out",
+          "selector": ":is(button,input)[name=\"checkout\"]",
+          "message": "Checkout with discount",
+          "position": "before",
+          "customliquid": "{% comment %}\n<style>\nbutton {\n  background: #000000;\n}\n</style>\n{% endcomment %}"
+        }
       }
     },
     "color_schemes": {
