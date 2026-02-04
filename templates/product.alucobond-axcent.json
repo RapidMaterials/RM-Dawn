@@ -385,6 +385,7 @@
         "text_AeLgT6",
         "buttons_DehKJC"
       ],
+      "disabled": true,
       "custom_css": [
         "p,h1,h2,h3,h4,h5,body,div,span {color: #444;}"
       ],
