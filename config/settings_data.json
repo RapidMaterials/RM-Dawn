@@ -195,16 +195,16 @@
         "disabled": false,
         "settings": {}
       },
-      "8535508488585157746": {
-        "type": "shopify://apps/cart-save-and-share/blocks/save-carts/658d49f7-6740-4039-a671-ea6e6109b1de",
+      "2077346902331567362": {
+        "type": "shopify://apps/meroxio-share-your-cart/blocks/share-cart-embed/9a651e45-a2e8-4ece-9102-9a67a2a9281d",
         "disabled": false,
         "settings": {
-          "button_state": "active",
-          "enter_button_text": "View Save Carts",
-          "enter_button_color": "#121212",
-          "enter_button_text_color": "#FFFFFF",
-          "enter_button_size": 16,
-          "button_alignment": "left"
+          "show-floting": true,
+          "floating-text": "Share Cart",
+          "fl-share-btn-bg-color": "#000",
+          "fl-share-btn-text-color": "#fff",
+          "fl-vertical_position": "bottom",
+          "fl-horizontal_position": "left"
         }
       }
     },
