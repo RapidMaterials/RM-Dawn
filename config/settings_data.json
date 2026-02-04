@@ -206,6 +206,16 @@
           "fl-vertical_position": "bottom",
           "fl-horizontal_position": "left"
         }
+      },
+      "12513784295890028501": {
+        "type": "shopify://apps/share-a-cart-for-your-store/blocks/share-a-cart/201dd2e6-eb4a-43d9-b73a-c6cdbd567bfa",
+        "disabled": false,
+        "settings": {
+          "position": "bottom-left",
+          "margin_unit": "%",
+          "vertical_margin": 30,
+          "horizontal_margin": 10
+        }
       }
     },
     "color_schemes": {
