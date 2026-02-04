@@ -195,17 +195,16 @@
         "disabled": false,
         "settings": {}
       },
-      "17988510917489049597": {
-        "type": "shopify://apps/cartify-multicart-share-sync/blocks/floating_button/fb253623-3121-4c18-9c20-a6216041be16",
+      "8535508488585157746": {
+        "type": "shopify://apps/cart-save-and-share/blocks/save-carts/658d49f7-6740-4039-a671-ea6e6109b1de",
         "disabled": false,
         "settings": {
-          "cartify_save_btn": "Save",
-          "cartify_mycart_btn": "My carts",
-          "cartify_save_btn_settings": "true",
-          "cartify-nudge-position": "right",
-          "grid_mode": true,
-          "cartify-BgColor": "#73bf43",
-          "cartify_text_color": "#000000"
+          "button_state": "active",
+          "enter_button_text": "View Save Carts",
+          "enter_button_color": "#121212",
+          "enter_button_text_color": "#FFFFFF",
+          "enter_button_size": 16,
+          "button_alignment": "left"
         }
       }
     },
