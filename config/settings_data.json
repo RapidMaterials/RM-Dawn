@@ -199,7 +199,7 @@
         "type": "shopify://apps/draftly-auto-save-cart/blocks/cart-tracker/01995ebb-9409-7a25-bc2d-ae4fe92b4593",
         "disabled": false,
         "settings": {
-          "enable_email_popup": false,
+          "enable_email_popup": true,
           "popup_title": "Save Your Cart!",
           "popup_subtitle": "Enter your email or phone number to save your cart and get notified if you leave.",
           "email_placeholder": "Email or Phone Number",
