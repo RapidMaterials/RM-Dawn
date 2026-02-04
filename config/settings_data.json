@@ -195,10 +195,33 @@
         "disabled": false,
         "settings": {}
       },
-      "7596347708867144509": {
-        "type": "shopify://apps/avada-seo-suite/blocks/avada-seo/15507c6e-1aa3-45d3-b698-7e175e033440",
+      "318871914576213038": {
+        "type": "shopify://apps/draftly-auto-save-cart/blocks/cart-tracker/01995ebb-9409-7a25-bc2d-ae4fe92b4593",
         "disabled": false,
-        "settings": {}
+        "settings": {
+          "enable_email_popup": false,
+          "popup_title": "Save Your Cart!",
+          "popup_subtitle": "Enter your email or phone number to save your cart and get notified if you leave.",
+          "email_placeholder": "Email or Phone Number",
+          "button_text": "Save My Cart",
+          "success_message": "✓ Your email has been saved!",
+          "popup_background_color": "#ffffff",
+          "title_color": "#202223",
+          "text_color": "#6d7175",
+          "button_color": "#008060",
+          "button_text_color": "#ffffff",
+          "button_hover_color": "#006e52",
+          "input_border_color": "#d1d5db",
+          "input_focus_color": "#008060",
+          "success_color": "#008060",
+          "overlay_opacity": 50,
+          "popup_max_width": 480,
+          "popup_padding": 32,
+          "popup_border_radius": 12,
+          "button_border_radius": 8,
+          "title_font_size": 24,
+          "text_font_size": 16
+        }
       }
     },
     "color_schemes": {
