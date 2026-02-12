@@ -23,36 +23,60 @@
         "color_scheme": "scheme-1"
       }
     },
+    "image_only_banner_zT9Fdz": {
+      "type": "image-only-banner",
+      "name": "Simple Banner Image",
+      "settings": {
+        "desktop_image": "shopify://shop_images/cat_gutterbrush_header.png",
+        "mobile_image": "shopify://shop_images/cat_gutterbrush_header.png",
+        "alt_text": "Banner image",
+        "link": "",
+        "desktop_height": 130,
+        "mobile_height": 120,
+        "object_fit": "cover",
+        "border_radius": 0,
+        "loading": "lazy"
+      }
+    },
     "image_with_text_zeHAbY": {
       "type": "image-with-text",
       "blocks": {
         "heading_bdbMjy": {
           "type": "heading",
           "settings": {
-            "heading": "S-5! ColorGard 2.0 Snow System for Metal Roofs",
+            "heading": "GutterBrush Gutter Guard",
             "heading_tag": "h1",
             "heading_size": "h1"
+          }
+        },
+        "caption_zJRGdp": {
+          "type": "caption",
+          "settings": {
+            "caption": "Simple, Reliable Gutter Protection",
+            "text_style": "subtitle",
+            "text_size": "large"
           }
         },
         "text_Vpcx7b": {
           "type": "text",
           "settings": {
-            "text": "<p>ColorGard® 2.0 improves on the original with faster installation, no pre-assembly required, and simplified field adjustments — all while maintaining the same trusted strength and color-match finish. It’s a true lay-and-play upgrade built for both new construction and retrofit projects.</p>",
+            "text": "<p>Brush‑style gutter guards that drop into  existing gutters to help stop clogs before they startsimple for homeowners, fast for pros.</p>",
             "text_style": "body"
           }
         }
       },
       "block_order": [
         "heading_bdbMjy",
+        "caption_zJRGdp",
         "text_Vpcx7b"
       ],
       "settings": {
-        "image": "shopify://shop_images/670F997D-F7CC-4CCE-8978-338102C1D209-e1739309461776.png",
+        "image": "shopify://shop_images/GutterBrushinhalfround5inchwhitegutter.png",
         "height": "adapt",
         "desktop_image_width": "small",
         "layout": "image_first",
         "image_behavior": "none",
-        "content_layout": "no-overlap",
+        "content_layout": "overlap",
         "desktop_content_position": "top",
         "desktop_content_alignment": "left",
         "mobile_content_alignment": "left",
@@ -62,23 +86,6 @@
         "padding_top": 0,
         "padding_bottom": 0,
         "side-padding": "no-padding"
-      }
-    },
-    "image_banner_NHkXKX": {
-      "type": "image-banner",
-      "custom_css": [],
-      "settings": {
-        "image": "shopify://shop_images/ColorGard2.0.png",
-        "image_overlay_opacity": 0,
-        "image_height": "adapt",
-        "desktop_content_position": "middle-center",
-        "show_text_box": false,
-        "desktop_content_alignment": "center",
-        "color_scheme": "scheme-3ecab526-23df-438e-a281-3ae133d61365",
-        "image_behavior": "none",
-        "mobile_content_alignment": "center",
-        "stack_images_on_mobile": true,
-        "show_text_below": true
       }
     },
     "multicolumn_ARiLGw": {
@@ -241,6 +248,7 @@
       "settings": {
         "desktop_content_position": "center",
         "content_alignment": "center",
+        "content_max_width": 900,
         "color_scheme": "scheme-2",
         "full_width": true,
         "padding_top": 28,
@@ -437,8 +445,8 @@
   },
   "order": [
     "banner",
+    "image_only_banner_zT9Fdz",
     "image_with_text_zeHAbY",
-    "image_banner_NHkXKX",
     "multicolumn_ARiLGw",
     "video_nMgp6g",
     "multicolumn_Tk3QLK",
