@@ -94,19 +94,19 @@
         "column_KntxHR": {
           "type": "column",
           "settings": {
-            "title": "<strong> Faster, Easier Installation</strong>",
+            "title": "<strong>Simple, drop‑in design</strong>",
             "heading_tag": "h2",
-            "text": "<ul><li>No pre-assembly needed — lay-and-play design saves time on the roof</li><li>VersaClip™ installs directly over internal splices, eliminating in-field cutting at splice points</li><li>Ideal for both new metal roof installs and retrofit applications</li></ul>",
+            "text": "<ul><li>Brush sections sit inside your existing gutters, filling the channel where clogs usually start.</li><li>No fasteners, no glue, no cutting into the roof or fascia—just slide sections in and bend around corners.</li><li>Easy for confident DIYers, and fast for pros to add while they’re already on the ladder.</li></ul>",
             "link_label": "",
-            "link": "https://cdn.shopify.com/s/files/1/0645/2540/2290/files/ColorGard-2-0-Installation-Instructions_RapidMaterials.pdf?v=1743440011"
+            "link": ""
           }
         },
         "column_pBKarN": {
           "type": "column",
           "settings": {
-            "title": "<strong>Proven Strength</strong>",
+            "title": "<strong>Cuts down clogs</strong>",
             "heading_tag": "h2",
-            "text": "<ul><li>Load-tested on 500+ metal roof profiles</li><li>Corrosion-resistant materials built to last the life of the roof</li><li>Profile-specific engineering for exposed-fastened and standing seam systems</li></ul>",
+            "text": "<ul><li>Stiff bristles help block most leaves and debris from packing the gutter solid.</li><li>Water flows through and around the bristles into the gutter and downspouts, even in heavy rain.</li><li>Helps reduce overflow that can stain siding and contribute to fascia, soffit, and foundation issues.</li></ul>",
             "link_label": "",
             "link": ""
           }
@@ -114,9 +114,9 @@
         "column_BTHpfb": {
           "type": "column",
           "settings": {
-            "title": "<strong>Seamless Aesthetics</strong>",
+            "title": "<strong>Durable, roof‑friendly</strong>",
             "heading_tag": "h2",
-            "text": "<ul><li>Maintains the clean look of your metal roof</li><li>Uses your roof material for an exact color and finish match.</li><li>Sleek design reduces visual impact while improving safety<br/></li></ul>",
+            "text": "<ul><li>Galvanized steel core with UV‑protected bristles, built to handle years of sun and weather.</li><li>Designed not to touch or interfere with shingles or metal roofing, helping avoid warranty worries.</li><li>Flexible design that still works even if gutters have minor dents or hanger variations.</li></ul>",
             "link_label": "",
             "link": ""
           }
@@ -155,78 +155,6 @@
         "padding_bottom": 36
       }
     },
-    "video_nMgp6g": {
-      "type": "video",
-      "custom_css": [
-        ".video-section {max-width: 600px;}"
-      ],
-      "settings": {
-        "heading": "",
-        "heading_size": "h1",
-        "section_float": "left",
-        "enable_video_looping": false,
-        "video_url": "https://youtu.be/x9CkJRF748Y",
-        "cover_image": "shopify://shop_images/Screenshot-2025-02-20-at-2.13.53_PM-e1740171615481-1024x568.png",
-        "description": "Introducing ColorGard 2.0",
-        "full_width": false,
-        "color_scheme": "",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "multicolumn_Tk3QLK": {
-      "type": "multicolumn",
-      "blocks": {
-        "column_XCRHxA": {
-          "type": "column",
-          "settings": {
-            "title": "",
-            "heading_tag": "h2",
-            "text": "",
-            "link_label": "Download Instructions >",
-            "link": "https://cdn.shopify.com/s/files/1/0712/5726/0271/files/ColorGard-2-0-Installation-Instructions_RapidMaterials.pdf?v=1743621824"
-          }
-        },
-        "column_TxErCF": {
-          "type": "column",
-          "settings": {
-            "title": "",
-            "heading_tag": "h2",
-            "text": "",
-            "link_label": "ColorGard 2.0 Brochure",
-            "link": "https://3482954.fs1.hubspotusercontent-na1.net/hubfs/3482954/Resources/Product%20Documents/Snow%20Retention/ColorGard%202.0/ColorGard2.0%20Product%20Sheet.pdf"
-          }
-        }
-      },
-      "block_order": [
-        "column_XCRHxA",
-        "column_TxErCF"
-      ],
-      "custom_css": [
-        "a.link.animate-arrow {margin-top: 0;}"
-      ],
-      "settings": {
-        "title": "",
-        "heading_tag": "h2",
-        "section_float": "right",
-        "mobile_display": "mobile-show",
-        "desktop_display": "desktop-show",
-        "heading_size": "h2",
-        "col_alignment": "left",
-        "image_width": "full",
-        "image_ratio": "adapt",
-        "button_label": "",
-        "button_link": "",
-        "columns_desktop": 1,
-        "column_alignment": "center",
-        "background_style": "primary",
-        "color_scheme": "scheme-1",
-        "columns_mobile": "1",
-        "swipe_on_mobile": false,
-        "padding_top": 44,
-        "padding_bottom": 20
-      }
-    },
     "rich_text_EeCJeG": {
       "type": "rich-text",
       "blocks": {
@@ -253,17 +181,6 @@
         "full_width": true,
         "padding_top": 28,
         "padding_bottom": 16
-      }
-    },
-    "custom_liquid_awMT8b": {
-      "type": "custom-liquid",
-      "settings": {
-        "custom_liquid": "<div data-instabuy data-widget-id=\"9afaf0aa-5d4d-42ae-a228-6d758d279ffc\"></div>",
-        "color_scheme": "scheme-2",
-        "padding_top": 0,
-        "padding_bottom": 4,
-        "padding_left": 4,
-        "padding_right": 4
       }
     },
     "multicolumn_NbLt7K": {
@@ -448,10 +365,7 @@
     "image_only_banner_zT9Fdz",
     "image_with_text_zeHAbY",
     "multicolumn_ARiLGw",
-    "video_nMgp6g",
-    "multicolumn_Tk3QLK",
     "rich_text_EeCJeG",
-    "custom_liquid_awMT8b",
     "multicolumn_NbLt7K",
     "product-grid",
     "collapsible_content_Xec8tV"
