@@ -270,6 +270,47 @@
         "padding_bottom": 36
       }
     },
+    "video_gallery_CKxRh4": {
+      "type": "video-gallery",
+      "blocks": {
+        "video_block_DW8gYD": {
+          "type": "video_block",
+          "settings": {
+            "video_url": "https://youtu.be/U8LuX3C9ffA?si=7iOyt2D0Qxs3ctsv",
+            "poster_image": "shopify://shop_images/download.webp",
+            "alt_text": ""
+          }
+        },
+        "video_block_xWYLtJ": {
+          "type": "video_block",
+          "settings": {
+            "video_url": "https://youtu.be/AW5RBuQ5ows?si=bRe1I0zPRZ0C2h76",
+            "poster_image": "shopify://shop_images/download-1.webp",
+            "alt_text": ""
+          }
+        },
+        "video_block_VacH77": {
+          "type": "video_block",
+          "settings": {
+            "video_url": "https://youtu.be/yuVvLsQZvmQ?si=1NhtS6uofQDbTqDU",
+            "poster_image": "shopify://shop_images/maxresdefault_6097e0c1-566e-4250-9eb8-14adc1f4c345.webp",
+            "alt_text": ""
+          }
+        }
+      },
+      "block_order": [
+        "video_block_DW8gYD",
+        "video_block_xWYLtJ",
+        "video_block_VacH77"
+      ],
+      "name": "Multi Video Lightbox",
+      "settings": {
+        "heading": "",
+        "heading_size": "h1",
+        "section_float": "clear",
+        "color_scheme": ""
+      }
+    },
     "collapsible_content_Xec8tV": {
       "type": "collapsible-content",
       "blocks": {
@@ -387,9 +428,10 @@
     "image_only_banner_zT9Fdz",
     "image_with_text_zeHAbY",
     "multicolumn_ARiLGw",
-    "multicolumn_w9jBii",
     "177100621428404ac3",
+    "multicolumn_w9jBii",
     "product-grid",
+    "video_gallery_CKxRh4",
     "collapsible_content_Xec8tV"
   ]
 }
