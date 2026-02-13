@@ -159,90 +159,6 @@
         "padding_bottom": 36
       }
     },
-    "rich_text_EeCJeG": {
-      "type": "rich-text",
-      "blocks": {
-        "heading_Nm6NDK": {
-          "type": "heading",
-          "settings": {
-            "heading": "Order ColorGard 2.0",
-            "heading_size": "h1",
-            "heading_tag": "h2"
-          }
-        }
-      },
-      "block_order": [
-        "heading_Nm6NDK"
-      ],
-      "custom_css": [
-        ".section-template--18380191006898__rich_text_EeCJeG-padding {clear: both;}"
-      ],
-      "settings": {
-        "desktop_content_position": "center",
-        "content_alignment": "center",
-        "content_max_width": 900,
-        "color_scheme": "scheme-2",
-        "full_width": true,
-        "padding_top": 28,
-        "padding_bottom": 16
-      }
-    },
-    "multicolumn_NbLt7K": {
-      "type": "multicolumn",
-      "blocks": {
-        "column_9bPxNG": {
-          "type": "column",
-          "settings": {
-            "title": "Need help figuring what you need?",
-            "heading_tag": "h2",
-            "text": "<p>Not sure which ColorGard® 2.0 setup or SnoClips are right for your roof? We've got you covered.</p>",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "column_e3K794": {
-          "type": "column",
-          "settings": {
-            "title": "",
-            "heading_tag": "h2",
-            "text": "<p><a href=\"https://www.s-5.com/snow-calculator/?step=snow_calculator&screen=existing_projects\" target=\"_blank\" title=\"https://www.s-5.com/snow-calculator/?step=snow_calculator&screen=existing_projects\">Use S-5!'s Snow Calculator</a></p><p><a href=\"/pages/contact\" title=\"Contact\">Contact Rapid Materials</a></p>",
-            "link_label": "",
-            "link": "https://www.s-5.com/snow-calculator/?step=snow_calculator&screen=existing_projects"
-          }
-        }
-      },
-      "block_order": [
-        "column_9bPxNG",
-        "column_e3K794"
-      ],
-      "custom_css": [
-        ".multicolumn-card a {line-height: 2; background-color: black; padding: 10px; color: white; text-decoration: none;}",
-        "li#Slide-template--18380191006898__multicolumn_NbLt7K-2 p {padding: 10px;}",
-        "h3.inline-richtext {font-size: 23px; font-weight: bold;}",
-        "h2 {margin-top: 0;}"
-      ],
-      "settings": {
-        "title": "",
-        "heading_tag": "h2",
-        "section_float": "clear",
-        "mobile_display": "mobile-show",
-        "desktop_display": "desktop-show",
-        "heading_size": "h1",
-        "col_alignment": "left",
-        "image_width": "full",
-        "image_ratio": "adapt",
-        "button_label": "",
-        "button_link": "",
-        "columns_desktop": 2,
-        "column_alignment": "left",
-        "background_style": "primary",
-        "color_scheme": "scheme-4193c3da-e497-4afa-91b7-12fbd16d7fb2",
-        "columns_mobile": "1",
-        "swipe_on_mobile": false,
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
     "product-grid": {
       "type": "main-collection-product-grid",
       "disabled": true,
@@ -278,27 +194,27 @@
         "collapsible_row_XqLp8E": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Can I just put snow guards over doors and call it good?",
+            "heading": "What is GutterBrush and how does it work?",
             "icon": "check_mark",
-            "row_content": "<p>Not really — and here's why. Snow doesn't break off neatly just because you block a small section. It will shear diagonally, often leaving you with a giant wedge of snow sitting above your doorway instead of a safe little patch. This wedge can overload the system, shift unexpectedly, and still cause damage. Snow retention should usually run the full eave line, not just the areas over doors or walkways.</p>",
+            "row_content": "<p>GutterBrush is a cylindrical, bristle-style gutter guard that sits directly inside your existing gutter. The stiff bristles help block leaves and debris from packing into the gutter channel, while rainwater flows through and around the bristles and down the downspout.</p><p>Instead of covering the top of the gutter like a screen or helmet system, it works inside the gutter to reduce clog buildup at the source.</p>",
             "page": ""
           }
         },
         "collapsible_row_mXiRpB": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Why is it important to keep snow on the roof instead of letting it slide off?",
+            "heading": "Does GutterBrush fit all gutter types?",
             "icon": "check_mark",
-            "row_content": "<p>Letting snow dump off all at once can cause serious problems. We're talking about thousands of pounds sliding down suddenly — wrecking gutters, damaging vehicles, tearing up landscaping, or even hurting people below. Snow tends to stick to metal roofs until just enough melting happens to make it slippery. When it finally lets go, it often releases in a dangerous avalanche. Snow retention systems like ColorGard 2.0 let the snow melt gradually and safely, preventing sudden dumps and all the trouble they bring.</p>",
+            "row_content": "<p>We currently offer GutterBrush in <strong>5\" and 6\" sizes</strong> to fit the most common residential gutter systems.</p><p>These sizes are designed for:</p><ul><li>5\" and 6\" K-style (ogee) gutters<br/></li><li>5\" and 6\" half-round gutters, including European half-round profiles (like <a href=\"https://rapidmaterials.com/collections/brand-zambelli\" title=\"https://rapidmaterials.com/collections/brand-zambelli\">Zambelli</a> and <a href=\"https://rapidmaterials.com/pages/nordic-6-painted-all-colors-landing-page\" title=\"https://rapidmaterials.com/pages/nordic-6-painted-all-colors-landing-page\">Nordic Steel)</a><br/></li></ul><p>Always measure your gutter width before ordering to ensure the correct fit. If you’re unsure, measure across the top opening of the gutter from front lip to back.</p>",
             "page": ""
           }
         },
         "collapsible_row_ckxnPL": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "What makes ColorGard 2.0 better than other color-matched snow guards?",
+            "heading": "Will water overflow in heavy rain?",
             "icon": "check_mark",
-            "row_content": "<p>The key is long-term color matching. Sure, anyone can match a roof color when the roof is brand new — that part is easy. The real test is how it looks 5, 10, or even 20 years down the line. ColorGard 2.0 uses the <em>exact same</em> material as your roof to achieve a permanent match. Other systems use paints or coatings that age differently than the roof, leading to noticeable mismatches over time. ColorGard stays consistent because it ages right along with the roof.</p>",
+            "row_content": "<p>When properly sized for the gutter, water flows through the bristles and into the gutter channel—even during heavy rain. The open-flow design allows water to pass through instead of sheeting over the edge like some top-mounted covers can.</p><p>Proper gutter slope and clean downspouts are still important for peak performance.</p>",
             "page": ""
           }
         },
@@ -350,7 +266,7 @@
       ],
       "settings": {
         "caption": "",
-        "heading": "ColorGard 2.0 FAQ",
+        "heading": "GutterBrush FAQ",
         "heading_size": "h1",
         "heading_alignment": "center",
         "layout": "none",
@@ -369,8 +285,6 @@
     "image_only_banner_zT9Fdz",
     "image_with_text_zeHAbY",
     "multicolumn_ARiLGw",
-    "rich_text_EeCJeG",
-    "multicolumn_NbLt7K",
     "product-grid",
     "collapsible_content_Xec8tV"
   ]
