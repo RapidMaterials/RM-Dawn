@@ -257,7 +257,8 @@
         "judge_me_reviews_review_widget_q3ip3c"
       ],
       "custom_css": [
-        ".shopify-block {background-color: #f0f0f0; padding: 2%; margin-top: 20px;}"
+        ".shopify-block {background-color: #f0f0f0; padding: 2%; margin-top: 20px;}",
+        ".jdgm-rev__custom-form {display: none;}"
       ],
       "settings": {
         "include_margins": true
