@@ -94,6 +94,7 @@
         "column_KntxHR": {
           "type": "column",
           "settings": {
+            "image": "shopify://shop_images/icon-drop-in.png",
             "title": "<strong>Simple, drop‑in design</strong>",
             "heading_tag": "h2",
             "text": "<ul><li>Brush sections sit inside your existing gutters, filling the channel where clogs usually start.</li><li>No fasteners, no glue, no cutting into the roof or fascia—just slide sections in and bend around corners.</li><li>Easy for confident DIYers, and fast for pros to add while they’re already on the ladder.</li></ul>",
@@ -104,6 +105,7 @@
         "column_pBKarN": {
           "type": "column",
           "settings": {
+            "image": "shopify://shop_images/icon-rain-water.png",
             "title": "<strong>Cuts down clogs</strong>",
             "heading_tag": "h2",
             "text": "<ul><li>Stiff bristles help block most leaves and debris from packing the gutter solid.</li><li>Water flows through and around the bristles into the gutter and downspouts, even in heavy rain.</li><li>Helps reduce overflow that can stain siding and contribute to fascia, soffit, and foundation issues.</li></ul>",
@@ -114,6 +116,7 @@
         "column_BTHpfb": {
           "type": "column",
           "settings": {
+            "image": "shopify://shop_images/icon-long-lasting.png",
             "title": "<strong>Durable, roof‑friendly</strong>",
             "heading_tag": "h2",
             "text": "<ul><li>Galvanized steel core with UV‑protected bristles, built to handle years of sun and weather.</li><li>Designed not to touch or interfere with shingles or metal roofing, helping avoid warranty worries.</li><li>Flexible design that still works even if gutters have minor dents or hanger variations.</li></ul>",
@@ -131,7 +134,8 @@
         "li {font-size: 14px; line-height: 1.2em;}",
         ".rte ul,.rte ol {list-style-position: outside;}",
         ".rte li {margin-bottom: 5px;}",
-        "h2 {margin-top: 0;}"
+        "h2 {margin-top: 0;}",
+        ".multicolumn-card__image-wrapper.multicolumn-card__image-wrapper--full-width.multicolumn-card-spacing {max-width: 120px; margin: auto !important;}"
       ],
       "settings": {
         "title": "",
