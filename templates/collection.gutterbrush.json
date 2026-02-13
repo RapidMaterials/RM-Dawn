@@ -253,6 +253,24 @@
             "row_content": "<p>GutterBrush features a galvanized steel core with UV-protected polypropylene bristles designed to withstand years of sun and weather exposure. Longevity depends on climate and debris load, but it’s built for multi-year durability in typical residential conditions.</p>",
             "page": ""
           }
+        },
+        "collapsible_row_nnRXyt": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Can homeowners install it themselves?",
+            "icon": "check_mark",
+            "row_content": "<p>Yes. Installation is simple:</p><ol><li>Slide sections into the gutter.<br/></li><li>Push them end-to-end.<br/></li><li>Bend gently around corners as needed.<br/></li></ol><p>No tools, cutting, glue, or fasteners are required. Many homeowners install it themselves, while contractors often add it during existing gutter or roofing work.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_ifYxrA": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How is GutterBrush different from metal screens or helmet systems?",
+            "icon": "check_mark",
+            "row_content": "<p>Unlike top-mounted systems that rely on surface tension or tight perforations, GutterBrush:</p><ul><li>Sits inside the gutter<br/></li><li>Doesn’t require fastening under shingles<br/></li><li>Is easy to remove and clean<br/></li><li>Typically costs less than permanent cover systems<br/></li><li>Can be installed in minutes rather than hours<br/></li></ul><p>It’s a simple, practical solution rather than a permanently attached system.</p>",
+            "page": ""
+          }
         }
       },
       "block_order": [
@@ -262,7 +280,9 @@
         "collapsible_row_yeiJUw",
         "collapsible_row_jxzWPR",
         "collapsible_row_NDG8AL",
-        "collapsible_row_E9eyeN"
+        "collapsible_row_E9eyeN",
+        "collapsible_row_nnRXyt",
+        "collapsible_row_ifYxrA"
       ],
       "settings": {
         "caption": "",
