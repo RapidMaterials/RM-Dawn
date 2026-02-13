@@ -159,6 +159,63 @@
         "padding_bottom": 36
       }
     },
+    "multicolumn_w9jBii": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_Xqpjnm": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/5in-gutter-dim.png",
+            "title": "Standard 5\" GutterBrush",
+            "heading_tag": "h2",
+            "text": "<p>✔ Fits 5″ K-Style & 5″ Half-Round Gutters<br/>✔ Ideal for Most Residential Homes</p>",
+            "link_label": "Shop 5\" GutterBrush",
+            "link": "shopify://products/5-inch-gutterbrush-gutter-guards-fits-standard-k-style-residential-gutters-4-25-inch-diameter"
+          }
+        },
+        "column_iabz3Y": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/6in-gutter-dim.png",
+            "title": "Large 6\" GutterBrush",
+            "heading_tag": "h2",
+            "text": "<p>✔ Fits 6″ K-Style & 6″ Half-Round Gutters<br/>✔ Designed for Larger Roofs & Higher Water Volume</p>",
+            "link_label": "Shop 6\" GutterBrush",
+            "link": "shopify://products/6-inch-gutterbrush-gutter-guard-fits-large-residential-small-commercial-gutters-5-25-inch-diameter"
+          }
+        }
+      },
+      "block_order": [
+        "column_Xqpjnm",
+        "column_iabz3Y"
+      ],
+      "custom_css": [
+        ".multicolumn-card__image-wrapper.multicolumn-card__image-wrapper--full-width.multicolumn-card-spacing {max-width: 50%; margin: auto !important;}",
+        "h2.title.inline-richtext.h1.left {width: 100%; text-align: center;}"
+      ],
+      "name": "t:sections.multicolumn.presets.name",
+      "settings": {
+        "title": "Select the Right Fit for Your Gutter",
+        "heading_tag": "h2",
+        "section_float": "clear",
+        "mobile_display": "mobile-show",
+        "desktop_display": "desktop-show",
+        "heading_size": "h1",
+        "col_alignment": "left",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "button_label": "",
+        "button_link": "",
+        "columns_desktop": 2,
+        "column_alignment": "left",
+        "background_style": "primary",
+        "color_scheme": "",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
     "product-grid": {
       "type": "main-collection-product-grid",
       "disabled": true,
@@ -305,6 +362,7 @@
     "image_only_banner_zT9Fdz",
     "image_with_text_zeHAbY",
     "multicolumn_ARiLGw",
+    "multicolumn_w9jBii",
     "product-grid",
     "collapsible_content_Xec8tV"
   ]
