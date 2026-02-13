@@ -216,6 +216,31 @@
         "padding_bottom": 36
       }
     },
+    "177100621428404ac3": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_464d89c_Fbi4FK": {
+          "type": "ai_gen_block_464d89c",
+          "settings": {
+            "image_1": "shopify://shop_images/image_16454.webp",
+            "image_2": "shopify://shop_images/GutterBrush_Hero_Banner_1.webp",
+            "image_3": "shopify://shop_images/Shannon_Install.webp",
+            "image_4": "shopify://shop_images/29177612_10156229149797200_8668858962570903552_n.jpg",
+            "image_5": "shopify://shop_images/commercial_gutterbrush_1.webp",
+            "aspect_ratio": "1 / 1",
+            "gap": 8,
+            "border_radius": 0,
+            "columns_tablet": "3",
+            "columns_mobile": "2"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_464d89c_Fbi4FK"
+      ],
+      "settings": {}
+    },
     "product-grid": {
       "type": "main-collection-product-grid",
       "disabled": true,
@@ -363,6 +388,7 @@
     "image_with_text_zeHAbY",
     "multicolumn_ARiLGw",
     "multicolumn_w9jBii",
+    "177100621428404ac3",
     "product-grid",
     "collapsible_content_Xec8tV"
   ]
