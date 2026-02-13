@@ -230,27 +230,27 @@
         "collapsible_row_jxzWPR": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Do I need more ColorGard than plastic snow guards?",
+            "heading": "Will it damage my roof or void warranties?",
             "icon": "check_mark",
-            "row_content": "<p>Nope — actually, you need less. Many plastic snow guard systems require a <em>lot</em> of parts to reach the strength you get from just one row of ColorGard 2.0. Plastic parts can’t handle the same loads, so they need to be installed in dense patterns. ColorGard’s tested strength means you use fewer components while still getting superior snow retention.</p>",
+            "row_content": "<p>GutterBrush installs inside the gutter and does not attach to shingles, fascia, or metal roofing panels. There are no fasteners, screws, or roof penetrations required.</p><p>Because it doesn’t interfere with the roof system itself, it avoids many of the warranty concerns associated with some top-mounted gutter guards.</p>",
             "page": ""
           }
         },
         "collapsible_row_NDG8AL": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Which SnoClip® 2.0 is right for me?",
+            "heading": "Is GutterBrush good for pine needles and small debris?",
             "icon": "check_mark",
-            "row_content": "<p>It all comes down to your seam height:</p><ul><li>1\" and 2\", you’ll need the <strong>SnoClip 2.0 II</strong>.</li><li>2\" and 3-1/4\", you’ll need the <strong>SnoClip 2.0 III</strong>.</li></ul><p>SnoClips are sized to match the vertical dimension of your roof’s seam, so they fit snugly and do their job of controlling snow and ice movement under the ColorGard 2.0 bar.</p>",
+            "row_content": "<p>The dense bristle design helps trap leaves and larger debris before they compact into the gutter channel. It also reduces buildup from pine needles, seed pods, and roof grit, though very fine debris may still settle over time and require periodic cleaning.</p>",
             "page": ""
           }
         },
         "collapsible_row_E9eyeN": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Is ColorGard 1.0 compatible with ColorGard 2.0?",
+            "heading": "How long does GutterBrush last?",
             "icon": "check_mark",
-            "row_content": "<p>Not directly. ColorGard 1.0 and 2.0 have different bar profiles and components, so they aren’t designed to be mixed together on the same section of roof. The parts don’t physically connect, and things like splice connectors, SnoClips, and end caps are not interchangeable.</p><p>However, if you have a new section of roof that needs snow retention, you <em>can</em> use ColorGard 2.0 on that section, while leaving your existing ColorGard 1.0 system in place elsewhere. Both systems will function properly as long as each section is installed as a complete system.</p>",
+            "row_content": "<p>GutterBrush features a galvanized steel core with UV-protected polypropylene bristles designed to withstand years of sun and weather exposure. Longevity depends on climate and debris load, but it’s built for multi-year durability in typical residential conditions.</p>",
             "page": ""
           }
         }
