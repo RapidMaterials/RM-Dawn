@@ -226,6 +226,122 @@ button#ModalClose-ReturnDetails, .product-popup-modal__toggle {
                     price_class: 'price--large'
                   -%}
                 </div>
+              {%- assign v = product.selected_or_first_available_variant -%}
+              {%- assign vsize = v.metafields.custom['v-size'].value | default: '' -%}
+
+              <div class="price-per-sqft caption" data-pps-wrap hidden>
+                <span data-pps-text></span>
+              </div>
+
+              <script type="application/json" data-variant-vsize-map>
+              {
+                {%- for variant in product.variants -%}
+                  "{{ variant.id }}": {{ variant.metafields.custom['v-size'].value | default: '' | json }}{% unless forloop.last %},{% endunless %}
+                {%- endfor -%}
+              }
+              </script>
+              <script>
+(() => {
+  const root = document.getElementById('MainProduct-{{ section.id }}') || document;
+
+  const wrap = root.querySelector('[data-pps-wrap]');
+  const textEl = root.querySelector('[data-pps-text]');
+  const mapEl = root.querySelector('script[data-variant-vsize-map]');
+  if (!wrap || !textEl || !mapEl) return;
+
+  let vsizeMap = {};
+  try { vsizeMap = JSON.parse(mapEl.textContent || '{}'); } catch (e) {}
+
+  const calcSqftFromVSize = (vsizeRaw) => {
+    if (!vsizeRaw) return 0;
+
+    const cleaned = String(vsizeRaw)
+      .toLowerCase()
+      .replace(/in\b/g, '')
+      .replace(/"/g, '')
+      .trim();
+
+    const match = cleaned.match(/([\d.]+)\s*x\s*([\d.]+)/);
+    if (!match) return 0;
+
+    const w = parseFloat(match[1]);
+    const h = parseFloat(match[2]);
+    if (!Number.isFinite(w) || !Number.isFinite(h) || w <= 0 || h <= 0) return 0;
+
+    return (w * h) / 144;
+  };
+
+  const formatMoneyFromCents = (cents) => {
+    // Uses Shopify's built-in formatting (Dawn exposes this)
+    if (window.Shopify && typeof Shopify.formatMoney === 'function') {
+      return Shopify.formatMoney(cents, "{{ shop.money_format }}");
+    }
+    // Fallback
+    return (cents / 100).toFixed(2);
+  };
+
+  const render = (variant) => {
+    if (!variant?.id) return;
+
+    const vsize = vsizeMap[String(variant.id)] || '';
+    const sqft = calcSqftFromVSize(vsize);
+
+    if (!sqft) {
+      wrap.hidden = true;
+      textEl.textContent = '';
+      return;
+    }
+
+    const priceCents = variant.price; // Dawn event gives price in cents
+    if (!Number.isFinite(priceCents) || priceCents <= 0) {
+      wrap.hidden = true;
+      textEl.textContent = '';
+      return;
+    }
+
+    const ppsCents = Math.round(priceCents / sqft);
+    const pps = formatMoneyFromCents(ppsCents);
+
+    textEl.textContent = `${pps} / sq ft`;
+    wrap.hidden = false;
+  };
+
+  // Initial render using current selected/first variant data from JSON embedded in Dawn
+  // We can pull the selected variant id from the form input
+  const form = root.querySelector('form[action^="/cart/add"]');
+  const idInput = form?.querySelector('input[name="id"], select[name="id"]');
+  const initialVariantId = idInput?.value || {{ product.selected_or_first_available_variant.id | json }};
+
+  // If variant:change fires, we get a full variant object including price
+  document.addEventListener('variant:change', (event) => {
+    const variant = event?.detail?.variant;
+    if (variant) render(variant);
+  });
+
+  // Fallback: if no variant:change, attempt to fetch variant JSON from product.js (price only)
+  root.addEventListener('change', async (event) => {
+    const t = event.target;
+    if (!t || t.name !== 'id') return;
+
+    try {
+      const res = await fetch(`{{ routes.root_url }}products/{{ product.handle }}.js`);
+      if (!res.ok) return;
+      const data = await res.json();
+      const v = (data.variants || []).find(v => String(v.id) === String(t.value));
+      if (v) {
+        // product.js variant has `price` in cents
+        render({ id: v.id, price: v.price });
+      }
+    } catch (e) {}
+  });
+
+  // Best-effort initial display (price not available without variant object; hide until first change)
+  // If you want initial to show, we can render using Liquid price cents instead:
+  const initialPriceCents = {{ product.selected_or_first_available_variant.price | json }};
+  render({ id: initialVariantId, price: initialPriceCents });
+})();
+</script>
+
                 {%- if product.quantity_price_breaks_configured? -%}
                   <div class="volume-pricing-note" id="Volume-Note-{{ section.id }}">
                     <span>{{ 'products.product.volume_pricing.note' | t }}</span>
