@@ -261,20 +261,15 @@
           </li>
 
            {%- if product.selected_or_first_available_variant.barcode != blank -%}<li><strong>UPC:</strong> {{ product.selected_or_first_available_variant.barcode }}</li>{%- endif -%}
-         {%- assign initial_variant = product.selected_or_first_available_variant -%}
-{%- assign initial_gloss = initial_variant.metafields.custom.info_gloss.value | default: '' -%}
+{%- assign v = product.selected_or_first_available_variant -%}
 
-{%- if initial_gloss != blank -%}
-  <li>
-    <strong>Gloss:</strong>
-    <span data-mc-gloss data-section-id="{{ section.id }}">{{ initial_gloss }}</span>
-  </li>
-{%- else -%}
-  <li class="visibility-hidden" data-mc-gloss-row data-section-id="{{ section.id }}">
-    <strong>Gloss:</strong>
-    <span data-mc-gloss data-section-id="{{ section.id }}"></span>
-  </li>
-{%- endif -%}
+<li><strong>Direction:</strong> <span data-mc-vfield="info_directional">{{ v.metafields.custom.info_directional.value | default: '' }}</span></li>
+<li><strong>Finish:</strong> <span data-mc-vfield="info_finish">{{ v.metafields.custom.info_finish.value | default: '' }}</span></li>
+<li><strong>Reflectivity:</strong> <span data-mc-vfield="info_reflectivity">{{ v.metafields.custom.info_reflectivity.value | default: '' }}</span></li>
+<li><strong>Coverage:</strong> <span data-mc-vfield="info_coverage">{{ v.metafields.custom.info_coverage.value | default: '' }}</span></li>
+<li><strong>Thickness:</strong> <span data-mc-vfield="info_thickness">{{ v.metafields.custom.info_thickness.value | default: '' }}</span></li>
+<li><strong>V-Size:</strong> <span data-mc-vfield="v-size">{{ v.metafields.custom.v-size.value | default: '' }}</span></li>
+<li><strong>Warranty:</strong> <span data-mc-vfield="info_warranty">{{ v.metafields.custom.info_warranty.value | default: '' }}</span></li>
          
            {%- if certs != blank -%}
  
