@@ -30,7 +30,8 @@
           "type": "heading",
           "settings": {
             "heading": "Get a Quote",
-            "heading_size": "h1"
+            "heading_size": "h1",
+            "heading_tag": "h2"
           }
         }
       },
@@ -40,29 +41,18 @@
       "settings": {
         "desktop_content_position": "center",
         "content_alignment": "center",
+        "content_max_width": 900,
         "color_scheme": "",
         "full_width": true,
         "padding_top": 40,
         "padding_bottom": 0
       }
     },
-    "custom_liquid_QbRBWe": {
-      "type": "custom-liquid",
-      "disabled": true,
+    "quote_form_alucbond_LQRkL6": {
+      "type": "quote-form-alucbond",
+      "name": "Quote Form - Alucobond",
       "settings": {
-        "custom_liquid": "<sk-form><script type=\"application/json\" sk-forms data-id=\"525431344f4f3349\">{{ shop.metafields.squadkin_form[\"525431344f4f3349\"] }}</script><style sk-global-css>{{ shop.metafields.squadkin.sk_global_css }}</style><div class=\"sk-form\" sk-form-block data-token=\"525431344f4f3349\"></div></sk-form>",
-        "color_scheme": "",
-        "padding_top": 0,
-        "padding_bottom": 52
-      }
-    },
-    "quote_form_tbizLM": {
-      "type": "quote-form",
-      "custom_css": [
-        ".contact {max-width: 600px;}"
-      ],
-      "settings": {
-        "heading": "",
+        "heading": "Quote form",
         "heading_size": "h1",
         "color_scheme": "",
         "padding_top": 36,
@@ -74,7 +64,6 @@
     "forms",
     "1ba91c78-35d2-4b79-9318-e724162867ed",
     "rich_text_3At6BY",
-    "custom_liquid_QbRBWe",
-    "quote_form_tbizLM"
+    "quote_form_alucbond_LQRkL6"
   ]
 }
