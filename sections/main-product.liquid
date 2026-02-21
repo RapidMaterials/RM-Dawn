@@ -1090,68 +1090,106 @@ button#ModalClose-ReturnDetails, .product-popup-modal__toggle {
 </script>
 <script>
 (() => {
-  // Scope to the main product section if possible
   const root = document.getElementById('MainProduct-{{ section.id }}') || document;
 
-  const wrapEl = root.querySelector('[data-variant-combined-wrap]');
-  const lineEl = root.querySelector('[data-variant-combined-line]');
-  const mapEl  = root.querySelector('script[data-variant-combined-map]');
-  if (!wrapEl || !lineEl || !mapEl) return;
+  const wrap = root.querySelector('[data-pps-wrap]');
+  const textEl = root.querySelector('[data-pps-text]');
+  const sqftWrap = root.querySelector('[data-sheet-sqft-wrap]');
+  const sqftEl = root.querySelector('[data-sheet-sqft]');
+  const mapEl = root.querySelector('script[data-variant-vsize-map]');
 
-  let map = {};
-  try { map = JSON.parse(mapEl.textContent || '{}'); } catch (e) {}
+  if (!wrap || !textEl || !sqftWrap || !sqftEl || !mapEl) return;
 
-  const buildLine = (d) => {
-    const finish = (d.finish || '').trim();
-    const title = (d.title || '').trim();
-    const coverage = (d.coverage || '').trim();
-    const vsize = (d.vsize || '').trim();
-    const thickness = (d.thickness || '').trim();
+  let vsizeMap = {};
+  try { vsizeMap = JSON.parse(mapEl.textContent || '{}'); } catch (e) {}
 
-    // Only show if thickness exists
-    if (!thickness) return '';
+  const calcSqftFromVSize = (vsizeRaw) => {
+    if (!vsizeRaw) return 0;
 
-    let base = [finish, title, coverage].filter(Boolean).join(' ').trim();
+    const cleaned = String(vsizeRaw)
+      .toLowerCase()
+      .replace(/in\b/g, '')
+      .replace(/"/g, '')
+      .trim();
 
-    let dims = '';
-    if (vsize) dims += vsize;
-    if (vsize && thickness) dims += ' x ';
-    if (thickness) dims += thickness;
+    const match = cleaned.match(/([\d.]+)\s*x\s*([\d.]+)/);
+    if (!match) return 0;
 
-    if (dims) base += ` - ${dims}`;
+    const w = parseFloat(match[1]);
+    const h = parseFloat(match[2]);
+    if (!Number.isFinite(w) || !Number.isFinite(h) || w <= 0 || h <= 0) return 0;
 
-    return base.replace(/\s+/g, ' ').trim();
+    return (w * h) / 144;
   };
 
-  const render = (variantId) => {
-    const d = map[String(variantId)];
-    if (!d) return;
-
-    const text = buildLine(d);
-
-    if (text) {
-      lineEl.textContent = text;
-      wrapEl.hidden = false;
-    } else {
-      wrapEl.hidden = true;
-      lineEl.textContent = '';
+  const formatMoneyFromCents = (cents) => {
+    if (window.Shopify && typeof Shopify.formatMoney === 'function') {
+      return Shopify.formatMoney(cents, "{{ shop.money_format }}");
     }
+    // USD-ish fallback with $ sign
+    return `$${(cents / 100).toFixed(2)}`;
+  };
+
+  const render = (variant) => {
+    if (!variant?.id) return;
+
+    const vsize = vsizeMap[String(variant.id)] || '';
+    const sqft = calcSqftFromVSize(vsize);
+
+    // --- SQ FT TOTAL (per sheet) ---
+    if (sqft > 0) {
+      sqftEl.textContent = `${sqft.toFixed(2)} sq ft`;
+      sqftWrap.hidden = false;
+    } else {
+      sqftEl.textContent = '';
+      sqftWrap.hidden = true;
+    }
+
+    // --- PRICE PER SQ FT ---
+    if (!sqft) {
+      wrap.hidden = true;
+      textEl.textContent = '';
+      return;
+    }
+
+    const priceCents = variant.price;
+    if (!Number.isFinite(priceCents) || priceCents <= 0) {
+      wrap.hidden = true;
+      textEl.textContent = '';
+      return;
+    }
+
+    const ppsCents = Math.round(priceCents / sqft);
+    const pps = formatMoneyFromCents(ppsCents);
+
+    // Do NOT prepend another "$" since formatMoney already includes it (or fallback does)
+    textEl.textContent = `${pps} / sq ft`;
+    wrap.hidden = false;
   };
 
   // Initial render
-  render({{ product.selected_or_first_available_variant.id | json }});
+  const initialVariantId = {{ product.selected_or_first_available_variant.id | json }};
+  const initialPriceCents = {{ product.selected_or_first_available_variant.price | json }};
+  render({ id: initialVariantId, price: initialPriceCents });
 
-  // Dawn event (best)
+  // Dawn variant change event
   document.addEventListener('variant:change', (event) => {
-    const v = event?.detail?.variant;
-    if (v?.id) render(v.id);
+    const variant = event?.detail?.variant;
+    if (variant) render(variant);
   });
 
-  // Fallback: some themes only update input[name="id"]
-  root.addEventListener('change', (event) => {
+  // Fallback if variant:change doesn't fire
+  root.addEventListener('change', async (event) => {
     const t = event.target;
     if (!t || t.name !== 'id') return;
-    render(t.value);
+
+    try {
+      const res = await fetch(`{{ routes.root_url }}products/{{ product.handle }}.js`);
+      if (!res.ok) return;
+      const data = await res.json();
+      const v = (data.variants || []).find(v => String(v.id) === String(t.value));
+      if (v) render({ id: v.id, price: v.price });
+    } catch (e) {}
   });
 })();
 </script>
