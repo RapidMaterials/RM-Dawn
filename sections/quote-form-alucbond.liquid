@@ -249,19 +249,37 @@
               What color(s) are you inquiring about? <span aria-hidden="true">*</span>
             </label>
           </div>
+{%- comment -%} Q5: Color flexibility (radio buttons) {%- endcomment -%}
+<div class="field">
+  <fieldset style="border: 0; padding: 0; margin: 0;">
+    <legend class="field__label" style="margin-bottom: 8px;">
+      Are your color requirements flexible? <span aria-hidden="true">*</span>
+    </legend>
 
-          {%- comment -%} Q5: Open to other colors? {%- endcomment -%}
-          <div class="field">
-            <select class="field__input" id="ContactForm-alt-colors" name="contact[Open to Alternate Colors]" required aria-required="true">
-              <option value="" {% if form['Open to Alternate Colors'] == blank %}selected{% endif %}>Select an option</option>
-              <option value="Yes" {% if form['Open to Alternate Colors'] == 'Yes' %}selected{% endif %}>Yes</option>
-              <option value="No" {% if form['Open to Alternate Colors'] == 'No' %}selected{% endif %}>No</option>
-            </select>
-            <label class="field__label" for="ContactForm-alt-colors">
-              Are your color needs flexible? <span aria-hidden="true">*</span>
-            </label>
-          </div>
+    <div style="display: flex; gap: 20px; flex-wrap: wrap;">
+      <label style="display: flex; align-items: center; gap: 6px;">
+        <input
+          type="radio"
+          name="contact[Color Flexibility]"
+          value="Yes"
+          {% if form['Color Flexibility'] == 'Yes' %}checked{% endif %}
+          required
+        >
+        Yes
+      </label>
 
+      <label style="display: flex; align-items: center; gap: 6px;">
+        <input
+          type="radio"
+          name="contact[Color Flexibility]"
+          value="No"
+          {% if form['Color Flexibility'] == 'No' %}checked{% endif %}
+        >
+        No
+      </label>
+    </div>
+  </fieldset>
+</div>
           {%- comment -%} Q6: Quantity of sheets + helper sizes {%- endcomment -%}
           <div class="field">
             <input
