@@ -1297,7 +1297,7 @@ button#ModalClose-ReturnDetails, .product-popup-modal__toggle {
 
     // --- SQ FT TOTAL (per sheet) ---
     if (sqft > 0) {
-      sqftEl.textContent = `{{ variant.metafields.custom['v-size'].value | default: '' | json }} (${sqft.toFixed(2)} sq ft)`;
+      sqftEl.textContent = `(${vsize} ${sqft.toFixed(2)} sq ft)`;
       sqftWrap.hidden = false;
     } else {
       sqftEl.textContent = '';
