@@ -33,16 +33,12 @@
 
     {%- form 'contact', id: 'ContactForm', class: contact_form_class -%}
 
-      {%- comment -%}
-        Quote form identifiers (helps the email read like a quote request)
-      {%- endcomment -%}
-      <input type="hidden" name="contact[Form Type]" value="Quote Request">
-      <input type="hidden" name="contact[Subject]" value="Quote Request – {{ shop.name }}{% if page.title != blank %} – {{ page.title }}{% endif %}">
+      {%- comment -%} Quote identifiers {%- endcomment -%}
+      <input type="hidden" name="contact[Form Type]" value="ALUCOBOND Quote Request">
+      <input type="hidden" name="contact[Subject]" value="ALUCOBOND® Quote Request – {{ shop.name }}{% if page.title != blank %} – {{ page.title }}{% endif %}">
       <input type="hidden" name="contact[Page URL]" value="{{ canonical_url }}">
 
-      {%- comment -%}
-        Honeypot spam field (bots often fill this, humans won’t)
-      {%- endcomment -%}
+      {%- comment -%} Honeypot spam field {%- endcomment -%}
       <div style="position:absolute; left:-5000px;" aria-hidden="true">
         <label for="ContactForm-website">Website</label>
         <input id="ContactForm-website" type="text" name="contact[website]" tabindex="-1" autocomplete="off">
@@ -70,6 +66,181 @@
         </ul>
       {%- endif -%}
 
+      {%- comment -%}
+        Q1: Project name
+      {%- endcomment -%}
+      <div class="field">
+        <input
+          class="field__input"
+          type="text"
+          id="ContactForm-project-name"
+          name="contact[Project Name]"
+          value="{{ form['Project Name'] }}"
+          placeholder="Project name"
+          required
+          aria-required="true"
+        >
+        <label class="field__label" for="ContactForm-project-name">
+          What is the name of your project? <span aria-hidden="true">*</span>
+        </label>
+      </div>
+
+      {%- comment -%}
+        Q2: Project location (city, state, zip)
+      {%- endcomment -%}
+      <div class="field">
+        <input
+          class="field__input"
+          type="text"
+          id="ContactForm-project-location"
+          name="contact[Project Location]"
+          value="{{ form['Project Location'] }}"
+          placeholder="City, State, Zip"
+          required
+          aria-required="true"
+        >
+        <label class="field__label" for="ContactForm-project-location">
+          Where is this project located (city, state, and zip code)? <span aria-hidden="true">*</span>
+        </label>
+      </div>
+
+      {%- comment -%}
+        Q3: Size / thickness inquiry
+      {%- endcomment -%}
+      <div class="field">
+        <select
+          class="field__input"
+          id="ContactForm-size"
+          name="contact[Size / Thickness]"
+          required
+          aria-required="true"
+        >
+          <option value="" {% if form['Size / Thickness'] == blank %}selected{% endif %}>Select an option</option>
+          <option value="4mm FR" {% if form['Size / Thickness'] == '4mm FR' %}selected{% endif %}>4mm FR</option>
+          <option value="0.040" {% if form['Size / Thickness'] == '0.040' %}selected{% endif %}>0.040</option>
+          <option value="0.063" {% if form['Size / Thickness'] == '0.063' %}selected{% endif %}>0.063</option>
+          <option value="0.080" {% if form['Size / Thickness'] == '0.080' %}selected{% endif %}>0.080</option>
+        </select>
+        <label class="field__label" for="ContactForm-size">
+          What size are you inquiring about? <span aria-hidden="true">*</span>
+        </label>
+      </div>
+
+      {%- comment -%}
+        Q4: Color inquiry
+      {%- endcomment -%}
+      <div class="field">
+        <input
+          class="field__input"
+          type="text"
+          id="ContactForm-color"
+          name="contact[Color]"
+          value="{{ form['Color'] }}"
+          placeholder="Color name / finish"
+          required
+          aria-required="true"
+        >
+        <label class="field__label" for="ContactForm-color">
+          What color are you inquiring about? <span aria-hidden="true">*</span>
+        </label>
+      </div>
+
+      {%- comment -%}
+        Q5: Open to other colors?
+      {%- endcomment -%}
+      <div class="field">
+        <select class="field__input" id="ContactForm-alt-colors" name="contact[Open to Alternate Colors]" required aria-required="true">
+          <option value="" {% if form['Open to Alternate Colors'] == blank %}selected{% endif %}>Select an option</option>
+          <option value="Yes" {% if form['Open to Alternate Colors'] == 'Yes' %}selected{% endif %}>Yes</option>
+          <option value="No" {% if form['Open to Alternate Colors'] == 'No' %}selected{% endif %}>No</option>
+        </select>
+        <label class="field__label" for="ContactForm-alt-colors">
+          Are you open to other color options to shorten your lead time? <span aria-hidden="true">*</span>
+        </label>
+      </div>
+
+      {%- comment -%}
+        Q6: Quantity of sheets + helper sizes
+      {%- endcomment -%}
+      <div class="field">
+        <input
+          class="field__input"
+          type="number"
+          min="1"
+          step="1"
+          id="ContactForm-qty"
+          name="contact[Sheet Quantity]"
+          value="{{ form['Sheet Quantity'] }}"
+          placeholder="Number of sheets"
+          required
+          aria-required="true"
+        >
+        <label class="field__label" for="ContactForm-qty">
+          How many sheets are you needing for your project? <span aria-hidden="true">*</span>
+        </label>
+        <div class="caption-large" style="margin-top: 6px;">
+          4mm sheets are 62&quot; x 196&quot;. 0.040 sheets are 48&quot; x 120&quot;. 0.063 and 0.080 sheets are 60&quot; x 120&quot;.
+        </div>
+      </div>
+
+      {%- comment -%}
+        Q7: Ship-to address
+      {%- endcomment -%}
+      <div class="field">
+        <textarea
+          rows="4"
+          id="ContactForm-ship-to"
+          class="text-area field__input"
+          name="contact[Ship To Address]"
+          placeholder="Company / Name, Street, City, State, Zip"
+          required
+          aria-required="true"
+        >{{ form['Ship To Address'] }}</textarea>
+        <label class="form__label field__label" for="ContactForm-ship-to">
+          What is the ship to address for this quote? <span aria-hidden="true">*</span>
+        </label>
+      </div>
+
+      {%- comment -%}
+        Q8: Email address for quote (use contact[email] so Shopify validates it)
+      {%- endcomment -%}
+      <div class="field field--with-error">
+        <input
+          autocomplete="email"
+          type="email"
+          id="ContactForm-email"
+          class="field__input"
+          name="contact[email]"
+          spellcheck="false"
+          autocapitalize="off"
+          value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}"
+          aria-required="true"
+          required
+          {% if form.errors contains 'email' %}
+            aria-invalid="true"
+            aria-describedby="ContactForm-email-error"
+          {% endif %}
+          placeholder="Email address"
+        >
+        <label class="field__label" for="ContactForm-email">
+          What is the email address you would like us to send this quote to? <span aria-hidden="true">*</span>
+        </label>
+
+        {%- if form.errors contains 'email' -%}
+          <small class="contact__field-error" id="ContactForm-email-error">
+            <span class="visually-hidden">{{ 'accessibility.error' | t }}</span>
+            <span class="form__message">
+              {%- render 'icon-error' -%}
+              {{- form.errors.translated_fields.email | capitalize }}
+              {{ form.errors.messages.email -}}
+            </span>
+          </small>
+        {%- endif -%}
+      </div>
+
+      {%- comment -%}
+        Contact name / phone (still useful for the quote)
+      {%- endcomment -%}
       <div class="contact__fields">
         <div class="field">
           <input
@@ -78,112 +249,51 @@
             type="text"
             id="ContactForm-name"
             aria-required="true"
-            name="contact[{{ 'templates.contact.form.name' | t }}]"
+            name="contact[Contact Name]"
             value="{% if form.name %}{{ form.name }}{% elsif customer %}{{ customer.name }}{% endif %}"
-            placeholder="{{ 'templates.contact.form.name' | t }}"
+            placeholder="Contact name"
             required
           >
           <label class="field__label" for="ContactForm-name">
-            {{ 'templates.contact.form.name' | t }} <span aria-hidden="true">*</span>
+            Contact name <span aria-hidden="true">*</span>
           </label>
         </div>
 
-        <div class="field field--with-error">
+        <div class="field">
           <input
-            autocomplete="email"
-            type="email"
-            id="ContactForm-email"
+            type="tel"
+            id="ContactForm-phone"
             class="field__input"
-            name="contact[email]"
-            spellcheck="false"
-            autocapitalize="off"
-            value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}"
-            aria-required="true"
-            required
-            {% if form.errors contains 'email' %}
-              aria-invalid="true"
-              aria-describedby="ContactForm-email-error"
-            {% endif %}
-            placeholder="{{ 'templates.contact.form.email' | t }}"
+            autocomplete="tel"
+            name="contact[Phone]"
+            pattern="[0-9\-]*"
+            value="{% if form.phone %}{{ form.phone }}{% elsif customer %}{{ customer.phone }}{% endif %}"
+            placeholder="Phone (optional)"
           >
-          <label class="field__label" for="ContactForm-email">
-            {{- 'templates.contact.form.email' | t }}
-            <span aria-hidden="true">*</span>
-          </label>
-
-          {%- if form.errors contains 'email' -%}
-            <small class="contact__field-error" id="ContactForm-email-error">
-              <span class="visually-hidden">{{ 'accessibility.error' | t }}</span>
-              <span class="form__message">
-                {%- render 'icon-error' -%}
-                {{- form.errors.translated_fields.email | capitalize }}
-                {{ form.errors.messages.email -}}
-              </span>
-            </small>
-          {%- endif -%}
+          <label class="field__label" for="ContactForm-phone">Phone (optional)</label>
         </div>
       </div>
 
-      <div class="field">
-        <input
-          type="tel"
-          id="ContactForm-phone"
-          class="field__input"
-          autocomplete="tel"
-          name="contact[{{ 'templates.contact.form.phone' | t }}]"
-          pattern="[0-9\-]*"
-          value="{% if form.phone %}{{ form.phone }}{% elsif customer %}{{ customer.phone }}{% endif %}"
-          placeholder="{{ 'templates.contact.form.phone' | t }}"
-        >
-        <label class="field__label" for="ContactForm-phone">
-          {{ 'templates.contact.form.phone' | t }}
-        </label>
-      </div>
-
-      <div class="field">
-        <input
-          class="field__input"
-          type="text"
-          id="ContactForm-zip"
-          name="contact[Delivery Zip Code]"
-          value="{{ form['Delivery Zip Code'] }}"
-          placeholder="Delivery Zip Code"
-        >
-        <label class="field__label" for="ContactForm-zip">Delivery Zip Code</label>
-      </div>
-
-      <div class="field">
-        <input
-          class="field__input"
-          type="date"
-          id="ContactForm-date"
-          name="contact[Desired Delivery Date]"
-          value="{{ form['Desired Delivery Date'] }}"
-          placeholder="Delivery Date"
-        >
-        <label class="field__label" for="ContactForm-date">Desired Delivery Date</label>
-      </div>
-
+      {%- comment -%}
+        Additional info (maps to Shopify's standard body so {{ form.body }} works)
+      {%- endcomment -%}
       <div class="field">
         <textarea
-          rows="10"
+          rows="6"
           id="ContactForm-body"
           class="text-area field__input"
           name="contact[body]"
-          placeholder="Let us know what we can quote you."
-          aria-required="true"
-          required
+          placeholder="Is there any additional information we need?"
         >{{- form.body -}}</textarea>
 
         <label class="form__label field__label" for="ContactForm-body">
-          Let us know what we can quote you.
-          <span aria-hidden="true">*</span>
+          Is there any additional information we need?
         </label>
       </div>
 
       <div class="contact__button">
         <button type="submit" class="button">
-          {{ 'templates.contact.form.send' | t }}
+          Request quote
         </button>
       </div>
 
