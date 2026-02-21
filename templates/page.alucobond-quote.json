@@ -15,6 +15,21 @@
         "include_margins": true
       }
     },
+    "image_only_banner_RanhXB": {
+      "type": "image-only-banner",
+      "name": "Simple Banner Image",
+      "settings": {
+        "desktop_image": "{{ page.metafields.custom.header_image.value }}",
+        "mobile_image": "{{ page.metafields.custom.header_image.value }}",
+        "alt_text": "Banner image",
+        "link": "",
+        "desktop_height": 100,
+        "mobile_height": 100,
+        "object_fit": "cover",
+        "border_radius": 0,
+        "loading": "lazy"
+      }
+    },
     "1ba91c78-35d2-4b79-9318-e724162867ed": {
       "type": "main-page",
       "disabled": true,
@@ -67,6 +82,7 @@
   },
   "order": [
     "forms",
+    "image_only_banner_RanhXB",
     "1ba91c78-35d2-4b79-9318-e724162867ed",
     "rich_text_3At6BY",
     "quote_form_alucbond_LQRkL6"
