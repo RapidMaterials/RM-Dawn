@@ -250,18 +250,7 @@
         <h3 style="font-weight: bold; margin-bottom: 8px;">Specs</h3>
         <ul style="list-style: none; padding: 0; margin: 0;">
           <li><strong>SKU: </strong>   {{- product.selected_or_first_available_variant.sku -}} </li>
-          {%- assign initial_variant = product.selected_or_first_available_variant -%}
-
-<p class="product-sku" data-sku-wrapper>
-  <span class="product-sku__label">SKU:</span>
-  <span
-    class="product-sku__value"
-    data-sku
-    data-sku-empty="{{ section.settings.sku_fallback | default: '' | escape }}"
-  >
-    {{- initial_variant.sku -}}
-  </span>
-</p>
+          
            {%- if product.selected_or_first_available_variant.barcode != blank -%}<li><strong>UPC:</strong> {{ product.selected_or_first_available_variant.barcode }}</li>{%- endif -%}
           {%- if certs != blank -%}
   <li><strong>Certifications:</strong>
@@ -365,45 +354,6 @@
       {%- endif -%}
     </div>
   </div>
-  <script>
-  (() => {
-    const section = document.getElementById('shopify-section-{{ section.id }}');
-    if (!section) return;
-
-    const skuEl = section.querySelector('[data-sku]');
-    if (!skuEl) return;
-
-    const setSku = (variant) => {
-      if (!variant) return;
-      const sku = variant.sku || skuEl.getAttribute('data-sku-empty') || '';
-      skuEl.textContent = sku;
-    };
-
-    // Dawn emits this on variant changes
-    section.addEventListener('variant:change', (event) => {
-      setSku(event.detail.variant);
-    });
-
-    // In case your variant picker doesn't emit variant:change (custom), fallback:
-    const form = section.querySelector('form[action^="/cart/add"]');
-    if (form) {
-      form.addEventListener('change', async (e) => {
-        const idInput = form.querySelector('input[name="id"]');
-        if (!idInput) return;
-
-        // If we can find the variant JSON on the page, map id -> sku without fetch
-        const productJson = section.querySelector('script[type="application/json"][data-product-json]');
-        if (productJson) {
-          try {
-            const data = JSON.parse(productJson.textContent);
-            const v = (data.variants || []).find(v => String(v.id) === String(idInput.value));
-            if (v) setSku(v);
-          } catch (err) {}
-        }
-      });
-    }
-  })();
-</script>
 </div>
 
 {% schema %}
