@@ -225,6 +225,9 @@ button#ModalClose-ReturnDetails, .product-popup-modal__toggle {
                     show_badges: true,
                     price_class: 'price--large'
                   -%}
+                                <div class="price-per-sqft caption" style="margin-top:-15px;" data-pps-wrap hidden>
+                <span data-pps-text></span>
+              </div>
                 </div>
                 
               {%- assign v = product.selected_or_first_available_variant -%}
@@ -232,9 +235,7 @@ button#ModalClose-ReturnDetails, .product-popup-modal__toggle {
 <div class="sheet-sqft caption" style="margin-top:-20px;"  data-sheet-sqft-wrap hidden>
   <span data-sheet-sqft></span>
 </div>
-              <div class="price-per-sqft caption" style="margin-top:-15px;" data-pps-wrap hidden>
-                <span data-pps-text></span>
-              </div>
+
               <script type="application/json" data-variant-vsize-map>
               {
                 {%- for variant in product.variants -%}
