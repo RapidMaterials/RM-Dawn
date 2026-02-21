@@ -510,9 +510,7 @@
 
 <script>
 (() => {
-  const sectionRoot =
-    document.getElementById('shopify-section-{{ section.id }}');
-
+  const sectionRoot = document.getElementById('shopify-section-{{ section.id }}');
   if (!sectionRoot) return;
 
   const mapEl = sectionRoot.querySelector(
@@ -525,10 +523,36 @@
     variantMap = JSON.parse(mapEl.textContent || '{}');
   } catch (e) {}
 
+  // Derive sqft from a v-size string like: 39.37" x 122"
+  const calcSqftFromVSize = (vsizeRaw) => {
+    if (!vsizeRaw) return '';
+
+    const cleaned = String(vsizeRaw)
+      .toLowerCase()
+      .replace(/in\b/g, '')
+      .replace(/"/g, '')
+      .trim();
+
+    // matches "39.37 x 122" with optional spaces
+    const match = cleaned.match(/([\d.]+)\s*x\s*([\d.]+)/);
+    if (!match) return '';
+
+    const w = parseFloat(match[1]);
+    const h = parseFloat(match[2]);
+    if (!Number.isFinite(w) || !Number.isFinite(h) || w <= 0 || h <= 0) return '';
+
+    const sqft = (w * h) / 144;
+    // keep 2 decimals, but you can change to 1 or 0 if you prefer
+    return `${sqft.toFixed(2)} sq ft`;
+  };
+
   const updateFields = (variantId) => {
     if (!variantId) return;
 
     const data = variantMap[String(variantId)] || {};
+
+    // Add computed field(s) into the same data object your loops use
+    data.sqft = calcSqftFromVSize(data['v-size']);
 
     // Update values
     sectionRoot.querySelectorAll('[data-mc-vfield]').forEach((el) => {
@@ -537,7 +561,7 @@
       el.textContent = val;
     });
 
-    // Hide/show rows automatically
+    // Hide/show rows automatically (works for sqft too)
     sectionRoot.querySelectorAll('[data-mc-row]').forEach((row) => {
       const key = row.getAttribute('data-mc-row');
       const val = data[key] || '';
@@ -558,11 +582,8 @@
     updateFields(t.value);
   });
 
-  // Initial hide pass on page load
-  const initialId =
-    {{ product.selected_or_first_available_variant.id | json }};
-  updateFields(initialId);
-
+  // Initial render on page load
+  updateFields({{ product.selected_or_first_available_variant.id | json }});
 })();
 </script>
 </div>
