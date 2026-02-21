@@ -230,75 +230,58 @@
   </fieldset>
 </div>
 
-          {%- comment -%} Q3: Size / thickness inquiry (multi-select checkboxes) {%- endcomment -%}
-          <div class="field">
-            <label  style="display:block; margin-bottom: 8px;">
-              What size are you inquiring about? <span aria-hidden="true">*</span>
-            </label>
+         {%- comment -%} Q3: Size / thickness inquiry (multi-select checkboxes) {%- endcomment -%}
+<div class="quote-form__group" style="margin: 0 0 2rem;">
+  <p class="form__label" style="margin: 0 0 10px;">
+    What size are you inquiring about? <span aria-hidden="true">*</span>
+  </p>
 
-            <div class="quote-form__checkboxes">
-              <label>
-                <input
-                  type="checkbox"
-                  name="contact[Size - 4mm FR]"
-                  value="Yes"
-                  {% if form['Size - 4mm FR'] == 'Yes' %}checked{% endif %}
-                >
-                4mm FR
-              </label>
+  <div class="quote-form__checkboxes" style="display: grid; gap: 12px;">
+    <label style="display:flex; align-items:center; gap:10px;">
+      <input
+        type="checkbox"
+        name="contact[Size - 4mm FR]"
+        value="Yes"
+        {% if form['Size - 4mm FR'] == 'Yes' %}checked{% endif %}
+      >
+      4mm FR
+    </label>
 
-              <label>
-                <input
-                  type="checkbox"
-                  name="contact[Size - 0.040]"
-                  value="Yes"
-                  {% if form['Size - 0.040'] == 'Yes' %}checked{% endif %}
-                >
-                0.040
-              </label>
+    <label style="display:flex; align-items:center; gap:10px;">
+      <input
+        type="checkbox"
+        name="contact[Size - 0.040]"
+        value="Yes"
+        {% if form['Size - 0.040'] == 'Yes' %}checked{% endif %}
+      >
+      0.040
+    </label>
 
-              <label>
-                <input
-                  type="checkbox"
-                  name="contact[Size - 0.063]"
-                  value="Yes"
-                  {% if form['Size - 0.063'] == 'Yes' %}checked{% endif %}
-                >
-                0.063
-              </label>
+    <label style="display:flex; align-items:center; gap:10px;">
+      <input
+        type="checkbox"
+        name="contact[Size - 0.063]"
+        value="Yes"
+        {% if form['Size - 0.063'] == 'Yes' %}checked{% endif %}
+      >
+      0.063
+    </label>
 
-              <label>
-                <input
-                  type="checkbox"
-                  name="contact[Size - 0.080]"
-                  value="Yes"
-                  {% if form['Size - 0.080'] == 'Yes' %}checked{% endif %}
-                >
-                0.080
-              </label>
-            </div>
+    <label style="display:flex; align-items:center; gap:10px;">
+      <input
+        type="checkbox"
+        name="contact[Size - 0.080]"
+        value="Yes"
+        {% if form['Size - 0.080'] == 'Yes' %}checked{% endif %}
+      >
+      0.080
+    </label>
+  </div>
 
-            <div class="caption-large" style="margin-top: 8px;">
-              Select all that apply.
-            </div>
-          </div>
-
-          {%- comment -%} Q4: Color inquiry {%- endcomment -%}
-          <div class="field">
-            <input
-              class="field__input"
-              type="text"
-              id="ContactForm-color"
-              name="contact[Color]"
-              value="{{ form['Color'] }}"
-              placeholder="Color name / finish"
-              required
-              aria-required="true"
-            >
-            <label class="field__label" for="ContactForm-color">
-              What color(s) are you inquiring about? <span aria-hidden="true">*</span>
-            </label>
-          </div>
+  <div class="caption-large" style="margin-top: 10px;">
+    Select all that apply.
+  </div>
+</div>
 {%- comment -%} Q5: Color flexibility (radio buttons) {%- endcomment -%}
 <div class="field">
   <fieldset style="border: 0; padding: 0; margin: 0;">
