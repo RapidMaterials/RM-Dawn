@@ -316,6 +316,24 @@
   </span>
 </li>
 
+{%- assign vsize_raw = v.metafields.custom['v-size'].value | default: '' -%}
+{%- assign sqft_text = '' -%}
+
+{%- if vsize_raw != blank and vsize_raw contains 'x' -%}
+  {%- assign cleaned = vsize_raw | downcase | remove: '"' | remove: 'in' | strip -%}
+  {%- assign parts = cleaned | split: 'x' -%}
+  {%- assign w_in = parts[0] | strip | plus: 0 -%}
+  {%- assign h_in = parts[1] | strip | plus: 0 -%}
+  {%- assign sqft = w_in | times: h_in | divided_by: 144.0 -%}
+  {%- assign sqft_text = sqft | round: 2 | append: ' sq ft' -%}
+{%- endif -%}
+
+<li data-mc-row="sqft" {% if sqft_text == blank %}style="display:none"{% endif %}>
+  <strong>Square Footage:</strong>
+  <span data-mc-vfield="sqft">{{ sqft_text }}</span>
+</li>
+
+
 <li data-mc-row="info_warranty">
   <strong>Warranty:</strong>
   <span data-mc-vfield="info_warranty">
