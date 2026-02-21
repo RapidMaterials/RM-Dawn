@@ -715,7 +715,10 @@ button#ModalClose-ReturnDetails, .product-popup-modal__toggle {
     {%- for variant in product.variants -%}
       "{{ variant.id }}": {
         "inventory_quantity": {{ variant.inventory_quantity | default: 0 | json }},
+
         "stock_status": {{ variant.metafields.custom.stock_status.value | default: '' | json }},
+        "quote_link": {{ variant.metafields.custom.quote_link.value | default: '' | json }},
+
         "info_restock_date": {{ variant.metafields.custom.info_restock_date.value | default: '' | json }},
         "info_backordred_lead_time_override": {{ variant.metafields.custom.info_backordred_lead_time_override.value | default: '' | json }},
         "info_stocked_lead_time_override": {{ variant.metafields.custom.info_stocked_lead_time_override.value | default: '' | json }}
@@ -739,15 +742,16 @@ button#ModalClose-ReturnDetails, .product-popup-modal__toggle {
       .replaceAll('"', '&quot;')
       .replaceAll("'", '&#039;');
 
+  const normalize = (x) => (x == null ? '' : String(x)).trim();
+
   const readMap = () => {
     const el = document.getElementById(mapId);
     if (!el) return null;
     try { return JSON.parse(el.textContent || '{}'); } catch (e) { return null; }
   };
 
+  // IMPORTANT: re-query every time (Dawn re-renders DOM on variant change)
   const getMsgEl = () => document.getElementById(msgId);
-
-  const normalize = (x) => (x == null ? '' : String(x)).trim();
 
   const buildHtml = (variantId, map) => {
     const p = map.product || {};
@@ -757,20 +761,29 @@ button#ModalClose-ReturnDetails, .product-popup-modal__toggle {
 
     const invQty = Number(d.inventory_quantity);
 
-    // product defaults
+    // Product defaults
     const pLead = normalize(p.info_lead_time);
     const pBackLead = normalize(p.info_backordered_lead_time);
     const pStatus = normalize(p.info_stock_status);
     const pRestock = normalize(p.info_restock_date);
 
-    // variant overrides
+    // Variant overrides
     const vStatus = normalize(d.stock_status);
+    const vQuoteLink = normalize(d.quote_link);
     const vRestock = normalize(d.info_restock_date);
     const vStockLead = normalize(d.info_stocked_lead_time_override);
     const vBackLead = normalize(d.info_backordred_lead_time_override);
 
-    // effective (variant overrides product if not blank)
-    const effectiveStatus = vStatus || pStatus;                 // blank allowed
+    // ✅ NEW RULE: Made to Order overrides everything
+    if (vStatus === 'Made to Order') {
+      if (vQuoteLink) {
+        return `<strong>Made to Order</strong><br><a href="${escapeHtml(vQuoteLink)}" class="link">Get a Quote</a>`;
+      }
+      return `<strong>Made to Order</strong>`;
+    }
+
+    // Effective (variant overrides product if not blank)
+    const effectiveStatus = vStatus || pStatus; // blank allowed
     const effectiveRestock = vRestock || pRestock;
     const effectiveStockLead = vStockLead || pLead;
     const effectiveBackLead = vBackLead || pBackLead;
@@ -778,12 +791,14 @@ button#ModalClose-ReturnDetails, .product-popup-modal__toggle {
     // Treat blank status as In Stock for rule #1
     const statusIsInStock = (effectiveStatus === '' || effectiveStatus === 'In Stock');
 
-    // Rule 1: In Stock (or blank) AND inventory > 0
+    // Rule 1:
+    // If stock_status = In Stock (OR not set) AND inventory_quantity > 0
     if (statusIsInStock && invQty > 0) {
       return `<strong>In Stock</strong>${effectiveStockLead ? ` Ships in ${escapeHtml(effectiveStockLead)}` : ''}`;
     }
 
-    // Rule 2: Explicitly In Stock AND inventory == 0
+    // Rule 2:
+    // If stock_status = In Stock AND inventory_quantity == 0 => On Backorder
     if (effectiveStatus === 'In Stock' && invQty === 0) {
       if (effectiveRestock) {
         return `<strong>On Backorder</strong><br>Estimated delivery: ${escapeHtml(effectiveRestock)}`;
@@ -800,7 +815,7 @@ button#ModalClose-ReturnDetails, .product-popup-modal__toggle {
 
   const render = (variantId) => {
     const map = readMap();
-    const msgEl = getMsgEl(); // IMPORTANT: re-query every time (survives Dawn re-render)
+    const msgEl = getMsgEl();
     if (!map || !msgEl) return;
 
     const html = buildHtml(variantId, map);
@@ -821,24 +836,21 @@ button#ModalClose-ReturnDetails, .product-popup-modal__toggle {
   document.addEventListener('variant:change', (event) => {
     const v = event?.detail?.variant;
     if (!v?.id) return;
-
     // Let Dawn finish swapping DOM, then render
     requestAnimationFrame(() => render(v.id));
   });
 
-  // Fallback: if your theme doesn't emit variant:change
+  // Fallback: if theme doesn't emit variant:change
   document.addEventListener('change', (event) => {
     const t = event.target;
     if (!t) return;
-
-    // Dawn commonly uses name="id" for the variant id input/select
     if (t.name === 'id' && t.value) {
       requestAnimationFrame(() => render(t.value));
     }
   });
 })();
 </script>
-
+                
               {%- when 'buy_buttons' -%}
                 {%- render 'buy-buttons',
                   block: block,
