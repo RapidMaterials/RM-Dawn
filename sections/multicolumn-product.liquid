@@ -365,6 +365,45 @@
       {%- endif -%}
     </div>
   </div>
+  <script>
+  (() => {
+    const section = document.getElementById('shopify-section-{{ section.id }}');
+    if (!section) return;
+
+    const skuEl = section.querySelector('[data-sku]');
+    if (!skuEl) return;
+
+    const setSku = (variant) => {
+      if (!variant) return;
+      const sku = variant.sku || skuEl.getAttribute('data-sku-empty') || '';
+      skuEl.textContent = sku;
+    };
+
+    // Dawn emits this on variant changes
+    section.addEventListener('variant:change', (event) => {
+      setSku(event.detail.variant);
+    });
+
+    // In case your variant picker doesn't emit variant:change (custom), fallback:
+    const form = section.querySelector('form[action^="/cart/add"]');
+    if (form) {
+      form.addEventListener('change', async (e) => {
+        const idInput = form.querySelector('input[name="id"]');
+        if (!idInput) return;
+
+        // If we can find the variant JSON on the page, map id -> sku without fetch
+        const productJson = section.querySelector('script[type="application/json"][data-product-json]');
+        if (productJson) {
+          try {
+            const data = JSON.parse(productJson.textContent);
+            const v = (data.variants || []).find(v => String(v.id) === String(idInput.value));
+            if (v) setSku(v);
+          } catch (err) {}
+        }
+      });
+    }
+  })();
+</script>
 </div>
 
 {% schema %}
