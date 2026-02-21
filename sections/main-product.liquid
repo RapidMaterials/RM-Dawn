@@ -226,6 +226,92 @@ button#ModalClose-ReturnDetails, .product-popup-modal__toggle {
                     price_class: 'price--large'
                   -%}
                 </div>
+{%- assign v = product.selected_or_first_available_variant -%}
+
+{%- comment -%}
+  PRODUCT-LEVEL metafields (defaults)
+{%- endcomment -%}
+{%- assign p_lead_time = product.metafields.custom.info_lead_time.value | default: '' -%}
+{%- assign p_backorder_lead_time = product.metafields.custom.info_backordered_lead_time.value | default: '' -%}
+{%- assign p_stock_status = product.metafields.custom.info_stock_status.value | default: '' -%}
+{%- assign p_restock_date = product.metafields.custom.info_restock_date.value | default: '' -%}
+
+{%- comment -%}
+  VARIANT-LEVEL overrides (if present)
+{%- endcomment -%}
+{%- assign v_stock_status = v.metafields.custom.stock_status.value | default: '' -%}
+{%- assign v_restock_date = v.metafields.custom.info_restock_date.value | default: '' -%}
+{%- assign v_backorder_lead_time_override = v.metafields.custom.info_backordred_lead_time_override.value | default: '' -%}
+{%- assign v_stocked_lead_time_override = v.metafields.custom.info_stocked_lead_time_override.value | default: '' -%}
+
+{%- comment -%}
+  Apply override rules:
+  - stock_status: variant overrides product
+  - restock_date: variant overrides product
+  - lead times: variant override if present
+{%- endcomment -%}
+{%- assign effective_stock_status = p_stock_status -%}
+{%- if v_stock_status != blank -%}
+  {%- assign effective_stock_status = v_stock_status -%}
+{%- endif -%}
+
+{%- assign effective_restock_date = p_restock_date -%}
+{%- if v_restock_date != blank -%}
+  {%- assign effective_restock_date = v_restock_date -%}
+{%- endif -%}
+
+{%- assign effective_stocked_lead_time = p_lead_time -%}
+{%- if v_stocked_lead_time_override != blank -%}
+  {%- assign effective_stocked_lead_time = v_stocked_lead_time_override -%}
+{%- endif -%}
+
+{%- assign effective_backorder_lead_time = p_backorder_lead_time -%}
+{%- if v_backorder_lead_time_override != blank -%}
+  {%- assign effective_backorder_lead_time = v_backorder_lead_time_override -%}
+{%- endif -%}
+
+{%- comment -%}
+  Normalize: treat blank stock status as "In Stock" for logic purposes
+{%- endcomment -%}
+{%- assign status_is_in_stock = false -%}
+{%- if effective_stock_status == blank or effective_stock_status == 'In Stock' -%}
+  {%- assign status_is_in_stock = true -%}
+{%- endif -%}
+
+{%- comment -%}
+  Output rules:
+  1) If status is In Stock (or blank) AND inventory > 0 => "In Stock" (+ lead time if set)
+  2) If status is In Stock AND inventory == 0 => "On Backorder"
+      - if restock_date present => "Estimated delivery: <date>"
+      - else => "Estimated restock in <backorder lead time>"
+{%- endcomment -%}
+
+{%- if status_is_in_stock and v.inventory_quantity > 0 -%}
+  <p class="product__text inline-richtext prod-ship-note">
+    <strong>In Stock</strong>
+    {%- if effective_stocked_lead_time != blank -%}
+      <br>
+      {{ effective_stocked_lead_time }}
+    {%- endif -%}
+  </p>
+
+{%- elsif effective_stock_status == 'In Stock' and v.inventory_quantity == 0 -%}
+  <p class="product__text inline-richtext prod-ship-note">
+    <strong>On Backorder</strong>
+    <br>
+    {%- if effective_restock_date != blank -%}
+      Estimated delivery: {{ effective_restock_date }}
+    {%- else -%}
+      {%- if effective_backorder_lead_time != blank -%}
+        Estimated restock in {{ effective_backorder_lead_time }}
+      {%- else -%}
+        Estimated restock: TBD
+      {%- endif -%}
+    {%- endif -%}
+  </p>
+{%- endif -%}
+
+
               {%- assign v = product.selected_or_first_available_variant -%}
               {%- assign vsize = v.metafields.custom['v-size'].value | default: '' -%}
 
