@@ -233,10 +233,6 @@ button#ModalClose-ReturnDetails, .product-popup-modal__toggle {
               <div class="price-per-sqft caption" style="margin-top:-20px;" data-pps-wrap hidden>
                 <span data-pps-text></span>
               </div>
-<div class="sheet-sqft caption" data-sheet-sqft-wrap hidden>
-  <span data-sheet-sqft></span>
-</div>
-
               <script type="application/json" data-variant-vsize-map>
               {
                 {%- for variant in product.variants -%}
@@ -696,7 +692,10 @@ button#ModalClose-ReturnDetails, .product-popup-modal__toggle {
                 {% render 'product-variant-picker', product: product, block: block, product_form_id: product_form_id %}
 
 
-{%- assign v = product.selected_or_first_available_variant -%}
+<div class="sheet-sqft caption" data-sheet-sqft-wrap hidden>
+  <span data-sheet-sqft></span>
+</div>
+                {%- assign v = product.selected_or_first_available_variant -%}
 
 <p class="product__text inline-richtext prod-ship-note"
    id="StockMessage-{{ section.id }}"
