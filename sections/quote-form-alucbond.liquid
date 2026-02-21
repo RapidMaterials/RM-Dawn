@@ -230,6 +230,23 @@
   </fieldset>
 </div>
 
+          {%- comment -%} Q7: Ship-to address {%- endcomment -%}
+          <div class="field">
+            <textarea
+              rows="4"
+              id="ContactForm-ship-to"
+              class="text-area field__input"
+              name="contact[Ship To Address]"
+              placeholder="Company / Name, Street, City, State, Zip"
+              required
+              aria-required="true"
+            >{{ form['Ship To Address'] }}</textarea>
+            <label class="form__label field__label" for="ContactForm-ship-to">
+              What is the ship to address for this quote? <span aria-hidden="true">*</span>
+            </label>
+          </div>
+
+         
       
 
 
@@ -328,23 +345,6 @@
 
 
 
-          {%- comment -%} Q7: Ship-to address {%- endcomment -%}
-          <div class="field">
-            <textarea
-              rows="4"
-              id="ContactForm-ship-to"
-              class="text-area field__input"
-              name="contact[Ship To Address]"
-              placeholder="Company / Name, Street, City, State, Zip"
-              required
-              aria-required="true"
-            >{{ form['Ship To Address'] }}</textarea>
-            <label class="form__label field__label" for="ContactForm-ship-to">
-              What is the ship to address for this quote? <span aria-hidden="true">*</span>
-            </label>
-          </div>
-
-         
 
           {%- comment -%} Additional info {%- endcomment -%}
           <div class="field">
