@@ -461,7 +461,9 @@
 })();
 </script>
 
-<script type="application/json" data-mc-variant-fields data-section-id="{{ section.id }}">
+<script type="application/json"
+        data-mc-variant-fields
+        data-section-id="{{ section.id }}">
 {
   {%- for variant in product.variants -%}
     "{{ variant.id }}": {
@@ -476,10 +478,13 @@
   {%- endfor -%}
 }
 </script>
+
 <script>
 (() => {
   const sectionRoot =
-    document.getElementById('shopify-section-{{ section.id }}') || document;
+    document.getElementById('shopify-section-{{ section.id }}');
+
+  if (!sectionRoot) return;
 
   const mapEl = sectionRoot.querySelector(
     'script[data-mc-variant-fields][data-section-id="{{ section.id }}"]'
@@ -487,31 +492,48 @@
   if (!mapEl) return;
 
   let variantMap = {};
-  try { variantMap = JSON.parse(mapEl.textContent || '{}'); } catch (e) {}
+  try {
+    variantMap = JSON.parse(mapEl.textContent || '{}');
+  } catch (e) {}
 
   const updateFields = (variantId) => {
     if (!variantId) return;
+
     const data = variantMap[String(variantId)] || {};
 
+    // Update values
     sectionRoot.querySelectorAll('[data-mc-vfield]').forEach((el) => {
       const key = el.getAttribute('data-mc-vfield');
-      const val = (key && Object.prototype.hasOwnProperty.call(data, key)) ? data[key] : '';
-      el.textContent = val || '';
+      const val = data[key] || '';
+      el.textContent = val;
+    });
+
+    // Hide/show rows automatically
+    sectionRoot.querySelectorAll('[data-mc-row]').forEach((row) => {
+      const key = row.getAttribute('data-mc-row');
+      const val = data[key] || '';
+      row.style.display = val ? '' : 'none';
     });
   };
 
-  // Dawn (best)
+  // Dawn native event
   document.addEventListener('variant:change', (event) => {
-    const v = event?.detail?.variant;
-    if (v?.id) updateFields(v.id);
+    const variant = event?.detail?.variant;
+    if (variant?.id) updateFields(variant.id);
   });
 
-  // Fallback: if variant:change isn't emitted
+  // Fallback if theme doesn’t emit variant:change
   document.addEventListener('change', (event) => {
     const t = event.target;
     if (!t || t.name !== 'id') return;
     updateFields(t.value);
   });
+
+  // Initial hide pass on page load
+  const initialId =
+    {{ product.selected_or_first_available_variant.id | json }};
+  updateFields(initialId);
+
 })();
 </script>
 </div>
