@@ -226,148 +226,6 @@ button#ModalClose-ReturnDetails, .product-popup-modal__toggle {
                     price_class: 'price--large'
                   -%}
                 </div>
-{%- assign v = product.selected_or_first_available_variant -%}
-
-<p class="product__text inline-richtext prod-ship-note"
-   id="StockMessage-{{ section.id }}"
-   data-stock-message
-   hidden></p>
-
-<script type="application/json" id="StockLogicMap-{{ section.id }}">
-{
-  "product": {
-    "info_lead_time": {{ product.metafields.custom.info_lead_time.value | default: '' | json }},
-    "info_backordered_lead_time": {{ product.metafields.custom.info_backordered_lead_time.value | default: '' | json }},
-    "info_stock_status": {{ product.metafields.custom.info_stock_status.value | default: '' | json }},
-    "info_restock_date": {{ product.metafields.custom.info_restock_date.value | default: '' | json }}
-  },
-  "variants": {
-    {%- for variant in product.variants -%}
-      "{{ variant.id }}": {
-        "inventory_quantity": {{ variant.inventory_quantity | default: 0 | json }},
-        "stock_status": {{ variant.metafields.custom.stock_status.value | default: '' | json }},
-        "info_restock_date": {{ variant.metafields.custom.info_restock_date.value | default: '' | json }},
-        "info_backordred_lead_time_override": {{ variant.metafields.custom.info_backordred_lead_time_override.value | default: '' | json }},
-        "info_stocked_lead_time_override": {{ variant.metafields.custom.info_stocked_lead_time_override.value | default: '' | json }}
-      }{% unless forloop.last %},{% endunless %}
-    {%- endfor -%}
-  }
-}
-</script>
-
-<script>
-(() => {
-  const sectionId = {{ section.id | json }};
-  const mapId = `StockLogicMap-${sectionId}`;
-  const msgId = `StockMessage-${sectionId}`;
-
-  const escapeHtml = (s) =>
-    String(s ?? '')
-      .replaceAll('&', '&amp;')
-      .replaceAll('<', '&lt;')
-      .replaceAll('>', '&gt;')
-      .replaceAll('"', '&quot;')
-      .replaceAll("'", '&#039;');
-
-  const readMap = () => {
-    const el = document.getElementById(mapId);
-    if (!el) return null;
-    try { return JSON.parse(el.textContent || '{}'); } catch (e) { return null; }
-  };
-
-  const getMsgEl = () => document.getElementById(msgId);
-
-  const normalize = (x) => (x == null ? '' : String(x)).trim();
-
-  const buildHtml = (variantId, map) => {
-    const p = map.product || {};
-    const variants = map.variants || {};
-    const d = variants[String(variantId)];
-    if (!d) return '';
-
-    const invQty = Number(d.inventory_quantity);
-
-    // product defaults
-    const pLead = normalize(p.info_lead_time);
-    const pBackLead = normalize(p.info_backordered_lead_time);
-    const pStatus = normalize(p.info_stock_status);
-    const pRestock = normalize(p.info_restock_date);
-
-    // variant overrides
-    const vStatus = normalize(d.stock_status);
-    const vRestock = normalize(d.info_restock_date);
-    const vStockLead = normalize(d.info_stocked_lead_time_override);
-    const vBackLead = normalize(d.info_backordred_lead_time_override);
-
-    // effective (variant overrides product if not blank)
-    const effectiveStatus = vStatus || pStatus;                 // blank allowed
-    const effectiveRestock = vRestock || pRestock;
-    const effectiveStockLead = vStockLead || pLead;
-    const effectiveBackLead = vBackLead || pBackLead;
-
-    // Treat blank status as In Stock for rule #1
-    const statusIsInStock = (effectiveStatus === '' || effectiveStatus === 'In Stock');
-
-    // Rule 1: In Stock (or blank) AND inventory > 0
-    if (statusIsInStock && invQty > 0) {
-      return `<strong>In Stock</strong>${effectiveStockLead ? `<br>${escapeHtml(effectiveStockLead)}` : ''}`;
-    }
-
-    // Rule 2: Explicitly In Stock AND inventory == 0
-    if (effectiveStatus === 'In Stock' && invQty === 0) {
-      if (effectiveRestock) {
-        return `<strong>On Backorder</strong><br>Estimated delivery: ${escapeHtml(effectiveRestock)}`;
-      }
-      if (effectiveBackLead) {
-        return `<strong>On Backorder</strong><br>Estimated restock in ${escapeHtml(effectiveBackLead)}`;
-      }
-      return `<strong>On Backorder</strong>`;
-    }
-
-    // Otherwise: no output
-    return '';
-  };
-
-  const render = (variantId) => {
-    const map = readMap();
-    const msgEl = getMsgEl(); // IMPORTANT: re-query every time (survives Dawn re-render)
-    if (!map || !msgEl) return;
-
-    const html = buildHtml(variantId, map);
-
-    if (html) {
-      msgEl.innerHTML = html;
-      msgEl.hidden = false;
-    } else {
-      msgEl.innerHTML = '';
-      msgEl.hidden = true;
-    }
-  };
-
-  // Initial
-  render({{ product.selected_or_first_available_variant.id | json }});
-
-  // Dawn event (best)
-  document.addEventListener('variant:change', (event) => {
-    const v = event?.detail?.variant;
-    if (!v?.id) return;
-
-    // Let Dawn finish swapping DOM, then render
-    requestAnimationFrame(() => render(v.id));
-  });
-
-  // Fallback: if your theme doesn't emit variant:change
-  document.addEventListener('change', (event) => {
-    const t = event.target;
-    if (!t) return;
-
-    // Dawn commonly uses name="id" for the variant id input/select
-    if (t.name === 'id' && t.value) {
-      requestAnimationFrame(() => render(t.value));
-    }
-  });
-})();
-</script>
                 
               {%- assign v = product.selected_or_first_available_variant -%}
               {%- assign vsize = v.metafields.custom['v-size'].value | default: '' -%}
@@ -836,6 +694,151 @@ button#ModalClose-ReturnDetails, .product-popup-modal__toggle {
 
               {%- when 'variant_picker' -%}
                 {% render 'product-variant-picker', product: product, block: block, product_form_id: product_form_id %}
+
+
+{%- assign v = product.selected_or_first_available_variant -%}
+
+<p class="product__text inline-richtext prod-ship-note"
+   id="StockMessage-{{ section.id }}"
+   data-stock-message
+   hidden></p>
+
+<script type="application/json" id="StockLogicMap-{{ section.id }}">
+{
+  "product": {
+    "info_lead_time": {{ product.metafields.custom.info_lead_time.value | default: '' | json }},
+    "info_backordered_lead_time": {{ product.metafields.custom.info_backordered_lead_time.value | default: '' | json }},
+    "info_stock_status": {{ product.metafields.custom.info_stock_status.value | default: '' | json }},
+    "info_restock_date": {{ product.metafields.custom.info_restock_date.value | default: '' | json }}
+  },
+  "variants": {
+    {%- for variant in product.variants -%}
+      "{{ variant.id }}": {
+        "inventory_quantity": {{ variant.inventory_quantity | default: 0 | json }},
+        "stock_status": {{ variant.metafields.custom.stock_status.value | default: '' | json }},
+        "info_restock_date": {{ variant.metafields.custom.info_restock_date.value | default: '' | json }},
+        "info_backordred_lead_time_override": {{ variant.metafields.custom.info_backordred_lead_time_override.value | default: '' | json }},
+        "info_stocked_lead_time_override": {{ variant.metafields.custom.info_stocked_lead_time_override.value | default: '' | json }}
+      }{% unless forloop.last %},{% endunless %}
+    {%- endfor -%}
+  }
+}
+</script>
+
+<script>
+(() => {
+  const sectionId = {{ section.id | json }};
+  const mapId = `StockLogicMap-${sectionId}`;
+  const msgId = `StockMessage-${sectionId}`;
+
+  const escapeHtml = (s) =>
+    String(s ?? '')
+      .replaceAll('&', '&amp;')
+      .replaceAll('<', '&lt;')
+      .replaceAll('>', '&gt;')
+      .replaceAll('"', '&quot;')
+      .replaceAll("'", '&#039;');
+
+  const readMap = () => {
+    const el = document.getElementById(mapId);
+    if (!el) return null;
+    try { return JSON.parse(el.textContent || '{}'); } catch (e) { return null; }
+  };
+
+  const getMsgEl = () => document.getElementById(msgId);
+
+  const normalize = (x) => (x == null ? '' : String(x)).trim();
+
+  const buildHtml = (variantId, map) => {
+    const p = map.product || {};
+    const variants = map.variants || {};
+    const d = variants[String(variantId)];
+    if (!d) return '';
+
+    const invQty = Number(d.inventory_quantity);
+
+    // product defaults
+    const pLead = normalize(p.info_lead_time);
+    const pBackLead = normalize(p.info_backordered_lead_time);
+    const pStatus = normalize(p.info_stock_status);
+    const pRestock = normalize(p.info_restock_date);
+
+    // variant overrides
+    const vStatus = normalize(d.stock_status);
+    const vRestock = normalize(d.info_restock_date);
+    const vStockLead = normalize(d.info_stocked_lead_time_override);
+    const vBackLead = normalize(d.info_backordred_lead_time_override);
+
+    // effective (variant overrides product if not blank)
+    const effectiveStatus = vStatus || pStatus;                 // blank allowed
+    const effectiveRestock = vRestock || pRestock;
+    const effectiveStockLead = vStockLead || pLead;
+    const effectiveBackLead = vBackLead || pBackLead;
+
+    // Treat blank status as In Stock for rule #1
+    const statusIsInStock = (effectiveStatus === '' || effectiveStatus === 'In Stock');
+
+    // Rule 1: In Stock (or blank) AND inventory > 0
+    if (statusIsInStock && invQty > 0) {
+      return `<strong>In Stock</strong>${effectiveStockLead ? `<br>${escapeHtml(effectiveStockLead)}` : ''}`;
+    }
+
+    // Rule 2: Explicitly In Stock AND inventory == 0
+    if (effectiveStatus === 'In Stock' && invQty === 0) {
+      if (effectiveRestock) {
+        return `<strong>On Backorder</strong><br>Estimated delivery: ${escapeHtml(effectiveRestock)}`;
+      }
+      if (effectiveBackLead) {
+        return `<strong>On Backorder</strong><br>Estimated restock in ${escapeHtml(effectiveBackLead)}`;
+      }
+      return `<strong>On Backorder</strong>`;
+    }
+
+    // Otherwise: no output
+    return '';
+  };
+
+  const render = (variantId) => {
+    const map = readMap();
+    const msgEl = getMsgEl(); // IMPORTANT: re-query every time (survives Dawn re-render)
+    if (!map || !msgEl) return;
+
+    const html = buildHtml(variantId, map);
+
+    if (html) {
+      msgEl.innerHTML = html;
+      msgEl.hidden = false;
+    } else {
+      msgEl.innerHTML = '';
+      msgEl.hidden = true;
+    }
+  };
+
+  // Initial
+  render({{ product.selected_or_first_available_variant.id | json }});
+
+  // Dawn event (best)
+  document.addEventListener('variant:change', (event) => {
+    const v = event?.detail?.variant;
+    if (!v?.id) return;
+
+    // Let Dawn finish swapping DOM, then render
+    requestAnimationFrame(() => render(v.id));
+  });
+
+  // Fallback: if your theme doesn't emit variant:change
+  document.addEventListener('change', (event) => {
+    const t = event.target;
+    if (!t) return;
+
+    // Dawn commonly uses name="id" for the variant id input/select
+    if (t.name === 'id' && t.value) {
+      requestAnimationFrame(() => render(t.value));
+    }
+  });
+})();
+</script>
+
               {%- when 'buy_buttons' -%}
                 {%- render 'buy-buttons',
                   block: block,
