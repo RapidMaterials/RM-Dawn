@@ -231,11 +231,13 @@
 </div>
 
          {%- comment -%} Q3: Size / thickness inquiry (multi-select checkboxes) {%- endcomment -%}
-<div class="field">
+<div class="field" style="flex-direction: column;">
   <p class="form__label" style="margin: 0 0 10px;">
     What size are you inquiring about? <span aria-hidden="true">*</span>
   </p>
-
+  <div class="caption-large" style="margin-top: 10px;">
+    Select all that apply.
+  </div>
   <div class="quote-form__checkboxes" style="display: grid; gap: 12px;">
     <label style="display:flex; align-items:center; gap:10px;">
       <input
@@ -278,9 +280,7 @@
     </label>
   </div>
 
-  <div class="caption-large" style="margin-top: 10px;">
-    Select all that apply.
-  </div>
+
 </div>
 {%- comment -%} Q5: Color flexibility (radio buttons) {%- endcomment -%}
 <div class="field">
