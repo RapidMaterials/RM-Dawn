@@ -263,13 +263,54 @@
            {%- if product.selected_or_first_available_variant.barcode != blank -%}<li><strong>UPC:</strong> {{ product.selected_or_first_available_variant.barcode }}</li>{%- endif -%}
 {%- assign v = product.selected_or_first_available_variant -%}
 
-<li><strong>Direction:</strong> <span data-mc-vfield="info_directional">{{ v.metafields.custom.info_directional.value | default: '' }}</span></li>
-<li><strong>Finish:</strong> <span data-mc-vfield="info_finish">{{ v.metafields.custom.info_finish.value | default: '' }}</span></li>
-<li><strong>Reflectivity:</strong> <span data-mc-vfield="info_reflectivity">{{ v.metafields.custom.info_reflectivity.value | default: '' }}</span></li>
-<li><strong>Coverage:</strong> <span data-mc-vfield="info_coverage">{{ v.metafields.custom.info_coverage.value | default: '' }}</span></li>
-<li><strong>Thickness:</strong> <span data-mc-vfield="info_thickness">{{ v.metafields.custom.info_thickness.value | default: '' }}</span></li>
-<li><strong>V-Size:</strong> <span data-mc-vfield="v-size">{{ v.metafields.custom.v-size.value | default: '' }}</span></li>
-<li><strong>Warranty:</strong> <span data-mc-vfield="info_warranty">{{ v.metafields.custom.info_warranty.value | default: '' }}</span></li>
+<li data-mc-row="info_directional">
+  <strong>Direction:</strong>
+  <span data-mc-vfield="info_directional">
+    {{ v.metafields.custom.info_directional.value | default: '' }}
+  </span>
+</li>
+
+<li data-mc-row="info_finish">
+  <strong>Finish:</strong>
+  <span data-mc-vfield="info_finish">
+    {{ v.metafields.custom.info_finish.value | default: '' }}
+  </span>
+</li>
+
+<li data-mc-row="info_reflectivity">
+  <strong>Reflectivity:</strong>
+  <span data-mc-vfield="info_reflectivity">
+    {{ v.metafields.custom.info_reflectivity.value | default: '' }}
+  </span>
+</li>
+
+<li data-mc-row="info_coverage">
+  <strong>Coverage:</strong>
+  <span data-mc-vfield="info_coverage">
+    {{ v.metafields.custom.info_coverage.value | default: '' }}
+  </span>
+</li>
+
+<li data-mc-row="info_thickness">
+  <strong>Thickness:</strong>
+  <span data-mc-vfield="info_thickness">
+    {{ v.metafields.custom.info_thickness.value | default: '' }}
+  </span>
+</li>
+
+<li data-mc-row="v-size">
+  <strong>V-Size:</strong>
+  <span data-mc-vfield="v-size">
+    {{ v.metafields.custom['v-size'].value | default: '' }}
+  </span>
+</li>
+
+<li data-mc-row="info_warranty">
+  <strong>Warranty:</strong>
+  <span data-mc-vfield="info_warranty">
+    {{ v.metafields.custom.info_warranty.value | default: '' }}
+  </span>
+</li>
          
            {%- if certs != blank -%}
  
