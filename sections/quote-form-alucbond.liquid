@@ -179,50 +179,53 @@
               What is the name of your project? <span aria-hidden="true">*</span>
             </label>
           </div>
-{%- comment -%}
-  Timeline: Target delivery date + flexibility
-{%- endcomment -%}
 <div class="field">
-  <label class="field__label" for="ContactForm-target-date">
-    What is your target delivery date, and is it flexible? <span aria-hidden="true">*</span>
-  </label>
+  <fieldset style="border: 0; padding: 0; margin: 0;">
+    <legend style="font-size: 1.6rem; font-weight: 500; margin-bottom: 12px;">
+      What is your target delivery date, and is it flexible?
+      <span aria-hidden="true">*</span>
+    </legend>
 
-  <div style="display: grid; gap: 12px; margin-top: 8px;">
+    <div style="display: grid; gap: 16px;">
 
-    <input
-      class="field__input"
-      type="date"
-      id="ContactForm-target-date"
-      name="contact[Target Delivery Date]"
-      value="{{ form['Target Delivery Date'] }}"
-      required
-      aria-required="true"
-    >
-
-    <div style="display: flex; gap: 20px; flex-wrap: wrap;">
-      <label style="display: flex; align-items: center; gap: 6px;">
+      <!-- Date -->
+      <div>
         <input
-          type="radio"
-          name="contact[Delivery Date Flexibility]"
-          value="Flexible"
-          {% if form['Delivery Date Flexibility'] == 'Flexible' %}checked{% endif %}
+          class="field__input"
+          type="date"
+          id="ContactForm-target-date"
+          name="contact[Target Delivery Date]"
+          value="{{ form['Target Delivery Date'] }}"
           required
         >
-        Flexible
-      </label>
+      </div>
 
-      <label style="display: flex; align-items: center; gap: 6px;">
-        <input
-          type="radio"
-          name="contact[Delivery Date Flexibility]"
-          value="Firm Date"
-          {% if form['Delivery Date Flexibility'] == 'Firm Date' %}checked{% endif %}
-        >
-        Firm date
-      </label>
+      <!-- Radios -->
+      <div style="display: flex; gap: 24px; flex-wrap: wrap;">
+        <label style="display: flex; align-items: center; gap: 8px;">
+          <input
+            type="radio"
+            name="contact[Delivery Date Flexibility]"
+            value="Flexible"
+            {% if form['Delivery Date Flexibility'] == 'Flexible' %}checked{% endif %}
+            required
+          >
+          Flexible
+        </label>
+
+        <label style="display: flex; align-items: center; gap: 8px;">
+          <input
+            type="radio"
+            name="contact[Delivery Date Flexibility]"
+            value="Firm date"
+            {% if form['Delivery Date Flexibility'] == 'Firm date' %}checked{% endif %}
+          >
+          Firm date
+        </label>
+      </div>
+
     </div>
-
-  </div>
+  </fieldset>
 </div>
 
           {%- comment -%} Q3: Size / thickness inquiry (multi-select checkboxes) {%- endcomment -%}
