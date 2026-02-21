@@ -342,21 +342,7 @@ button#ModalClose-ReturnDetails, .product-popup-modal__toggle {
 })();
 </script>
 
-     {%- assign v = product.selected_or_first_available_variant -%}
-                {%- assign thickness = v.metafields.custom.info_thickness.value | default: '' -%}
-
-                <div data-variant-combined-wrap {% if thickness == blank %}hidden{% endif %}>
-                  <p data-variant-combined-line>
-                    {%- assign finish = v.metafields.custom.info_finish.value | default: '' -%}
-                    {%- assign coverage = v.metafields.custom.info_coverage.value | default: '' -%}
-                    {%- assign vsize = v.metafields.custom['v-size'].value | default: '' -%}
-
-                    {{ finish }} {{ coverage }}
-                    {%- if vsize != blank or thickness != blank -%}
-                      - {{ vsize }}{%- if vsize != blank and thickness != blank -%} x {%- endif -%}{{ thickness }}
-                    {%- endif -%}
-                  </p>
-                </div>
+    
 
                 {%- if product.quantity_price_breaks_configured? -%}
                   <div class="volume-pricing-note" id="Volume-Note-{{ section.id }}">
