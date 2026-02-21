@@ -50,11 +50,16 @@
     },
     "quote_form_alucbond_LQRkL6": {
       "type": "quote-form-alucbond",
+      "custom_css": [
+        ".quote-form {max-width: 800px;}"
+      ],
       "name": "Quote Form - Alucobond",
       "settings": {
-        "heading": "Quote form",
+        "heading": "",
         "heading_size": "h1",
         "color_scheme": "",
+        "right_heading": "Request a Quote",
+        "right_richtext": "<p>Add helpful details here like lead times, sheet sizes, freight notes, and what happens after submission.</p>",
         "padding_top": 36,
         "padding_bottom": 36
       }
