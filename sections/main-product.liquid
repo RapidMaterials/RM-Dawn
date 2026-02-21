@@ -226,10 +226,12 @@ button#ModalClose-ReturnDetails, .product-popup-modal__toggle {
                     price_class: 'price--large'
                   -%}
                                 
-              </div>
                 </div>
-                <div class="price-per-sqft" style="margin-top:-15px;" data-pps-wrap hidden>
+                <div class="price-per-sqft caption" style="margin-top:-15px;" data-pps-wrap hidden>
                 <span data-pps-text></span>
+              </div>
+
+
               {%- assign v = product.selected_or_first_available_variant -%}
               {%- assign vsize = v.metafields.custom['v-size'].value | default: '' -%}
 <div class="sheet-sqft caption" style="margin-top:-20px;"  data-sheet-sqft-wrap hidden>
