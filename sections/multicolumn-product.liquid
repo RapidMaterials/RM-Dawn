@@ -250,7 +250,18 @@
         <h3 style="font-weight: bold; margin-bottom: 8px;">Specs</h3>
         <ul style="list-style: none; padding: 0; margin: 0;">
           <li><strong>SKU: </strong>   {{- product.selected_or_first_available_variant.sku -}} </li>
-          
+          {%- assign initial_variant = product.selected_or_first_available_variant -%}
+
+<p class="product-sku" data-sku-wrapper>
+  <span class="product-sku__label">SKU:</span>
+  <span
+    class="product-sku__value"
+    data-sku
+    data-sku-empty="{{ section.settings.sku_fallback | default: '' | escape }}"
+  >
+    {{- initial_variant.sku -}}
+  </span>
+</p>
            {%- if product.selected_or_first_available_variant.barcode != blank -%}<li><strong>UPC:</strong> {{ product.selected_or_first_available_variant.barcode }}</li>{%- endif -%}
           {%- if certs != blank -%}
   <li><strong>Certifications:</strong>
