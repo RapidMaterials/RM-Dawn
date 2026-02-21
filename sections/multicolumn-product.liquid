@@ -261,8 +261,7 @@
           </li>
 
            {%- if product.selected_or_first_available_variant.barcode != blank -%}<li><strong>UPC:</strong> {{ product.selected_or_first_available_variant.barcode }}</li>{%- endif -%}
-          {%- if certs != blank -%}
-{%- assign initial_variant = product.selected_or_first_available_variant -%}
+         {%- assign initial_variant = product.selected_or_first_available_variant -%}
 {%- assign initial_gloss = initial_variant.metafields.custom.info_gloss.value | default: '' -%}
 
 {%- if initial_gloss != blank -%}
@@ -276,8 +275,9 @@
     <span data-mc-gloss data-section-id="{{ section.id }}"></span>
   </li>
 {%- endif -%}
-
-            
+         
+           {%- if certs != blank -%}
+ 
   <li><strong>Certifications:</strong>
     <div class="certs-box" style="display: flex; gap: 4px; flex-wrap: wrap;align-items: end;">
       {%- for certifications in certs -%}
