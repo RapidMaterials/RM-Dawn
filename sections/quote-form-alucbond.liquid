@@ -189,6 +189,7 @@
     <div style="display: grid; gap: 16px;">
 
       <!-- Date -->
+      <div class="date-wrapper">
       <div>
         <input
           class="field__input"
@@ -196,7 +197,8 @@
           id="ContactForm-target-date"
           name="contact[Target Delivery Date]"
           value="{{ form['Target Delivery Date'] }}"
-          required
+          required 
+          style="    padding: 10px;width: 50%;    background-color: #eeeeee;"
         >
       </div>
 
@@ -223,7 +225,7 @@
           Firm date
         </label>
       </div>
-
+  </div>
     </div>
   </fieldset>
 </div>
