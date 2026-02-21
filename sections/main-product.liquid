@@ -780,7 +780,7 @@ button#ModalClose-ReturnDetails, .product-popup-modal__toggle {
 
     // Rule 1: In Stock (or blank) AND inventory > 0
     if (statusIsInStock && invQty > 0) {
-      return `<strong>In Stock</strong>${effectiveStockLead ? `<br>${escapeHtml(effectiveStockLead)}` : ''}`;
+      return `<strong>In Stock</strong>${effectiveStockLead ? `Ships in ${escapeHtml(effectiveStockLead)}` : ''}`;
     }
 
     // Rule 2: Explicitly In Stock AND inventory == 0
