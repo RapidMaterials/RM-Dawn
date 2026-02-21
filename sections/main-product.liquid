@@ -354,6 +354,23 @@ button#ModalClose-ReturnDetails, .product-popup-modal__toggle {
                   class="product-form__input product-form__quantity{% if settings.inputs_shadow_vertical_offset != 0 and settings.inputs_shadow_vertical_offset < 0 %} product-form__quantity-top{% endif %}"
                   {{ block.shopify_attributes }}
                 >
+                  {%- assign v = product.selected_or_first_available_variant -%}
+{%- assign thickness = v.metafields.custom.info_thickness.value | default: '' -%}
+
+{%- if thickness != blank -%}
+
+  {%- assign finish = v.metafields.custom.info_finish.value | default: '' -%}
+  {%- assign coverage = v.metafields.custom.info_coverage.value | default: '' -%}
+  {%- assign vsize = v.metafields.custom['v-size'].value | default: '' -%}
+
+  <p data-variant-combined-line>
+    {{ finish }} {{ v.title }} {{ coverage }}
+    {%- if vsize != blank or thickness != blank -%}
+      - {{ vsize }}{%- if vsize != blank and thickness != blank -%} x {%- endif -%}{{ thickness }}
+    {%- endif -%}
+  </p>
+
+{%- endif -%}
                   {% comment %} TODO: enable theme-check once `item_count_for_variant` is accepted as valid filter {% endcomment %}
                   {% # theme-check-disable %}
                   {%- assign cart_qty = cart
