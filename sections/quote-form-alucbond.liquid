@@ -43,11 +43,9 @@
         <label for="ContactForm-website">Website</label>
         <input id="ContactForm-website" type="text" name="contact[website]" tabindex="-1" autocomplete="off">
       </div>
-
-      {%- if form.posted_successfully? -%}
+        {%- if form.posted_successfully? -%}
         <h2 class="form-status form-status-list form__message" tabindex="-1" autofocus>
-          {% render 'icon-success' %}
-          {{ 'templates.contact.form.post_success' | t }}
+            Thank you. Your quote request has been submitted. Our team will review and follow up shortly.
         </h2>
       {%- elsif form.errors -%}
         <div class="form__message">
