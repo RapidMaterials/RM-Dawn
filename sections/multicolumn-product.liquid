@@ -247,18 +247,18 @@
 
   
         <div class="specs" style="padding: 16px; background-color: #f5f5f5;margin-top:20px;">
-        {%- if product.has_only_default_variant == false -%}
-          <h3 style="font-weight: bold; margin-bottom: 8px;">
-            Specifications for
-            <span data-mc-variant-title>
-              {{ product.selected_or_first_available_variant.title }}
-            </span>
-          </h3>
-        {%- else -%}
-          <h3 style="font-weight: bold; margin-bottom: 8px;">
-            Specifications
-          </h3>
-        {%- endif -%}
+        {%- assign v = product.selected_or_first_available_variant -%}
+        {%- assign thickness = v.metafields.custom.info_thickness.value | default: '' -%}
+
+        <h3 style="font-weight: bold; margin-bottom: 8px;">
+          <span data-mc-specs-title>
+            {%- if thickness != blank -%}
+              Specifications for {{ v.title }}
+            {%- else -%}
+              Specifications
+            {%- endif -%}
+          </span>
+        </h3>
         <ul style="list-style: none; padding: 0; margin: 0;">
           <li>
             <strong>SKU:</strong>
