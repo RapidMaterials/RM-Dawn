@@ -139,27 +139,62 @@
         </label>
       </div>
 
-      {%- comment -%}
-        Q3: Size / thickness inquiry
-      {%- endcomment -%}
-      <div class="field">
-        <select
-          class="field__input"
-          id="ContactForm-size"
-          name="contact[Size / Thickness]"
-          required
-          aria-required="true"
-        >
-          <option value="" {% if form['Size / Thickness'] == blank %}selected{% endif %}>Select an option</option>
-          <option value="4mm FR" {% if form['Size / Thickness'] == '4mm FR' %}selected{% endif %}>4mm FR</option>
-          <option value="0.040" {% if form['Size / Thickness'] == '0.040' %}selected{% endif %}>0.040</option>
-          <option value="0.063" {% if form['Size / Thickness'] == '0.063' %}selected{% endif %}>0.063</option>
-          <option value="0.080" {% if form['Size / Thickness'] == '0.080' %}selected{% endif %}>0.080</option>
-        </select>
-        <label class="field__label" for="ContactForm-size">
-          What size are you inquiring about? <span aria-hidden="true">*</span>
-        </label>
-      </div>
+     {%- comment -%}
+  Q3: Size / thickness inquiry (multi-select checkboxes)
+{%- endcomment -%}
+
+<div class="field">
+  <label class="field__label" style="display:block; margin-bottom: 8px;">
+    What size are you inquiring about? <span aria-hidden="true">*</span>
+  </label>
+
+  <div style="display:grid; gap: 10px;">
+    <label>
+      <input
+        type="checkbox"
+        name="contact[Size - 4mm FR]"
+        value="Yes"
+        {% if form['Size - 4mm FR'] == 'Yes' %}checked{% endif %}
+        required
+      >
+      4mm FR
+    </label>
+
+    <label>
+      <input
+        type="checkbox"
+        name="contact[Size - 0.040]"
+        value="Yes"
+        {% if form['Size - 0.040'] == 'Yes' %}checked{% endif %}
+      >
+      0.040
+    </label>
+
+    <label>
+      <input
+        type="checkbox"
+        name="contact[Size - 0.063]"
+        value="Yes"
+        {% if form['Size - 0.063'] == 'Yes' %}checked{% endif %}
+      >
+      0.063
+    </label>
+
+    <label>
+      <input
+        type="checkbox"
+        name="contact[Size - 0.080]"
+        value="Yes"
+        {% if form['Size - 0.080'] == 'Yes' %}checked{% endif %}
+      >
+      0.080
+    </label>
+  </div>
+
+  <div class="caption-large" style="margin-top: 8px;">
+    Select all that apply.
+  </div>
+</div>
 
       {%- comment -%}
         Q4: Color inquiry
