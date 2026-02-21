@@ -249,11 +249,11 @@
     {%- capture key_color -%}Line Item {{ i }} - Color / Finish{%- endcapture -%}
     {%- capture key_qty -%}Line Item {{ i }} - Sheet Qty{%- endcapture -%}
 
-    <div style="border: 1px solid rgba(0,0,0,0.15); border-radius: 8px; padding: 14px; margin-bottom: 14px;">
+    <div style="border: 1px solid rgba(0,0,0,0.15); border-radius: 8px; padding: 14px; margin-bottom: 14px;  padding:1.5rem;">
       <p class="form__label" style="margin: 0 0 10px;">Line item {{ i }}</p>
 
       <div class="field">
-        <select class="field__input" id="LineItem-{{ i }}-size" name="contact[{{ key_thickness }}]" style="padding:1.5rem;">
+        <select class="field__input" id="LineItem-{{ i }}-size" name="contact[{{ key_thickness }}]">
           <option value="" {% if form[key_thickness] == blank %}selected{% endif %}>Select thickness / series</option>
           <option value="4mm FR" {% if form[key_thickness] == '4mm FR' %}selected{% endif %}>4mm FR</option>
           <option value="0.040 AXCENT" {% if form[key_thickness] == '0.040 AXCENT' %}selected{% endif %}>0.040 AXCENT</option>
