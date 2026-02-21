@@ -12,6 +12,12 @@
     "main": {
       "type": "main-product",
       "blocks": {
+        "sku_jCTWi9": {
+          "type": "sku",
+          "settings": {
+            "text_style": "body"
+          }
+        },
         "custom_liquid_9qzpnL": {
           "type": "custom_liquid",
           "settings": {
@@ -69,6 +75,7 @@
         }
       },
       "block_order": [
+        "sku_jCTWi9",
         "custom_liquid_9qzpnL",
         "title",
         "price",
