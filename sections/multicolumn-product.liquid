@@ -420,49 +420,56 @@
 })();
 </script>
 
-<script type="application/json" data-mc-variant-gloss-map data-section-id="{{ section.id }}">
+<script type="application/json" data-mc-variant-fields data-section-id="{{ section.id }}">
 {
-  {%- for v in product.variants -%}
-    "{{ v.id }}": {{ v.metafields.custom.info_gloss.value | default: '' | json }}{% unless forloop.last %},{% endunless %}
+  {%- for variant in product.variants -%}
+    "{{ variant.id }}": {
+      "info_directional": {{ variant.metafields.custom.info_directional.value | default: '' | json }},
+      "info_finish": {{ variant.metafields.custom.info_finish.value | default: '' | json }},
+      "info_reflectivity": {{ variant.metafields.custom.info_reflectivity.value | default: '' | json }},
+      "info_coverage": {{ variant.metafields.custom.info_coverage.value | default: '' | json }},
+      "info_thickness": {{ variant.metafields.custom.info_thickness.value | default: '' | json }},
+      "v-size": {{ variant.metafields.custom['v-size'].value | default: '' | json }},
+      "info_warranty": {{ variant.metafields.custom.info_warranty.value | default: '' | json }}
+    }{% unless forloop.last %},{% endunless %}
   {%- endfor -%}
 }
 </script>
-
 <script>
 (() => {
-  const sectionId = "{{ section.id }}";
-  const glossEl = document.querySelector(`[data-mc-gloss][data-section-id="${sectionId}"]`);
-  const rowEl = document.querySelector(`[data-mc-gloss-row][data-section-id="${sectionId}"]`);
-  const mapEl = document.querySelector(`script[data-mc-variant-gloss-map][data-section-id="${sectionId}"]`);
-  if (!glossEl || !mapEl) return;
+  const sectionRoot =
+    document.getElementById('shopify-section-{{ section.id }}') || document;
 
-  let glossMap = {};
-  try { glossMap = JSON.parse(mapEl.textContent || '{}'); } catch (e) {}
+  const mapEl = sectionRoot.querySelector(
+    'script[data-mc-variant-fields][data-section-id="{{ section.id }}"]'
+  );
+  if (!mapEl) return;
 
-  const setGlossByVariantId = (variantId) => {
+  let variantMap = {};
+  try { variantMap = JSON.parse(mapEl.textContent || '{}'); } catch (e) {}
+
+  const updateFields = (variantId) => {
     if (!variantId) return;
-    const val = glossMap[String(variantId)] || '';
+    const data = variantMap[String(variantId)] || {};
 
-    glossEl.textContent = val;
-
-    // Show/hide the row if you're using the visibility-hidden version
-    if (rowEl) {
-      if (val) rowEl.classList.remove('visibility-hidden');
-      else rowEl.classList.add('visibility-hidden');
-    }
+    sectionRoot.querySelectorAll('[data-mc-vfield]').forEach((el) => {
+      const key = el.getAttribute('data-mc-vfield');
+      const val = (key && Object.prototype.hasOwnProperty.call(data, key)) ? data[key] : '';
+      el.textContent = val || '';
+    });
   };
 
-  // Dawn event (best)
+  // Dawn (best)
   document.addEventListener('variant:change', (event) => {
-    const variant = event?.detail?.variant;
-    if (variant?.id) setGlossByVariantId(variant.id);
+    const v = event?.detail?.variant;
+    if (v?.id) updateFields(v.id);
   });
 
-  // Fallback if variant:change isn't fired
+  // Fallback: if variant:change isn't emitted
   document.addEventListener('change', (event) => {
     const t = event.target;
     if (!t || t.name !== 'id') return;
-    setGlossByVariantId(t.value);
+    updateFields(t.value);
   });
 })();
 </script>
