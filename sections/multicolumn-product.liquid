@@ -362,6 +362,51 @@
       {%- endif -%}
     </div>
   </div>
+  <script>
+(() => {
+  const skuEl = document.querySelector('[data-mc-sku][data-section-id="{{ section.id }}"]');
+  if (!skuEl) return;
+
+  const productHandle = skuEl.getAttribute('data-product-handle');
+  let productJsonCache = null;
+
+  const setSku = (variant) => {
+    if (!variant) return;
+    skuEl.textContent = variant.sku || '';
+  };
+
+  // 1) Preferred: Dawn emits this event when variant changes
+  document.addEventListener('variant:change', (event) => {
+    if (event?.detail?.variant) setSku(event.detail.variant);
+  });
+
+  // 2) Fallback: listen for changes to the main product form variant id input/select
+  document.addEventListener('change', async (event) => {
+    const target = event.target;
+    if (!target) return;
+
+    // Handles: <select name="id"> or radio inputs updating variant id
+    if (target.name !== 'id') return;
+
+    const variantId = target.value;
+    if (!variantId || !productHandle) return;
+
+    try {
+      // Cache product JSON once per page
+      if (!productJsonCache) {
+        const res = await fetch(`{{ routes.root_url }}products/${productHandle}.js`);
+        if (!res.ok) return;
+        productJsonCache = await res.json();
+      }
+
+      const variant = (productJsonCache.variants || []).find(v => String(v.id) === String(variantId));
+      if (variant) setSku(variant);
+    } catch (e) {
+      // no-op
+    }
+  });
+})();
+</script>
 </div>
 
 {% schema %}
