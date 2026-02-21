@@ -66,7 +66,9 @@
     "quote_form_alucbond_LQRkL6": {
       "type": "quote-form-alucbond",
       "custom_css": [
-        ".quote-form {max-width: 800px;}"
+        ".quote-form {max-width: 800px;}",
+        "h3{margin:0 0 10px 0;}",
+        "p{color:#000;}"
       ],
       "name": "Quote Form - Alucobond",
       "settings": {
