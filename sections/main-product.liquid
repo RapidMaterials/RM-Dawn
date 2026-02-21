@@ -298,20 +298,12 @@ button#ModalClose-ReturnDetails, .product-popup-modal__toggle {
       textEl.textContent = '';
       return;
     }
-const formatMoneyFromCents = (cents) => {
-  if (window.Shopify && typeof Shopify.formatMoney === 'function') {
-    return Shopify.formatMoney(cents, "{{ shop.money_format }}");
-  }
 
-  // Safe fallback
-  return new Intl.NumberFormat(
-    "{{ shop.locale }}",
-    {
-      style: "currency",
-      currency: "{{ shop.currency }}",
-    }
-  ).format(cents / 100);
-};
+    const ppsCents = Math.round(priceCents / sqft);
+    const pps = formatMoneyFromCents(ppsCents);
+
+    textEl.textContent = `${pps} / sq ft`;
+    wrap.hidden = false;
   };
 
   // Initial render using current selected/first variant data from JSON embedded in Dawn
