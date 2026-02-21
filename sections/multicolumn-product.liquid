@@ -424,6 +424,53 @@
   });
 })();
 </script>
+
+<script type="application/json" data-mc-variant-gloss-map data-section-id="{{ section.id }}">
+{
+  {%- for v in product.variants -%}
+    "{{ v.id }}": {{ v.metafields.custom.info_gloss.value | default: '' | json }}{% unless forloop.last %},{% endunless %}
+  {%- endfor -%}
+}
+</script>
+
+<script>
+(() => {
+  const sectionId = "{{ section.id }}";
+  const glossEl = document.querySelector(`[data-mc-gloss][data-section-id="${sectionId}"]`);
+  const rowEl = document.querySelector(`[data-mc-gloss-row][data-section-id="${sectionId}"]`);
+  const mapEl = document.querySelector(`script[data-mc-variant-gloss-map][data-section-id="${sectionId}"]`);
+  if (!glossEl || !mapEl) return;
+
+  let glossMap = {};
+  try { glossMap = JSON.parse(mapEl.textContent || '{}'); } catch (e) {}
+
+  const setGlossByVariantId = (variantId) => {
+    if (!variantId) return;
+    const val = glossMap[String(variantId)] || '';
+
+    glossEl.textContent = val;
+
+    // Show/hide the row if you're using the visibility-hidden version
+    if (rowEl) {
+      if (val) rowEl.classList.remove('visibility-hidden');
+      else rowEl.classList.add('visibility-hidden');
+    }
+  };
+
+  // Dawn event (best)
+  document.addEventListener('variant:change', (event) => {
+    const variant = event?.detail?.variant;
+    if (variant?.id) setGlossByVariantId(variant.id);
+  });
+
+  // Fallback if variant:change isn't fired
+  document.addEventListener('change', (event) => {
+    const t = event.target;
+    if (!t || t.name !== 'id') return;
+    setGlossByVariantId(t.value);
+  });
+})();
+</script>
 </div>
 
 {% schema %}
