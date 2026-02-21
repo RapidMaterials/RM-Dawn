@@ -775,6 +775,8 @@ button#ModalClose-ReturnDetails, .product-popup-modal__toggle {
     const vRestock = normalize(d.info_restock_date);
     const vStockLead = normalize(d.info_stocked_lead_time_override);
     const vBackLead = normalize(d.info_backordred_lead_time_override);
+    const vSqFtOver = normalize(d.custom.info_sqft_overide);
+    
 
     // ✅ NEW RULE: Made to Order overrides everything
     if (vStatus === 'Made to Order') {
@@ -1236,33 +1238,33 @@ button#ModalClose-ReturnDetails, .product-popup-modal__toggle {
     </script>
   </div>
   </div>
-  <script type="application/json" data-variant-combined-map>
+{%- comment -%} Variant v-size + sqft override map {%- endcomment -%}
+<script type="application/json" id="SqftMap-{{ section.id }}">
 {
   {%- for variant in product.variants -%}
     "{{ variant.id }}": {
-      "title": {{ variant.title | json }},
-      "finish": {{ variant.metafields.custom.info_finish.value | default: '' | json }},
-      "coverage": {{ variant.metafields.custom.info_coverage.value | default: '' | json }},
       "vsize": {{ variant.metafields.custom['v-size'].value | default: '' | json }},
-      "thickness": {{ variant.metafields.custom.info_thickness.value | default: '' | json }}
+      "sqft_override": {{ variant.metafields.custom.info_sqft_override.value | default: '' | json }}
     }{% unless forloop.last %},{% endunless %}
   {%- endfor -%}
 }
 </script>
+
 <script>
 (() => {
+  const sectionId = {{ section.id | json }};
   const root = document.getElementById('MainProduct-{{ section.id }}') || document;
 
   const wrap = root.querySelector('[data-pps-wrap]');
   const textEl = root.querySelector('[data-pps-text]');
   const sqftWrap = root.querySelector('[data-sheet-sqft-wrap]');
   const sqftEl = root.querySelector('[data-sheet-sqft]');
-  const mapEl = root.querySelector('script[data-variant-vsize-map]');
+  const mapEl = document.getElementById(`SqftMap-${sectionId}`);
 
   if (!wrap || !textEl || !sqftWrap || !sqftEl || !mapEl) return;
 
-  let vsizeMap = {};
-  try { vsizeMap = JSON.parse(mapEl.textContent || '{}'); } catch (e) {}
+  let vMap = {};
+  try { vMap = JSON.parse(mapEl.textContent || '{}'); } catch (e) {}
 
   const calcSqftFromVSize = (vsizeRaw) => {
     if (!vsizeRaw) return 0;
@@ -1283,23 +1285,41 @@ button#ModalClose-ReturnDetails, .product-popup-modal__toggle {
     return (w * h) / 144;
   };
 
+  const getSqft = (variantId) => {
+    const d = vMap[String(variantId)] || {};
+    const vsize = d.vsize || '';
+    const overrideRaw = d.sqft_override;
+
+    const overrideNum = parseFloat(
+      typeof overrideRaw === 'number' ? String(overrideRaw) : (overrideRaw || '')
+    );
+
+    // ✅ If override exists and is valid, use it
+    if (Number.isFinite(overrideNum) && overrideNum > 0) {
+      return { sqft: overrideNum, vsize };
+    }
+
+    // fallback: calculate from v-size
+    return { sqft: calcSqftFromVSize(vsize), vsize };
+  };
+
   const formatMoneyFromCents = (cents) => {
     if (window.Shopify && typeof Shopify.formatMoney === 'function') {
       return Shopify.formatMoney(cents, "{{ shop.money_format }}");
     }
-    // USD-ish fallback with $ sign
     return `$${(cents / 100).toFixed(2)}`;
   };
 
   const render = (variant) => {
     if (!variant?.id) return;
 
-    const vsize = vsizeMap[String(variant.id)] || '';
-    const sqft = calcSqftFromVSize(vsize);
+    const { sqft, vsize } = getSqft(variant.id);
 
-    // --- SQ FT TOTAL (per sheet) ---
+    // --- SQ FT TOTAL (per unit/sheet) ---
     if (sqft > 0) {
-      sqftEl.textContent = `per ${vsize} unit (${sqft.toFixed(2)} sq ft)`;
+      // keep your exact label format
+      const vsizeLabel = vsize ? `per ${vsize} unit ` : '';
+      sqftEl.textContent = `${vsizeLabel}(${sqft.toFixed(2)} sq ft)`;
       sqftWrap.hidden = false;
     } else {
       sqftEl.textContent = '';
@@ -1313,7 +1333,7 @@ button#ModalClose-ReturnDetails, .product-popup-modal__toggle {
       return;
     }
 
-    const priceCents = variant.price;
+    const priceCents = Number(variant.price);
     if (!Number.isFinite(priceCents) || priceCents <= 0) {
       wrap.hidden = true;
       textEl.textContent = '';
@@ -1323,15 +1343,16 @@ button#ModalClose-ReturnDetails, .product-popup-modal__toggle {
     const ppsCents = Math.round(priceCents / sqft);
     const pps = formatMoneyFromCents(ppsCents);
 
-    // Do NOT prepend another "$" since formatMoney already includes it (or fallback does)
+    // formatMoney already includes currency formatting (or fallback does)
     textEl.textContent = `${pps} / sq ft`;
     wrap.hidden = false;
   };
 
   // Initial render
-  const initialVariantId = {{ product.selected_or_first_available_variant.id | json }};
-  const initialPriceCents = {{ product.selected_or_first_available_variant.price | json }};
-  render({ id: initialVariantId, price: initialPriceCents });
+  render({
+    id: {{ product.selected_or_first_available_variant.id | json }},
+    price: {{ product.selected_or_first_available_variant.price | json }}
+  });
 
   // Dawn variant change event
   document.addEventListener('variant:change', (event) => {
