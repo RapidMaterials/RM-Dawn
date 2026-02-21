@@ -226,92 +226,185 @@ button#ModalClose-ReturnDetails, .product-popup-modal__toggle {
                     price_class: 'price--large'
                   -%}
                 </div>
-{%- assign v = product.selected_or_first_available_variant -%}
+
+                {%- assign v = product.selected_or_first_available_variant -%}
 
 {%- comment -%}
-  PRODUCT-LEVEL metafields (defaults)
+  INITIAL LIQUID RENDER (fallback/no-JS)
+  JS will replace this on variant change.
 {%- endcomment -%}
+
 {%- assign p_lead_time = product.metafields.custom.info_lead_time.value | default: '' -%}
 {%- assign p_backorder_lead_time = product.metafields.custom.info_backordered_lead_time.value | default: '' -%}
 {%- assign p_stock_status = product.metafields.custom.info_stock_status.value | default: '' -%}
 {%- assign p_restock_date = product.metafields.custom.info_restock_date.value | default: '' -%}
 
-{%- comment -%}
-  VARIANT-LEVEL overrides (if present)
-{%- endcomment -%}
 {%- assign v_stock_status = v.metafields.custom.stock_status.value | default: '' -%}
 {%- assign v_restock_date = v.metafields.custom.info_restock_date.value | default: '' -%}
 {%- assign v_backorder_lead_time_override = v.metafields.custom.info_backordred_lead_time_override.value | default: '' -%}
 {%- assign v_stocked_lead_time_override = v.metafields.custom.info_stocked_lead_time_override.value | default: '' -%}
 
-{%- comment -%}
-  Apply override rules:
-  - stock_status: variant overrides product
-  - restock_date: variant overrides product
-  - lead times: variant override if present
-{%- endcomment -%}
 {%- assign effective_stock_status = p_stock_status -%}
-{%- if v_stock_status != blank -%}
-  {%- assign effective_stock_status = v_stock_status -%}
-{%- endif -%}
+{%- if v_stock_status != blank -%}{%- assign effective_stock_status = v_stock_status -%}{%- endif -%}
 
 {%- assign effective_restock_date = p_restock_date -%}
-{%- if v_restock_date != blank -%}
-  {%- assign effective_restock_date = v_restock_date -%}
-{%- endif -%}
+{%- if v_restock_date != blank -%}{%- assign effective_restock_date = v_restock_date -%}{%- endif -%}
 
 {%- assign effective_stocked_lead_time = p_lead_time -%}
-{%- if v_stocked_lead_time_override != blank -%}
-  {%- assign effective_stocked_lead_time = v_stocked_lead_time_override -%}
-{%- endif -%}
+{%- if v_stocked_lead_time_override != blank -%}{%- assign effective_stocked_lead_time = v_stocked_lead_time_override -%}{%- endif -%}
 
 {%- assign effective_backorder_lead_time = p_backorder_lead_time -%}
-{%- if v_backorder_lead_time_override != blank -%}
-  {%- assign effective_backorder_lead_time = v_backorder_lead_time_override -%}
-{%- endif -%}
+{%- if v_backorder_lead_time_override != blank -%}{%- assign effective_backorder_lead_time = v_backorder_lead_time_override -%}{%- endif -%}
 
-{%- comment -%}
-  Normalize: treat blank stock status as "In Stock" for logic purposes
-{%- endcomment -%}
 {%- assign status_is_in_stock = false -%}
 {%- if effective_stock_status == blank or effective_stock_status == 'In Stock' -%}
   {%- assign status_is_in_stock = true -%}
 {%- endif -%}
 
-{%- comment -%}
-  Output rules:
-  1) If status is In Stock (or blank) AND inventory > 0 => "In Stock" (+ lead time if set)
-  2) If status is In Stock AND inventory == 0 => "On Backorder"
-      - if restock_date present => "Estimated delivery: <date>"
-      - else => "Estimated restock in <backorder lead time>"
-{%- endcomment -%}
-
-{%- if status_is_in_stock and v.inventory_quantity > 0 -%}
-  <p class="product__text inline-richtext prod-ship-note">
-    <strong>In Stock</strong>
-    {%- if effective_stocked_lead_time != blank -%}
-      <br>
-      {{ effective_stocked_lead_time }}
-    {%- endif -%}
-  </p>
-
-{%- elsif effective_stock_status == 'In Stock' and v.inventory_quantity == 0 -%}
-  <p class="product__text inline-richtext prod-ship-note">
-    <strong>On Backorder</strong>
-    <br>
-    {%- if effective_restock_date != blank -%}
-      Estimated delivery: {{ effective_restock_date }}
-    {%- else -%}
-      {%- if effective_backorder_lead_time != blank -%}
-        Estimated restock in {{ effective_backorder_lead_time }}
-      {%- else -%}
-        Estimated restock: TBD
+<div data-stock-message-wrap>
+  <p class="product__text inline-richtext prod-ship-note" data-stock-message {% if v.inventory_quantity == 0 and effective_stock_status != 'In Stock' and status_is_in_stock == false %}hidden{% endif %}>
+    {%- if status_is_in_stock and v.inventory_quantity > 0 -%}
+      <strong>In Stock</strong>
+      {%- if effective_stocked_lead_time != blank -%}
+        <br>{{ effective_stocked_lead_time }}
       {%- endif -%}
+    {%- elsif effective_stock_status == 'In Stock' and v.inventory_quantity == 0 -%}
+      <strong>On Backorder</strong><br>
+      {%- if effective_restock_date != blank -%}
+        Estimated delivery: {{ effective_restock_date }}
+      {%- else -%}
+        {%- if effective_backorder_lead_time != blank -%}
+          Estimated restock in {{ effective_backorder_lead_time }}
+        {%- else -%}
+          Estimated restock: TBD
+        {%- endif -%}
+      {%- endif -%}
+    {%- else -%}
+      {%- comment -%} Default: hide if rules don’t match {%- endcomment -%}
     {%- endif -%}
   </p>
-{%- endif -%}
+</div>
 
+<script type="application/json" data-stock-logic-map>
+{
+  "product": {
+    "info_lead_time": {{ product.metafields.custom.info_lead_time.value | default: '' | json }},
+    "info_backordered_lead_time": {{ product.metafields.custom.info_backordered_lead_time.value | default: '' | json }},
+    "info_stock_status": {{ product.metafields.custom.info_stock_status.value | default: '' | json }},
+    "info_restock_date": {{ product.metafields.custom.info_restock_date.value | default: '' | json }}
+  },
+  "variants": {
+    {%- for variant in product.variants -%}
+      "{{ variant.id }}": {
+        "stock_status": {{ variant.metafields.custom.stock_status.value | default: '' | json }},
+        "info_restock_date": {{ variant.metafields.custom.info_restock_date.value | default: '' | json }},
+        "info_backordred_lead_time_override": {{ variant.metafields.custom.info_backordred_lead_time_override.value | default: '' | json }},
+        "info_stocked_lead_time_override": {{ variant.metafields.custom.info_stocked_lead_time_override.value | default: '' | json }}
+      }{% unless forloop.last %},{% endunless %}
+    {%- endfor -%}
+  }
+}
+</script>
 
+<script>
+(() => {
+  const root = document.getElementById('MainProduct-{{ section.id }}') || document;
+
+  const msgEl = root.querySelector('[data-stock-message]');
+  const mapEl = root.querySelector('script[data-stock-logic-map]');
+  if (!msgEl || !mapEl) return;
+
+  let map = {};
+  try { map = JSON.parse(mapEl.textContent || '{}'); } catch (e) {}
+
+  const p = map.product || {};
+  const variants = map.variants || {};
+
+  const normalize = (x) => (x == null ? '' : String(x)).trim();
+
+  const buildHtml = (variant) => {
+    const id = variant?.id;
+    const invQty = Number(variant?.inventory_quantity);
+
+    const o = variants[String(id)] || {};
+
+    const effectiveStockStatus = normalize(o.stock_status) || normalize(p.info_stock_status);
+    const statusIsInStock = (effectiveStockStatus === '' || effectiveStockStatus === 'In Stock');
+
+    const effectiveRestockDate = normalize(o.info_restock_date) || normalize(p.info_restock_date);
+    const effectiveStockedLeadTime = normalize(o.info_stocked_lead_time_override) || normalize(p.info_lead_time);
+    const effectiveBackorderLeadTime = normalize(o.info_backordred_lead_time_override) || normalize(p.info_backordered_lead_time);
+
+    // Rule 1
+    if (statusIsInStock && invQty > 0) {
+      return `<strong>In Stock</strong>${effectiveStockedLeadTime ? `<br>${escapeHtml(effectiveStockedLeadTime)}` : ''}`;
+    }
+
+    // Rule 2 (must explicitly be "In Stock")
+    if (effectiveStockStatus === 'In Stock' && invQty === 0) {
+      if (effectiveRestockDate) {
+        return `<strong>On Backorder</strong><br>Estimated delivery: ${escapeHtml(effectiveRestockDate)}`;
+      }
+      if (effectiveBackorderLeadTime) {
+        return `<strong>On Backorder</strong><br>Estimated restock in ${escapeHtml(effectiveBackorderLeadTime)}`;
+      }
+      return `<strong>On Backorder</strong>`;
+    }
+
+    return '';
+  };
+
+  const escapeHtml = (s) =>
+    String(s)
+      .replaceAll('&', '&amp;')
+      .replaceAll('<', '&lt;')
+      .replaceAll('>', '&gt;')
+      .replaceAll('"', '&quot;')
+      .replaceAll("'", '&#039;');
+
+  const setMessageFromVariant = (variant) => {
+    const html = buildHtml(variant);
+    if (html) {
+      msgEl.innerHTML = html;
+      msgEl.hidden = false;
+    } else {
+      msgEl.innerHTML = '';
+      msgEl.hidden = true;
+    }
+  };
+
+  // Initial render using Liquid-selected variant values
+  setMessageFromVariant({
+    id: {{ product.selected_or_first_available_variant.id | json }},
+    inventory_quantity: {{ product.selected_or_first_available_variant.inventory_quantity | default: 0 | json }}
+  });
+
+  // Best case: Dawn fires variant:change with full variant object
+  document.addEventListener('variant:change', (event) => {
+    const v = event?.detail?.variant;
+    if (v?.id != null) setMessageFromVariant(v);
+  });
+
+  // Fallback: watch id input changes and fetch product.js for inventory_quantity
+  const fetchVariantFromProductJs = async (variantId) => {
+    try {
+      const res = await fetch(`{{ routes.root_url }}products/{{ product.handle }}.js`);
+      if (!res.ok) return null;
+      const data = await res.json();
+      return (data.variants || []).find(x => String(x.id) === String(variantId)) || null;
+    } catch (e) {
+      return null;
+    }
+  };
+
+  root.addEventListener('change', async (event) => {
+    const t = event.target;
+    if (!t || t.name !== 'id') return;
+    const v = await fetchVariantFromProductJs(t.value);
+    if (v) setMessageFromVariant(v);
+  });
+})();
+</script>
               {%- assign v = product.selected_or_first_available_variant -%}
               {%- assign vsize = v.metafields.custom['v-size'].value | default: '' -%}
 
