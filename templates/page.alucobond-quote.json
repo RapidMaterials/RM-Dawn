@@ -23,7 +23,7 @@
         "mobile_image": "{{ page.metafields.custom.header_image.value }}",
         "alt_text": "Banner image",
         "link": "",
-        "desktop_height": 100,
+        "desktop_height": 120,
         "mobile_height": 100,
         "object_fit": "cover",
         "border_radius": 0,
@@ -44,7 +44,7 @@
         "heading_B7wnrH": {
           "type": "heading",
           "settings": {
-            "heading": "Get a Quote",
+            "heading": "{{ page.title }}",
             "heading_size": "h1",
             "heading_tag": "h2"
           }
