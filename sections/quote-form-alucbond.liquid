@@ -230,106 +230,8 @@
   </fieldset>
 </div>
 
-         {%- comment -%} Q3: Size / thickness inquiry (multi-select checkboxes) {%- endcomment -%}
-<div class="field" style="flex-direction: column;">
-<label style="font-size: 1.6rem; font-weight: 500; padding:1.5rem 1.5rem .5rem 2rem"> What size are you inquiring about? <span aria-hidden="true">*</span> </label>
-<div class="option-wrapper" style="padding: 0 1.5rem 1.5rem">  
-<div class="caption-large" >
-    Select all that apply.
-  </div>
-  <div class="quote-form__checkboxes" style="display: grid; gap: 0;">
-    <label style="display:flex; align-items:center; gap:10px;">
-      <input
-        type="checkbox"
-        name="contact[Size - 4mm FR]"
-        value="Yes"
-        {% if form['Size - 4mm FR'] == 'Yes' %}checked{% endif %}
-      >
-      4mm FR
-    </label>
+      
 
-    <label style="display:flex; align-items:center; gap:10px;">
-      <input
-        type="checkbox"
-        name="contact[Size - 0.040]"
-        value="Yes"
-        {% if form['Size - 0.040'] == 'Yes' %}checked{% endif %}
-      >
-      0.040
-    </label>
-
-    <label style="display:flex; align-items:center; gap:10px;">
-      <input
-        type="checkbox"
-        name="contact[Size - 0.063]"
-        value="Yes"
-        {% if form['Size - 0.063'] == 'Yes' %}checked{% endif %}
-      >
-      0.063
-    </label>
-
-    <label style="display:flex; align-items:center; gap:10px;">
-      <input
-        type="checkbox"
-        name="contact[Size - 0.080]"
-        value="Yes"
-        {% if form['Size - 0.080'] == 'Yes' %}checked{% endif %}
-      >
-      0.080
-    </label>
-  </div>
-  </div>
-
-</div>
-{%- comment -%} Q5: Color flexibility (radio buttons) {%- endcomment -%}
-<div class="field">
-  <fieldset style="border: 0; padding: 0; margin: 0;">
-    <legend class="field__label" >
-      Are your color requirements flexible? <span aria-hidden="true">*</span>
-    </legend>
-
-    <div style="display: flex; gap: 20px; flex-wrap: wrap;">
-      <label style="display: flex; align-items: center; gap: 6px;">
-        <input
-          type="radio"
-          name="contact[Color Flexibility]"
-          value="Yes"
-          {% if form['Color Flexibility'] == 'Yes' %}checked{% endif %}
-          required
-        >
-        Yes
-      </label>
-
-      <label style="display: flex; align-items: center; gap: 6px;">
-        <input
-          type="radio"
-          name="contact[Color Flexibility]"
-          value="No"
-          {% if form['Color Flexibility'] == 'No' %}checked{% endif %}
-        >
-        No
-      </label>
-    </div>
-  </fieldset>
-</div>
-          {%- comment -%} Q6: Quantity of sheets + helper sizes {%- endcomment -%}
-          <div class="field">
-            <input
-              class="field__input"
-              type="number"
-              min="1"
-              step="1"
-              id="ContactForm-qty"
-              name="contact[Sheet Quantity]"
-              value="{{ form['Sheet Quantity'] }}"
-              placeholder="Number of sheets"
-              required
-              aria-required="true"
-            >
-            <label class="field__label" for="ContactForm-qty">
-              How many sheets/panels? <span aria-hidden="true">*</span>
-            </label>
-          </div>
 
 
 {%- comment -%} Line items (up to 3) {%- endcomment -%}
@@ -393,6 +295,39 @@
     If you need more than 3 line items, list the additional ones in the notes field below.
   </div>
 </div>
+
+{%- comment -%} Q5: Color flexibility (radio buttons) {%- endcomment -%}
+<div class="field">
+  <fieldset style="border: 0; padding: 0; margin: 0;">
+    <legend class="field__label" >
+      Are your color requirements flexible? <span aria-hidden="true">*</span>
+    </legend>
+
+    <div style="display: flex; gap: 20px; flex-wrap: wrap;">
+      <label style="display: flex; align-items: center; gap: 6px;">
+        <input
+          type="radio"
+          name="contact[Color Flexibility]"
+          value="Yes"
+          {% if form['Color Flexibility'] == 'Yes' %}checked{% endif %}
+          required
+        >
+        Yes
+      </label>
+
+      <label style="display: flex; align-items: center; gap: 6px;">
+        <input
+          type="radio"
+          name="contact[Color Flexibility]"
+          value="No"
+          {% if form['Color Flexibility'] == 'No' %}checked{% endif %}
+        >
+        No
+      </label>
+    </div>
+  </fieldset>
+</div>
+
 
 
           {%- comment -%} Q7: Ship-to address {%- endcomment -%}
