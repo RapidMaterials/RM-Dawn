@@ -804,7 +804,7 @@ button#ModalClose-ReturnDetails, .product-popup-modal__toggle {
     // If stock_status = In Stock AND inventory_quantity == 0 => On Backorder
     if (effectiveStatus === 'In Stock' && invQty === 0) {
       if (effectiveRestock) {
-        return `<strong>On Backorder</strong><br>Estimated delivery: ${escapeHtml(effectiveRestock)}`;
+        return `<strong>On Backorder</strong><br>Estimated restock: ${escapeHtml(effectiveRestock)}`;
       }
       if (effectiveBackLead) {
         return `<strong>On Backorder</strong><br>Estimated restock in ${escapeHtml(effectiveBackLead)}`;
