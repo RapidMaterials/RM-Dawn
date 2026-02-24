@@ -82,7 +82,7 @@
             "enabled": true,
             "heading": "Brand Color Charts",
             "heading_tag": "h3",
-            "text": "<ul><li></li></ul>"
+            "text": "<p>ALFREX → View Colors</p><p>Alpolic  → View Colors</p><p>Alucoil → View Colors</p><p>ALUCOBOND® → View Colors<br/><br/>Pac-Clad → View Colors</p><p>Reynobond → View Colors</p>"
           }
         }
       },
@@ -100,7 +100,7 @@
         "column_split": "split-70-30",
         "show_title": false,
         "title_tag": "h1",
-        "right_color_scheme": "scheme-2",
+        "right_color_scheme": "scheme-5",
         "padding_top": 36,
         "padding_bottom": 36
       }
