@@ -58,12 +58,12 @@
     "1ba91c78-35d2-4b79-9318-e724162867ed": {
       "type": "main-page",
       "custom_css": [
-        ".page-width {max-width: 900px;}"
+        ".page-width {max-width: 1200px;}"
       ],
       "settings": {
         "content_width": "narrow",
         "layout": "two_column",
-        "column_split": "split-60-40",
+        "column_split": "split-70-30",
         "show_title": false,
         "title_tag": "h1",
         "right_color_scheme": "scheme-2",
