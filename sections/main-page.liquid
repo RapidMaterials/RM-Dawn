@@ -12,15 +12,86 @@
       padding-bottom: {{ section.settings.padding_bottom }}px;
     }
   }
+
+  .main-page-grid-{{ section.id }} {
+    display: grid;
+    gap: 2rem;
+  }
+
+  @media screen and (min-width: 990px) {
+    .main-page-grid-{{ section.id }} {
+      grid-template-columns: 1fr 1fr;
+      align-items: start;
+    }
+  }
 {%- endstyle -%}
 
-<div class="page-width page-width--narrow section-{{ section.id }}-padding">
-  <h1 class="main-page-title page-title h0{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
-    {{ page.title | escape }}
-  </h1>
-  <div class="rte{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
-    {{ page.content }}
-  </div>
+{%- assign container_class = '' -%}
+{%- case section.settings.content_width -%}
+  {%- when 'narrow' -%}
+    {%- assign container_class = 'page-width page-width--narrow' -%}
+  {%- when 'normal' -%}
+    {%- assign container_class = 'page-width' -%}
+  {%- when 'full' -%}
+    {%- assign container_class = '' -%}
+{%- endcase -%}
+
+{%- assign title_tag = section.settings.title_tag | default: 'h1' -%}
+{%- assign side_title_tag = section.settings.side_title_tag | default: 'h2' -%}
+
+<div class="{% unless container_class == blank %}{{ container_class }}{% endunless %} section-{{ section.id }}-padding">
+
+  {%- if section.settings.layout == 'two_column' -%}
+    <div class="main-page-grid-{{ section.id }}">
+
+      <!-- Column 1 -->
+      <div>
+        {%- if section.settings.show_title -%}
+          <{{ title_tag }}
+            class="main-page-title page-title h0{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
+            {{ page.title | escape }}
+          </{{ title_tag }}>
+        {%- endif -%}
+
+        <div class="rte{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+          {{ page.content }}
+        </div>
+      </div>
+
+      <!-- Column 2 -->
+      <div>
+        {%- assign side_heading_stripped = section.settings.side_heading | strip -%}
+
+        {%- if section.settings.show_side_heading and side_heading_stripped != blank -%}
+          <{{ side_title_tag }}
+            class="h2{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
+            {{ side_heading_stripped | escape }}
+          </{{ side_title_tag }}>
+        {%- endif -%}
+
+        {%- if section.settings.side_richtext != blank -%}
+          <div class="rte{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+            {{ section.settings.side_richtext }}
+          </div>
+        {%- endif -%}
+      </div>
+
+    </div>
+
+  {%- else -%}
+
+    {%- if section.settings.show_title -%}
+      <{{ title_tag }}
+        class="main-page-title page-title h0{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
+        {{ page.title | escape }}
+      </{{ title_tag }}>
+    {%- endif -%}
+
+    <div class="rte{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+      {{ page.content }}
+    </div>
+
+  {%- endif -%}
 </div>
 
 {% schema %}
@@ -30,8 +101,92 @@
   "class": "section",
   "settings": [
     {
+      "type": "select",
+      "id": "content_width",
+      "label": "Content width",
+      "default": "narrow",
+      "options": [
+        { "value": "narrow", "label": "Narrow" },
+        { "value": "normal", "label": "Normal" },
+        { "value": "full", "label": "Full width" }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "layout",
+      "label": "Layout",
+      "default": "full_width",
+      "options": [
+        { "value": "full_width", "label": "Full width (1 column)" },
+        { "value": "two_column", "label": "Two column" }
+      ]
+    },
+
+    {
       "type": "header",
-      "content": "t:sections.all.padding.section_padding_heading"
+      "content": "Page title"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_title",
+      "label": "Show page title",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "title_tag",
+      "label": "Page title heading tag",
+      "default": "h1",
+      "options": [
+        { "value": "h1", "label": "H1" },
+        { "value": "h2", "label": "H2" },
+        { "value": "h3", "label": "H3" },
+        { "value": "h4", "label": "H4" },
+        { "value": "h5", "label": "H5" },
+        { "value": "h6", "label": "H6" }
+      ]
+    },
+
+    {
+      "type": "header",
+      "content": "Second column (only used in Two column layout)"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_side_heading",
+      "label": "Show second column heading",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "side_heading",
+      "label": "Second column heading text",
+      "default": "Additional information"
+    },
+    {
+      "type": "select",
+      "id": "side_title_tag",
+      "label": "Second column heading tag",
+      "default": "h2",
+      "options": [
+        { "value": "h1", "label": "H1" },
+        { "value": "h2", "label": "H2" },
+        { "value": "h3", "label": "H3" },
+        { "value": "h4", "label": "H4" },
+        { "value": "h5", "label": "H5" },
+        { "value": "h6", "label": "H6" }
+      ]
+    },
+    {
+      "type": "richtext",
+      "id": "side_richtext",
+      "label": "Second column rich text",
+      "default": "<p></p>"
+    },
+
+    {
+      "type": "header",
+      "content": "Section padding"
     },
     {
       "type": "range",
@@ -40,7 +195,7 @@
       "max": 100,
       "step": 4,
       "unit": "px",
-      "label": "t:sections.all.padding.padding_top",
+      "label": "Padding top",
       "default": 36
     },
     {
@@ -50,7 +205,7 @@
       "max": 100,
       "step": 4,
       "unit": "px",
-      "label": "t:sections.all.padding.padding_bottom",
+      "label": "Padding bottom",
       "default": 36
     }
   ]
