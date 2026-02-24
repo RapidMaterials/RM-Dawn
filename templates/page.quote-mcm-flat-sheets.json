@@ -62,7 +62,7 @@
         "layout": "two_column",
         "show_title": false,
         "title_tag": "h1",
-        "show_side_heading": false,
+        "show_side_heading": true,
         "side_heading": "Additional information",
         "side_title_tag": "h2",
         "side_richtext": "",
