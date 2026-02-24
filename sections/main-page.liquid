@@ -34,6 +34,16 @@
     .main-page-grid-{{ section.id }}.split-30-70 { grid-template-columns: 30% 70%; }
     .main-page-grid-{{ section.id }}.split-20-80 { grid-template-columns: 20% 80%; }
   }
+
+  /* Right column inner padding so color scheme background has breathing room */
+  .main-page-right-inner-{{ section.id }} {
+    padding: 20px;
+    border-radius: 8px;
+  }
+
+  .main-page-right-inner-{{ section.id }} .rte p:first-child {
+    margin-top: 0;
+  }
 {%- endstyle -%}
 
 {%- assign container_class = '' -%}
@@ -69,22 +79,24 @@
         </div>
       </div>
 
-      <!-- Column 2 -->
-      <div>
-        {%- assign side_heading_stripped = section.settings.side_heading | strip -%}
+      <!-- Column 2 (wrapped in color scheme) -->
+      <div class="color-{{ section.settings.right_color_scheme }} gradient">
+        <div class="main-page-right-inner-{{ section.id }}">
+          {%- assign side_heading_stripped = section.settings.side_heading | strip -%}
 
-        {%- if section.settings.show_side_heading and side_heading_stripped != blank -%}
-          <{{ side_title_tag }}
-            class="h2{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
-            {{ side_heading_stripped | escape }}
-          </{{ side_title_tag }}>
-        {%- endif -%}
+          {%- if section.settings.show_side_heading and side_heading_stripped != blank -%}
+            <{{ side_title_tag }}
+              class="h2{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
+              {{ side_heading_stripped | escape }}
+            </{{ side_title_tag }}>
+          {%- endif -%}
 
-        {%- if section.settings.side_richtext != blank -%}
-          <div class="rte{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
-            {{ section.settings.side_richtext }}
-          </div>
-        {%- endif -%}
+          {%- if section.settings.side_richtext != blank -%}
+            <div class="rte{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+              {{ section.settings.side_richtext }}
+            </div>
+          {%- endif -%}
+        </div>
       </div>
 
     </div>
@@ -176,6 +188,12 @@
     {
       "type": "header",
       "content": "Second column (only used in Two column layout)"
+    },
+    {
+      "type": "color_scheme",
+      "id": "right_color_scheme",
+      "label": "Right column color scheme",
+      "default": "scheme-1"
     },
     {
       "type": "checkbox",
