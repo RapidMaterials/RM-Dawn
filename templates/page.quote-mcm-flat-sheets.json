@@ -57,6 +57,40 @@
     },
     "1ba91c78-35d2-4b79-9318-e724162867ed": {
       "type": "main-page",
+      "blocks": {
+        "right_item_C8PPQR": {
+          "type": "right_item",
+          "settings": {
+            "enabled": true,
+            "heading": "When to use this form",
+            "heading_tag": "h3",
+            "text": "<ul><li>The color or finish you need is not currently in stock</li><li>You require manufacturer-confirmed lead times</li><li>You need freight reviewed for a specific delivery scenario</li></ul><p>In-stock materials and current availability are listed directly on product pages and may be used for bidding purposes.</p>"
+          }
+        },
+        "right_item_T4AnxR": {
+          "type": "right_item",
+          "settings": {
+            "enabled": true,
+            "heading": "Lead Times",
+            "heading_tag": "h3",
+            "text": "<p>Standard non-stock colors: 2–4 weeks<br/>Custom finishes: 6–10+ weeks<br/><br/>Lead times vary by brand and order size. Indicating flexibility in the form may result in faster turnaround options.</p>"
+          }
+        },
+        "right_item_WMkh6R": {
+          "type": "right_item",
+          "settings": {
+            "enabled": true,
+            "heading": "Brand Color Charts",
+            "heading_tag": "h3",
+            "text": "<ul><li></li></ul>"
+          }
+        }
+      },
+      "block_order": [
+        "right_item_C8PPQR",
+        "right_item_T4AnxR",
+        "right_item_WMkh6R"
+      ],
       "custom_css": [
         ".page-width {max-width: 1200px;}"
       ],
@@ -67,10 +101,6 @@
         "show_title": false,
         "title_tag": "h1",
         "right_color_scheme": "scheme-2",
-        "show_side_heading": true,
-        "side_heading": "Additional information",
-        "side_title_tag": "h2",
-        "side_richtext": "",
         "padding_top": 36,
         "padding_bottom": 36
       }
