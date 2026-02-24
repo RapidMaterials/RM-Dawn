@@ -66,6 +66,7 @@
         "column_split": "split-60-40",
         "show_title": false,
         "title_tag": "h1",
+        "right_color_scheme": "scheme-2",
         "show_side_heading": true,
         "side_heading": "Additional information",
         "side_title_tag": "h2",
