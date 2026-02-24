@@ -92,7 +92,7 @@
 
       <!-- Column 2 (wrapped in color scheme) -->
       <div class="color-{{ section.settings.right_color_scheme }} gradient">
-        <div class="main-page-right-inner-{{ section.id }}">
+        <div class="col-right main-page-right-inner-{{ section.id }}">
           {%- assign has_right_blocks = false -%}
           {%- for block in section.blocks -%}
             {%- if block.type == 'right_item' -%}
