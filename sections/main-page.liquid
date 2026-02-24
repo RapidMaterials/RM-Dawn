@@ -20,9 +20,19 @@
 
   @media screen and (min-width: 990px) {
     .main-page-grid-{{ section.id }} {
+      /* Default fallback */
       grid-template-columns: 1fr 1fr;
       align-items: start;
     }
+
+    /* Column split options (apply only on desktop) */
+    .main-page-grid-{{ section.id }}.split-50-50 { grid-template-columns: 50% 50%; }
+    .main-page-grid-{{ section.id }}.split-60-40 { grid-template-columns: 60% 40%; }
+    .main-page-grid-{{ section.id }}.split-70-30 { grid-template-columns: 70% 30%; }
+    .main-page-grid-{{ section.id }}.split-80-20 { grid-template-columns: 80% 20%; }
+    .main-page-grid-{{ section.id }}.split-40-60 { grid-template-columns: 40% 60%; }
+    .main-page-grid-{{ section.id }}.split-30-70 { grid-template-columns: 30% 70%; }
+    .main-page-grid-{{ section.id }}.split-20-80 { grid-template-columns: 20% 80%; }
   }
 {%- endstyle -%}
 
@@ -38,11 +48,12 @@
 
 {%- assign title_tag = section.settings.title_tag | default: 'h1' -%}
 {%- assign side_title_tag = section.settings.side_title_tag | default: 'h2' -%}
+{%- assign split_class = section.settings.column_split | default: 'split-50-50' -%}
 
 <div class="{% unless container_class == blank %}{{ container_class }}{% endunless %} section-{{ section.id }}-padding">
 
   {%- if section.settings.layout == 'two_column' -%}
-    <div class="main-page-grid-{{ section.id }}">
+    <div class="main-page-grid-{{ section.id }} {{ split_class }}">
 
       <!-- Column 1 -->
       <div>
@@ -119,6 +130,21 @@
       "options": [
         { "value": "full_width", "label": "Full width (1 column)" },
         { "value": "two_column", "label": "Two column" }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "column_split",
+      "label": "Two column split (desktop)",
+      "default": "split-50-50",
+      "options": [
+        { "value": "split-50-50", "label": "50 / 50" },
+        { "value": "split-60-40", "label": "60 / 40" },
+        { "value": "split-70-30", "label": "70 / 30" },
+        { "value": "split-80-20", "label": "80 / 20" },
+        { "value": "split-40-60", "label": "40 / 60" },
+        { "value": "split-30-70", "label": "30 / 70" },
+        { "value": "split-20-80", "label": "20 / 80" }
       ]
     },
 
