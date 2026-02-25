@@ -80,17 +80,6 @@
             "link": "shopify://collections/brand-american-master-gutters"
           }
         },
-        "column_cNkqJY": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/buschmann_logo_transparent.png",
-            "title": "Buschmann Tools",
-            "heading_tag": "h2",
-            "text": "",
-            "link_label": "Shop",
-            "link": "shopify://collections/buschmann-tools"
-          }
-        },
         "column_4chJfV": {
           "type": "column",
           "settings": {
@@ -100,6 +89,17 @@
             "text": "",
             "link_label": "Shop",
             "link": "shopify://collections/brand-arconic"
+          }
+        },
+        "column_cNkqJY": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/buschmann_logo_transparent.png",
+            "title": "Buschmann Tools",
+            "heading_tag": "h2",
+            "text": "",
+            "link_label": "Shop",
+            "link": "shopify://collections/buschmann-tools"
           }
         },
         "column_rhWpy3": {
@@ -133,6 +133,17 @@
             "text": "",
             "link_label": "Shop",
             "link": "shopify://collections/freund-tools"
+          }
+        },
+        "column_KdGJzF": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/GutterBrush_Rectangle_Logo_Randy_New_3x_1.avif",
+            "title": "GutterBrush",
+            "heading_tag": "h2",
+            "text": "",
+            "link_label": "Shop",
+            "link": "shopify://collections/brand-gutterbrush"
           }
         },
         "column_fttj3V": {
@@ -293,11 +304,12 @@
       "block_order": [
         "column_dRBAwJ",
         "column_LWtCBx",
-        "column_cNkqJY",
         "column_4chJfV",
+        "column_cNkqJY",
         "column_rhWpy3",
         "column_8CrDq4",
         "column_3KBHJp",
+        "column_KdGJzF",
         "column_fttj3V",
         "column_XG4xcW",
         "column_kUVcRa",
