@@ -585,7 +585,7 @@
       "shipping_errors": {
         "title": "Shipping Rate Unavailable",
         "shipping_method_not_available_generic": {
-          "one": "We couldn’t retrieve shipping rates for this address. Please double-check that your street address is entered correctly and select a verified address from the dropdown suggestions. If you're still having trouble, contact us at info@rapidmaterials.com with a screenshot of your cart and shipping address and we’ll get you a quote right away."
+          "one": "<div>   <p><strong>We couldn’t validate your shipping address, so rates can’t be returned.</strong></p>    <ul>     <li><strong>No PO Boxes:</strong> We can’t ship to PO Boxes. Make sure your address isn’t a PO Box.</li>     <li><strong>Use the verified suggestion:</strong> Start typing your address and <strong>select one of the dropdown suggestions</strong> to confirm it’s valid.</li>     <li><strong>Double-check basics:</strong> Street number, ZIP code, and state are correct (and match each other).</li>   </ul>    <p>     <strong>Still stuck?</strong>     Email <a href=\"mailto:info@rapidmaterials.com\">info@rapidmaterials.com</a> with a screenshot of your cart and the shipping address, and we’ll send a quote.   </p> </div>"
         }
       },
       "delivery_options": {
