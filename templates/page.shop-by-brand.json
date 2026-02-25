@@ -13,6 +13,12 @@
       "type": "main-page",
       "disabled": true,
       "settings": {
+        "content_width": "narrow",
+        "layout": "full_width",
+        "column_split": "split-50-50",
+        "show_title": true,
+        "title_tag": "h1",
+        "right_color_scheme": "",
         "padding_top": 28,
         "padding_bottom": 28
       }
@@ -42,6 +48,7 @@
       "settings": {
         "desktop_content_position": "center",
         "content_alignment": "center",
+        "content_max_width": 900,
         "color_scheme": "",
         "full_width": true,
         "padding_top": 40,
@@ -87,12 +94,12 @@
         "column_4chJfV": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/Equitone_logo_transparent.png",
-            "title": "Equitone",
+            "image": "shopify://shop_images/Arconic_logo__horizontal__svg.png",
+            "title": "Arconic",
             "heading_tag": "h2",
             "text": "",
             "link_label": "Shop",
-            "link": "shopify://collections/brand-equitone"
+            "link": "shopify://collections/brand-arconic"
           }
         },
         "column_rhWpy3": {
@@ -317,6 +324,8 @@
         "title": "",
         "heading_tag": "h2",
         "section_float": "clear",
+        "mobile_display": "mobile-show",
+        "desktop_display": "desktop-show",
         "heading_size": "h2",
         "col_alignment": "left",
         "image_width": "full",
