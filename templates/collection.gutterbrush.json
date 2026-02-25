@@ -215,8 +215,9 @@
         "column_iabz3Y"
       ],
       "custom_css": [
-        ".multicolumn-card__image-wrapper.multicolumn-card__image-wrapper--full-width.multicolumn-card-spacing {max-width: 50%; margin: auto !important;}",
-        "h2.title.inline-richtext.h1.left {width: 100%; text-align: center;}"
+        ".multicolumn-card__image-wrapper.multicolumn-card__image-wrapper--full-width.multicolumn-card-spacing {max-width: 30%; margin: auto !important;}",
+        "h2.title.inline-richtext.h1.left {width: 100%; text-align: center;}",
+        "a.link.animate-arrow {padding: 5px 10px; background-color: #235ba8; color: white;}"
       ],
       "name": "t:sections.multicolumn.presets.name",
       "settings": {
