@@ -31,7 +31,7 @@
         "mobile_image": "shopify://shop_images/cat_gutterbrush_header.png",
         "alt_text": "Banner image",
         "link": "",
-        "desktop_height": 130,
+        "desktop_height": 180,
         "mobile_height": 120,
         "object_fit": "cover",
         "border_radius": 0,
