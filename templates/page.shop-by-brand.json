@@ -204,12 +204,12 @@
         "column_GiTaEN": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/midwest_tools_logo-Horizontal_9ea95022-7f0f-4295-810c-5024b0702cb1.png",
-            "title": "MidWest Tools",
+            "image": "shopify://shop_images/NSG_LOGO_light_b1d30b90-46f3-43e8-afc9-92b00dbccd22.png",
+            "title": "Nordic Steel Gutters",
             "heading_tag": "h2",
             "text": "",
             "link_label": "Shop",
-            "link": "shopify://collections/brand-midwest-tools"
+            "link": "https://rapidmaterials.com/pages/nordic-6-painted-all-colors-landing-page"
           }
         },
         "column_aVrAAP": {
@@ -245,17 +245,6 @@
             "link": "shopify://collections/brand-s-5"
           }
         },
-        "column_VGnPij": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/sfs_logo_horizontal_3bd11b3e-6b62-4e9a-8bde-216e5ec9b76a.png",
-            "title": "SFS",
-            "heading_tag": "h2",
-            "text": "",
-            "link_label": "Shop",
-            "link": "shopify://collections/brand-sfs"
-          }
-        },
         "column_ziffQU": {
           "type": "column",
           "settings": {
@@ -267,15 +256,15 @@
             "link": "shopify://collections/brand-stubai"
           }
         },
-        "column_kLhpkj": {
+        "column_kecb4N": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/swenson-shear_logo_transparent.png",
-            "title": "Swenson Shear",
+            "image": "shopify://shop_images/trespa-logo.png",
+            "title": "Trespa",
             "heading_tag": "h2",
             "text": "",
             "link_label": "Shop",
-            "link": "shopify://collections/swenson-shear"
+            "link": "shopify://collections/brand-stubai"
           }
         },
         "column_bNDAaT": {
@@ -319,9 +308,8 @@
         "column_aVrAAP",
         "column_pmWFmc",
         "column_DC3dBx",
-        "column_VGnPij",
         "column_ziffQU",
-        "column_kLhpkj",
+        "column_kecb4N",
         "column_bNDAaT",
         "column_98w7JW"
       ],
