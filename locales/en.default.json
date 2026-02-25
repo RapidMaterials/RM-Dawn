@@ -585,7 +585,7 @@
       "shipping_errors": {
         "title": "Shipping Rate Unavailable",
         "shipping_method_not_available_generic": {
-          "one": "Shipping rates cannot be returned at this time. Please contact us at info@rapidmaterials.com and include a screenshot of your cart so we can provide you with a quote."
+          "one": "We couldn’t retrieve shipping rates for this address. Please double-check that your street address is entered correctly and select a verified address from the dropdown suggestions. If you're still having trouble, contact us at info@rapidmaterials.com with a screenshot of your cart and shipping address and we’ll get you a quote right away."
         }
       },
       "delivery_options": {
