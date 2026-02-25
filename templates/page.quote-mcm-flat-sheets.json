@@ -73,7 +73,7 @@
             "enabled": true,
             "heading": "Lead Times",
             "heading_tag": "h3",
-            "text": "<p>N<strong>on-stock colors:</strong> 2–4 weeks<br/><strong>Custom finishes:</strong> 6–10+ weeks<br/><br/>Lead times vary by brand and order size. Indicating flexibility in the form may result in faster turnaround options.</p>"
+            "text": "<p><strong>Non-stock colors:</strong> 2–4 weeks<br/><strong>Custom finishes:</strong> 6–10+ weeks<br/><br/>Lead times vary by brand and order size. Indicating flexibility in the form may result in faster turnaround options.</p>"
           }
         },
         "right_item_WMkh6R": {
@@ -93,7 +93,8 @@
       ],
       "custom_css": [
         ".page-width {max-width: 1200px;}",
-        "h3{font-weight:bold;font-size:1.2em;}"
+        "h3 {font-weight: bold; font-size: 1.2em; color: #79ba5b;}",
+        ".col-right div {color: #000; line-height: 1.2;}"
       ],
       "settings": {
         "content_width": "narrow",
@@ -101,7 +102,7 @@
         "column_split": "split-70-30",
         "show_title": false,
         "title_tag": "h1",
-        "right_color_scheme": "scheme-5",
+        "right_color_scheme": "scheme-2",
         "padding_top": 36,
         "padding_bottom": 36
       }
