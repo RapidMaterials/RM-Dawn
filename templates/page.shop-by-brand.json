@@ -223,6 +223,17 @@
             "link": "shopify://collections/brand-perkeo"
           }
         },
+        "column_jPaXt8": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Rapid-Logo-Wide-Color-1200px_225eb96d-06aa-4218-9d81-ff19fd72ce1e.png",
+            "title": "Rapid Materials",
+            "heading_tag": "h2",
+            "text": "",
+            "link_label": "Shop",
+            "link": "shopify://collections/brand-rapid-materials"
+          }
+        },
         "column_pmWFmc": {
           "type": "column",
           "settings": {
@@ -306,6 +317,7 @@
         "column_feY6R7",
         "column_GiTaEN",
         "column_aVrAAP",
+        "column_jPaXt8",
         "column_pmWFmc",
         "column_DC3dBx",
         "column_ziffQU",
