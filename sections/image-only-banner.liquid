@@ -68,8 +68,8 @@
   /* Optional glow/blur circle */
   .rm-banner-{{ section.id }} .rm-banner__glow {
     position: absolute;
-    width: {{ section.settings.glow_size_desktop }}px;
-    height: {{ section.settings.glow_size_desktop }}px;
+    width: {{ section.settings.glow_width_desktop }}px;
+    height: {{ section.settings.glow_height_desktop }}px;
     border-radius: 999px;
     filter: blur({{ section.settings.glow_blur }}px);
     opacity: {{ section.settings.glow_opacity | times: 0.01 }};
@@ -81,8 +81,8 @@
 
   @media screen and (max-width: 749px) {
     .rm-banner-{{ section.id }} .rm-banner__glow {
-      width: {{ section.settings.glow_size_mobile }}px;
-      height: {{ section.settings.glow_size_mobile }}px;
+      width: {{ section.settings.glow_width_mobile }}px;
+      height: {{ section.settings.glow_height_mobile }}px;
     }
   }
 
@@ -337,23 +337,43 @@
     },
     {
       "type": "range",
-      "id": "glow_size_desktop",
+      "id": "glow_height_desktop",
       "min": 80,
       "max": 900,
       "step": 10,
       "unit": "px",
-      "label": "Glow size (desktop)",
+      "label": "Glow Height (desktop)",
+      "default": 380
+    },
+     {
+      "type": "range",
+      "id": "glow_width_desktop",
+      "min": 80,
+      "max": 900,
+      "step": 10,
+      "unit": "px",
+      "label": "Glow Width (desktop)",
       "default": 380
     },
     {
       "type": "range",
-      "id": "glow_size_mobile",
+      "id": "glow_height_mobile",
       "min": 80,
       "max": 700,
       "step": 10,
       "unit": "px",
-      "label": "Glow size (mobile)",
+      "label": "Glow Height (mobile)",
       "default": 260
+    },
+     {
+      "type": "range",
+      "id": "glow_width_mobile",
+      "min": 80,
+      "max": 900,
+      "step": 10,
+      "unit": "px",
+      "label": "Glow Width (mobile)",
+      "default": 380
     }
   ],
   "presets": [
