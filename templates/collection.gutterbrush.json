@@ -28,9 +28,12 @@
       "name": "Simple Banner Image",
       "settings": {
         "desktop_image": "shopify://shop_images/cat_gutterbrush_header_1.png",
-        "mobile_image": "shopify://shop_images/cat_gutterbrush_header_1.png",
         "alt_text": "Banner image",
         "link": "",
+        "desktop_object_x": 50,
+        "desktop_object_y": 50,
+        "mobile_object_x": 92,
+        "mobile_object_y": 50,
         "desktop_height": 180,
         "mobile_height": 100,
         "object_fit": "cover",
