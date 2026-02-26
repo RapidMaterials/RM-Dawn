@@ -32,20 +32,22 @@
         "alt_text": "Banner image",
         "link": "",
         "desktop_height": 180,
-        "mobile_height": 120,
+        "mobile_height": 100,
         "object_fit": "cover",
         "border_radius": 0,
         "loading": "lazy",
-        "logo_image": "shopify://shop_images/GutterBrush_Rectangle_Logo_Randy_New_3x_1.avif",
+        "logo_image": "shopify://shop_images/White_Logo_GB.webp",
         "logo_alt": "Logo",
         "logo_width_desktop": 280,
-        "logo_width_mobile": 180,
+        "logo_width_mobile": 200,
         "show_glow": true,
-        "glow_color": "white",
+        "glow_color": "black",
         "glow_opacity": 95,
         "glow_blur": 76,
-        "glow_size_desktop": 900,
-        "glow_size_mobile": 620
+        "glow_height_desktop": 120,
+        "glow_width_desktop": 690,
+        "glow_height_mobile": 260,
+        "glow_width_mobile": 380
       }
     },
     "image_with_text_zeHAbY": {
