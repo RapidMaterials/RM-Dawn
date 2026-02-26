@@ -248,6 +248,10 @@
         "buy_buttons_iTBGPN",
         "share_tmW87x"
       ],
+      "custom_css": [
+        ".product__tax.caption.rte {display: none;}",
+        "form#product-form-installment-featured--8730074415282 {display: none;}"
+      ],
       "name": "t:sections.featured-product.presets.name",
       "settings": {
         "product": "5-inch-gutterbrush-gutter-guards-fits-standard-k-style-residential-gutters-4-25-inch-diameter",
