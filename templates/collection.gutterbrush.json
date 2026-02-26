@@ -89,7 +89,7 @@
         "@media screen and (max-width: 749px) {.image-with-text__content {padding: 10px; } .image-with-text__media-item--small {max-width: 80% !important; } div#ImageWithText--template--20494261223602__image_with_text_zeHAbY {background-color: #ffffff00; } p.image-with-text__text.image-with-text__text--caption.subtitle.subtitle--large.subtitle {margin-top: 0; line-height: 1.3em; } h1.image-with-text__heading.inline-richtext.h1 {max-width: 250px; } .image-with-text__text.rte.body {text-align: center !important; }}"
       ],
       "settings": {
-        "image": "shopify://shop_images/6inch-gutter-brush.png",
+        "image": "shopify://shop_images/gutter-guard-box.webp",
         "height": "adapt",
         "desktop_image_width": "small",
         "layout": "image_first",
@@ -233,6 +233,12 @@
             "show_gift_card_recipient": false
           }
         },
+        "custom_liquid_mwWxq6": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<div class=\"gutter-dim-row\">\n  <div class=\"gutter-dim-left\">\n    <img \n      class=\"dim-img\"\n      src=\"//cdn.shopify.com/s/files/1/0645/2540/2290/files/5in-gutter-dim.png\"\n      alt=\"5 inch gutter dimensions\"\n    >\n  </div>\n\n  <div class=\"gutter-dim-right\">\n    <p>\n      ✔ Fits 5″ K-Style & 5″ Half-Round Gutters <br>\n      ✔ Ideal for Most Residential Homes\n    </p>\n  </div>\n</div>"
+          }
+        },
         "share_tmW87x": {
           "type": "share",
           "settings": {
@@ -246,11 +252,16 @@
         "variant_picker_eYymyq",
         "quantity_selector_BPabhn",
         "buy_buttons_iTBGPN",
+        "custom_liquid_mwWxq6",
         "share_tmW87x"
       ],
       "custom_css": [
         ".product__tax.caption.rte {display: none;}",
-        "form#product-form-installment-featured--8730074415282 {display: none;}"
+        "form#product-form-installment-featured--8730074415282 {display: none;}",
+        ".gutter-dim-row {display: flex; align-items: center; gap: 24px;}",
+        ".gutter-dim-left img {max-width: 200px; /* control size here */ width: 100%; height: auto; display: block;}",
+        ".gutter-dim-right {flex: 1;}",
+        "/* Mobile stack */@media (max-width: 749px) {.gutter-dim-row {flex-direction: column; text-align: center; }}"
       ],
       "name": "t:sections.featured-product.presets.name",
       "settings": {
@@ -261,67 +272,86 @@
         "constrain_to_viewport": true,
         "media_fit": "cover",
         "media_position": "left",
-        "image_zoom": "lightbox",
+        "image_zoom": "none",
         "hide_variants": true,
         "enable_video_looping": false,
         "padding_top": 36,
         "padding_bottom": 36
       }
     },
-    "multicolumn_w9jBii": {
-      "type": "multicolumn",
+    "featured_product_b978PV": {
+      "type": "featured-product",
       "blocks": {
-        "column_Xqpjnm": {
-          "type": "column",
+        "title_TAYJFr": {
+          "type": "title",
           "settings": {
-            "image": "shopify://shop_images/5in-gutter-dim.png",
-            "title": "Standard 5\" GutterBrush",
-            "heading_tag": "h2",
-            "text": "<p><strong>From $16.95</strong></p><p>✔ Fits 5″ K-Style & 5″ Half-Round Gutters<br/>✔ Ideal for Most Residential Homes</p>",
-            "link_label": "Shop 5\" GutterBrush",
-            "link": "shopify://products/5-inch-gutterbrush-gutter-guards-fits-standard-k-style-residential-gutters-4-25-inch-diameter"
+            "heading_size": "h1"
           }
         },
-        "column_iabz3Y": {
-          "type": "column",
+        "price_WxQrhE": {
+          "type": "price",
+          "settings": {}
+        },
+        "variant_picker_8XFwaU": {
+          "type": "variant_picker",
           "settings": {
-            "image": "shopify://shop_images/6in-gutter-dim.png",
-            "title": "Large 6\" GutterBrush",
-            "heading_tag": "h2",
-            "text": "<p><strong>From $16.95</strong></p><p>✔ Fits 6″ K-Style & 6″ Half-Round Gutters<br/>✔ Designed for Larger Roofs & Higher Water Volume</p>",
-            "link_label": "Shop 6\" GutterBrush",
-            "link": "shopify://products/6-inch-gutterbrush-gutter-guard-fits-large-residential-small-commercial-gutters-5-25-inch-diameter"
+            "picker_type": "dropdown",
+            "swatch_shape": "none"
+          }
+        },
+        "quantity_selector_HNmjth": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "buy_buttons_Xd644k": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false,
+            "show_gift_card_recipient": false
+          }
+        },
+        "custom_liquid_D7cDJz": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<div class=\"gutter-dim-row\">\n  <div class=\"gutter-dim-left\">\n    <img \n      class=\"dim-img\"\n      src=\"//cdn.shopify.com/s/files/1/0645/2540/2290/files/5in-gutter-dim.png\"\n      alt=\"5 inch gutter dimensions\"\n    >\n  </div>\n\n  <div class=\"gutter-dim-right\">\n    <p>\n      ✔ Fits 6″ K-Style & 6″ Half-Round Gutters <br>\n      ✔ Designed for Larger Roofs & Higher Water Volume\n    </p>\n  </div>\n</div>"
+          }
+        },
+        "share_N7DaM3": {
+          "type": "share",
+          "settings": {
+            "share_label": "Share"
           }
         }
       },
       "block_order": [
-        "column_Xqpjnm",
-        "column_iabz3Y"
+        "title_TAYJFr",
+        "price_WxQrhE",
+        "variant_picker_8XFwaU",
+        "quantity_selector_HNmjth",
+        "buy_buttons_Xd644k",
+        "custom_liquid_D7cDJz",
+        "share_N7DaM3"
       ],
       "custom_css": [
-        ".multicolumn-card__image-wrapper.multicolumn-card__image-wrapper--full-width.multicolumn-card-spacing {max-width: 30%; margin: auto !important;}",
-        "h2.title.inline-richtext.h1.left {width: 100%; text-align: center;}",
-        "a.link.animate-arrow {padding: 5px 10px; background-color: #235ba8; color: white;}"
+        ".product__tax.caption.rte {display: none;}",
+        "form#product-form-installment-featured--8730074251442 {display: none;}",
+        ".gutter-dim-row {display: flex; align-items: center; gap: 24px;}",
+        ".gutter-dim-left img {max-width: 200px; /* control size here */ width: 100%; height: auto; display: block;}",
+        ".gutter-dim-right {flex: 1;}",
+        "/* Mobile stack */@media (max-width: 749px) {.gutter-dim-row {flex-direction: column; text-align: center; }}"
       ],
-      "name": "t:sections.multicolumn.presets.name",
+      "name": "t:sections.featured-product.presets.name",
       "settings": {
-        "title": "Select the Right Fit for Your Gutter",
-        "heading_tag": "h2",
-        "section_float": "clear",
-        "mobile_display": "mobile-show",
-        "desktop_display": "desktop-show",
-        "heading_size": "h1",
-        "col_alignment": "left",
-        "image_width": "full",
-        "image_ratio": "adapt",
-        "button_label": "",
-        "button_link": "",
-        "columns_desktop": 2,
-        "column_alignment": "center",
-        "background_style": "primary",
-        "color_scheme": "scheme-dd1ea1f1-da37-4a01-9698-c601054d2161",
-        "columns_mobile": "1",
-        "swipe_on_mobile": false,
+        "product": "6-inch-gutterbrush-gutter-guard-fits-large-residential-small-commercial-gutters-5-25-inch-diameter",
+        "color_scheme": "",
+        "secondary_background": false,
+        "media_size": "small",
+        "constrain_to_viewport": true,
+        "media_fit": "cover",
+        "media_position": "left",
+        "image_zoom": "none",
+        "hide_variants": true,
+        "enable_video_looping": false,
         "padding_top": 36,
         "padding_bottom": 36
       }
@@ -515,7 +545,7 @@
     "multicolumn_ARiLGw",
     "177100621428404ac3",
     "featured_product_7D7FHj",
-    "multicolumn_w9jBii",
+    "featured_product_b978PV",
     "product-grid",
     "video_gallery_CKxRh4",
     "collapsible_content_Xec8tV"
