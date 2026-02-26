@@ -23,11 +23,26 @@
         "mobile_image": "{{ page.metafields.custom.header_image.value }}",
         "alt_text": "Banner image",
         "link": "",
+        "desktop_object_x": 50,
+        "desktop_object_y": 50,
+        "mobile_object_x": 50,
+        "mobile_object_y": 50,
         "desktop_height": 120,
         "mobile_height": 100,
         "object_fit": "cover",
         "border_radius": 0,
-        "loading": "lazy"
+        "loading": "lazy",
+        "logo_alt": "Logo",
+        "logo_width_desktop": 280,
+        "logo_width_mobile": 180,
+        "show_glow": false,
+        "glow_color": "white",
+        "glow_opacity": 45,
+        "glow_blur": 26,
+        "glow_height_desktop": 380,
+        "glow_width_desktop": 380,
+        "glow_height_mobile": 260,
+        "glow_width_mobile": 380
       }
     },
     "rich_text_3At6BY": {
@@ -82,7 +97,7 @@
             "enabled": true,
             "heading": "Brand Color Charts",
             "heading_tag": "h3",
-            "text": "<p>ALFREX → View Colors</p><p>Alpolic  → View Colors</p><p>Alucoil → View Colors</p><p>ALUCOBOND® → View Colors<br/><br/>Pac-Clad → View Colors</p><p>Reynobond → View Colors</p>"
+            "text": "<p><a href=\"https://cdn.shopify.com/s/files/1/0645/2540/2290/files/F-01-Alfrex-Standard-Product-Finishes.pdf?v=1771965829\" target=\"_blank\" title=\"Alfrex Color and Finishes\">ALFREX → View Colors</a></p><p>Alpolic  → View Colors</p><p>Alucoil → View Colors</p><p>ALUCOBOND® → View Colors<br/><br/>Pac-Clad → View Colors</p><p>Reynobond → View Colors</p>"
           }
         }
       },
