@@ -78,41 +78,78 @@ margin:auto;
             class="image-with-text__content image-with-text__content--{{ section.settings.desktop_content_position }} image-with-text__content--desktop-{{ section.settings.desktop_content_alignment }} image-with-text__content--mobile-{{ section.settings.mobile_content_alignment }} image-with-text__content--{{ section.settings.height }} content-container{% unless remove_color_classes %} gradient color-{{ section.settings.color_scheme }}{% else %} background-transparent{% endunless %}"
           >
             {%- for block in section.blocks -%}
-              {% case block.type %}
-                {%- when 'heading' -%}
-                  <{{ block.settings.heading_tag }}
-                    class="image-with-text__heading inline-richtext {{ block.settings.heading_size }}"
-                    {{ block.shopify_attributes }}
-                  >
-                    {{ block.settings.heading }}
-                  </{{ block.settings.heading_tag }}>
-                {%- when 'caption' -%}
-                  <p
-                    class="image-with-text__text image-with-text__text--caption {{ block.settings.text_style }} {{ block.settings.text_style }}--{{ block.settings.text_size }} {{ block.settings.text_style }}"
-                    {{ block.shopify_attributes }}
-                  >
-                    {{ block.settings.caption | escape }}
-                  </p>
-                {%- when 'text' -%}
-                  <div class="image-with-text__text rte {{ block.settings.text_style }}" {{ block.shopify_attributes }}>
-                    {{ block.settings.text }}
-                  </div>
-                {%- when 'button' -%}
-                  {%- if block.settings.button_label != blank -%}
-                    <a
-                      {% if block.settings.button_link == blank %}
-                        role="link" aria-disabled="true"
-                      {% else %}
-                        href="{{ block.settings.button_link }}"
-                      {% endif %}
-                      class="button{% if block.settings.button_style_secondary %} button--secondary{% else %} button--primary{% endif %}"
-                      {{ block.shopify_attributes }}
-                    >
-                      {{ block.settings.button_label | escape }}
-                    </a>
-                  {%- endif -%}
-              {%- endcase -%}
-            {%- endfor -%}
+  {% case block.type %}
+    {%- when 'heading' -%}
+      <{{ block.settings.heading_tag }}
+        class="image-with-text__heading inline-richtext {{ block.settings.heading_size }}"
+        {{ block.shopify_attributes }}
+      >
+        {{ block.settings.heading }}
+      </{{ block.settings.heading_tag }}>
+
+    {%- when 'caption' -%}
+      <p
+        class="image-with-text__text image-with-text__text--caption {{ block.settings.text_style }} {{ block.settings.text_style }}--{{ block.settings.text_size }} {{ block.settings.text_style }}"
+        {{ block.shopify_attributes }}
+      >
+        {{ block.settings.caption | escape }}
+      </p>
+
+    {%- when 'text' -%}
+      <div class="image-with-text__text rte {{ block.settings.text_style }}" {{ block.shopify_attributes }}>
+        {{ block.settings.text }}
+      </div>
+
+    {%- when 'button' -%}
+      {%- if block.settings.button_label != blank -%}
+        <a
+          {% if block.settings.button_link == blank %}
+            role="link" aria-disabled="true"
+          {% else %}
+            href="{{ block.settings.button_link }}"
+          {% endif %}
+          class="button{% if block.settings.button_style_secondary %} button--secondary{% else %} button--primary{% endif %}"
+          {{ block.shopify_attributes }}
+        >
+          {{ block.settings.button_label | escape }}
+        </a>
+      {%- endif -%}
+
+    {%- when 'below_button_image' -%}
+      {%- comment -%} Intentionally rendered AFTER the loop (so it always sits below the button slot) {%- endcomment -%}
+
+  {%- endcase -%}
+{%- endfor -%}
+
+{%- comment -%} Render "Image under button" blocks at the bottom, even if no button exists {%- endcomment -%}
+{%- for block in section.blocks -%}
+  {%- if block.type == 'below_button_image' and block.settings.image != blank -%}
+    <div
+      class="image-with-text__below-button-media"
+      {{ block.shopify_attributes }}
+      style="margin-top: 12px; width: {{ block.settings.image_width }}%; {% if block.settings.image_align == 'center' %}margin-left:auto; margin-right:auto;{% elsif block.settings.image_align == 'right' %}margin-left:auto;{% endif %}"
+    >
+      {%- assign img_widths = '165, 360, 535, 750, 1070, 1500' -%}
+      {%- capture img_sizes -%}
+        (min-width: {{ settings.page_width }}px) 520px,
+        (min-width: 750px) 40vw,
+        90vw
+      {%- endcapture -%}
+
+      {{
+        block.settings.image
+        | image_url: width: 1500
+        | image_tag: widths: img_widths, sizes: img_sizes, loading: 'lazy'
+      }}
+
+      {%- if block.settings.caption != blank -%}
+        <div class="rte" style="margin-top: 8px;">
+          {{ block.settings.caption }}
+        </div>
+      {%- endif -%}
+    </div>
+  {%- endif -%}
+{%- endfor -%}
           </div>
         </div>
       </div>
@@ -365,6 +402,46 @@ margin:auto;
     }
   ],
   "blocks": [
+    {
+  "type": "below_button_image",
+  "name": "Image under button",
+  "limit": 2,
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "select",
+      "id": "image_width",
+      "label": "Image width",
+      "default": "100",
+      "options": [
+        { "value": "100", "label": "100%" },
+        { "value": "75", "label": "75%" },
+        { "value": "50", "label": "50%" }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "image_align",
+      "label": "Image alignment",
+      "default": "left",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ]
+    },
+    {
+      "type": "richtext",
+      "id": "caption",
+      "label": "Caption (optional)",
+      "default": "<p></p>"
+    }
+  ]
+},
     {
       "type": "heading",
       "name": "t:sections.image-with-text.blocks.heading.name",
