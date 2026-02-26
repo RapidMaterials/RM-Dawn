@@ -24,6 +24,24 @@ margin:auto;
   .image-with-text__grid--imgtop .grid__item{
     width:100%;
   }
+  /* Below-button image block */
+.image-with-text__below-button-media {
+  display: block;
+  max-width: 100%;
+}
+
+.image-with-text__below-button-media img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;         /* preserves aspect ratio */
+  object-fit: contain;  /* prevents cropping */
+}
+
+/* Optional: keep giant images/logos from dominating */
+.image-with-text__below-button-media img {
+  max-height: 220px;    /* adjust: 160–320px usually feels right */
+}
 
 {%- endstyle -%}
 
