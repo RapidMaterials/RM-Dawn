@@ -134,30 +134,16 @@ margin:auto;
       {%- endif -%}
 
     {%- when 'below_button_image' -%}
-      {%- comment -%} Intentionally rendered AFTER the loop (so it always sits below the button slot) {%- endcomment -%}
-
-  {%- endcase -%}
-{%- endfor -%}
-
-{%- comment -%} Render "Image under button" blocks at the bottom, even if no button exists {%- endcomment -%}
-{%- for block in section.blocks -%}
-  {%- if block.type == 'below_button_image' and block.settings.image != blank -%}
+  {%- if block.settings.image != blank -%}
     <div
       class="image-with-text__below-button-media"
       {{ block.shopify_attributes }}
       style="margin-top: 12px; width: {{ block.settings.image_width }}%; {% if block.settings.image_align == 'center' %}margin-left:auto; margin-right:auto;{% elsif block.settings.image_align == 'right' %}margin-left:auto;{% endif %}"
     >
-      {%- assign img_widths = '165, 360, 535, 750, 1070, 1500' -%}
-      {%- capture img_sizes -%}
-        (min-width: {{ settings.page_width }}px) 520px,
-        (min-width: 750px) 40vw,
-        90vw
-      {%- endcapture -%}
-
       {{
         block.settings.image
         | image_url: width: 1500
-        | image_tag: widths: img_widths, sizes: img_sizes, loading: 'lazy'
+        | image_tag: loading: 'lazy'
       }}
 
       {%- if block.settings.caption != blank -%}
@@ -167,7 +153,10 @@ margin:auto;
       {%- endif -%}
     </div>
   {%- endif -%}
+  {%- endcase -%}
 {%- endfor -%}
+
+
           </div>
         </div>
       </div>
