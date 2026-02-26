@@ -19,8 +19,8 @@
     }
   }
 
-  /* Image fill */
-  .rm-banner-{{ section.id }} img {
+  /* Background image fill */
+  .rm-banner-{{ section.id }} .rm-banner__bg img {
     position: absolute;
     inset: 0;
     width: 100%;
@@ -30,89 +30,136 @@
     display: block;
   }
 
-  /* Optional link cursor */
-  .rm-banner-{{ section.id }} a {
-    display: block;
-  }
-
-  {%- style -%}
-  .rm-banner-{{ section.id }} {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-    border-radius: {{ section.settings.border_radius }}px;
-  }
-
-  .rm-banner-{{ section.id }} .rm-banner__media {
-    position: relative;
-    width: 100%;
-    height: {{ section.settings.desktop_height }}px;
-  }
-
-  /* Image fill */
-  .rm-banner-{{ section.id }} img {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: {{ section.settings.object_fit }};
-    object-position: center; /* desktop default */
-    display: block;
-  }
-
   @media screen and (max-width: 749px) {
-    .rm-banner-{{ section.id }} .rm-banner__media {
-      height: {{ section.settings.mobile_height }}px;
-    }
-
     /* Mobile: keep LEFT side visible, crop overflow on right */
-    .rm-banner-{{ section.id }} img {
+    .rm-banner-{{ section.id }} .rm-banner__bg img {
       object-position: left center;
     }
   }
 
-  .rm-banner-{{ section.id }} a {
+  /* Optional link wrapper */
+  .rm-banner-{{ section.id }} a.rm-banner__link {
     display: block;
+    color: inherit;
+    text-decoration: none;
   }
-{%- endstyle -%}
 
+  /* Overlay container (centered) */
+  .rm-banner-{{ section.id }} .rm-banner__overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none; /* allow whole banner to remain clickable */
+    padding: 16px;
+    z-index: 2;
+  }
+
+  /* Optional glow/blur circle */
+  .rm-banner-{{ section.id }} .rm-banner__glow {
+    position: absolute;
+    width: {{ section.settings.glow_size_desktop }}px;
+    height: {{ section.settings.glow_size_desktop }}px;
+    border-radius: 999px;
+    filter: blur({{ section.settings.glow_blur }}px);
+    opacity: {{ section.settings.glow_opacity | divided_by: 100.0 }};
+    transform: translateZ(0);
+    z-index: 1;
+  }
+
+  @media screen and (max-width: 749px) {
+    .rm-banner-{{ section.id }} .rm-banner__glow {
+      width: {{ section.settings.glow_size_mobile }}px;
+      height: {{ section.settings.glow_size_mobile }}px;
+    }
+  }
+
+  .rm-banner-{{ section.id }} .rm-banner__glow--white {
+    background: radial-gradient(circle, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.0) 65%);
+  }
+  .rm-banner-{{ section.id }} .rm-banner__glow--black {
+    background: radial-gradient(circle, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.0) 65%);
+  }
+
+  /* Overlay image sizing */
+  .rm-banner-{{ section.id }} .rm-banner__logo-wrap {
+    position: relative;
+    z-index: 2;
+    width: {{ section.settings.logo_width_desktop }}px;
+    max-width: 100%;
+  }
+
+  @media screen and (max-width: 749px) {
+    .rm-banner-{{ section.id }} .rm-banner__logo-wrap {
+      width: {{ section.settings.logo_width_mobile }}px;
+    }
+  }
+
+  .rm-banner-{{ section.id }} .rm-banner__logo-wrap img {
+    position: static;
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+  }
 {%- endstyle -%}
 
 <div class="rm-banner-{{ section.id }}">
   {%- if section.settings.link != blank -%}
-    <a href="{{ section.settings.link }}">
+    <a class="rm-banner__link" href="{{ section.settings.link }}">
   {%- endif -%}
 
   <div class="rm-banner__media">
     {%- liquid
       assign desktop_img = section.settings.desktop_image
       assign mobile_img = section.settings.mobile_image
-
       assign use_mobile = false
       if mobile_img != blank
         assign use_mobile = true
       endif
     -%}
 
-    {%- if desktop_img != blank -%}
-      <picture>
-        {%- if use_mobile -%}
-          <source
-            media="(max-width: 749px)"
-            srcset="{{ mobile_img | image_url: width: 1500 }}"
+    <div class="rm-banner__bg">
+      {%- if desktop_img != blank -%}
+        <picture>
+          {%- if use_mobile -%}
+            <source
+              media="(max-width: 749px)"
+              srcset="{{ mobile_img | image_url: width: 1500 }}"
+            >
+          {%- endif -%}
+
+          <img
+            src="{{ desktop_img | image_url: width: 3000 }}"
+            alt="{{ section.settings.alt_text | escape }}"
+            loading="{{ section.settings.loading }}"
+            width="{{ desktop_img.width }}"
+            height="{{ desktop_img.height }}"
           >
+        </picture>
+      {%- else -%}
+        {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' }}
+      {%- endif -%}
+    </div>
+
+    {%- if section.settings.logo_image != blank -%}
+      <div class="rm-banner__overlay">
+        {%- if section.settings.show_glow -%}
+          <div
+            class="rm-banner__glow rm-banner__glow--{{ section.settings.glow_color }}"
+            aria-hidden="true"
+          ></div>
         {%- endif -%}
 
-        <img
-          src="{{ desktop_img | image_url: width: 3000 }}"
-          alt="{{ section.settings.alt_text | escape }}"
-          loading="{{ section.settings.loading }}"
-          width="{{ desktop_img.width }}"
-          height="{{ desktop_img.height }}"
-        >
-      </picture>
-    {%- else -%}
-      {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' }}
+        <div class="rm-banner__logo-wrap">
+          <img
+            src="{{ section.settings.logo_image | image_url: width: 1200 }}"
+            alt="{{ section.settings.logo_alt | escape }}"
+            loading="lazy"
+          >
+        </div>
+      </div>
     {%- endif -%}
   </div>
 
@@ -197,6 +244,103 @@
         { "value": "lazy", "label": "Lazy" },
         { "value": "eager", "label": "Eager" }
       ]
+    },
+
+    {
+      "type": "header",
+      "content": "Overlay logo"
+    },
+    {
+      "type": "image_picker",
+      "id": "logo_image",
+      "label": "Overlay logo image"
+    },
+    {
+      "type": "text",
+      "id": "logo_alt",
+      "label": "Logo alt text",
+      "default": "Logo"
+    },
+    {
+      "type": "range",
+      "id": "logo_width_desktop",
+      "min": 60,
+      "max": 900,
+      "step": 10,
+      "unit": "px",
+      "label": "Logo width (desktop)",
+      "default": 280
+    },
+    {
+      "type": "range",
+      "id": "logo_width_mobile",
+      "min": 40,
+      "max": 600,
+      "step": 10,
+      "unit": "px",
+      "label": "Logo width (mobile)",
+      "default": 180
+    },
+
+    {
+      "type": "header",
+      "content": "Glow behind logo (optional)"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_glow",
+      "label": "Show glow",
+      "default": false
+    },
+    {
+      "type": "select",
+      "id": "glow_color",
+      "label": "Glow color",
+      "default": "white",
+      "options": [
+        { "value": "white", "label": "White" },
+        { "value": "black", "label": "Black" }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "glow_opacity",
+      "min": 5,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "label": "Glow opacity",
+      "default": 45
+    },
+    {
+      "type": "range",
+      "id": "glow_blur",
+      "min": 0,
+      "max": 80,
+      "step": 2,
+      "unit": "px",
+      "label": "Glow blur",
+      "default": 26
+    },
+    {
+      "type": "range",
+      "id": "glow_size_desktop",
+      "min": 80,
+      "max": 900,
+      "step": 10,
+      "unit": "px",
+      "label": "Glow size (desktop)",
+      "default": 380
+    },
+    {
+      "type": "range",
+      "id": "glow_size_mobile",
+      "min": 80,
+      "max": 700,
+      "step": 10,
+      "unit": "px",
+      "label": "Glow size (mobile)",
+      "default": 260
     }
   ],
   "presets": [
