@@ -63,7 +63,7 @@
     height: {{ section.settings.glow_size_desktop }}px;
     border-radius: 999px;
     filter: blur({{ section.settings.glow_blur }}px);
-    opacity: {{ section.settings.glow_opacity | divided_by: 100.0 }};
+    opacity: {{ section.settings.glow_opacity | times: 0.01 }};
     transform: translateZ(0);
     z-index: 1;
   }
