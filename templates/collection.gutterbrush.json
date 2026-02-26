@@ -27,8 +27,8 @@
       "type": "image-only-banner",
       "name": "Simple Banner Image",
       "settings": {
-        "desktop_image": "shopify://shop_images/cat_gutterbrush_header.png",
-        "mobile_image": "shopify://shop_images/cat_gutterbrush_header.png",
+        "desktop_image": "shopify://shop_images/cat_gutterbrush_header_1.png",
+        "mobile_image": "shopify://shop_images/cat_gutterbrush_header_1.png",
         "alt_text": "Banner image",
         "link": "",
         "desktop_height": 180,
