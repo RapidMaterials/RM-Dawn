@@ -96,7 +96,7 @@
         "image_behavior": "none",
         "content_layout": "no-overlap",
         "desktop_content_position": "middle",
-        "desktop_content_alignment": "left",
+        "desktop_content_alignment": "center",
         "mobile_content_alignment": "center",
         "section_color_scheme": "scheme-1",
         "color_scheme": "",
@@ -236,7 +236,7 @@
         "custom_liquid_mwWxq6": {
           "type": "custom_liquid",
           "settings": {
-            "custom_liquid": "<div class=\"gutter-dim-row\">\n  <div class=\"gutter-dim-left\">\n    <img \n      class=\"dim-img\"\n      src=\"//cdn.shopify.com/s/files/1/0645/2540/2290/files/5in-gutter-dim.png\"\n      alt=\"5 inch gutter dimensions\"\n    >\n  </div>\n\n  <div class=\"gutter-dim-right\">\n    <p>\n      ✔ Fits 5″ K-Style & 5″ Half-Round Gutters <br>\n      ✔ Ideal for Most Residential Homes\n    </p>\n  </div>\n</div>"
+            "custom_liquid": "<div style=\"display:flex; gap:24px; align-items:center; flex-wrap:wrap;\">\n  <div style=\"flex:0 0 200px; max-width:200px;\">\n    <img\n      src=\"//cdn.shopify.com/s/files/1/0645/2540/2290/files/5in-gutter-dim.png\"\n      alt=\"5 inch gutter dimensions\"\n      style=\"width:100%; height:auto; display:block;\"\n    >\n  </div>\n\n  <div style=\"flex:1 1 260px; min-width:260px;\">\n    <p style=\"margin:0;\">\n      ✔ Fits 5″ K-Style & 5″ Half-Round Gutters <br>\n      ✔ Ideal for Most Residential Homes\n    </p>\n  </div>\n</div>"
           }
         },
         "share_tmW87x": {
@@ -261,7 +261,7 @@
         ".gutter-dim-row {display: flex; align-items: center; gap: 24px;}",
         ".gutter-dim-left img {max-width: 200px; /* control size here */ width: 100%; height: auto; display: block;}",
         ".gutter-dim-right {flex: 1;}",
-        "/* Mobile stack */@media (max-width: 749px) {.gutter-dim-row {flex-direction: column; text-align: center; }}"
+        " /* Mobile stack */@media (max-width: 749px) {.gutter-dim-row {flex-direction: column !important; text-align: center; }}"
       ],
       "name": "t:sections.featured-product.presets.name",
       "settings": {
@@ -313,7 +313,7 @@
         "custom_liquid_D7cDJz": {
           "type": "custom_liquid",
           "settings": {
-            "custom_liquid": "<div class=\"gutter-dim-row\">\n  <div class=\"gutter-dim-left\">\n    <img \n      class=\"dim-img\"\n      src=\"//cdn.shopify.com/s/files/1/0645/2540/2290/files/5in-gutter-dim.png\"\n      alt=\"5 inch gutter dimensions\"\n    >\n  </div>\n\n  <div class=\"gutter-dim-right\">\n    <p>\n      ✔ Fits 6″ K-Style & 6″ Half-Round Gutters <br>\n      ✔ Designed for Larger Roofs & Higher Water Volume\n    </p>\n  </div>\n</div>"
+            "custom_liquid": "<div style=\"display:flex; gap:24px; align-items:center; flex-wrap:wrap;\">\n  <div style=\"flex:0 0 200px; max-width:200px;\">\n    <img\n      src=\"//cdn.shopify.com/s/files/1/0645/2540/2290/files/5in-gutter-dim.png\"\n      alt=\"6 inch gutter guard dimensions\"\n      style=\"width:100%; height:auto; display:block;\"\n    >\n  </div>\n\n  <div style=\"flex:1 1 260px; min-width:260px;\">\n    <p style=\"margin:0;\">\n      ✔ Fits 6″ K-Style & 6″ Half-Round Gutters <br>\n      ✔ Designed for Larger Roofs & Higher Water Volume\n    </p>\n  </div>\n</div>"
           }
         },
         "share_N7DaM3": {
@@ -336,9 +336,9 @@
         ".product__tax.caption.rte {display: none;}",
         "form#product-form-installment-featured--8730074251442 {display: none;}",
         ".gutter-dim-row {display: flex; align-items: center; gap: 24px;}",
-        ".gutter-dim-left img {max-width: 200px; /* control size here */ width: 100%; height: auto; display: block;}",
+        ".gutter-dim-left img {max-width: 200px; width: 100%; height: auto; display: block;}",
         ".gutter-dim-right {flex: 1;}",
-        "/* Mobile stack */@media (max-width: 749px) {.gutter-dim-row {flex-direction: column; text-align: center; }}"
+        " /* Mobile stack */@media (max-width: 749px) {.gutter-dim-row {flex-direction: column; align-items: center; text-align: center; } .gutter-dim-left img {max-width: 160px; /* optional smaller mobile size */ }}"
       ],
       "name": "t:sections.featured-product.presets.name",
       "settings": {
