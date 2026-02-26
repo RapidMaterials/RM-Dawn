@@ -35,7 +35,17 @@
         "mobile_height": 120,
         "object_fit": "cover",
         "border_radius": 0,
-        "loading": "lazy"
+        "loading": "lazy",
+        "logo_image": "shopify://shop_images/GutterBrush_Rectangle_Logo_Randy_New_3x_1.avif",
+        "logo_alt": "Logo",
+        "logo_width_desktop": 280,
+        "logo_width_mobile": 180,
+        "show_glow": true,
+        "glow_color": "white",
+        "glow_opacity": 95,
+        "glow_blur": 76,
+        "glow_size_desktop": 900,
+        "glow_size_mobile": 620
       }
     },
     "image_with_text_zeHAbY": {
