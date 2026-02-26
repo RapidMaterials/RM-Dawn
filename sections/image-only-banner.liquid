@@ -55,6 +55,15 @@
     padding: 16px;
     z-index: 2;
   }
+  .rm-banner-{{ section.id }} .rm-banner__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.rm-banner-{{ section.id }} .rm-banner__overlay {
+  z-index: 3;
+}
 
   /* Optional glow/blur circle */
   .rm-banner-{{ section.id }} .rm-banner__glow {
