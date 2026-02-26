@@ -135,12 +135,12 @@ margin:auto;
 
     {%- when 'below_button_image' -%}
   {%- if block.settings.image != blank -%}
-{%- assign width_value = block.settings.image_width | strip -%}
-<div
-  class="image-with-text__below-button-media"
-  {{ block.shopify_attributes }}
-  style="margin-top: 12px; width: {% if width_value != blank %}{{ width_value }}{% else %}100%{% endif %}; max-width: 100%; {% if block.settings.image_align == 'center' %}margin-left:auto; margin-right:auto;{% elsif block.settings.image_align == 'right' %}margin-left:auto;{% endif %}"
->
+    {%- assign width_value = block.settings.image_width | strip -%}
+    <div
+      class="image-with-text__below-button-media"
+      {{ block.shopify_attributes }}
+      style="margin-top: 12px; width: {% if width_value != blank %}{{ width_value }}{% else %}100%{% endif %}; max-width: 100%; {% if block.settings.image_align == 'center' %}margin-left:auto; margin-right:auto;{% elsif block.settings.image_align == 'right' %}margin-left:auto;{% endif %}"
+    >
       {{
         block.settings.image
         | image_url: width: 1500
