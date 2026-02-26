@@ -71,7 +71,7 @@
         "text_Vpcx7b"
       ],
       "custom_css": [
-        "@media screen and (max-width: 749px) {.image-with-text__content {padding: 10px; } .image-with-text__media-item--small {max-width: 80% !important; } div#ImageWithText--template--20494261223602__image_with_text_zeHAbY {background-color: #ffffff00; } p.image-with-text__text.image-with-text__text--caption.subtitle.subtitle--large.subtitle {margin-top: 0; line-height: 1.3em; } h1.image-with-text__heading.inline-richtext.h1 {max-width: 250px; } .image-with-text__text.rte.body {text-align: center !important;}}"
+        "@media screen and (max-width: 749px) {.image-with-text__content {padding: 10px; } .image-with-text__media-item--small {max-width: 80% !important; } div#ImageWithText--template--20494261223602__image_with_text_zeHAbY {background-color: #ffffff00; } p.image-with-text__text.image-with-text__text--caption.subtitle.subtitle--large.subtitle {margin-top: 0; line-height: 1.3em; } h1.image-with-text__heading.inline-richtext.h1 {max-width: 250px; } .image-with-text__text.rte.body {text-align: center !important; }}"
       ],
       "settings": {
         "image": "shopify://shop_images/GutterBrushinhalfround5inchwhitegutter.png",
@@ -236,7 +236,7 @@
         "button_label": "",
         "button_link": "",
         "columns_desktop": 2,
-        "column_alignment": "left",
+        "column_alignment": "center",
         "background_style": "primary",
         "color_scheme": "scheme-dd1ea1f1-da37-4a01-9698-c601054d2161",
         "columns_mobile": "1",
