@@ -88,9 +88,10 @@
 
 
 /****custom menu csss***/
-ul#HeaderMenu-s-5-mounting, ul#HeaderMenu-gutters, ul#HeaderMenu-cladding-facades{
+ul#HeaderMenu-s-5-mounting, ul#HeaderMenu-cladding-facades{
     grid-template-columns: repeat(4, minmax(0, 1fr));
 }
+
 
 ul#HeaderMenu-tools, {
     grid-template-columns: repeat(5, minmax(0, 1fr));
