@@ -89,19 +89,19 @@
         "@media screen and (max-width: 749px) {.image-with-text__content {padding: 10px; } .image-with-text__media-item--small {max-width: 80% !important; } div#ImageWithText--template--20494261223602__image_with_text_zeHAbY {background-color: #ffffff00; } p.image-with-text__text.image-with-text__text--caption.subtitle.subtitle--large.subtitle {margin-top: 0; line-height: 1.3em; } h1.image-with-text__heading.inline-richtext.h1 {max-width: 250px; } .image-with-text__text.rte.body {text-align: center !important; }}"
       ],
       "settings": {
-        "image": "shopify://shop_images/GutterBrushinhalfround5inchwhitegutter.png",
+        "image": "shopify://shop_images/6inch-gutter-brush.png",
         "height": "adapt",
         "desktop_image_width": "small",
         "layout": "image_first",
         "image_behavior": "none",
-        "content_layout": "overlap",
+        "content_layout": "no-overlap",
         "desktop_content_position": "middle",
         "desktop_content_alignment": "left",
         "mobile_content_alignment": "center",
         "section_color_scheme": "",
         "color_scheme": "",
         "element-width": 100,
-        "padding_top": 0,
+        "padding_top": 40,
         "padding_bottom": 0,
         "side-padding": "no-padding"
       }
