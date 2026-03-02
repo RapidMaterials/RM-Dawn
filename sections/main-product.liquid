@@ -931,20 +931,85 @@ button#ModalClose-ReturnDetails, .product-popup-modal__toggle {
   };
 
   const render = (variantId) => {
-    const map = readMap();
-    const msgEl = getMsgEl();
-    if (!map || !msgEl) return;
+  const map = readMap();
+  const msgEl = getMsgEl();
+  if (!map || !msgEl) return;
 
-    const html = buildHtml(variantId, map);
+  const p = map.product || {};
+  const v = (map.variants || {})[String(variantId)];
+  if (!v) return;
 
-    if (html) {
-      msgEl.innerHTML = html;
-      msgEl.hidden = false;
-    } else {
-      msgEl.innerHTML = '';
-      msgEl.hidden = true;
-    }
-  };
+  const invQty = Number(v.inventory_quantity || 0);
+  const bucket = inventoryBucket(v.inventory_management, invQty);
+  const eff = effectiveFields(p, v);
+  const c = classifyStatus(eff.SS_raw, eff.SS_key);
+
+  const html = buildHtml(variantId, map);
+
+  // ----- STATUS CLASS LOGIC -----
+  let statusClass = '';
+
+  switch (c.type) {
+    case 'not_set':
+    case 'stocked':
+    case 'in_stock':
+    case 'in_stock_tier':
+      statusClass = bucket === 'C' ? 'is-backorder' : 'is-in-stock';
+      break;
+
+    case 'on_backorder':
+      statusClass = bucket === 'D' ? 'is-in-stock' : 'is-backorder';
+      break;
+
+    case 'made_to_order':
+      statusClass = 'is-made-to-order';
+      break;
+
+    case 'limited_stock_run':
+    case 'limited_stock_confirm':
+      statusClass = 'is-limited';
+      break;
+
+    case 'out_of_stock':
+      statusClass = bucket === 'D' ? 'is-limited' : 'is-out-of-stock';
+      break;
+
+    case 'discontinued':
+      statusClass = 'is-discontinued';
+      break;
+
+    case 'unavailable':
+      statusClass = 'is-unavailable';
+      break;
+
+    default:
+      statusClass = '';
+  }
+
+  // Remove old status classes before adding new one
+  msgEl.classList.remove(
+    'is-in-stock',
+    'is-backorder',
+    'is-made-to-order',
+    'is-limited',
+    'is-out-of-stock',
+    'is-discontinued',
+    'is-unavailable'
+  );
+
+  if (statusClass) {
+    msgEl.classList.add(statusClass);
+  }
+
+  // ----- OUTPUT -----
+  if (html) {
+    msgEl.innerHTML = html;
+    msgEl.hidden = false;
+  } else {
+    msgEl.innerHTML = '';
+    msgEl.hidden = true;
+  }
+};
 
   // Initial render
   render({{ product.selected_or_first_available_variant.id | json }});
