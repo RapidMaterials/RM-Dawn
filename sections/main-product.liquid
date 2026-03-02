@@ -1259,45 +1259,44 @@ button#ModalClose-ReturnDetails, .product-popup-modal__toggle {
                 {%- assign is_shipping_timeframe = true -%}
               {%- endif -%}
 
-              <li class="icon-feature" {% if is_shipping_timeframe %}data-icf-shipping-timeframe{% endif %}>
-                {%- comment -%}
-  Headline fallback order:
-  1) icf.feature (your actual metaobject field)
-  2) icf.headline (in case some entries were created with that field name)
-  3) icf.title (extra safety)
-{%- endcomment -%}
-{%- assign icf_headline =
-  icf.feature.value
-  | default: icf.headline.value
-  | default: icf.title.value
-  | default: ''
--%}
+             <li class="icon-feature" {% if is_shipping_timeframe %}data-icf-shipping-timeframe{% endif %}>
 
-{% if icf.icon.value %}
-  <img
-    src="{{ icf.icon.value | image_url: width: 64 }}"
-    alt="{{ icf_headline | escape }}"
-    class="icon-feature__image"
-  />
-{% endif %}
+              {%- assign icf_headline =
+                icf.feature.value
+                | default: icf.headline.value
+                | default: icf.title.value
+                | default: ''
+              -%}
 
-<h3
-  class="icon-feature__title"
-  {% if is_shipping_timeframe %}data-icf-shipping-title{% endif %}
-  data-original-headline="{{ icf_headline | escape }}"
->
-  {{ icf_headline }}
-</h3>
+              {% if icf.icon.value %}
+                <img
+                  src="{{ icf.icon.value | image_url: width: 64 }}"
+                  alt="{{ icf_headline | escape }}"
+                  class="icon-feature__image"
+                />
+              {% endif %}
 
-                  {%- unless is_shipping_timeframe -%}
-                    {% if icf.sub_headline.value %}
-                      <p class="icon-feature__subtitle">
-                        {{ icf.sub_headline.value }}
-                      </p>
-                    {% endif %}
-                  {%- endunless -%}
-                </div>
-              </li>
+              <div class="icon-feature__text">
+
+                <h3
+                  class="icon-feature__title"
+                  {% if is_shipping_timeframe %}data-icf-shipping-title{% endif %}
+                  data-original-headline="{{ icf_headline | escape }}"
+                >
+                  {{ icf_headline }}
+                </h3>
+
+                {%- unless is_shipping_timeframe -%}
+                  {% if icf.sub_headline.value %}
+                    <p class="icon-feature__subtitle">
+                      {{ icf.sub_headline.value }}
+                    </p>
+                  {% endif %}
+                {%- endunless -%}
+
+              </div>
+
+            </li>
             {% endfor %}
           </ul>
         </div>
