@@ -699,8 +699,7 @@ button#ModalClose-ReturnDetails, .product-popup-modal__toggle {
 
 
                 {%- assign v = product.selected_or_first_available_variant -%}
-
-<p class="product__text inline-richtext prod-ship-note"
+      <p class="product__text inline-richtext prod-ship-note"
    id="StockMessage-{{ section.id }}"
    data-stock-message
    hidden></p>
@@ -708,22 +707,21 @@ button#ModalClose-ReturnDetails, .product-popup-modal__toggle {
 <script type="application/json" id="StockLogicMap-{{ section.id }}">
 {
   "product": {
-    "info_lead_time": {{ product.metafields.custom.info_lead_time.value | default: '' | json }},
-    "info_backordered_lead_time": {{ product.metafields.custom.info_backordered_lead_time.value | default: '' | json }},
-    "info_stock_status": {{ product.metafields.custom.info_stock_status.value | default: '' | json }},
-    "info_restock_date": {{ product.metafields.custom.info_restock_date.value | default: '' | json }}
+    "PL": {{ product.metafields.custom.info_lead_time.value | default: '' | json }},
+    "PBL": {{ product.metafields.custom.info_backordered_lead_time.value | default: '' | json }},
+    "PSS": {{ product.metafields.custom.info_stock_status.value | default: '' | json }},
+    "PRD": {{ product.metafields.custom.info_restock_date.value | default: '' | json }}
   },
   "variants": {
     {%- for variant in product.variants -%}
       "{{ variant.id }}": {
+        "inventory_management": {{ variant.inventory_management | default: '' | json }},
         "inventory_quantity": {{ variant.inventory_quantity | default: 0 | json }},
 
-        "stock_status": {{ variant.metafields.custom.stock_status.value | default: '' | json }},
-        "quote_link": {{ variant.metafields.custom.quote_link.value | default: '' | json }},
-
-        "info_restock_date": {{ variant.metafields.custom.info_restock_date.value | default: '' | json }},
-        "info_backordred_lead_time_override": {{ variant.metafields.custom.info_backordred_lead_time_override.value | default: '' | json }},
-        "info_stocked_lead_time_override": {{ variant.metafields.custom.info_stocked_lead_time_override.value | default: '' | json }}
+        "VL": {{ variant.metafields.custom.info_stocked_lead_time_override.value | default: '' | json }},
+        "VBL": {{ variant.metafields.custom.info_backordred_lead_time_override.value | default: '' | json }},
+        "VSS": {{ variant.metafields.custom.stock_status.value | default: '' | json }},
+        "VRD": {{ variant.metafields.custom.info_restock_date.value | default: '' | json }}
       }{% unless forloop.last %},{% endunless %}
     {%- endfor -%}
   }
@@ -744,7 +742,8 @@ button#ModalClose-ReturnDetails, .product-popup-modal__toggle {
       .replaceAll('"', '&quot;')
       .replaceAll("'", '&#039;');
 
-  const normalize = (x) => (x == null ? '' : String(x)).trim();
+  const norm = (x) => (x == null ? '' : String(x)).trim();
+  const normKey = (x) => norm(x).toLowerCase();
 
   const readMap = () => {
     const el = document.getElementById(mapId);
@@ -752,67 +751,182 @@ button#ModalClose-ReturnDetails, .product-popup-modal__toggle {
     try { return JSON.parse(el.textContent || '{}'); } catch (e) { return null; }
   };
 
-  // IMPORTANT: re-query every time (Dawn re-renders DOM on variant change)
+  // Dawn re-renders blocks on variant change; always re-query the output element.
   const getMsgEl = () => document.getElementById(msgId);
+
+  const isTracked = (inventory_management) => normKey(inventory_management) === 'shopify';
+
+  const inventoryBucket = (invManagement, invQty) => {
+    if (isTracked(invManagement)) {
+      return Number(invQty) > 0 ? 'D' : 'C';
+    }
+    return 'B'; // "Inventory not set to track" (else bucket)
+  };
+
+  const effectiveFields = (p, v) => {
+    // Variant overrides product fields when non-blank
+    const VSS = norm(v.VSS);
+    const PSS = norm(p.PSS);
+
+    return {
+      // Stock Status
+      SS_raw: VSS || PSS,
+      SS_key: normKey(VSS || PSS),
+
+      // Lead times + restock
+      PL: norm(v.VL) || norm(p.PL),
+      PBL: norm(v.VBL) || norm(p.PBL),
+      PRD: norm(v.VRD) || norm(p.PRD)
+    };
+  };
+
+  const parseThreshold = (text) => {
+    // Extracts first number like "100" or "3,000" from status text
+    const m = String(text || '').match(/(\d[\d,]*)/);
+    return m ? m[1] : '';
+  };
+
+  const formatShipsIn = (lead) => lead ? `, Ships in ${escapeHtml(lead)}` : '';
+  const formatExpectedRestock = (restockDateStr, backLead) => {
+    if (restockDateStr) return `, Expected restock: ${escapeHtml(restockDateStr)}`;
+    if (backLead) return `, Expected restock in ${escapeHtml(backLead)}`;
+    return '';
+  };
+
+  const classifyStatus = (SS_raw, SS_key) => {
+    // Normalize a “row key” for your matrix (capitalization agnostic).
+    // Return: { type, displayText, threshold? }
+    const raw = norm(SS_raw);
+    const key = SS_key;
+
+    if (!key) return { type: 'not_set', displayText: '' };
+
+    if (key === 'stocked') return { type: 'stocked', displayText: 'Stocked' };
+    if (key === 'out of stock') return { type: 'out_of_stock', displayText: 'Out of Stock' };
+    if (key === 'on backorder') return { type: 'on_backorder', displayText: 'On Backorder' };
+    if (key === 'discontinued') return { type: 'discontinued', displayText: 'Discontinued' };
+    if (key === 'made to order') return { type: 'made_to_order', displayText: 'Made to Order' };
+    if (key === 'unavailable') return { type: 'unavailable', displayText: 'Unavailable' };
+    if (key === 'limited stock run') return { type: 'limited_stock_run', displayText: 'Limited Stock Run' };
+
+    // Limited Stock, confirm availability variants (100+ / 500+)
+    if (key.includes('limited stock') && key.includes('confirm availability')) {
+      const threshold = parseThreshold(raw);
+      return { type: 'limited_stock_confirm', displayText: 'Limited Stock', threshold };
+    }
+
+    // In Stock tiers: "In Stock (500+)" "In stock (3,000+)" etc.
+    if (key.startsWith('in stock') && raw.includes('(') && raw.includes(')')) {
+      // Keep a consistent label format, but preserve the threshold number from the text
+      const threshold = parseThreshold(raw);
+      return { type: 'in_stock_tier', displayText: threshold ? `In Stock (${threshold}+)` : 'In Stock' };
+    }
+
+    // Fallback: if someone typed "In Stock" but different casing
+    if (key === 'in stock') return { type: 'in_stock', displayText: 'In Stock' };
+
+    // Unknown status: show nothing (safe)
+    return { type: 'unknown', displayText: raw };
+  };
 
   const buildHtml = (variantId, map) => {
     const p = map.product || {};
-    const variants = map.variants || {};
-    const d = variants[String(variantId)];
-    if (!d) return '';
+    const v = (map.variants || {})[String(variantId)];
+    if (!v) return '';
 
-    const invQty = Number(d.inventory_quantity);
+    const invQty = Number(v.inventory_quantity || 0);
+    const bucket = inventoryBucket(v.inventory_management, invQty);
 
-    // Product defaults
-    const pLead = normalize(p.info_lead_time);
-    const pBackLead = normalize(p.info_backordered_lead_time);
-    const pStatus = normalize(p.info_stock_status);
-    const pRestock = normalize(p.info_restock_date);
+    const eff = effectiveFields(p, v);
+    const c = classifyStatus(eff.SS_raw, eff.SS_key);
 
-    // Variant overrides
-    const vStatus = normalize(d.stock_status);
-    const vQuoteLink = normalize(d.quote_link);
-    const vRestock = normalize(d.info_restock_date);
-    const vStockLead = normalize(d.info_stocked_lead_time_override);
-    const vBackLead = normalize(d.info_backordred_lead_time_override);
-    
+    // Helper outputs used by multiple rows
+    const shipsIn = formatShipsIn(eff.PL);
+    const expectedRestock = formatExpectedRestock(eff.PRD, eff.PBL);
+    const contactLink = `<a href="/contact">contact us</a>`;
+    const confirmLink = `<a href="/contact">confirm availability</a>`;
 
-    // ✅ NEW RULE: Made to Order overrides everything
-    if (vStatus === 'Made to Order') {
-      if (vQuoteLink) {
-        return `<strong>Made to Order</strong><br><a href="${escapeHtml(vQuoteLink)}" class="link">Get a Quote</a>`;
-      }
-      return `<strong>Made to Order</strong>`;
+    // --- MATRIX LOGIC ---
+
+    // Row: If not set
+    if (c.type === 'not_set') {
+      // B: "In Stock" + ships in PL
+      // C: "On Backorder" + expected restock (PRD or PBL) if present
+      // D: PINV + "In Stock" + ships in PL
+      if (bucket === 'B') return `<strong>In Stock</strong>${shipsIn}`;
+      if (bucket === 'C') return `<strong>On Backorder</strong>${expectedRestock || ''}`;
+      return `<strong>${invQty} In Stock</strong>${shipsIn}`;
     }
 
-    // Effective (variant overrides product if not blank)
-    const effectiveStatus = vStatus || pStatus; // blank allowed
-    const effectiveRestock = vRestock || pRestock;
-    const effectiveStockLead = vStockLead || pLead;
-    const effectiveBackLead = vBackLead || pBackLead;
-
-    // Treat blank status as In Stock for rule #1
-    const statusIsInStock = (effectiveStatus === '' || effectiveStatus === 'In Stock');
-
-    // Rule 1:
-    // If stock_status = In Stock (OR not set) AND inventory_quantity > 0
-    if (statusIsInStock && invQty > 0) {
-      return `<strong>In Stock</strong>${effectiveStockLead ? ` Ships in ${escapeHtml(effectiveStockLead)}` : ''}`;
+    // Row: Stocked (same behavior as not set in your matrix)
+    if (c.type === 'stocked') {
+      if (bucket === 'B') return `<strong>In Stock</strong>${shipsIn}`;
+      if (bucket === 'C') return `<strong>On Backorder</strong>${expectedRestock || ''}`;
+      return `<strong>${invQty} In Stock</strong>${shipsIn}`;
     }
 
-    // Rule 2:
-    // If stock_status = In Stock AND inventory_quantity == 0 => On Backorder
-    if (effectiveStatus === 'In Stock' && invQty === 0) {
-      if (effectiveRestock) {
-        return `<strong>On Backorder</strong><br>Estimated restock: ${escapeHtml(effectiveRestock)}`;
-      }
-      if (effectiveBackLead) {
-        return `<strong>On Backorder</strong><br>Estimated restock in ${escapeHtml(effectiveBackLead)}`;
-      }
-      return `<strong>On Backorder</strong>`;
+    // Row: Out of Stock
+    if (c.type === 'out_of_stock') {
+      if (bucket === 'D') return `<strong>Limited Stock</strong>, ${escapeHtml(invQty)} Available`;
+      // B/C: Out of stock + contact link
+      return `<strong>Out of Stock</strong>, ${contactLink} for availability`;
     }
 
-    // Otherwise: no output
+    // Row: On Backorder
+    if (c.type === 'on_backorder') {
+      if (bucket === 'D') return `<strong>${invQty} In Stock</strong>${shipsIn}`;
+      return `<strong>On Backorder</strong>${expectedRestock || ''}`;
+    }
+
+    // Row: Discontinued
+    if (c.type === 'discontinued') {
+      if (bucket === 'D') return `<strong>Discontinued</strong>, ${escapeHtml(invQty)} In Stock, No restock`;
+      return `<strong>Discontinued</strong>`;
+    }
+
+    // Row: Made to Order
+    if (c.type === 'made_to_order') {
+      // Uses PBL/VBL as ship lead (per your matrix)
+      const madeShips = formatShipsIn(eff.PBL);
+      return `<strong>Made to Order</strong>${madeShips}`;
+    }
+
+    // Row: Unavailable
+    if (c.type === 'unavailable') {
+      return `<strong>Unavailable</strong>`;
+    }
+
+    // Row: Limited Stock Run
+    if (c.type === 'limited_stock_run') {
+      if (bucket === 'D') return `<strong>Limited Stock</strong>, ${escapeHtml(invQty)} Available`;
+      return `<strong>Limited Stock Run</strong>`;
+    }
+
+    // Row: Limited Stock confirm availability (100+/500+ etc)
+    if (c.type === 'limited_stock_confirm') {
+      const x = c.threshold || '100';
+      if (bucket === 'D') {
+        // In your matrix D included qty available + additional note.
+        // You asked for a specific confirm availability sentence, so we’ll use it cleanly:
+        return `<strong>Limited Stock</strong>, ${escapeHtml(invQty)} Available<br>Limited Stock, For ${escapeHtml(x)}+ qty ${confirmLink}.`;
+      }
+      // B/C: just the confirm availability sentence (same across both)
+      return `Limited Stock, For ${escapeHtml(x)}+ qty ${confirmLink}.`;
+    }
+
+    // Row: In Stock tiers (500+ / 1000+ / 3000+ / 5000+)
+    if (c.type === 'in_stock_tier') {
+      if (bucket === 'B') return `<strong>${escapeHtml(c.displayText)}</strong>${shipsIn}`;
+      if (bucket === 'C') return `<strong>On Backorder</strong>${expectedRestock || ''}`;
+      return `<strong>${invQty} In Stock</strong>${shipsIn}`;
+    }
+
+    // Row: Get a Quote (quote link removed; always /contact)
+    if (c.SS_key === 'get a quote') {
+      return `<strong>Get a Quote</strong> — ${contactLink}`;
+    }
+
+    // Unknown: show nothing (prevents bad/typo statuses from displaying weird messages)
     return '';
   };
 
@@ -832,28 +946,25 @@ button#ModalClose-ReturnDetails, .product-popup-modal__toggle {
     }
   };
 
-  // Initial
+  // Initial render
   render({{ product.selected_or_first_available_variant.id | json }});
 
   // Dawn event (best)
   document.addEventListener('variant:change', (event) => {
     const v = event?.detail?.variant;
     if (!v?.id) return;
-    // Let Dawn finish swapping DOM, then render
     requestAnimationFrame(() => render(v.id));
   });
 
-  // Fallback: if theme doesn't emit variant:change
+  // Fallback
   document.addEventListener('change', (event) => {
     const t = event.target;
-    if (!t) return;
-    if (t.name === 'id' && t.value) {
+    if (t?.name === 'id' && t.value) {
       requestAnimationFrame(() => render(t.value));
     }
   });
 })();
 </script>
-                
               {%- when 'buy_buttons' -%}
                 {%- render 'buy-buttons',
                   block: block,
