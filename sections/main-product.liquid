@@ -1380,21 +1380,33 @@ button#ModalClose-ReturnDetails, .product-popup-modal__toggle {
   };
 
   const computeLeadTime = (variantId) => {
-    const p = map.product || {};
-    const v = (map.variants || {})[String(variantId)] || {};
+  const p = map.product || {};
+  const v = (map.variants || {})[String(variantId)] || {};
 
-    const PL  = norm(p.PL);
-    const PBL = norm(p.PBL);
+  const PL  = norm(p.PL);
+  const PBL = norm(p.PBL);
 
-    const VL  = norm(v.VL);
-    const VBL = norm(v.VBL);
+  const VL  = norm(v.VL);
+  const VBL = norm(v.VBL);
 
-    const inStock = isInStock(v);
+  // Pull effective status: variant overrides product
+  const SS = norm(v.VSS) || norm(p.PSS);
+  const SSkey = SS.toLowerCase();
 
-    // Your logic: in-stock uses VL/PL, backorder uses VBL/PBL
-    const chosen = inStock ? (VL || PL) : (VBL || PBL);
-    return chosen; // may be ''
-  };
+  // If status is Made to Order, ALWAYS use backorder lead time (VBL/PBL)
+  if (SSkey === 'made to order') {
+    return VBL || PBL;
+  }
+
+  // If status explicitly says backorder, use VBL/PBL too
+  if (SSkey === 'on backorder') {
+    return VBL || PBL;
+  }
+
+  // Otherwise fall back to inventory bucket logic
+  const inStock = isInStock(v);
+  return inStock ? (VL || PL) : (VBL || PBL);
+};
 
   const render = (variantId) => {
     const lead = computeLeadTime(variantId);
