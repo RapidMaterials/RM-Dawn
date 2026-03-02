@@ -1285,36 +1285,65 @@ button#ModalClose-ReturnDetails, .product-popup-modal__toggle {
       | default: ''
     -%}
 
-    <li class="icon-feature" {% if is_shipping_timeframe %}data-icf-shipping-timeframe{% endif %}>
-      {% if icf.icon.value %}
-        <img
-          src="{{ icf.icon.value | image_url: width: 64 }}"
-          alt="{{ icf_headline | escape }}"
-          class="icon-feature__image"
-        />
+<li class="icon-feature" {% if is_shipping_timeframe %}data-icf-shipping-timeframe{% endif %}>
+  {%- comment -%}
+    Headline fallback order:
+    1) icf.headline (your metaobject field)
+    2) icf.feature (safety if some were created with that name)
+    3) icf.title (extra safety)
+  {%- endcomment -%}
+  {%- assign icf_headline =
+    icf.headline.value
+    | default: icf.feature.value
+    | default: icf.title.value
+    | default: ''
+  -%}
+
+  {%- assign icf_subheadline = icf.sub_headline.value | default: '' -%}
+
+  {% if icf.icon.value %}
+    <img
+      src="{{ icf.icon.value | image_url: width: 64 }}"
+      alt="{{ icf_headline | escape }}"
+      class="icon-feature__image"
+    />
+  {% endif %}
+
+  <div class="icon-feature__text">
+    <h3
+      class="icon-feature__title"
+      {% if is_shipping_timeframe %}data-icf-shipping-title{% endif %}
+      data-original-headline="{{ icf_headline | escape }}"
+    >
+      {{ icf_headline }}
+    </h3>
+
+    {%- comment -%}
+      Rule:
+      - Not shipping timeframe: ALWAYS show subtitle when present.
+      - Shipping timeframe:
+          - If lead time exists: show nothing here (JS will hide this <p>)
+          - If lead time NOT set: show original subheadline (JS will restore/show)
+      So: for shipping timeframe, we still output a <p> (even if blank) so JS can control it.
+    {%- endcomment -%}
+    {% if is_shipping_timeframe %}
+      <p
+        class="icon-feature__subtitle"
+        data-icf-shipping-subtitle
+        data-original-subheadline="{{ icf_subheadline | escape }}"
+        {% if icf_subheadline == blank %}hidden{% endif %}
+      >
+        {{ icf_subheadline }}
+      </p>
+    {% else %}
+      {% if icf_subheadline != blank %}
+        <p class="icon-feature__subtitle">
+          {{ icf_subheadline }}
+        </p>
       {% endif %}
-
-      <div class="icon-feature__text">
-        <h3
-          class="icon-feature__title"
-          {% if is_shipping_timeframe %}data-icf-shipping-title{% endif %}
-          data-original-headline="{{ icf_headline | escape }}"
-        >
-          {{ icf_headline }}
-        </h3>
-
-        {%- unless is_shipping_timeframe -%}
-          {% if icf_subheadline != blank %}
-            <p
-              class="icon-feature__subtitle"
-              data-original-subheadline="{{ icf_subheadline | escape }}"
-            >
-              {{ icf_subheadline }}
-            </p>
-          {% endif %}
-        {%- endunless -%}
-      </div>
-    </li>
+    {% endif %}
+  </div>
+</li>
   {% endfor %}
 </ul>
         </div>
