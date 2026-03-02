@@ -190,7 +190,7 @@ button#ModalClose-ReturnDetails, .product-popup-modal__toggle {
       onload="this.media='all'"
     >
   {%- endif -%}
-{%- assign iconfs = product.metafields.custom.icon_features.value -%}
+
   {% assign variant_images = product.images | where: 'attached_to_variant?', true | map: 'src' %}
   <div class="page-width">
     <div class="product product--{{ section.settings.media_size }} product--{{ section.settings.media_position }} product--{{ section.settings.gallery_layout }} product--mobile-{{ section.settings.mobile_thumbnails }} grid grid--1-col {% if product.media.size > 0 %}grid--2-col-tablet{% else %}product--no-media{% endif %}">
@@ -1243,39 +1243,135 @@ button#ModalClose-ReturnDetails, .product-popup-modal__toggle {
             {{- 'icon-arrow.svg' | inline_asset_content -}}
           </a>
         </section>
-         {%- for block in section.blocks -%}
-            {%- case block.type -%}
-            {%- when 'features_with_icons' -%}
-                   {%- if iconfs != blank -%}
-                       <div class="product-icon-features quick-add-hidden">
-                          <ul class="icon-features-list">
-                            {% for icf in iconfs %}
-                                <li class="icon-feature">
-                                  {% if icf.icon.value %}
-                                    <img
-                                      src="{{ icf.icon.value | image_url: width: 64 }}"
-                                      alt="{{ icf.headline.value | escape }}"
-                                      class="icon-feature__image"
-                                    />
-                                  {% endif %}
-                        <div class="icon-feature__text">
-                          <h3 class="icon-feature__title">
-                            {{ icf.headline.value }}
-                          </h3>
-                          {% if icf.sub_headline.value %}
-                            <p class="icon-feature__subtitle">
-                              {{ icf.sub_headline.value }}
-                            </p>
-                          {% endif %}
-                        </div>
-                      </li>
-                  {% endfor %}
-                </ul>
-            </div>
-            {% endif %}
-              
-       {%- endcase -%}
-             {%- endfor -%}
+{%- for block in section.blocks -%}
+  {%- case block.type -%}
+    {%- when 'features_with_icons' -%}
+      {%- if iconfs != blank -%}
+        <div class="product-icon-features quick-add-hidden">
+          <ul class="icon-features-list">
+            {% for icf in iconfs %}
+              {%- assign icf_type = icf.type.value | default: '' -%}
+              {%- assign icf_type_lc = icf_type | downcase -%}
+              {%- assign is_shipping_timeframe = false -%}
+              {%- if icf_type_lc == 'shipping timeframe' -%}
+                {%- assign is_shipping_timeframe = true -%}
+              {%- endif -%}
+
+              <li class="icon-feature" {% if is_shipping_timeframe %}data-icf-shipping-timeframe{% endif %}>
+                {% if icf.icon.value %}
+                  <img
+                    src="{{ icf.icon.value | image_url: width: 64 }}"
+                    alt="{{ icf.headline.value | escape }}"
+                    class="icon-feature__image"
+                  />
+                {% endif %}
+
+                <div class="icon-feature__text">
+                  <h3
+                    class="icon-feature__title"
+                    {% if is_shipping_timeframe %}
+                      data-icf-shipping-title
+                    {% endif %}
+                  >
+                    {%- if is_shipping_timeframe -%}
+                      {{ icf.headline.value }}
+                    {%- else -%}
+                      {{ icf.headline.value }}
+                    {%- endif -%}
+                  </h3>
+
+                  {%- unless is_shipping_timeframe -%}
+                    {% if icf.sub_headline.value %}
+                      <p class="icon-feature__subtitle">
+                        {{ icf.sub_headline.value }}
+                      </p>
+                    {% endif %}
+                  {%- endunless -%}
+                </div>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+
+        <script>
+          (() => {
+            const sectionId = {{ section.id | json }};
+            const mapEl = document.getElementById(`StockLogicMap-${sectionId}`);
+            if (!mapEl) return;
+
+            let map = null;
+            try { map = JSON.parse(mapEl.textContent || '{}'); } catch (e) { return; }
+            if (!map) return;
+
+            const norm = (x) => (x == null ? '' : String(x)).trim();
+
+            const isTracked = (inventory_management) =>
+              norm(inventory_management).toLowerCase() === 'shopify';
+
+            const isInStock = (v) => {
+              // Treat "not tracked" as in-stock bucket (your "B" else logic)
+              if (!v) return true;
+              if (isTracked(v.inventory_management)) {
+                return Number(v.inventory_quantity || 0) > 0;
+              }
+              return true;
+            };
+
+            const getVariantId = () => {
+              // Prefer the live selected variant id
+              const form = document.querySelector(`#MainProduct-${sectionId} form[action^="/cart/add"]`)
+                || document.querySelector(`form[action^="/cart/add"]`);
+              const input = form?.querySelector('input[name="id"], select[name="id"]');
+              return input?.value || {{ product.selected_or_first_available_variant.id | json }};
+            };
+
+            const computeShippingTitle = (variantId) => {
+              const p = map.product || {};
+              const v = (map.variants || {})[String(variantId)] || {};
+
+              const PL  = norm(p.PL);
+              const PBL = norm(p.PBL);
+
+              const VL  = norm(v.VL);
+              const VBL = norm(v.VBL);
+
+              const inStock = isInStock(v);
+
+              // Same "matrix" behavior: in-stock uses PL/VL, backorder uses PBL/VBL
+              const chosen = inStock ? (VL || PL) : (VBL || PBL);
+              return chosen;
+            };
+
+            const render = (variantId) => {
+              const title = computeShippingTitle(variantId);
+              const nodes = document.querySelectorAll('[data-icf-shipping-timeframe] [data-icf-shipping-title]');
+              nodes.forEach((h3) => {
+                h3.textContent = title || '';
+              });
+            };
+
+            // Initial
+            render(getVariantId());
+
+            // Dawn variant event
+            document.addEventListener('variant:change', (event) => {
+              const v = event?.detail?.variant;
+              if (!v?.id) return;
+              requestAnimationFrame(() => render(v.id));
+            });
+
+            // Fallback if needed
+            document.addEventListener('change', (event) => {
+              const t = event.target;
+              if (t?.name === 'id' && t.value) {
+                requestAnimationFrame(() => render(t.value));
+              }
+            });
+          })();
+        </script>
+      {%- endif -%}
+  {%- endcase -%}
+{%- endfor -%}
 
 <div class="info-footer">
   {%- for block in section.blocks -%}
