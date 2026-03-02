@@ -793,7 +793,76 @@ button#ModalClose-ReturnDetails, .product-popup-modal__toggle {
     return m ? m[1] : '';
   };
 
-  const formatShipsIn = (lead) => lead ? `, Ships in ${escapeHtml(lead)}` : '';
+  const formatShipsIn = (lead) => {
+  const raw = String(lead ?? '').trim();
+  if (!raw) return '';
+
+  // Match: "1 Business Day" or "1 Day" (case agnostic), allow extra spaces / plural
+  const isOneDay = /^1\s*(business\s*)?day(s)?$/i.test(raw.replace(/\s+/g, ' '));
+  if (!isOneDay) return `, Ships in ${escapeHtml(raw)}`;
+
+  // --- Eastern time helpers ---
+  const tz = 'America/New_York';
+
+  const getEasternParts = () => {
+    const parts = new Intl.DateTimeFormat('en-US', {
+      timeZone: tz,
+      weekday: 'short',
+      hour: 'numeric',
+      minute: 'numeric',
+      hour12: false
+    }).formatToParts(new Date());
+
+    const get = (type) => parts.find(p => p.type === type)?.value;
+
+    const weekday = (get('weekday') || '').toLowerCase();
+    const hour = parseInt(get('hour') || '0', 10);
+    const minute = parseInt(get('minute') || '0', 10);
+
+    // Map weekday to 0..6 (Sun..Sat)
+    const dowMap = { sun: 0, mon: 1, tue: 2, wed: 3, thu: 4, fri: 5, sat: 6 };
+    const dow = dowMap[weekday] ?? 0;
+
+    return { dow, hour, minute };
+  };
+
+  const formatEasternDate = (dateObj) => {
+    // Example: "Mon, Mar 2"
+    return new Intl.DateTimeFormat('en-US', {
+      timeZone: tz,
+      weekday: 'short',
+      month: 'short',
+      day: 'numeric'
+    }).format(dateObj);
+  };
+
+  const { dow, hour, minute } = getEasternParts();
+  const mins = (hour * 60) + minute;
+  const cutoff = 13 * 60; // 1:00pm ET
+  const isWeekday = dow >= 1 && dow <= 5;
+
+  const now = new Date();
+
+  // Before 1pm ET, Mon–Fri
+  if (isWeekday && mins < cutoff) {
+    const dateStr = formatEasternDate(now);
+    return `, Ships today (${escapeHtml(dateStr)}) if ordered before 1pm EST`;
+  }
+
+  // After 1pm ET, Mon–Thu -> tomorrow
+  if (dow >= 1 && dow <= 4 && mins >= cutoff) {
+    const tomorrow = new Date(now.getTime() + 24 * 60 * 60 * 1000);
+    const dateStr = formatEasternDate(tomorrow);
+    return `, Ships tomorrow (${escapeHtml(dateStr)})`;
+  }
+
+  // After 1pm Friday OR any time Sat OR any time Sun -> Monday
+  // (Also covers Friday after cutoff)
+  const daysUntilMonday = (1 - dow + 7) % 7 || 7; // if already Monday, push 7 (but we won't hit here)
+  const monday = new Date(now.getTime() + daysUntilMonday * 24 * 60 * 60 * 1000);
+  const dateStr = formatEasternDate(monday);
+  return `, Ships Monday (${escapeHtml(dateStr)})`;
+};
   const formatExpectedRestock = (restockDateStr, backLead) => {
     if (restockDateStr) return `, Expected restock: ${escapeHtml(restockDateStr)}`;
     if (backLead) return `, Expected restock in ${escapeHtml(backLead)}`;
