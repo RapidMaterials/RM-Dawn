@@ -1348,86 +1348,104 @@ button#ModalClose-ReturnDetails, .product-popup-modal__toggle {
 </ul>
         </div>
 
-        <script>
-          (() => {
-            const sectionId = {{ section.id | json }};
-            const mapEl = document.getElementById(`StockLogicMap-${sectionId}`);
-            if (!mapEl) return;
+<script>
+(() => {
+  const sectionId = {{ section.id | json }};
+  const mapEl = document.getElementById(`StockLogicMap-${sectionId}`);
+  if (!mapEl) return;
 
-            let map = null;
-            try { map = JSON.parse(mapEl.textContent || '{}'); } catch (e) { return; }
-            if (!map) return;
+  let map = null;
+  try { map = JSON.parse(mapEl.textContent || '{}'); } catch (e) { return; }
+  if (!map) return;
 
-            const norm = (x) => (x == null ? '' : String(x)).trim();
+  const norm = (x) => (x == null ? '' : String(x)).trim();
 
-            const isTracked = (inventory_management) =>
-              norm(inventory_management).toLowerCase() === 'shopify';
+  const isTracked = (inventory_management) =>
+    norm(inventory_management).toLowerCase() === 'shopify';
 
-            const isInStock = (v) => {
-              // Treat "not tracked" as in-stock bucket (your "B" else logic)
-              if (!v) return true;
-              if (isTracked(v.inventory_management)) {
-                return Number(v.inventory_quantity || 0) > 0;
-              }
-              return true;
-            };
+  const isInStock = (v) => {
+    // treat "not tracked" as in-stock
+    if (!v) return true;
+    if (isTracked(v.inventory_management)) {
+      return Number(v.inventory_quantity || 0) > 0;
+    }
+    return true;
+  };
 
-            const getVariantId = () => {
-              // Prefer the live selected variant id
-              const form = document.querySelector(`#MainProduct-${sectionId} form[action^="/cart/add"]`)
-                || document.querySelector(`form[action^="/cart/add"]`);
-              const input = form?.querySelector('input[name="id"], select[name="id"]');
-              return input?.value || {{ product.selected_or_first_available_variant.id | json }};
-            };
-            const computeShippingTitle = (variantId) => {
-              const p = map.product || {};
-              const v = (map.variants || {})[String(variantId)] || {};
+  const getVariantId = () => {
+    const root = document.getElementById(`MainProduct-${sectionId}`) || document;
+    const form = root.querySelector('form[action^="/cart/add"]');
+    const input = form?.querySelector('input[name="id"], select[name="id"]');
+    return input?.value || {{ product.selected_or_first_available_variant.id | json }};
+  };
 
-              const PL  = norm(p.PL);
-              const PBL = norm(p.PBL);
+  const computeLeadTime = (variantId) => {
+    const p = map.product || {};
+    const v = (map.variants || {})[String(variantId)] || {};
 
-              const VL  = norm(v.VL);
-              const VBL = norm(v.VBL);
+    const PL  = norm(p.PL);
+    const PBL = norm(p.PBL);
 
-              const inStock = isInStock(v);
+    const VL  = norm(v.VL);
+    const VBL = norm(v.VBL);
 
-              // Determine lead time based on matrix logic
-              const chosen = inStock ? (VL || PL) : (VBL || PBL);
+    const inStock = isInStock(v);
 
-              // ✅ FALLBACK: if nothing exists, use original headline from DOM
-              if (chosen) return chosen;
+    // Your logic: in-stock uses VL/PL, backorder uses VBL/PBL
+    const chosen = inStock ? (VL || PL) : (VBL || PBL);
+    return chosen; // may be ''
+  };
 
-              const el = document.querySelector('[data-icf-shipping-timeframe] [data-icf-shipping-title]');
-              return el?.getAttribute('data-original-headline') || '';
-            };
+  const render = (variantId) => {
+    const lead = computeLeadTime(variantId);
 
-            const render = (variantId) => {
-              const title = computeShippingTitle(variantId);
-              const nodes = document.querySelectorAll('[data-icf-shipping-timeframe] [data-icf-shipping-title]');
-              nodes.forEach((h3) => {
-                h3.textContent = title || '';
-              });
-            };
+    const shippingItems = document.querySelectorAll('[data-icf-shipping-timeframe]');
+    shippingItems.forEach((li) => {
+      const titleEl = li.querySelector('[data-icf-shipping-title]');
+      const subEl   = li.querySelector('[data-icf-shipping-subtitle]');
 
-            // Initial
-            render(getVariantId());
+      if (!titleEl) return;
 
-            // Dawn variant event
-            document.addEventListener('variant:change', (event) => {
-              const v = event?.detail?.variant;
-              if (!v?.id) return;
-              requestAnimationFrame(() => render(v.id));
-            });
+      const originalHeadline = titleEl.getAttribute('data-original-headline') || '';
+      const originalSub = subEl?.getAttribute('data-original-subheadline') || '';
 
-            // Fallback if needed
-            document.addEventListener('change', (event) => {
-              const t = event.target;
-              if (t?.name === 'id' && t.value) {
-                requestAnimationFrame(() => render(t.value));
-              }
-            });
-          })();
-        </script>
+      if (lead) {
+        // Lead time exists: show it in H3, put NOTHING in subtitle area
+        titleEl.textContent = lead;
+        if (subEl) {
+          subEl.textContent = '';
+          subEl.hidden = true;
+        }
+      } else {
+        // Lead time NOT set: revert to original headline + original subheadline
+        titleEl.textContent = originalHeadline;
+        if (subEl) {
+          subEl.textContent = originalSub;
+          subEl.hidden = !originalSub;
+        }
+      }
+    });
+  };
+
+  // Initial
+  render(getVariantId());
+
+  // Dawn variant event
+  document.addEventListener('variant:change', (event) => {
+    const v = event?.detail?.variant;
+    if (!v?.id) return;
+    requestAnimationFrame(() => render(v.id));
+  });
+
+  // Fallback
+  document.addEventListener('change', (event) => {
+    const t = event.target;
+    if (t?.name === 'id' && t.value) {
+      requestAnimationFrame(() => render(t.value));
+    }
+  });
+})();
+</script>
       {%- endif -%}
   {%- endcase -%}
 {%- endfor -%}
