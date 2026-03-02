@@ -1245,35 +1245,97 @@ button#ModalClose-ReturnDetails, .product-popup-modal__toggle {
         </section>
          {%- for block in section.blocks -%}
             {%- case block.type -%}
-            {%- when 'features_with_icons' -%}
-                   {%- if iconfs != blank -%}
-                       <div class="product-icon-features quick-add-hidden">
-                          <ul class="icon-features-list">
-                            {% for icf in iconfs %}
-                                <li class="icon-feature">
-                                  {% if icf.icon.value %}
-                                    <img
-                                      src="{{ icf.icon.value | image_url: width: 64 }}"
-                                      alt="{{ icf.headline.value | escape }}"
-                                      class="icon-feature__image"
-                                    />
-                                  {% endif %}
-                        <div class="icon-feature__text">
-                          <h3 class="icon-feature__title">
-                            {{ icf.headline.value }}
-                          </h3>
-                          {% if icf.sub_headline.value %}
-                            <p class="icon-feature__subtitle">
-                              {{ icf.sub_headline.value }}
-                            </p>
-                          {% endif %}
-                        </div>
-                      </li>
-                  {% endfor %}
-                </ul>
-            </div>
+  {%- assign iconfs = product.metafields.custom.icon_features.value -%}
+
+{%- comment -%}
+  Shipping Timeframe logic for the icon feature named/type "Shipping Timeframe"
+  - Uses selected variant first, falls back to product metafields
+  - Chooses Stocked lead time (PL/VL) vs Backordered lead time (PBL/VBL) based on:
+      1) Explicit stock status containing "backorder"
+      2) OR inventory is tracked AND qty == 0 AND status is blank or "in stock"
+  - Case-insensitive for status comparisons
+  - Does NOT touch your existing stock-status script
+{%- endcomment -%}
+
+{%- assign v = product.selected_or_first_available_variant -%}
+
+{%- assign pl  = product.metafields.custom.info_lead_time.value | default: '' -%}
+{%- assign pbl = product.metafields.custom.info_backordered_lead_time.value | default: '' -%}
+{%- assign pss = product.metafields.custom.info_stock_status.value | default: '' -%}
+
+{%- assign vl  = v.metafields.custom.info_stocked_lead_time_override.value | default: '' -%}
+{%- assign vbl = v.metafields.custom.info_backordred_lead_time_override.value | default: '' -%}
+{%- assign vss = v.metafields.custom.stock_status.value | default: '' -%}
+
+{%- assign effective_status = vss | default: pss | default: '' -%}
+{%- assign status_lc = effective_status | downcase | strip -%}
+
+{%- assign inv_qty = v.inventory_quantity | default: 0 -%}
+{%- assign inv_tracked = false -%}
+{%- if v.inventory_management == 'shopify' -%}
+  {%- assign inv_tracked = true -%}
+{%- endif -%}
+
+{%- assign is_backorder = false -%}
+{%- if status_lc contains 'backorder' -%}
+  {%- assign is_backorder = true -%}
+{%- elsif inv_tracked and inv_qty == 0 -%}
+  {%- if status_lc == '' or status_lc == 'in stock' -%}
+    {%- assign is_backorder = true -%}
+  {%- endif -%}
+{%- endif -%}
+
+{%- assign effective_stock_lead = vl | default: pl | default: '' -%}
+{%- assign effective_back_lead  = vbl | default: pbl | default: '' -%}
+
+{%- assign shipping_timeframe_text = effective_stock_lead -%}
+{%- if is_backorder -%}
+  {%- assign shipping_timeframe_text = effective_back_lead -%}
+{%- endif -%}
+
+{%- when 'features_with_icons' -%}
+  {%- if iconfs != blank -%}
+    <div class="product-icon-features quick-add-hidden">
+      <ul class="icon-features-list">
+        {% for icf in iconfs %}
+          {%- assign icf_type = icf.type.value | default: icf.type | default: '' -%}
+          {%- assign icf_type_lc = icf_type | downcase | strip -%}
+          {%- assign is_shipping_timeframe_feature = false -%}
+          {%- if icf_type_lc == 'shipping timeframe' -%}
+            {%- assign is_shipping_timeframe_feature = true -%}
+          {%- endif -%}
+
+          <li class="icon-feature">
+            {% if icf.icon.value %}
+              <img
+                src="{{ icf.icon.value | image_url: width: 64 }}"
+                alt="{{ icf.headline.value | escape }}"
+                class="icon-feature__image"
+              />
             {% endif %}
-              
+
+            <div class="icon-feature__text">
+              <h3 class="icon-feature__title">
+                {%- if is_shipping_timeframe_feature -%}
+                  {{ shipping_timeframe_text }}
+                {%- else -%}
+                  {{ icf.headline.value }}
+                {%- endif -%}
+              </h3>
+
+              {%- unless is_shipping_timeframe_feature -%}
+                {% if icf.sub_headline.value %}
+                  <p class="icon-feature__subtitle">
+                    {{ icf.sub_headline.value }}
+                  </p>
+                {% endif %}
+              {%- endunless -%}
+            </div>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  {%- endif -%}
        {%- endcase -%}
              {%- endfor -%}
 
