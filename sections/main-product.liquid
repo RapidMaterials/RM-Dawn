@@ -1269,18 +1269,14 @@ button#ModalClose-ReturnDetails, .product-popup-modal__toggle {
                 {% endif %}
 
                 <div class="icon-feature__text">
-                  <h3
-                    class="icon-feature__title"
-                    {% if is_shipping_timeframe %}
-                      data-icf-shipping-title
-                    {% endif %}
-                  >
-                    {%- if is_shipping_timeframe -%}
-                      {{ icf.headline.value }}
-                    {%- else -%}
-                      {{ icf.headline.value }}
-                    {%- endif -%}
-                  </h3>
+                <h3
+                  class="icon-feature__title"
+                  {% if is_shipping_timeframe %}
+                    data-icf-shipping-title
+                  {% endif %}
+                >
+                  {{ icf.headline.value }}
+                </h3>
 
                   {%- unless is_shipping_timeframe -%}
                     {% if icf.sub_headline.value %}
@@ -1326,7 +1322,6 @@ button#ModalClose-ReturnDetails, .product-popup-modal__toggle {
               const input = form?.querySelector('input[name="id"], select[name="id"]');
               return input?.value || {{ product.selected_or_first_available_variant.id | json }};
             };
-
             const computeShippingTitle = (variantId) => {
               const p = map.product || {};
               const v = (map.variants || {})[String(variantId)] || {};
@@ -1339,9 +1334,14 @@ button#ModalClose-ReturnDetails, .product-popup-modal__toggle {
 
               const inStock = isInStock(v);
 
-              // Same "matrix" behavior: in-stock uses PL/VL, backorder uses PBL/VBL
+              // Determine lead time based on matrix logic
               const chosen = inStock ? (VL || PL) : (VBL || PBL);
-              return chosen;
+
+              // ✅ FALLBACK: if nothing exists, use original headline from DOM
+              if (chosen) return chosen;
+
+              const el = document.querySelector('[data-icf-shipping-timeframe] [data-icf-shipping-title]');
+              return el?.getAttribute('data-original-headline') || '';
             };
 
             const render = (variantId) => {
