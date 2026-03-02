@@ -1245,193 +1245,35 @@ button#ModalClose-ReturnDetails, .product-popup-modal__toggle {
         </section>
          {%- for block in section.blocks -%}
             {%- case block.type -%}
-            {%- assign iconfs = product.metafields.custom.icon_features.value -%}
-{%- assign v_initial = product.selected_or_first_available_variant -%}
-
-{%- assign PL = product.metafields.custom.info_lead_time.value | default: '' -%}
-{%- assign PBL = product.metafields.custom.info_backordered_lead_time.value | default: '' -%}
-{%- assign PSS = product.metafields.custom.info_stock_status.value | default: '' -%}
-{%- assign PRD = product.metafields.custom.info_restock_date.value | default: '' -%}
-
-{%- assign VL = v_initial.metafields.custom.info_stocked_lead_time_override.value | default: '' -%}
-{%- assign VBL = v_initial.metafields.custom.info_backordred_lead_time_override.value | default: '' -%}
-{%- assign VSS = v_initial.metafields.custom.stock_status.value | default: '' -%}
-{%- assign VRD = v_initial.metafields.custom.info_restock_date.value | default: '' -%}
-
-{%- assign inv_tracked_initial = false -%}
-{%- if v_initial.inventory_management == 'shopify' -%}
-  {%- assign inv_tracked_initial = true -%}
-{%- endif -%}
-{%- assign inv_qty_initial = v_initial.inventory_quantity | default: 0 -%}
-
-{%- assign status_initial = VSS | default: PSS -%}
-{%- assign status_initial_lc = status_initial | downcase | strip -%}
-
-{%- assign is_backorder_initial = false -%}
-
-{%- if status_initial_lc == 'on backorder' -%}
-  {%- assign is_backorder_initial = true -%}
-{%- elsif inv_tracked_initial and inv_qty_initial == 0 and status_initial_lc == '' -%}
-  {%- assign is_backorder_initial = true -%}
-{%- elsif inv_tracked_initial and inv_qty_initial == 0 and status_initial_lc == 'in stock' -%}
-  {%- assign is_backorder_initial = true -%}
-{%- endif -%}
-
-{%- assign lead_instock_initial = VL | default: PL -%}
-{%- assign lead_backorder_initial = VBL | default: PBL -%}
-{%- assign restock_initial = VRD | default: PRD -%}
-
-{%- assign shipping_timeframe_initial = '' -%}
-{%- if is_backorder_initial -%}
-  {%- if restock_initial != blank -%}
-    {%- assign shipping_timeframe_initial = restock_initial -%}
-  {%- else -%}
-    {%- assign shipping_timeframe_initial = lead_backorder_initial -%}
-  {%- endif -%}
-{%- else -%}
-  {%- assign shipping_timeframe_initial = lead_instock_initial -%}
-{%- endif -%}
-
-{%- when 'features_with_icons' -%}
-  {%- if iconfs != blank -%}
-    <div class="product-icon-features quick-add-hidden">
-      <ul class="icon-features-list">
-        {% for icf in iconfs %}
-          {%- assign icf_type = icf.type.value | default: '' | downcase | strip -%}
-          {%- assign is_shipping_timeframe = false -%}
-          {%- if icf_type == 'shipping timeframe' -%}
-            {%- assign is_shipping_timeframe = true -%}
-          {%- endif -%}
-
-          <li class="icon-feature">
-            {% if icf.icon.value %}
-              <img
-                src="{{ icf.icon.value | image_url: width: 64 }}"
-                alt="{{ icf.headline.value | escape }}"
-                class="icon-feature__image"
-              />
-            {% endif %}
-
-            <div class="icon-feature__text">
-              <h3
-                class="icon-feature__title"
-                {% if is_shipping_timeframe %}
-                  data-icf-shipping-timeframe-title
-                  data-default-title="{{ icf.headline.value | escape }}"
-                {% endif %}
-              >
-                {%- if is_shipping_timeframe -%}
-                  {{ shipping_timeframe_initial | default: icf.headline.value }}
-                {%- else -%}
-                  {{ icf.headline.value }}
-                {%- endif -%}
-              </h3>
-
-              {%- unless is_shipping_timeframe -%}
-                {% if icf.sub_headline.value %}
-                  <p class="icon-feature__subtitle">
-                    {{ icf.sub_headline.value }}
-                  </p>
-                {% endif %}
-              {%- endunless -%}
+            {%- when 'features_with_icons' -%}
+                   {%- if iconfs != blank -%}
+                       <div class="product-icon-features quick-add-hidden">
+                          <ul class="icon-features-list">
+                            {% for icf in iconfs %}
+                                <li class="icon-feature">
+                                  {% if icf.icon.value %}
+                                    <img
+                                      src="{{ icf.icon.value | image_url: width: 64 }}"
+                                      alt="{{ icf.headline.value | escape }}"
+                                      class="icon-feature__image"
+                                    />
+                                  {% endif %}
+                        <div class="icon-feature__text">
+                          <h3 class="icon-feature__title">
+                            {{ icf.headline.value }}
+                          </h3>
+                          {% if icf.sub_headline.value %}
+                            <p class="icon-feature__subtitle">
+                              {{ icf.sub_headline.value }}
+                            </p>
+                          {% endif %}
+                        </div>
+                      </li>
+                  {% endfor %}
+                </ul>
             </div>
-          </li>
-        {% endfor %}
-      </ul>
-    </div>
-
-    <script type="application/json" id="IcfShippingTimeframeMap-{{ section.id }}">
-    {
-      "product": {
-        "PL": {{ PL | json }},
-        "PBL": {{ PBL | json }},
-        "PSS": {{ PSS | json }},
-        "PRD": {{ PRD | json }}
-      },
-      "variants": {
-        {%- for v in product.variants -%}
-          "{{ v.id }}": {
-            "inv_mgmt": {{ v.inventory_management | default: '' | json }},
-            "inv_qty": {{ v.inventory_quantity | default: 0 | json }},
-            "VSS": {{ v.metafields.custom.stock_status.value | default: '' | json }},
-            "VL": {{ v.metafields.custom.info_stocked_lead_time_override.value | default: '' | json }},
-            "VBL": {{ v.metafields.custom.info_backordred_lead_time_override.value | default: '' | json }},
-            "VRD": {{ v.metafields.custom.info_restock_date.value | default: '' | json }}
-          }{% unless forloop.last %},{% endunless %}
-        {%- endfor -%}
-      }
-    }
-    </script>
-
-    <script>
-    (() => {
-      const sectionId = {{ section.id | json }};
-      const mapEl = document.getElementById(`IcfShippingTimeframeMap-${sectionId}`);
-      if (!mapEl) return;
-
-      const normalize = (x) => (x == null ? '' : String(x)).trim();
-      const lower = (x) => normalize(x).toLowerCase();
-
-      let map = null;
-      try { map = JSON.parse(mapEl.textContent || '{}'); } catch (e) { return; }
-
-      const computeShippingTimeframe = (variantId) => {
-        const p = map.product || {};
-        const vd = (map.variants || {})[String(variantId)] || {};
-
-        const invTracked = normalize(vd.inv_mgmt) === 'shopify';
-        const invQty = Number(vd.inv_qty || 0);
-
-        const status = normalize(vd.VSS) || normalize(p.PSS);
-        const statusLc = lower(status);
-
-        const leadInStock = normalize(vd.VL) || normalize(p.PL);
-        const leadBack = normalize(vd.VBL) || normalize(p.PBL);
-        const restock = normalize(vd.VRD) || normalize(p.PRD);
-
-        let isBackorder = false;
-
-        if (statusLc === 'on backorder') {
-          isBackorder = true;
-        } else if (invTracked && invQty === 0 && statusLc === '') {
-          isBackorder = true;
-        } else if (invTracked && invQty === 0 && statusLc === 'in stock') {
-          isBackorder = true;
-        }
-
-        if (isBackorder) {
-          return restock || leadBack || '';
-        }
-        return leadInStock || '';
-      };
-
-      const updateAllShippingIcons = (variantId) => {
-        const els = document.querySelectorAll('[data-icf-shipping-timeframe-title]');
-        if (!els.length) return;
-
-        const text = computeShippingTimeframe(variantId);
-        els.forEach((el) => {
-          const fallback = el.getAttribute('data-default-title') || '';
-          el.textContent = text || fallback;
-        });
-      };
-
-      updateAllShippingIcons({{ product.selected_or_first_available_variant.id | json }});
-
-      document.addEventListener('variant:change', (event) => {
-        const v = event?.detail?.variant;
-        if (!v?.id) return;
-        requestAnimationFrame(() => updateAllShippingIcons(v.id));
-      });
-
-      document.addEventListener('change', (event) => {
-        const t = event.target;
-        if (!t || t.name !== 'id' || !t.value) return;
-        requestAnimationFrame(() => updateAllShippingIcons(t.value));
-      });
-    })();
-    </script>
-  {%- endif -%}
+            {% endif %}
+              
        {%- endcase -%}
              {%- endfor -%}
 
