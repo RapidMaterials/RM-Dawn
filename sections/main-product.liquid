@@ -1250,55 +1250,73 @@ button#ModalClose-ReturnDetails, .product-popup-modal__toggle {
     {%- when 'features_with_icons' -%}
       {%- if iconfs != blank -%}
         <div class="product-icon-features quick-add-hidden">
-          <ul class="icon-features-list">
-            {% for icf in iconfs %}
-              {%- assign icf_type = icf.type.value | default: '' -%}
-              {%- assign icf_type_lc = icf_type | downcase -%}
-              {%- assign is_shipping_timeframe = false -%}
-              {%- if icf_type_lc == 'shipping timeframe' -%}
-                {%- assign is_shipping_timeframe = true -%}
-              {%- endif -%}
+ <ul class="icon-features-list">
+  {% for icf in iconfs %}
+    {%- assign icf_type = icf.type.value | default: '' -%}
+    {%- assign icf_type_lc = icf_type | downcase -%}
+    {%- assign is_shipping_timeframe = false -%}
+    {%- if icf_type_lc == 'shipping timeframe' -%}
+      {%- assign is_shipping_timeframe = true -%}
+    {%- endif -%}
 
-             <li class="icon-feature" {% if is_shipping_timeframe %}data-icf-shipping-timeframe{% endif %}>
+    {%- comment -%}
+      Headline fallback order:
+      1) icf.feature
+      2) icf.headline
+      3) icf.title
+    {%- endcomment -%}
+    {%- assign icf_headline =
+      icf.feature.value
+      | default: icf.headline.value
+      | default: icf.title.value
+      | default: ''
+    -%}
 
-              {%- assign icf_headline =
-                icf.feature.value
-                | default: icf.headline.value
-                | default: icf.title.value
-                | default: ''
-              -%}
+    {%- comment -%}
+      Subheadline fallback order:
+      1) icf.sub_headline
+      2) icf.subheadline (common alt name)
+      3) icf.subtitle (extra safety)
+    {%- endcomment -%}
+    {%- assign icf_subheadline =
+      icf.sub_headline.value
+      | default: icf.subheadline.value
+      | default: icf.subtitle.value
+      | default: ''
+    -%}
 
-              {% if icf.icon.value %}
-                <img
-                  src="{{ icf.icon.value | image_url: width: 64 }}"
-                  alt="{{ icf_headline | escape }}"
-                  class="icon-feature__image"
-                />
-              {% endif %}
+    <li class="icon-feature" {% if is_shipping_timeframe %}data-icf-shipping-timeframe{% endif %}>
+      {% if icf.icon.value %}
+        <img
+          src="{{ icf.icon.value | image_url: width: 64 }}"
+          alt="{{ icf_headline | escape }}"
+          class="icon-feature__image"
+        />
+      {% endif %}
 
-              <div class="icon-feature__text">
+      <div class="icon-feature__text">
+        <h3
+          class="icon-feature__title"
+          {% if is_shipping_timeframe %}data-icf-shipping-title{% endif %}
+          data-original-headline="{{ icf_headline | escape }}"
+        >
+          {{ icf_headline }}
+        </h3>
 
-                <h3
-                  class="icon-feature__title"
-                  {% if is_shipping_timeframe %}data-icf-shipping-title{% endif %}
-                  data-original-headline="{{ icf_headline | escape }}"
-                >
-                  {{ icf_headline }}
-                </h3>
-
-                {%- unless is_shipping_timeframe -%}
-                  {% if icf.sub_headline.value %}
-                    <p class="icon-feature__subtitle">
-                      {{ icf.sub_headline.value }}
-                    </p>
-                  {% endif %}
-                {%- endunless -%}
-
-              </div>
-
-            </li>
-            {% endfor %}
-          </ul>
+        {%- unless is_shipping_timeframe -%}
+          {% if icf_subheadline != blank %}
+            <p
+              class="icon-feature__subtitle"
+              data-original-subheadline="{{ icf_subheadline | escape }}"
+            >
+              {{ icf_subheadline }}
+            </p>
+          {% endif %}
+        {%- endunless -%}
+      </div>
+    </li>
+  {% endfor %}
+</ul>
         </div>
 
         <script>
