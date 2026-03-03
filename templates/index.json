@@ -20,11 +20,26 @@
         "desktop_image": "shopify://shop_images/NSG_LOGO_light_b1d30b90-46f3-43e8-afc9-92b00dbccd22.png",
         "alt_text": "",
         "link": "",
+        "desktop_object_x": 50,
+        "desktop_object_y": 50,
+        "mobile_object_x": 50,
+        "mobile_object_y": 50,
         "desktop_height": 100,
         "mobile_height": 100,
         "object_fit": "contain",
         "border_radius": 0,
-        "loading": "lazy"
+        "loading": "lazy",
+        "logo_alt": "Logo",
+        "logo_width_desktop": 280,
+        "logo_width_mobile": 180,
+        "show_glow": false,
+        "glow_color": "white",
+        "glow_opacity": 45,
+        "glow_blur": 26,
+        "glow_height_desktop": 380,
+        "glow_width_desktop": 380,
+        "glow_height_mobile": 260,
+        "glow_width_mobile": 380
       }
     },
     "image_banner": {
