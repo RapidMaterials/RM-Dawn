@@ -144,6 +144,16 @@
         "padding_bottom": 36
       }
     },
+    "video_gallery_8xqihm": {
+      "type": "video-gallery",
+      "name": "Multi Video Lightbox",
+      "settings": {
+        "heading": "",
+        "heading_size": "h1",
+        "section_float": "clear",
+        "color_scheme": "scheme-3"
+      }
+    },
     "collapsible_content_faq_P8N8E4": {
       "type": "collapsible-content-faq",
       "name": "FAQ Accordion",
@@ -160,16 +170,6 @@
         "desktop_layout": "image_second",
         "padding_top": 36,
         "padding_bottom": 36
-      }
-    },
-    "video_gallery_8xqihm": {
-      "type": "video-gallery",
-      "name": "Multi Video Lightbox",
-      "settings": {
-        "heading": "",
-        "heading_size": "h1",
-        "section_float": "clear",
-        "color_scheme": ""
       }
     }
   },
