@@ -484,6 +484,74 @@
       align-items:center;
     }
   }
+
+
+.rm-header-mobile-tools {
+  display: none;
+}
+
+.rm-header-mobile-tools .rm-topbar__search-wrap {
+  margin-left: 0;
+  max-width: none;
+  width: 100%;
+}
+
+.rm-header-mobile-tools .rm-topbar__search-input {
+  height: 44px;
+  font-size: 14px;
+}
+
+.rm-header-mobile-tools .rm-topbar__icon_wrapper {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex: 0 0 auto;
+}
+
+.rm-header-mobile-tools .rm-topbar__icon,
+.rm-header-mobile-tools .rm-topbar__cart {
+  width: 40px;
+  height: 40px;
+}
+
+.rm-header-mobile-tools .rm-topbar__icon svg,
+.rm-header-mobile-tools .rm-topbar__cart svg {
+  width: 24px;
+  height: 24px;
+}
+
+@media screen and (max-width: 989px) {
+  #{{ section_id }} .rm-topbar__search-wrap,
+  #{{ section_id }} .rm-topbar__icon_wrapper {
+    display: none;
+  }
+
+  .rm-header-mobile-tools {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  .rm-header-mobile-tools__search {
+    flex: 1 1 auto;
+    min-width: 0;
+    max-width: 280px;
+  }
+
+  .header {
+    column-gap: 12px;
+  }
+}
+
+@media screen and (min-width: 990px) {
+  .rm-header-mobile-tools {
+    display: none !important;
+  }
+}
+
 </style>
 
 {%- style -%}
@@ -513,7 +581,7 @@
 <script src="{{ 'cart-notification.js' | asset_url }}" defer="defer"></script>
 
 {%- assign desktop_menu = section.settings.menu -%}
-{%- assign mobile_menu_handle = section.settings.mobile-menu -%}
+{%- assign mobile_menu_handle = section.settings.mobile_menu -%}
 {%- assign mobile_menu = linklists[mobile_menu_handle] -%}
 
 {%- liquid
@@ -654,6 +722,81 @@
         render 'header-search', input_id: 'Search-In-Modal-1'
       endif
     -%}
+    <div class="rm-header-mobile-tools medium-hide large-up-hide">
+  <div class="rm-header-mobile-tools__search">
+    <div class="rm-topbar__search-wrap" data-search-wrap>
+      <form action="{{ routes.search_url }}" method="get" role="search" class="rm-topbar__search-form" data-search-form>
+        <input
+          class="rm-topbar__search-input"
+          type="search"
+          name="q"
+          value="{{ search.terms | escape }}"
+          placeholder="{{ section.settings.search_placeholder }}"
+          autocomplete="off"
+          autocorrect="off"
+          autocapitalize="off"
+          spellcheck="false"
+          aria-label="Search products, brands, and pages"
+          aria-expanded="false"
+          aria-haspopup="listbox"
+          data-search-input
+        >
+        <input type="hidden" name="options[prefix]" value="last">
+        <button type="submit" class="rm-topbar__search-button" aria-label="Search">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="11" cy="11" r="7"></circle>
+            <path d="M20 20l-3.5-3.5"></path>
+          </svg>
+        </button>
+      </form>
+
+      <div class="rm-topbar__results" data-search-results>
+        <div class="rm-topbar__results-inner" data-search-results-inner></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="rm-topbar__icon_wrapper">
+    <a href="{{ routes.cart_url }}" class="rm-topbar__cart" aria-label="Cart">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <circle cx="9" cy="20" r="1.5"></circle>
+        <circle cx="18" cy="20" r="1.5"></circle>
+        <path d="M2 3h3l2.2 10.2a1 1 0 0 0 1 .8h9.8a1 1 0 0 0 1-.8L21 7H6"></path>
+      </svg>
+      {% if cart.item_count > 0 %}
+        <span class="rm-topbar__cart-count">{{ cart.item_count }}</span>
+      {% endif %}
+    </a>
+
+    {%- if shop.customer_accounts_enabled -%}
+      <a
+        href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}"
+        class="rm-topbar__icon rm-topbar__account"
+        rel="nofollow"
+        aria-label="{%- if customer -%}Account{%- else -%}Log in{%- endif -%}"
+      >
+        {%- if section.settings.enable_customer_avatar and customer and customer.has_avatar? -%}
+          {{ customer | avatar }}
+        {%- else -%}
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="7" r="4"></circle>
+            <path d="M4 20.5c1.7-4.2 14.3-4.2 16 0"></path>
+          </svg>
+        {%- endif -%}
+
+        <span class="visually-hidden">
+          {%- liquid
+            if customer
+              echo 'customer.account_fallback' | t
+            else
+              echo 'customer.log_in' | t
+            endif
+          -%}
+        </span>
+      </a>
+    {%- endif -%}
+  </div>
+</div>
 
     {%- if section.settings.logo_position != 'middle-center' -%}
       {%- if request.page_type == 'index' -%}
@@ -827,15 +970,6 @@
     const root = document.getElementById('{{ section_id }}');
     if (!root) return;
 
-    const input = root.querySelector('[data-search-input]');
-    const results = root.querySelector('[data-search-results]');
-    const resultsInner = root.querySelector('[data-search-results-inner]');
-    const form = root.querySelector('[data-search-form]');
-    if (!input || !results || !resultsInner || !form) return;
-
-    let controller;
-    let activeQuery = '';
-
     function formatMoney(cents) {
       try {
         if (window.Shopify && typeof window.Shopify.formatMoney === 'function') {
@@ -854,193 +988,203 @@
         .replace(/'/g, '&#39;');
     }
 
-    function openResults() {
-      results.classList.add('is-open');
-      input.setAttribute('aria-expanded', 'true');
-    }
+    function initPredictiveSearch(container) {
+      const input = container.querySelector('[data-search-input]');
+      const results = container.querySelector('[data-search-results]');
+      const resultsInner = container.querySelector('[data-search-results-inner]');
+      const form = container.querySelector('[data-search-form]');
+      if (!input || !results || !resultsInner || !form) return;
 
-    function closeResults() {
-      results.classList.remove('is-open');
-      input.setAttribute('aria-expanded', 'false');
-    }
+      let controller;
+      let debounceTimer;
 
-    function renderNoResults(query) {
-      resultsInner.innerHTML = `
-        <div class="rm-topbar__empty">No quick results for “${escapeHtml(query)}”.</div>
-        <a class="rm-topbar__footer-link" href="{{ routes.search_url }}?q=${encodeURIComponent(query)}&options%5Bprefix%5D=last">
-          <span>Search for “${escapeHtml(query)}”</span>
-          <span>→</span>
-        </a>
-      `;
-      openResults();
-    }
-
-    function buildSimpleList(title, items, type) {
-      if (!items || !items.length) return '';
-      const links = items.map((item) => {
-        const text = item.text || item.title || '';
-        const url = item.url || '#';
-        return `
-          <li class="rm-topbar__item">
-            <a class="rm-topbar__link" href="${url}">
-              <span class="rm-topbar__text">${escapeHtml(text)}</span>
-            </a>
-          </li>
-        `;
-      }).join('');
-
-      return `
-        <div class="rm-topbar__group">
-          <div class="rm-topbar__group-title">${title}</div>
-          <ul class="rm-topbar__list" role="listbox" aria-label="${escapeHtml(type)} results">
-            ${links}
-          </ul>
-        </div>
-      `;
-    }
-
-    function buildProductList(products) {
-      if (!products || !products.length) return '';
-      const items = products.map((product) => {
-        const img = product.featured_image && product.featured_image.url
-          ? `<div class="rm-topbar__thumb"><img src="${product.featured_image.url}&width=112" alt="${escapeHtml((product.featured_image.alt || product.title || ''))}"></div>`
-          : `<div class="rm-topbar__thumb"></div>`;
-
-        const price = typeof product.price === 'number'
-          ? `<div class="rm-topbar__product-price">${formatMoney(product.price * 100)}</div>`
-          : '';
-
-        return `
-          <li class="rm-topbar__item">
-            <a class="rm-topbar__product" href="${product.url}">
-              ${img}
-              <div class="rm-topbar__product-text">
-                <div class="rm-topbar__product-title">${escapeHtml(product.title)}</div>
-                ${price}
-              </div>
-            </a>
-          </li>
-        `;
-      }).join('');
-
-      return `
-        <div class="rm-topbar__group">
-          <div class="rm-topbar__group-title">Products</div>
-          <ul class="rm-topbar__list" role="listbox" aria-label="Product results">
-            ${items}
-          </ul>
-        </div>
-      `;
-    }
-
-    function renderResults(query, data) {
-      const resourceResults = data && data.resources && data.resources.results ? data.resources.results : {};
-      const queries = resourceResults.queries || [];
-      const products = resourceResults.products || [];
-      const pages = resourceResults.pages || [];
-      const collections = resourceResults.collections || [];
-
-      if (!queries.length && !products.length && !pages.length && !collections.length) {
-        renderNoResults(query);
-        return;
+      function openResults() {
+        results.classList.add('is-open');
+        input.setAttribute('aria-expanded', 'true');
       }
 
-      const leftCol = `
-        ${buildSimpleList('Suggestions', queries, 'query')}
-        ${buildSimpleList('Pages', pages, 'page')}
-        ${buildSimpleList('Collections', collections, 'collection')}
-      `;
-
-      const rightCol = `
-        ${buildProductList(products)}
-      `;
-
-      resultsInner.innerHTML = `
-        <div class="rm-topbar__results-grid">
-          <div class="rm-topbar__results-col">${leftCol}</div>
-          <div class="rm-topbar__results-col">${rightCol}</div>
-        </div>
-        <a class="rm-topbar__footer-link" href="{{ routes.search_url }}?q=${encodeURIComponent(query)}&options%5Bprefix%5D=last">
-          <span>Search for “${escapeHtml(query)}”</span>
-          <span>→</span>
-        </a>
-      `;
-
-      openResults();
-    }
-
-    function fetchResults(query) {
-      if (controller) controller.abort();
-      controller = new AbortController();
-
-      resultsInner.innerHTML = `<div class="rm-topbar__loading">Searching…</div>`;
-      openResults();
-
-      const url =
-        window.Shopify.routes.root +
-        'search/suggest.json?q=' + encodeURIComponent(query) +
-        '&resources[type]=query,product,page,collection' +
-        '&resources[limit]=6' +
-        '&resources[limit_scope]=each' +
-        '&resources[options][unavailable_products]=last';
-
-      fetch(url, { signal: controller.signal })
-        .then((response) => {
-          if (!response.ok) throw new Error('Predictive search request failed');
-          return response.json();
-        })
-        .then((data) => {
-          if (input.value.trim() !== query) return;
-          renderResults(query, data);
-        })
-        .catch((error) => {
-          if (error.name === 'AbortError') return;
-          resultsInner.innerHTML = `
-            <div class="rm-topbar__empty">Search suggestions couldn’t load.</div>
-            <a class="rm-topbar__footer-link" href="{{ routes.search_url }}?q=${encodeURIComponent(query)}&options%5Bprefix%5D=last">
-              <span>Search for “${escapeHtml(query)}”</span>
-              <span>→</span>
-            </a>
-          `;
-          openResults();
-        });
-    }
-
-    let debounceTimer;
-    input.addEventListener('input', function() {
-      const query = this.value.trim();
-      activeQuery = query;
-
-      clearTimeout(debounceTimer);
-
-      if (query.length < 2) {
-        closeResults();
-        resultsInner.innerHTML = '';
-        return;
+      function closeResults() {
+        results.classList.remove('is-open');
+        input.setAttribute('aria-expanded', 'false');
       }
 
-      debounceTimer = setTimeout(() => {
-        fetchResults(query);
-      }, 180);
-    });
-
-    input.addEventListener('focus', function() {
-      if (resultsInner.innerHTML.trim() !== '' && this.value.trim().length >= 2) {
+      function renderNoResults(query) {
+        resultsInner.innerHTML = `
+          <div class="rm-topbar__empty">No quick results for “${escapeHtml(query)}”.</div>
+          <a class="rm-topbar__footer-link" href="{{ routes.search_url }}?q=${encodeURIComponent(query)}&options%5Bprefix%5D=last">
+            <span>Search for “${escapeHtml(query)}”</span>
+            <span>→</span>
+          </a>
+        `;
         openResults();
       }
-    });
 
-    document.addEventListener('click', function(event) {
-      if (!root.contains(event.target)) {
-        closeResults();
-      }
-    });
+      function buildSimpleList(title, items, type) {
+        if (!items || !items.length) return '';
+        const links = items.map((item) => {
+          const text = item.text || item.title || '';
+          const url = item.url || '#';
+          return `
+            <li class="rm-topbar__item">
+              <a class="rm-topbar__link" href="${url}">
+                <span class="rm-topbar__text">${escapeHtml(text)}</span>
+              </a>
+            </li>
+          `;
+        }).join('');
 
-    input.addEventListener('keydown', function(event) {
-      if (event.key === 'Escape') {
-        closeResults();
+        return `
+          <div class="rm-topbar__group">
+            <div class="rm-topbar__group-title">${title}</div>
+            <ul class="rm-topbar__list" role="listbox" aria-label="${escapeHtml(type)} results">
+              ${links}
+            </ul>
+          </div>
+        `;
       }
-    });
+
+      function buildProductList(products) {
+        if (!products || !products.length) return '';
+        const items = products.map((product) => {
+          const img = product.featured_image && product.featured_image.url
+            ? `<div class="rm-topbar__thumb"><img src="${product.featured_image.url}&width=112" alt="${escapeHtml((product.featured_image.alt || product.title || ''))}"></div>`
+            : `<div class="rm-topbar__thumb"></div>`;
+
+          const price = typeof product.price === 'number'
+            ? `<div class="rm-topbar__product-price">${formatMoney(product.price * 100)}</div>`
+            : '';
+
+          return `
+            <li class="rm-topbar__item">
+              <a class="rm-topbar__product" href="${product.url}">
+                ${img}
+                <div class="rm-topbar__product-text">
+                  <div class="rm-topbar__product-title">${escapeHtml(product.title)}</div>
+                  ${price}
+                </div>
+              </a>
+            </li>
+          `;
+        }).join('');
+
+        return `
+          <div class="rm-topbar__group">
+            <div class="rm-topbar__group-title">Products</div>
+            <ul class="rm-topbar__list" role="listbox" aria-label="Product results">
+              ${items}
+            </ul>
+          </div>
+        `;
+      }
+
+      function renderResults(query, data) {
+        const resourceResults = data && data.resources && data.resources.results ? data.resources.results : {};
+        const queries = resourceResults.queries || [];
+        const products = resourceResults.products || [];
+        const pages = resourceResults.pages || [];
+        const collections = resourceResults.collections || [];
+
+        if (!queries.length && !products.length && !pages.length && !collections.length) {
+          renderNoResults(query);
+          return;
+        }
+
+        const leftCol = `
+          ${buildSimpleList('Suggestions', queries, 'query')}
+          ${buildSimpleList('Pages', pages, 'page')}
+          ${buildSimpleList('Collections', collections, 'collection')}
+        `;
+
+        const rightCol = `
+          ${buildProductList(products)}
+        `;
+
+        resultsInner.innerHTML = `
+          <div class="rm-topbar__results-grid">
+            <div class="rm-topbar__results-col">${leftCol}</div>
+            <div class="rm-topbar__results-col">${rightCol}</div>
+          </div>
+          <a class="rm-topbar__footer-link" href="{{ routes.search_url }}?q=${encodeURIComponent(query)}&options%5Bprefix%5D=last">
+            <span>Search for “${escapeHtml(query)}”</span>
+            <span>→</span>
+          </a>
+        `;
+
+        openResults();
+      }
+
+      function fetchResults(query) {
+        if (controller) controller.abort();
+        controller = new AbortController();
+
+        resultsInner.innerHTML = `<div class="rm-topbar__loading">Searching…</div>`;
+        openResults();
+
+        const url =
+          window.Shopify.routes.root +
+          'search/suggest.json?q=' + encodeURIComponent(query) +
+          '&resources[type]=query,product,page,collection' +
+          '&resources[limit]=6' +
+          '&resources[limit_scope]=each' +
+          '&resources[options][unavailable_products]=last';
+
+        fetch(url, { signal: controller.signal })
+          .then((response) => {
+            if (!response.ok) throw new Error('Predictive search request failed');
+            return response.json();
+          })
+          .then((data) => {
+            if (input.value.trim() !== query) return;
+            renderResults(query, data);
+          })
+          .catch((error) => {
+            if (error.name === 'AbortError') return;
+            resultsInner.innerHTML = `
+              <div class="rm-topbar__empty">Search suggestions couldn’t load.</div>
+              <a class="rm-topbar__footer-link" href="{{ routes.search_url }}?q=${encodeURIComponent(query)}&options%5Bprefix%5D=last">
+                <span>Search for “${escapeHtml(query)}”</span>
+                <span>→</span>
+              </a>
+            `;
+            openResults();
+          });
+      }
+
+      input.addEventListener('input', function() {
+        const query = this.value.trim();
+        clearTimeout(debounceTimer);
+
+        if (query.length < 2) {
+          closeResults();
+          resultsInner.innerHTML = '';
+          return;
+        }
+
+        debounceTimer = setTimeout(() => {
+          fetchResults(query);
+        }, 180);
+      });
+
+      input.addEventListener('focus', function() {
+        if (resultsInner.innerHTML.trim() !== '' && this.value.trim().length >= 2) {
+          openResults();
+        }
+      });
+
+      document.addEventListener('click', function(event) {
+        if (!container.contains(event.target)) {
+          closeResults();
+        }
+      });
+
+      input.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape') {
+          closeResults();
+        }
+      });
+    }
+
+    root.querySelectorAll('[data-search-wrap]').forEach(initPredictiveSearch);
   })();
 </script>
 
