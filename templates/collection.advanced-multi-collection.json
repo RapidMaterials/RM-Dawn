@@ -17,11 +17,26 @@
         "mobile_image": "{{ collection.metafields.custom.header_image_mobile.value }}",
         "alt_text": "Banner image",
         "link": "",
+        "desktop_object_x": 50,
+        "desktop_object_y": 50,
+        "mobile_object_x": 50,
+        "mobile_object_y": 50,
         "desktop_height": 130,
         "mobile_height": 120,
         "object_fit": "cover",
         "border_radius": 0,
-        "loading": "lazy"
+        "loading": "lazy",
+        "logo_alt": "Logo",
+        "logo_width_desktop": 280,
+        "logo_width_mobile": 180,
+        "show_glow": false,
+        "glow_color": "white",
+        "glow_opacity": 45,
+        "glow_blur": 26,
+        "glow_height_desktop": 380,
+        "glow_width_desktop": 380,
+        "glow_height_mobile": 260,
+        "glow_width_mobile": 380
       }
     },
     "rich_text_cDKn9n": {
@@ -45,6 +60,9 @@
       "block_order": [
         "heading_xaPwfV",
         "text_9d7iRK"
+      ],
+      "custom_css": [
+        ".rich-text__text.rte{color:black; line-height:1.2em; margin-top:0; font-size:.8em; width: 80%; margin:auto;}"
       ],
       "settings": {
         "desktop_content_position": "center",
