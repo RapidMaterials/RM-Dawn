@@ -1,0 +1,176 @@
+<style>
+.rm-topbar{
+  background:#ffffff;
+  border-bottom:1px solid rgba(0,0,0,.08);
+}
+
+.rm-topbar__inner{
+  max-width:1600px;
+  margin:0 auto;
+  padding:16px 24px;
+  display:grid;
+  grid-template-columns:auto 1fr;
+  align-items:center;
+  gap:32px;
+}
+
+.rm-brand{
+  display:flex;
+  flex-direction:column;
+}
+
+.rm-logo img{
+  max-width:320px;
+}
+
+.rm-tagline{
+  font-size:13px;
+  font-weight:600;
+  color:#6b7280;
+  text-transform:uppercase;
+  letter-spacing:.05em;
+  margin-top:4px;
+}
+
+.rm-right{
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;
+  gap:16px;
+}
+
+.rm-search{
+  flex:1;
+  max-width:600px;
+}
+
+.rm-search input{
+  width:100%;
+  height:54px;
+  border:2px solid #d8dde3;
+  padding:0 16px;
+  font-size:16px;
+  border-radius:4px;
+}
+
+.rm-cart{
+  position:relative;
+}
+
+.rm-cart svg{
+  width:28px;
+}
+
+.rm-cart-count{
+  position:absolute;
+  top:-4px;
+  right:-4px;
+  background:#2f67b1;
+  color:#fff;
+  border-radius:999px;
+  font-size:12px;
+  padding:2px 6px;
+}
+
+@media(max-width:900px){
+
+.rm-topbar__inner{
+  grid-template-columns:1fr;
+}
+
+.rm-right{
+  justify-content:stretch;
+}
+
+.rm-search{
+  max-width:none;
+}
+
+}
+</style>
+
+<div class="rm-topbar">
+  <div class="rm-topbar__inner">
+
+    <div class="rm-brand">
+      <a href="{{ routes.root_url }}" class="rm-logo">
+
+        {% if section.settings.logo != blank %}
+          {{
+            section.settings.logo
+            | image_url: width:600
+            | image_tag
+          }}
+        {% else %}
+          {{ shop.name }}
+        {% endif %}
+
+      </a>
+
+      <div class="rm-tagline">
+        {{ section.settings.tagline }}
+      </div>
+    </div>
+
+    <div class="rm-right">
+
+      <div class="rm-search">
+        <form action="{{ routes.search_url }}" method="get">
+          <input
+            type="search"
+            name="q"
+            placeholder="{{ section.settings.search_placeholder }}"
+          >
+        </form>
+      </div>
+
+      <a href="{{ routes.cart_url }}" class="rm-cart">
+
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+          <circle cx="9" cy="20" r="1.5"></circle>
+          <circle cx="18" cy="20" r="1.5"></circle>
+          <path d="M2 3h3l2.2 10.2a1 1 0 0 0 1 .8h9.8a1 1 0 0 0 1-.8L21 7H6"></path>
+        </svg>
+
+        {% if cart.item_count > 0 %}
+          <span class="rm-cart-count">{{ cart.item_count }}</span>
+        {% endif %}
+
+      </a>
+
+    </div>
+
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Header Top Bar",
+  "tag": "section",
+  "class": "section-header-top-bar",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo"
+    },
+    {
+      "type": "text",
+      "id": "tagline",
+      "label": "Tagline",
+      "default": "Contractor trusted since 2017"
+    },
+    {
+      "type": "text",
+      "id": "search_placeholder",
+      "label": "Search placeholder",
+      "default": "Search products, brands, SKUs..."
+    }
+  ],
+  "presets":[
+    {
+      "name":"Header Top Bar"
+    }
+  ]
+}
+{% endschema %}
