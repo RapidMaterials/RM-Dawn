@@ -1,4 +1,5 @@
 <style>
+
 .rm-topbar{
   background:#ffffff;
   border-bottom:1px solid rgba(0,0,0,.08);
@@ -9,7 +10,7 @@
   margin:0 auto;
   padding:16px 24px;
   display:grid;
-  grid-template-columns:auto 1fr;
+  grid-template-columns:auto 1fr auto;
   align-items:center;
   gap:32px;
 }
@@ -17,54 +18,67 @@
 .rm-brand{
   display:flex;
   flex-direction:column;
+  text-decoration:none;
 }
 
 .rm-logo img{
-  max-width:320px;
+  max-width:300px;
+  height:auto;
 }
 
 .rm-tagline{
   font-size:13px;
-  font-weight:600;
-  color:#6b7280;
   text-transform:uppercase;
   letter-spacing:.05em;
+  color:#6b7280;
   margin-top:4px;
+  font-weight:600;
 }
 
-.rm-right{
-  display:flex;
-  align-items:center;
-  justify-content:flex-end;
-  gap:16px;
-}
-
-.rm-search{
-  flex:1;
-  max-width:600px;
-}
-
-.rm-search input{
+.rm-search-wrapper{
   width:100%;
-  height:54px;
+}
+
+.rm-search-form{
+  position:relative;
+  width:100%;
+}
+
+.rm-search-input{
+  width:100%;
+  height:56px;
   border:2px solid #d8dde3;
-  padding:0 16px;
+  border-radius:6px;
+  padding:0 56px 0 18px;
   font-size:16px;
-  border-radius:4px;
+}
+
+.rm-search-button{
+  position:absolute;
+  right:16px;
+  top:50%;
+  transform:translateY(-50%);
+  border:0;
+  background:transparent;
+  cursor:pointer;
 }
 
 .rm-cart{
   position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
 }
 
 .rm-cart svg{
   width:28px;
+  height:28px;
 }
 
 .rm-cart-count{
   position:absolute;
-  top:-4px;
-  right:-4px;
+  top:-6px;
+  right:-8px;
   background:#2f67b1;
   color:#fff;
   border-radius:999px;
@@ -72,140 +86,175 @@
   padding:2px 6px;
 }
 
+.predictive-search{
+  position:absolute;
+  width:100%;
+  z-index:20;
+}
+
 @media(max-width:900px){
 
 .rm-topbar__inner{
   grid-template-columns:1fr;
+  gap:20px;
 }
 
-.rm-right{
-  justify-content:stretch;
+.rm-search-input{
+  height:50px;
 }
 
-.rm-search{
-  max-width:none;
+.rm-logo img{
+  max-width:220px;
 }
 
 }
+
 </style>
 
+
 <div class="rm-topbar">
-  <div class="rm-topbar__inner">
+<div class="rm-topbar__inner">
 
-    <div class="rm-brand">
-      <a href="{{ routes.root_url }}" class="rm-logo">
+<a href="{{ routes.root_url }}" class="rm-brand">
 
-        {% if section.settings.logo != blank %}
-          {{
-            section.settings.logo
-            | image_url: width:600
-            | image_tag
-          }}
-        {% else %}
-          {{ shop.name }}
-        {% endif %}
+<div class="rm-logo">
+{% if section.settings.logo != blank %}
+{{ section.settings.logo | image_url: width:600 | image_tag }}
+{% else %}
+{{ shop.name }}
+{% endif %}
+</div>
 
-      </a>
+<div class="rm-tagline">
+{{ section.settings.tagline }}
+</div>
 
-      <div class="rm-tagline">
-        {{ section.settings.tagline }}
-      </div>
-    </div>
+</a>
 
-    <div class="rm-right">
 
-      <div class="rm-search">
-   <form action="{{ routes.search_url }}" method="get" role="search" class="search search--header">
-  
-  <div class="search__field">
 
-    <input
-      class="search__input"
-      type="search"
-      name="q"
-      placeholder="{{ section.settings.search_placeholder }}"
-      value="{{ search.terms | escape }}"
-      role="combobox"
-      aria-expanded="false"
-      aria-owns="predictive-search-results"
-      aria-controls="predictive-search-results"
-      aria-haspopup="listbox"
-      aria-autocomplete="list"
-      autocorrect="off"
-      autocomplete="off"
-      autocapitalize="off"
-      spellcheck="false"
-      data-predictive-search-input
-    >
+<predictive-search class="rm-search-wrapper">
 
-    <input type="hidden" name="options[prefix]" value="last">
+<form
+action="{{ routes.search_url }}"
+method="get"
+role="search"
+class="rm-search-form"
+>
 
-    <button
-      type="submit"
-      class="search__button"
-      aria-label="Search"
-    >
-      🔍
-    </button>
+<input
+class="rm-search-input search__input"
+type="search"
+name="q"
+value="{{ search.terms | escape }}"
+placeholder="{{ section.settings.search_placeholder }}"
+role="combobox"
+aria-expanded="false"
+aria-owns="predictive-search-results"
+aria-controls="predictive-search-results"
+aria-haspopup="listbox"
+aria-autocomplete="list"
+autocorrect="off"
+autocomplete="off"
+autocapitalize="off"
+spellcheck="false"
+data-predictive-search-input
+>
 
-  </div>
+<input type="hidden" name="options[prefix]" value="last">
 
-  <div
-    class="predictive-search"
-    tabindex="-1"
-    data-predictive-search
-  ></div>
+<button
+type="submit"
+class="rm-search-button"
+aria-label="Search"
+>
+
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+<circle cx="11" cy="11" r="7"></circle>
+<path d="M20 20l-3.5-3.5"></path>
+</svg>
+
+</button>
+
+<div
+class="predictive-search predictive-search--header"
+tabindex="-1"
+data-predictive-search
+>
+
+<div class="predictive-search__loading-state">
+<svg
+aria-hidden="true"
+focusable="false"
+class="spinner"
+viewBox="0 0 66 66"
+xmlns="http://www.w3.org/2000/svg"
+>
+<circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
+</svg>
+</div>
+
+</div>
+
+<span class="predictive-search-status visually-hidden" role="status" aria-hidden="true"></span>
 
 </form>
-      </div>
 
-      <a href="{{ routes.cart_url }}" class="rm-cart">
+</predictive-search>
 
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-          <circle cx="9" cy="20" r="1.5"></circle>
-          <circle cx="18" cy="20" r="1.5"></circle>
-          <path d="M2 3h3l2.2 10.2a1 1 0 0 0 1 .8h9.8a1 1 0 0 0 1-.8L21 7H6"></path>
-        </svg>
 
-        {% if cart.item_count > 0 %}
-          <span class="rm-cart-count">{{ cart.item_count }}</span>
-        {% endif %}
 
-      </a>
+<a href="{{ routes.cart_url }}" class="rm-cart">
 
-    </div>
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+<circle cx="9" cy="20" r="1.5"></circle>
+<circle cx="18" cy="20" r="1.5"></circle>
+<path d="M2 3h3l2.2 10.2a1 1 0 0 0 1 .8h9.8a1 1 0 0 0 1-.8L21 7H6"></path>
+</svg>
 
-  </div>
+{% if cart.item_count > 0 %}
+<span class="rm-cart-count">{{ cart.item_count }}</span>
+{% endif %}
+
+</a>
+
 </div>
+</div>
+
+
 
 {% schema %}
 {
-  "name": "Header Top Bar",
-  "tag": "section",
-  "class": "section-header-top-bar",
-  "settings": [
-    {
-      "type": "image_picker",
-      "id": "logo",
-      "label": "Logo"
-    },
-    {
-      "type": "text",
-      "id": "tagline",
-      "label": "Tagline",
-      "default": "Contractor trusted since 2017"
-    },
-    {
-      "type": "text",
-      "id": "search_placeholder",
-      "label": "Search placeholder",
-      "default": "Search products, brands, SKUs..."
-    }
-  ],
-  "presets":[
-    {
-      "name":"Header Top Bar"
-    }
-  ]
+"name": "Header Top Bar",
+"tag": "section",
+"class": "section-header-top-bar",
+"settings": [
+
+{
+"type": "image_picker",
+"id": "logo",
+"label": "Logo"
+},
+
+{
+"type": "text",
+"id": "tagline",
+"label": "Tagline",
+"default": "Contractor trusted since 2017"
+},
+
+{
+"type": "text",
+"id": "search_placeholder",
+"label": "Search placeholder",
+"default": "Search products, part numbers, brands..."
+}
+
+],
+"presets":[
+{
+"name":"Header Top Bar"
+}
+]
 }
 {% endschema %}
