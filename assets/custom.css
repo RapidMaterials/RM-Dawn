@@ -126,8 +126,8 @@
 #HeaderMenu-contact {
   font-weight: bold;
   transition: 0.3s;
-  background-color: #fff;
-  color: #000;
+    background-color: #235da9;
+    color: #fff;
 }
 #HeaderMenu-contact:hover {
   background-color: #e3e3e3;
