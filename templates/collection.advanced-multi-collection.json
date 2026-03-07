@@ -161,6 +161,16 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "video_gallery_8xqihm": {
+      "type": "video-gallery",
+      "name": "Multi Video Lightbox",
+      "settings": {
+        "heading": "",
+        "heading_size": "h1",
+        "section_float": "clear",
+        "color_scheme": ""
+      }
     }
   },
   "order": [
@@ -170,6 +180,7 @@
     "banner",
     "product-grid",
     "compatible_collections",
+    "video_gallery_8xqihm",
     "collapsible_content_faq_P8N8E4"
   ]
 }
