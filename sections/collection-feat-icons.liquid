@@ -76,19 +76,7 @@
     overflow: auto;
     max-width: 100%;
   }
-  @media screen and (max-width: 749px) {
-  p.icon-feature__subtitle {
-    font-size: 0.6em !important;
-  }
-  h3.icon-feature__title {
-    font-size: 0.8em !imporant;
-    font-weight: 600 !imporant;
-  }
-  .collection-icon-features-{{ section.id }} .icon-features-list {
-    grid-template-columns: repeat(auto-fit, minmax(100px, 160)) !imporant;
-        gap: 8px !imporant;
-  }
-}
+
 {%- endstyle -%}
 
 {%- assign raw = collection.metafields.custom.features -%}
