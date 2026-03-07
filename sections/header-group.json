@@ -24,19 +24,6 @@
         "enable_language_selector": false
       }
     },
-    "header_top_bar_ayfrtp": {
-      "type": "header-top-bar",
-      "name": "Header Top Bar",
-      "settings": {
-        "logo": "shopify://shop_images/Rapid-Logo-Wide-Color-1200px_225eb96d-06aa-4218-9d81-ff19fd72ce1e.png",
-        "tagline": "Over 45 Years Serving the Construction Industry",
-        "search_placeholder": "Search products, brands, SKUs...",
-        "logo_width": 340,
-        "max_width": 1200,
-        "padding_x": 24,
-        "padding_y": 16
-      }
-    },
     "header": {
       "type": "header",
       "custom_css": [
@@ -48,11 +35,19 @@
         "logo_position": "middle-left",
         "mobile_logo_position": "center",
         "menu": "primary-menu",
+        "mobile_menu": "main-menu",
         "menu_type_desktop": "mega",
         "sticky_header_type": "always",
         "show_line_separator": true,
         "color_scheme": "scheme-4",
         "menu_color_scheme": "scheme-1",
+        "logo": "shopify://shop_images/Rapid-Logo-Wide-Color-1200px_225eb96d-06aa-4218-9d81-ff19fd72ce1e.png",
+        "tagline": "Over 45 Years Serving the Construction Industry",
+        "search_placeholder": "Search products, part numbers, brands...",
+        "logo_width_topbar": 240,
+        "max_width": 1200,
+        "padding_x_topbar": 24,
+        "padding_y_topbar": 16,
         "enable_country_selector": false,
         "enable_language_selector": false,
         "enable_customer_avatar": false,
@@ -64,7 +59,6 @@
   },
   "order": [
     "announcement_bar_9k9i4C",
-    "header_top_bar_ayfrtp",
     "header"
   ]
 }
