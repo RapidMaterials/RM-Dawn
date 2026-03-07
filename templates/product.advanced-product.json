@@ -66,6 +66,10 @@
           "type": "shopify://apps/optis-product-options/blocks/option-set/2c446099-c349-4e73-80cd-49c9770b7807",
           "settings": {}
         },
+        "watermelon_order_limits_app_block_MR4eYt": {
+          "type": "shopify://apps/watermelon-order-limits/blocks/app-block/91904755-64ba-4bc5-85c6-2e5708522f2b",
+          "settings": {}
+        },
         "text_XdzqLY": {
           "type": "text",
           "name": "Shipping Note",
@@ -74,10 +78,6 @@
             "txtclass": "prod-ship-note",
             "text_style": "body"
           }
-        },
-        "watermelon_order_limits_app_block_MR4eYt": {
-          "type": "shopify://apps/watermelon-order-limits/blocks/app-block/91904755-64ba-4bc5-85c6-2e5708522f2b",
-          "settings": {}
         },
         "quantity_selector": {
           "type": "quantity_selector",
@@ -110,8 +110,8 @@
         "oscp_wholesale_b2b_app_block_k7JUnx",
         "variant_picker",
         "bss_variant_options_option_set_dEcH69",
-        "text_XdzqLY",
         "watermelon_order_limits_app_block_MR4eYt",
+        "text_XdzqLY",
         "quantity_selector",
         "buy_buttons",
         "features_with_icons_qLjpdB",
