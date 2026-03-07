@@ -1054,8 +1054,8 @@ color:#fff;}
 
 <script>
   (function() {
-    const searchContainers = document.querySelectorAll('[data-search-wrap]');
-    if (!searchContainers.length) return;
+    const root = document.getElementById('{{ section_id }}');
+    if (!root) return;
 
     function formatMoney(cents) {
       try {
@@ -1271,7 +1271,7 @@ color:#fff;}
       });
     }
 
-    searchContainers.forEach(initPredictiveSearch);
+    root.querySelectorAll('[data-search-wrap]').forEach(initPredictiveSearch);
   })();
 </script>
 
