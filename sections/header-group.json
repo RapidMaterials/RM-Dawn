@@ -62,11 +62,21 @@
         "padding_top": 4,
         "padding_bottom": 4
       }
+    },
+    "header_top_bar_ayfrtp": {
+      "type": "header-top-bar",
+      "name": "Header Top Bar",
+      "settings": {
+        "logo": "shopify://shop_images/Rapid-Logo-Wide-Color-1200px_225eb96d-06aa-4218-9d81-ff19fd72ce1e.png",
+        "tagline": "Contractor trusted since 2017",
+        "search_placeholder": "Search products, brands, SKUs..."
+      }
     }
   },
   "order": [
     "announcement_bar_9k9i4C",
     "custom_liquid_kf8mBb",
-    "header"
+    "header",
+    "header_top_bar_ayfrtp"
   ]
 }
