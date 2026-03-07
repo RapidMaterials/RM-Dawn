@@ -22,7 +22,7 @@
         "mobile_object_x": 50,
         "mobile_object_y": 50,
         "desktop_height": 130,
-        "mobile_height": 120,
+        "mobile_height": 100,
         "object_fit": "cover",
         "border_radius": 0,
         "loading": "lazy",
