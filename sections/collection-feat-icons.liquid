@@ -36,7 +36,8 @@
     padding: 0;
     margin: 0;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax({{ section.settings.min_col_width }}px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax({{ section.settings.min_col_width }}px, 160px));
+        justify-content: center;
     gap: {{ section.settings.grid_gap }}px;
   }
 
