@@ -101,8 +101,14 @@
     {%- endunless -%}
 
     <div class="video-gallery">
-    {% if product %}
-        {%- assign vids = product.metafields.custom.videos.value -%}
+
+      {%- assign vids = product.metafields.custom.videos.value -%}
+{%- if vids == blank and collection -%}
+  {%- assign vids = collection.metafields.custom.videos.value -%}
+{%- endif -%}
+{%- if vids == blank and page -%}
+  {%- assign vids = page.metafields.custom.videos.value -%}
+{%- endif -%}
               {%- if vids != blank -%} 
                 {% for videos in vids %}
                 {% assign raw_url = videos.video_url %}
@@ -128,7 +134,7 @@
                           </div>
                  {% endfor %}
                  {% endif %}
-                {% else %}
+                
                 {% for block in section.blocks %} 
                   {% assign video_id = block.settings.video_url.id %}
                   {% assign alt = block.settings.alt_text | escape %}
@@ -150,7 +156,7 @@
                     </button>
                   </div>
                 {% endfor %}
-         {% endif %}
+         
     </div>
 
     <div id="video-lightbox" class="video-lightbox">
