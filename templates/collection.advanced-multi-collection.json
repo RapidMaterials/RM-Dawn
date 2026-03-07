@@ -62,7 +62,8 @@
         "text_9d7iRK"
       ],
       "custom_css": [
-        ".rich-text__text.rte{color:black; line-height:1.2em; margin-top:0; font-size:.8em; width: 80%; margin:auto;}"
+        ".rich-text__text.rte {color: black; line-height: 1.2em; margin-top: 0; font-size: 0.8em; width: 80%; margin: auto;}",
+        "@media screen and (max-width: 749px) {.rich-text__text.rte {width: 100% !important; }}"
       ],
       "settings": {
         "desktop_content_position": "center",
@@ -76,6 +77,11 @@
     },
     "collection_feat_icons_pC3Jyc": {
       "type": "collection-feat-icons",
+      "custom_css": [
+        "p.icon-feature__subtitle {font-size: 0.6em !important;}",
+        "h3.icon-feature__title {font-size: 0.8em; font-weight: 600;}",
+        ".icon-features-list {grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));}"
+      ],
       "name": "Collection Icons",
       "settings": {
         "heading": "",
@@ -132,7 +138,9 @@
     },
     "compatible_collections": {
       "type": "compatible-collections",
-      "custom_css": [],
+      "custom_css": [
+        "@media screen and (max-width: 749px) {.compatible-jump-nav {padding: 10px; } .compatible-jump-row {justify-content: center; } a.compatible-jump-button {padding: 2px 4px; font-size: 0.7em; color: black; background-color: transparent; }}"
+      ],
       "settings": {
         "quick_add": "bulk",
         "color_scheme": "",
