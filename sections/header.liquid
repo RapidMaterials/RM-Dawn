@@ -545,7 +545,7 @@
     .rm-header-mobile-tools {
       display: none !important;
     }
-    header{max-width:1200px;}
+    header{max-width:1200px !important;}
   }
 
 
@@ -930,7 +930,7 @@ header-drawer {
         endif
       endif
     -%}
-
+ {% comment %}
     {%- if section.settings.logo_position == 'middle-center' -%}
       {%- if request.page_type == 'index' -%}
         <h1 class="header__heading">
@@ -960,7 +960,7 @@ header-drawer {
         </h1>
       {%- endif -%}
     {%- endif -%}
-       {% comment %}
+      
     <div class="header__icons{% if section.settings.enable_country_selector or section.settings.enable_language_selector %} header__icons--localization header-localization{% endif %}">
 
       <div class="desktop-localization-wrapper">
