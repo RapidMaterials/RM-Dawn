@@ -201,6 +201,11 @@
           "fl-vertical_position": "bottom",
           "fl-horizontal_position": "left"
         }
+      },
+      "11631084706489998723": {
+        "type": "shopify://apps/watermelon-order-limits/blocks/app-embed/91904755-64ba-4bc5-85c6-2e5708522f2b",
+        "disabled": false,
+        "settings": {}
       }
     },
     "color_schemes": {
