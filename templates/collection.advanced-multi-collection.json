@@ -78,9 +78,7 @@
     "collection_feat_icons_pC3Jyc": {
       "type": "collection-feat-icons",
       "custom_css": [
-        "p.icon-feature__subtitle {font-size: 0.6em !important;}",
-        "h3.icon-feature__title {font-size: 0.8em; font-weight: 600;}",
-        ".icon-features-list {grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));}"
+        "@media screen and (max-width: 749px) {p.icon-feature__subtitle {font-size: 0.6em !important;}h3.icon-feature__title {font-size: 0.8em; font-weight: 600;}.icon-features-list {grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));}}"
       ],
       "name": "Collection Icons",
       "settings": {
