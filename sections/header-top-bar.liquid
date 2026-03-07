@@ -152,13 +152,23 @@
   flex:0 0 auto;
 }
 /* Icon hover effect */
-#{{ section_id }} .rm-topbar__icon{
+#{{ section_id }} .rm-topbar__icon,
+#{{ section_id }} .rm-topbar__cart,
+#{{ section_id }} .rm-topbar__account {
   transition: color .18s ease, transform .15s ease;
 }
 
-#{{ section_id }} .rm-topbar__icon:hover{
-  color:#000;
+#{{ section_id }} .rm-topbar__icon:hover,
+#{{ section_id }} .rm-topbar__cart:hover,
+#{{ section_id }} .rm-topbar__account:hover {
+  color: #000;
   transform: translateY(-1px);
+}
+
+#{{ section_id }} .rm-topbar__icon svg,
+#{{ section_id }} .rm-topbar__cart svg,
+#{{ section_id }} .rm-topbar__account svg {
+  stroke: currentColor;
 }
 
 #{{ section_id }} .rm-topbar__actions{
