@@ -960,8 +960,9 @@ color:#fff;}
         </h1>
       {%- endif -%}
     {%- endif -%}
-   {% comment %}
+       {% comment %}
     <div class="header__icons{% if section.settings.enable_country_selector or section.settings.enable_language_selector %} header__icons--localization header-localization{% endif %}">
+
       <div class="desktop-localization-wrapper">
         {%- if section.settings.enable_country_selector and localization.available_countries.size > 1 -%}
           <localization-form class="small-hide medium-hide" data-prevent-hide>
@@ -986,7 +987,7 @@ color:#fff;}
         {%- endif -%}
       </div>
 
-   
+     
       {% render 'header-search', input_id: 'Search-In-Modal' %}
 
       {%- if shop.customer_accounts_enabled -%}
@@ -1043,8 +1044,8 @@ color:#fff;}
           </div>
         {%- endif -%}
       </a>
-      {% endcomment %}
-    </div>
+      
+    </div>{% endcomment %}
   </header>
 </{{ header_tag }}>
 
