@@ -65,12 +65,15 @@
     },
     "header_top_bar_ayfrtp": {
       "type": "header-top-bar",
-      "disabled": true,
       "name": "Header Top Bar",
       "settings": {
         "logo": "shopify://shop_images/Rapid-Logo-Wide-Color-1200px_225eb96d-06aa-4218-9d81-ff19fd72ce1e.png",
         "tagline": "Contractor trusted since 2017",
-        "search_placeholder": "Search products, brands, SKUs..."
+        "search_placeholder": "Search products, brands, SKUs...",
+        "logo_width": 300,
+        "max_width": 1600,
+        "padding_x": 24,
+        "padding_y": 16
       }
     }
   },

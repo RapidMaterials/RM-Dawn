@@ -1,260 +1,688 @@
+{% liquid
+  assign section_id = 'rm-topbar-' | append: section.id
+%}
+
 <style>
+  #{{ section_id }} {
+    --rm-border: #d7dbe1;
+    --rm-text: #111827;
+    --rm-muted: #6b7280;
+    --rm-bg: #ffffff;
+    --rm-accent: #2f67b1;
+    --rm-shadow: 0 12px 30px rgba(17, 24, 39, 0.12);
+    background: var(--rm-bg);
+    border-bottom: 1px solid rgba(0,0,0,.08);
+    position: relative;
+    z-index: 20;
+  }
 
-.rm-topbar{
-  background:#ffffff;
-  border-bottom:1px solid rgba(0,0,0,.08);
-}
+  #{{ section_id }} .rm-topbar__inner {
+    max-width: {{ section.settings.max_width }}px;
+    margin: 0 auto;
+    padding: {{ section.settings.padding_y }}px {{ section.settings.padding_x }}px;
+    display: grid;
+    grid-template-columns: auto minmax(260px, 1fr) auto;
+    align-items: center;
+    gap: 28px;
+  }
 
-.rm-topbar__inner{
-  max-width:1600px;
-  margin:0 auto;
-  padding:16px 24px;
-  display:grid;
-  grid-template-columns:auto 1fr auto;
-  align-items:center;
-  gap:32px;
-}
+  #{{ section_id }} .rm-topbar__brand {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: inherit;
+    min-width: 0;
+  }
 
-.rm-brand{
-  display:flex;
-  flex-direction:column;
-  text-decoration:none;
-}
+  #{{ section_id }} .rm-topbar__logo-image {
+    display: block;
+    width: auto;
+    max-width: {{ section.settings.logo_width }}px;
+    max-height: 90px;
+    height: auto;
+  }
 
-.rm-logo img{
-  max-width:300px;
-  height:auto;
-}
+  #{{ section_id }} .rm-topbar__logo-fallback {
+    font-size: 28px;
+    line-height: 1;
+    font-weight: 700;
+    color: var(--rm-text);
+  }
 
-.rm-tagline{
-  font-size:13px;
-  text-transform:uppercase;
-  letter-spacing:.05em;
-  color:#6b7280;
-  margin-top:4px;
-  font-weight:600;
-}
+  #{{ section_id }} .rm-topbar__tagline {
+    margin-top: 6px;
+    font-size: 13px;
+    line-height: 1.2;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    color: var(--rm-muted);
+    font-weight: 700;
+  }
 
-.rm-search-wrapper{
-  width:100%;
-}
+  #{{ section_id }} .rm-topbar__search-wrap {
+    position: relative;
+    min-width: 0;
+  }
 
-.rm-search-form{
-  position:relative;
-  width:100%;
-}
+  #{{ section_id }} .rm-topbar__search-form {
+    position: relative;
+    width: 100%;
+  }
 
-.rm-search-input{
-  width:100%;
-  height:56px;
-  border:2px solid #d8dde3;
-  border-radius:6px;
-  padding:0 56px 0 18px;
-  font-size:16px;
-}
+  #{{ section_id }} .rm-topbar__search-input {
+    width: 100%;
+    height: 58px;
+    border: 2px solid var(--rm-border);
+    border-radius: 10px;
+    background: #fff;
+    padding: 0 58px 0 18px;
+    font-size: 18px;
+    line-height: 1;
+    color: var(--rm-text);
+    outline: none;
+    box-sizing: border-box;
+    transition: border-color .2s ease, box-shadow .2s ease;
+  }
 
-.rm-search-button{
-  position:absolute;
-  right:16px;
-  top:50%;
-  transform:translateY(-50%);
-  border:0;
-  background:transparent;
-  cursor:pointer;
-}
+  #{{ section_id }} .rm-topbar__search-input:focus {
+    border-color: var(--rm-accent);
+    box-shadow: 0 0 0 4px rgba(47, 103, 177, .12);
+  }
 
-.rm-cart{
-  position:relative;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
+  #{{ section_id }} .rm-topbar__search-input::placeholder {
+    color: #98a2b3;
+  }
 
-.rm-cart svg{
-  width:28px;
-  height:28px;
-}
+  #{{ section_id }} .rm-topbar__search-button {
+    position: absolute;
+    top: 50%;
+    right: 16px;
+    transform: translateY(-50%);
+    width: 26px;
+    height: 26px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    background: transparent;
+    color: #667085;
+    cursor: pointer;
+    padding: 0;
+  }
 
-.rm-cart-count{
-  position:absolute;
-  top:-6px;
-  right:-8px;
-  background:#2f67b1;
-  color:#fff;
-  border-radius:999px;
-  font-size:12px;
-  padding:2px 6px;
-}
+  #{{ section_id }} .rm-topbar__search-button svg {
+    width: 22px;
+    height: 22px;
+    display: block;
+  }
 
-.predictive-search{
-  position:absolute;
-  width:100%;
-  z-index:20;
-}
+  #{{ section_id }} .rm-topbar__cart {
+    position: relative;
+    width: 46px;
+    height: 46px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--rm-accent);
+    text-decoration: none;
+    flex: 0 0 auto;
+  }
 
-@media(max-width:900px){
+  #{{ section_id }} .rm-topbar__cart svg {
+    width: 30px;
+    height: 30px;
+    display: block;
+  }
 
-.rm-topbar__inner{
-  grid-template-columns:1fr;
-  gap:20px;
-}
+  #{{ section_id }} .rm-topbar__cart-count {
+    position: absolute;
+    top: -2px;
+    right: -4px;
+    min-width: 20px;
+    height: 20px;
+    padding: 0 5px;
+    border-radius: 999px;
+    background: var(--rm-accent);
+    color: #fff;
+    font-size: 11px;
+    line-height: 20px;
+    text-align: center;
+    font-weight: 700;
+  }
 
-.rm-search-input{
-  height:50px;
-}
+  #{{ section_id }} .rm-topbar__results {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    right: 0;
+    background: #fff;
+    border: 1px solid rgba(17,24,39,.08);
+    border-radius: 14px;
+    box-shadow: var(--rm-shadow);
+    overflow: hidden;
+    display: none;
+    z-index: 40;
+  }
 
-.rm-logo img{
-  max-width:220px;
-}
+  #{{ section_id }} .rm-topbar__results.is-open {
+    display: block;
+  }
 
-}
+  #{{ section_id }} .rm-topbar__results-inner {
+    max-height: 70vh;
+    overflow: auto;
+    padding: 10px 0;
+  }
 
+  #{{ section_id }} .rm-topbar__results-grid {
+    display: grid;
+    grid-template-columns: minmax(180px, 240px) 1fr;
+    gap: 24px;
+    padding: 6px 14px 14px;
+  }
+
+  #{{ section_id }} .rm-topbar__results-col + .rm-topbar__results-col {
+    border-left: 1px solid rgba(17,24,39,.08);
+    padding-left: 24px;
+  }
+
+  #{{ section_id }} .rm-topbar__group-title {
+    font-size: 12px;
+    line-height: 1.2;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--rm-muted);
+    font-weight: 700;
+    margin: 10px 0 8px;
+  }
+
+  #{{ section_id }} .rm-topbar__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  #{{ section_id }} .rm-topbar__item {
+    margin: 0;
+    padding: 0;
+  }
+
+  #{{ section_id }} .rm-topbar__link,
+  #{{ section_id }} .rm-topbar__product {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: var(--rm-text);
+    padding: 10px 8px;
+    border-radius: 10px;
+    transition: background .18s ease;
+  }
+
+  #{{ section_id }} .rm-topbar__link:hover,
+  #{{ section_id }} .rm-topbar__product:hover {
+    background: #f7f8fa;
+  }
+
+  #{{ section_id }} .rm-topbar__thumb {
+    width: 56px;
+    height: 56px;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #f4f4f5;
+    flex: 0 0 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #{{ section_id }} .rm-topbar__thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  #{{ section_id }} .rm-topbar__product-text {
+    min-width: 0;
+  }
+
+  #{{ section_id }} .rm-topbar__product-title,
+  #{{ section_id }} .rm-topbar__text {
+    font-size: 15px;
+    line-height: 1.35;
+    font-weight: 600;
+    color: var(--rm-text);
+  }
+
+  #{{ section_id }} .rm-topbar__product-price {
+    margin-top: 3px;
+    font-size: 13px;
+    line-height: 1.2;
+    color: var(--rm-muted);
+  }
+
+  #{{ section_id }} .rm-topbar__footer-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    text-decoration: none;
+    color: var(--rm-text);
+    border-top: 1px solid rgba(17,24,39,.08);
+    padding: 14px 18px;
+    font-weight: 700;
+  }
+
+  #{{ section_id }} .rm-topbar__empty,
+  #{{ section_id }} .rm-topbar__loading {
+    padding: 16px 18px;
+    font-size: 14px;
+    color: var(--rm-muted);
+  }
+
+  @media screen and (max-width: 989px) {
+    #{{ section_id }} .rm-topbar__inner {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+
+    #{{ section_id }} .rm-topbar__cart {
+      justify-self: end;
+      margin-top: -58px;
+    }
+
+    #{{ section_id }} .rm-topbar__results-grid {
+      grid-template-columns: 1fr;
+      gap: 10px;
+    }
+
+    #{{ section_id }} .rm-topbar__results-col + .rm-topbar__results-col {
+      border-left: 0;
+      padding-left: 0;
+      border-top: 1px solid rgba(17,24,39,.08);
+      padding-top: 12px;
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    #{{ section_id }} .rm-topbar__inner {
+      padding: 14px 16px;
+    }
+
+    #{{ section_id }} .rm-topbar__logo-image {
+      max-width: min({{ section.settings.logo_width }}px, 220px);
+    }
+
+    #{{ section_id }} .rm-topbar__tagline {
+      font-size: 12px;
+    }
+
+    #{{ section_id }} .rm-topbar__search-input {
+      height: 52px;
+      font-size: 16px;
+    }
+
+    #{{ section_id }} .rm-topbar__cart {
+      margin-top: 0;
+      width: 42px;
+      height: 42px;
+    }
+  }
 </style>
 
+<section id="{{ section_id }}" class="rm-topbar" data-rm-topbar>
+  <div class="rm-topbar__inner">
+    <a href="{{ routes.root_url }}" class="rm-topbar__brand" aria-label="{{ shop.name }}">
+      {% if section.settings.logo != blank %}
+        {{
+          section.settings.logo
+          | image_url: width: 720
+          | image_tag:
+            class: 'rm-topbar__logo-image',
+            loading: 'eager',
+            widths: '180, 240, 360, 540, 720',
+            alt: shop.name
+        }}
+      {% else %}
+        <span class="rm-topbar__logo-fallback">{{ shop.name }}</span>
+      {% endif %}
 
-<div class="rm-topbar">
-<div class="rm-topbar__inner">
+      {% if section.settings.tagline != blank %}
+        <span class="rm-topbar__tagline">{{ section.settings.tagline }}</span>
+      {% endif %}
+    </a>
 
-<a href="{{ routes.root_url }}" class="rm-brand">
+    <div class="rm-topbar__search-wrap" data-search-wrap>
+      <form action="{{ routes.search_url }}" method="get" role="search" class="rm-topbar__search-form" data-search-form>
+        <input
+          class="rm-topbar__search-input"
+          type="search"
+          name="q"
+          value="{{ search.terms | escape }}"
+          placeholder="{{ section.settings.search_placeholder }}"
+          autocomplete="off"
+          autocorrect="off"
+          autocapitalize="off"
+          spellcheck="false"
+          aria-label="Search products, brands, and pages"
+          aria-expanded="false"
+          aria-haspopup="listbox"
+          data-search-input
+        >
+        <input type="hidden" name="options[prefix]" value="last">
+        <button type="submit" class="rm-topbar__search-button" aria-label="Search">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="11" cy="11" r="7"></circle>
+            <path d="M20 20l-3.5-3.5"></path>
+          </svg>
+        </button>
+      </form>
 
-<div class="rm-logo">
-{% if section.settings.logo != blank %}
-{{ section.settings.logo | image_url: width:600 | image_tag }}
-{% else %}
-{{ shop.name }}
-{% endif %}
-</div>
+      <div class="rm-topbar__results" data-search-results>
+        <div class="rm-topbar__results-inner" data-search-results-inner></div>
+      </div>
+    </div>
 
-<div class="rm-tagline">
-{{ section.settings.tagline }}
-</div>
+    <a href="{{ routes.cart_url }}" class="rm-topbar__cart" aria-label="Cart">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <circle cx="9" cy="20" r="1.5"></circle>
+        <circle cx="18" cy="20" r="1.5"></circle>
+        <path d="M2 3h3l2.2 10.2a1 1 0 0 0 1 .8h9.8a1 1 0 0 0 1-.8L21 7H6"></path>
+      </svg>
+      {% if cart.item_count > 0 %}
+        <span class="rm-topbar__cart-count">{{ cart.item_count }}</span>
+      {% endif %}
+    </a>
+  </div>
+</section>
 
-</a>
+<script>
+  (function() {
+    const root = document.getElementById('{{ section_id }}');
+    if (!root) return;
 
+    const input = root.querySelector('[data-search-input]');
+    const results = root.querySelector('[data-search-results]');
+    const resultsInner = root.querySelector('[data-search-results-inner]');
+    const form = root.querySelector('[data-search-form]');
+    if (!input || !results || !resultsInner || !form) return;
 
+    let controller;
+    let activeQuery = '';
 
-<predictive-search class="rm-search-wrapper">
+    function formatMoney(cents) {
+      try {
+        if (window.Shopify && typeof window.Shopify.formatMoney === 'function') {
+          return window.Shopify.formatMoney(cents, "{{ shop.money_format | escape }}");
+        }
+      } catch (e) {}
+      return '';
+    }
 
-<form
-action="{{ routes.search_url }}"
-method="get"
-role="search"
-class="rm-search-form"
->
+    function escapeHtml(str) {
+      return String(str || '')
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+    }
 
-<input
-class="rm-search-input search__input"
-type="search"
-name="q"
-value="{{ search.terms | escape }}"
-placeholder="{{ section.settings.search_placeholder }}"
-role="combobox"
-aria-expanded="false"
-aria-owns="predictive-search-results"
-aria-controls="predictive-search-results"
-aria-haspopup="listbox"
-aria-autocomplete="list"
-autocorrect="off"
-autocomplete="off"
-autocapitalize="off"
-spellcheck="false"
-data-predictive-search-input
->
+    function openResults() {
+      results.classList.add('is-open');
+      input.setAttribute('aria-expanded', 'true');
+    }
 
-<input type="hidden" name="options[prefix]" value="last">
+    function closeResults() {
+      results.classList.remove('is-open');
+      input.setAttribute('aria-expanded', 'false');
+    }
 
-<button
-type="submit"
-class="rm-search-button"
-aria-label="Search"
->
+    function renderNoResults(query) {
+      resultsInner.innerHTML = `
+        <div class="rm-topbar__empty">No quick results for “${escapeHtml(query)}”.</div>
+        <a class="rm-topbar__footer-link" href="{{ routes.search_url }}?q=${encodeURIComponent(query)}&options%5Bprefix%5D=last">
+          <span>Search for “${escapeHtml(query)}”</span>
+          <span>→</span>
+        </a>
+      `;
+      openResults();
+    }
 
-<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-<circle cx="11" cy="11" r="7"></circle>
-<path d="M20 20l-3.5-3.5"></path>
-</svg>
+    function buildSimpleList(title, items, type) {
+      if (!items || !items.length) return '';
+      const links = items.map((item) => {
+        const text = item.text || item.title || '';
+        const url = item.url || '#';
+        return `
+          <li class="rm-topbar__item">
+            <a class="rm-topbar__link" href="${url}">
+              <span class="rm-topbar__text">${escapeHtml(text)}</span>
+            </a>
+          </li>
+        `;
+      }).join('');
 
-</button>
+      return `
+        <div class="rm-topbar__group">
+          <div class="rm-topbar__group-title">${title}</div>
+          <ul class="rm-topbar__list" role="listbox" aria-label="${escapeHtml(type)} results">
+            ${links}
+          </ul>
+        </div>
+      `;
+    }
 
-<div
-class="predictive-search predictive-search--header"
-tabindex="-1"
-data-predictive-search
->
+    function buildProductList(products) {
+      if (!products || !products.length) return '';
+      const items = products.map((product) => {
+        const img = product.featured_image && product.featured_image.url
+          ? `<div class="rm-topbar__thumb"><img src="${product.featured_image.url}&width=112" alt="${escapeHtml((product.featured_image.alt || product.title || ''))}"></div>`
+          : `<div class="rm-topbar__thumb"></div>`;
 
-<div class="predictive-search__loading-state">
-<svg
-aria-hidden="true"
-focusable="false"
-class="spinner"
-viewBox="0 0 66 66"
-xmlns="http://www.w3.org/2000/svg"
->
-<circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
-</svg>
-</div>
+        const price = typeof product.price === 'number'
+          ? `<div class="rm-topbar__product-price">${formatMoney(product.price * 100)}</div>`
+          : '';
 
-</div>
+        return `
+          <li class="rm-topbar__item">
+            <a class="rm-topbar__product" href="${product.url}">
+              ${img}
+              <div class="rm-topbar__product-text">
+                <div class="rm-topbar__product-title">${escapeHtml(product.title)}</div>
+                ${price}
+              </div>
+            </a>
+          </li>
+        `;
+      }).join('');
 
-<span class="predictive-search-status visually-hidden" role="status" aria-hidden="true"></span>
+      return `
+        <div class="rm-topbar__group">
+          <div class="rm-topbar__group-title">Products</div>
+          <ul class="rm-topbar__list" role="listbox" aria-label="Product results">
+            ${items}
+          </ul>
+        </div>
+      `;
+    }
 
-</form>
+    function renderResults(query, data) {
+      const resourceResults = data && data.resources && data.resources.results ? data.resources.results : {};
+      const queries = resourceResults.queries || [];
+      const products = resourceResults.products || [];
+      const pages = resourceResults.pages || [];
+      const collections = resourceResults.collections || [];
 
-</predictive-search>
+      if (!queries.length && !products.length && !pages.length && !collections.length) {
+        renderNoResults(query);
+        return;
+      }
 
+      const leftCol = `
+        ${buildSimpleList('Suggestions', queries, 'query')}
+        ${buildSimpleList('Pages', pages, 'page')}
+        ${buildSimpleList('Collections', collections, 'collection')}
+      `;
 
+      const rightCol = `
+        ${buildProductList(products)}
+      `;
 
-<a href="{{ routes.cart_url }}" class="rm-cart">
+      resultsInner.innerHTML = `
+        <div class="rm-topbar__results-grid">
+          <div class="rm-topbar__results-col">${leftCol}</div>
+          <div class="rm-topbar__results-col">${rightCol}</div>
+        </div>
+        <a class="rm-topbar__footer-link" href="{{ routes.search_url }}?q=${encodeURIComponent(query)}&options%5Bprefix%5D=last">
+          <span>Search for “${escapeHtml(query)}”</span>
+          <span>→</span>
+        </a>
+      `;
 
-<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-<circle cx="9" cy="20" r="1.5"></circle>
-<circle cx="18" cy="20" r="1.5"></circle>
-<path d="M2 3h3l2.2 10.2a1 1 0 0 0 1 .8h9.8a1 1 0 0 0 1-.8L21 7H6"></path>
-</svg>
+      openResults();
+    }
 
-{% if cart.item_count > 0 %}
-<span class="rm-cart-count">{{ cart.item_count }}</span>
-{% endif %}
+    function fetchResults(query) {
+      if (controller) controller.abort();
+      controller = new AbortController();
 
-</a>
+      resultsInner.innerHTML = `<div class="rm-topbar__loading">Searching…</div>`;
+      openResults();
 
-</div>
-</div>
+      const url =
+        window.Shopify.routes.root +
+        'search/suggest.json?q=' + encodeURIComponent(query) +
+        '&resources[type]=query,product,page,collection' +
+        '&resources[limit]=6' +
+        '&resources[limit_scope]=each' +
+        '&resources[options][unavailable_products]=last';
 
+      fetch(url, { signal: controller.signal })
+        .then((response) => {
+          if (!response.ok) throw new Error('Predictive search request failed');
+          return response.json();
+        })
+        .then((data) => {
+          if (input.value.trim() !== query) return;
+          renderResults(query, data);
+        })
+        .catch((error) => {
+          if (error.name === 'AbortError') return;
+          resultsInner.innerHTML = `
+            <div class="rm-topbar__empty">Search suggestions couldn’t load.</div>
+            <a class="rm-topbar__footer-link" href="{{ routes.search_url }}?q=${encodeURIComponent(query)}&options%5Bprefix%5D=last">
+              <span>Search for “${escapeHtml(query)}”</span>
+              <span>→</span>
+            </a>
+          `;
+          openResults();
+        });
+    }
 
+    let debounceTimer;
+    input.addEventListener('input', function() {
+      const query = this.value.trim();
+      activeQuery = query;
+
+      clearTimeout(debounceTimer);
+
+      if (query.length < 2) {
+        closeResults();
+        resultsInner.innerHTML = '';
+        return;
+      }
+
+      debounceTimer = setTimeout(() => {
+        fetchResults(query);
+      }, 180);
+    });
+
+    input.addEventListener('focus', function() {
+      if (resultsInner.innerHTML.trim() !== '' && this.value.trim().length >= 2) {
+        openResults();
+      }
+    });
+
+    document.addEventListener('click', function(event) {
+      if (!root.contains(event.target)) {
+        closeResults();
+      }
+    });
+
+    input.addEventListener('keydown', function(event) {
+      if (event.key === 'Escape') {
+        closeResults();
+      }
+    });
+  })();
+</script>
 
 {% schema %}
 {
-"name": "Header Top Bar",
-"tag": "section",
-"class": "section-header-top-bar",
-"settings": [
-
-{
-"type": "image_picker",
-"id": "logo",
-"label": "Logo"
-},
-
-{
-"type": "text",
-"id": "tagline",
-"label": "Tagline",
-"default": "Contractor trusted since 2017"
-},
-
-{
-"type": "text",
-"id": "search_placeholder",
-"label": "Search placeholder",
-"default": "Search products, part numbers, brands..."
-}
-
-],
-"presets":[
-{
-"name":"Header Top Bar"
-}
-]
+  "name": "Header top bar",
+  "tag": "section",
+  "class": "section-header-top-bar",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo"
+    },
+    {
+      "type": "text",
+      "id": "tagline",
+      "label": "Tagline",
+      "default": "Contractor trusted since 2017"
+    },
+    {
+      "type": "text",
+      "id": "search_placeholder",
+      "label": "Search placeholder",
+      "default": "Search products, part numbers, brands..."
+    },
+    {
+      "type": "range",
+      "id": "logo_width",
+      "label": "Logo max width",
+      "min": 120,
+      "max": 420,
+      "step": 10,
+      "default": 300
+    },
+    {
+      "type": "range",
+      "id": "max_width",
+      "label": "Content max width",
+      "min": 1000,
+      "max": 1800,
+      "step": 20,
+      "default": 1600
+    },
+    {
+      "type": "range",
+      "id": "padding_x",
+      "label": "Horizontal padding",
+      "min": 12,
+      "max": 40,
+      "step": 2,
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "padding_y",
+      "label": "Vertical padding",
+      "min": 10,
+      "max": 28,
+      "step": 2,
+      "default": 16
+    }
+  ],
+  "presets": [
+    {
+      "name": "Header top bar"
+    }
+  ]
 }
 {% endschema %}
