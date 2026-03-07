@@ -884,7 +884,7 @@ header-drawer {
 
   </div>
 </div>
-
+ {% comment %}
     {%- if section.settings.logo_position != 'middle-center' -%}
       {%- if request.page_type == 'index' -%}
         <h2 class="header__heading">
@@ -920,6 +920,7 @@ header-drawer {
         </h2>
       {%- endif -%}
     {%- endif -%}
+      {% endcomment %}
 
     {%- liquid
       if section.settings.menu != blank
