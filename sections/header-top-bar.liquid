@@ -115,13 +115,48 @@
     <div class="rm-right">
 
       <div class="rm-search">
-        <form action="{{ routes.search_url }}" method="get">
-          <input
-            type="search"
-            name="q"
-            placeholder="{{ section.settings.search_placeholder }}"
-          >
-        </form>
+   <form action="{{ routes.search_url }}" method="get" role="search" class="search search--header">
+  
+  <div class="search__field">
+
+    <input
+      class="search__input"
+      type="search"
+      name="q"
+      placeholder="{{ section.settings.search_placeholder }}"
+      value="{{ search.terms | escape }}"
+      role="combobox"
+      aria-expanded="false"
+      aria-owns="predictive-search-results"
+      aria-controls="predictive-search-results"
+      aria-haspopup="listbox"
+      aria-autocomplete="list"
+      autocorrect="off"
+      autocomplete="off"
+      autocapitalize="off"
+      spellcheck="false"
+      data-predictive-search-input
+    >
+
+    <input type="hidden" name="options[prefix]" value="last">
+
+    <button
+      type="submit"
+      class="search__button"
+      aria-label="Search"
+    >
+      🔍
+    </button>
+
+  </div>
+
+  <div
+    class="predictive-search"
+    tabindex="-1"
+    data-predictive-search
+  ></div>
+
+</form>
       </div>
 
       <a href="{{ routes.cart_url }}" class="rm-cart">
