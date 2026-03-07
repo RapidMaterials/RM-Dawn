@@ -35,7 +35,7 @@
         "logo_position": "middle-left",
         "mobile_logo_position": "center",
         "menu": "primary-menu",
-        "mobile_menu": "main-menu",
+        "mobile_menu": "mobile-menu",
         "menu_type_desktop": "mega",
         "sticky_header_type": "always",
         "show_line_separator": true,
