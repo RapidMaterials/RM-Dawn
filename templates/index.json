@@ -148,7 +148,7 @@
         "padding_x": 0,
         "padding_y": 8,
         "padding_x_mobile": 0,
-        "padding_y_mobile": 10,
+        "padding_y_mobile": 2,
         "columns_desktop": 4,
         "columns_tablet": 2,
         "grid_gap": 0,
