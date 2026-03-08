@@ -129,7 +129,7 @@
         "value_item_htmNn4": {
           "type": "value_item",
           "settings": {
-            "icon": "quote",
+            "icon": "clock",
             "item_heading": "Quick Support",
             "item_subtext": "Orders & quotes available",
             "link": ""
