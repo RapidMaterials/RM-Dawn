@@ -34,7 +34,12 @@
     display: block;
   }
 
+  .rm-hero-{{ section.id }} .rm-hero__image {
+    object-position: var(--desktop-x, 50%) var(--desktop-y, 50%);
+  }
+
   .rm-hero-{{ section.id }} .rm-hero__image-mobile {
+    object-position: var(--mobile-x, 50%) var(--mobile-y, 50%);
     display: none;
   }
 
@@ -90,6 +95,10 @@
     font-size: {{ section.settings.text_size_desktop }}px;
     line-height: 1.45;
     font-weight: {{ section.settings.text_weight }};
+  }
+
+  .rm-hero-{{ section.id }} .rm-hero__text p {
+    margin: 0;
   }
 
   .rm-hero-{{ section.id }} .rm-hero__button {
@@ -239,7 +248,16 @@
   <div class="rm-hero__slider">
     <div class="rm-hero__track" data-slider-track>
       {%- for block in section.blocks -%}
-        <div class="rm-hero__slide" {{ block.shopify_attributes }}>
+        <div
+          class="rm-hero__slide"
+          style="
+            --desktop-x: {{ block.settings.desktop_object_x }}%;
+            --desktop-y: {{ block.settings.desktop_object_y }}%;
+            --mobile-x: {{ block.settings.mobile_object_x }}%;
+            --mobile-y: {{ block.settings.mobile_object_y }}%;
+          "
+          {{ block.shopify_attributes }}
+        >
           <div class="rm-hero__media">
             {%- if block.settings.image != blank -%}
               {{
@@ -760,6 +778,54 @@
           "type": "image_picker",
           "id": "image_mobile",
           "label": "Mobile background image"
+        },
+        {
+          "type": "header",
+          "content": "Background position (desktop)"
+        },
+        {
+          "type": "range",
+          "id": "desktop_object_x",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "unit": "%",
+          "label": "Horizontal position (desktop)",
+          "default": 50
+        },
+        {
+          "type": "range",
+          "id": "desktop_object_y",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "unit": "%",
+          "label": "Vertical position (desktop)",
+          "default": 50
+        },
+        {
+          "type": "header",
+          "content": "Background position (mobile)"
+        },
+        {
+          "type": "range",
+          "id": "mobile_object_x",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "unit": "%",
+          "label": "Horizontal position (mobile)",
+          "default": 50
+        },
+        {
+          "type": "range",
+          "id": "mobile_object_y",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "unit": "%",
+          "label": "Vertical position (mobile)",
+          "default": 50
         },
         {
           "type": "image_picker",
