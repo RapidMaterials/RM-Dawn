@@ -106,7 +106,7 @@
 
     .trust-strip-{{ section.id }} .trust-strip__grid {
       grid-template-columns: repeat({{ section.settings.columns_tablet }}, minmax(0, 1fr));
-      gap: 10px;
+      gap: {{ section.settings.grid_gap_mobile }}px;
     }
 
     .trust-strip-{{ section.id }} .trust-strip__item {
