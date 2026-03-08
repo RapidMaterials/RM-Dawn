@@ -96,6 +96,82 @@
         "show_text_below": false
       }
     },
+    "trust_value_strip_iWDDxf": {
+      "type": "trust-value-strip",
+      "blocks": {
+        "value_item_f6FRhC": {
+          "type": "value_item",
+          "settings": {
+            "icon": "award",
+            "item_heading": "45+ Years",
+            "item_subtext": "in construction",
+            "link": ""
+          }
+        },
+        "value_item_gAUEpt": {
+          "type": "value_item",
+          "settings": {
+            "icon": "truck",
+            "item_heading": "Fast Shipping",
+            "item_subtext": "On in-stock products",
+            "link": ""
+          }
+        },
+        "value_item_EnRhDQ": {
+          "type": "value_item",
+          "settings": {
+            "icon": "tool",
+            "item_heading": "Contractor Focused",
+            "item_subtext": "Trade-ready products",
+            "link": ""
+          }
+        },
+        "value_item_htmNn4": {
+          "type": "value_item",
+          "settings": {
+            "icon": "quote",
+            "item_heading": "Quick Order",
+            "item_subtext": "Quote support available",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "value_item_f6FRhC",
+        "value_item_gAUEpt",
+        "value_item_EnRhDQ",
+        "value_item_htmNn4"
+      ],
+      "name": "Trust / Value strip",
+      "settings": {
+        "max_width": 1600,
+        "padding_x": 0,
+        "padding_y": 8,
+        "padding_x_mobile": 16,
+        "padding_y_mobile": 14,
+        "columns_desktop": 4,
+        "columns_tablet": 2,
+        "grid_gap": 8,
+        "icon_position": "left",
+        "icon_size": 34,
+        "icon_size_mobile": 24,
+        "heading_size": 15,
+        "heading_size_mobile": 17,
+        "subtext_size": 14,
+        "subtext_size_mobile": 13,
+        "heading_weight": 700,
+        "subtext_weight": 400,
+        "use_cards": false,
+        "background_color": "#f3f3f3",
+        "heading_color": "#111111",
+        "subtext_color": "#4b5563",
+        "text_color": "#111111",
+        "icon_color": "#2f67b1",
+        "card_background": "#f7f7f7",
+        "card_border": "#e5e7eb",
+        "card_radius": 8
+      }
+    },
     "multicolumn_KdhDjH": {
       "type": "multicolumn",
       "blocks": {
@@ -238,6 +314,7 @@
   "order": [
     "image_only_banner_yJty6P",
     "image_banner",
+    "trust_value_strip_iWDDxf",
     "multicolumn_KdhDjH",
     "image_with_text_idzyYK"
   ]
