@@ -104,7 +104,7 @@
           "settings": {
             "icon": "award",
             "item_heading": "45+ Years",
-            "item_subtext": "Serving construction professionals",
+            "item_subtext": "Serving construction pros",
             "link": ""
           }
         },
@@ -153,7 +153,7 @@
         "columns_tablet": 2,
         "grid_gap": 8,
         "icon_position": "left",
-        "icon_size": 34,
+        "icon_size": 30,
         "icon_size_mobile": 24,
         "heading_size": 15,
         "heading_size_mobile": 17,
