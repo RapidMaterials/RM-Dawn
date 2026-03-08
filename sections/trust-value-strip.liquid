@@ -29,7 +29,6 @@
     min-height: 84px;
     flex-direction: {% if section.settings.icon_position == 'top' %}column{% else %}row{% endif %};
     text-align: {% if section.settings.icon_position == 'top' %}center{% else %}left{% endif %};
-    justify-content: {% if section.settings.icon_position == 'top' %}flex-start{% else %}flex-start{% endif %};
   }
 
   .trust-strip-{{ section.id }} .trust-strip__icon-wrap {
@@ -75,7 +74,6 @@
     line-height: 1.15;
     color: {{ section.settings.heading_color }};
     margin: 0;
-    letter-spacing: 0;
   }
 
   .trust-strip-{{ section.id }} .trust-strip__subtext {
@@ -156,14 +154,12 @@
               {{
                 block.settings.custom_icon
                 | image_url: width: 100
-                | image_tag: alt: block.settings.heading, loading: 'lazy'
+                | image_tag: alt: block.settings.item_heading, loading: 'lazy'
               }}
             {%- else -%}
               {%- case block.settings.icon -%}
                 {%- when 'shield' -%}
-                  <svg viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M12 3l7 3v5c0 5-3.5 8-7 10-3.5-2-7-5-7-10V6l7-3z"></path>
-                  </svg>
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7 3v5c0 5-3.5 8-7 10-3.5-2-7-5-7-10V6l7-3z"></path></svg>
                 {%- when 'truck' -%}
                   <svg viewBox="0 0 24 24" aria-hidden="true">
                     <path d="M10 17H6a2 2 0 0 1-2-2V7h10v10z"></path>
@@ -172,27 +168,15 @@
                     <circle cx="17.5" cy="17.5" r="1.5"></circle>
                   </svg>
                 {%- when 'clock' -%}
-                  <svg viewBox="0 0 24 24" aria-hidden="true">
-                    <circle cx="12" cy="12" r="9"></circle>
-                    <path d="M12 7v5l3 2"></path>
-                  </svg>
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>
                 {%- when 'box' -%}
-                  <svg viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M12 3l8 4.5-8 4.5-8-4.5L12 3z"></path>
-                    <path d="M4 7.5V16.5L12 21l8-4.5V7.5"></path>
-                  </svg>
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 4.5-8 4.5-8-4.5L12 3z"></path><path d="M4 7.5V16.5L12 21l8-4.5V7.5"></path></svg>
                 {%- when 'tool' -%}
-                  <svg viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L4 17l3 3 5.3-5.3a4 4 0 0 0 5.4-5.4"></path>
-                  </svg>
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L4 17l3 3 5.3-5.3a4 4 0 0 0 5.4-5.4"></path></svg>
                 {%- when 'star' -%}
-                  <svg viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M12 3l2.8 5.7 6.2.9-4.5 4.4 1.1 6.2L12 17.3l-5.6 2.9 1.1-6.2L3 9.6l6.2-.9L12 3z"></path>
-                  </svg>
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l2.8 5.7 6.2.9-4.5 4.4 1.1 6.2L12 17.3l-5.6 2.9 1.1-6.2L3 9.6l6.2-.9L12 3z"></path></svg>
                 {%- when 'check' -%}
-                  <svg viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M20 6L9 17l-5-5"></path>
-                  </svg>
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg>
                 {%- when 'quote' -%}
                   <svg viewBox="0 0 24 24" aria-hidden="true">
                     <path d="M9 11H5v-1a4 4 0 0 1 4-4"></path>
@@ -201,14 +185,9 @@
                     <path d="M15 11h4v6h-4z"></path>
                   </svg>
                 {%- when 'award' -%}
-                  <svg viewBox="0 0 24 24" aria-hidden="true">
-                    <circle cx="12" cy="8" r="5"></circle>
-                    <path d="M9 13l-1 8 4-2 4 2-1-8"></path>
-                  </svg>
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="5"></circle><path d="M9 13l-1 8 4-2 4 2-1-8"></path></svg>
                 {%- else -%}
-                  <svg viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M20 6L9 17l-5-5"></path>
-                  </svg>
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg>
               {%- endcase -%}
             {%- endif -%}
           </div>
@@ -216,19 +195,19 @@
           <div class="trust-strip__content">
             {%- if block.settings.link != blank -%}
               <a href="{{ block.settings.link }}">
-                {%- if block.settings.heading != blank -%}
-                  <div class="trust-strip__heading">{{ block.settings.heading }}</div>
+                {%- if block.settings.item_heading != blank -%}
+                  <div class="trust-strip__heading">{{ block.settings.item_heading }}</div>
                 {%- endif -%}
-                {%- if block.settings.subtext != blank -%}
-                  <div class="trust-strip__subtext">{{ block.settings.subtext }}</div>
+                {%- if block.settings.item_subtext != blank -%}
+                  <div class="trust-strip__subtext">{{ block.settings.item_subtext }}</div>
                 {%- endif -%}
               </a>
             {%- else -%}
-              {%- if block.settings.heading != blank -%}
-                <div class="trust-strip__heading">{{ block.settings.heading }}</div>
+              {%- if block.settings.item_heading != blank -%}
+                <div class="trust-strip__heading">{{ block.settings.item_heading }}</div>
               {%- endif -%}
-              {%- if block.settings.subtext != blank -%}
-                <div class="trust-strip__subtext">{{ block.settings.subtext }}</div>
+              {%- if block.settings.item_subtext != blank -%}
+                <div class="trust-strip__subtext">{{ block.settings.item_subtext }}</div>
               {%- endif -%}
             {%- endif -%}
           </div>
@@ -485,13 +464,13 @@
         },
         {
           "type": "text",
-          "id": "heading",
+          "id": "item_heading",
           "label": "Heading",
           "default": "Fast Shipping"
         },
         {
           "type": "text",
-          "id": "subtext",
+          "id": "item_subtext",
           "label": "Subtext",
           "default": "On in-stock products"
         },
@@ -511,32 +490,32 @@
           "type": "value_item",
           "settings": {
             "icon": "award",
-            "heading": "45+ Years",
-            "subtext": "Serving the construction industry"
+            "item_heading": "45+ Years",
+            "item_subtext": "Serving the construction industry"
           }
         },
         {
           "type": "value_item",
           "settings": {
             "icon": "truck",
-            "heading": "Fast Shipping",
-            "subtext": "On in-stock products"
+            "item_heading": "Fast Shipping",
+            "item_subtext": "On in-stock products"
           }
         },
         {
           "type": "value_item",
           "settings": {
             "icon": "tool",
-            "heading": "Contractor Focused",
-            "subtext": "Trade-ready product selection"
+            "item_heading": "Contractor Focused",
+            "item_subtext": "Trade-ready product selection"
           }
         },
         {
           "type": "value_item",
           "settings": {
             "icon": "quote",
-            "heading": "Quick Order",
-            "subtext": "Quote support available"
+            "item_heading": "Quick Order",
+            "item_subtext": "Quote support available"
           }
         }
       ]
