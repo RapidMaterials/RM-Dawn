@@ -151,7 +151,7 @@
         "padding_y_mobile": 10,
         "columns_desktop": 4,
         "columns_tablet": 2,
-        "grid_gap": 8,
+        "grid_gap": 2,
         "icon_position": "left",
         "icon_size": 30,
         "icon_size_mobile": 24,
