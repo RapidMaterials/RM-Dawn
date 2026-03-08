@@ -16,6 +16,10 @@
           "type": "slide",
           "settings": {
             "image": "shopify://shop_images/noridc-bg-black.png",
+            "desktop_object_x": 50,
+            "desktop_object_y": 50,
+            "mobile_object_x": 70,
+            "mobile_object_y": 50,
             "logo": "shopify://shop_images/NSG_LOGO_light_b1d30b90-46f3-43e8-afc9-92b00dbccd22.png",
             "heading": "A New Name in Premium Euro Steel Gutters",
             "text": "<p>Meet Nordic Steel — the clean, durable gutter system that's giving the big brands a run for their money. Engineered for strength. Priced to compete.</p>",
