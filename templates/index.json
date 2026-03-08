@@ -27,17 +27,16 @@
       "block_order": [
         "slide_Lqd4wR"
       ],
-      "disabled": true,
       "name": "Home hero slider",
       "settings": {
-        "content_max_width": 1600,
+        "content_max_width": 1200,
         "text_max_width": 1100,
-        "desktop_height": 620,
-        "mobile_height": 500,
-        "side_padding": 24,
-        "side_padding_mobile": 16,
-        "padding_top": 40,
-        "padding_bottom": 70,
+        "desktop_height": 380,
+        "mobile_height": 300,
+        "side_padding": 80,
+        "side_padding_mobile": 14,
+        "padding_top": 20,
+        "padding_bottom": 50,
         "padding_top_mobile": 30,
         "padding_bottom_mobile": 50,
         "horizontal_alignment": "center",
@@ -46,16 +45,16 @@
         "horizontal_alignment_mobile": "center",
         "vertical_alignment_mobile": "center",
         "text_alignment_mobile": "center",
-        "logo_max_height": 140,
-        "logo_max_height_mobile": 100,
-        "heading_size_desktop": 56,
-        "heading_size_mobile": 34,
+        "logo_max_height": 80,
+        "logo_max_height_mobile": 60,
+        "heading_size_desktop": 44,
+        "heading_size_mobile": 26,
         "text_size_desktop": 19,
-        "text_size_mobile": 16,
+        "text_size_mobile": 14,
         "heading_weight": 700,
         "text_weight": 400,
         "heading_color": "#ffffff",
-        "text_color": "#f3f4f6",
+        "text_color": "#ffffff",
         "overlay_opacity": 20,
         "button_bg": "#7ac943",
         "button_bg_hover": "#68b337",
@@ -67,93 +66,6 @@
         "show_dots": true,
         "autoplay": false,
         "autoplay_speed": 5
-      }
-    },
-    "image_banner": {
-      "type": "image-banner",
-      "blocks": {
-        "heading": {
-          "type": "heading",
-          "settings": {
-            "heading": "<strong>A New Name in Premium Euro Steel Gutters</strong>",
-            "heading_tag": "h2",
-            "heading_size": "h1"
-          }
-        },
-        "text_QeTPD4": {
-          "type": "text",
-          "settings": {
-            "text": "Meet Nordic Steel — the clean, durable gutter system that’s giving the big brands a run for their money.Engineered for strength. Priced to compete.",
-            "text_style": "body"
-          }
-        },
-        "button": {
-          "type": "buttons",
-          "settings": {
-            "button_label_1": "Shop Nordic Steel Gutters",
-            "button_link_1": "https://rapidmaterials.com/pages/nordic-6-painted-all-colors-landing-page",
-            "button_style_secondary_1": false,
-            "button_label_2": "",
-            "button_link_2": "shopify://pages/quick-order-rapid-materials",
-            "button_style_secondary_2": false
-          }
-        }
-      },
-      "block_order": [
-        "heading",
-        "text_QeTPD4",
-        "button"
-      ],
-      "custom_css": [
-        "@media only screen and (min-width: 750px) {.banner--content-align-left.banner--desktop-transparent .banner__box, .banner--content-align-right.banner--desktop-transparent .banner__box, .banner--medium.banner--desktop-transparent .banner__box {max-width: 80rem; }}",
-        "@media only screen and (max-width: 749px) {.banner-box {padding-bottom: 0 !important; } .media > img {object-position: 75%; }}",
-        ".banner__content.banner__content--middle-center.page-width {margin-top: 50px; padding-bottom: 10px;}"
-      ],
-      "settings": {
-        "image": "shopify://shop_images/noridc-bg-black.png",
-        "image_overlay_opacity": 0,
-        "image_height": "small",
-        "desktop_content_position": "middle-center",
-        "show_text_box": false,
-        "desktop_content_alignment": "center",
-        "color_scheme": "scheme-6b61fb3b-285f-4844-88d1-5205c39b59d3",
-        "image_behavior": "none",
-        "mobile_content_alignment": "center",
-        "stack_images_on_mobile": false,
-        "show_text_below": false
-      }
-    },
-    "image_only_banner_yJty6P": {
-      "type": "image-only-banner",
-      "custom_css": [
-        ".rm-banner-template--18210574237874__image_only_banner_yJty6P {margin-bottom: -120px; z-index: 1; padding-top: 20px;}",
-        "@media (max-width: 768px) {.rm-banner-template--18210574237874__image_only_banner_yJty6P img {height: 60px; }}"
-      ],
-      "name": "Simple Banner Image",
-      "settings": {
-        "desktop_image": "shopify://shop_images/NSG_LOGO_light_b1d30b90-46f3-43e8-afc9-92b00dbccd22.png",
-        "alt_text": "",
-        "link": "",
-        "desktop_object_x": 50,
-        "desktop_object_y": 50,
-        "mobile_object_x": 50,
-        "mobile_object_y": 50,
-        "desktop_height": 100,
-        "mobile_height": 100,
-        "object_fit": "contain",
-        "border_radius": 0,
-        "loading": "lazy",
-        "logo_alt": "Logo",
-        "logo_width_desktop": 280,
-        "logo_width_mobile": 180,
-        "show_glow": false,
-        "glow_color": "white",
-        "glow_opacity": 45,
-        "glow_blur": 26,
-        "glow_height_desktop": 380,
-        "glow_width_desktop": 380,
-        "glow_height_mobile": 260,
-        "glow_width_mobile": 380
       }
     },
     "trust_value_strip_iWDDxf": {
@@ -378,8 +290,6 @@
   },
   "order": [
     "home_hero_slider_9TexqX",
-    "image_banner",
-    "image_only_banner_yJty6P",
     "trust_value_strip_iWDDxf",
     "multicolumn_KdhDjH",
     "image_with_text_idzyYK"
