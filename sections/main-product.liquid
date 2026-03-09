@@ -148,6 +148,12 @@ button#ModalClose-ReturnDetails, .product-popup-modal__toggle {
 .prod-ship-note.is-in-stock::before {
     color:#3e8313;
 }
+.product-form__submit.min-qty-not-met {
+  background: #b8b8b8 !important;
+  border-color: #b8b8b8 !important;
+  color: #ffffff !important;
+  cursor: not-allowed;
+}
 
 
     @media screen and (min-width: 750px) {
@@ -1792,6 +1798,74 @@ button#ModalClose-ReturnDetails, .product-popup-modal__toggle {
   });
 })();
 </script>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  function updateMinQtyButtonState(container) {
+    const limitLabel = container.querySelector('.order-limit-label');
+    const addToCartButton = container.querySelector('.product-form__submit');
+
+    if (!limitLabel || !addToCartButton) return;
+
+    const isHidden =
+      limitLabel.style.display === 'none' ||
+      window.getComputedStyle(limitLabel).display === 'none';
+
+    if (isHidden) {
+      addToCartButton.classList.remove('min-qty-not-met');
+    } else {
+      addToCartButton.classList.add('min-qty-not-met');
+    }
+  }
+
+  function initMinQtyWatcher(container) {
+    const limitLabel = container.querySelector('.order-limit-label');
+    if (!limitLabel) return;
+
+    updateMinQtyButtonState(container);
+
+    const observer = new MutationObserver(function () {
+      updateMinQtyButtonState(container);
+    });
+
+    observer.observe(limitLabel, {
+      attributes: true,
+      attributeFilter: ['style', 'class']
+    });
+
+    const qtyInput = container.querySelector('.quantity__input');
+    if (qtyInput) {
+      qtyInput.addEventListener('input', function () {
+        setTimeout(function () {
+          updateMinQtyButtonState(container);
+        }, 50);
+      });
+
+      qtyInput.addEventListener('change', function () {
+        setTimeout(function () {
+          updateMinQtyButtonState(container);
+        }, 50);
+      });
+    }
+
+    const plusMinusButtons = container.querySelectorAll('.quantity__button');
+    plusMinusButtons.forEach(function (button) {
+      button.addEventListener('click', function () {
+        setTimeout(function () {
+          updateMinQtyButtonState(container);
+        }, 50);
+      });
+    });
+  }
+
+  document.querySelectorAll('product-form').forEach(function (productForm) {
+    const container = productForm.parentElement || productForm.closest('[id^="Quantity-Form"]') || document;
+    initMinQtyWatcher(container);
+  });
+});
+</script>
+
 </product-info>
 
 {% schema %}
