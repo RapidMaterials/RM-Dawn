@@ -148,12 +148,6 @@ button#ModalClose-ReturnDetails, .product-popup-modal__toggle {
 .prod-ship-note.is-in-stock::before {
     color:#3e8313;
 }
-.product-form__submit.min-qty-not-met {
-  background: #b8b8b8 !important;
-  border-color: #b8b8b8 !important;
-  color: #ffffff !important;
-  cursor: not-allowed;
-}
 
 
     @media screen and (min-width: 750px) {
@@ -1799,73 +1793,117 @@ button#ModalClose-ReturnDetails, .product-popup-modal__toggle {
 })();
 </script>
 
-
 <script>
 document.addEventListener('DOMContentLoaded', function () {
-  function updateMinQtyButtonState(container) {
-    const limitLabel = container.querySelector('.order-limit-label');
-    const addToCartButton = container.querySelector('.product-form__submit');
+  function getWatermelonSettings() {
+    const settingsEl = document.querySelector('#watermelon-block-settings');
+    if (!settingsEl) return null;
 
-    if (!limitLabel || !addToCartButton) return;
+    try {
+      return JSON.parse(settingsEl.textContent);
+    } catch (e) {
+      console.error('Could not parse Watermelon settings JSON', e);
+      return null;
+    }
+  }
 
-    const isHidden =
-      limitLabel.style.display === 'none' ||
-      window.getComputedStyle(limitLabel).display === 'none';
+  function getMinQtyForVariant(settings, productId, variantId) {
+    if (!settings || !settings.productLimits) return 1;
 
-    if (isHidden) {
-      addToCartButton.classList.remove('min-qty-not-met');
+    const limits = Object.values(settings.productLimits);
+
+    for (const limit of limits) {
+      if (
+        limit.limitType === 'quantity' &&
+        limit.productSelectionType === 'variants' &&
+        limit.productVariants &&
+        limit.productVariants[String(productId)]
+      ) {
+        const matchingVariant = limit.productVariants[String(productId)].find(function (variant) {
+          return String(variant.id) === String(variantId);
+        });
+
+        if (matchingVariant) {
+          return Number(limit.limitValue?.quantity?.min || 1);
+        }
+      }
+    }
+
+    return 1;
+  }
+
+  function updateAddToCartState() {
+    const settings = getWatermelonSettings();
+    if (!settings || !settings.product) return;
+
+    const productId = settings.product.id;
+
+    const variantInput = document.querySelector('form[data-type="add-to-cart-form"] input[name="id"]');
+    const qtyInput = document.querySelector('input[name="quantity"]');
+    const addButton = document.querySelector('.product-form__submit');
+
+    if (!variantInput || !qtyInput || !addButton) return;
+
+    const variantId = variantInput.value;
+    const qty = Number(qtyInput.value || 0);
+    const minQty = getMinQtyForVariant(settings, productId, variantId);
+
+    if (qty < minQty) {
+      addButton.classList.add('min-qty-not-met');
+      addButton.disabled = true;
+      addButton.setAttribute('aria-disabled', 'true');
     } else {
-      addToCartButton.classList.add('min-qty-not-met');
+      addButton.classList.remove('min-qty-not-met');
+      addButton.disabled = false;
+      addButton.removeAttribute('aria-disabled');
     }
   }
 
-  function initMinQtyWatcher(container) {
-    const limitLabel = container.querySelector('.order-limit-label');
-    if (!limitLabel) return;
+  function initMinQtyButtonWatcher() {
+    const form = document.querySelector('form[data-type="add-to-cart-form"]');
+    const qtyInput = document.querySelector('input[name="quantity"]');
+    const variantInput = form ? form.querySelector('input[name="id"]') : null;
 
-    updateMinQtyButtonState(container);
+    if (!form || !qtyInput || !variantInput) return;
 
-    const observer = new MutationObserver(function () {
-      updateMinQtyButtonState(container);
-    });
+    updateAddToCartState();
 
-    observer.observe(limitLabel, {
-      attributes: true,
-      attributeFilter: ['style', 'class']
-    });
+    qtyInput.addEventListener('input', updateAddToCartState);
+    qtyInput.addEventListener('change', updateAddToCartState);
 
-    const qtyInput = container.querySelector('.quantity__input');
-    if (qtyInput) {
-      qtyInput.addEventListener('input', function () {
-        setTimeout(function () {
-          updateMinQtyButtonState(container);
-        }, 50);
-      });
-
-      qtyInput.addEventListener('change', function () {
-        setTimeout(function () {
-          updateMinQtyButtonState(container);
-        }, 50);
-      });
-    }
-
-    const plusMinusButtons = container.querySelectorAll('.quantity__button');
-    plusMinusButtons.forEach(function (button) {
+    document.querySelectorAll('.quantity__button').forEach(function (button) {
       button.addEventListener('click', function () {
-        setTimeout(function () {
-          updateMinQtyButtonState(container);
-        }, 50);
+        setTimeout(updateAddToCartState, 50);
       });
+    });
+
+    const variantObserver = new MutationObserver(function () {
+      setTimeout(updateAddToCartState, 50);
+    });
+
+    variantObserver.observe(variantInput, {
+      attributes: true,
+      attributeFilter: ['value']
+    });
+
+    form.addEventListener('change', function () {
+      setTimeout(updateAddToCartState, 50);
+    });
+
+    document.addEventListener('variant:change', function () {
+      setTimeout(updateAddToCartState, 50);
+    });
+
+    document.addEventListener('change', function (event) {
+      if (event.target.matches('select, input[type="radio"]')) {
+        setTimeout(updateAddToCartState, 50);
+      }
     });
   }
 
-  document.querySelectorAll('product-form').forEach(function (productForm) {
-    const container = productForm.parentElement || productForm.closest('[id^="Quantity-Form"]') || document;
-    initMinQtyWatcher(container);
-  });
+  initMinQtyButtonWatcher();
 });
 </script>
-
 </product-info>
 
 {% schema %}
