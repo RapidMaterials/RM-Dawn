@@ -1903,6 +1903,63 @@ document.addEventListener('DOMContentLoaded', function () {
 
   initMinQtyButtonWatcher();
 });
+
+
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+
+  function initCustomLengthToggle() {
+
+    const cutLengthSelect = document.querySelector(
+      'select[name="options[Cut Length for Shipping]"]'
+    );
+
+    if (!cutLengthSelect) return;
+
+    // Find the BSS field by label text instead of ID
+    let customFieldWrap = null;
+
+    document.querySelectorAll('.po-label').forEach(label => {
+      if (label.textContent.trim().toLowerCase() === 'cut length') {
+        customFieldWrap = label.closest('.po-stack');
+      }
+    });
+
+    if (!customFieldWrap) return;
+
+    function toggle() {
+      const selectedValue = cutLengthSelect.value.toLowerCase();
+      const show = selectedValue.includes('custom cut');
+
+      customFieldWrap.style.display = show ? 'flex' : 'none';
+
+      const input = customFieldWrap.querySelector('input');
+
+      if (input) {
+        input.required = show;
+
+        if (!show) {
+          input.value = '';
+          input.dispatchEvent(new Event('change', { bubbles: true }));
+        }
+      }
+    }
+
+    toggle();
+
+    cutLengthSelect.addEventListener('change', toggle);
+
+    document.addEventListener('variant:change', toggle);
+  }
+
+  // Run once
+  initCustomLengthToggle();
+
+  // Run again if Shopify re-renders variants (important for Dawn)
+  document.addEventListener('shopify:section:load', initCustomLengthToggle);
+
+});
 </script>
 </product-info>
 
