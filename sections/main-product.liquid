@@ -26,12 +26,8 @@
   {%- endif -%}
 
   {%- style -%}
-<style>
-  .rm-hidden-cut-length {
-    display: none !important;
-  }
-</style>
 
+  
     .section-{{ section.id }}-padding {
       padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
       padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
@@ -163,7 +159,6 @@ button#ModalClose-ReturnDetails, .product-popup-modal__toggle {
       }
     }
   {%- endstyle -%}
-
 
   <script src="{{ 'product-info.js' | asset_url }}" defer="defer"></script>
   <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
@@ -359,72 +354,6 @@ button#ModalClose-ReturnDetails, .product-popup-modal__toggle {
   const initialPriceCents = {{ product.selected_or_first_available_variant.price | json }};
   render({ id: initialVariantId, price: initialPriceCents });
 })();
-</script>
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-  function getCutLengthSelect() {
-    return document.querySelector('select[name="options[Cut Length for Shipping]"]');
-  }
-
-  function getCustomCutFieldWrap() {
-    const labels = document.querySelectorAll('.po-label');
-
-    for (const label of labels) {
-      const text = label.textContent.replace(/\s+/g, ' ').trim().toLowerCase();
-      if (text.includes('cut length')) {
-        return label.closest('.po-stack');
-      }
-    }
-
-    return null;
-  }
-
-  function toggleCustomCutField() {
-    const select = getCutLengthSelect();
-    const fieldWrap = getCustomCutFieldWrap();
-
-    if (!select || !fieldWrap) return;
-
-    const selectedValue = (select.value || '').toLowerCase();
-    const shouldShow = selectedValue.includes('custom cut');
-
-    fieldWrap.classList.toggle('rm-hidden-cut-length', !shouldShow);
-
-    const input = fieldWrap.querySelector('input, textarea');
-    if (input) {
-      input.required = shouldShow;
-
-      if (!shouldShow) {
-        input.value = '';
-        input.dispatchEvent(new Event('change', { bubbles: true }));
-        input.dispatchEvent(new Event('input', { bubbles: true }));
-      }
-    }
-  }
-
-  function bindEvents() {
-    document.addEventListener('change', function (event) {
-      if (event.target && event.target.matches('select[name="options[Cut Length for Shipping]"]')) {
-        toggleCustomCutField();
-      }
-    });
-
-    document.addEventListener('variant:change', toggleCustomCutField);
-    document.addEventListener('shopify:section:load', toggleCustomCutField);
-  }
-
-  bindEvents();
-  toggleCustomCutField();
-
-  const observer = new MutationObserver(function () {
-    toggleCustomCutField();
-  });
-
-  observer.observe(document.body, {
-    childList: true,
-    subtree: true
-  });
-});
 </script>
 
     
