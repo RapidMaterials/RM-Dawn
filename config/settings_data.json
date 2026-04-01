@@ -170,11 +170,6 @@
         "disabled": false,
         "settings": {}
       },
-      "8171265131012698934": {
-        "type": "shopify://apps/oc-quantity-breaks-limit/blocks/orichi-discount/3f38eaa3-2a3f-4e55-bcc9-df5d3f75e351",
-        "disabled": false,
-        "settings": {}
-      },
       "5918707185744429496": {
         "type": "shopify://apps/optis-product-options/blocks/bss-po-script/2c446099-c349-4e73-80cd-49c9770b7807",
         "disabled": false,
@@ -204,6 +199,11 @@
       },
       "11631084706489998723": {
         "type": "shopify://apps/watermelon-order-limits/blocks/app-embed/91904755-64ba-4bc5-85c6-2e5708522f2b",
+        "disabled": false,
+        "settings": {}
+      },
+      "17676059084223943535": {
+        "type": "shopify://apps/triplewhale/blocks/triple_pixel_snippet/483d496b-3f1a-4609-aea7-8eee3b6b7a2a",
         "disabled": false,
         "settings": {}
       }
