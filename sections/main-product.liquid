@@ -362,16 +362,19 @@ button#ModalClose-ReturnDetails, .product-popup-modal__toggle {
 </script>
 <script>
 document.addEventListener('DOMContentLoaded', function () {
-  function getCutLengthSelect() {
+  const hiddenClass = 'rm-hidden-cut-length';
+
+  function getLengthSelect() {
     return document.querySelector('select[name="options[Length for Shipping]"]');
   }
 
-  function getCustomCutFieldWrap() {
+  function getCutLengthFieldWrap() {
     const labels = document.querySelectorAll('.po-label');
 
     for (const label of labels) {
       const text = label.textContent.replace(/\s+/g, ' ').trim().toLowerCase();
-      if (text.includes('custom')) {
+
+      if (text === 'cut length' || text.includes('cut length')) {
         return label.closest('.po-stack');
       }
     }
@@ -379,53 +382,55 @@ document.addEventListener('DOMContentLoaded', function () {
     return null;
   }
 
-  function toggleCustomCutField() {
-    const select = getCutLengthSelect();
-    const fieldWrap = getCustomCutFieldWrap();
+  function toggleCutLengthField() {
+    const select = getLengthSelect();
+    const fieldWrap = getCutLengthFieldWrap();
 
     if (!select || !fieldWrap) return;
 
     const selectedValue = (select.value || '').toLowerCase();
     const shouldShow = selectedValue.includes('custom');
 
-    fieldWrap.classList.toggle('rm-hidden-cut-length', !shouldShow);
+    fieldWrap.classList.toggle(hiddenClass, !shouldShow);
 
     const input = fieldWrap.querySelector('input, textarea');
+
     if (input) {
       input.required = shouldShow;
 
       if (!shouldShow) {
         input.value = '';
-        input.dispatchEvent(new Event('change', { bubbles: true }));
         input.dispatchEvent(new Event('input', { bubbles: true }));
+        input.dispatchEvent(new Event('change', { bubbles: true }));
       }
     }
   }
 
-  function bindEvents() {
-    document.addEventListener('change', function (event) {
-      if (event.target && event.target.matches('select[name="options[Length for Shipping]"]')) {
-        toggleCustomCutField();
-      }
-    });
+  document.addEventListener('change', function (event) {
+    if (
+      event.target &&
+      event.target.matches('select[name="options[Length for Shipping]"]')
+    ) {
+      toggleCutLengthField();
+    }
+  });
 
-    document.addEventListener('variant:change', toggleCustomCutField);
-    document.addEventListener('shopify:section:load', toggleCustomCutField);
-  }
-
-  bindEvents();
-  toggleCustomCutField();
+  document.addEventListener('variant:change', toggleCutLengthField);
+  document.addEventListener('shopify:section:load', toggleCutLengthField);
 
   const observer = new MutationObserver(function () {
-    toggleCustomCutField();
+    toggleCutLengthField();
   });
 
   observer.observe(document.body, {
     childList: true,
     subtree: true
   });
+
+  toggleCutLengthField();
 });
 </script>
+
 
     
 
