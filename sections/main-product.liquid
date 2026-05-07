@@ -386,7 +386,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (!select || !fieldWrap) return;
 
     const selectedValue = (select.value || '').toLowerCase();
-    const shouldShow = selectedValue.includes('custom cut');
+    const shouldShow = selectedValue.includes('custom');
 
     fieldWrap.classList.toggle('rm-hidden-cut-length', !shouldShow);
 
