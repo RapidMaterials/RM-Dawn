@@ -371,7 +371,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     for (const label of labels) {
       const text = label.textContent.replace(/\s+/g, ' ').trim().toLowerCase();
-      if (text.includes('cut length')) {
+      if (text.includes('custom')) {
         return label.closest('.po-stack');
       }
     }
