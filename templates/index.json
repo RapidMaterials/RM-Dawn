@@ -31,6 +31,72 @@
       "block_order": [
         "slide_Lqd4wR"
       ],
+      "disabled": true,
+      "name": "Home hero slider",
+      "settings": {
+        "content_max_width": 1200,
+        "text_max_width": 1100,
+        "desktop_height": 380,
+        "mobile_height": 300,
+        "side_padding": 80,
+        "side_padding_mobile": 14,
+        "padding_top": 20,
+        "padding_bottom": 50,
+        "padding_top_mobile": 30,
+        "padding_bottom_mobile": 50,
+        "horizontal_alignment": "center",
+        "vertical_alignment": "center",
+        "text_alignment": "center",
+        "horizontal_alignment_mobile": "center",
+        "vertical_alignment_mobile": "center",
+        "text_alignment_mobile": "center",
+        "logo_max_height": 80,
+        "logo_max_height_mobile": 60,
+        "heading_size_desktop": 36,
+        "heading_size_mobile": 26,
+        "text_size_desktop": 18,
+        "text_size_mobile": 14,
+        "heading_weight": 700,
+        "text_weight": 400,
+        "heading_color": "#ffffff",
+        "text_color": "#ffffff",
+        "overlay_opacity": 20,
+        "button_bg": "#7ac943",
+        "button_bg_hover": "#68b337",
+        "button_text": "#111111",
+        "button_radius": 0,
+        "button_text_size": 16,
+        "button_weight": 600,
+        "show_arrows": true,
+        "show_dots": true,
+        "autoplay": false,
+        "autoplay_speed": 5
+      }
+    },
+    "home_hero_slider_JU6WzL": {
+      "type": "home-hero-slider",
+      "blocks": {
+        "slide_Jph7py": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/stack-of-square-steel-pipes-for-construction-suppl-2026-03-24-00-10-06-utc.jpg",
+            "desktop_object_x": 50,
+            "desktop_object_y": 50,
+            "mobile_object_x": 70,
+            "mobile_object_y": 50,
+            "heading": "Steel Framing Channels & Angles",
+            "text": "<p>Browse our expanded selection of steel framing profiles, channels, angles, and structural support components built for commercial and industrial applications.</p>",
+            "button_label": "Shop Profiles & Channels",
+            "button_link": "https://rapidmaterials.com/collections/profiles-channels"
+          }
+        }
+      },
+      "block_order": [
+        "slide_Jph7py"
+      ],
+      "custom_css": [
+        ".rm-hero__overlay {display: block !important; background: rgba(0, 0, 0, 0.4);}"
+      ],
       "name": "Home hero slider",
       "settings": {
         "content_max_width": 1200,
@@ -294,6 +360,7 @@
   },
   "order": [
     "home_hero_slider_9TexqX",
+    "home_hero_slider_JU6WzL",
     "trust_value_strip_iWDDxf",
     "multicolumn_KdhDjH",
     "image_with_text_idzyYK"
