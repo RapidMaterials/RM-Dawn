@@ -67,7 +67,7 @@
           "settings": {}
         },
         "watermelon_order_limits_app_block_MR4eYt": {
-          "type": "shopify://apps/watermelon-order-limits/blocks/app-block/91904755-64ba-4bc5-85c6-2e5708522f2b",
+          "type": "shopify://apps/melon-minimum-order-quantity/blocks/app-block/91904755-64ba-4bc5-85c6-2e5708522f2b",
           "settings": {}
         },
         "text_XdzqLY": {
@@ -137,7 +137,7 @@
         "gallery_layout": "thumbnail",
         "mobile_thumbnails": "show",
         "media_position": "left",
-        "image_zoom": "hover",
+        "image_zoom": "lightbox",
         "hide_variants": true,
         "enable_video_looping": false,
         "padding_top": 28,
@@ -276,7 +276,7 @@
       "type": "apps",
       "blocks": {
         "watermelon_order_limits_app_block_t6Nbzx": {
-          "type": "shopify://apps/watermelon-order-limits/blocks/app-block/91904755-64ba-4bc5-85c6-2e5708522f2b",
+          "type": "shopify://apps/melon-minimum-order-quantity/blocks/app-block/91904755-64ba-4bc5-85c6-2e5708522f2b",
           "settings": {}
         }
       },
