@@ -13,6 +13,18 @@
   "sections": {
     "announcement_bar_9k9i4C": {
       "type": "announcement-bar",
+      "blocks": {
+        "announcement_qVkr9E": {
+          "type": "announcement",
+          "settings": {
+            "text": "Rapid Materials will be closed Monday, May 26th for Memorial Day. Orders placed over the weekend will begin processing Tuesday.",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "announcement_qVkr9E"
+      ],
       "name": "t:sections.announcement-bar.presets.name",
       "settings": {
         "auto_rotate": false,

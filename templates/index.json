@@ -9,6 +9,19 @@
  */
 {
   "sections": {
+    "custom_liquid_Q3XFcc": {
+      "type": "custom-liquid",
+      "disabled": true,
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "",
+        "color_scheme": "",
+        "padding_top": 4,
+        "padding_bottom": 4,
+        "padding_left": 4,
+        "padding_right": 4
+      }
+    },
     "home_hero_slider_9TexqX": {
       "type": "home-hero-slider",
       "blocks": {
@@ -359,6 +372,7 @@
     }
   },
   "order": [
+    "custom_liquid_Q3XFcc",
     "home_hero_slider_9TexqX",
     "home_hero_slider_JU6WzL",
     "trust_value_strip_iWDDxf",
