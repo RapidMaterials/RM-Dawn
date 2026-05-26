@@ -79,6 +79,7 @@
       "settings": {
         "desktop_content_position": "center",
         "content_alignment": "center",
+        "content_max_width": 900,
         "color_scheme": "",
         "full_width": true,
         "padding_top": 20,
@@ -134,6 +135,8 @@
         "title": "",
         "heading_tag": "h2",
         "section_float": "clear",
+        "mobile_display": "mobile-show",
+        "desktop_display": "desktop-show",
         "heading_size": "h1",
         "col_alignment": "left",
         "image_width": "full",
@@ -176,6 +179,7 @@
       "settings": {
         "desktop_content_position": "center",
         "content_alignment": "center",
+        "content_max_width": 900,
         "color_scheme": "scheme-2",
         "full_width": true,
         "padding_top": 20,
@@ -221,6 +225,8 @@
         "title": "",
         "heading_tag": "h2",
         "section_float": "clear",
+        "mobile_display": "mobile-show",
+        "desktop_display": "desktop-show",
         "heading_size": "h2",
         "col_alignment": "left",
         "image_width": "full",
@@ -262,6 +268,7 @@
       "settings": {
         "desktop_content_position": "center",
         "content_alignment": "center",
+        "content_max_width": 900,
         "color_scheme": "scheme-1",
         "full_width": true,
         "padding_top": 40,
@@ -281,7 +288,6 @@
     },
     "product-grid": {
       "type": "main-collection-product-grid",
-      "disabled": true,
       "custom_css": [
         "@media screen and (min-width: 750px) {.card__information {padding: 0; }}",
         "h2#verticalTitle {display: none;}",
@@ -335,8 +341,8 @@
     "rich_text_CjC7c7",
     "multicolumn_nrn6EQ",
     "rich_text_EeCJeG",
-    "custom_liquid_awMT8b",
     "product-grid",
+    "custom_liquid_awMT8b",
     "collapsible_content_faq_QpCTnt"
   ]
 }
