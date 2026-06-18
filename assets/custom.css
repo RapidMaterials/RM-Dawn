@@ -149,3 +149,13 @@
     padding: 5px 10px;
   }
 }
+
+
+/***sfs color matcher with app for product options**/
+div#bss-po-dropdown-selected-option {
+    background-color: white;
+}
+
+.po-selected-swatch {
+    display: none;
+}
