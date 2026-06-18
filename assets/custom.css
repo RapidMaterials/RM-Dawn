@@ -152,7 +152,7 @@
 
 
 /***sfs color matcher with app for product options**/
-div#bss-po-dropdown-selected-option {
+div#bss-po-dropdown-selected-option, div#po-dropdown-selected-option {
     background-color: white;
 }
 
