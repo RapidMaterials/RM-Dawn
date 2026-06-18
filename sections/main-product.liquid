@@ -1844,6 +1844,32 @@ document.addEventListener('DOMContentLoaded', function () {
 
 </script>
 
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+
+  function toggleColorOptions() {
+
+    const finishSelect = document.querySelector('select[name="options[Finish:]"]');
+    const optionSet = document.querySelector('.bss-po-option-set');
+
+    if (!finishSelect || !optionSet) return;
+
+    const isPainted = finishSelect.value === 'Color - Painted';
+
+    optionSet.style.display = isPainted ? '' : 'none';
+  }
+
+  document.addEventListener('change', function(e){
+    if (e.target.matches('select[name="options[Finish:]"]')) {
+      toggleColorOptions();
+    }
+  });
+
+  document.addEventListener('variant:change', toggleColorOptions);
+
+  toggleColorOptions();
+});
+</script>
 </product-info>
 
 {% schema %}
