@@ -256,6 +256,17 @@
             "link": "shopify://collections/brand-s-5"
           }
         },
+        "column_CAJF9U": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/sfs_sq_transparent.png",
+            "title": "SFS",
+            "heading_tag": "h2",
+            "text": "",
+            "link_label": "Shop",
+            "link": "shopify://collections/brand-sfs"
+          }
+        },
         "column_ziffQU": {
           "type": "column",
           "settings": {
@@ -320,6 +331,7 @@
         "column_jPaXt8",
         "column_pmWFmc",
         "column_DC3dBx",
+        "column_CAJF9U",
         "column_ziffQU",
         "column_kecb4N",
         "column_bNDAaT",
