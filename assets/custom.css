@@ -165,3 +165,8 @@ div#bss-po-dropdown-selected-option, div#po-dropdown-selected-option {
 .video-gallery{
   align-items: center;
 }
+
+
+button#jdgm-tab_questions_answers {
+    display: none;
+}
