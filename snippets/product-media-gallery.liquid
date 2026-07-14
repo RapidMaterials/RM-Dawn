@@ -161,14 +161,6 @@
     </div>
   </slider-component>
 
-         {%- assign imgnote = product.metafields.custom.image_note.value -%} 
-{%- if imgnote != blank -%}
-  <div style="font-size: 12px;
-    font-style: italic;
-    line-height: 12px;
-    text-align: center">{{ imgnote }}</div>
-  {%- endif -%}
-
   {%- if first_3d_model -%}
     <button
       class="button button--full-width product__xr-button"
@@ -345,3 +337,12 @@
     </slider-component>
   {%- endif -%}
 </media-gallery>
+
+         {%- assign imgnote = product.metafields.custom.image_note.value -%} 
+{%- if imgnote != blank -%}
+  <div style="font-size: 12px;
+    font-style: italic;
+    line-height: 12px;
+    text-align: center">{{ imgnote }}</div>
+  {%- endif -%}
+
