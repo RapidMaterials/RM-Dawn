@@ -129,13 +129,7 @@
       {%- endfor -%}
    
     </ul>
-       {%- assign imgnote = product.metafields.custom.image_note.value -%} 
-{%- if imgnote != blank -%}
-  <span style="    font-size: 12px;
-    font-style: italic;
-    line-height: 12px !important;
-    text-align: center !important;">{{ imgnote }}</span>
-  {%- endif -%}
+
     <div class="slider-buttons quick-add-hidden{% if hide_mobile_slider %} small-hide{% endif %}">
       <button
         type="button"
