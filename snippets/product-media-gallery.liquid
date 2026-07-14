@@ -57,10 +57,7 @@
       {{ 'accessibility.skip_to_product_info' | t }}
     </a>
 
-{%- assign imgnote = product.metafields.custom.image_note.value -%} 
-{%- if imgnote != blank -%}
-  <span class="img-note">{{ imgnote }}</span>
-  {%- endif -%}
+
 
     <ul
       id="Slider-Gallery-{{ section.id }}"
@@ -130,6 +127,13 @@
           </li>
         {%- endunless -%}
       {%- endfor -%}
+      {%- assign imgnote = product.metafields.custom.image_note.value -%} 
+{%- if imgnote != blank -%}
+  <span style="    font-size: 12px;
+    font-style: italic;
+    line-height: 12px !important;
+    text-align: center !important;">{{ imgnote }}</span>
+  {%- endif -%}
     </ul>
     <div class="slider-buttons quick-add-hidden{% if hide_mobile_slider %} small-hide{% endif %}">
       <button
