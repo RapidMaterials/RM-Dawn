@@ -56,6 +56,12 @@
     <a class="skip-to-content-link button visually-hidden quick-add-hidden" href="#ProductInfo-{{ section.id }}">
       {{ 'accessibility.skip_to_product_info' | t }}
     </a>
+
+{%- assign imgnote = product.metafields.custom.image_note.value -%} 
+{%- if imgnote != blank -%}
+  <span class="img-note">{{ imgnote }}</span>
+  {%- endif -%}
+
     <ul
       id="Slider-Gallery-{{ section.id }}"
       class="product__media-list contains-media grid grid--peek list-unstyled slider slider--mobile"
