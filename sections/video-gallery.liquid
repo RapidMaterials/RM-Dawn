@@ -354,204 +354,275 @@
 </div>
 
 <script>
-  (() => {
-    const sectionId = '{{ section.id }}';
+(() => {
+  const sectionId = '{{ section.id }}';
 
-    function initializeVideoGallery() {
-      const section = document.querySelector(
-        `[data-video-gallery-section="${sectionId}"]`
-      );
+  function initializeVideoGallery() {
+    const section = document.querySelector(
+      `[data-video-gallery-section="${sectionId}"]`
+    );
 
-      if (!section || section.dataset.videoGalleryInitialized === 'true') {
-        return;
-      }
-
-      section.dataset.videoGalleryInitialized = 'true';
-
-      const buttons = section.querySelectorAll('.video-gallery__thumb');
-      const lightbox = section.querySelector(
-        `.video-lightbox[data-section-id="${sectionId}"]`
-      );
-
-      if (!lightbox) {
-        return;
-      }
-
-      const container = lightbox.querySelector('.video-container');
-      const closeButton = lightbox.querySelector('.video-lightbox__close');
-
-      if (!container || !closeButton) {
-        return;
-      }
-
-      document.body.appendChild(lightbox);
-
-      let scrollPosition = 0;
-      let lastFocusedElement = null;
-
-      function runEmbedScripts(element) {
-        const scripts = element.querySelectorAll('script');
-
-        scripts.forEach((oldScript) => {
-          const newScript = document.createElement('script');
-
-          Array.from(oldScript.attributes).forEach((attribute) => {
-            newScript.setAttribute(attribute.name, attribute.value);
-          });
-
-          newScript.textContent = oldScript.textContent;
-          oldScript.parentNode.replaceChild(newScript, oldScript);
-        });
-
-        if (
-          window.FB &&
-          window.FB.XFBML &&
-          typeof window.FB.XFBML.parse === 'function'
-        ) {
-          window.FB.XFBML.parse(element);
-        }
-      }
-
-      function openLightbox(content, isEmbedCode = false) {
-        scrollPosition = window.scrollY;
-        lastFocusedElement = document.activeElement;
-
-        document.body.style.position = 'fixed';
-        document.body.style.top = `-${scrollPosition}px`;
-        document.body.style.left = '0';
-        document.body.style.right = '0';
-        document.body.style.width = '100%';
-        document.body.classList.add('video-lightbox-open');
-
-        container.innerHTML = content;
-
-        lightbox.classList.add('is-open');
-        lightbox.setAttribute('aria-hidden', 'false');
-
-        if (isEmbedCode) {
-          runEmbedScripts(container);
-        }
-
-        closeButton.focus();
-      }
-
-      function closeLightbox() {
-        container.innerHTML = '';
-
-        lightbox.classList.remove('is-open');
-        lightbox.setAttribute('aria-hidden', 'true');
-
-        document.body.style.position = '';
-        document.body.style.top = '';
-        document.body.style.left = '';
-        document.body.style.right = '';
-        document.body.style.width = '';
-        document.body.classList.remove('video-lightbox-open');
-
-        window.scrollTo(0, scrollPosition);
-
-        if (lastFocusedElement) {
-          lastFocusedElement.focus();
-        }
-      }
-
-      buttons.forEach((button) => {
-        button.addEventListener('click', () => {
-          const embedTemplateId = button.dataset.embedTemplate;
-
-          /*
-           * Custom embed code always takes priority over
-           * the normal YouTube or Vimeo URL.
-           */
-          if (embedTemplateId) {
-            const template = document.getElementById(embedTemplateId);
-
-            if (template) {
-              openLightbox(template.innerHTML.trim(), true);
-            }
-
-            return;
-          }
-
-          const videoType = button.dataset.videoType;
-          const videoId = button.dataset.videoId;
-
-          if (!videoId) {
-            return;
-          }
-
-          let iframeSrc = '';
-
-          if (videoType === 'youtube') {
-            iframeSrc =
-              `https://www.youtube.com/embed/${encodeURIComponent(videoId)}` +
-              '?autoplay=1&mute=1&enablejsapi=1&rel=0';
-          } else if (videoType === 'vimeo') {
-            iframeSrc =
-              `https://player.vimeo.com/video/${encodeURIComponent(videoId)}` +
-              '?autoplay=1';
-          }
-
-          if (!iframeSrc) {
-            return;
-          }
-
-          const title =
-            button.getAttribute('aria-label') || 'Video';
-
-          openLightbox(`
-            <iframe
-              src="${iframeSrc}"
-              title="${title.replace(/"/g, '&quot;')}"
-              allow="autoplay; encrypted-media; picture-in-picture"
-              allowfullscreen
-            ></iframe>
-          `);
-        });
-      });
-
-      closeButton.addEventListener('click', closeLightbox);
-
-      lightbox.addEventListener('click', (event) => {
-        if (event.target === lightbox) {
-          closeLightbox();
-        }
-      });
-
-      document.addEventListener('keydown', (event) => {
-        if (
-          event.key === 'Escape' &&
-          lightbox.classList.contains('is-open')
-        ) {
-          closeLightbox();
-        }
-      });
-
-      document.addEventListener('shopify:section:unload', (event) => {
-        if (event.detail.sectionId === sectionId) {
-          lightbox.remove();
-        }
-      });
+    if (!section || section.dataset.videoGalleryInitialized === 'true') {
+      return;
     }
 
-    if (document.readyState === 'loading') {
-      document.addEventListener(
-        'DOMContentLoaded',
-        initializeVideoGallery,
-        { once: true }
-      );
-    } else {
-      initializeVideoGallery();
+    section.dataset.videoGalleryInitialized = 'true';
+
+    const buttons = section.querySelectorAll('.video-gallery__thumb');
+    const lightbox = section.querySelector(
+      `.video-lightbox[data-section-id="${sectionId}"]`
+    );
+
+    if (!lightbox) return;
+
+    const container = lightbox.querySelector('.video-container');
+    const closeButton = lightbox.querySelector('.video-lightbox__close');
+
+    if (!container || !closeButton) return;
+
+    document.body.appendChild(lightbox);
+
+    let scrollPosition = 0;
+    let lastFocusedElement = null;
+    let observer = null;
+
+    function runEmbedScripts(element) {
+      const scripts = element.querySelectorAll('script');
+
+      scripts.forEach((oldScript) => {
+        const newScript = document.createElement('script');
+
+        [...oldScript.attributes].forEach(attr => {
+          newScript.setAttribute(attr.name, attr.value);
+        });
+
+        newScript.textContent = oldScript.textContent;
+        oldScript.parentNode.replaceChild(newScript, oldScript);
+      });
+
+      if (
+        window.FB &&
+        window.FB.XFBML &&
+        typeof window.FB.XFBML.parse === 'function'
+      ) {
+        window.FB.XFBML.parse(element);
+      }
+
+      if (
+        window.instgrm &&
+        window.instgrm.Embeds &&
+        typeof window.instgrm.Embeds.process === 'function'
+      ) {
+        window.instgrm.Embeds.process();
+      }
     }
 
-    document.addEventListener('shopify:section:load', (event) => {
-      if (event.detail.sectionId === sectionId) {
-        initializeVideoGallery();
+    function resizeToEmbed() {
+      const iframe = container.querySelector('iframe');
+
+      if (!iframe) return;
+
+      let width =
+        parseFloat(iframe.getAttribute('width')) ||
+        iframe.clientWidth;
+
+      let height =
+        parseFloat(iframe.getAttribute('height')) ||
+        iframe.clientHeight;
+
+      // Facebook / Instagram often inject later
+      if ((!width || !height) && iframe.contentWindow) {
+        width = iframe.clientWidth;
+        height = iframe.clientHeight;
+      }
+
+      if (!width || !height) return;
+
+      const ratio = width / height;
+
+      const maxWidth = window.innerWidth * 0.9;
+      const maxHeight = window.innerHeight * 0.85;
+
+      let finalWidth = maxWidth;
+      let finalHeight = finalWidth / ratio;
+
+      if (finalHeight > maxHeight) {
+        finalHeight = maxHeight;
+        finalWidth = finalHeight * ratio;
+      }
+
+      const content = lightbox.querySelector('.video-lightbox__content');
+
+      content.style.width = finalWidth + 'px';
+
+      iframe.style.width = '100%';
+      iframe.style.height = finalHeight + 'px';
+      iframe.style.aspectRatio = 'auto';
+    }
+
+    function openLightbox(content, isEmbedCode = false) {
+      scrollPosition = window.scrollY;
+      lastFocusedElement = document.activeElement;
+
+      document.body.style.position = 'fixed';
+      document.body.style.top = `-${scrollPosition}px`;
+      document.body.style.left = '0';
+      document.body.style.right = '0';
+      document.body.style.width = '100%';
+      document.body.classList.add('video-lightbox-open');
+
+      container.innerHTML = content;
+
+      lightbox.classList.add('is-open');
+      lightbox.setAttribute('aria-hidden', 'false');
+
+      if (isEmbedCode) {
+        runEmbedScripts(container);
+
+        resizeToEmbed();
+
+        observer = new MutationObserver(() => {
+          resizeToEmbed();
+        });
+
+        observer.observe(container, {
+          childList: true,
+          subtree: true,
+          attributes: true
+        });
+
+        setTimeout(resizeToEmbed, 500);
+        setTimeout(resizeToEmbed, 1000);
+        setTimeout(resizeToEmbed, 2000);
+      } else {
+        const iframe = container.querySelector('iframe');
+
+        if (iframe) {
+          iframe.style.width = '90vw';
+          iframe.style.maxWidth = '1000px';
+          iframe.style.aspectRatio = '16/9';
+          iframe.style.height = 'auto';
+        }
+      }
+
+      closeButton.focus();
+    }
+
+    function closeLightbox() {
+      if (observer) {
+        observer.disconnect();
+        observer = null;
+      }
+
+      container.innerHTML = '';
+
+      const content = lightbox.querySelector('.video-lightbox__content');
+      content.style.width = '';
+
+      lightbox.classList.remove('is-open');
+      lightbox.setAttribute('aria-hidden', 'true');
+
+      document.body.style.position = '';
+      document.body.style.top = '';
+      document.body.style.left = '';
+      document.body.style.right = '';
+      document.body.style.width = '';
+      document.body.classList.remove('video-lightbox-open');
+
+      window.scrollTo(0, scrollPosition);
+
+      if (lastFocusedElement) {
+        lastFocusedElement.focus();
+      }
+    }
+
+    buttons.forEach((button) => {
+      button.addEventListener('click', () => {
+
+        const embedTemplateId = button.dataset.embedTemplate;
+
+        if (embedTemplateId) {
+          const template = document.getElementById(embedTemplateId);
+
+          if (template) {
+            openLightbox(template.innerHTML.trim(), true);
+          }
+
+          return;
+        }
+
+        const videoType = button.dataset.videoType;
+        const videoId = button.dataset.videoId;
+
+        if (!videoId) return;
+
+        let iframeSrc = '';
+
+        if (videoType === 'youtube') {
+          iframeSrc =
+            `https://www.youtube.com/embed/${encodeURIComponent(videoId)}?autoplay=1&mute=1&rel=0`;
+        } else if (videoType === 'vimeo') {
+          iframeSrc =
+            `https://player.vimeo.com/video/${encodeURIComponent(videoId)}?autoplay=1`;
+        }
+
+        if (!iframeSrc) return;
+
+        const title =
+          button.getAttribute('aria-label') || 'Video';
+
+        openLightbox(`
+          <iframe
+            src="${iframeSrc}"
+            title="${title.replace(/"/g,'&quot;')}"
+            allow="autoplay; encrypted-media; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        `);
+      });
+    });
+
+    closeButton.addEventListener('click', closeLightbox);
+
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) {
+        closeLightbox();
       }
     });
-  })();
-</script>
 
+    document.addEventListener('keydown', (e) => {
+      if (
+        e.key === 'Escape' &&
+        lightbox.classList.contains('is-open')
+      ) {
+        closeLightbox();
+      }
+    });
+
+    document.addEventListener('shopify:section:unload', (event) => {
+      if (event.detail.sectionId === sectionId) {
+        lightbox.remove();
+      }
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener(
+      'DOMContentLoaded',
+      initializeVideoGallery,
+      { once: true }
+    );
+  } else {
+    initializeVideoGallery();
+  }
+
+  document.addEventListener('shopify:section:load', (event) => {
+    if (event.detail.sectionId === sectionId) {
+      initializeVideoGallery();
+    }
+  });
+})();
+</script>
 {% schema %}
 {
   "name": "Multi Video Lightbox",
