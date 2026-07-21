@@ -1,238 +1,547 @@
-{% stylesheet %}
 {{ 'video-section.css' | asset_url | stylesheet_tag }}
 {{ 'component-deferred-media.css' | asset_url | stylesheet_tag }}
 
-.video-gallery {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-}
-.video-gallery__item {
-  flex: 1 1 calc(33.333% - 1rem);
-  position: relative;
-  max-width:33%;
-}
-.video-gallery__thumb {
-  background: none;
-  border: none;
-  padding: 0;
-  cursor: pointer;
-  display: block;
-  position: relative;
-  width: auto;
-  height: auto;
-  overflow: hidden;
-   z-index: 1;
-}
-.video-gallery__thumb img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-.video-play-button {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 60px;
-  height: 60px;
-  background: rgba(0, 0, 0, 0.6);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.video-play-button::before {
-  content: '';
-  display: block;
-  width: 0;
-  height: 0;
-  border-left: 18px solid white;
-  border-top: 10px solid transparent;
-  border-bottom: 10px solid transparent;
-}
+{% style %}
+  .section-{{ section.id }}-padding .video-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
 
-.video-lightbox {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.8);
-  z-index:2147483647 !important;
-  display: none;
-  align-items: center;
-  justify-content: center;
-}
-  body.lightbox-open {
-  overflow: hidden;
-  position: fixed;
-  width: 100%;
-}
-.video-lightbox__content {
-  position: relative;
-  width: 90%;
-  max-width: 800px;
-}
-.video-lightbox__close {
-  position: absolute;
-  top: -30px;
-  right: 0;
-  font-size: 2rem;
-  background: none;
-  color: white;
-  border: none;
-  cursor: pointer;
-}
-#video-container iframe {
-  width: 100%;
-  height: 450px;
-}
+  .section-{{ section.id }}-padding .video-gallery__item {
+    flex: 1 1 calc(33.333% - 1rem);
+    position: relative;
+    max-width: calc(33.333% - 0.667rem);
+  }
 
-{% endstylesheet %}
+  .section-{{ section.id }}-padding .video-gallery__thumb {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    display: block;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    z-index: 1;
+  }
 
-<div class="color-{{ section.settings.color_scheme }} gradient {{ section.settings.section_float }} section-{{ section.id }}-padding">
+  .section-{{ section.id }}-padding .video-gallery__thumb img,
+  .section-{{ section.id }}-padding .video-gallery__thumb svg {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    display: block;
+  }
+
+  .section-{{ section.id }}-padding .video-play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+  }
+
+  .section-{{ section.id }}-padding .video-play-button::before {
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    margin-left: 4px;
+    border-left: 18px solid white;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+  }
+
+  .video-lightbox[data-section-id="{{ section.id }}"] {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    padding: 40px 20px;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 2147483647 !important;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+
+  .video-lightbox[data-section-id="{{ section.id }}"].is-open {
+    display: flex;
+  }
+
+  .video-lightbox[data-section-id="{{ section.id }}"] .video-lightbox__content {
+    position: relative;
+    width: 90%;
+    max-width: 800px;
+    max-height: calc(100vh - 80px);
+  }
+
+  .video-lightbox[data-section-id="{{ section.id }}"] .video-lightbox__close {
+    position: absolute;
+    top: -45px;
+    right: 0;
+    padding: 0;
+    font-size: 2.5rem;
+    line-height: 1;
+    background: none;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+
+  .video-lightbox[data-section-id="{{ section.id }}"] .video-container {
+    width: 100%;
+    max-height: calc(100vh - 80px);
+  }
+
+  .video-lightbox[data-section-id="{{ section.id }}"] .video-container iframe,
+  .video-lightbox[data-section-id="{{ section.id }}"] .video-container video {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    display: block;
+    border: 0;
+  }
+
+  .video-lightbox[data-section-id="{{ section.id }}"] .video-container .fb-video,
+  .video-lightbox[data-section-id="{{ section.id }}"] .video-container .fb-post {
+    margin: 0 auto;
+  }
+
+  body.video-lightbox-open {
+    overflow: hidden;
+  }
+
+  @media screen and (max-width: 749px) {
+    .section-{{ section.id }}-padding .video-gallery__item {
+      flex-basis: 100%;
+      max-width: 100%;
+    }
+
+    .video-lightbox[data-section-id="{{ section.id }}"] {
+      padding: 50px 10px 20px;
+    }
+
+    .video-lightbox[data-section-id="{{ section.id }}"] .video-lightbox__content {
+      width: 100%;
+    }
+  }
+{% endstyle %}
+
+<div
+  class="
+    color-{{ section.settings.color_scheme }}
+    gradient
+    {{ section.settings.section_float }}
+    section-{{ section.id }}-padding
+  "
+  data-video-gallery-section="{{ section.id }}"
+>
   <div class="video-section isolate{% unless section.settings.full_width %} page-width{% endunless %}">
     {%- unless section.settings.heading == blank -%}
-      <div class="title-wrapper title-wrapper--no-top-margin{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
-        <h2 class="title inline-richtext {{ section.settings.heading_size }}">{{ section.settings.heading }}</h2>
+      <div
+        class="
+          title-wrapper
+          title-wrapper--no-top-margin
+          {% if settings.animations_reveal_on_scroll %}
+            scroll-trigger animate--slide-in
+          {% endif %}
+        "
+      >
+        <h2 class="title inline-richtext {{ section.settings.heading_size }}">
+          {{ section.settings.heading }}
+        </h2>
       </div>
     {%- endunless -%}
 
     <div class="video-gallery">
-
       {%- assign vids = product.metafields.custom.videos.value -%}
-{%- if vids == blank and collection -%}
-  {%- assign vids = collection.metafields.custom.videos.value -%}
-{%- endif -%}
-{%- if vids == blank and page -%}
-  {%- assign vids = page.metafields.custom.videos.value -%}
-{%- endif -%}
-              {%- if vids != blank -%} 
-                {% for videos in vids %}
-                {% assign raw_url = videos.video_url %}
-                {% assign id_with_params = raw_url | split: '/' | last %}
-                {% assign video_id = id_with_params | split: '?' | first %}
-                {% assign video_type = videos.video_url.provider %}
-                {% assign alt = videos.video_description | escape %}
-                {% assign poster = videos.poster_image %}
-                   <div class="video-gallery__item">
-                            <button
-                              class="video-gallery__thumb"
-                              data-video-type="youtube"
-                              data-video-id="{{ video_id }}"
-                              aria-label="{{ alt }}"
-                            >
-                              {% if poster %}
-                                {{ poster | image_url: width: 480 | image_tag: alt: alt }}
-                              {% else %}
-                                {{ 'hero-apparel-3' | placeholder_svg_tag: 'placeholder-svg placeholder' }}
-                              {% endif %}
-                              <span class="video-play-button"></span>
-                            </button>
-                          </div>
-                 {% endfor %}
-                 {% endif %}
-                
-                {% for block in section.blocks %} 
-                  {% assign video_id = block.settings.video_url.id %}
-                  {% assign alt = block.settings.alt_text | escape %}
-                  {% assign poster = block.settings.poster_image %}
-          
-                  <div class="video-gallery__item">
-                    <button
-                      class="video-gallery__thumb"
-                      data-video-type="{{ block.settings.video_url.type }}"
-                      data-video-id="{{ video_id }}"
-                      aria-label="{{ alt }}"
-                    >
-                      {% if poster %}
-                        {{ poster | image_url: width: 480 | image_tag: alt: alt }}
-                      {% else %}
-                        {{ 'hero-apparel-3' | placeholder_svg_tag: 'placeholder-svg placeholder' }}
-                      {% endif %}
-                      <span class="video-play-button"></span>
-                    </button>
-                  </div>
-                {% endfor %}
-         
+
+      {%- if vids == blank and collection -%}
+        {%- assign vids = collection.metafields.custom.videos.value -%}
+      {%- endif -%}
+
+      {%- if vids == blank and page -%}
+        {%- assign vids = page.metafields.custom.videos.value -%}
+      {%- endif -%}
+
+      {%- if vids != blank -%}
+        {%- for videos in vids -%}
+          {%- assign embed_code = videos.embed_code.value | default: videos.embed_code -%}
+          {%- assign raw_url = videos.video_url.value | default: videos.video_url -%}
+          {%- assign video_type = videos.video_url.provider | default: videos.video_url.type -%}
+          {%- assign video_id = videos.video_url.id -%}
+          {%- assign alt = videos.video_description.value | default: videos.video_description -%}
+          {%- assign poster = videos.poster_image.value | default: videos.poster_image -%}
+
+          {%- if video_id == blank and raw_url != blank -%}
+            {%- if raw_url contains 'youtu.be/' -%}
+              {%- assign video_id_with_params = raw_url | split: 'youtu.be/' | last -%}
+              {%- assign video_id = video_id_with_params | split: '?' | first -%}
+              {%- assign video_type = 'youtube' -%}
+
+            {%- elsif raw_url contains 'youtube.com/watch' -%}
+              {%- assign video_id_with_params = raw_url | split: 'v=' | last -%}
+              {%- assign video_id = video_id_with_params | split: '&' | first -%}
+              {%- assign video_type = 'youtube' -%}
+
+            {%- elsif raw_url contains 'youtube.com/shorts/' -%}
+              {%- assign video_id_with_params = raw_url | split: 'youtube.com/shorts/' | last -%}
+              {%- assign video_id = video_id_with_params | split: '?' | first -%}
+              {%- assign video_type = 'youtube' -%}
+
+            {%- elsif raw_url contains 'youtube.com/embed/' -%}
+              {%- assign video_id_with_params = raw_url | split: 'youtube.com/embed/' | last -%}
+              {%- assign video_id = video_id_with_params | split: '?' | first -%}
+              {%- assign video_type = 'youtube' -%}
+
+            {%- elsif raw_url contains 'vimeo.com/' -%}
+              {%- assign video_id_with_params = raw_url | split: '/' | last -%}
+              {%- assign video_id = video_id_with_params | split: '?' | first -%}
+              {%- assign video_type = 'vimeo' -%}
+            {%- endif -%}
+          {%- endif -%}
+
+          {%- assign embed_template_id = 'video-embed-' | append: section.id | append: '-metafield-' | append: forloop.index -%}
+
+          {%- if embed_code != blank or video_id != blank -%}
+            <div class="video-gallery__item">
+              <button
+                type="button"
+                class="video-gallery__thumb"
+                {% if embed_code != blank %}
+                  data-embed-template="{{ embed_template_id }}"
+                {% else %}
+                  data-video-type="{{ video_type | downcase }}"
+                  data-video-id="{{ video_id | escape }}"
+                {% endif %}
+                aria-label="{{ alt | default: 'Play video' | escape }}"
+              >
+                {%- if poster != blank -%}
+                  {{
+                    poster
+                    | image_url: width: 1000
+                    | image_tag:
+                      alt: alt,
+                      loading: 'lazy',
+                      widths: '360, 480, 640, 800, 1000',
+                      sizes: '(min-width: 750px) 33vw, 100vw'
+                  }}
+                {%- elsif video_type == 'youtube' and video_id != blank -%}
+                  <img
+                    src="https://i.ytimg.com/vi/{{ video_id | escape }}/hqdefault.jpg"
+                    alt="{{ alt | default: 'Play video' | escape }}"
+                    width="480"
+                    height="360"
+                    loading="lazy"
+                  >
+                {%- else -%}
+                  {{ 'hero-apparel-3' | placeholder_svg_tag: 'placeholder-svg placeholder' }}
+                {%- endif -%}
+
+                <span class="video-play-button" aria-hidden="true"></span>
+              </button>
+
+              {%- if embed_code != blank -%}
+                <template id="{{ embed_template_id }}">
+                  {{ embed_code }}
+                </template>
+              {%- endif -%}
+            </div>
+          {%- endif -%}
+        {%- endfor -%}
+      {%- endif -%}
+
+      {%- for block in section.blocks -%}
+        {%- assign embed_code = block.settings.embed_code -%}
+        {%- assign video_id = block.settings.video_url.id -%}
+        {%- assign video_type = block.settings.video_url.type -%}
+        {%- assign alt = block.settings.alt_text -%}
+        {%- assign poster = block.settings.poster_image -%}
+        {%- assign embed_template_id = 'video-embed-' | append: section.id | append: '-block-' | append: block.id -%}
+
+        {%- if embed_code != blank or video_id != blank -%}
+          <div
+            class="video-gallery__item"
+            {{ block.shopify_attributes }}
+          >
+            <button
+              type="button"
+              class="video-gallery__thumb"
+              {% if embed_code != blank %}
+                data-embed-template="{{ embed_template_id }}"
+              {% else %}
+                data-video-type="{{ video_type }}"
+                data-video-id="{{ video_id | escape }}"
+              {% endif %}
+              aria-label="{{ alt | default: 'Play video' | escape }}"
+            >
+              {%- if poster != blank -%}
+                {{
+                  poster
+                  | image_url: width: 1000
+                  | image_tag:
+                    alt: alt,
+                    loading: 'lazy',
+                    widths: '360, 480, 640, 800, 1000',
+                    sizes: '(min-width: 750px) 33vw, 100vw'
+                }}
+              {%- elsif video_type == 'youtube' and video_id != blank -%}
+                <img
+                  src="https://i.ytimg.com/vi/{{ video_id | escape }}/hqdefault.jpg"
+                  alt="{{ alt | default: 'Play video' | escape }}"
+                  width="480"
+                  height="360"
+                  loading="lazy"
+                >
+              {%- else -%}
+                {{ 'hero-apparel-3' | placeholder_svg_tag: 'placeholder-svg placeholder' }}
+              {%- endif -%}
+
+              <span class="video-play-button" aria-hidden="true"></span>
+            </button>
+
+            {%- if embed_code != blank -%}
+              <template id="{{ embed_template_id }}">
+                {{ embed_code }}
+              </template>
+            {%- endif -%}
+          </div>
+        {%- endif -%}
+      {%- endfor -%}
     </div>
 
-    <div id="video-lightbox" class="video-lightbox">
+    <div
+      class="video-lightbox"
+      data-section-id="{{ section.id }}"
+      role="dialog"
+      aria-modal="true"
+      aria-hidden="true"
+      aria-label="Video player"
+    >
       <div class="video-lightbox__content">
-        <button class="video-lightbox__close">×</button>
-        <div id="video-container"></div>
+        <button
+          type="button"
+          class="video-lightbox__close"
+          aria-label="Close video"
+        >
+          ×
+        </button>
+
+        <div class="video-container"></div>
       </div>
     </div>
   </div>
 </div>
 
 <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    
-    const buttons = document.querySelectorAll('.video-gallery__thumb');
-    const lightbox = document.getElementById('video-lightbox');
-    const container = document.getElementById('video-container');
-    const closeBtn = document.querySelector('.video-lightbox__close');
+  (() => {
+    const sectionId = '{{ section.id }}';
 
-    // 🔧 Move lightbox to end of <body> to avoid stacking context issues
-  document.body.appendChild(lightbox);
+    function initializeVideoGallery() {
+      const section = document.querySelector(
+        `[data-video-gallery-section="${sectionId}"]`
+      );
 
-    let scrollPosition = 0;
+      if (!section || section.dataset.videoGalleryInitialized === 'true') {
+        return;
+      }
 
-    function openLightbox(iframeSrc) {
-      // Save scroll position
-      scrollPosition = window.scrollY;
+      section.dataset.videoGalleryInitialized = 'true';
 
-      // Lock scroll without jumping
-      document.body.style.position = 'fixed';
-      document.body.style.top = `-${scrollPosition}px`;
-      document.body.style.left = '0';
-      document.body.style.right = '0';
-      document.body.style.overflow = 'hidden';
-      document.body.classList.add('lightbox-open');
+      const buttons = section.querySelectorAll('.video-gallery__thumb');
+      const lightbox = section.querySelector(
+        `.video-lightbox[data-section-id="${sectionId}"]`
+      );
 
-      // Show lightbox with iframe
-      container.innerHTML = `<iframe src="${iframeSrc}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>`;
-      lightbox.style.display = 'flex';
-    }
+      if (!lightbox) {
+        return;
+      }
 
-    function closeLightbox() {
-      // Remove iframe and hide
-      container.innerHTML = '';
-      lightbox.style.display = 'none';
+      const container = lightbox.querySelector('.video-container');
+      const closeButton = lightbox.querySelector('.video-lightbox__close');
 
-      // Restore scroll
-      document.body.style.position = '';
-      document.body.style.top = '';
-      document.body.style.left = '';
-      document.body.style.right = '';
-      document.body.style.overflow = '';
-      document.body.classList.remove('lightbox-open');
+      if (!container || !closeButton) {
+        return;
+      }
 
-      // Reset scroll
-      window.scrollTo(0, scrollPosition);
-    }
+      document.body.appendChild(lightbox);
 
-    buttons.forEach(btn => {
-      btn.addEventListener('click', function () {
-        const type = btn.dataset.videoType;
-        const id = btn.dataset.videoId;
-        let iframeSrc = '';
+      let scrollPosition = 0;
+      let lastFocusedElement = null;
 
-        if (type === 'youtube') {
-          iframeSrc = `https://www.youtube.com/embed/${id}?autoplay=1&mute=1&enablejsapi=1`;
-        } else {
-          iframeSrc = `https://player.vimeo.com/video/${id}?autoplay=1`;
+      function runEmbedScripts(element) {
+        const scripts = element.querySelectorAll('script');
+
+        scripts.forEach((oldScript) => {
+          const newScript = document.createElement('script');
+
+          Array.from(oldScript.attributes).forEach((attribute) => {
+            newScript.setAttribute(attribute.name, attribute.value);
+          });
+
+          newScript.textContent = oldScript.textContent;
+          oldScript.parentNode.replaceChild(newScript, oldScript);
+        });
+
+        if (
+          window.FB &&
+          window.FB.XFBML &&
+          typeof window.FB.XFBML.parse === 'function'
+        ) {
+          window.FB.XFBML.parse(element);
+        }
+      }
+
+      function openLightbox(content, isEmbedCode = false) {
+        scrollPosition = window.scrollY;
+        lastFocusedElement = document.activeElement;
+
+        document.body.style.position = 'fixed';
+        document.body.style.top = `-${scrollPosition}px`;
+        document.body.style.left = '0';
+        document.body.style.right = '0';
+        document.body.style.width = '100%';
+        document.body.classList.add('video-lightbox-open');
+
+        container.innerHTML = content;
+
+        lightbox.classList.add('is-open');
+        lightbox.setAttribute('aria-hidden', 'false');
+
+        if (isEmbedCode) {
+          runEmbedScripts(container);
         }
 
-        openLightbox(iframeSrc);
-      });
-    });
+        closeButton.focus();
+      }
 
-    closeBtn.addEventListener('click', closeLightbox);
-  });
+      function closeLightbox() {
+        container.innerHTML = '';
+
+        lightbox.classList.remove('is-open');
+        lightbox.setAttribute('aria-hidden', 'true');
+
+        document.body.style.position = '';
+        document.body.style.top = '';
+        document.body.style.left = '';
+        document.body.style.right = '';
+        document.body.style.width = '';
+        document.body.classList.remove('video-lightbox-open');
+
+        window.scrollTo(0, scrollPosition);
+
+        if (lastFocusedElement) {
+          lastFocusedElement.focus();
+        }
+      }
+
+      buttons.forEach((button) => {
+        button.addEventListener('click', () => {
+          const embedTemplateId = button.dataset.embedTemplate;
+
+          /*
+           * Custom embed code always takes priority over
+           * the normal YouTube or Vimeo URL.
+           */
+          if (embedTemplateId) {
+            const template = document.getElementById(embedTemplateId);
+
+            if (template) {
+              openLightbox(template.innerHTML.trim(), true);
+            }
+
+            return;
+          }
+
+          const videoType = button.dataset.videoType;
+          const videoId = button.dataset.videoId;
+
+          if (!videoId) {
+            return;
+          }
+
+          let iframeSrc = '';
+
+          if (videoType === 'youtube') {
+            iframeSrc =
+              `https://www.youtube.com/embed/${encodeURIComponent(videoId)}` +
+              '?autoplay=1&mute=1&enablejsapi=1&rel=0';
+          } else if (videoType === 'vimeo') {
+            iframeSrc =
+              `https://player.vimeo.com/video/${encodeURIComponent(videoId)}` +
+              '?autoplay=1';
+          }
+
+          if (!iframeSrc) {
+            return;
+          }
+
+          const title =
+            button.getAttribute('aria-label') || 'Video';
+
+          openLightbox(`
+            <iframe
+              src="${iframeSrc}"
+              title="${title.replace(/"/g, '&quot;')}"
+              allow="autoplay; encrypted-media; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          `);
+        });
+      });
+
+      closeButton.addEventListener('click', closeLightbox);
+
+      lightbox.addEventListener('click', (event) => {
+        if (event.target === lightbox) {
+          closeLightbox();
+        }
+      });
+
+      document.addEventListener('keydown', (event) => {
+        if (
+          event.key === 'Escape' &&
+          lightbox.classList.contains('is-open')
+        ) {
+          closeLightbox();
+        }
+      });
+
+      document.addEventListener('shopify:section:unload', (event) => {
+        if (event.detail.sectionId === sectionId) {
+          lightbox.remove();
+        }
+      });
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener(
+        'DOMContentLoaded',
+        initializeVideoGallery,
+        { once: true }
+      );
+    } else {
+      initializeVideoGallery();
+    }
+
+    document.addEventListener('shopify:section:load', (event) => {
+      if (event.detail.sectionId === sectionId) {
+        initializeVideoGallery();
+      }
+    });
+  })();
 </script>
 
 {% schema %}
@@ -251,11 +560,26 @@
       "type": "select",
       "id": "heading_size",
       "options": [
-        {"value": "h2", "label": "Heading 2"},
-        {"value": "h1", "label": "Heading 1"},
-        {"value": "h0", "label": "Heading 0"},
-        {"value": "hxl", "label": "Extra Large"},
-        {"value": "hxxl", "label": "Double Extra Large"}
+        {
+          "value": "h2",
+          "label": "Heading 2"
+        },
+        {
+          "value": "h1",
+          "label": "Heading 1"
+        },
+        {
+          "value": "h0",
+          "label": "Heading 0"
+        },
+        {
+          "value": "hxl",
+          "label": "Extra Large"
+        },
+        {
+          "value": "hxxl",
+          "label": "Double Extra Large"
+        }
       ],
       "default": "h1",
       "label": "Heading Size"
@@ -264,9 +588,18 @@
       "type": "select",
       "id": "section_float",
       "options": [
-        {"value": "clear", "label": "None - Full Width"},
-        {"value": "left", "label": "Float Left"},
-        {"value": "right", "label": "Float Right"}
+        {
+          "value": "clear",
+          "label": "None - Full Width"
+        },
+        {
+          "value": "left",
+          "label": "Float Left"
+        },
+        {
+          "value": "right",
+          "label": "Float Right"
+        }
       ],
       "default": "clear",
       "label": "Float Option"
@@ -286,8 +619,18 @@
         {
           "type": "video_url",
           "id": "video_url",
-          "accept": ["youtube", "vimeo"],
-          "label": "Video URL"
+          "accept": [
+            "youtube",
+            "vimeo"
+          ],
+          "label": "Video URL",
+          "info": "Used only when Embed Code is blank."
+        },
+        {
+          "type": "liquid",
+          "id": "embed_code",
+          "label": "Embed Code",
+          "info": "Overrides the Video URL when filled in. Paste a YouTube, Vimeo, Facebook, or other video embed code."
         },
         {
           "type": "image_picker",
