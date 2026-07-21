@@ -41,9 +41,10 @@
 -%}
 
 {%- liquid
-  if use_variant
-    assign price_stock_status = product.selected_or_first_available_variant.metafields.custom.stock_status.value
-  else
+  assign selected_variant = product.selected_or_first_available_variant
+  assign price_stock_status = selected_variant.metafields.custom.stock_status.value
+
+  if price_stock_status == blank
     assign price_stock_status = product.metafields.custom.info_stock_status.value
   endif
 -%}
@@ -131,18 +132,21 @@
         </span>
       </small>
     </div>
-    {%- if show_badges -%}
-    <span class="badge price__badge-sale color-{{ settings.sale_badge_color_scheme }}">
-      {%- if price_stock_status == 'Pre-Order' -%}
-        Pre-Order Price
-      {%- else -%}
-        {{ 'products.product.on_sale' | t }}
-      {%- endif -%}
-    </span>
+   {%- if show_badges -%}
+  <span
+    class="badge price__badge-sale color-{{ settings.sale_badge_color_scheme }}"
+    data-price-sale-badge
+  >
+    {%- if price_stock_status == 'Pre-Order' -%}
+      Pre-Order Price
+    {%- else -%}
+      {{ 'products.product.on_sale' | t }}
+    {%- endif -%}
+  </span>
 
-    <span class="badge price__badge-sold-out color-{{ settings.sold_out_badge_color_scheme }}">
-      {{ 'products.product.sold_out' | t }}
-    </span>
-  {%- endif -%}
+  <span class="badge price__badge-sold-out color-{{ settings.sold_out_badge_color_scheme }}">
+    {{ 'products.product.sold_out' | t }}
+  </span>
+{%- endif -%}
   </div>
 {% endunless %}
