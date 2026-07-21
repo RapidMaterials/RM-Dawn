@@ -659,26 +659,23 @@
 
       buttons.forEach((button) => {
         button.addEventListener('click', () => {
-          const embedTemplateId = button.dataset.embedTemplate;
+       const embedTemplateId = button.dataset.embedTemplate;
 
-          /*
-           * Embed code takes priority over the normal
-           * YouTube or Vimeo URL.
-           */
-          if (embedTemplateId) {
-            const template = document.getElementById(
-              embedTemplateId
-            );
+if (embedTemplateId) {
+  const videoItem = button.closest('.video-gallery__item');
+  const template = videoItem
+    ? videoItem.querySelector('template')
+    : null;
 
-            if (template) {
-              openLightbox(
-                template.innerHTML.trim(),
-                true
-              );
-            }
+  if (template) {
+    openLightbox(
+      template.innerHTML.trim(),
+      true
+    );
+  }
 
-            return;
-          }
+  return;
+}
 
           const videoType = button.dataset.videoType;
           const videoId = button.dataset.videoId;
