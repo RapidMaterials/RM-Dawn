@@ -84,13 +84,13 @@
     display: flex;
   }
 
-  .video-lightbox[data-section-id="{{ section.id }}"] .video-lightbox__content {
-    position: relative;
-    width: auto;
-    max-width: 90vw;
-    max-height: 85vh;
-    margin: auto;
-  }
+.video-lightbox[data-section-id="{{ section.id }}"] .video-lightbox__content {
+  position: relative;
+  width: auto;
+  max-width: 90vw;
+  max-height: 85vh;
+  margin: auto;
+}
 
   .video-lightbox[data-section-id="{{ section.id }}"] .video-lightbox__close {
     position: absolute;
@@ -112,28 +112,31 @@
    * JavaScript updates the content width based on the actual
    * embed ratio. The fallback is 16:9.
    */
-  .video-lightbox[data-section-id="{{ section.id }}"] .video-container {
-    width: min(
-      90vw,
-      calc(85vh * var(--video-aspect-ratio, 1.777777))
-    );
-    max-width: 90vw;
-    max-height: 85vh;
-    margin: 0 auto;
-  }
+.video-lightbox[data-section-id="{{ section.id }}"] .video-container {
+  width: min(
+    90vw,
+    calc(80vh * var(--video-aspect-ratio, 1.777777))
+  );
+  max-width: 1000px;
+  max-height: 80vh;
+  margin: 0 auto;
+}
 
   /*
    * Do not force all videos to 16:9 here.
    * JavaScript applies the correct width and height for each embed.
    */
-  .video-lightbox[data-section-id="{{ section.id }}"] .video-container iframe,
-  .video-lightbox[data-section-id="{{ section.id }}"] .video-container video {
-    display: block;
-    max-width: 90vw;
-    max-height: 85vh;
-    border: 0;
-    object-fit: contain;
-  }
+ .video-lightbox[data-section-id="{{ section.id }}"] .video-container iframe,
+.video-lightbox[data-section-id="{{ section.id }}"] .video-container video {
+  display: block;
+  width: 100% !important;
+  height: auto !important;
+  aspect-ratio: var(--video-aspect-ratio, 16 / 9);
+  max-width: 100% !important;
+  max-height: 80vh !important;
+  object-fit: contain;
+  border: 0;
+}
 
   /*
    * Standard YouTube and Vimeo embeds created by this section.
@@ -146,17 +149,14 @@
   /*
    * Facebook and Instagram wrapper elements.
    */
-  .video-lightbox[data-section-id="{{ section.id }}"] .video-container .fb-video,
-  .video-lightbox[data-section-id="{{ section.id }}"] .video-container .fb-post,
-  .video-lightbox[data-section-id="{{ section.id }}"] .video-container .instagram-media,
-  .video-lightbox[data-section-id="{{ section.id }}"] .video-container blockquote {
-    display: block;
-    width: auto;
-    max-width: 90vw !important;
-    max-height: 85vh;
-    margin: 0 auto !important;
-  }
-
+.video-lightbox[data-section-id="{{ section.id }}"] .video-container .fb-video,
+.video-lightbox[data-section-id="{{ section.id }}"] .video-container .fb-post,
+.video-lightbox[data-section-id="{{ section.id }}"] .video-container .instagram-media,
+.video-lightbox[data-section-id="{{ section.id }}"] .video-container blockquote {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 auto !important;
+}
   .video-lightbox[data-section-id="{{ section.id }}"] .video-container .fb-video iframe,
   .video-lightbox[data-section-id="{{ section.id }}"] .video-container .fb-post iframe,
   .video-lightbox[data-section-id="{{ section.id }}"] .video-container .instagram-media iframe {
@@ -414,274 +414,359 @@
 </div>
 
 <script>
-(() => {
-  const sectionId = '{{ section.id }}';
+  (() => {
+    const sectionId = '{{ section.id }}';
 
-  function initializeVideoGallery() {
-    const section = document.querySelector(
-      `[data-video-gallery-section="${sectionId}"]`
-    );
+    function initializeVideoGallery() {
+      const section = document.querySelector(
+        `[data-video-gallery-section="${sectionId}"]`
+      );
 
-    if (!section || section.dataset.videoGalleryInitialized === 'true') {
-      return;
-    }
+      if (!section || section.dataset.videoGalleryInitialized === 'true') {
+        return;
+      }
 
-    section.dataset.videoGalleryInitialized = 'true';
+      section.dataset.videoGalleryInitialized = 'true';
 
-    const buttons = section.querySelectorAll('.video-gallery__thumb');
-    const lightbox = section.querySelector(
-      `.video-lightbox[data-section-id="${sectionId}"]`
-    );
+      const buttons = section.querySelectorAll('.video-gallery__thumb');
+      const lightbox = section.querySelector(
+        `.video-lightbox[data-section-id="${sectionId}"]`
+      );
 
-    if (!lightbox) return;
+      if (!lightbox) return;
 
-    const container = lightbox.querySelector('.video-container');
-    const closeButton = lightbox.querySelector('.video-lightbox__close');
+      const container = lightbox.querySelector('.video-container');
+      const closeButton = lightbox.querySelector('.video-lightbox__close');
 
-    if (!container || !closeButton) return;
+      if (!container || !closeButton) return;
 
-    document.body.appendChild(lightbox);
+      document.body.appendChild(lightbox);
 
-    let scrollPosition = 0;
-    let lastFocusedElement = null;
-    let observer = null;
+      let scrollPosition = 0;
+      let lastFocusedElement = null;
+      let embedObserver = null;
 
-    function runEmbedScripts(element) {
-      const scripts = element.querySelectorAll('script');
+      function runEmbedScripts(element) {
+        const scripts = element.querySelectorAll('script');
 
-      scripts.forEach((oldScript) => {
-        const newScript = document.createElement('script');
+        scripts.forEach((oldScript) => {
+          const newScript = document.createElement('script');
 
-        [...oldScript.attributes].forEach(attr => {
-          newScript.setAttribute(attr.name, attr.value);
+          Array.from(oldScript.attributes).forEach((attribute) => {
+            newScript.setAttribute(attribute.name, attribute.value);
+          });
+
+          newScript.textContent = oldScript.textContent;
+
+          if (oldScript.parentNode) {
+            oldScript.parentNode.replaceChild(newScript, oldScript);
+          }
         });
 
-        newScript.textContent = oldScript.textContent;
-        oldScript.parentNode.replaceChild(newScript, oldScript);
-      });
+        if (
+          window.FB &&
+          window.FB.XFBML &&
+          typeof window.FB.XFBML.parse === 'function'
+        ) {
+          window.FB.XFBML.parse(element);
+        }
 
-      if (
-        window.FB &&
-        window.FB.XFBML &&
-        typeof window.FB.XFBML.parse === 'function'
-      ) {
-        window.FB.XFBML.parse(element);
-      }
-
-      if (
-        window.instgrm &&
-        window.instgrm.Embeds &&
-        typeof window.instgrm.Embeds.process === 'function'
-      ) {
-        window.instgrm.Embeds.process();
-      }
-    }
-
-    function resizeToEmbed() {
-      const iframe = container.querySelector('iframe');
-
-      if (!iframe) return;
-
-      let width =
-        parseFloat(iframe.getAttribute('width')) ||
-        iframe.clientWidth;
-
-      let height =
-        parseFloat(iframe.getAttribute('height')) ||
-        iframe.clientHeight;
-
-      // Facebook / Instagram often inject later
-      if ((!width || !height) && iframe.contentWindow) {
-        width = iframe.clientWidth;
-        height = iframe.clientHeight;
-      }
-
-      if (!width || !height) return;
-
-      const ratio = width / height;
-
-      const maxWidth = window.innerWidth * 0.9;
-      const maxHeight = window.innerHeight * 0.85;
-
-      let finalWidth = maxWidth;
-      let finalHeight = finalWidth / ratio;
-
-      if (finalHeight > maxHeight) {
-        finalHeight = maxHeight;
-        finalWidth = finalHeight * ratio;
-      }
-
-      const content = lightbox.querySelector('.video-lightbox__content');
-
-      content.style.width = finalWidth + 'px';
-
-      iframe.style.width = '100%';
-      iframe.style.height = finalHeight + 'px';
-      iframe.style.aspectRatio = 'auto';
-    }
-
-    function openLightbox(content, isEmbedCode = false) {
-      scrollPosition = window.scrollY;
-      lastFocusedElement = document.activeElement;
-
-      document.body.style.position = 'fixed';
-      document.body.style.top = `-${scrollPosition}px`;
-      document.body.style.left = '0';
-      document.body.style.right = '0';
-      document.body.style.width = '100%';
-      document.body.classList.add('video-lightbox-open');
-
-      container.innerHTML = content;
-
-      lightbox.classList.add('is-open');
-      lightbox.setAttribute('aria-hidden', 'false');
-
-      if (isEmbedCode) {
-        runEmbedScripts(container);
-
-        resizeToEmbed();
-
-        observer = new MutationObserver(() => {
-          resizeToEmbed();
-        });
-
-        observer.observe(container, {
-          childList: true,
-          subtree: true,
-          attributes: true
-        });
-
-        setTimeout(resizeToEmbed, 500);
-        setTimeout(resizeToEmbed, 1000);
-        setTimeout(resizeToEmbed, 2000);
-      } else {
-        const iframe = container.querySelector('iframe');
-
-        if (iframe) {
-          iframe.style.width = '90vw';
-          iframe.style.maxWidth = '1000px';
-          iframe.style.aspectRatio = '16/9';
-          iframe.style.height = 'auto';
+        if (
+          window.instgrm &&
+          window.instgrm.Embeds &&
+          typeof window.instgrm.Embeds.process === 'function'
+        ) {
+          window.instgrm.Embeds.process();
         }
       }
 
-      closeButton.focus();
-    }
+      function getNumberFromStyle(styleText, property) {
+        if (!styleText) return null;
 
-    function closeLightbox() {
-      if (observer) {
-        observer.disconnect();
-        observer = null;
+        const expression = new RegExp(
+          `${property}\\s*:\\s*([0-9.]+)px`,
+          'i'
+        );
+
+        const match = styleText.match(expression);
+
+        return match ? parseFloat(match[1]) : null;
       }
 
-      container.innerHTML = '';
+      function getEmbedAspectRatio(html) {
+        const temporaryWrapper = document.createElement('div');
+        temporaryWrapper.innerHTML = html;
 
-      const content = lightbox.querySelector('.video-lightbox__content');
-      content.style.width = '';
+        const iframe = temporaryWrapper.querySelector('iframe');
+        const video = temporaryWrapper.querySelector('video');
+        const media = iframe || video;
 
-      lightbox.classList.remove('is-open');
-      lightbox.setAttribute('aria-hidden', 'true');
+        if (media) {
+          const styleText = media.getAttribute('style') || '';
 
-      document.body.style.position = '';
-      document.body.style.top = '';
-      document.body.style.left = '';
-      document.body.style.right = '';
-      document.body.style.width = '';
-      document.body.classList.remove('video-lightbox-open');
+          const width =
+            parseFloat(media.getAttribute('width')) ||
+            getNumberFromStyle(styleText, 'width');
 
-      window.scrollTo(0, scrollPosition);
+          const height =
+            parseFloat(media.getAttribute('height')) ||
+            getNumberFromStyle(styleText, 'height');
 
-      if (lastFocusedElement) {
-        lastFocusedElement.focus();
-      }
-    }
-
-    buttons.forEach((button) => {
-      button.addEventListener('click', () => {
-
-        const embedTemplateId = button.dataset.embedTemplate;
-
-        if (embedTemplateId) {
-          const template = document.getElementById(embedTemplateId);
-
-          if (template) {
-            openLightbox(template.innerHTML.trim(), true);
+          if (width && height && width > 0 && height > 0) {
+            return width / height;
           }
 
-          return;
+          const src = media.getAttribute('src') || '';
+
+          if (
+            src.includes('facebook.com') ||
+            src.includes('instagram.com')
+          ) {
+            return 9 / 16;
+          }
         }
 
-        const videoType = button.dataset.videoType;
-        const videoId = button.dataset.videoId;
-
-        if (!videoId) return;
-
-        let iframeSrc = '';
-
-        if (videoType === 'youtube') {
-          iframeSrc =
-            `https://www.youtube.com/embed/${encodeURIComponent(videoId)}?autoplay=1&mute=1&rel=0`;
-        } else if (videoType === 'vimeo') {
-          iframeSrc =
-            `https://player.vimeo.com/video/${encodeURIComponent(videoId)}?autoplay=1`;
+        if (
+          html.includes('instagram-media') ||
+          html.includes('instagram.com') ||
+          html.includes('facebook.com/reel') ||
+          html.includes('facebook.com/plugins/video')
+        ) {
+          return 9 / 16;
         }
 
-        if (!iframeSrc) return;
-
-        const title =
-          button.getAttribute('aria-label') || 'Video';
-
-        openLightbox(`
-          <iframe
-            src="${iframeSrc}"
-            title="${title.replace(/"/g,'&quot;')}"
-            allow="autoplay; encrypted-media; picture-in-picture"
-            allowfullscreen
-          ></iframe>
-        `);
-      });
-    });
-
-    closeButton.addEventListener('click', closeLightbox);
-
-    lightbox.addEventListener('click', (e) => {
-      if (e.target === lightbox) {
-        closeLightbox();
+        return 16 / 9;
       }
-    });
 
-    document.addEventListener('keydown', (e) => {
-      if (
-        e.key === 'Escape' &&
-        lightbox.classList.contains('is-open')
+      function applyMediaSizing() {
+        const mediaElements = container.querySelectorAll('iframe, video');
+
+        mediaElements.forEach((media) => {
+          media.style.setProperty('display', 'block', 'important');
+          media.style.setProperty('width', '100%', 'important');
+          media.style.setProperty('height', 'auto', 'important');
+          media.style.setProperty(
+            'aspect-ratio',
+            'var(--video-aspect-ratio)',
+            'important'
+          );
+          media.style.setProperty('max-width', '100%', 'important');
+          media.style.setProperty('max-height', '80vh', 'important');
+          media.style.setProperty('border', '0', 'important');
+          media.style.setProperty('object-fit', 'contain', 'important');
+
+          media.removeAttribute('scrolling');
+        });
+      }
+
+      function openLightbox(
+        content,
+        isEmbedCode = false,
+        forcedRatio = null
       ) {
-        closeLightbox();
+        scrollPosition = window.scrollY;
+        lastFocusedElement = document.activeElement;
+
+        let aspectRatio = forcedRatio;
+
+        if (!aspectRatio) {
+          aspectRatio = isEmbedCode
+            ? getEmbedAspectRatio(content)
+            : 16 / 9;
+        }
+
+        /*
+         * Prevent broken or extreme embed dimensions from
+         * creating an oversized popup.
+         */
+        if (
+          !Number.isFinite(aspectRatio) ||
+          aspectRatio < 0.45 ||
+          aspectRatio > 2.4
+        ) {
+          aspectRatio = isEmbedCode ? 9 / 16 : 16 / 9;
+        }
+
+        container.style.setProperty(
+          '--video-aspect-ratio',
+          aspectRatio
+        );
+
+        document.body.style.position = 'fixed';
+        document.body.style.top = `-${scrollPosition}px`;
+        document.body.style.left = '0';
+        document.body.style.right = '0';
+        document.body.style.width = '100%';
+        document.body.classList.add('video-lightbox-open');
+
+        container.innerHTML = content;
+
+        lightbox.classList.add('is-open');
+        lightbox.setAttribute('aria-hidden', 'false');
+
+        applyMediaSizing();
+
+        if (isEmbedCode) {
+          runEmbedScripts(container);
+
+          /*
+           * Facebook and Instagram may insert or replace
+           * the iframe after their script loads.
+           */
+          embedObserver = new MutationObserver(() => {
+            applyMediaSizing();
+          });
+
+          embedObserver.observe(container, {
+            childList: true,
+            subtree: true
+          });
+
+          window.setTimeout(applyMediaSizing, 300);
+          window.setTimeout(applyMediaSizing, 800);
+          window.setTimeout(applyMediaSizing, 1500);
+          window.setTimeout(applyMediaSizing, 3000);
+        }
+
+        closeButton.focus();
       }
-    });
 
-    document.addEventListener('shopify:section:unload', (event) => {
-      if (event.detail.sectionId === sectionId) {
-        lightbox.remove();
+      function closeLightbox() {
+        if (embedObserver) {
+          embedObserver.disconnect();
+          embedObserver = null;
+        }
+
+        container.innerHTML = '';
+        container.style.removeProperty('--video-aspect-ratio');
+
+        lightbox.classList.remove('is-open');
+        lightbox.setAttribute('aria-hidden', 'true');
+
+        document.body.style.position = '';
+        document.body.style.top = '';
+        document.body.style.left = '';
+        document.body.style.right = '';
+        document.body.style.width = '';
+        document.body.classList.remove('video-lightbox-open');
+
+        window.scrollTo(0, scrollPosition);
+
+        if (lastFocusedElement) {
+          lastFocusedElement.focus();
+        }
       }
-    });
-  }
 
-  if (document.readyState === 'loading') {
-    document.addEventListener(
-      'DOMContentLoaded',
-      initializeVideoGallery,
-      { once: true }
-    );
-  } else {
-    initializeVideoGallery();
-  }
+      buttons.forEach((button) => {
+        button.addEventListener('click', () => {
+          const embedTemplateId = button.dataset.embedTemplate;
 
-  document.addEventListener('shopify:section:load', (event) => {
-    if (event.detail.sectionId === sectionId) {
+          /*
+           * Embed code takes priority over the normal
+           * YouTube or Vimeo URL.
+           */
+          if (embedTemplateId) {
+            const template = document.getElementById(
+              embedTemplateId
+            );
+
+            if (template) {
+              openLightbox(
+                template.innerHTML.trim(),
+                true
+              );
+            }
+
+            return;
+          }
+
+          const videoType = button.dataset.videoType;
+          const videoId = button.dataset.videoId;
+
+          if (!videoId) return;
+
+          let iframeSrc = '';
+
+          if (videoType === 'youtube') {
+            iframeSrc =
+              `https://www.youtube.com/embed/${encodeURIComponent(videoId)}` +
+              '?autoplay=1&mute=1&enablejsapi=1&rel=0';
+          } else if (videoType === 'vimeo') {
+            iframeSrc =
+              `https://player.vimeo.com/video/${encodeURIComponent(videoId)}` +
+              '?autoplay=1';
+          }
+
+          if (!iframeSrc) return;
+
+          const title =
+            button.getAttribute('aria-label') || 'Video';
+
+          openLightbox(
+            `
+              <iframe
+                src="${iframeSrc}"
+                title="${title.replace(/"/g, '&quot;')}"
+                allow="autoplay; encrypted-media; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+            `,
+            false,
+            16 / 9
+          );
+        });
+      });
+
+      closeButton.addEventListener('click', closeLightbox);
+
+      lightbox.addEventListener('click', (event) => {
+        if (event.target === lightbox) {
+          closeLightbox();
+        }
+      });
+
+      document.addEventListener('keydown', (event) => {
+        if (
+          event.key === 'Escape' &&
+          lightbox.classList.contains('is-open')
+        ) {
+          closeLightbox();
+        }
+      });
+
+      document.addEventListener(
+        'shopify:section:unload',
+        (event) => {
+          if (event.detail.sectionId === sectionId) {
+            if (embedObserver) {
+              embedObserver.disconnect();
+            }
+
+            lightbox.remove();
+          }
+        }
+      );
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener(
+        'DOMContentLoaded',
+        initializeVideoGallery,
+        { once: true }
+      );
+    } else {
       initializeVideoGallery();
     }
-  });
-})();
+
+    document.addEventListener(
+      'shopify:section:load',
+      (event) => {
+        if (event.detail.sectionId === sectionId) {
+          initializeVideoGallery();
+        }
+      }
+    );
+  })();
 </script>
 {% schema %}
 {
