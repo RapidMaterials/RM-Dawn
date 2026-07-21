@@ -79,12 +79,12 @@
     display: flex;
   }
 
-  .video-lightbox[data-section-id="{{ section.id }}"] .video-lightbox__content {
-    position: relative;
-    width: 90%;
-    max-width: 800px;
-    max-height: calc(100vh - 80px);
-  }
+.video-lightbox[data-section-id="{{ section.id }}"] .video-lightbox__content {
+  position: relative;
+  width: auto;
+  max-width: 90vw;
+  max-height: 85vh;
+}
 
   .video-lightbox[data-section-id="{{ section.id }}"] .video-lightbox__close {
     position: absolute;
@@ -99,25 +99,33 @@
     cursor: pointer;
   }
 
-  .video-lightbox[data-section-id="{{ section.id }}"] .video-container {
-    width: 100%;
-    max-height: calc(100vh - 80px);
-  }
+ .video-lightbox[data-section-id="{{ section.id }}"] .video-container {
+  width: min(
+    90vw,
+    calc(85vh * var(--video-aspect-ratio, 1.777777))
+  );
+  max-width: 100%;
+  max-height: 85vh;
+}
+.video-lightbox[data-section-id="{{ section.id }}"] .video-container iframe,
+.video-lightbox[data-section-id="{{ section.id }}"] .video-container video {
+  display: block;
+  width: 100% !important;
+  height: auto !important;
+  aspect-ratio: var(--video-aspect-ratio, 16 / 9);
+  max-width: 90vw;
+  max-height: 85vh;
+  object-fit: contain;
+  border: 0;
+}
 
-  .video-lightbox[data-section-id="{{ section.id }}"] .video-container iframe,
-  .video-lightbox[data-section-id="{{ section.id }}"] .video-container video {
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-    aspect-ratio: 16 / 9;
-    display: block;
-    border: 0;
-  }
-
-  .video-lightbox[data-section-id="{{ section.id }}"] .video-container .fb-video,
-  .video-lightbox[data-section-id="{{ section.id }}"] .video-container .fb-post {
-    margin: 0 auto;
-  }
+.video-lightbox[data-section-id="{{ section.id }}"] .video-container .fb-video,
+.video-lightbox[data-section-id="{{ section.id }}"] .video-container .fb-post,
+.video-lightbox[data-section-id="{{ section.id }}"] .video-container blockquote {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+}
 
   body.video-lightbox-open {
     overflow: hidden;
