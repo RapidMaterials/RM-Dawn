@@ -89,6 +89,22 @@
     "home_hero_slider_JU6WzL": {
       "type": "home-hero-slider",
       "blocks": {
+        "slide_kg9aWB": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/buschmann-cutter-new-Website_-_Home_Banner.png",
+            "image_mobile": "shopify://shop_images/buschmann-cutter-new-Website_-_Home_Banner.png",
+            "desktop_object_x": 100,
+            "desktop_object_y": 92,
+            "mobile_object_x": 100,
+            "mobile_object_y": 50,
+            "logo": "shopify://shop_images/new.png",
+            "heading": "Professional Metal Cutting, Powered by Your Drill.",
+            "text": "<p>Meet the Buschmann Universal Cutter. Clean, precise cuts in corrugated and profiled metal panels using most 18V cordless drills.</p>",
+            "button_label": "Pre-Order Now",
+            "button_link": "https://rapidmaterials.com/products/universal-cutter-by-buschmann"
+          }
+        },
         "slide_Jph7py": {
           "type": "slide",
           "settings": {
@@ -105,6 +121,7 @@
         }
       },
       "block_order": [
+        "slide_kg9aWB",
         "slide_Jph7py"
       ],
       "custom_css": [
