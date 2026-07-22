@@ -202,9 +202,26 @@
         "disabled": false,
         "settings": {}
       },
+      "5515788360651110344": {
+        "type": "shopify://apps/casa-loyalty/blocks/casa_landing_page/da24958b-9ea9-44ae-b810-fe9dddbf4430",
+        "disabled": false,
+        "settings": {}
+      },
+      "14950026111393621546": {
+        "type": "shopify://apps/casa-loyalty/blocks/casa_app_sdk/da24958b-9ea9-44ae-b810-fe9dddbf4430",
+        "disabled": false,
+        "settings": {}
+      },
+      "16053653756511055521": {
+        "type": "shopify://apps/casa-loyalty/blocks/casa_app_embed/da24958b-9ea9-44ae-b810-fe9dddbf4430",
+        "disabled": false,
+        "settings": {
+          "defer_loading": false
+        }
+      },
       "17676059084223943535": {
         "type": "shopify://apps/triplewhale/blocks/triple_pixel_snippet/483d496b-3f1a-4609-aea7-8eee3b6b7a2a",
-        "disabled": false,
+        "disabled": true,
         "settings": {}
       }
     },
