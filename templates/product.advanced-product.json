@@ -67,7 +67,7 @@
           "settings": {}
         },
         "watermelon_order_limits_app_block_MR4eYt": {
-          "type": "shopify://apps/melon-minimum-order-quantity/blocks/app-block/91904755-64ba-4bc5-85c6-2e5708522f2b",
+          "type": "shopify://apps/melon-order-limits/blocks/app-block/91904755-64ba-4bc5-85c6-2e5708522f2b",
           "settings": {}
         },
         "text_XdzqLY": {
@@ -88,6 +88,14 @@
           "settings": {
             "show_dynamic_checkout": false,
             "show_gift_card_recipient": false
+          }
+        },
+        "casa_loyalty_casa_app_product_BFppiJ": {
+          "type": "shopify://apps/casa-loyalty/blocks/casa_app_product/da24958b-9ea9-44ae-b810-fe9dddbf4430",
+          "settings": {
+            "link_visibility": "inherit",
+            "learn_more_link": "https://rapidmaterials.com/pages/rapid-pro-rewards",
+            "open_in_new_tab": true
           }
         },
         "features_with_icons_qLjpdB": {
@@ -114,6 +122,7 @@
         "text_XdzqLY",
         "quantity_selector",
         "buy_buttons",
+        "casa_loyalty_casa_app_product_BFppiJ",
         "features_with_icons_qLjpdB",
         "popup_JJ8bWY"
       ],
@@ -276,7 +285,7 @@
       "type": "apps",
       "blocks": {
         "watermelon_order_limits_app_block_t6Nbzx": {
-          "type": "shopify://apps/melon-minimum-order-quantity/blocks/app-block/91904755-64ba-4bc5-85c6-2e5708522f2b",
+          "type": "shopify://apps/melon-order-limits/blocks/app-block/91904755-64ba-4bc5-85c6-2e5708522f2b",
           "settings": {}
         }
       },
