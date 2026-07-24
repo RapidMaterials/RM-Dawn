@@ -25,6 +25,21 @@
     "home_hero_slider_9TexqX": {
       "type": "home-hero-slider",
       "blocks": {
+        "slide_XXeVxH": {
+          "type": "slide",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/stack-of-square-steel-pipes-for-construction-suppl-2026-03-24-00-10-06-utc.jpg",
+            "desktop_object_x": 50,
+            "desktop_object_y": 50,
+            "mobile_object_x": 70,
+            "mobile_object_y": 50,
+            "heading": "Steel Framing Channels & Angles",
+            "text": "<p>Browse our expanded selection of steel framing profiles, channels, angles, and structural support components built for commercial and industrial applications.</p>",
+            "button_label": "Shop Profiles & Channels",
+            "button_link": "https://rapidmaterials.com/collections/profiles-channels"
+          }
+        },
         "slide_Lqd4wR": {
           "type": "slide",
           "settings": {
@@ -42,6 +57,7 @@
         }
       },
       "block_order": [
+        "slide_XXeVxH",
         "slide_Lqd4wR"
       ],
       "disabled": true,
@@ -104,25 +120,10 @@
             "button_label": "Pre-Order Now",
             "button_link": "https://rapidmaterials.com/products/universal-cutter-by-buschmann"
           }
-        },
-        "slide_Jph7py": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/stack-of-square-steel-pipes-for-construction-suppl-2026-03-24-00-10-06-utc.jpg",
-            "desktop_object_x": 50,
-            "desktop_object_y": 50,
-            "mobile_object_x": 70,
-            "mobile_object_y": 50,
-            "heading": "Steel Framing Channels & Angles",
-            "text": "<p>Browse our expanded selection of steel framing profiles, channels, angles, and structural support components built for commercial and industrial applications.</p>",
-            "button_label": "Shop Profiles & Channels",
-            "button_link": "https://rapidmaterials.com/collections/profiles-channels"
-          }
         }
       },
       "block_order": [
-        "slide_kg9aWB",
-        "slide_Jph7py"
+        "slide_kg9aWB"
       ],
       "custom_css": [
         ".rm-hero__overlay {display: block !important; background: rgba(0, 0, 0, 0.4);}"
