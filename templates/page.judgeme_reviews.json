@@ -11,6 +11,7 @@
   "sections": {
     "main": {
       "type": "main-page",
+      "disabled": true,
       "settings": {
         "content_width": "narrow",
         "layout": "full_width",
@@ -22,16 +23,36 @@
         "padding_bottom": 28
       }
     },
-    "1746734999386cf969": {
-      "type": "apps",
+    "rich_text_HNpjCU": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_P7JKQm": {
+          "type": "heading",
+          "settings": {
+            "heading": "{{ page.title }}",
+            "heading_size": "h1",
+            "heading_tag": "h2"
+          }
+        }
+      },
+      "block_order": [
+        "heading_P7JKQm"
+      ],
+      "name": "Rich text (width control)",
       "settings": {
-        "include_margins": true
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "content_max_width": 900,
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
       }
     },
-    "1786479429a7005447": {
+    "1746734999386cf969": {
       "type": "apps",
       "blocks": {
-        "judge_me_reviews_all_reviews_page_hXHBXw": {
+        "judge_me_reviews_all_reviews_page_etmV8H": {
           "type": "shopify://apps/judge-me-reviews/blocks/all_reviews_page/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
           "settings": {
             "max_width": 1200,
@@ -43,7 +64,7 @@
         }
       },
       "block_order": [
-        "judge_me_reviews_all_reviews_page_hXHBXw"
+        "judge_me_reviews_all_reviews_page_etmV8H"
       ],
       "settings": {
         "include_margins": true
@@ -52,7 +73,7 @@
   },
   "order": [
     "main",
-    "1746734999386cf969",
-    "1786479429a7005447"
+    "rich_text_HNpjCU",
+    "1746734999386cf969"
   ]
 }
