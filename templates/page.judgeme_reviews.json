@@ -31,36 +31,6 @@
     "1786479429a7005447": {
       "type": "apps",
       "blocks": {
-        "judge_me_reviews_store_summary_RBt6GT": {
-          "type": "shopify://apps/judge-me-reviews/blocks/store_summary/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
-          "settings": {
-            "data_source": "sample",
-            "theme": "expanded",
-            "button_theme_color": "#FFFFFF",
-            "button_theme_text_color": "#000000",
-            "show_keywords": true,
-            "keywords_visibility": "shown",
-            "show_button": true,
-            "button_visibility": "shown",
-            "alignment": "left",
-            "title_size": "default",
-            "text_size": "default",
-            "corner_styling": "soft",
-            "widget_color": "#F9F9F9",
-            "text_color": "#000000",
-            "lighter_text_color": "#787878",
-            "button_color": "#108474",
-            "button_text_color": "#FFFFFF",
-            "show_sentiment_colors": false,
-            "max_width": 1100,
-            "heading_text": "Customers rate this store",
-            "button_text": "See AI reviews summary"
-          }
-        },
-        "judge_me_reviews_medals_KaYfCH": {
-          "type": "shopify://apps/judge-me-reviews/blocks/medals/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
-          "settings": {}
-        },
         "judge_me_reviews_all_reviews_page_hXHBXw": {
           "type": "shopify://apps/judge-me-reviews/blocks/all_reviews_page/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
           "settings": {
@@ -73,8 +43,6 @@
         }
       },
       "block_order": [
-        "judge_me_reviews_store_summary_RBt6GT",
-        "judge_me_reviews_medals_KaYfCH",
         "judge_me_reviews_all_reviews_page_hXHBXw"
       ],
       "settings": {
