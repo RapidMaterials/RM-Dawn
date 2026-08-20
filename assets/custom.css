@@ -170,3 +170,11 @@ div#bss-po-dropdown-selected-option, div#po-dropdown-selected-option {
 button#jdgm-tab_questions_answers {
     display: none;
 }
+
+
+
+
+/**Fix optis z index***/
+ul.product-grid{
+  z-index: 2 !important;
+}
