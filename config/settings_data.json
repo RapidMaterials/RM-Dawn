@@ -155,11 +155,6 @@
         "disabled": false,
         "settings": {}
       },
-      "11320579242087869063": {
-        "type": "shopify://apps/codify-order-cancel/blocks/cancel_button/f7f8a269-b6ea-461a-8e1b-d61167f44926",
-        "disabled": false,
-        "settings": {}
-      },
       "14327677521557774844": {
         "type": "shopify://apps/simprosys-google-shopping-feed/blocks/core_settings_block/1f0b859e-9fa6-4007-97e8-4513aff5ff3b",
         "disabled": false,
@@ -222,6 +217,11 @@
       "17676059084223943535": {
         "type": "shopify://apps/triplewhale/blocks/triple_pixel_snippet/483d496b-3f1a-4609-aea7-8eee3b6b7a2a",
         "disabled": true,
+        "settings": {}
+      },
+      "9208514330436462001": {
+        "type": "shopify://apps/optis-combined-listings/blocks/optis-cl-script/019f263e-f9ab-7edc-a2d0-843664ceee19",
+        "disabled": false,
         "settings": {}
       }
     },
