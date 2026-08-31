@@ -158,27 +158,32 @@
     padding: 10px 0;
   }
 
-  /*
-    Shopify theme table styles can leak into the fabrication diagrams.
-    Remove those default borders here.
-  */
 
-  .fab-item-drawing table,
-  .fab-item-drawing tr,
-  .fab-item-drawing td {
-    border-color: transparent;
-  }
 
-  .drawing-wrap table {
-    border: none !important;
-    border-collapse: collapse !important;
-    margin: 0 auto;
-  }
+/* Remove all Shopify table styling inside drawings */
+.drawing-wrap,
+.drawing-wrap table,
+.drawing-wrap tbody,
+.drawing-wrap tr,
+.drawing-wrap td {
+  border: 0 !important;
+  outline: 0 !important;
+  box-shadow: none !important;
+  background: transparent !important;
+}
 
-  .drawing-wrap td {
-    border: none;
-    box-shadow: none;
-  }
+.drawing-wrap table {
+  border-collapse: collapse !important;
+  border-spacing: 0 !important;
+  margin: 0 auto;
+}
+
+/* Restore ONLY the actual fabrication lines */
+.drawing-wrap .profile-u {
+  border-top: 3px solid #111 !important;
+  border-left: 3px solid #111 !important;
+  border-right: 3px solid #111 !important;
+}
 
   @media screen and (max-width: 700px) {
 
