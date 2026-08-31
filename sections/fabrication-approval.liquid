@@ -192,11 +192,6 @@
     padding: 10px 0;
   }
 
-  /*
-    Strip Shopify theme styling from all internal
-    tables used to construct the drawings.
-  */
-
   .drawing-wrap,
   .drawing-wrap table,
   .drawing-wrap tbody,
@@ -223,7 +218,7 @@
   }
 
   /* =========================================================
-     U CHANNEL PROFILE
+     U CHANNEL
      ========================================================= */
 
   .drawing-wrap td.profile-u {
@@ -234,7 +229,7 @@
   }
 
   /* =========================================================
-     HAT CHANNEL PROFILE
+     HAT CHANNEL
      ========================================================= */
 
   .drawing-wrap td.profile-hat-left {
@@ -259,7 +254,7 @@
   }
 
   /* =========================================================
-     Z GIRT PROFILE
+     Z GIRT
      ========================================================= */
 
   .drawing-wrap td.profile-z-top {
@@ -277,7 +272,7 @@
   }
 
   /* =========================================================
-     ANGLE PROFILE
+     ANGLE
      ========================================================= */
 
   .drawing-wrap td.profile-angle {
@@ -311,10 +306,6 @@
       margin-bottom: 25px;
     }
 
-    /*
-      Stack ONLY the two main item columns.
-    */
-
     .fab-item > tbody > tr {
       display: block;
     }
@@ -333,16 +324,10 @@
     }
 
     .fab-item-drawing {
-      padding: 28px 8px 28px;
+      padding: 28px 8px;
       text-align: center;
       overflow-x: auto;
     }
-
-    /*
-      IMPORTANT:
-      Keep the nested drawing tables behaving
-      like real tables on mobile.
-    */
 
     .drawing-wrap {
       display: inline-block;
@@ -402,6 +387,7 @@
 
 <div class="fab-approval-page">
 
+
   <!-- ======================================================
        LOADING
        ====================================================== -->
@@ -412,7 +398,7 @@
 
 
   <!-- ======================================================
-       REVIEW SCREEN
+       REVIEW
        ====================================================== -->
 
   <div id="review-screen" style="display:none;">
@@ -490,7 +476,7 @@
 
 
   <!-- ======================================================
-       MODIFICATION SCREEN
+       MODIFY
        ====================================================== -->
 
   <div id="modify-screen" style="display:none;">
@@ -589,55 +575,22 @@
 
 
   <!-- ======================================================
-       ZAPIER
+       ZAPIER RESPONSE
        ====================================================== -->
 
   <iframe
-    name="zapier-response"
     id="zapier-response"
+    name="zapier-response"
     style="display:none;"
   ></iframe>
 
-
-  <form
-    id="zapier-form"
-    action="https://hooks.zapier.com/hooks/catch/21037350/4hmzwbn/"
-    method="POST"
-    target="zapier-response"
-    style="display:none;"
-  >
-
-    <input
-      type="hidden"
-      name="action"
-      id="zapier-action"
-    >
-
-    <input
-      type="hidden"
-      name="order_number"
-      id="zapier-order-number"
-    >
-
-    <input
-      type="hidden"
-      name="modifications"
-      id="zapier-modifications"
-    >
-
-    <input
-      type="hidden"
-      name="items"
-      id="zapier-items"
-    >
-
-  </form>
 
 </div>
 
 
 <script>
 document.addEventListener('DOMContentLoaded', function () {
+
 
   /* =========================================================
      URL DATA
@@ -648,14 +601,18 @@ document.addEventListener('DOMContentLoaded', function () {
       window.location.search
     );
 
+
   const order =
     params.get('order');
+
 
   const requestedAction =
     params.get('action');
 
+
   const itemsParameter =
     params.get('items');
+
 
   let items = [];
 
@@ -671,12 +628,15 @@ document.addEventListener('DOMContentLoaded', function () {
       .style.display =
       'none';
 
+
     document
       .getElementById('error-screen')
       .style.display =
       'block';
 
+
     return;
+
   }
 
 
@@ -724,7 +684,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
   if (!Array.isArray(items)) {
+
     items = [];
+
   }
 
 
@@ -738,27 +700,42 @@ document.addEventListener('DOMContentLoaded', function () {
       value === undefined ||
       value === null
     ) {
+
       return '';
+
     }
 
+
     return String(value)
+
       .replace(/&/g, '&amp;')
+
       .replace(/</g, '&lt;')
+
       .replace(/>/g, '&gt;')
+
       .replace(/"/g, '&quot;')
+
       .replace(/'/g, '&#039;');
+
   }
 
 
   function cleanDimension(value) {
 
     if (!value) {
+
       return '';
+
     }
 
+
     return String(value)
+
       .replace(/["″”“]/g, '')
+
       .trim();
+
   }
 
 
@@ -769,11 +746,16 @@ document.addEventListener('DOMContentLoaded', function () {
         cleanDimension(value)
       );
 
+
     if (isNaN(number)) {
+
       return 0;
+
     }
 
+
     return number;
+
   }
 
 
@@ -790,6 +772,7 @@ document.addEventListener('DOMContentLoaded', function () {
         Fabrication diagram unavailable.
       </div>
     `;
+
   }
 
 
@@ -811,6 +794,7 @@ document.addEventListener('DOMContentLoaded', function () {
         "
       >
     `;
+
   }
 
 
@@ -825,19 +809,26 @@ document.addEventListener('DOMContentLoaded', function () {
         item.web
       );
 
+
     const legs =
       cleanDimension(
         item.legs
       );
 
 
-    if (!web || !legs) {
+    if (
+      !web ||
+      !legs
+    ) {
+
       return noDrawing();
+
     }
 
 
     const webNum =
       dimensionNumber(web);
+
 
     const legsNum =
       dimensionNumber(legs);
@@ -856,6 +847,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const width =
       webNum * scale;
+
 
     const height =
       legsNum * scale;
@@ -952,6 +944,7 @@ document.addEventListener('DOMContentLoaded', function () {
       </div>
 
     `;
+
   }
 
 
@@ -966,10 +959,12 @@ document.addEventListener('DOMContentLoaded', function () {
         item.depth
       );
 
+
     const crown =
       cleanDimension(
         item.crown
       );
+
 
     const flange =
       cleanDimension(
@@ -983,24 +978,23 @@ document.addEventListener('DOMContentLoaded', function () {
       !crown ||
       !flange
     ) {
+
       return noDrawing();
+
     }
 
 
     const depthNum =
       dimensionNumber(depth);
 
+
     const crownNum =
       dimensionNumber(crown);
+
 
     const flangeNum =
       dimensionNumber(flange);
 
-
-    /*
-      Scale based on total overall width so
-      crown + both flanges remain proportional.
-    */
 
     const totalWidth =
       flangeNum +
@@ -1022,8 +1016,10 @@ document.addEventListener('DOMContentLoaded', function () {
     const crownWidth =
       crownNum * scale;
 
+
     const depthHeight =
       depthNum * scale;
+
 
     const flangeWidth =
       flangeNum * scale;
@@ -1187,6 +1183,7 @@ document.addEventListener('DOMContentLoaded', function () {
       </div>
 
     `;
+
   }
 
 
@@ -1202,6 +1199,7 @@ document.addEventListener('DOMContentLoaded', function () {
         item.web
       );
 
+
     const flange =
       cleanDimension(
         item.flange ||
@@ -1213,21 +1211,19 @@ document.addEventListener('DOMContentLoaded', function () {
       !depth ||
       !flange
     ) {
+
       return noDrawing();
+
     }
 
 
     const depthNum =
       dimensionNumber(depth);
 
+
     const flangeNum =
       dimensionNumber(flange);
 
-
-    /*
-      Z has one flange above the web and
-      one flange below the web.
-    */
 
     const totalHeight =
       flangeNum * 2;
@@ -1246,6 +1242,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const depthWidth =
       depthNum * scale;
+
 
     const flangeHeight =
       flangeNum * scale;
@@ -1350,6 +1347,7 @@ document.addEventListener('DOMContentLoaded', function () {
       </div>
 
     `;
+
   }
 
 
@@ -1366,6 +1364,7 @@ document.addEventListener('DOMContentLoaded', function () {
         item.mounting_leg
       );
 
+
     const vertical =
       cleanDimension(
         item.vertical ||
@@ -1378,12 +1377,15 @@ document.addEventListener('DOMContentLoaded', function () {
       !horizontal ||
       !vertical
     ) {
+
       return noDrawing();
+
     }
 
 
     const horizontalNum =
       dimensionNumber(horizontal);
+
 
     const verticalNum =
       dimensionNumber(vertical);
@@ -1402,6 +1404,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const width =
       horizontalNum * scale;
+
 
     const height =
       verticalNum * scale;
@@ -1481,6 +1484,7 @@ document.addEventListener('DOMContentLoaded', function () {
       </div>
 
     `;
+
   }
 
 
@@ -1491,7 +1495,9 @@ document.addEventListener('DOMContentLoaded', function () {
   function getDrawing(item) {
 
     if (item.img_url) {
+
       return drawManualImage(item);
+
     }
 
 
@@ -1513,7 +1519,9 @@ document.addEventListener('DOMContentLoaded', function () {
       profile === 'u channel' ||
       name.includes('u channel')
     ) {
+
       return drawUChannel(item);
+
     }
 
 
@@ -1523,7 +1531,9 @@ document.addEventListener('DOMContentLoaded', function () {
       profile === 'hat channel' ||
       name.includes('hat channel')
     ) {
+
       return drawHatChannel(item);
+
     }
 
 
@@ -1533,7 +1543,9 @@ document.addEventListener('DOMContentLoaded', function () {
       profile === 'z girt' ||
       name.includes('z girt')
     ) {
+
       return drawZGirt(item);
+
     }
 
 
@@ -1542,11 +1554,14 @@ document.addEventListener('DOMContentLoaded', function () {
       name.includes('support angle') ||
       name.includes('closure angle')
     ) {
+
       return drawAngle(item);
+
     }
 
 
     return noDrawing();
+
   }
 
 
@@ -1588,7 +1603,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
       `;
 
+
       return;
+
     }
 
 
@@ -1661,10 +1678,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
 
-    /* =========================================================
-       MULTIPLE ITEMS
-       ========================================================= */
-
     if (items.length > 1) {
 
       document
@@ -1679,11 +1692,6 @@ document.addEventListener('DOMContentLoaded', function () {
         'Please confirm that all fabrication details and diagrams shown above are correct.';
 
     }
-
-
-    /* =========================================================
-       SINGLE ITEM
-       ========================================================= */
 
     else {
 
@@ -1712,33 +1720,52 @@ document.addEventListener('DOMContentLoaded', function () {
     modificationsValue
   ) {
 
-    document
-      .getElementById('zapier-action')
-      .value =
-      actionValue;
+    const webhook =
+      'https://hooks.zapier.com/hooks/catch/21037350/4hmzwbn/';
+
+
+    const zapParams =
+      new URLSearchParams();
+
+
+    zapParams.set(
+      'action',
+      actionValue
+    );
+
+
+    zapParams.set(
+      'order_number',
+      order
+    );
+
+
+    if (modificationsValue) {
+
+      zapParams.set(
+        'modifications',
+        modificationsValue
+      );
+
+    }
+
+
+    const webhookUrl =
+      webhook +
+      '?' +
+      zapParams.toString();
+
+
+    console.log(
+      'Sending fabrication response to:',
+      webhookUrl
+    );
 
 
     document
-      .getElementById('zapier-order-number')
-      .value =
-      order;
-
-
-    document
-      .getElementById('zapier-modifications')
-      .value =
-      modificationsValue || '';
-
-
-    document
-      .getElementById('zapier-items')
-      .value =
-      JSON.stringify(items);
-
-
-    document
-      .getElementById('zapier-form')
-      .submit();
+      .getElementById('zapier-response')
+      .src =
+      webhookUrl;
 
   }
 
@@ -1806,7 +1833,7 @@ document.addEventListener('DOMContentLoaded', function () {
               'block';
 
           },
-          750
+          1000
         );
 
       }
@@ -1944,7 +1971,7 @@ document.addEventListener('DOMContentLoaded', function () {
               'block';
 
           },
-          750
+          1000
         );
 
       }
@@ -1965,11 +1992,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
   /*
-    MODIFY link from email:
-    go directly to modification form.
+    If an old URL still contains action=modify,
+    open the modification form.
 
-    APPROVE link:
-    show review page first.
+    action=review or anything else opens
+    the normal review screen.
   */
 
   if (
@@ -1991,6 +2018,7 @@ document.addEventListener('DOMContentLoaded', function () {
       'block';
 
   }
+
 
 });
 </script>
