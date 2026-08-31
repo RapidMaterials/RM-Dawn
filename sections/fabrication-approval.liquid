@@ -123,21 +123,28 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
 
-  async function sendToZapier(data) {
+ async function sendToZapier(data) {
 
-    const formData = new URLSearchParams();
+  const formData = new URLSearchParams();
 
-    Object.keys(data).forEach(function(key) {
-      formData.append(key, data[key] || '');
-    });
+  Object.keys(data).forEach(function(key) {
+    formData.append(key, data[key] || '');
+  });
 
-    return fetch('YOUR_ZAPIER_WEBHOOK_URL_HERE', {
+  const response = await fetch(
+    'https://hooks.zapier.com/hooks/catch/21037350/4hmzwbn/',
+    {
       method: 'POST',
       body: formData
-    });
+    }
+  );
 
+  if (!response.ok) {
+    throw new Error('Zapier webhook failed');
   }
 
+  return response;
+}
 
   document.getElementById('approve-button').addEventListener('click', async function () {
 
