@@ -4,7 +4,10 @@
     Loading fabrication approval...
   </div>
 
+
+  <!-- APPROVAL SCREEN -->
   <div id="approved-screen" style="display:none;text-align:center;">
+
     <h1>Fabrication Approval</h1>
 
     <p>
@@ -31,10 +34,14 @@
       ">
       Confirm Approval
     </button>
+
   </div>
 
 
+
+  <!-- MODIFY SCREEN -->
   <div id="modify-screen" style="display:none;">
+
     <h1>Request Fabrication Changes</h1>
 
     <p>
@@ -76,160 +83,285 @@
       ">
       Submit Modifications
     </button>
+
   </div>
 
 
+
+  <!-- SUCCESS SCREEN -->
   <div id="success-screen" style="display:none;text-align:center;">
+
     <h1 id="success-title"></h1>
+
     <p id="success-message"></p>
+
   </div>
 
 
+
+  <!-- ERROR SCREEN -->
   <div id="error-screen" style="display:none;text-align:center;">
+
     <h1>Something Went Wrong</h1>
+
     <p>
       We were unable to submit your response. Please contact Rapid Materials.
     </p>
+
   </div>
+
+
+  <!--
+      Hidden iframe receives Zapier's response.
+      This prevents the customer from leaving the Rapid Materials page.
+  -->
+  <iframe
+    name="zapier-response"
+    id="zapier-response"
+    style="display:none;"
+  ></iframe>
+
+
+  <!--
+      Hidden form that actually posts the response to Zapier.
+  -->
+  <form
+    id="zapier-form"
+    action="https://hooks.zapier.com/hooks/catch/21037350/4hmzwbn/"
+    method="POST"
+    target="zapier-response"
+    style="display:none;"
+  >
+
+    <input
+      type="hidden"
+      name="action"
+      id="zapier-action"
+      value=""
+    >
+
+    <input
+      type="hidden"
+      name="order_number"
+      id="zapier-order-number"
+      value=""
+    >
+
+    <input
+      type="hidden"
+      name="modifications"
+      id="zapier-modifications"
+      value=""
+    >
+
+  </form>
 
 </div>
 
 
+
 <script>
+
 document.addEventListener('DOMContentLoaded', function () {
+
+
+  /* =========================================================
+     READ URL VARIABLES
+     ========================================================= */
 
   const params = new URLSearchParams(window.location.search);
 
   const order = params.get('order');
-  const orderdeskId = params.get('od_id');
   const action = params.get('action');
 
+
+
+  /* =========================================================
+     VALIDATE ORDER NUMBER
+     ========================================================= */
+
+  if (!order) {
+
+    document.getElementById('loading').style.display = 'none';
+
+    document.getElementById('error-screen').style.display = 'block';
+
+    return;
+
+  }
+
+
+
+  /* =========================================================
+     DISPLAY ORDER NUMBER
+     ========================================================= */
+
   document.querySelectorAll('.order-number').forEach(function(el) {
-    el.textContent = order || '';
+
+    el.textContent = order;
+
   });
+
 
   document.getElementById('loading').style.display = 'none';
 
+
+
+  /* =========================================================
+     SHOW CORRECT SCREEN
+     ========================================================= */
+
   if (action === 'approved') {
+
     document.getElementById('approved-screen').style.display = 'block';
+
   }
 
   else if (action === 'modify') {
+
     document.getElementById('modify-screen').style.display = 'block';
+
   }
 
   else {
+
     document.getElementById('error-screen').style.display = 'block';
+
   }
 
 
- async function sendToZapier(data) {
 
-  const formData = new URLSearchParams();
+  /* =========================================================
+     SUBMIT TO ZAPIER
+     ========================================================= */
 
-  Object.keys(data).forEach(function(key) {
-    formData.append(key, data[key] || '');
-  });
+  function submitToZapier(actionValue, modificationsValue) {
 
-  const response = await fetch(
-    'https://hooks.zapier.com/hooks/catch/21037350/4hmzwbn/',
-    {
-      method: 'POST',
-      body: formData
+    document.getElementById('zapier-action').value =
+      actionValue;
+
+    document.getElementById('zapier-order-number').value =
+      order;
+
+    document.getElementById('zapier-modifications').value =
+      modificationsValue || '';
+
+    document.getElementById('zapier-form').submit();
+
+  }
+
+
+
+  /* =========================================================
+     APPROVAL
+     ========================================================= */
+
+  document.getElementById('approve-button').addEventListener(
+    'click',
+    function () {
+
+      const button = this;
+
+      button.disabled = true;
+      button.textContent = 'Submitting...';
+
+
+      submitToZapier(
+        'approved',
+        ''
+      );
+
+
+      /*
+       Give the browser a moment to submit the hidden form
+       before showing confirmation.
+      */
+
+      setTimeout(function () {
+
+        document.getElementById('approved-screen').style.display =
+          'none';
+
+        document.getElementById('success-title').textContent =
+          'Fabrication Approved';
+
+        document.getElementById('success-message').textContent =
+          'Thank you. Your approval for Order ' +
+          order +
+          ' has been received.';
+
+        document.getElementById('success-screen').style.display =
+          'block';
+
+      }, 750);
+
     }
   );
 
-  if (!response.ok) {
-    throw new Error('Zapier webhook failed');
-  }
-
-  return response;
-}
-
-  document.getElementById('approve-button').addEventListener('click', async function () {
-
-    const button = this;
-
-    button.disabled = true;
-    button.textContent = 'Submitting...';
-
-    try {
-
-      await sendToZapier({
-        action: 'approved',
-        order_number: order,
-        orderdesk_id: orderdeskId
-      });
-
-      document.getElementById('approved-screen').style.display = 'none';
-
-      document.getElementById('success-title').textContent =
-        'Fabrication Approved';
-
-      document.getElementById('success-message').textContent =
-        'Thank you. Your approval for Order ' + order + ' has been received.';
-
-      document.getElementById('success-screen').style.display = 'block';
-
-    }
-
-    catch (error) {
-
-      document.getElementById('approved-screen').style.display = 'none';
-      document.getElementById('error-screen').style.display = 'block';
-
-    }
-
-  });
 
 
-  document.getElementById('modify-button').addEventListener('click', async function () {
+  /* =========================================================
+     MODIFICATIONS
+     ========================================================= */
 
-    const modifications =
-      document.getElementById('modifications').value.trim();
+  document.getElementById('modify-button').addEventListener(
+    'click',
+    function () {
 
-    if (!modifications) {
-      alert('Please enter the modifications you would like us to make.');
-      return;
-    }
+      const modifications =
+        document.getElementById('modifications').value.trim();
 
-    const button = this;
 
-    button.disabled = true;
-    button.textContent = 'Submitting...';
+      if (!modifications) {
 
-    try {
+        alert(
+          'Please enter the modifications you would like us to make.'
+        );
 
-      await sendToZapier({
-        action: 'modify',
-        order_number: order,
-        orderdesk_id: orderdeskId,
-        modifications: modifications
-      });
+        return;
 
-      document.getElementById('modify-screen').style.display = 'none';
+      }
 
-      document.getElementById('success-title').textContent =
-        'Changes Requested';
 
-      document.getElementById('success-message').textContent =
-        'Thank you. Your requested changes for Order ' + order + ' have been submitted.';
+      const button = this;
 
-      document.getElementById('success-screen').style.display = 'block';
+      button.disabled = true;
+      button.textContent = 'Submitting...';
+
+
+      submitToZapier(
+        'modify',
+        modifications
+      );
+
+
+      setTimeout(function () {
+
+        document.getElementById('modify-screen').style.display =
+          'none';
+
+        document.getElementById('success-title').textContent =
+          'Changes Requested';
+
+        document.getElementById('success-message').textContent =
+          'Thank you. Your requested changes for Order ' +
+          order +
+          ' have been submitted.';
+
+        document.getElementById('success-screen').style.display =
+          'block';
+
+      }, 750);
 
     }
+  );
 
-    catch (error) {
-
-      document.getElementById('modify-screen').style.display = 'none';
-      document.getElementById('error-screen').style.display = 'block';
-
-    }
-
-  });
 
 });
+
 </script>
+
+
 
 {% schema %}
 {
