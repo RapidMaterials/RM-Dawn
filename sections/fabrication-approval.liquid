@@ -270,43 +270,110 @@
 
   @media screen and (max-width: 700px) {
 
-    .fab-approval-page {
-      margin-top: 30px;
-      padding: 0 15px;
-    }
-
-    .fab-item,
-    .fab-item tbody,
-    .fab-item tr,
-    .fab-item td {
-      display: block;
-      width: 100% !important;
-      box-sizing: border-box;
-    }
-
-    .fab-item-info {
-      border-right: 0;
-      border-bottom: 1px solid #ddd;
-      padding: 22px;
-    }
-
-    .fab-item-drawing {
-      padding: 25px 15px;
-      overflow-x: auto;
-    }
-
-    .fab-header h1 {
-      font-size: 28px;
-    }
-
-    .fab-button {
-      display: block;
-      width: 100%;
-      box-sizing: border-box;
-      margin: 8px 0;
-    }
-
+  .fab-approval-page {
+    margin: 25px auto 60px;
+    padding: 0 14px;
   }
+
+  .fab-header {
+    margin-bottom: 25px;
+  }
+
+  .fab-header h1 {
+    font-size: 28px;
+  }
+
+  .fab-intro {
+    font-size: 15px;
+    margin-bottom: 25px;
+  }
+
+
+  /* Stack ONLY the two main item columns */
+  .fab-item > tbody > tr {
+    display: block;
+  }
+
+  .fab-item > tbody > tr > .fab-item-info,
+  .fab-item > tbody > tr > .fab-item-drawing {
+    display: block;
+    width: 100% !important;
+    box-sizing: border-box;
+  }
+
+
+  .fab-item-info {
+    border-right: 0;
+    border-bottom: 1px solid #ddd;
+    padding: 22px;
+  }
+
+  .fab-item-drawing {
+    padding: 28px 10px 32px;
+    text-align: center;
+    overflow-x: auto;
+  }
+
+
+  /*
+    IMPORTANT:
+    Do not change display/width on the nested
+    table cells that make up the drawings.
+  */
+
+  .drawing-wrap {
+    display: inline-block;
+    width: auto;
+    max-width: none;
+    margin: 0 auto;
+  }
+
+  .drawing-wrap table {
+    width: auto !important;
+    max-width: none !important;
+  }
+
+  .drawing-wrap tr {
+    display: table-row !important;
+  }
+
+  .drawing-wrap td {
+    display: table-cell !important;
+    width: auto;
+  }
+
+
+  .fab-item-name {
+    font-size: 17px;
+  }
+
+  .fab-qty {
+    font-size: 15px;
+  }
+
+
+  .fab-review-box {
+    padding: 20px 16px;
+  }
+
+  .fab-review-title {
+    font-size: 19px;
+  }
+
+
+  .fab-button {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 8px 0;
+  }
+
+
+  .fab-modification-box {
+    padding: 20px 15px;
+  }
+
+}
 </style>
 
 
