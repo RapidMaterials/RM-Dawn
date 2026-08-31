@@ -30,6 +30,10 @@
     line-height: 1.6;
   }
 
+  /* =========================================================
+     ITEM CARD
+     ========================================================= */
+
   .fab-item {
     width: 100%;
     border: 1px solid #ddd;
@@ -65,6 +69,24 @@
     font-size: 15px;
     font-weight: bold;
   }
+
+  /* =========================================================
+     DIAGRAM NOTE
+     ========================================================= */
+
+  .diagram-note {
+    max-width: 500px;
+    margin: 18px auto 0;
+    font-size: 12px;
+    line-height: 1.45;
+    color: #777;
+    font-style: italic;
+    text-align: center;
+  }
+
+  /* =========================================================
+     APPROVAL
+     ========================================================= */
 
   .fab-review-box {
     margin-top: 32px;
@@ -115,6 +137,10 @@
     color: #222;
   }
 
+  /* =========================================================
+     MODIFICATIONS
+     ========================================================= */
+
   .fab-modification-box {
     max-width: 700px;
     margin: 30px auto 0;
@@ -134,6 +160,10 @@
     border-radius: 4px;
   }
 
+  /* =========================================================
+     SUCCESS / ERROR
+     ========================================================= */
+
   .fab-success {
     max-width: 700px;
     margin: 80px auto;
@@ -152,7 +182,6 @@
     text-align: center;
   }
 
-
   /* =========================================================
      DRAWINGS
      ========================================================= */
@@ -163,19 +192,9 @@
     padding: 10px 0;
   }
 
-  .diagram-note {
-  margin-top: 14px;
-  font-size: 12px;
-  line-height: 1.45;
-  color: #777;
-  font-style: italic;
-  text-align: center;
-}
-
-
   /*
-    Remove Shopify theme styling from the internal
-    tables used to construct the fabrication drawings.
+    Strip Shopify theme styling from all internal
+    tables used to construct the drawings.
   */
 
   .drawing-wrap,
@@ -203,7 +222,6 @@
     border: none !important;
   }
 
-
   /* =========================================================
      U CHANNEL PROFILE
      ========================================================= */
@@ -214,7 +232,6 @@
     border-right: 3px solid #111111 !important;
     border-bottom: none !important;
   }
-
 
   /* =========================================================
      HAT CHANNEL PROFILE
@@ -241,7 +258,6 @@
     border-left: 3px solid #111111 !important;
   }
 
-
   /* =========================================================
      Z GIRT PROFILE
      ========================================================= */
@@ -260,7 +276,6 @@
     border-right: 3px solid #111111 !important;
   }
 
-
   /* =========================================================
      ANGLE PROFILE
      ========================================================= */
@@ -272,124 +287,124 @@
     border-bottom: 3px solid #111111 !important;
   }
 
-
   /* =========================================================
      MOBILE
      ========================================================= */
 
   @media screen and (max-width: 700px) {
 
-  .fab-approval-page {
-    margin: 25px auto 60px;
-    padding: 0 14px;
+    .fab-approval-page {
+      margin: 25px auto 60px;
+      padding: 0 14px;
+    }
+
+    .fab-header {
+      margin-bottom: 25px;
+    }
+
+    .fab-header h1 {
+      font-size: 28px;
+    }
+
+    .fab-intro {
+      font-size: 15px;
+      margin-bottom: 25px;
+    }
+
+    /*
+      Stack ONLY the two main item columns.
+    */
+
+    .fab-item > tbody > tr {
+      display: block;
+    }
+
+    .fab-item > tbody > tr > .fab-item-info,
+    .fab-item > tbody > tr > .fab-item-drawing {
+      display: block;
+      width: 100% !important;
+      box-sizing: border-box;
+    }
+
+    .fab-item-info {
+      border-right: 0;
+      border-bottom: 1px solid #ddd;
+      padding: 22px;
+    }
+
+    .fab-item-drawing {
+      padding: 28px 8px 28px;
+      text-align: center;
+      overflow-x: auto;
+    }
+
+    /*
+      IMPORTANT:
+      Keep the nested drawing tables behaving
+      like real tables on mobile.
+    */
+
+    .drawing-wrap {
+      display: inline-block;
+      width: auto;
+      max-width: none;
+      margin: 0 auto;
+    }
+
+    .drawing-wrap table {
+      width: auto !important;
+      max-width: none !important;
+    }
+
+    .drawing-wrap tr {
+      display: table-row !important;
+    }
+
+    .drawing-wrap td {
+      display: table-cell !important;
+      width: auto;
+    }
+
+    .fab-item-name {
+      font-size: 17px;
+    }
+
+    .fab-qty {
+      font-size: 15px;
+    }
+
+    .diagram-note {
+      padding: 0 12px;
+      font-size: 11px;
+    }
+
+    .fab-review-box {
+      padding: 20px 16px;
+    }
+
+    .fab-review-title {
+      font-size: 19px;
+    }
+
+    .fab-button {
+      display: block;
+      width: 100%;
+      box-sizing: border-box;
+      margin: 8px 0;
+    }
+
+    .fab-modification-box {
+      padding: 20px 15px;
+    }
   }
-
-  .fab-header {
-    margin-bottom: 25px;
-  }
-
-  .fab-header h1 {
-    font-size: 28px;
-  }
-
-  .fab-intro {
-    font-size: 15px;
-    margin-bottom: 25px;
-  }
-
-
-  /* Stack ONLY the two main item columns */
-  .fab-item > tbody > tr {
-    display: block;
-  }
-
-  .fab-item > tbody > tr > .fab-item-info,
-  .fab-item > tbody > tr > .fab-item-drawing {
-    display: block;
-    width: 100% !important;
-    box-sizing: border-box;
-  }
-
-
-  .fab-item-info {
-    border-right: 0;
-    border-bottom: 1px solid #ddd;
-    padding: 22px;
-  }
-
-  .fab-item-drawing {
-    padding: 28px 10px 32px;
-    text-align: center;
-    overflow-x: auto;
-  }
-
-
-  /*
-    IMPORTANT:
-    Do not change display/width on the nested
-    table cells that make up the drawings.
-  */
-
-  .drawing-wrap {
-    display: inline-block;
-    width: auto;
-    max-width: none;
-    margin: 0 auto;
-  }
-
-  .drawing-wrap table {
-    width: auto !important;
-    max-width: none !important;
-  }
-
-  .drawing-wrap tr {
-    display: table-row !important;
-  }
-
-  .drawing-wrap td {
-    display: table-cell !important;
-    width: auto;
-  }
-
-
-  .fab-item-name {
-    font-size: 17px;
-  }
-
-  .fab-qty {
-    font-size: 15px;
-  }
-
-
-  .fab-review-box {
-    padding: 20px 16px;
-  }
-
-  .fab-review-title {
-    font-size: 19px;
-  }
-
-
-  .fab-button {
-    display: block;
-    width: 100%;
-    box-sizing: border-box;
-    margin: 8px 0;
-  }
-
-
-  .fab-modification-box {
-    padding: 20px 15px;
-  }
-
-}
 </style>
 
 
 <div class="fab-approval-page">
 
-
-  <!-- LOADING -->
+  <!-- ======================================================
+       LOADING
+       ====================================================== -->
 
   <div id="loading">
     Loading fabrication details...
@@ -624,7 +639,6 @@
 <script>
 document.addEventListener('DOMContentLoaded', function () {
 
-
   /* =========================================================
      URL DATA
      ========================================================= */
@@ -634,18 +648,14 @@ document.addEventListener('DOMContentLoaded', function () {
       window.location.search
     );
 
-
   const order =
     params.get('order');
-
 
   const requestedAction =
     params.get('action');
 
-
   const itemsParameter =
     params.get('items');
-
 
   let items = [];
 
@@ -661,15 +671,12 @@ document.addEventListener('DOMContentLoaded', function () {
       .style.display =
       'none';
 
-
     document
       .getElementById('error-screen')
       .style.display =
       'block';
 
-
     return;
-
   }
 
 
@@ -717,9 +724,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
   if (!Array.isArray(items)) {
-
     items = [];
-
   }
 
 
@@ -733,42 +738,27 @@ document.addEventListener('DOMContentLoaded', function () {
       value === undefined ||
       value === null
     ) {
-
       return '';
-
     }
 
-
     return String(value)
-
       .replace(/&/g, '&amp;')
-
       .replace(/</g, '&lt;')
-
       .replace(/>/g, '&gt;')
-
       .replace(/"/g, '&quot;')
-
       .replace(/'/g, '&#039;');
-
   }
 
 
   function cleanDimension(value) {
 
     if (!value) {
-
       return '';
-
     }
 
-
     return String(value)
-
       .replace(/["″”“]/g, '')
-
       .trim();
-
   }
 
 
@@ -779,16 +769,11 @@ document.addEventListener('DOMContentLoaded', function () {
         cleanDimension(value)
       );
 
-
     if (isNaN(number)) {
-
       return 0;
-
     }
 
-
     return number;
-
   }
 
 
@@ -805,7 +790,6 @@ document.addEventListener('DOMContentLoaded', function () {
         Fabrication diagram unavailable.
       </div>
     `;
-
   }
 
 
@@ -827,7 +811,6 @@ document.addEventListener('DOMContentLoaded', function () {
         "
       >
     `;
-
   }
 
 
@@ -842,35 +825,40 @@ document.addEventListener('DOMContentLoaded', function () {
         item.web
       );
 
-
     const legs =
       cleanDimension(
         item.legs
       );
 
 
-    if (
-      !web ||
-      !legs
-    ) {
-
+    if (!web || !legs) {
       return noDrawing();
-
     }
 
 
-    const width =
+    const webNum =
+      dimensionNumber(web);
+
+    const legsNum =
+      dimensionNumber(legs);
+
+
+    const maxDimension =
       Math.max(
-        100,
-        dimensionNumber(web) * 55
+        webNum,
+        legsNum
       );
 
+
+    const scale =
+      220 / maxDimension;
+
+
+    const width =
+      webNum * scale;
 
     const height =
-      Math.max(
-        55,
-        dimensionNumber(legs) * 55
-      );
+      legsNum * scale;
 
 
     return `
@@ -964,7 +952,6 @@ document.addEventListener('DOMContentLoaded', function () {
       </div>
 
     `;
-
   }
 
 
@@ -979,12 +966,10 @@ document.addEventListener('DOMContentLoaded', function () {
         item.depth
       );
 
-
     const crown =
       cleanDimension(
         item.crown
       );
-
 
     const flange =
       cleanDimension(
@@ -998,31 +983,50 @@ document.addEventListener('DOMContentLoaded', function () {
       !crown ||
       !flange
     ) {
-
       return noDrawing();
-
     }
 
 
-    const crownWidth =
+    const depthNum =
+      dimensionNumber(depth);
+
+    const crownNum =
+      dimensionNumber(crown);
+
+    const flangeNum =
+      dimensionNumber(flange);
+
+
+    /*
+      Scale based on total overall width so
+      crown + both flanges remain proportional.
+    */
+
+    const totalWidth =
+      flangeNum +
+      crownNum +
+      flangeNum;
+
+
+    const maxDimension =
       Math.max(
-        90,
-        dimensionNumber(crown) * 45
+        totalWidth,
+        depthNum
       );
 
+
+    const scale =
+      260 / maxDimension;
+
+
+    const crownWidth =
+      crownNum * scale;
 
     const depthHeight =
-      Math.max(
-        55,
-        dimensionNumber(depth) * 45
-      );
-
+      depthNum * scale;
 
     const flangeWidth =
-      Math.max(
-        40,
-        dimensionNumber(flange) * 45
-      );
+      flangeNum * scale;
 
 
     return `
@@ -1034,7 +1038,6 @@ document.addEventListener('DOMContentLoaded', function () {
           cellspacing="0"
           border="0"
         >
-
 
           <tr>
 
@@ -1184,7 +1187,6 @@ document.addEventListener('DOMContentLoaded', function () {
       </div>
 
     `;
-
   }
 
 
@@ -1200,7 +1202,6 @@ document.addEventListener('DOMContentLoaded', function () {
         item.web
       );
 
-
     const flange =
       cleanDimension(
         item.flange ||
@@ -1212,24 +1213,42 @@ document.addEventListener('DOMContentLoaded', function () {
       !depth ||
       !flange
     ) {
-
       return noDrawing();
-
     }
 
 
-    const depthWidth =
+    const depthNum =
+      dimensionNumber(depth);
+
+    const flangeNum =
+      dimensionNumber(flange);
+
+
+    /*
+      Z has one flange above the web and
+      one flange below the web.
+    */
+
+    const totalHeight =
+      flangeNum * 2;
+
+
+    const maxDimension =
       Math.max(
-        100,
-        dimensionNumber(depth) * 55
+        depthNum,
+        totalHeight
       );
 
+
+    const scale =
+      220 / maxDimension;
+
+
+    const depthWidth =
+      depthNum * scale;
 
     const flangeHeight =
-      Math.max(
-        50,
-        dimensionNumber(flange) * 55
-      );
+      flangeNum * scale;
 
 
     return `
@@ -1241,7 +1260,6 @@ document.addEventListener('DOMContentLoaded', function () {
           cellspacing="0"
           border="0"
         >
-
 
           <tr>
 
@@ -1332,7 +1350,6 @@ document.addEventListener('DOMContentLoaded', function () {
       </div>
 
     `;
-
   }
 
 
@@ -1349,7 +1366,6 @@ document.addEventListener('DOMContentLoaded', function () {
         item.mounting_leg
       );
 
-
     const vertical =
       cleanDimension(
         item.vertical ||
@@ -1362,24 +1378,33 @@ document.addEventListener('DOMContentLoaded', function () {
       !horizontal ||
       !vertical
     ) {
-
       return noDrawing();
-
     }
 
 
-    const width =
+    const horizontalNum =
+      dimensionNumber(horizontal);
+
+    const verticalNum =
+      dimensionNumber(vertical);
+
+
+    const maxDimension =
       Math.max(
-        100,
-        dimensionNumber(horizontal) * 50
+        horizontalNum,
+        verticalNum
       );
 
+
+    const scale =
+      220 / maxDimension;
+
+
+    const width =
+      horizontalNum * scale;
 
     const height =
-      Math.max(
-        55,
-        dimensionNumber(vertical) * 50
-      );
+      verticalNum * scale;
 
 
     return `
@@ -1391,7 +1416,6 @@ document.addEventListener('DOMContentLoaded', function () {
           cellspacing="0"
           border="0"
         >
-
 
           <tr>
 
@@ -1457,7 +1481,6 @@ document.addEventListener('DOMContentLoaded', function () {
       </div>
 
     `;
-
   }
 
 
@@ -1468,9 +1491,7 @@ document.addEventListener('DOMContentLoaded', function () {
   function getDrawing(item) {
 
     if (item.img_url) {
-
       return drawManualImage(item);
-
     }
 
 
@@ -1492,9 +1513,7 @@ document.addEventListener('DOMContentLoaded', function () {
       profile === 'u channel' ||
       name.includes('u channel')
     ) {
-
       return drawUChannel(item);
-
     }
 
 
@@ -1504,9 +1523,7 @@ document.addEventListener('DOMContentLoaded', function () {
       profile === 'hat channel' ||
       name.includes('hat channel')
     ) {
-
       return drawHatChannel(item);
-
     }
 
 
@@ -1516,9 +1533,7 @@ document.addEventListener('DOMContentLoaded', function () {
       profile === 'z girt' ||
       name.includes('z girt')
     ) {
-
       return drawZGirt(item);
-
     }
 
 
@@ -1527,14 +1542,11 @@ document.addEventListener('DOMContentLoaded', function () {
       name.includes('support angle') ||
       name.includes('closure angle')
     ) {
-
       return drawAngle(item);
-
     }
 
 
     return noDrawing();
-
   }
 
 
@@ -1576,9 +1588,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
       `;
 
-
       return;
-
     }
 
 
@@ -1632,6 +1642,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
             ${getDrawing(item)}
 
+            <div class="diagram-note">
+              Diagram is for reference only and may not be shown to scale.
+              Verify all labeled dimensions before approval.
+            </div>
+
           </td>
 
         </tr>
@@ -1646,7 +1661,9 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
 
-    /* MULTIPLE ITEMS */
+    /* =========================================================
+       MULTIPLE ITEMS
+       ========================================================= */
 
     if (items.length > 1) {
 
@@ -1664,7 +1681,9 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
 
-    /* SINGLE ITEM */
+    /* =========================================================
+       SINGLE ITEM
+       ========================================================= */
 
     else {
 
