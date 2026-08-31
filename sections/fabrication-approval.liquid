@@ -158,27 +158,67 @@
     padding: 10px 0;
   }
 
-  /*
-    Shopify theme table styles can leak into the fabrication diagrams.
-    Remove those default borders here.
-  */
 
-  .fab-item-drawing table,
-  .fab-item-drawing tr,
-  .fab-item-drawing td {
-    border-color: transparent;
+  /* =========================================================
+     REMOVE SHOPIFY TABLE STYLING FROM DRAWINGS
+     ========================================================= */
+
+  .drawing-wrap,
+  .drawing-wrap table,
+  .drawing-wrap tbody,
+  .drawing-wrap tr,
+  .drawing-wrap td {
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+    background: transparent !important;
   }
 
   .drawing-wrap table {
-    border: none !important;
     border-collapse: collapse !important;
-    margin: 0 auto;
+    border-spacing: 0 !important;
+    margin: 0 auto !important;
   }
 
-  .drawing-wrap td {
-    border: none;
-    box-shadow: none;
+
+  /* =========================================================
+     RESTORE ONLY THE ACTUAL PROFILE LINES
+     ========================================================= */
+
+  .profile-u {
+    border-top: 3px solid #111 !important;
+    border-left: 3px solid #111 !important;
+    border-right: 3px solid #111 !important;
   }
+
+  .profile-hat-left {
+    border-bottom: 3px solid #111 !important;
+    border-right: 3px solid #111 !important;
+  }
+
+  .profile-hat-crown {
+    border-top: 3px solid #111 !important;
+  }
+
+  .profile-hat-right {
+    border-bottom: 3px solid #111 !important;
+    border-left: 3px solid #111 !important;
+  }
+
+  .profile-z-top {
+    border-left: 3px solid #111 !important;
+    border-bottom: 3px solid #111 !important;
+  }
+
+  .profile-z-bottom {
+    border-right: 3px solid #111 !important;
+  }
+
+  .profile-angle {
+    border-left: 3px solid #111 !important;
+    border-bottom: 3px solid #111 !important;
+  }
+
 
   @media screen and (max-width: 700px) {
 
@@ -224,31 +264,19 @@
 
 <div class="fab-approval-page">
 
-
-  <!-- ======================================================
-       LOADING
-       ====================================================== -->
-
   <div id="loading">
     Loading fabrication details...
   </div>
 
 
-
-  <!-- ======================================================
-       REVIEW SCREEN
-       ====================================================== -->
-
   <div id="review-screen" style="display:none;">
 
     <div class="fab-header">
-
       <h1>Fabrication Approval</h1>
 
       <div class="fab-order">
         Order <strong id="display-order"></strong>
       </div>
-
     </div>
 
 
@@ -283,7 +311,6 @@
           Approve
         </button>
 
-
         <button
           type="button"
           id="show-modify-button"
@@ -297,14 +324,7 @@
     </div>
 
 
-    <p
-      style="
-        text-align:center;
-        margin-top:25px;
-        font-size:14px;
-        color:#555;
-      "
-    >
+    <p style="text-align:center;margin-top:25px;font-size:14px;color:#555;">
       <strong>
         Fabrication will not begin until your approval is received.
       </strong>
@@ -313,21 +333,14 @@
   </div>
 
 
-
-  <!-- ======================================================
-       MODIFICATION SCREEN
-       ====================================================== -->
-
   <div id="modify-screen" style="display:none;">
 
     <div class="fab-header">
-
       <h1>Request Fabrication Changes</h1>
 
       <div class="fab-order">
         Order <strong class="order-number"></strong>
       </div>
-
     </div>
 
 
@@ -354,7 +367,6 @@
           Submit Modifications
         </button>
 
-
         <button
           type="button"
           id="back-to-review"
@@ -370,54 +382,25 @@
   </div>
 
 
-
-  <!-- ======================================================
-       SUCCESS SCREEN
-       ====================================================== -->
-
-  <div
-    id="success-screen"
-    class="fab-success"
-    style="display:none;"
-  >
-
+  <div id="success-screen" class="fab-success" style="display:none;">
     <h1 id="success-title"></h1>
-
-    <p
-      id="success-message"
-      style="font-size:17px;"
-    ></p>
-
+    <p id="success-message" style="font-size:17px;"></p>
   </div>
 
-
-
-  <!-- ======================================================
-       ERROR SCREEN
-       ====================================================== -->
 
   <div id="error-screen" style="display:none;">
 
     <div class="fab-error">
-
-      <h2>
-        Unable to Load Fabrication Approval
-      </h2>
+      <h2>Unable to Load Fabrication Approval</h2>
 
       <p>
         We were unable to load the fabrication information for this order.
         Please contact Rapid Materials for assistance.
       </p>
-
     </div>
 
   </div>
 
-
-
-  <!-- ======================================================
-       HIDDEN ZAPIER RESPONSE
-       ====================================================== -->
 
   <iframe
     name="zapier-response"
@@ -425,11 +408,6 @@
     style="display:none;"
   ></iframe>
 
-
-
-  <!-- ======================================================
-       HIDDEN ZAPIER FORM
-       ====================================================== -->
 
   <form
     id="zapier-form"
@@ -465,150 +443,84 @@
 
   </form>
 
-
 </div>
-
 
 
 <script>
 document.addEventListener('DOMContentLoaded', function () {
 
-
-  /* =========================================================
-     URL VARIABLES
-     ========================================================= */
-
   const params = new URLSearchParams(window.location.search);
 
   const order = params.get('order');
-
   const requestedAction = params.get('action');
-
   const itemsParameter = params.get('items');
 
   let items = [];
 
 
-
-  /* =========================================================
-     BASIC VALIDATION
-     ========================================================= */
-
   if (!order) {
 
-    document.getElementById('loading').style.display =
-      'none';
-
-    document.getElementById('error-screen').style.display =
-      'block';
+    document.getElementById('loading').style.display = 'none';
+    document.getElementById('error-screen').style.display = 'block';
 
     return;
 
   }
 
 
-  document.getElementById('display-order').textContent =
-    order;
+  document.getElementById('display-order').textContent = order;
 
+  document.querySelectorAll('.order-number').forEach(function(el) {
+    el.textContent = order;
+  });
 
-  document
-    .querySelectorAll('.order-number')
-    .forEach(function(el) {
-
-      el.textContent = order;
-
-    });
-
-
-
-  /* =========================================================
-     READ ITEM DATA
-     ========================================================= */
 
   if (itemsParameter) {
 
     try {
-
       items = JSON.parse(itemsParameter);
-
     }
 
     catch (error) {
-
-      console.error(
-        'Unable to parse fabrication items:',
-        error
-      );
-
+      console.error('Unable to parse fabrication items:', error);
     }
 
   }
 
 
   if (!Array.isArray(items)) {
-
     items = [];
-
   }
 
 
-
-  /* =========================================================
-     ESCAPE HTML
-     ========================================================= */
-
   function escapeHtml(value) {
 
-    if (
-      value === undefined ||
-      value === null
-    ) {
-
+    if (value === undefined || value === null) {
       return '';
-
     }
 
     return String(value)
-
       .replace(/&/g, '&amp;')
-
       .replace(/</g, '&lt;')
-
       .replace(/>/g, '&gt;')
-
       .replace(/"/g, '&quot;')
-
       .replace(/'/g, '&#039;');
 
   }
 
 
-
-  /* =========================================================
-     CLEAN DIMENSION
-     ========================================================= */
-
   function cleanDimension(value) {
 
     if (!value) {
-
       return '';
-
     }
 
     return String(value)
-
       .replace(/["″”“]/g, '')
-
       .trim();
 
   }
 
-
-
-  /* =========================================================
-     SAFE DIMENSION NUMBER
-     ========================================================= */
 
   function dimensionNumber(value) {
 
@@ -618,9 +530,7 @@ document.addEventListener('DOMContentLoaded', function () {
       );
 
     if (isNaN(number)) {
-
       return 0;
-
     }
 
     return number;
@@ -628,32 +538,20 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
 
-
-  /* =========================================================
-     NO DRAWING
-     ========================================================= */
-
   function noDrawing() {
 
     return `
-      <div
-        style="
-          color:#777;
-          padding:25px;
-          font-size:14px;
-        "
-      >
+      <div style="
+        color:#777;
+        padding:25px;
+        font-size:14px;
+      ">
         Fabrication diagram unavailable.
       </div>
     `;
 
   }
 
-
-
-  /* =========================================================
-     MANUAL IMAGE
-     ========================================================= */
 
   function drawManualImage(item) {
 
@@ -673,33 +571,24 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
 
-
   /* =========================================================
      U CHANNEL
      ========================================================= */
 
   function drawUChannel(item) {
 
-    const web =
-      cleanDimension(item.web);
-
-    const legs =
-      cleanDimension(item.legs);
-
+    const web = cleanDimension(item.web);
+    const legs = cleanDimension(item.legs);
 
     if (!web || !legs) {
-
       return noDrawing();
-
     }
-
 
     const width =
       Math.max(
         100,
         dimensionNumber(web) * 55
       );
-
 
     const height =
       Math.max(
@@ -709,102 +598,67 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
     return `
+      <div class="drawing-wrap">
 
-      <div
-        class="drawing-wrap"
-      >
-
-        <table
-          cellpadding="0"
-          cellspacing="0"
-          border="0"
-          style="
-            margin:0 auto;
-            border-collapse:collapse;
-            border:none;
-          "
-        >
+        <table cellpadding="0" cellspacing="0" border="0">
 
           <tr>
 
-            <td
-              style="
-                width:55px;
-                border:none !important;
-                padding:0;
-              "
-            ></td>
+            <td style="
+              width:55px;
+              padding:0;
+            "></td>
 
-
-            <td
-              style="
-                width:${width}px;
-                border:none !important;
-                text-align:center;
-                font-size:20px;
-                padding:0 0 10px 0;
-                white-space:nowrap;
-              "
-            >
+            <td style="
+              width:${width}px;
+              text-align:center;
+              font-size:20px;
+              padding:0 0 10px 0;
+              white-space:nowrap;
+            ">
               ${escapeHtml(web)}"
             </td>
 
-
-            <td
-              style="
-                width:55px;
-                border:none !important;
-                padding:0;
-              "
-            ></td>
+            <td style="
+              width:55px;
+              padding:0;
+            "></td>
 
           </tr>
 
 
           <tr>
 
-            <td
-              style="
-                width:55px;
-                border:none !important;
-                padding:0 10px 0 0;
-                text-align:right;
-                vertical-align:middle;
-                font-size:20px;
-                white-space:nowrap;
-              "
-            >
+            <td style="
+              width:55px;
+              padding:0 10px 0 0;
+              text-align:right;
+              vertical-align:middle;
+              font-size:20px;
+              white-space:nowrap;
+            ">
               ${escapeHtml(legs)}"
             </td>
 
-
             <td
+              class="profile-u"
               style="
                 width:${width}px;
                 height:${height}px;
-                border:none;
-                border-top:3px solid #111111 !important;
-                border-left:3px solid #111111 !important;
-                border-right:3px solid #111111 !important;
-                border-bottom:none !important;
                 padding:0;
               "
             >
               &nbsp;
             </td>
 
-
-            <td
-              style="
-                width:55px;
-                border:none !important;
-                padding:0 0 0 10px;
-                text-align:left;
-                vertical-align:middle;
-                font-size:20px;
-                white-space:nowrap;
-              "
-            >
+            <td style="
+              width:55px;
+              padding:0 0 0 10px;
+              text-align:left;
+              vertical-align:middle;
+              font-size:20px;
+              white-space:nowrap;
+            ">
               ${escapeHtml(legs)}"
             </td>
 
@@ -813,11 +667,9 @@ document.addEventListener('DOMContentLoaded', function () {
         </table>
 
       </div>
-
     `;
 
   }
-
 
 
   /* =========================================================
@@ -826,29 +678,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
   function drawHatChannel(item) {
 
-    const depth =
-      cleanDimension(item.depth);
+    const depth = cleanDimension(item.depth);
+    const crown = cleanDimension(item.crown);
+    const flange = cleanDimension(item.flange || item.flanges);
 
-    const crown =
-      cleanDimension(item.crown);
-
-    const flange =
-      cleanDimension(
-        item.flange ||
-        item.flanges
-      );
-
-
-    if (
-      !depth ||
-      !crown ||
-      !flange
-    ) {
-
+    if (!depth || !crown || !flange) {
       return noDrawing();
-
     }
-
 
     const crownWidth =
       Math.max(
@@ -856,13 +692,11 @@ document.addEventListener('DOMContentLoaded', function () {
         dimensionNumber(crown) * 45
       );
 
-
     const depthHeight =
       Math.max(
         55,
         dimensionNumber(depth) * 45
       );
-
 
     const flangeWidth =
       Math.max(
@@ -872,69 +706,42 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
     return `
+      <div class="drawing-wrap">
 
-      <div
-        class="drawing-wrap"
-      >
-
-        <table
-          cellpadding="0"
-          cellspacing="0"
-          border="0"
-          style="
-            margin:0 auto;
-            border-collapse:collapse;
-            border:none;
-          "
-        >
-
+        <table cellpadding="0" cellspacing="0" border="0">
 
           <tr>
 
-            <td
-              style="
-                width:${flangeWidth}px;
-                border:none !important;
-                padding:0;
-              "
-            ></td>
+            <td style="
+              width:${flangeWidth}px;
+              padding:0;
+            "></td>
 
-
-            <td
-              style="
-                width:${crownWidth}px;
-                border:none !important;
-                padding:0 0 10px 0;
-                text-align:center;
-                font-size:20px;
-                white-space:nowrap;
-              "
-            >
+            <td style="
+              width:${crownWidth}px;
+              padding:0 0 10px 0;
+              text-align:center;
+              font-size:20px;
+              white-space:nowrap;
+            ">
               ${escapeHtml(crown)}"
             </td>
 
-
-            <td
-              style="
-                width:${flangeWidth}px;
-                border:none !important;
-                padding:0;
-              "
-            ></td>
+            <td style="
+              width:${flangeWidth}px;
+              padding:0;
+            "></td>
 
           </tr>
 
 
-
           <tr>
 
             <td
+              class="profile-hat-left"
               style="
                 width:${flangeWidth}px;
                 height:${depthHeight}px;
-                border:none;
-                border-bottom:3px solid #111111 !important;
-                border-right:3px solid #111111 !important;
                 padding:0;
               "
             >
@@ -943,11 +750,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
             <td
+              class="profile-hat-crown"
               style="
                 width:${crownWidth}px;
                 height:${depthHeight}px;
-                border:none;
-                border-top:3px solid #111111 !important;
                 padding:0;
                 vertical-align:middle;
               "
@@ -959,38 +765,27 @@ document.addEventListener('DOMContentLoaded', function () {
                 cellpadding="0"
                 cellspacing="0"
                 border="0"
-                style="
-                  border:none;
-                  border-collapse:collapse;
-                "
               >
 
                 <tr>
 
-                  <td
-                    style="
-                      border:none !important;
-                      text-align:left;
-                      vertical-align:middle;
-                      padding:0 0 0 7px;
-                      font-size:18px;
-                      white-space:nowrap;
-                    "
-                  >
+                  <td style="
+                    text-align:left;
+                    vertical-align:middle;
+                    padding:0 0 0 7px;
+                    font-size:18px;
+                    white-space:nowrap;
+                  ">
                     ${escapeHtml(depth)}"
                   </td>
 
-
-                  <td
-                    style="
-                      border:none !important;
-                      text-align:right;
-                      vertical-align:middle;
-                      padding:0 7px 0 0;
-                      font-size:18px;
-                      white-space:nowrap;
-                    "
-                  >
+                  <td style="
+                    text-align:right;
+                    vertical-align:middle;
+                    padding:0 7px 0 0;
+                    font-size:18px;
+                    white-space:nowrap;
+                  ">
                     ${escapeHtml(depth)}"
                   </td>
 
@@ -1002,12 +797,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
             <td
+              class="profile-hat-right"
               style="
                 width:${flangeWidth}px;
                 height:${depthHeight}px;
-                border:none;
-                border-bottom:3px solid #111111 !important;
-                border-left:3px solid #111111 !important;
                 padding:0;
               "
             >
@@ -1017,52 +810,36 @@ document.addEventListener('DOMContentLoaded', function () {
           </tr>
 
 
-
           <tr>
 
-            <td
-              style="
-                border:none !important;
-                text-align:center;
-                padding:7px 0 0 0;
-                font-size:18px;
-                white-space:nowrap;
-              "
-            >
+            <td style="
+              text-align:center;
+              padding:7px 0 0 0;
+              font-size:18px;
+              white-space:nowrap;
+            ">
               ${escapeHtml(flange)}"
             </td>
 
+            <td></td>
 
-            <td
-              style="
-                border:none !important;
-              "
-            ></td>
-
-
-            <td
-              style="
-                border:none !important;
-                text-align:center;
-                padding:7px 0 0 0;
-                font-size:18px;
-                white-space:nowrap;
-              "
-            >
+            <td style="
+              text-align:center;
+              padding:7px 0 0 0;
+              font-size:18px;
+              white-space:nowrap;
+            ">
               ${escapeHtml(flange)}"
             </td>
 
           </tr>
 
-
         </table>
 
       </div>
-
     `;
 
   }
-
 
 
   /* =========================================================
@@ -1083,20 +860,15 @@ document.addEventListener('DOMContentLoaded', function () {
         item.flanges
       );
 
-
     if (!depth || !flange) {
-
       return noDrawing();
-
     }
-
 
     const depthWidth =
       Math.max(
         100,
         dimensionNumber(depth) * 55
       );
-
 
     const flangeHeight =
       Math.max(
@@ -1106,48 +878,30 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
     return `
+      <div class="drawing-wrap">
 
-      <div
-        class="drawing-wrap"
-      >
-
-        <table
-          cellpadding="0"
-          cellspacing="0"
-          border="0"
-          style="
-            margin:0 auto;
-            border-collapse:collapse;
-            border:none;
-          "
-        >
-
+        <table cellpadding="0" cellspacing="0" border="0">
 
           <tr>
 
-            <td
-              style="
-                width:55px;
-                height:${flangeHeight}px;
-                border:none !important;
-                padding:0 10px 0 0;
-                text-align:right;
-                vertical-align:middle;
-                font-size:20px;
-                white-space:nowrap;
-              "
-            >
+            <td style="
+              width:55px;
+              height:${flangeHeight}px;
+              padding:0 10px 0 0;
+              text-align:right;
+              vertical-align:middle;
+              font-size:20px;
+              white-space:nowrap;
+            ">
               ${escapeHtml(flange)}"
             </td>
 
 
             <td
+              class="profile-z-top"
               style="
                 width:${depthWidth}px;
                 height:${flangeHeight}px;
-                border:none;
-                border-left:3px solid #111111 !important;
-                border-bottom:3px solid #111111 !important;
                 padding:0 0 7px 0;
                 text-align:center;
                 vertical-align:bottom;
@@ -1159,75 +913,61 @@ document.addEventListener('DOMContentLoaded', function () {
             </td>
 
 
-            <td
-              style="
-                width:55px;
-                height:${flangeHeight}px;
-                border:none !important;
-              "
-            >
+            <td style="
+              width:55px;
+              height:${flangeHeight}px;
+            ">
               &nbsp;
             </td>
 
           </tr>
 
 
-
           <tr>
 
-            <td
-              style="
-                width:55px;
-                height:${flangeHeight}px;
-                border:none !important;
-              "
-            >
+            <td style="
+              width:55px;
+              height:${flangeHeight}px;
+            ">
               &nbsp;
             </td>
 
 
             <td
+              class="profile-z-bottom"
               style="
                 width:${depthWidth}px;
                 height:${flangeHeight}px;
-                border:none;
-                border-right:3px solid #111111 !important;
               "
             >
               &nbsp;
             </td>
 
 
-            <td
-              style="
-                width:55px;
-                height:${flangeHeight}px;
-                border:none !important;
-                padding:0 0 0 10px;
-                text-align:left;
-                vertical-align:middle;
-                font-size:20px;
-                white-space:nowrap;
-              "
-            >
+            <td style="
+              width:55px;
+              height:${flangeHeight}px;
+              padding:0 0 0 10px;
+              text-align:left;
+              vertical-align:middle;
+              font-size:20px;
+              white-space:nowrap;
+            ">
               ${escapeHtml(flange)}"
             </td>
 
           </tr>
 
-
         </table>
 
       </div>
-
     `;
 
   }
 
 
-
   /* =========================================================
-     SUPPORT / CLOSURE ANGLE
+     ANGLE
      ========================================================= */
 
   function drawAngle(item) {
@@ -1239,7 +979,6 @@ document.addEventListener('DOMContentLoaded', function () {
         item.mounting_leg
       );
 
-
     const vertical =
       cleanDimension(
         item.vertical ||
@@ -1247,23 +986,15 @@ document.addEventListener('DOMContentLoaded', function () {
         item.panel_leg
       );
 
-
-    if (
-      !horizontal ||
-      !vertical
-    ) {
-
+    if (!horizontal || !vertical) {
       return noDrawing();
-
     }
-
 
     const width =
       Math.max(
         100,
         dimensionNumber(horizontal) * 50
       );
-
 
     const height =
       Math.max(
@@ -1273,48 +1004,30 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
     return `
+      <div class="drawing-wrap">
 
-      <div
-        class="drawing-wrap"
-      >
-
-        <table
-          cellpadding="0"
-          cellspacing="0"
-          border="0"
-          style="
-            margin:0 auto;
-            border-collapse:collapse;
-            border:none;
-          "
-        >
-
+        <table cellpadding="0" cellspacing="0" border="0">
 
           <tr>
 
-            <td
-              style="
-                width:60px;
-                height:${height}px;
-                border:none !important;
-                padding:0 10px 0 0;
-                text-align:right;
-                vertical-align:middle;
-                font-size:20px;
-                white-space:nowrap;
-              "
-            >
+            <td style="
+              width:60px;
+              height:${height}px;
+              padding:0 10px 0 0;
+              text-align:right;
+              vertical-align:middle;
+              font-size:20px;
+              white-space:nowrap;
+            ">
               ${escapeHtml(vertical)}"
             </td>
 
 
             <td
+              class="profile-angle"
               style="
                 width:${width}px;
                 height:${height}px;
-                border:none;
-                border-left:3px solid #111111 !important;
-                border-bottom:3px solid #111111 !important;
                 padding:0;
               "
             >
@@ -1322,77 +1035,48 @@ document.addEventListener('DOMContentLoaded', function () {
             </td>
 
 
-            <td
-              style="
-                width:30px;
-                border:none !important;
-              "
-            ></td>
+            <td style="
+              width:30px;
+            "></td>
 
           </tr>
-
 
 
           <tr>
 
-            <td
-              style="
-                border:none !important;
-              "
-            ></td>
+            <td></td>
 
-
-            <td
-              style="
-                border:none !important;
-                text-align:center;
-                padding:7px 0 0 0;
-                font-size:20px;
-                white-space:nowrap;
-              "
-            >
+            <td style="
+              text-align:center;
+              padding:7px 0 0 0;
+              font-size:20px;
+              white-space:nowrap;
+            ">
               ${escapeHtml(horizontal)}"
             </td>
 
-
-            <td
-              style="
-                border:none !important;
-              "
-            ></td>
+            <td></td>
 
           </tr>
-
 
         </table>
 
       </div>
-
     `;
 
   }
 
 
-
-  /* =========================================================
-     DETERMINE DRAWING TYPE
-     ========================================================= */
-
   function getDrawing(item) {
 
-
     if (item.img_url) {
-
       return drawManualImage(item);
-
     }
-
 
     const profile =
       String(
         item.profile || ''
       ).toLowerCase();
-
 
     const name =
       String(
@@ -1400,81 +1084,42 @@ document.addEventListener('DOMContentLoaded', function () {
       ).toLowerCase();
 
 
-
-    /* U CHANNEL */
-
     if (
-
       profile === 'u' ||
-
       profile === 'u-channel' ||
-
       profile === 'u channel' ||
-
       name.includes('u channel')
-
     ) {
-
       return drawUChannel(item);
-
     }
 
 
-
-    /* HAT CHANNEL */
-
     if (
-
       profile === 'hat' ||
-
       profile === 'hat-channel' ||
-
       profile === 'hat channel' ||
-
       name.includes('hat channel')
-
     ) {
-
       return drawHatChannel(item);
-
     }
 
 
-
-    /* Z GIRT */
-
     if (
-
       profile === 'z' ||
-
       profile === 'z-girt' ||
-
       profile === 'z girt' ||
-
       name.includes('z girt')
-
     ) {
-
       return drawZGirt(item);
-
     }
 
 
-
-    /* ANGLE */
-
     if (
-
       profile === 'angle' ||
-
       name.includes('support angle') ||
-
       name.includes('closure angle')
-
     ) {
-
       return drawAngle(item);
-
     }
 
 
@@ -1483,77 +1128,52 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
 
-
-  /* =========================================================
-     RENDER ITEMS
-     ========================================================= */
-
   function renderItems() {
-
 
     const container =
       document.getElementById(
         'items-container'
       );
 
-
     container.innerHTML = '';
-
 
 
     if (!items.length) {
 
-
       container.innerHTML = `
-
-        <div
-          style="
-            padding:25px;
-            border:1px solid #ddd;
-            background:#f7f7f7;
-            text-align:center;
-            margin-bottom:20px;
-          "
-        >
-
+        <div style="
+          padding:25px;
+          border:1px solid #ddd;
+          background:#f7f7f7;
+          text-align:center;
+          margin-bottom:20px;
+        ">
           Fabrication details for Order
-          <strong>
-            ${escapeHtml(order)}
-          </strong>
-
+          <strong>${escapeHtml(order)}</strong>
         </div>
-
       `;
-
 
       return;
 
     }
 
 
-
     items.forEach(function(item) {
-
 
       const quantity =
         item.quantity ||
         item.qty ||
         1;
 
-
       const table =
         document.createElement('table');
 
-
-      table.className =
-        'fab-item';
-
+      table.className = 'fab-item';
 
       table.setAttribute(
         'cellpadding',
         '0'
       );
-
 
       table.setAttribute(
         'cellspacing',
@@ -1565,30 +1185,20 @@ document.addEventListener('DOMContentLoaded', function () {
 
         <tr>
 
-          <td
-            class="fab-item-info"
-          >
+          <td class="fab-item-info">
 
-            <div
-              class="fab-item-name"
-            >
+            <div class="fab-item-name">
               ${escapeHtml(item.name)}
             </div>
 
-
-            <div
-              class="fab-qty"
-            >
-              Quantity:
-              ${escapeHtml(quantity)}
+            <div class="fab-qty">
+              Quantity: ${escapeHtml(quantity)}
             </div>
 
           </td>
 
 
-          <td
-            class="fab-item-drawing"
-          >
+          <td class="fab-item-drawing">
 
             ${getDrawing(item)}
 
@@ -1606,80 +1216,61 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
 
-
-    /* SINGULAR / PLURAL */
-
     if (items.length > 1) {
-
 
       document
         .getElementById('approve-button')
         .textContent =
         'Approve All';
 
-
       document
         .getElementById('approval-description')
         .textContent =
         'Please confirm that all fabrication details and diagrams shown above are correct.';
 
-
     }
 
     else {
-
 
       document
         .getElementById('approve-button')
         .textContent =
         'Approve';
 
-
       document
         .getElementById('approval-description')
         .textContent =
         'Please confirm that the fabrication details and diagram shown above are correct.';
-
 
     }
 
   }
 
 
-
-  /* =========================================================
-     SUBMIT TO ZAPIER
-     ========================================================= */
-
   function submitToZapier(
     actionValue,
     modificationsValue
   ) {
-
 
     document
       .getElementById('zapier-action')
       .value =
       actionValue;
 
-
     document
       .getElementById('zapier-order-number')
       .value =
       order;
-
 
     document
       .getElementById('zapier-modifications')
       .value =
       modificationsValue || '';
 
-
     document
       .getElementById('zapier-items')
       .value =
       JSON.stringify(items);
-
 
     document
       .getElementById('zapier-form')
@@ -1688,29 +1279,20 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
 
-
-  /* =========================================================
-     APPROVE BUTTON
-     ========================================================= */
-
   document
     .getElementById('approve-button')
     .addEventListener(
       'click',
       function () {
 
-
         const button =
           this;
-
 
         button.disabled =
           true;
 
-
         button.textContent =
           'Submitting...';
-
 
 
         submitToZapier(
@@ -1719,28 +1301,23 @@ document.addEventListener('DOMContentLoaded', function () {
         );
 
 
-
         setTimeout(
           function () {
-
 
             document
               .getElementById('review-screen')
               .style.display =
               'none';
 
-
             document
               .getElementById('modify-screen')
               .style.display =
               'none';
 
-
             document
               .getElementById('success-title')
               .textContent =
               'Fabrication Approved';
-
 
             document
               .getElementById('success-message')
@@ -1749,26 +1326,18 @@ document.addEventListener('DOMContentLoaded', function () {
               order +
               ' has been received.';
 
-
             document
               .getElementById('success-screen')
               .style.display =
               'block';
 
-
           },
           750
         );
 
-
       }
     );
 
-
-
-  /* =========================================================
-     SHOW MODIFICATIONS
-     ========================================================= */
 
   document
     .getElementById('show-modify-button')
@@ -1776,27 +1345,19 @@ document.addEventListener('DOMContentLoaded', function () {
       'click',
       function () {
 
-
         document
           .getElementById('review-screen')
           .style.display =
           'none';
-
 
         document
           .getElementById('modify-screen')
           .style.display =
           'block';
 
-
       }
     );
 
-
-
-  /* =========================================================
-     BACK TO REVIEW
-     ========================================================= */
 
   document
     .getElementById('back-to-review')
@@ -1804,34 +1365,25 @@ document.addEventListener('DOMContentLoaded', function () {
       'click',
       function () {
 
-
         document
           .getElementById('modify-screen')
           .style.display =
           'none';
-
 
         document
           .getElementById('review-screen')
           .style.display =
           'block';
 
-
       }
     );
 
-
-
-  /* =========================================================
-     SUBMIT MODIFICATIONS
-     ========================================================= */
 
   document
     .getElementById('submit-modifications')
     .addEventListener(
       'click',
       function () {
-
 
         const modifications =
           document
@@ -1840,32 +1392,25 @@ document.addEventListener('DOMContentLoaded', function () {
             .trim();
 
 
-
         if (!modifications) {
-
 
           alert(
             'Please enter the modifications you would like us to make.'
           );
-
 
           return;
 
         }
 
 
-
         const button =
           this;
-
 
         button.disabled =
           true;
 
-
         button.textContent =
           'Submitting...';
-
 
 
         submitToZapier(
@@ -1874,28 +1419,23 @@ document.addEventListener('DOMContentLoaded', function () {
         );
 
 
-
         setTimeout(
           function () {
-
 
             document
               .getElementById('modify-screen')
               .style.display =
               'none';
 
-
             document
               .getElementById('review-screen')
               .style.display =
               'none';
 
-
             document
               .getElementById('success-title')
               .textContent =
               'Changes Requested';
-
 
             document
               .getElementById('success-message')
@@ -1904,29 +1444,20 @@ document.addEventListener('DOMContentLoaded', function () {
               order +
               ' have been submitted.';
 
-
             document
               .getElementById('success-screen')
               .style.display =
               'block';
 
-
           },
           750
         );
-
 
       }
     );
 
 
-
-  /* =========================================================
-     INITIALIZE PAGE
-     ========================================================= */
-
   renderItems();
-
 
   document
     .getElementById('loading')
@@ -1934,38 +1465,25 @@ document.addEventListener('DOMContentLoaded', function () {
     'none';
 
 
-
-  /*
-    If customer clicked MODIFY in email,
-    take them directly to modification screen.
-
-    Otherwise show full review screen.
-  */
-
   if (
     requestedAction === 'modify'
   ) {
-
 
     document
       .getElementById('modify-screen')
       .style.display =
       'block';
 
-
   }
 
   else {
-
 
     document
       .getElementById('review-screen')
       .style.display =
       'block';
 
-
   }
-
 
 });
 </script>
