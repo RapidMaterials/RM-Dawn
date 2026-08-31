@@ -1,0 +1,237 @@
+<div style="max-width:700px;margin:60px auto;padding:30px;font-family:Arial,sans-serif;">
+
+  <div id="loading">
+    Loading fabrication approval...
+  </div>
+
+  <div id="approved-screen" style="display:none;text-align:center;">
+    <h1>Fabrication Approval</h1>
+
+    <p>
+      You are approving the fabrication details for
+      <strong>Order <span class="order-number"></span></strong>.
+    </p>
+
+    <p>
+      Please confirm that all fabrication details and dimensions are correct.
+    </p>
+
+    <button
+      type="button"
+      id="approve-button"
+      style="
+        background:#2f6f3e;
+        color:#fff;
+        border:0;
+        padding:14px 28px;
+        font-size:16px;
+        font-weight:bold;
+        cursor:pointer;
+        border-radius:4px;
+      ">
+      Confirm Approval
+    </button>
+  </div>
+
+
+  <div id="modify-screen" style="display:none;">
+    <h1>Request Fabrication Changes</h1>
+
+    <p>
+      Order <strong><span class="order-number"></span></strong>
+    </p>
+
+    <p>
+      Please describe the changes you would like us to make:
+    </p>
+
+    <textarea
+      id="modifications"
+      rows="7"
+      style="
+        width:100%;
+        box-sizing:border-box;
+        padding:12px;
+        font-size:15px;
+        border:1px solid #ccc;
+        border-radius:4px;
+      "
+      placeholder="Enter requested modifications here..."
+    ></textarea>
+
+    <br><br>
+
+    <button
+      type="button"
+      id="modify-button"
+      style="
+        background:#444;
+        color:#fff;
+        border:0;
+        padding:14px 28px;
+        font-size:16px;
+        font-weight:bold;
+        cursor:pointer;
+        border-radius:4px;
+      ">
+      Submit Modifications
+    </button>
+  </div>
+
+
+  <div id="success-screen" style="display:none;text-align:center;">
+    <h1 id="success-title"></h1>
+    <p id="success-message"></p>
+  </div>
+
+
+  <div id="error-screen" style="display:none;text-align:center;">
+    <h1>Something Went Wrong</h1>
+    <p>
+      We were unable to submit your response. Please contact Rapid Materials.
+    </p>
+  </div>
+
+</div>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+
+  const params = new URLSearchParams(window.location.search);
+
+  const order = params.get('order');
+  const orderdeskId = params.get('od_id');
+  const action = params.get('action');
+
+  document.querySelectorAll('.order-number').forEach(function(el) {
+    el.textContent = order || '';
+  });
+
+  document.getElementById('loading').style.display = 'none';
+
+  if (action === 'approved') {
+    document.getElementById('approved-screen').style.display = 'block';
+  }
+
+  else if (action === 'modify') {
+    document.getElementById('modify-screen').style.display = 'block';
+  }
+
+  else {
+    document.getElementById('error-screen').style.display = 'block';
+  }
+
+
+  async function sendToZapier(data) {
+
+    const formData = new URLSearchParams();
+
+    Object.keys(data).forEach(function(key) {
+      formData.append(key, data[key] || '');
+    });
+
+    return fetch('YOUR_ZAPIER_WEBHOOK_URL_HERE', {
+      method: 'POST',
+      body: formData
+    });
+
+  }
+
+
+  document.getElementById('approve-button').addEventListener('click', async function () {
+
+    const button = this;
+
+    button.disabled = true;
+    button.textContent = 'Submitting...';
+
+    try {
+
+      await sendToZapier({
+        action: 'approved',
+        order_number: order,
+        orderdesk_id: orderdeskId
+      });
+
+      document.getElementById('approved-screen').style.display = 'none';
+
+      document.getElementById('success-title').textContent =
+        'Fabrication Approved';
+
+      document.getElementById('success-message').textContent =
+        'Thank you. Your approval for Order ' + order + ' has been received.';
+
+      document.getElementById('success-screen').style.display = 'block';
+
+    }
+
+    catch (error) {
+
+      document.getElementById('approved-screen').style.display = 'none';
+      document.getElementById('error-screen').style.display = 'block';
+
+    }
+
+  });
+
+
+  document.getElementById('modify-button').addEventListener('click', async function () {
+
+    const modifications =
+      document.getElementById('modifications').value.trim();
+
+    if (!modifications) {
+      alert('Please enter the modifications you would like us to make.');
+      return;
+    }
+
+    const button = this;
+
+    button.disabled = true;
+    button.textContent = 'Submitting...';
+
+    try {
+
+      await sendToZapier({
+        action: 'modify',
+        order_number: order,
+        orderdesk_id: orderdeskId,
+        modifications: modifications
+      });
+
+      document.getElementById('modify-screen').style.display = 'none';
+
+      document.getElementById('success-title').textContent =
+        'Changes Requested';
+
+      document.getElementById('success-message').textContent =
+        'Thank you. Your requested changes for Order ' + order + ' have been submitted.';
+
+      document.getElementById('success-screen').style.display = 'block';
+
+    }
+
+    catch (error) {
+
+      document.getElementById('modify-screen').style.display = 'none';
+      document.getElementById('error-screen').style.display = 'block';
+
+    }
+
+  });
+
+});
+</script>
+
+{% schema %}
+{
+  "name": "Fabrication Approval",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Fabrication Approval"
+    }
+  ]
+}
+{% endschema %}
