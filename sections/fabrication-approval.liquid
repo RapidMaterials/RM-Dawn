@@ -152,6 +152,11 @@
     text-align: center;
   }
 
+
+  /* =========================================================
+     DRAWINGS
+     ========================================================= */
+
   .drawing-wrap {
     display: inline-block;
     margin: 0 auto;
@@ -159,66 +164,109 @@
   }
 
 
-  /* =========================================================
-     REMOVE SHOPIFY TABLE STYLING FROM DRAWINGS
-     ========================================================= */
+  /*
+    Remove Shopify theme styling from the internal
+    tables used to construct the fabrication drawings.
+  */
 
   .drawing-wrap,
   .drawing-wrap table,
   .drawing-wrap tbody,
   .drawing-wrap tr,
   .drawing-wrap td {
-    border: none !important;
     outline: none !important;
     box-shadow: none !important;
     background: transparent !important;
   }
 
   .drawing-wrap table {
+    border: none !important;
     border-collapse: collapse !important;
     border-spacing: 0 !important;
     margin: 0 auto !important;
   }
 
+  .drawing-wrap tr {
+    border: none !important;
+  }
+
+  .drawing-wrap td {
+    border: none !important;
+  }
+
 
   /* =========================================================
-     RESTORE ONLY THE ACTUAL PROFILE LINES
+     U CHANNEL PROFILE
      ========================================================= */
 
-  .profile-u {
-    border-top: 3px solid #111 !important;
-    border-left: 3px solid #111 !important;
-    border-right: 3px solid #111 !important;
+  .drawing-wrap td.profile-u {
+    border-top: 3px solid #111111 !important;
+    border-left: 3px solid #111111 !important;
+    border-right: 3px solid #111111 !important;
+    border-bottom: none !important;
   }
 
-  .profile-hat-left {
-    border-bottom: 3px solid #111 !important;
-    border-right: 3px solid #111 !important;
+
+  /* =========================================================
+     HAT CHANNEL PROFILE
+     ========================================================= */
+
+  .drawing-wrap td.profile-hat-left {
+    border-top: none !important;
+    border-left: none !important;
+    border-bottom: 3px solid #111111 !important;
+    border-right: 3px solid #111111 !important;
   }
 
-  .profile-hat-crown {
-    border-top: 3px solid #111 !important;
+  .drawing-wrap td.profile-hat-crown {
+    border-top: 3px solid #111111 !important;
+    border-left: none !important;
+    border-right: none !important;
+    border-bottom: none !important;
   }
 
-  .profile-hat-right {
-    border-bottom: 3px solid #111 !important;
-    border-left: 3px solid #111 !important;
+  .drawing-wrap td.profile-hat-right {
+    border-top: none !important;
+    border-right: none !important;
+    border-bottom: 3px solid #111111 !important;
+    border-left: 3px solid #111111 !important;
   }
 
-  .profile-z-top {
-    border-left: 3px solid #111 !important;
-    border-bottom: 3px solid #111 !important;
+
+  /* =========================================================
+     Z GIRT PROFILE
+     ========================================================= */
+
+  .drawing-wrap td.profile-z-top {
+    border-top: none !important;
+    border-right: none !important;
+    border-left: 3px solid #111111 !important;
+    border-bottom: 3px solid #111111 !important;
   }
 
-  .profile-z-bottom {
-    border-right: 3px solid #111 !important;
+  .drawing-wrap td.profile-z-bottom {
+    border-top: none !important;
+    border-left: none !important;
+    border-bottom: none !important;
+    border-right: 3px solid #111111 !important;
   }
 
-  .profile-angle {
-    border-left: 3px solid #111 !important;
-    border-bottom: 3px solid #111 !important;
+
+  /* =========================================================
+     ANGLE PROFILE
+     ========================================================= */
+
+  .drawing-wrap td.profile-angle {
+    border-top: none !important;
+    border-right: none !important;
+    border-left: 3px solid #111111 !important;
+    border-bottom: 3px solid #111111 !important;
   }
 
+
+  /* =========================================================
+     MOBILE
+     ========================================================= */
 
   @media screen and (max-width: 700px) {
 
@@ -264,19 +312,28 @@
 
 <div class="fab-approval-page">
 
+
+  <!-- LOADING -->
+
   <div id="loading">
     Loading fabrication details...
   </div>
 
 
+  <!-- ======================================================
+       REVIEW SCREEN
+       ====================================================== -->
+
   <div id="review-screen" style="display:none;">
 
     <div class="fab-header">
+
       <h1>Fabrication Approval</h1>
 
       <div class="fab-order">
         Order <strong id="display-order"></strong>
       </div>
+
     </div>
 
 
@@ -311,6 +368,7 @@
           Approve
         </button>
 
+
         <button
           type="button"
           id="show-modify-button"
@@ -324,7 +382,14 @@
     </div>
 
 
-    <p style="text-align:center;margin-top:25px;font-size:14px;color:#555;">
+    <p
+      style="
+        text-align:center;
+        margin-top:25px;
+        font-size:14px;
+        color:#555;
+      "
+    >
       <strong>
         Fabrication will not begin until your approval is received.
       </strong>
@@ -333,14 +398,20 @@
   </div>
 
 
+  <!-- ======================================================
+       MODIFICATION SCREEN
+       ====================================================== -->
+
   <div id="modify-screen" style="display:none;">
 
     <div class="fab-header">
+
       <h1>Request Fabrication Changes</h1>
 
       <div class="fab-order">
         Order <strong class="order-number"></strong>
       </div>
+
     </div>
 
 
@@ -350,6 +421,7 @@
         Please describe the changes that need to be made.
         Include the item and dimension being changed when applicable.
       </p>
+
 
       <textarea
         id="modifications"
@@ -367,6 +439,7 @@
           Submit Modifications
         </button>
 
+
         <button
           type="button"
           id="back-to-review"
@@ -382,25 +455,51 @@
   </div>
 
 
-  <div id="success-screen" class="fab-success" style="display:none;">
+  <!-- ======================================================
+       SUCCESS
+       ====================================================== -->
+
+  <div
+    id="success-screen"
+    class="fab-success"
+    style="display:none;"
+  >
+
     <h1 id="success-title"></h1>
-    <p id="success-message" style="font-size:17px;"></p>
+
+    <p
+      id="success-message"
+      style="font-size:17px;"
+    ></p>
+
   </div>
 
+
+  <!-- ======================================================
+       ERROR
+       ====================================================== -->
 
   <div id="error-screen" style="display:none;">
 
     <div class="fab-error">
-      <h2>Unable to Load Fabrication Approval</h2>
+
+      <h2>
+        Unable to Load Fabrication Approval
+      </h2>
 
       <p>
         We were unable to load the fabrication information for this order.
         Please contact Rapid Materials for assistance.
       </p>
+
     </div>
 
   </div>
 
+
+  <!-- ======================================================
+       ZAPIER
+       ====================================================== -->
 
   <iframe
     name="zapier-response"
@@ -449,61 +548,131 @@
 <script>
 document.addEventListener('DOMContentLoaded', function () {
 
-  const params = new URLSearchParams(window.location.search);
 
-  const order = params.get('order');
-  const requestedAction = params.get('action');
-  const itemsParameter = params.get('items');
+  /* =========================================================
+     URL DATA
+     ========================================================= */
+
+  const params =
+    new URLSearchParams(
+      window.location.search
+    );
+
+
+  const order =
+    params.get('order');
+
+
+  const requestedAction =
+    params.get('action');
+
+
+  const itemsParameter =
+    params.get('items');
+
 
   let items = [];
 
 
+  /* =========================================================
+     VALIDATION
+     ========================================================= */
+
   if (!order) {
 
-    document.getElementById('loading').style.display = 'none';
-    document.getElementById('error-screen').style.display = 'block';
+    document
+      .getElementById('loading')
+      .style.display =
+      'none';
+
+
+    document
+      .getElementById('error-screen')
+      .style.display =
+      'block';
+
 
     return;
 
   }
 
 
-  document.getElementById('display-order').textContent = order;
+  document
+    .getElementById('display-order')
+    .textContent =
+    order;
 
-  document.querySelectorAll('.order-number').forEach(function(el) {
-    el.textContent = order;
-  });
 
+  document
+    .querySelectorAll('.order-number')
+    .forEach(function(el) {
+
+      el.textContent =
+        order;
+
+    });
+
+
+  /* =========================================================
+     PARSE ITEMS
+     ========================================================= */
 
   if (itemsParameter) {
 
     try {
-      items = JSON.parse(itemsParameter);
+
+      items =
+        JSON.parse(
+          itemsParameter
+        );
+
     }
 
     catch (error) {
-      console.error('Unable to parse fabrication items:', error);
+
+      console.error(
+        'Unable to parse fabrication items:',
+        error
+      );
+
     }
 
   }
 
 
   if (!Array.isArray(items)) {
+
     items = [];
+
   }
 
 
+  /* =========================================================
+     HELPERS
+     ========================================================= */
+
   function escapeHtml(value) {
 
-    if (value === undefined || value === null) {
+    if (
+      value === undefined ||
+      value === null
+    ) {
+
       return '';
+
     }
 
+
     return String(value)
+
       .replace(/&/g, '&amp;')
+
       .replace(/</g, '&lt;')
+
       .replace(/>/g, '&gt;')
+
       .replace(/"/g, '&quot;')
+
       .replace(/'/g, '&#039;');
 
   }
@@ -512,11 +681,16 @@ document.addEventListener('DOMContentLoaded', function () {
   function cleanDimension(value) {
 
     if (!value) {
+
       return '';
+
     }
 
+
     return String(value)
+
       .replace(/["″”“]/g, '')
+
       .trim();
 
   }
@@ -529,9 +703,13 @@ document.addEventListener('DOMContentLoaded', function () {
         cleanDimension(value)
       );
 
+
     if (isNaN(number)) {
+
       return 0;
+
     }
+
 
     return number;
 
@@ -541,17 +719,23 @@ document.addEventListener('DOMContentLoaded', function () {
   function noDrawing() {
 
     return `
-      <div style="
-        color:#777;
-        padding:25px;
-        font-size:14px;
-      ">
+      <div
+        style="
+          color:#777;
+          padding:25px;
+          font-size:14px;
+        "
+      >
         Fabrication diagram unavailable.
       </div>
     `;
 
   }
 
+
+  /* =========================================================
+     MANUAL IMAGE
+     ========================================================= */
 
   function drawManualImage(item) {
 
@@ -577,18 +761,34 @@ document.addEventListener('DOMContentLoaded', function () {
 
   function drawUChannel(item) {
 
-    const web = cleanDimension(item.web);
-    const legs = cleanDimension(item.legs);
+    const web =
+      cleanDimension(
+        item.web
+      );
 
-    if (!web || !legs) {
+
+    const legs =
+      cleanDimension(
+        item.legs
+      );
+
+
+    if (
+      !web ||
+      !legs
+    ) {
+
       return noDrawing();
+
     }
+
 
     const width =
       Math.max(
         100,
         dimensionNumber(web) * 55
       );
+
 
     const height =
       Math.max(
@@ -598,47 +798,63 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
     return `
+
       <div class="drawing-wrap">
 
-        <table cellpadding="0" cellspacing="0" border="0">
+        <table
+          cellpadding="0"
+          cellspacing="0"
+          border="0"
+        >
 
           <tr>
 
-            <td style="
-              width:55px;
-              padding:0;
-            "></td>
+            <td
+              style="
+                width:55px;
+                padding:0;
+              "
+            ></td>
 
-            <td style="
-              width:${width}px;
-              text-align:center;
-              font-size:20px;
-              padding:0 0 10px 0;
-              white-space:nowrap;
-            ">
+
+            <td
+              style="
+                width:${width}px;
+                text-align:center;
+                font-size:20px;
+                padding:0 0 10px 0;
+                white-space:nowrap;
+              "
+            >
               ${escapeHtml(web)}"
             </td>
 
-            <td style="
-              width:55px;
-              padding:0;
-            "></td>
+
+            <td
+              style="
+                width:55px;
+                padding:0;
+              "
+            ></td>
 
           </tr>
 
 
           <tr>
 
-            <td style="
-              width:55px;
-              padding:0 10px 0 0;
-              text-align:right;
-              vertical-align:middle;
-              font-size:20px;
-              white-space:nowrap;
-            ">
+            <td
+              style="
+                width:55px;
+                padding:0 10px 0 0;
+                text-align:right;
+                vertical-align:middle;
+                font-size:20px;
+                white-space:nowrap;
+              "
+            >
               ${escapeHtml(legs)}"
             </td>
+
 
             <td
               class="profile-u"
@@ -651,14 +867,17 @@ document.addEventListener('DOMContentLoaded', function () {
               &nbsp;
             </td>
 
-            <td style="
-              width:55px;
-              padding:0 0 0 10px;
-              text-align:left;
-              vertical-align:middle;
-              font-size:20px;
-              white-space:nowrap;
-            ">
+
+            <td
+              style="
+                width:55px;
+                padding:0 0 0 10px;
+                text-align:left;
+                vertical-align:middle;
+                font-size:20px;
+                white-space:nowrap;
+              "
+            >
               ${escapeHtml(legs)}"
             </td>
 
@@ -667,6 +886,7 @@ document.addEventListener('DOMContentLoaded', function () {
         </table>
 
       </div>
+
     `;
 
   }
@@ -678,13 +898,35 @@ document.addEventListener('DOMContentLoaded', function () {
 
   function drawHatChannel(item) {
 
-    const depth = cleanDimension(item.depth);
-    const crown = cleanDimension(item.crown);
-    const flange = cleanDimension(item.flange || item.flanges);
+    const depth =
+      cleanDimension(
+        item.depth
+      );
 
-    if (!depth || !crown || !flange) {
+
+    const crown =
+      cleanDimension(
+        item.crown
+      );
+
+
+    const flange =
+      cleanDimension(
+        item.flange ||
+        item.flanges
+      );
+
+
+    if (
+      !depth ||
+      !crown ||
+      !flange
+    ) {
+
       return noDrawing();
+
     }
+
 
     const crownWidth =
       Math.max(
@@ -692,11 +934,13 @@ document.addEventListener('DOMContentLoaded', function () {
         dimensionNumber(crown) * 45
       );
 
+
     const depthHeight =
       Math.max(
         55,
         dimensionNumber(depth) * 45
       );
+
 
     const flangeWidth =
       Math.max(
@@ -706,31 +950,45 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
     return `
+
       <div class="drawing-wrap">
 
-        <table cellpadding="0" cellspacing="0" border="0">
+        <table
+          cellpadding="0"
+          cellspacing="0"
+          border="0"
+        >
+
 
           <tr>
 
-            <td style="
-              width:${flangeWidth}px;
-              padding:0;
-            "></td>
+            <td
+              style="
+                width:${flangeWidth}px;
+                padding:0;
+              "
+            ></td>
 
-            <td style="
-              width:${crownWidth}px;
-              padding:0 0 10px 0;
-              text-align:center;
-              font-size:20px;
-              white-space:nowrap;
-            ">
+
+            <td
+              style="
+                width:${crownWidth}px;
+                padding:0 0 10px 0;
+                text-align:center;
+                font-size:20px;
+                white-space:nowrap;
+              "
+            >
               ${escapeHtml(crown)}"
             </td>
 
-            <td style="
-              width:${flangeWidth}px;
-              padding:0;
-            "></td>
+
+            <td
+              style="
+                width:${flangeWidth}px;
+                padding:0;
+              "
+            ></td>
 
           </tr>
 
@@ -769,23 +1027,28 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 <tr>
 
-                  <td style="
-                    text-align:left;
-                    vertical-align:middle;
-                    padding:0 0 0 7px;
-                    font-size:18px;
-                    white-space:nowrap;
-                  ">
+                  <td
+                    style="
+                      text-align:left;
+                      vertical-align:middle;
+                      padding:0 0 0 7px;
+                      font-size:18px;
+                      white-space:nowrap;
+                    "
+                  >
                     ${escapeHtml(depth)}"
                   </td>
 
-                  <td style="
-                    text-align:right;
-                    vertical-align:middle;
-                    padding:0 7px 0 0;
-                    font-size:18px;
-                    white-space:nowrap;
-                  ">
+
+                  <td
+                    style="
+                      text-align:right;
+                      vertical-align:middle;
+                      padding:0 7px 0 0;
+                      font-size:18px;
+                      white-space:nowrap;
+                    "
+                  >
                     ${escapeHtml(depth)}"
                   </td>
 
@@ -812,23 +1075,29 @@ document.addEventListener('DOMContentLoaded', function () {
 
           <tr>
 
-            <td style="
-              text-align:center;
-              padding:7px 0 0 0;
-              font-size:18px;
-              white-space:nowrap;
-            ">
+            <td
+              style="
+                text-align:center;
+                padding:7px 0 0 0;
+                font-size:18px;
+                white-space:nowrap;
+              "
+            >
               ${escapeHtml(flange)}"
             </td>
 
+
             <td></td>
 
-            <td style="
-              text-align:center;
-              padding:7px 0 0 0;
-              font-size:18px;
-              white-space:nowrap;
-            ">
+
+            <td
+              style="
+                text-align:center;
+                padding:7px 0 0 0;
+                font-size:18px;
+                white-space:nowrap;
+              "
+            >
               ${escapeHtml(flange)}"
             </td>
 
@@ -837,6 +1106,7 @@ document.addEventListener('DOMContentLoaded', function () {
         </table>
 
       </div>
+
     `;
 
   }
@@ -854,21 +1124,30 @@ document.addEventListener('DOMContentLoaded', function () {
         item.web
       );
 
+
     const flange =
       cleanDimension(
         item.flange ||
         item.flanges
       );
 
-    if (!depth || !flange) {
+
+    if (
+      !depth ||
+      !flange
+    ) {
+
       return noDrawing();
+
     }
+
 
     const depthWidth =
       Math.max(
         100,
         dimensionNumber(depth) * 55
       );
+
 
     const flangeHeight =
       Math.max(
@@ -878,21 +1157,29 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
     return `
+
       <div class="drawing-wrap">
 
-        <table cellpadding="0" cellspacing="0" border="0">
+        <table
+          cellpadding="0"
+          cellspacing="0"
+          border="0"
+        >
+
 
           <tr>
 
-            <td style="
-              width:55px;
-              height:${flangeHeight}px;
-              padding:0 10px 0 0;
-              text-align:right;
-              vertical-align:middle;
-              font-size:20px;
-              white-space:nowrap;
-            ">
+            <td
+              style="
+                width:55px;
+                height:${flangeHeight}px;
+                padding:0 10px 0 0;
+                text-align:right;
+                vertical-align:middle;
+                font-size:20px;
+                white-space:nowrap;
+              "
+            >
               ${escapeHtml(flange)}"
             </td>
 
@@ -913,10 +1200,12 @@ document.addEventListener('DOMContentLoaded', function () {
             </td>
 
 
-            <td style="
-              width:55px;
-              height:${flangeHeight}px;
-            ">
+            <td
+              style="
+                width:55px;
+                height:${flangeHeight}px;
+              "
+            >
               &nbsp;
             </td>
 
@@ -925,10 +1214,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
           <tr>
 
-            <td style="
-              width:55px;
-              height:${flangeHeight}px;
-            ">
+            <td
+              style="
+                width:55px;
+                height:${flangeHeight}px;
+              "
+            >
               &nbsp;
             </td>
 
@@ -944,15 +1235,17 @@ document.addEventListener('DOMContentLoaded', function () {
             </td>
 
 
-            <td style="
-              width:55px;
-              height:${flangeHeight}px;
-              padding:0 0 0 10px;
-              text-align:left;
-              vertical-align:middle;
-              font-size:20px;
-              white-space:nowrap;
-            ">
+            <td
+              style="
+                width:55px;
+                height:${flangeHeight}px;
+                padding:0 0 0 10px;
+                text-align:left;
+                vertical-align:middle;
+                font-size:20px;
+                white-space:nowrap;
+              "
+            >
               ${escapeHtml(flange)}"
             </td>
 
@@ -961,6 +1254,7 @@ document.addEventListener('DOMContentLoaded', function () {
         </table>
 
       </div>
+
     `;
 
   }
@@ -979,6 +1273,7 @@ document.addEventListener('DOMContentLoaded', function () {
         item.mounting_leg
       );
 
+
     const vertical =
       cleanDimension(
         item.vertical ||
@@ -986,15 +1281,23 @@ document.addEventListener('DOMContentLoaded', function () {
         item.panel_leg
       );
 
-    if (!horizontal || !vertical) {
+
+    if (
+      !horizontal ||
+      !vertical
+    ) {
+
       return noDrawing();
+
     }
+
 
     const width =
       Math.max(
         100,
         dimensionNumber(horizontal) * 50
       );
+
 
     const height =
       Math.max(
@@ -1004,21 +1307,29 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
     return `
+
       <div class="drawing-wrap">
 
-        <table cellpadding="0" cellspacing="0" border="0">
+        <table
+          cellpadding="0"
+          cellspacing="0"
+          border="0"
+        >
+
 
           <tr>
 
-            <td style="
-              width:60px;
-              height:${height}px;
-              padding:0 10px 0 0;
-              text-align:right;
-              vertical-align:middle;
-              font-size:20px;
-              white-space:nowrap;
-            ">
+            <td
+              style="
+                width:60px;
+                height:${height}px;
+                padding:0 10px 0 0;
+                text-align:right;
+                vertical-align:middle;
+                font-size:20px;
+                white-space:nowrap;
+              "
+            >
               ${escapeHtml(vertical)}"
             </td>
 
@@ -1035,9 +1346,11 @@ document.addEventListener('DOMContentLoaded', function () {
             </td>
 
 
-            <td style="
-              width:30px;
-            "></td>
+            <td
+              style="
+                width:30px;
+              "
+            ></td>
 
           </tr>
 
@@ -1046,14 +1359,18 @@ document.addEventListener('DOMContentLoaded', function () {
 
             <td></td>
 
-            <td style="
-              text-align:center;
-              padding:7px 0 0 0;
-              font-size:20px;
-              white-space:nowrap;
-            ">
+
+            <td
+              style="
+                text-align:center;
+                padding:7px 0 0 0;
+                font-size:20px;
+                white-space:nowrap;
+              "
+            >
               ${escapeHtml(horizontal)}"
             </td>
+
 
             <td></td>
 
@@ -1062,21 +1379,30 @@ document.addEventListener('DOMContentLoaded', function () {
         </table>
 
       </div>
+
     `;
 
   }
 
 
+  /* =========================================================
+     DRAWING ROUTER
+     ========================================================= */
+
   function getDrawing(item) {
 
     if (item.img_url) {
+
       return drawManualImage(item);
+
     }
+
 
     const profile =
       String(
         item.profile || ''
       ).toLowerCase();
+
 
     const name =
       String(
@@ -1090,7 +1416,9 @@ document.addEventListener('DOMContentLoaded', function () {
       profile === 'u channel' ||
       name.includes('u channel')
     ) {
+
       return drawUChannel(item);
+
     }
 
 
@@ -1100,7 +1428,9 @@ document.addEventListener('DOMContentLoaded', function () {
       profile === 'hat channel' ||
       name.includes('hat channel')
     ) {
+
       return drawHatChannel(item);
+
     }
 
 
@@ -1110,7 +1440,9 @@ document.addEventListener('DOMContentLoaded', function () {
       profile === 'z girt' ||
       name.includes('z girt')
     ) {
+
       return drawZGirt(item);
+
     }
 
 
@@ -1119,7 +1451,9 @@ document.addEventListener('DOMContentLoaded', function () {
       name.includes('support angle') ||
       name.includes('closure angle')
     ) {
+
       return drawAngle(item);
+
     }
 
 
@@ -1128,6 +1462,10 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
 
+  /* =========================================================
+     RENDER ITEMS
+     ========================================================= */
+
   function renderItems() {
 
     const container =
@@ -1135,23 +1473,33 @@ document.addEventListener('DOMContentLoaded', function () {
         'items-container'
       );
 
+
     container.innerHTML = '';
 
 
     if (!items.length) {
 
       container.innerHTML = `
-        <div style="
-          padding:25px;
-          border:1px solid #ddd;
-          background:#f7f7f7;
-          text-align:center;
-          margin-bottom:20px;
-        ">
+
+        <div
+          style="
+            padding:25px;
+            border:1px solid #ddd;
+            background:#f7f7f7;
+            text-align:center;
+            margin-bottom:20px;
+          "
+        >
+
           Fabrication details for Order
-          <strong>${escapeHtml(order)}</strong>
+          <strong>
+            ${escapeHtml(order)}
+          </strong>
+
         </div>
+
       `;
+
 
       return;
 
@@ -1165,15 +1513,20 @@ document.addEventListener('DOMContentLoaded', function () {
         item.qty ||
         1;
 
+
       const table =
         document.createElement('table');
 
-      table.className = 'fab-item';
+
+      table.className =
+        'fab-item';
+
 
       table.setAttribute(
         'cellpadding',
         '0'
       );
+
 
       table.setAttribute(
         'cellspacing',
@@ -1192,7 +1545,8 @@ document.addEventListener('DOMContentLoaded', function () {
             </div>
 
             <div class="fab-qty">
-              Quantity: ${escapeHtml(quantity)}
+              Quantity:
+              ${escapeHtml(quantity)}
             </div>
 
           </td>
@@ -1216,12 +1570,15 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
 
+    /* MULTIPLE ITEMS */
+
     if (items.length > 1) {
 
       document
         .getElementById('approve-button')
         .textContent =
         'Approve All';
+
 
       document
         .getElementById('approval-description')
@@ -1230,12 +1587,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
     }
 
+
+    /* SINGLE ITEM */
+
     else {
 
       document
         .getElementById('approve-button')
         .textContent =
         'Approve';
+
 
       document
         .getElementById('approval-description')
@@ -1247,6 +1608,10 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
 
+  /* =========================================================
+     SEND TO ZAPIER
+     ========================================================= */
+
   function submitToZapier(
     actionValue,
     modificationsValue
@@ -1257,20 +1622,24 @@ document.addEventListener('DOMContentLoaded', function () {
       .value =
       actionValue;
 
+
     document
       .getElementById('zapier-order-number')
       .value =
       order;
+
 
     document
       .getElementById('zapier-modifications')
       .value =
       modificationsValue || '';
 
+
     document
       .getElementById('zapier-items')
       .value =
       JSON.stringify(items);
+
 
     document
       .getElementById('zapier-form')
@@ -1278,6 +1647,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
   }
 
+
+  /* =========================================================
+     APPROVE
+     ========================================================= */
 
   document
     .getElementById('approve-button')
@@ -1288,8 +1661,10 @@ document.addEventListener('DOMContentLoaded', function () {
         const button =
           this;
 
+
         button.disabled =
           true;
+
 
         button.textContent =
           'Submitting...';
@@ -1309,15 +1684,18 @@ document.addEventListener('DOMContentLoaded', function () {
               .style.display =
               'none';
 
+
             document
               .getElementById('modify-screen')
               .style.display =
               'none';
 
+
             document
               .getElementById('success-title')
               .textContent =
               'Fabrication Approved';
+
 
             document
               .getElementById('success-message')
@@ -1325,6 +1703,7 @@ document.addEventListener('DOMContentLoaded', function () {
               'Thank you. Your approval for Order ' +
               order +
               ' has been received.';
+
 
             document
               .getElementById('success-screen')
@@ -1339,6 +1718,10 @@ document.addEventListener('DOMContentLoaded', function () {
     );
 
 
+  /* =========================================================
+     OPEN MODIFICATION FORM
+     ========================================================= */
+
   document
     .getElementById('show-modify-button')
     .addEventListener(
@@ -1350,6 +1733,7 @@ document.addEventListener('DOMContentLoaded', function () {
           .style.display =
           'none';
 
+
         document
           .getElementById('modify-screen')
           .style.display =
@@ -1358,6 +1742,10 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     );
 
+
+  /* =========================================================
+     BACK TO REVIEW
+     ========================================================= */
 
   document
     .getElementById('back-to-review')
@@ -1370,6 +1758,7 @@ document.addEventListener('DOMContentLoaded', function () {
           .style.display =
           'none';
 
+
         document
           .getElementById('review-screen')
           .style.display =
@@ -1378,6 +1767,10 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     );
 
+
+  /* =========================================================
+     SUBMIT MODIFICATIONS
+     ========================================================= */
 
   document
     .getElementById('submit-modifications')
@@ -1406,8 +1799,10 @@ document.addEventListener('DOMContentLoaded', function () {
         const button =
           this;
 
+
         button.disabled =
           true;
+
 
         button.textContent =
           'Submitting...';
@@ -1427,15 +1822,18 @@ document.addEventListener('DOMContentLoaded', function () {
               .style.display =
               'none';
 
+
             document
               .getElementById('review-screen')
               .style.display =
               'none';
 
+
             document
               .getElementById('success-title')
               .textContent =
               'Changes Requested';
+
 
             document
               .getElementById('success-message')
@@ -1443,6 +1841,7 @@ document.addEventListener('DOMContentLoaded', function () {
               'Thank you. Your requested changes for Order ' +
               order +
               ' have been submitted.';
+
 
             document
               .getElementById('success-screen')
@@ -1457,13 +1856,26 @@ document.addEventListener('DOMContentLoaded', function () {
     );
 
 
+  /* =========================================================
+     INITIALIZE
+     ========================================================= */
+
   renderItems();
+
 
   document
     .getElementById('loading')
     .style.display =
     'none';
 
+
+  /*
+    MODIFY link from email:
+    go directly to modification form.
+
+    APPROVE link:
+    show review page first.
+  */
 
   if (
     requestedAction === 'modify'
