@@ -103,6 +103,17 @@
             "link": "https://rapidmaterials.com/collections/trespa"
           }
         },
+        "column_aXjiy3": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Pac-Clad.webp",
+            "title": "Pac-Clad",
+            "heading_tag": "h2",
+            "text": "<p>Petersen Aluminum cladding & MCM materials. </p>",
+            "link_label": "Shop",
+            "link": "https://rapidmaterials.com/collections/trespa"
+          }
+        },
         "column_cNe8PM": {
           "type": "column",
           "settings": {
@@ -119,6 +130,7 @@
         "column_xdYcLx",
         "column_michtp",
         "column_wJDgLA",
+        "column_aXjiy3",
         "column_cNe8PM"
       ],
       "settings": {
