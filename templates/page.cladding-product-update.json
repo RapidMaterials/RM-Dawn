@@ -50,12 +50,24 @@
             "button_link_2": "",
             "button_style_secondary_2": false
           }
+        },
+        "button_qgnkND": {
+          "type": "button",
+          "settings": {
+            "button_label": "Contact Us",
+            "button_link": "https://rapidmaterials.com/collections/buy-cladding-exterior-facade-systems",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
         }
       },
       "block_order": [
         "heading_P6UKt6",
         "text_EhJ7jR",
-        "button_n9kDig"
+        "button_n9kDig",
+        "button_qgnkND"
       ],
       "settings": {
         "desktop_content_position": "center",
