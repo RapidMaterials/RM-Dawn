@@ -35,6 +35,15 @@
           "type": "price",
           "settings": {}
         },
+        "oscp_wholesale_price_grid_widget_8cHrDp": {
+          "type": "shopify://apps/oscp-wholesale/blocks/price-grid-widget/4d1d9eb6-630d-4c84-ad8e-14dfd07f94ed",
+          "settings": {
+            "quantity_heading": "Minimum Quantity",
+            "price_heading": "PRICE",
+            "grid_header_bg_color": "#004085",
+            "grid_border_color": "#ddd"
+          }
+        },
         "oscp_wholesale_b2b_app_block_k7JUnx": {
           "type": "shopify://apps/oscp-wholesale/blocks/app-block/4d1d9eb6-630d-4c84-ad8e-14dfd07f94ed",
           "settings": {
@@ -115,6 +124,7 @@
         "sku_ibtQ6p",
         "title",
         "price",
+        "oscp_wholesale_price_grid_widget_8cHrDp",
         "oscp_wholesale_b2b_app_block_k7JUnx",
         "variant_picker",
         "bss_variant_options_option_set_dEcH69",

@@ -56,14 +56,6 @@
             "show_gift_card_recipient": true
           }
         },
-        "text_eanxjX": {
-          "type": "text",
-          "settings": {
-            "text": "{{ product.metafields.custom.alert.value }}{{ product.metafields.custom.info_condition_details.value }}",
-            "txtclass": "cl",
-            "text_style": "body"
-          }
-        },
         "popup_JJ8bWY": {
           "type": "popup",
           "settings": {
@@ -72,8 +64,28 @@
           }
         },
         "oscp_wholesale_b2b_cancelled_block_CH3WUt": {
-          "type": "shopify://apps/oscp-wholesale-b2b/blocks/cancelled-block/4d1d9eb6-630d-4c84-ad8e-14dfd07f94ed",
+          "type": "shopify://apps/oscp-wholesale/blocks/cancelled-block/4d1d9eb6-630d-4c84-ad8e-14dfd07f94ed",
           "settings": {}
+        },
+        "oscp_wholesale_app_block_gFAhPa": {
+          "type": "shopify://apps/oscp-wholesale/blocks/app-block/4d1d9eb6-630d-4c84-ad8e-14dfd07f94ed",
+          "settings": {
+            "qty_title": "Qty",
+            "price_title": "Price",
+            "buy_text": "Buy",
+            "off_text": "Off",
+            "each_text": "Each",
+            "discount_value": "Discount Value",
+            "incl_tax_title": "Incl. Tax",
+            "excl_tax_title": "Excl. Tax",
+            "disableruleclmn": false,
+            "disableinclpriceclmn": false,
+            "disableexclpriceclmn": false,
+            "PGBC": "#A3F8DB",
+            "PGH": "#000000",
+            "PGB": "#A3F8DB",
+            "PGT": "#000000"
+          }
         }
       },
       "block_order": [
@@ -85,9 +97,9 @@
         "bss_variant_options_option_set_dEcH69",
         "quantity_selector",
         "buy_buttons",
-        "text_eanxjX",
         "popup_JJ8bWY",
-        "oscp_wholesale_b2b_cancelled_block_CH3WUt"
+        "oscp_wholesale_b2b_cancelled_block_CH3WUt",
+        "oscp_wholesale_app_block_gFAhPa"
       ],
       "custom_css": [
         "h1 {font-size: 2.5rem; line-height: 2.5rem;}",
@@ -138,6 +150,7 @@
       "settings": {
         "desktop_content_position": "left",
         "content_alignment": "left",
+        "content_max_width": 900,
         "color_scheme": "",
         "full_width": true,
         "padding_top": 40,
@@ -149,7 +162,12 @@
       "blocks": {
         "judge_me_reviews_review_widget_q3ip3c": {
           "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
-          "settings": {}
+          "settings": {
+            "review_data": "sample_data",
+            "max_width": 1200,
+            "show_shop_reviews": false,
+            "empty_state": "empty_widget"
+          }
         }
       },
       "block_order": [
