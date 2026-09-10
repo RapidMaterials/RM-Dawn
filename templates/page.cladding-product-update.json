@@ -13,6 +13,12 @@
       "type": "main-page",
       "disabled": true,
       "settings": {
+        "content_width": "narrow",
+        "layout": "full_width",
+        "column_split": "split-50-50",
+        "show_title": true,
+        "title_tag": "h1",
+        "right_color_scheme": "",
         "padding_top": 28,
         "padding_bottom": 28
       }
@@ -31,7 +37,7 @@
         "text_EhJ7jR": {
           "type": "text",
           "settings": {
-            "text": "<p>We’ve recently updated our cladding product offerings to better serve our customers. While we no longer carry <strong>Equitone, Reynobond, ALPOLIC, Alucoil, or Pac-Clad</strong>, we continue to offer high-quality cladding solutions with <strong>Alucobond and Trespa</strong>.</p><h2></h2>"
+            "text": "<p>We’re expanding and updating our cladding product offerings to better serve your project needs. Explore our current selection below, including <strong>ALUCOBOND®, Reynobond, ALPOLIC™, PAC-CLAD, and Trespa</strong>.</p><p><strong>Don’t see what you’re looking for?</strong> Contact our team. We may still be able to source the product, color, or material you need.</p><p></p>"
           }
         },
         "button_n9kDig": {
@@ -54,6 +60,7 @@
       "settings": {
         "desktop_content_position": "center",
         "content_alignment": "center",
+        "content_max_width": 900,
         "color_scheme": "",
         "full_width": true,
         "padding_top": 40,
@@ -68,6 +75,7 @@
           "settings": {
             "image": "shopify://shop_images/alucobond-logo-lg-gray.png",
             "title": "Alucobond",
+            "heading_tag": "h2",
             "text": "<p>A top choice for aluminum composite panels, known for its durability and design flexibility.</p>",
             "link_label": "Shop",
             "link": "shopify://collections/alucobond"
@@ -78,7 +86,19 @@
           "settings": {
             "image": "shopify://shop_images/trespa-logo.png",
             "title": "Trespa",
+            "heading_tag": "h2",
             "text": "<p>A premium option for high-pressure laminate (HPL) panels, offering outstanding performance and aesthetics.</p>",
+            "link_label": "Shop",
+            "link": "https://rapidmaterials.com/collections/trespa"
+          }
+        },
+        "column_wJDgLA": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Arconic_logo__horizontal__svg.png",
+            "title": "Arconic / Reynobond",
+            "heading_tag": "h2",
+            "text": "<p>Arconic Architectural Products LLC is a leading U.S.-based manufacturer of innovative aluminum building materials, including Reynobond® composite panels.</p>",
             "link_label": "Shop",
             "link": "https://rapidmaterials.com/collections/trespa"
           }
@@ -88,6 +108,7 @@
           "settings": {
             "image": "shopify://shop_images/trufast-sfs.png",
             "title": "Accessories & Hardware",
+            "heading_tag": "h2",
             "text": "<p>A full selection of fasteners, sub-framing, trims, and installation components to ensure a seamless cladding system.</p>",
             "link_label": "Shop",
             "link": "https://rapidmaterials.com/collections/cladding-facades-accessories-hardware"
@@ -97,11 +118,17 @@
       "block_order": [
         "column_xdYcLx",
         "column_michtp",
+        "column_wJDgLA",
         "column_cNe8PM"
       ],
       "settings": {
-        "title": "Our Cladding Offerings",
+        "title": "Explore Our Cladding Products",
+        "heading_tag": "h2",
+        "section_float": "clear",
+        "mobile_display": "mobile-show",
+        "desktop_display": "desktop-show",
         "heading_size": "h2",
+        "col_alignment": "left",
         "image_width": "full",
         "image_ratio": "adapt",
         "button_label": "",
