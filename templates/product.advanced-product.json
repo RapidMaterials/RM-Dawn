@@ -83,15 +83,6 @@
           "type": "shopify://apps/melon-order-limits/blocks/app-block/91904755-64ba-4bc5-85c6-2e5708522f2b",
           "settings": {}
         },
-        "text_XdzqLY": {
-          "type": "text",
-          "name": "Shipping Note",
-          "settings": {
-            "text": "{{ product.metafields.custom.shipping_note.value }}",
-            "txtclass": "prod-ship-note",
-            "text_style": "body"
-          }
-        },
         "quantity_selector": {
           "type": "quantity_selector",
           "settings": {}
@@ -101,6 +92,15 @@
           "settings": {
             "show_dynamic_checkout": false,
             "show_gift_card_recipient": false
+          }
+        },
+        "text_XdzqLY": {
+          "type": "text",
+          "name": "Shipping Note",
+          "settings": {
+            "text": "{{ product.metafields.custom.shipping_note.value }}",
+            "txtclass": "prod-ship-note",
+            "text_style": "body"
           }
         },
         "casa_loyalty_casa_app_product_BFppiJ": {
@@ -134,9 +134,9 @@
         "oscp_wholesale_cancelled_block_amQyxk",
         "oscp_wholesale_b2b_app_block_k7JUnx",
         "watermelon_order_limits_app_block_MR4eYt",
-        "text_XdzqLY",
         "quantity_selector",
         "buy_buttons",
+        "text_XdzqLY",
         "casa_loyalty_casa_app_product_BFppiJ",
         "features_with_icons_qLjpdB",
         "popup_JJ8bWY"
