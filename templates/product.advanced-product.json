@@ -35,6 +35,17 @@
           "type": "price",
           "settings": {}
         },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "dropdown",
+            "swatch_shape": "circle"
+          }
+        },
+        "bss_variant_options_option_set_dEcH69": {
+          "type": "shopify://apps/optis-product-options/blocks/option-set/2c446099-c349-4e73-80cd-49c9770b7807",
+          "settings": {}
+        },
         "oscp_wholesale_price_grid_widget_8cHrDp": {
           "type": "shopify://apps/oscp-wholesale/blocks/price-grid-widget/4d1d9eb6-630d-4c84-ad8e-14dfd07f94ed",
           "settings": {
@@ -67,17 +78,6 @@
             "PGB": "#a5a5a5",
             "PGT": "#000000"
           }
-        },
-        "variant_picker": {
-          "type": "variant_picker",
-          "settings": {
-            "picker_type": "dropdown",
-            "swatch_shape": "circle"
-          }
-        },
-        "bss_variant_options_option_set_dEcH69": {
-          "type": "shopify://apps/optis-product-options/blocks/option-set/2c446099-c349-4e73-80cd-49c9770b7807",
-          "settings": {}
         },
         "watermelon_order_limits_app_block_MR4eYt": {
           "type": "shopify://apps/melon-order-limits/blocks/app-block/91904755-64ba-4bc5-85c6-2e5708522f2b",
@@ -128,11 +128,11 @@
         "sku_ibtQ6p",
         "title",
         "price",
+        "variant_picker",
+        "bss_variant_options_option_set_dEcH69",
         "oscp_wholesale_price_grid_widget_8cHrDp",
         "oscp_wholesale_cancelled_block_amQyxk",
         "oscp_wholesale_b2b_app_block_k7JUnx",
-        "variant_picker",
-        "bss_variant_options_option_set_dEcH69",
         "watermelon_order_limits_app_block_MR4eYt",
         "text_XdzqLY",
         "quantity_selector",
