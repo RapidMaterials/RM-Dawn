@@ -68,6 +68,25 @@
             "PGT": "#000000"
           }
         },
+        "oscp_wholesale_quantity_selector_widget_79KDFH": {
+          "type": "shopify://apps/oscp-wholesale/blocks/quantity-selector-widget/4d1d9eb6-630d-4c84-ad8e-14dfd07f94ed",
+          "settings": {
+            "show_price_with_currency": false,
+            "discount_title": "Buy More & Save",
+            "SSPR": true,
+            "SYSR": true,
+            "sqr": true,
+            "variant_quantity": true,
+            "stl": "Save per unit",
+            "TSL": "Total Savings",
+            "ttl": "Total",
+            "ATCB": "Grab This Deal",
+            "gtc": "#000",
+            "bca": "#108043",
+            "DlB": "#e6f2ec",
+            "slc": "#DD1D1D"
+          }
+        },
         "watermelon_order_limits_app_block_MR4eYt": {
           "type": "shopify://apps/melon-order-limits/blocks/app-block/91904755-64ba-4bc5-85c6-2e5708522f2b",
           "settings": {}
@@ -131,6 +150,7 @@
         "oscp_wholesale_price_grid_widget_8cHrDp",
         "oscp_wholesale_cancelled_block_amQyxk",
         "oscp_wholesale_b2b_app_block_k7JUnx",
+        "oscp_wholesale_quantity_selector_widget_79KDFH",
         "watermelon_order_limits_app_block_MR4eYt",
         "variant_picker",
         "bss_variant_options_option_set_dEcH69",
