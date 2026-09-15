@@ -72,6 +72,10 @@
           "type": "shopify://apps/melon-order-limits/blocks/app-block/91904755-64ba-4bc5-85c6-2e5708522f2b",
           "settings": {}
         },
+        "dynamic_product_options_dpo_khRdWP": {
+          "type": "shopify://apps/dynamic-product-options/blocks/dpo/2864e3ef-cedb-498f-9c77-b996517e0dc3",
+          "settings": {}
+        },
         "variant_picker": {
           "type": "variant_picker",
           "settings": {
@@ -132,6 +136,7 @@
         "oscp_wholesale_cancelled_block_amQyxk",
         "oscp_wholesale_b2b_app_block_k7JUnx",
         "watermelon_order_limits_app_block_MR4eYt",
+        "dynamic_product_options_dpo_khRdWP",
         "variant_picker",
         "bss_variant_options_option_set_dEcH69",
         "quantity_selector",
