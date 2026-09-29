@@ -956,7 +956,9 @@ document.addEventListener('DOMContentLoaded', function () {
   const invQty = Number(v.inventory_quantity || 0);
   const bucket = inventoryBucket(v.inventory_management, invQty);
   const eff = effectiveFields(p, v);
+
   const c = classifyStatus(eff.SS_raw, eff.SS_key);
+  if (c.type === 'hide_stock_status') return '';
 
   const html = buildHtml(variantId, map);
 
