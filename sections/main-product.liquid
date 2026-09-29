@@ -814,6 +814,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if (!key) return { type: 'not_set', displayText: '' };
 
+    if (key === 'hide stock status') return { type: 'hide_stock_status', displayText: '' };
     if (key === 'stocked') return { type: 'stocked', displayText: 'Stocked' };
     if (key === 'out of stock') return { type: 'out_of_stock', displayText: 'Out of Stock' };
     if (key === 'on backorder') return { type: 'on_backorder', displayText: 'On Backorder' };
