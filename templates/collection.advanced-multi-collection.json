@@ -44,7 +44,7 @@
       "type": "custom-liquid",
       "name": "t:sections.custom-liquid.presets.name",
       "settings": {
-        "custom_liquid": "{% if collection.metafields.custom.alert.value != blank %}\n  <div class=\"collection-alert\" style=\"    background-color: #fece34;\n    padding: 20px;\n \"><div style=\"width:80%;margin:auto;\"\n    {{ collection.metafields.custom.alert.value }}\n  </div></div>\n{% endif %}",
+        "custom_liquid": "{% if collection.metafields.custom.alert.value != blank %}\n  <div class=\"collection-alert\" style=\"    background-color: #fece34;\n    padding: 20px;\n \"><div style=\"width:80%;margin:auto;\">\n    {{ collection.metafields.custom.alert.value }}\n  </div>\n{% endif %}",
         "color_scheme": "scheme-1",
         "padding_top": 0,
         "padding_bottom": 0,
