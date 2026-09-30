@@ -40,6 +40,18 @@
         "glow_width_mobile": 380
       }
     },
+    "custom_liquid_fR3qEp": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "{% if collection.metafields.custom.alert.value != blank %}\n  <div class=\"collection-alert\" style=\"    background-color: #fece34;\n    padding: 20px;\n \">\n    {{ collection.metafields.custom.alert.value }}\n  </div>\n{% endif %}",
+        "color_scheme": "scheme-1",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_left": 0,
+        "padding_right": 0
+      }
+    },
     "rich_text_cDKn9n": {
       "type": "rich-text",
       "blocks": {
@@ -176,6 +188,7 @@
   },
   "order": [
     "image_only_banner_cnFKLU",
+    "custom_liquid_fR3qEp",
     "rich_text_cDKn9n",
     "collection_feat_icons_pC3Jyc",
     "banner",
