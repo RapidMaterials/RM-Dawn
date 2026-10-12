@@ -17,6 +17,7 @@
     },
     "custom_liquid_HPA3Dy": {
       "type": "custom-liquid",
+      "disabled": true,
       "name": "t:sections.custom-liquid.presets.name",
       "settings": {
         "custom_liquid": "<div style=\"width:80%; margin:0 auto; text-align:center;font-weight:bold;\">\n  We’re at METALCON this week. Phone support will be unavailable Tuesday-Friday. Please email us and we’ll respond as soon as possible.\n</div>",
