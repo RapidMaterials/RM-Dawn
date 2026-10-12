@@ -26,10 +26,11 @@
   <meta property="og:image:height" content="{{ page_image.height }}">
 {%- endif -%}
 
-{%- if request.page_type == 'product' -%}
+{%- assign stock_status = product.metafields.custom.info_stock_status.value | default: '' | downcase | strip -%}
+{%- unless stock_status == 'coming soon' -%}
   <meta property="og:price:amount" content="{{ product.price | money_without_currency | strip_html }}">
   <meta property="og:price:currency" content="{{ cart.currency.iso_code }}">
-{%- endif -%}
+{%- endunless -%}
 
 {%- if settings.social_twitter_link != blank -%}
   <meta name="twitter:site" content="{{ settings.social_twitter_link | split: 'twitter.com/' | last | prepend: '@' }}">
