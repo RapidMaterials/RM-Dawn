@@ -1,0 +1,324 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "text_6ANM9p": {
+          "type": "text",
+          "name": "Alert",
+          "settings": {
+            "text": "{{ product.metafields.custom.alert.value }}",
+            "txtclass": "prod-alert",
+            "text_style": "body"
+          }
+        },
+        "sku_ibtQ6p": {
+          "type": "sku",
+          "settings": {
+            "text_style": "uppercase"
+          }
+        },
+        "title": {
+          "type": "title",
+          "settings": {}
+        },
+        "price": {
+          "type": "price",
+          "settings": {}
+        },
+        "oscp_wholesale_price_grid_widget_8cHrDp": {
+          "type": "shopify://apps/oscp-wholesale/blocks/price-grid-widget/4d1d9eb6-630d-4c84-ad8e-14dfd07f94ed",
+          "settings": {
+            "quantity_heading": "Minimum Quantity",
+            "price_heading": "PRICE",
+            "grid_header_bg_color": "#004085",
+            "grid_border_color": "#ddd"
+          }
+        },
+        "oscp_wholesale_cancelled_block_amQyxk": {
+          "type": "shopify://apps/oscp-wholesale/blocks/cancelled-block/4d1d9eb6-630d-4c84-ad8e-14dfd07f94ed",
+          "settings": {}
+        },
+        "oscp_wholesale_b2b_app_block_k7JUnx": {
+          "type": "shopify://apps/oscp-wholesale/blocks/app-block/4d1d9eb6-630d-4c84-ad8e-14dfd07f94ed",
+          "settings": {
+            "qty_title": "Qty",
+            "price_title": "Price",
+            "buy_text": "Buy",
+            "off_text": "Off",
+            "each_text": "Each",
+            "discount_value": "Discount Value",
+            "incl_tax_title": "Incl. Tax",
+            "excl_tax_title": "Excl. Tax",
+            "disableruleclmn": false,
+            "disableinclpriceclmn": false,
+            "disableexclpriceclmn": false,
+            "PGBC": "#d5d9e0",
+            "PGH": "#000000",
+            "PGB": "#a5a5a5",
+            "PGT": "#000000"
+          }
+        },
+        "watermelon_order_limits_app_block_MR4eYt": {
+          "type": "shopify://apps/melon-order-limits/blocks/app-block/91904755-64ba-4bc5-85c6-2e5708522f2b",
+          "settings": {}
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "dropdown",
+            "swatch_shape": "circle"
+          }
+        },
+        "bss_variant_options_option_set_dEcH69": {
+          "type": "shopify://apps/optis-product-options/blocks/option-set/2c446099-c349-4e73-80cd-49c9770b7807",
+          "settings": {}
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false,
+            "show_gift_card_recipient": false
+          }
+        },
+        "text_XdzqLY": {
+          "type": "text",
+          "name": "Shipping Note",
+          "settings": {
+            "text": "{{ product.metafields.custom.shipping_note.value }}",
+            "txtclass": "prod-ship-note",
+            "text_style": "body"
+          }
+        },
+        "casa_loyalty_casa_app_product_BFppiJ": {
+          "type": "shopify://apps/casa-loyalty/blocks/casa_app_product/da24958b-9ea9-44ae-b810-fe9dddbf4430",
+          "settings": {
+            "link_visibility": "inherit",
+            "learn_more_link": "https://rapidmaterials.com/pages/rapid-pro-rewards",
+            "open_in_new_tab": true
+          }
+        },
+        "features_with_icons_qLjpdB": {
+          "type": "features_with_icons",
+          "settings": {}
+        },
+        "popup_JJ8bWY": {
+          "type": "popup",
+          "settings": {
+            "text": "Shipping Details",
+            "page": "shipping-details"
+          }
+        }
+      },
+      "block_order": [
+        "text_6ANM9p",
+        "sku_ibtQ6p",
+        "title",
+        "price",
+        "oscp_wholesale_price_grid_widget_8cHrDp",
+        "oscp_wholesale_cancelled_block_amQyxk",
+        "oscp_wholesale_b2b_app_block_k7JUnx",
+        "watermelon_order_limits_app_block_MR4eYt",
+        "variant_picker",
+        "bss_variant_options_option_set_dEcH69",
+        "quantity_selector",
+        "buy_buttons",
+        "text_XdzqLY",
+        "casa_loyalty_casa_app_product_BFppiJ",
+        "features_with_icons_qLjpdB",
+        "popup_JJ8bWY"
+      ],
+      "custom_css": [
+        "h1 {font-size: 2.5rem; line-height: 2.5rem;}",
+        "form.installment {display: none !important;}",
+        ".product__info-wrapper.grid__item {background-color: #f0f0f0; padding: 3%;}",
+        ".grid {align-items: start; justify-content: center;}",
+        "table.oscp-price-grid.oscp-variant-level-grid.oscp-active td {font-size: 1.25rem !important;}",
+        ".oscp-price-grid th {font-size: 1.25rem; padding: 5px;}",
+        ".oscp-active td {padding: 5px;}",
+        "table.oscp-price-grid.oscp-variant-level-grid {max-width: 250px;}",
+        ".oscp-price-grid input {display: none;}"
+      ],
+      "settings": {
+        "enable_sticky_info": false,
+        "color_scheme": "scheme-1",
+        "media_size": "small",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "gallery_layout": "thumbnail",
+        "mobile_thumbnails": "show",
+        "media_position": "left",
+        "image_zoom": "hover",
+        "hide_variants": true,
+        "enable_video_looping": false,
+        "padding_top": 28,
+        "padding_bottom": 8
+      }
+    },
+    "multicolumn_product_JpGMnV": {
+      "type": "multicolumn-product",
+      "blocks": {
+        "column_6cGNwi": {
+          "type": "column",
+          "name": "Description",
+          "settings": {
+            "title": "<strong>Description</strong>",
+            "heading_tag": "h2",
+            "text": "{{ product.description }}",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_6cGNwi"
+      ],
+      "custom_css": [
+        "h2,h3 {margin-top: 0; font-weight: bold; font-size: 1.8rem; color: #235da9;}",
+        "h4,h5 {margin: 0;}",
+        ".multicolumn-card .rte,.brand-bio,p {font-size: 1.25rem !important; line-height: 1.5rem !important;}",
+        "p {margin: 10px 0 !important;}",
+        ".specs li {font-size: 1.25rem; line-height: 1.5rem;}",
+        "iframe {max-width: 400px;}",
+        ".multicolumn-card__info h3,.multicolumn-card__info h4 {margin-top: 2.5% !important;}"
+      ],
+      "name": "MultiColumn Product",
+      "settings": {
+        "title": "",
+        "heading_tag": "h2",
+        "section_float": "clear",
+        "heading_size": "h2",
+        "col_alignment": "left",
+        "include_brand": true,
+        "include_resources": true,
+        "include_specs": true,
+        "certs": false,
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "button_label": "",
+        "button_link": "",
+        "columns_desktop": 2,
+        "column_alignment": "left",
+        "background_style": "primary",
+        "color_scheme": "",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "video_gallery_KVeXnq": {
+      "type": "video-gallery",
+      "name": "Multi Video Lightbox",
+      "settings": {
+        "heading": "",
+        "heading_size": "h1",
+        "section_float": "clear",
+        "color_scheme": "scheme-3"
+      }
+    },
+    "collapsible_content_faq_TKA83N": {
+      "type": "collapsible-content-faq",
+      "custom_css": [
+        "h3.accordion__title.inline-richtext.h4 {padding-left: 15px;}"
+      ],
+      "name": "FAQ",
+      "settings": {
+        "caption": "{{ product.title }}",
+        "heading": "<strong>Frequently Asked Questions</strong>",
+        "heading_size": "h2",
+        "heading_alignment": "center",
+        "layout": "none",
+        "container_color_scheme": "",
+        "color_scheme": "",
+        "open_first_collapsible_row": false,
+        "image_ratio": "adapt",
+        "desktop_layout": "image_second",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "173773221725050421": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_review_widget_q3ip3c": {
+          "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+            "review_data": "sample_data",
+            "max_width": 1200,
+            "show_shop_reviews": false,
+            "empty_state": "empty_widget"
+          }
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_review_widget_q3ip3c"
+      ],
+      "custom_css": [
+        ".shopify-block {background-color: #f0f0f0; padding: 2%; margin-top: 20px;}",
+        ".jdgm-rev__custom-form {display: none;}"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "related-products": {
+      "type": "related-products",
+      "custom_css": [
+        "h2 {margin: 0; text-align: center;}"
+      ],
+      "settings": {
+        "heading": "<strong>You May Also Like...</strong>",
+        "heading_size": "h2",
+        "products_to_show": 6,
+        "columns_desktop": 6,
+        "columns_mobile": "2",
+        "color_scheme": "scheme-1",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "padding_top": 48,
+        "padding_bottom": 12
+      }
+    },
+    "17729053691fd05990": {
+      "type": "apps",
+      "blocks": {
+        "watermelon_order_limits_app_block_t6Nbzx": {
+          "type": "shopify://apps/melon-order-limits/blocks/app-block/91904755-64ba-4bc5-85c6-2e5708522f2b",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "watermelon_order_limits_app_block_t6Nbzx"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    }
+  },
+  "order": [
+    "main",
+    "multicolumn_product_JpGMnV",
+    "video_gallery_KVeXnq",
+    "collapsible_content_faq_TKA83N",
+    "173773221725050421",
+    "related-products",
+    "17729053691fd05990"
+  ]
+}
