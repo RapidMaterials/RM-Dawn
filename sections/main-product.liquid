@@ -821,7 +821,6 @@ document.addEventListener('DOMContentLoaded', function () {
     if (key === 'discontinued') return { type: 'discontinued', displayText: 'Discontinued' };
     if (key === 'made to order') return { type: 'made_to_order', displayText: 'Made to Order' };
     if (key === 'unavailable') return { type: 'unavailable', displayText: 'Unavailable' };
-    if (key === 'coming soon') return { type: 'coming_soon', displayText: 'Coming Soon' };
     if (key === 'limited stock run') return { type: 'limited_stock_run', displayText: 'Limited Stock Run' };
 
     // Limited Stock, confirm availability variants (100+ / 500+)
@@ -910,10 +909,6 @@ document.addEventListener('DOMContentLoaded', function () {
     if (c.type === 'unavailable') {
       return `<strong>Unavailable</strong>`;
     }
-      // Row: Coming Soon
-  if (c.type === 'coming_soon') {
-    return `<strong>Coming Soon</strong>`;
-  }
 
     // Row: Limited Stock Run
     if (c.type === 'limited_stock_run') {
@@ -962,49 +957,8 @@ document.addEventListener('DOMContentLoaded', function () {
   const bucket = inventoryBucket(v.inventory_management, invQty);
   const eff = effectiveFields(p, v);
 
-const c = classifyStatus(eff.SS_raw, eff.SS_key);
-
-// Hide pricing and purchasing controls for Coming Soon
-const isComingSoon = c.type === 'coming_soon';
-
-const productRoot = document.getElementById(`MainProduct-${sectionId}`);
-
-if (productRoot) {
-  const selectors = [
-    `#price-${sectionId}`,
-    '.product-form',
-    '.product-form__quantity',
-    '.shopify-payment-button',
-    '.installment',
-    '.volume-pricing-note',
-    'volume-pricing',
-    'price-per-item',
-    '[data-pps-wrap]',
-    '[data-sheet-sqft-wrap]'
-  ];
-
-  selectors.forEach((selector) => {
-    productRoot.querySelectorAll(selector).forEach((el) => {
-      el.style.setProperty(
-        'display',
-        isComingSoon ? 'none' : '',
-        isComingSoon ? 'important' : ''
-      );
-    });
-  });
-
-  // Prevent the product form from being submitted while Coming Soon
-  productRoot.querySelectorAll('form[action*="/cart/add"]').forEach((form) => {
-    form.querySelectorAll('button[type="submit"]').forEach((button) => {
-      if (isComingSoon) {
-        button.disabled = true;
-        button.setAttribute('aria-disabled', 'true');
-      }
-    });
-  });
-}
-
-if (c.type === 'hide_stock_status') return '';
+  const c = classifyStatus(eff.SS_raw, eff.SS_key);
+  if (c.type === 'hide_stock_status') return '';
 
   const html = buildHtml(variantId, map);
 
@@ -1015,9 +969,6 @@ if (c.type === 'hide_stock_status') return '';
     case 'not_set':
     case 'stocked':
     case 'in_stock':
-    case 'coming_soon':
-      statusClass = 'is-coming-soon';
-      break;
     case 'in_stock_tier':
       statusClass = bucket === 'C' ? 'is-backorder' : 'is-in-stock';
       break;
@@ -1059,7 +1010,6 @@ if (c.type === 'hide_stock_status') return '';
     'is-limited',
     'is-out-of-stock',
     'is-discontinued',
-    'is-coming-soon',
     'is-unavailable'
   );
 
