@@ -908,43 +908,7 @@ header-drawer {
 
   </div>
 </div>
- {% comment %}
-    {%- if section.settings.logo_position != 'middle-center' -%}
-      {%- if request.page_type == 'index' -%}
-        <h2 class="header__heading">
-      {%- endif -%}
-      <a href="{{ routes.root_url }}" class="header__heading-link link link--text focus-inset">
-        {%- if settings.logo != blank -%}
-          <div class="header__heading-logo-wrapper">
-            {% if product.collections %}
-              {% for collection in product.collections %}
-                {% if collection.metafields.custom.logo_url %}
-                  <a href="{{ collection.metafields.custom.collection_url }}" style="text-decoration:none;">
-                    <img src="{{ collection.metafields.custom.logo_url | file_url }}" alt="{{ collection.title }} Logo" class="header-logo">
-                  </a>
-                  {% break %}
-                {% endif %}
-              {% endfor %}
-            {% elsif collection.metafields.custom.logo_url %}
-              <a href="{{ collection.metafields.custom.collection_url }}" style="text-decoration:none;">
-                <img src="{{ collection.metafields.custom.logo_url | file_url }}" alt="{{ collection.title }} Logo" class="header-logo">
-              </a>
-            {% elsif page.metafields.custom.logo_url %}
-              <a href="{{ page.metafields.custom.collection_url }}" style="text-decoration:none;">
-                <img src="{{ page.metafields.custom.logo_url | file_url }}" alt="Logo" class="header-logo">
-              </a>
-            {% else %}
-            {% endif %}
-          </div>
-        {%- else -%}
-          <span class="h2">{{ shop.name }}</span>
-        {%- endif -%}
-      </a>
-      {%- if request.page_type == 'index' -%}
-        </h2>
-      {%- endif -%}
-    {%- endif -%}
-      {% endcomment %}
+
 
     {%- liquid
       if section.settings.menu != blank
