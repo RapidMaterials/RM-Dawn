@@ -13,6 +13,12 @@
       "type": "main-page",
       "disabled": true,
       "settings": {
+        "content_width": "narrow",
+        "layout": "full_width",
+        "column_split": "split-50-50",
+        "show_title": true,
+        "title_tag": "h1",
+        "right_color_scheme": "",
         "padding_top": 28,
         "padding_bottom": 28
       }
@@ -75,6 +81,7 @@
       "settings": {
         "desktop_content_position": "center",
         "content_alignment": "center",
+        "content_max_width": 900,
         "color_scheme": "scheme-3ecab526-23df-438e-a281-3ae133d61365",
         "full_width": true,
         "padding_top": 16,
@@ -106,67 +113,69 @@
       "settings": {
         "desktop_content_position": "center",
         "content_alignment": "center",
+        "content_max_width": 900,
         "color_scheme": "",
         "full_width": true,
         "padding_top": 40,
         "padding_bottom": 52
       }
     },
-    "image_with_text_fNNbaj": {
-      "type": "image-with-text",
-      "blocks": {
-        "heading_ryh6wU": {
-          "type": "heading",
-          "settings": {
-            "heading": "S-5! ColorGard® 2.0",
-            "heading_tag": "h3",
-            "heading_size": "h1"
-          }
-        },
-        "text_hHy9RX": {
-          "type": "text",
-          "settings": {
-            "text": "<p>ColorGard® 2.0 offers strong, single-bar snow retention with perfect color matching. Designed for standing seam roofs, it preserves appearance and performance.</p>",
-            "text_style": "body"
-          }
-        },
-        "button_BVErdz": {
-          "type": "button",
-          "settings": {
-            "button_label": "Shop ColorGard 2.0",
-            "button_link": "shopify://collections/s-5-colorgard",
-            "button_style_secondary": false
-          }
-        }
-      },
-      "block_order": [
-        "heading_ryh6wU",
-        "text_hHy9RX",
-        "button_BVErdz"
-      ],
-      "custom_css": [],
-      "settings": {
-        "image": "shopify://shop_images/ColorGard2.0.png",
-        "height": "adapt",
-        "desktop_image_width": "small",
-        "layout": "image_top",
-        "image_behavior": "none",
-        "content_layout": "no-overlap",
-        "desktop_content_position": "top",
-        "desktop_content_alignment": "left",
-        "mobile_content_alignment": "left",
-        "section_color_scheme": "scheme-1",
-        "color_scheme": "scheme-2",
-        "element-width": 60,
-        "padding_top": 0,
-        "padding_bottom": 0,
-        "side-padding": "no-padding"
-      }
-    },
     "multicolumn_gew8HA": {
       "type": "multicolumn",
       "blocks": {
         "column_iBHzPJ": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/ColorGard2.0.png",
+            "title": "S-5! ColorGard® 2.0",
+            "heading_tag": "h2",
+            "text": "<p>ColorGard® 2.0 offers strong, single-bar snow retention with perfect color matching. Designed for standing seam roofs, it preserves appearance and performance.</p>",
+            "link_label": "Shop",
+            "link": "shopify://collections/s-5-colorgard"
+          }
+        },
+        "column_q8PKMV": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/SnoGard-EF.png",
+            "title": "S-5! SnoGard EF (Coming November 2026)",
+            "heading_tag": "h2",
+            "text": "<p>SnoGard™ EF is a pre-engineered snow retention system designed specifically for exposed-fastened metal roofs. Its streamlined design and straightforward installation make it easy to achieve reliable snow retention without complex calculations.</p>",
+            "link_label": "Shop",
+            "link": "shopify://products/s-5-snogard™-ef-snow-retention-system-for-exposed-fastened-metal-roofs-84-lf-kit"
+          }
+        }
+      },
+      "block_order": [
+        "column_iBHzPJ",
+        "column_q8PKMV"
+      ],
+      "settings": {
+        "title": "",
+        "heading_tag": "h2",
+        "section_float": "clear",
+        "mobile_display": "mobile-show",
+        "desktop_display": "desktop-show",
+        "heading_size": "h1",
+        "col_alignment": "left",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "button_label": "",
+        "button_link": "",
+        "columns_desktop": 2,
+        "column_alignment": "left",
+        "background_style": "primary",
+        "color_scheme": "",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 20,
+        "padding_bottom": 12
+      }
+    },
+    "multicolumn_mKW9ac": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_jAXKKc": {
           "type": "column",
           "settings": {
             "image": "shopify://shop_images/X-Gard1.png",
@@ -177,7 +186,7 @@
             "link": "shopify://collections/s-5-x-gard"
           }
         },
-        "column_q8PKMV": {
+        "column_MhDQyp": {
           "type": "column",
           "settings": {
             "image": "shopify://shop_images/X-Gard2.png",
@@ -190,13 +199,15 @@
         }
       },
       "block_order": [
-        "column_iBHzPJ",
-        "column_q8PKMV"
+        "column_jAXKKc",
+        "column_MhDQyp"
       ],
       "settings": {
         "title": "",
         "heading_tag": "h2",
         "section_float": "clear",
+        "mobile_display": "mobile-show",
+        "desktop_display": "desktop-show",
         "heading_size": "h1",
         "col_alignment": "left",
         "image_width": "full",
@@ -247,6 +258,8 @@
         "title": "",
         "heading_tag": "h2",
         "section_float": "clear",
+        "mobile_display": "mobile-show",
+        "desktop_display": "desktop-show",
         "heading_size": "h1",
         "col_alignment": "left",
         "image_width": "full",
@@ -298,6 +311,8 @@
         "title": "",
         "heading_tag": "h2",
         "section_float": "clear",
+        "mobile_display": "mobile-show",
+        "desktop_display": "desktop-show",
         "heading_size": "h1",
         "col_alignment": "left",
         "image_width": "full",
@@ -338,8 +353,8 @@
     "image_banner_ca3EtW",
     "rich_text_XWAg7J",
     "rich_text_eK8tGy",
-    "image_with_text_fNNbaj",
     "multicolumn_gew8HA",
+    "multicolumn_mKW9ac",
     "multicolumn_bXaKjA",
     "multicolumn_3TeXiV",
     "collapsible_content_faq_MQUKFA"
