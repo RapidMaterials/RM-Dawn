@@ -910,6 +910,10 @@ document.addEventListener('DOMContentLoaded', function () {
     if (c.type === 'unavailable') {
       return `<strong>Unavailable</strong>`;
     }
+        // Row: Coming Soon
+    if (c.type === 'coming_soon') {
+      return `<strong>Coming Soon</strong>`;
+    }
 
     // Row: Limited Stock Run
     if (c.type === 'limited_stock_run') {
