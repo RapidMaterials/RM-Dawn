@@ -31,41 +31,10 @@
           "type": "title",
           "settings": {}
         },
-        "price": {
-          "type": "price",
-          "settings": {}
-        },
-        "oscp_wholesale_price_grid_widget_8cHrDp": {
-          "type": "shopify://apps/oscp-wholesale/blocks/price-grid-widget/4d1d9eb6-630d-4c84-ad8e-14dfd07f94ed",
+        "custom_liquid_FYtbxH": {
+          "type": "custom_liquid",
           "settings": {
-            "quantity_heading": "Minimum Quantity",
-            "price_heading": "PRICE",
-            "grid_header_bg_color": "#004085",
-            "grid_border_color": "#ddd"
-          }
-        },
-        "oscp_wholesale_cancelled_block_amQyxk": {
-          "type": "shopify://apps/oscp-wholesale/blocks/cancelled-block/4d1d9eb6-630d-4c84-ad8e-14dfd07f94ed",
-          "settings": {}
-        },
-        "oscp_wholesale_b2b_app_block_k7JUnx": {
-          "type": "shopify://apps/oscp-wholesale/blocks/app-block/4d1d9eb6-630d-4c84-ad8e-14dfd07f94ed",
-          "settings": {
-            "qty_title": "Qty",
-            "price_title": "Price",
-            "buy_text": "Buy",
-            "off_text": "Off",
-            "each_text": "Each",
-            "discount_value": "Discount Value",
-            "incl_tax_title": "Incl. Tax",
-            "excl_tax_title": "Excl. Tax",
-            "disableruleclmn": false,
-            "disableinclpriceclmn": false,
-            "disableexclpriceclmn": false,
-            "PGBC": "#d5d9e0",
-            "PGH": "#000000",
-            "PGB": "#a5a5a5",
-            "PGT": "#000000"
+            "custom_liquid": "<div style=\"background:#f4f4f4; border-left:4px solid #f4c400; padding:20px; margin:20px 0; text-align:left;\">\n  <div style=\"font-size:20px; font-weight:700; color:#222; margin-bottom:8px;\">\n    Coming November 2026\n  </div>\n  <div style=\"font-size:14px; color:#555; line-height:1.6;\">\n    The S-5! SnoGard EF Snow Retention System will be available soon. Stay tuned!\n  </div>\n</div>"
           }
         },
         "watermelon_order_limits_app_block_MR4eYt": {
@@ -79,21 +48,6 @@
             "swatch_shape": "circle"
           }
         },
-        "bss_variant_options_option_set_dEcH69": {
-          "type": "shopify://apps/optis-product-options/blocks/option-set/2c446099-c349-4e73-80cd-49c9770b7807",
-          "settings": {}
-        },
-        "quantity_selector": {
-          "type": "quantity_selector",
-          "settings": {}
-        },
-        "buy_buttons": {
-          "type": "buy_buttons",
-          "settings": {
-            "show_dynamic_checkout": false,
-            "show_gift_card_recipient": false
-          }
-        },
         "text_XdzqLY": {
           "type": "text",
           "name": "Shipping Note",
@@ -101,14 +55,6 @@
             "text": "{{ product.metafields.custom.shipping_note.value }}",
             "txtclass": "prod-ship-note",
             "text_style": "body"
-          }
-        },
-        "casa_loyalty_casa_app_product_BFppiJ": {
-          "type": "shopify://apps/casa-loyalty/blocks/casa_app_product/da24958b-9ea9-44ae-b810-fe9dddbf4430",
-          "settings": {
-            "link_visibility": "inherit",
-            "learn_more_link": "https://rapidmaterials.com/pages/rapid-pro-rewards",
-            "open_in_new_tab": true
           }
         },
         "features_with_icons_qLjpdB": {
@@ -127,17 +73,10 @@
         "text_6ANM9p",
         "sku_ibtQ6p",
         "title",
-        "price",
-        "oscp_wholesale_price_grid_widget_8cHrDp",
-        "oscp_wholesale_cancelled_block_amQyxk",
-        "oscp_wholesale_b2b_app_block_k7JUnx",
+        "custom_liquid_FYtbxH",
         "watermelon_order_limits_app_block_MR4eYt",
         "variant_picker",
-        "bss_variant_options_option_set_dEcH69",
-        "quantity_selector",
-        "buy_buttons",
         "text_XdzqLY",
-        "casa_loyalty_casa_app_product_BFppiJ",
         "features_with_icons_qLjpdB",
         "popup_JJ8bWY"
       ],
