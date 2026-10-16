@@ -184,6 +184,7 @@ ul.product-grid{
 /****OSCP Wholesale****/
 #oscpGridAccordion{ border:0 !important;
 box-shadow:none !important;
+padding:0 !important;
 }
 p.oscp-price-grid-original {
     display: none;
