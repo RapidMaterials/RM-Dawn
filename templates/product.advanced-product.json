@@ -68,6 +68,27 @@
             "PGT": "#000000"
           }
         },
+        "oscp_wholesale_quantity_selector_widget_NRHXDX": {
+          "type": "shopify://apps/oscp-wholesale/blocks/quantity-selector-widget/4d1d9eb6-630d-4c84-ad8e-14dfd07f94ed",
+          "settings": {
+            "show_price_with_currency": false,
+            "discount_title": "Buy More & Save",
+            "SSPR": true,
+            "SYSR": true,
+            "sqr": true,
+            "variant_quantity": true,
+            "blb": "Buy",
+            "bla": "+",
+            "stl": "Save per unit",
+            "TSL": "Total Savings",
+            "ttl": "Total",
+            "ATCB": "Grab This Deal",
+            "gtc": "#000",
+            "bca": "#108043",
+            "DlB": "#e6f2ec",
+            "slc": "#DD1D1D"
+          }
+        },
         "variant_picker": {
           "type": "variant_picker",
           "settings": {
@@ -135,6 +156,7 @@
         "oscp_wholesale_price_grid_widget_8cHrDp",
         "oscp_wholesale_cancelled_block_amQyxk",
         "oscp_wholesale_b2b_app_block_k7JUnx",
+        "oscp_wholesale_quantity_selector_widget_NRHXDX",
         "variant_picker",
         "bss_variant_options_option_set_dEcH69",
         "quantity_selector",
