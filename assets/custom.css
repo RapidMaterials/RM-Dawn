@@ -178,3 +178,8 @@ button#jdgm-tab_questions_answers {
 ul.product-grid{
   z-index: 2 !important;
 }
+
+
+
+/****OSCP Wholesale****/
+#oscpGridAccordion{ border:0 !important;}
