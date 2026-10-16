@@ -212,3 +212,9 @@ label.oscp-price-grid-label {font-weight: normal !important;}
 strong.oscp-price-grid-buy-label {
     font-weight: normal;
 }
+
+.oscp-price-grid-item:hover {
+    transform: none !important;
+    box-shadow:none !important;
+    border-color: black;
+}
