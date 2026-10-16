@@ -182,4 +182,33 @@ ul.product-grid{
 
 
 /****OSCP Wholesale****/
-#oscpGridAccordion{ border:0 !important;}
+#oscpGridAccordion{ border:0 !important;
+box-shadow:none !important;
+}
+p.oscp-price-grid-original {
+    display: none;
+}
+
+p.oscp-price-grid-total {
+    display: none;
+}
+
+label.oscp-price-grid-label {
+    gap: 0;
+}
+
+li.oscp-price-grid-item {
+    border: 1px solid gray;
+    background: transparent;
+    border-radius: 0;
+    padding: 10px;
+    margin: 0;
+}
+
+p.oscp-price-grid-discounted {font-weight: normal;}
+
+label.oscp-price-grid-label {font-weight: normal !important;}
+
+strong.oscp-price-grid-buy-label {
+    font-weight: normal;
+}
