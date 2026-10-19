@@ -234,7 +234,7 @@ li.osc-active{
 
 ul li.osc-active{
   background:none !important; 
-  border-color:#ddd;
+  border-color:#ddd !important;
 }
 ul.oscp-price-grid-list {
     position: relative;
