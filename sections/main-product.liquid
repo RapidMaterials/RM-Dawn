@@ -640,6 +640,75 @@ document.addEventListener('DOMContentLoaded', function () {
               {%- when 'variant_picker' -%}
                 {% render 'product-variant-picker', product: product, block: block, product_form_id: product_form_id %}
 
+                {%- liquid
+                  assign has_color_option = false
+                  assign color_chart_url = blank
+
+                  for option in product.options_with_values
+                    assign option_name = option.name | downcase | strip
+
+                    if option_name == 'color' or option_name == 'colour'
+                      assign has_color_option = true
+                      break
+                    endif
+                  endfor
+
+                  assign resources = product.metafields.custom.resources.value
+
+                  for resource in resources
+                    assign resource_type = resource.resource_type.value | downcase | strip
+
+                    if resource_type == 'color chart'
+                      assign resource_file = resource.file.value
+
+                      if resource_file != blank
+                        assign color_chart_url = resource_file.url
+                      endif
+
+                      break
+                    endif
+                  endfor
+                -%}
+
+                {% if has_color_option and color_chart_url != blank %}
+                  <div class="rm-color-chart-link">
+                    <button
+                      type="button"
+                      class="link underlined-link"
+                      onclick="document.getElementById('ColorChartModal-{{ section.id }}').showModal()"
+                    >
+                      View Color Chart
+                    </button>
+                  </div>
+
+                  <dialog id="ColorChartModal-{{ section.id }}" class="rm-color-chart-modal">
+                    <div class="rm-color-chart-header">
+                      <strong>Color Chart</strong>
+
+                      <button
+                        type="button"
+                        class="rm-color-chart-close"
+                        aria-label="Close color chart"
+                        onclick="this.closest('dialog').close()"
+                      >
+                        &times;
+                      </button>
+                    </div>
+
+                    <iframe
+                      src="{{ color_chart_url | escape }}"
+                      title="Product Color Chart"
+                      loading="lazy">
+                    </iframe>
+
+                    <div class="rm-color-chart-footer">
+                      <a href="{{ color_chart_url | escape }}" target="_blank" rel="noopener">
+                        Open in New Tab
+                      </a>
+                    </div>
+                  </dialog>
+                {% endif %}
+
 
 
                 {%- assign v = product.selected_or_first_available_variant -%}
