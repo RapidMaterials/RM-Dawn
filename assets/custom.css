@@ -320,6 +320,32 @@ ul.product-grid{
   }
 }
 
+/* Force color chart modal to center */
+dialog.rm-color-chart-modal {
+  position: fixed !important;
+  inset: 0 !important;
+  top: 50% !important;
+  left: 50% !important;
+  right: auto !important;
+  bottom: auto !important;
+  margin: 0 !important;
+  transform: translate(-50%, -50%) !important;
+
+  width: min(1100px, calc(100vw - 40px));
+  height: min(850px, calc(100dvh - 60px));
+  max-width: none;
+  max-height: none;
+
+  box-sizing: border-box;
+}
+
+@media screen and (max-width: 749px) {
+  dialog.rm-color-chart-modal {
+    width: calc(100vw - 20px);
+    height: calc(100dvh - 30px);
+  }
+}
+
 
 
 /****OSCP Wholesale****/
