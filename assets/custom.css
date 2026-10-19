@@ -296,25 +296,27 @@ ul.product-grid{
   box-shadow: 0 4px 20px rgba(0, 0, 0, .08);
 }
 
-/* Color chart link beside color label */
-.rm-color-chart-link {
-  margin: 0 !important;
+/* Color label and chart link */
+.product-form__input .form__label:has(.rm-color-chart-link) {
+  display: flex !important;
+  align-items: center;
+  justify-content: space-between !important;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Push color chart link to far right */
+.product-form__input .form__label .rm-color-chart-link {
+  margin: 0 0 0 auto !important;
+  padding-left: 15px;
+  flex-shrink: 0;
   text-align: right;
-  margin-left: auto !important;
 }
 
 .rm-color-chart-link button,
 .rm-color-chart-link a {
   font-size: 13px;
   white-space: nowrap;
-}
-
-/* Align color label and link */
-.product-form__input:has(.rm-color-chart-link) .form__label {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 15px;
 }
 
 /* Center Color Chart Modal */
