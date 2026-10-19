@@ -640,74 +640,101 @@ document.addEventListener('DOMContentLoaded', function () {
               {%- when 'variant_picker' -%}
                 {% render 'product-variant-picker', product: product, block: block, product_form_id: product_form_id %}
 
-                {%- liquid
-                  assign has_color_option = false
-                  assign color_chart_url = blank
+               
+{%- liquid
+  assign has_color_option = false
+  assign color_chart_image = blank
+  assign color_chart_pdf = blank
 
-                  for option in product.options_with_values
-                    assign option_name = option.name | downcase | strip
+  for option in product.options_with_values
+    assign option_name = option.name | downcase | strip
 
-                    if option_name == 'color' or option_name == 'colour'
-                      assign has_color_option = true
-                      break
-                    endif
-                  endfor
+    if option_name == 'color' or option_name == 'colour'
+      assign has_color_option = true
+      break
+    endif
+  endfor
 
-                  assign resources = product.metafields.custom.resources.value
+  assign resources = product.metafields.custom.resources.value
 
-                  for resource in resources
-                    assign resource_type = resource.resource_type.value | downcase | strip
+  for resource in resources
+    assign resource_type = resource.resource_type.value | downcase | strip
 
-                    if resource_type == 'color chart'
-                      assign resource_file = resource.file.value
+    if resource_type == 'color chart'
 
-                      if resource_file != blank
-                        assign color_chart_url = resource_file.url
-                      endif
+      if resource.image.value != blank
+        assign color_chart_image = resource.image.value
+      endif
 
-                      break
-                    endif
-                  endfor
-                -%}
+      if resource.file.value != blank
+        assign color_chart_pdf = resource.file.value.url
+      endif
 
-                {% if has_color_option and color_chart_url != blank %}
-                  <div class="rm-color-chart-link">
-                    <button
-                      type="button"
-                      class="link underlined-link"
-                      onclick="document.getElementById('ColorChartModal-{{ section.id }}').showModal()"
-                    >
-                      View Color Chart
-                    </button>
-                  </div>
+      if color_chart_image != blank or color_chart_pdf != blank
+        break
+      endif
 
-                  <dialog id="ColorChartModal-{{ section.id }}" class="rm-color-chart-modal">
-                    <div class="rm-color-chart-header">
-                      <strong>Color Chart</strong>
+    endif
+  endfor
+-%}
 
-                      <button
-                        type="button"
-                        class="rm-color-chart-close"
-                        aria-label="Close color chart"
-                        onclick="this.closest('dialog').close()"
-                      >
-                        &times;
-                      </button>
-                    </div>
+{% if has_color_option %}
 
-                    <iframe
-                      src="{{ color_chart_url | escape }}"
-                      title="Product Color Chart"
-                      loading="lazy">
-                    </iframe>
+  {% if color_chart_image != blank %}
 
-                    <div class="rm-color-chart-footer">
-                      <a href="{{ color_chart_url | escape }}" target="_blank" rel="noopener">
-                        Open in New Tab
-                      </a>
-                    </div>
-                  </dialog>
-                {% endif %}
+    <div class="rm-color-chart-link">
+      <button
+        type="button"
+        class="link underlined-link"
+        onclick="document.getElementById('ColorChartModal-{{ section.id }}').showModal()"
+      >
+        View Color Chart
+      </button>
+    </div>
+
+    <dialog id="ColorChartModal-{{ section.id }}" class="rm-color-chart-modal">
+
+      <div class="rm-color-chart-header">
+        <strong>Color Chart</strong>
+
+        <button
+          type="button"
+          class="rm-color-chart-close"
+          aria-label="Close color chart"
+          onclick="this.closest('dialog').close()"
+        >
+          &times;
+        </button>
+      </div>
+
+      <div class="rm-color-chart-content">
+        <img
+          src="{{ color_chart_image | image_url: width: 2000 }}"
+          alt="{{ product.title | escape }} Color Chart"
+          loading="lazy"
+          width="{{ color_chart_image.width }}"
+          height="{{ color_chart_image.height }}"
+        >
+      </div>
+
+    </dialog>
+
+  {% elsif color_chart_pdf != blank %}
+
+    <div class="rm-color-chart-link">
+      <a
+        href="{{ color_chart_pdf | escape }}"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="link underlined-link"
+      >
+        View Color Chart
+      </a>
+    </div>
+
+  {% endif %}
+
+{% endif %}
 
 
 

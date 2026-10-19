@@ -186,6 +186,7 @@ ul.product-grid{
   text-align: right;
 }
 
+.rm-color-chart-link a,
 .rm-color-chart-link button {
   cursor: pointer;
   font-size: 13px;
@@ -193,17 +194,21 @@ ul.product-grid{
 
 .rm-color-chart-modal {
   width: 90%;
-  max-width: 1000px;
-  height: 85vh;
-  max-height: 900px;
+  max-width: 1100px;
+  max-height: 90vh;
   padding: 0;
   border: 0;
   border-radius: 8px;
   overflow: hidden;
 }
 
+.rm-color-chart-modal[open] {
+  display: flex;
+  flex-direction: column;
+}
+
 .rm-color-chart-modal::backdrop {
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.75);
 }
 
 .rm-color-chart-header {
@@ -219,18 +224,33 @@ ul.product-grid{
   background: none;
   cursor: pointer;
   font-size: 28px;
+  line-height: 1;
 }
 
-.rm-color-chart-modal iframe {
+.rm-color-chart-content {
+  padding: 20px;
+  overflow: auto;
+  text-align: center;
+}
+
+.rm-color-chart-content img {
   display: block;
-  width: 100%;
-  height: calc(100% - 110px);
-  border: 0;
+  max-width: 100%;
+  width: auto;
+  height: auto;
+  margin: 0 auto;
+  border-radius: 4px;
 }
 
-.rm-color-chart-footer {
-  padding: 12px 20px;
-  text-align: right;
+@media screen and (max-width: 749px) {
+  .rm-color-chart-modal {
+    width: 95%;
+    max-height: 85vh;
+  }
+
+  .rm-color-chart-content {
+    padding: 10px;
+  }
 }
 
 
