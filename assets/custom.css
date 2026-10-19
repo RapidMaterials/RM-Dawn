@@ -179,6 +179,61 @@ ul.product-grid{
   z-index: 2 !important;
 }
 
+/***color chart button on variant***/
+
+.rm-color-chart-link {
+  margin: -10px 0 15px;
+  text-align: right;
+}
+
+.rm-color-chart-link button {
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.rm-color-chart-modal {
+  width: 90%;
+  max-width: 1000px;
+  height: 85vh;
+  max-height: 900px;
+  padding: 0;
+  border: 0;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.rm-color-chart-modal::backdrop {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.rm-color-chart-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 20px;
+  border-bottom: 1px solid #ddd;
+}
+
+.rm-color-chart-close {
+  border: 0;
+  background: none;
+  cursor: pointer;
+  font-size: 28px;
+}
+
+.rm-color-chart-modal iframe {
+  display: block;
+  width: 100%;
+  height: calc(100% - 110px);
+  border: 0;
+}
+
+.rm-color-chart-footer {
+  padding: 12px 20px;
+  text-align: right;
+}
+
+
 
 
 /****OSCP Wholesale****/
