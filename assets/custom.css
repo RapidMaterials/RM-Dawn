@@ -225,3 +225,6 @@ strong.oscp-price-grid-buy-label {
 ul.oscp-price-grid-list{
   max-width:200px !important;
 }
+.oscp-price-grid-list > li:not(:first-child) {
+    margin-top: -1px;
+}
