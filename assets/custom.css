@@ -228,3 +228,13 @@ ul.oscp-price-grid-list{
 .oscp-price-grid-list > li:not(:first-child) {
     margin-top: -1px;
 }
+li.osc-active{
+ box-shadow:none !important;
+ background-position:0 !important;
+ transform:none !important;
+}
+
+ul li.osc-active{
+  background:none !important; 
+  border-color:gray;
+}
