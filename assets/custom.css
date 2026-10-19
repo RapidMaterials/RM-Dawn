@@ -216,6 +216,7 @@ strong.oscp-price-grid-buy-label, p.oscp-price-grid-discounted, label.oscp-price
     transform: none !important;
     box-shadow:none !important;
     border-color: #ddd  !important;
+    cursor:auto;
 }
 .oscp-price-grid-item::before{
   background:none !important; 
