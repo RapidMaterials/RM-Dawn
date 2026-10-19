@@ -238,3 +238,25 @@ ul li.osc-active{
   background:none !important; 
   border-color:gray;
 }
+
+ul.oscp-price-grid-list::before {
+    content: "QTY";
+    display: block;
+    position: relative;
+    padding-bottom: 6px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+ul.oscp-price-grid-list {
+    position: relative;
+}
+
+ul.oscp-price-grid-list::after {
+    content: "PRICE";
+    position: absolute;
+    top: 0;
+    right: 10px;
+    font-size: 13px;
+    font-weight: 600;
+}
