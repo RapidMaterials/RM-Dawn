@@ -311,6 +311,17 @@
             "link": "shopify://collections/brand-trufast"
           }
         },
+        "column_rbRYQ4": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/logo.svg",
+            "title": "Wuko",
+            "heading_tag": "h2",
+            "text": "",
+            "link_label": "Shop",
+            "link": "shopify://collections/brand-wuko"
+          }
+        },
         "column_98w7JW": {
           "type": "column",
           "settings": {
@@ -347,6 +358,7 @@
         "column_ziffQU",
         "column_kecb4N",
         "column_bNDAaT",
+        "column_rbRYQ4",
         "column_98w7JW"
       ],
       "custom_css": [
