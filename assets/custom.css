@@ -319,6 +319,14 @@ ul.product-grid{
   white-space: nowrap;
 }
 
+.product-form__input .form__label:has(.rm-color-chart-link) {
+  column-gap: 4px;
+}
+
+.product-form__input .form__label:has(.rm-color-chart-link) .rm-color-chart-link {
+  margin-left: auto !important;
+}
+
 /* Center Color Chart Modal */
 dialog.rm-color-chart-modal {
   position: fixed !important;
