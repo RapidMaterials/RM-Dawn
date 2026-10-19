@@ -105,6 +105,17 @@
         "column_rhWpy3": {
           "type": "column",
           "settings": {
+            "image": "shopify://shop_images/Daggerz.png",
+            "title": "Daggerz",
+            "heading_tag": "h2",
+            "text": "",
+            "link_label": "Shop",
+            "link": ""
+          }
+        },
+        "column_LRr8mf": {
+          "type": "column",
+          "settings": {
             "image": "shopify://shop_images/ese_logo_transparent.png",
             "title": "ESE Machines",
             "heading_tag": "h2",
@@ -318,6 +329,7 @@
         "column_4chJfV",
         "column_cNkqJY",
         "column_rhWpy3",
+        "column_LRr8mf",
         "column_8CrDq4",
         "column_3KBHJp",
         "column_KdGJzF",
