@@ -44,10 +44,6 @@
             "grid_border_color": "#ddd"
           }
         },
-        "oscp_wholesale_cancelled_block_amQyxk": {
-          "type": "shopify://apps/oscp-wholesale/blocks/cancelled-block/4d1d9eb6-630d-4c84-ad8e-14dfd07f94ed",
-          "settings": {}
-        },
         "oscp_wholesale_b2b_app_block_k7JUnx": {
           "type": "shopify://apps/oscp-wholesale/blocks/app-block/4d1d9eb6-630d-4c84-ad8e-14dfd07f94ed",
           "settings": {
@@ -154,7 +150,6 @@
         "title",
         "price",
         "oscp_wholesale_price_grid_widget_8cHrDp",
-        "oscp_wholesale_cancelled_block_amQyxk",
         "oscp_wholesale_b2b_app_block_k7JUnx",
         "oscp_wholesale_quantity_selector_widget_NRHXDX",
         "variant_picker",
