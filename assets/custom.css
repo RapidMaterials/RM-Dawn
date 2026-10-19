@@ -199,7 +199,7 @@ label.oscp-price-grid-label {
 }
 
 li.oscp-price-grid-item {
-    border: 1px solid gray;
+    border: 1px solid #ddd;
     background: transparent;
     border-radius: 0;
     padding: 8px;
