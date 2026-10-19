@@ -219,3 +219,6 @@ strong.oscp-price-grid-buy-label {
     box-shadow:none !important;
     border-color: black;
 }
+.oscp-price-grid-item::before{
+  background:none !important;
+}
