@@ -206,12 +206,10 @@ li.oscp-price-grid-item {
     margin: 0;
 }
 
-p.oscp-price-grid-discounted {font-weight: normal;}
 
-label.oscp-price-grid-label {font-weight: normal !important;}
-
-strong.oscp-price-grid-buy-label {
+strong.oscp-price-grid-buy-label, p.oscp-price-grid-discounted, label.oscp-price-grid-labe {
     font-weight: normal;
+    font-size:13px !important;
 }
 
 .oscp-price-grid-item:hover {
