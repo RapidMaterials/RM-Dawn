@@ -752,7 +752,56 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 </script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const section = document.getElementById('MainProduct-{{ section.id }}');
+  if (!section) return;
 
+  const link = section.querySelector('.rm-color-chart-link');
+  const modal = section.querySelector('.rm-color-chart-modal');
+
+  if (!link) return;
+
+  // Preserve the original link so Shopify can't permanently remove it
+  const linkHTML = link.outerHTML;
+
+  function positionColorChartLink() {
+    const colorPicker = Array.from(
+      section.querySelectorAll('.product-form__input')
+    ).find(input => {
+      const label = input.querySelector('.form__label');
+      return label && /^color\s*:/i.test(label.textContent.trim());
+    });
+
+    if (!colorPicker) return;
+
+    const label = colorPicker.querySelector('.form__label');
+
+    // Don't add duplicates
+    if (label.querySelector('.rm-color-chart-link')) return;
+
+    // Create a new link after Shopify replaces the picker
+    label.insertAdjacentHTML('beforeend', linkHTML);
+
+    // Remove any duplicate links outside the label
+    section.querySelectorAll('.rm-color-chart-link').forEach(el => {
+      if (!label.contains(el)) el.remove();
+    });
+  }
+
+  positionColorChartLink();
+
+  // Watch for Shopify replacing the color picker
+  const observer = new MutationObserver(() => {
+    positionColorChartLink();
+  });
+
+  observer.observe(section, {
+    childList: true,
+    subtree: true
+  });
+});
+</script>
 
                 {%- assign v = product.selected_or_first_available_variant -%}
       <p class="product__text inline-richtext prod-ship-note"
