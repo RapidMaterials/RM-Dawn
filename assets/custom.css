@@ -217,7 +217,7 @@ strong.oscp-price-grid-buy-label {
 .oscp-price-grid-item:hover {
     transform: none !important;
     box-shadow:none !important;
-    border-color: black  !important;
+    border-color: #ddd  !important;
 }
 .oscp-price-grid-item::before{
   background:none !important; 
@@ -236,7 +236,7 @@ li.osc-active{
 
 ul li.osc-active{
   background:none !important; 
-  border-color:#d2d2d2;
+  border-color:#ddd;
 }
 ul.oscp-price-grid-list {
     position: relative;
