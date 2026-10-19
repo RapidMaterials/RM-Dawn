@@ -296,6 +296,26 @@ ul.product-grid{
   box-shadow: 0 4px 20px rgba(0, 0, 0, .08);
 }
 
+/* Color chart link beside color label */
+.rm-color-chart-link {
+  margin: 0 !important;
+  text-align: right;
+  margin-left: auto !important;
+}
+
+.rm-color-chart-link button,
+.rm-color-chart-link a {
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+/* Align color label and link */
+.product-form__input:has(.rm-color-chart-link) .form__label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+}
 
 /* Center Color Chart Modal */
 dialog.rm-color-chart-modal {
