@@ -735,7 +735,23 @@ document.addEventListener('DOMContentLoaded', function () {
   {% endif %}
 
 {% endif %}
+<script>
+  document.querySelectorAll('.rm-color-chart-modal').forEach(modal => {
+    modal.addEventListener('click', event => {
+      const rect = modal.getBoundingClientRect();
 
+      const clickedOutside =
+        event.clientX < rect.left ||
+        event.clientX > rect.right ||
+        event.clientY < rect.top ||
+        event.clientY > rect.bottom;
+
+      if (clickedOutside) {
+        modal.close();
+      }
+    });
+  });
+</script>
 
 
                 {%- assign v = product.selected_or_first_available_variant -%}
