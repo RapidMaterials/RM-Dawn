@@ -43,11 +43,11 @@
           </div>
         {% endif %}
 
-        {% if promo.promo_text.value != blank %}
-          <div class="rm-product-promo__text">
-            {{ promo.promo_text.value }}
-          </div>
-        {% endif %}
+{% if promo.promo_text.value != blank %}
+  <div class="rm-product-promo__text">
+    {{ promo.promo_text | metafield_tag }}
+  </div>
+{% endif %}
 
         {% if promo.mini_link.value != blank and promo.mini_link_text.value != blank %}
           <a
