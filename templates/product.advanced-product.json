@@ -82,8 +82,12 @@
             "gtc": "#000",
             "bca": "#108043",
             "DlB": "#e6f2ec",
-            "slc": "#DD1D1D"
+            "slc": "#dd1d1d"
           }
+        },
+        "promo_message_TLtC4d": {
+          "type": "promo_message",
+          "settings": {}
         },
         "variant_picker": {
           "type": "variant_picker",
@@ -115,10 +119,6 @@
             "txtclass": "prod-ship-note",
             "text_style": "body"
           }
-        },
-        "g_volume_discounts_fbt_pHBUBy": {
-          "type": "shopify://apps/g-volume-discounts/blocks/fbt/a702c84b-0471-4e7b-bea8-21bf53809d67",
-          "settings": {}
         },
         "watermelon_order_limits_app_block_MR4eYt": {
           "type": "shopify://apps/melon-order-limits/blocks/app-block/91904755-64ba-4bc5-85c6-2e5708522f2b",
@@ -152,12 +152,12 @@
         "oscp_wholesale_price_grid_widget_8cHrDp",
         "oscp_wholesale_b2b_app_block_k7JUnx",
         "oscp_wholesale_quantity_selector_widget_NRHXDX",
+        "promo_message_TLtC4d",
         "variant_picker",
         "bss_variant_options_option_set_dEcH69",
         "quantity_selector",
         "buy_buttons",
         "text_XdzqLY",
-        "g_volume_discounts_fbt_pHBUBy",
         "watermelon_order_limits_app_block_MR4eYt",
         "casa_loyalty_casa_app_product_BFppiJ",
         "features_with_icons_qLjpdB",
