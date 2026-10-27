@@ -1,3 +1,50 @@
+{%- style -%}
+  .rm-product-promo {
+    margin: 12px 0 16px;
+  }
+
+  .rm-product-promo__main {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .rm-product-promo__icon {
+    display: flex;
+    align-items: center;
+    flex: 0 0 auto;
+  }
+
+  .rm-product-promo__icon svg,
+  .rm-product-promo__icon img {
+    width: 20px;
+    height: 20px;
+  }
+
+  .rm-product-promo__content {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .rm-product-promo__text {
+    font-weight: 600;
+  }
+
+  .rm-product-promo__text .metafield-rich_text_field,
+  .rm-product-promo__text p {
+    margin: 0;
+    display: inline;
+  }
+
+  .rm-product-promo__link {
+    font-size: 13px;
+    white-space: nowrap;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+{%- endstyle -%}
 {% liquid
   assign promo = product.metafields.custom.promo_message.value
 %}
@@ -6,6 +53,7 @@
   <div class="rm-product-promo">
 
     <div class="rm-product-promo__main">
+
       <div class="rm-product-promo__icon">
         {% if promo.custom_icon.value != blank %}
           {{
@@ -37,17 +85,18 @@
       </div>
 
       <div class="rm-product-promo__content">
+
         {% if promo.header.value != blank %}
-          <div class="rm-product-promo__header">
+          <span class="rm-product-promo__header">
             {{ promo.header.value }}
-          </div>
+          </span>
         {% endif %}
 
-{% if promo.promo_text.value != blank %}
-  <div class="rm-product-promo__text">
-    {{ promo.promo_text | metafield_tag }}
-  </div>
-{% endif %}
+        {% if promo.promo_text.value != blank %}
+          <div class="rm-product-promo__text">
+            {{ promo.promo_text | metafield_tag }}
+          </div>
+        {% endif %}
 
         {% if promo.mini_link.value != blank and promo.mini_link_text.value != blank %}
           <a
@@ -57,7 +106,9 @@
             {{ promo.mini_link_text.value }}
           </a>
         {% endif %}
+
       </div>
+
     </div>
 
     {% if promo.button.value != blank and promo.button_text.value != blank %}
