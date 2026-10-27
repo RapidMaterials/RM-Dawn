@@ -108,17 +108,17 @@
         "slide_kg9aWB": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/buschmann-cutter-new-Website_-_Home_Banner.png",
-            "image_mobile": "shopify://shop_images/buschmann-cutter-new-Website_-_Home_Banner.png",
+            "image": "shopify://shop_images/levis-products-hero.png",
+            "image_mobile": "shopify://shop_images/levis-products-hero.png",
             "desktop_object_x": 100,
-            "desktop_object_y": 92,
+            "desktop_object_y": 47,
             "mobile_object_x": 100,
-            "mobile_object_y": 50,
-            "logo": "shopify://shop_images/new.png",
-            "heading": "Professional Metal Cutting, Powered by Your Drill.",
-            "text": "<p>Meet the Buschmann Universal Cutter. Clean, precise cuts in corrugated and profiled metal panels using most 18V cordless drills.</p>",
-            "button_label": "Order Now",
-            "button_link": "https://rapidmaterials.com/products/universal-cutter-by-buschmann"
+            "mobile_object_y": 53,
+            "logo": "shopify://shop_images/levis_logo_transparent.png",
+            "heading": "Free Shipping on Levi’s Orders $5,000+",
+            "text": "<p>Stock up on Snow Defender snow guards, fasteners, and eligible Levi’s Building Components and get free standard shipping on qualifying orders.</p>",
+            "button_label": "Shop Eligible Products",
+            "button_link": "https://rapidmaterials.com/collections/brand-levis"
           }
         }
       },
