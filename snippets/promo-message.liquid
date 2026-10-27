@@ -1,49 +1,64 @@
 {%- style -%}
-  .rm-product-promo {
-    margin: 12px 0 16px;
-  }
+.rm-product-promo {
+  margin: 10px 0 14px;
+  font-size: 13px;
+  line-height: 1.35;
+}
 
-  .rm-product-promo__main {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
+.rm-product-promo__main {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
 
-  .rm-product-promo__icon {
-    display: flex;
-    align-items: center;
-    flex: 0 0 auto;
-  }
+.rm-product-promo__icon {
+  display: flex;
+  align-items: center;
+  flex: 0 0 auto;
+  opacity: 0.75;
+}
 
-  .rm-product-promo__icon svg,
-  .rm-product-promo__icon img {
-    width: 20px;
-    height: 20px;
-  }
+.rm-product-promo__icon svg,
+.rm-product-promo__icon img {
+  width: 16px;
+  height: 16px;
+}
 
-  .rm-product-promo__content {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    flex-wrap: wrap;
-  }
+.rm-product-promo__content {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  flex-wrap: wrap;
+}
 
-  .rm-product-promo__text {
-    font-weight: 600;
-  }
+.rm-product-promo__header {
+  font-weight: 500;
+}
 
-  .rm-product-promo__text .metafield-rich_text_field,
-  .rm-product-promo__text p {
-    margin: 0;
-    display: inline;
-  }
+.rm-product-promo__text {
+  font-weight: 500;
+}
 
-  .rm-product-promo__link {
-    font-size: 13px;
-    white-space: nowrap;
-    text-decoration: underline;
-    text-underline-offset: 2px;
-  }
+.rm-product-promo__text .metafield-rich_text_field,
+.rm-product-promo__text p {
+  margin: 0;
+  display: inline;
+}
+
+.rm-product-promo__link {
+  font-size: 12px;
+  font-weight: 400;
+  white-space: nowrap;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  opacity: 0.8;
+}
+
+.rm-product-promo__button {
+  display: inline-block;
+  margin-top: 8px;
+  font-size: 12px;
+}
 {%- endstyle -%}
 {% liquid
   assign promo = product.metafields.custom.promo_message.value
