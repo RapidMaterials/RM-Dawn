@@ -395,6 +395,15 @@ document.addEventListener('DOMContentLoaded', function () {
                     </span>
                   {%- endif -%}
                 </p>
+            {%- when 'promo_message' -%}
+              {%- if product.metafields.custom.promo_message.value != blank -%}
+                <div class="product__promo-message" {{ block.shopify_attributes }}>
+                  {% render 'promo-message', product: product %}
+                </div>
+              {%- endif -%}
+
+
+
               {%- when 'custom_liquid' -%}
                 {{ block.settings.custom_liquid }}
               {%- when 'collapsible_tab' -%}
@@ -2083,6 +2092,12 @@ document.addEventListener('DOMContentLoaded', function () {
         }
       ]
     },
+    {
+      "type": "promo_message",
+      "name": "Promo Message",
+      "limit": 1
+    },
+
     {
       "type": "title",
       "name": "t:sections.main-product.blocks.title.name",
