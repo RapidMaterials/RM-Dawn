@@ -1,65 +1,115 @@
+{%- style -%}
+  .rm-product-promo {
+    margin: 12px 0 16px;
+  }
+
+  .rm-product-promo__main {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .rm-product-promo__icon {
+    display: flex;
+    align-items: center;
+    flex: 0 0 auto;
+  }
+
+  .rm-product-promo__icon svg,
+  .rm-product-promo__icon img {
+    width: 20px;
+    height: 20px;
+  }
+
+  .rm-product-promo__content {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .rm-product-promo__text {
+    font-weight: 600;
+  }
+
+  .rm-product-promo__text .metafield-rich_text_field,
+  .rm-product-promo__text p {
+    margin: 0;
+    display: inline;
+  }
+
+  .rm-product-promo__link {
+    font-size: 13px;
+    white-space: nowrap;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+{%- endstyle -%}
 {% liquid
   assign promo = product.metafields.custom.promo_message.value
 %}
 
 {% if promo != blank %}
-  <div class="rm-product-promo">
+<div class="rm-product-promo">
+  <div class="rm-product-promo__main">
 
-    <div class="rm-product-promo__main">
-      <div class="rm-product-promo__icon">
-        {% if promo.custom_icon.value != blank %}
-          {{
-            promo.custom_icon.value
-            | image_url: width: 40
-            | image_tag:
-              loading: 'lazy',
-              widths: '20, 40',
-              alt: ''
-          }}
-        {% elsif promo.promo_type.value == 'Shipping Discount' %}
-          <svg
-            aria-hidden="true"
-            viewBox="0 0 24 24"
-            width="20"
-            height="20"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="1.8"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <path d="M3 6h11v10H3z"/>
-            <path d="M14 10h4l3 3v3h-7z"/>
-            <circle cx="7" cy="18" r="2"/>
-            <circle cx="18" cy="18" r="2"/>
-          </svg>
-        {% endif %}
-      </div>
-
-      <div class="rm-product-promo__content">
-        {% if promo.header.value != blank %}
-          <div class="rm-product-promo__header">
-            {{ promo.header.value }}
-          </div>
-        {% endif %}
-                    ``
-                    {% if promo.promo_text.value != blank %}
-                    <div class="rm-product-promo__text">
-                        {{ promo.promo_text | metafield_tag }}
-                    </div>
-                    {% endif %}
-``
-        {% if promo.mini_link.value != blank and promo.mini_link_text.value != blank %}
-          <a
-            href="{{ promo.mini_link.value }}"
-            class="rm-product-promo__link"
-          >
-            {{ promo.mini_link_text.value }}
-          </a>
-        {% endif %}
-      </div>
+    <div class="rm-product-promo__icon">
+      {% if promo.custom_icon.value != blank %}
+        {{
+          promo.custom_icon.value
+          | image_url: width: 40
+          | image_tag:
+            loading: 'lazy',
+            widths: '20, 40',
+            alt: ''
+        }}
+      {% elsif promo.promo_type.value == 'Shipping Discount' %}
+        <svg
+          aria-hidden="true"
+          viewBox="0 0 24 24"
+          width="20"
+          height="20"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.8"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M3 6h11v10H3z"/>
+          <path d="M14 10h4l3 3v3h-7z"/>
+          <circle cx="7" cy="18" r="2"/>
+          <circle cx="18" cy="18" r="2"/>
+        </svg>
+      {% endif %}
     </div>
 
+    <div class="rm-product-promo__content">
+
+      {% if promo.header.value != blank %}
+        <span class="rm-product-promo__header">
+          {{ promo.header.value }}
+        </span>
+      {% endif %}
+
+      {% if promo.promo_text.value != blank %}
+        <div class="rm-product-promo__text">
+          {{ promo.promo_text | metafield_tag }}
+        </div>
+      {% endif %}
+
+      {% if promo.mini_link.value != blank and promo.mini_link_text.value != blank %}
+        <a
+          href="{{ promo.mini_link.value }}"
+          class="rm-product-promo__link"
+        >
+          {{ promo.mini_link_text.value }}
+        </a>
+      {% endif %}
+
+    </div>
+
+  </div>
+</div>
     {% if promo.button.value != blank and promo.button_text.value != blank %}
       <a
         href="{{ promo.button.value }}"
