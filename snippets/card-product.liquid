@@ -30,14 +30,23 @@
   {{ 'quantity-popover.css' | asset_url | stylesheet_tag }}
 {%- endunless -%}
 {%- if card_product and card_product != empty -%}
-  {%- liquid
-    assign display_title = card_product.title
-    if use_quick_order_title
-      assign display_title = card_product.metafields.custom.short_quick_order_title.value | default: card_product.title
-    else
-      assign display_title = card_product.metafields.custom.search_category_title_override.value | default: card_product.title
-    endif
-  -%}
+    {%- liquid
+      assign is_quick_order_list = false
+
+      if use_quick_order_title
+        assign is_quick_order_list = true
+      elsif section_id contains 'compatible_collections'
+        assign is_quick_order_list = true
+      elsif section.id contains 'compatible_collections'
+        assign is_quick_order_list = true
+      endif
+
+      if is_quick_order_list
+        assign display_title = card_product.metafields.custom.short_quick_order_title.value | default: card_product.title
+      else
+        assign display_title = card_product.metafields.custom.search_category_title_override.value | default: card_product.title
+      endif
+    -%}
   {%- liquid
     assign ratio = 1
     if card_product.featured_media and media_aspect_ratio == 'portrait'
