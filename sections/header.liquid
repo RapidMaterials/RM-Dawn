@@ -1124,10 +1124,14 @@ header-drawer {
 
             const titleDocument = new DOMParser().parseFromString(titlesHtml, 'text/html');
             const titleOverrides = new Map();
+            const hiddenProductIds = new Set();
 
             titleDocument.querySelectorAll('#rm-search-titles [data-product-id]').forEach((element) => {
               const title = element.textContent.trim();
               if (title) titleOverrides.set(element.dataset.productId, title);
+              if (element.dataset.hideFromStorefront === 'true') {
+                hiddenProductIds.add(element.dataset.productId);
+              }
             });
 
             const products = data && data.resources && data.resources.results
@@ -1138,7 +1142,11 @@ header-drawer {
               const override = titleOverrides.get(String(product.id));
               if (override) product.title = override;
             });
-
+          if (data && data.resources && data.resources.results) {
+            data.resources.results.products = products.filter((product) => {
+              return !hiddenProductIds.has(String(product.id));
+            });
+          }
             renderResults(query, data);
           })
           .catch((error) => {
