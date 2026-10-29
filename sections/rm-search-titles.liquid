@@ -4,7 +4,10 @@
       {%- assign full_product = all_products[search_product.handle] -%}
       {%- assign override_title = full_product.metafields.custom.search_category_title_override.value -%}
 
-      <span data-product-id="{{ search_product.id }}">
+      <span
+        data-product-id="{{ search_product.id }}"
+        data-hide-from-storefront="{% if full_product.tags contains 'hide-from-storefront' %}true{% else %}false{% endif %}"
+      >
         {{- override_title | default: search_product.title | escape -}}
       </span>
     {%- endfor -%}
