@@ -1098,13 +1098,47 @@ header-drawer {
           '&resources[limit_scope]=each' +
           '&resources[options][unavailable_products]=last';
 
-        fetch(url, { signal: controller.signal })
-          .then((response) => {
+        const requestSignal = controller.signal;
+        const titlesUrl = url.replace(
+          'search/suggest.json?',
+          'search/suggest?'
+        ) + '&section_id=rm-search-titles';
+
+        Promise.all([
+          fetch(url, { signal: requestSignal }).then((response) => {
             if (!response.ok) throw new Error('Predictive search request failed');
             return response.json();
-          })
-          .then((data) => {
+          }),
+          fetch(titlesUrl, { signal: requestSignal })
+            .then((response) => {
+              if (!response.ok) throw new Error('Search title request failed');
+              return response.text();
+            })
+            .catch((error) => {
+              if (error.name === 'AbortError') throw error;
+              return '';
+            })
+        ])
+          .then(([data, titlesHtml]) => {
             if (input.value.trim() !== query) return;
+
+            const titleDocument = new DOMParser().parseFromString(titlesHtml, 'text/html');
+            const titleOverrides = new Map();
+
+            titleDocument.querySelectorAll('#rm-search-titles [data-product-id]').forEach((element) => {
+              const title = element.textContent.trim();
+              if (title) titleOverrides.set(element.dataset.productId, title);
+            });
+
+            const products = data && data.resources && data.resources.results
+              ? data.resources.results.products || []
+              : [];
+
+            products.forEach((product) => {
+              const override = titleOverrides.get(String(product.id));
+              if (override) product.title = override;
+            });
+
             renderResults(query, data);
           })
           .catch((error) => {
