@@ -157,15 +157,9 @@
                           {{ product.vendor }}
                         </div>
                       {%- endif -%}
-                        {%- assign full_product = all_products[product.handle] -%}
-
-                        <p class="predictive-search__item-heading h5">
-                          TEST — {{ product.title | escape }}
-                          <br>
-                          Direct: {{ product.metafields.custom.search_category_title_override.value | default: 'EMPTY' | escape }}
-                          <br>
-                          Full: {{ full_product.metafields.custom.search_category_title_override.value | default: 'EMPTY' | escape }}
-                        </p>
+                          <p class="predictive-search__item-heading h5">
+                            {{- product.title | escape -}}
+                          </p>
                       {%- if settings.predictive_search_show_price -%}
                         {% render 'price', product: product, use_variant: true, show_badges: false %}
                       {%- endif -%}
