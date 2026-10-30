@@ -469,3 +469,11 @@ ul.oscp-price-grid-list::after {
     font-size: 13px;
     font-weight: 600;
 }
+
+body .ml {
+  margin-left: 0 !important;
+}
+
+body .mr {
+  margin-right: 0 !important;
+}
