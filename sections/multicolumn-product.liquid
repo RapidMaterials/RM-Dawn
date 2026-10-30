@@ -397,11 +397,6 @@
 </li>
                     
       </ul>
-      {%- if product.metafields.custom.tech_specs != blank -%}
-  <div class="specs__additional">
-    {{ product.metafields.custom.tech_specs | metafield_tag }}
-  </div>
-{%- endif -%}
 
       {%- if show_mobile_slider -%}
         <div class="slider-buttons large-up-hide">
