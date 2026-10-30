@@ -336,7 +336,13 @@
     {{ v.metafields.custom.info_warranty.value | default: '' }}
   </span>
 </li>
-         
+        
+{%- if product.metafields.custom.tech_specs != blank -%}
+  <div class="specs__additional">
+    {{ product.metafields.custom.tech_specs | metafield_tag }}
+  </div>
+{%- endif -%}
+
            {%- if certs != blank -%}
  
   <li><strong>Certifications:</strong>
