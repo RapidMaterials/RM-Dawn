@@ -32,6 +32,20 @@
       }
     }
   {%- endif -%}
+
+  #MainProduct-{{ section.id }} .thumbnail-list .thumbnail__badge:has(.icon-play) {
+  width: 3.2rem;
+  height: 3.2rem;
+  top: 50%;
+  left: 50%;
+  right: auto;
+  transform: translate(-50%, -50%);
+}
+
+#MainProduct-{{ section.id }} .thumbnail-list .thumbnail__badge .icon-play {
+  width: 1.5rem;
+  height: 1.5rem;
+}
 {%- endstyle -%}
 
   <script src="{{ 'product-info.js' | asset_url }}" defer="defer"></script>
