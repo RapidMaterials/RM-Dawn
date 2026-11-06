@@ -105,6 +105,22 @@
     "home_hero_slider_JU6WzL": {
       "type": "home-hero-slider",
       "blocks": {
+        "slide_axUf8g": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Website_-_Home_Banner.png",
+            "image_mobile": "shopify://shop_images/Website_-_Home_Banner.png",
+            "desktop_object_x": 100,
+            "desktop_object_y": 47,
+            "mobile_object_x": 100,
+            "mobile_object_y": 53,
+            "logo": "shopify://shop_images/s5-circle-logo-transparent4c_1.png",
+            "heading": "SnoGard EF™ Snow Retention",
+            "text": "<p>Pre-Engineered Snow Retention for Exposed-Fastened Metal Roofs. Simplified installation with complete 84ft.</p><p></p>",
+            "button_label": "Shop SnoGard EF",
+            "button_link": "shopify://products/s-5-snogard™-ef-snow-retention-system-for-exposed-fastened-metal-roofs-84-lf-kit"
+          }
+        },
         "slide_kg9aWB": {
           "type": "slide",
           "settings": {
@@ -123,6 +139,7 @@
         }
       },
       "block_order": [
+        "slide_axUf8g",
         "slide_kg9aWB"
       ],
       "custom_css": [
