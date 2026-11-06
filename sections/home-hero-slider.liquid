@@ -181,6 +181,31 @@
     background: #ffffff;
   }
 
+
+
+/* Hero slide type image */
+.rm-hero-{{ section.id }} .rm-hero__type-badge {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  width: 180px;
+  pointer-events: none;
+}
+
+.rm-hero-{{ section.id }} .rm-hero__type-badge img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+@media screen and (max-width: 749px) {
+  .rm-hero-{{ section.id }} .rm-hero__type-badge {
+    width: 110px;
+  }
+}
+
+
   @media screen and (max-width: 749px) {
     .rm-hero-{{ section.id }} .rm-hero__image {
       display: none;
@@ -297,7 +322,21 @@
 
           <div class="rm-hero__overlay"></div>
 
+          {%- case block.settings.slide_type -%}
+            {%- when 'new' -%}
+              <div class="rm-hero__type-badge">
+                <img
+                  src="https://cdn.shopify.com/s/files/1/0645/2540/2290/files/new.png?v=1778520889"
+                  alt="New"
+                  loading="lazy"
+                  width="180"
+                  height="180"
+                >
+              </div>
+          {%- endcase -%}
+
           <div class="rm-hero__inner">
+
             <div class="rm-hero__content">
               {%- if block.settings.logo != blank -%}
                 <div class="rm-hero__logo-wrap">
@@ -855,7 +894,18 @@
           "type": "url",
           "id": "button_link",
           "label": "Button link"
+        },
+        {
+          "type": "select",
+          "id": "slide_type",
+          "label": "Slide type",
+          "options": [
+            { "value": "none", "label": "None" },
+            { "value": "new", "label": "New" }
+          ],
+          "default": "none"
         }
+
       ]
     }
   ],
