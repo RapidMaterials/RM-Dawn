@@ -11,6 +11,18 @@
   "name": "t:sections.header.name",
   "type": "header",
   "sections": {
+    "custom_liquid_CWPeEJ": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "{% assign current_date = 'now' | date: '%Y%m%d' | plus: 0 %}\n\n{% if current_date >= 20261124 and current_date <= 20261129 %}\n  <div style=\"background-color: #fff4e5;\n              border: 1px solid #e8d4b5;\n              border-radius: 4px;\n              padding: 12px 20px;\n              text-align: center;\n              color: #60451f;\n              font-size: 14px;\n              line-height: 1.5;\">\n    <strong>Thanksgiving Holiday Closure</strong><br>\n    RapidMaterials will be closed Thursday, November 26 \n    and Friday, November 27 for Thanksgiving.\n    Orders may still be placed online and will resume \n    processing on Monday, November 30.\n    Have a happy Thanksgiving!\n  </div>\n{% endif %}",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_left": 0,
+        "padding_right": 0
+      }
+    },
     "header": {
       "type": "header",
       "custom_css": [
@@ -45,6 +57,7 @@
     }
   },
   "order": [
+    "custom_liquid_CWPeEJ",
     "header"
   ]
 }
